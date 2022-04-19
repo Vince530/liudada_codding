@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2019 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<Touch
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\aec\aecTouch.xsd">
+  <module_version major_revision="7" minor_revision="0" incr_revision="1"/>
+  <parameter_version>
+    <revision>A</revision>
+  </parameter_version>
+  <touchMtr>
+    <enableTouchROI>true</enableTouchROI>
+    <weightTouchROI>0.8</weightTouchROI>
+    <weightTemporalFilter>0</weightTemporalFilter>
+    <centerWeightStrength>0.5</centerWeightStrength>
+    <enableTouchLEDMetering>false</enableTouchLEDMetering>
+    <enableTouchROIHistAdj>false</enableTouchROIHistAdj>
+    <ROIHistAdjZone>
+      <zoneTrigger>
+        <start>0</start>
+        <end>190</end>
+      </zoneTrigger>
+      <zoneData>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <darkLumaRatioRange>
+          <start>0.15</start>
+          <end>0.3</end>
+        </darkLumaRatioRange>
+        <darkROIAdjustParams>
+          <minTargetAdjRatio>0.35</minTargetAdjRatio>
+          <maxTargetAdjRatio>3</maxTargetAdjRatio>
+          <darkRefLow>3</darkRefLow>
+          <satRefHigh>350</satRefHigh>
+        </darkROIAdjustParams>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <brightLumaRatioRange>
+          <start>3</start>
+          <end>6</end>
+        </brightLumaRatioRange>
+        <brightROIAdjustParams>
+          <minTargetAdjRatio>0.35</minTargetAdjRatio>
+          <maxTargetAdjRatio>3</maxTargetAdjRatio>
+          <darkRefLow>3</darkRefLow>
+          <satRefHigh>350</satRefHigh>
+        </brightROIAdjustParams>
+      </zoneData>
+    </ROIHistAdjZone>
+    <ROIHistAdjZone>
+      <zoneTrigger>
+        <start>230</start>
+        <end>360</end>
+      </zoneTrigger>
+      <zoneData>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <darkLumaRatioRange>
+          <start>0.15</start>
+          <end>0.3</end>
+        </darkLumaRatioRange>
+        <darkROIAdjustParams>
+          <minTargetAdjRatio>0.35</minTargetAdjRatio>
+          <maxTargetAdjRatio>3</maxTargetAdjRatio>
+          <darkRefLow>3</darkRefLow>
+          <satRefHigh>350</satRefHigh>
+        </darkROIAdjustParams>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <brightLumaRatioRange>
+          <start>3</start>
+          <end>6</end>
+        </brightLumaRatioRange>
+        <brightROIAdjustParams>
+          <minTargetAdjRatio>0.35</minTargetAdjRatio>
+          <maxTargetAdjRatio>3</maxTargetAdjRatio>
+          <darkRefLow>3</darkRefLow>
+          <satRefHigh>350</satRefHigh>
+        </brightROIAdjustParams>
+      </zoneData>
+    </ROIHistAdjZone>
+    <ROIHistAdjZone>
+      <zoneTrigger>
+        <start>420</start>
+        <end>1000</end>
+      </zoneTrigger>
+      <zoneData>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <darkLumaRatioRange>
+          <start>0.15</start>
+          <end>0.3</end>
+        </darkLumaRatioRange>
+        <darkROIAdjustParams>
+          <minTargetAdjRatio>0.35</minTargetAdjRatio>
+          <maxTargetAdjRatio>3</maxTargetAdjRatio>
+          <darkRefLow>3</darkRefLow>
+          <satRefHigh>350</satRefHigh>
+        </darkROIAdjustParams>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <brightLumaRatioRange>
+          <start>3</start>
+          <end>6</end>
+        </brightLumaRatioRange>
+        <brightROIAdjustParams>
+          <minTargetAdjRatio>0.35</minTargetAdjRatio>
+          <maxTargetAdjRatio>3</maxTargetAdjRatio>
+          <darkRefLow>3</darkRefLow>
+          <satRefHigh>350</satRefHigh>
+        </brightROIAdjustParams>
+      </zoneData>
+    </ROIHistAdjZone>
+  </touchMtr>
+  <touchConv>
+    <convSpeedAdjRatio>0.5</convSpeedAdjRatio>
+  </touchConv>
+</Touch>

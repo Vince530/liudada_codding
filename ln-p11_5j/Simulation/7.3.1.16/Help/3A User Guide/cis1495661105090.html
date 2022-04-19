@@ -1,0 +1,144 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="In AEC flash estimation, the smart ROI estimation algorithm can detect close objects within the scene. To tune the parameters, in the Parameter Editor , navigate to 3A &gt; AEC &gt; Flash &gt; Flash Mtr &gt; ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="LED smart ROI flash estimation parameters" /><meta name="abstract" content="In AEC flash estimation, the smart ROI estimation algorithm can detect close objects within the scene." /><meta name="description" content="In AEC flash estimation, the smart ROI estimation algorithm can detect close objects within the scene." /><meta name="DC.Relation" scheme="URI" content="qyq1502749761017.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="cnt1474864616732" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>LED smart ROI flash estimation parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="cnt1474864616732">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a> / <a class="navheader_parent_path" href="qyq1502749761017.html" title="In AEC flash estimation, a smart ROI estimation is available to detect close objects within the scene and prevent saturation.">LED smart ROI flash estimation</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qyq1502749761017.html" title="In AEC flash estimation, a smart ROI estimation is available to detect close objects within the scene and prevent saturation."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LED smart ROI flash estimation</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">LED smart ROI flash estimation parameters</h1>
+
+   
+   <div class="body conbody"><p class="shortdesc">In AEC flash estimation, the smart ROI estimation algorithm can detect
+      close objects within the scene. </p>
+
+      <p class="p">To tune the parameters, in the <span class="ph uicontrol">Parameter
+            Editor</span>, navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Flash</span> &gt; <span class="ph uicontrol">Flash Mtr</span> &gt; <span class="ph uicontrol">Smart Flash</span></span>.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="cnt1474864616732__ID-table-0000001d" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.853in" /><col style="width:2.96in" /><col style="width:0.743in" /><col style="width:0.882in" /></colgroup><thead class="thead" style="text-align:left;">
+               <tr class="row">
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d7145e62">Parameter</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d7145e65">Description</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d7145e68">Tuning</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d7145e71">Default</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e62 ">smart_flash_est_enable</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e65 "><p class="p">Use this flag to enable the smart ROI estimation algorithm for AEC. </p>
+<p class="p">Enable smart ROI estimation to achieve better saturation prevention for close foreground objects.</p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e68 "><p class="p">0 (disable)</p>
+<p class="p">1 (enable)</p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e71 ">1 (enabled)</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e62 ">smart_flash_est_strength</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e65 "><p class="p">This value controls how much AEC ROI estimation should focus on the foreground objects.</p>
+<p class="p">This parameter might be useful for fine tuning certain scenes. A setting of 0.0 essentially disables the smart ROI estimation for AEC.</p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e68 ">Range: [0.0, 2.0]<p class="p">Higher value = focus more on foreground</p>
+<p class="p">Lower value =
+                        focus more on background brightness</p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e71 ">1.0</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e62 ">minOffStats</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e65 ">Increase this value if the image
+                     sensor is noisy in dark scenes, causing large exposure variations from shot to
+                     shot </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e68 ">Range: [2, 5]</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e71 ">3</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e62 ">kFloorPct</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e65 ">Increase this value to emphasize
+                     small reflective objects and prevent saturation.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e68 ">Range: [0.0, 0.95]</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e71 ">0.8</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e62 ">satPreventStrength</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e65 ">Increase this value to further
+                     reduce saturation.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e68 ">Range: [0.0, 1.0]</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e71 ">0.0</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e62 ">enableSpeckleHandling</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e65 ">Enable this feature to detect speckle corner cases where a
+                     reflective surface (e.g., a mirror) produces a saturated speckle that would
+                     otherwise cause underexposure. This feature is somewhat opposite to saturation
+                     prevention as it allows saturation for speckles.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e68 ">
+                     <p class="p">0 (disable)</p>
+
+                     <p class="p">1 (enable)</p>
+
+                  </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e71 ">1</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e62 ">speckleSaPctRange</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e65 ">Decrease this range to allow speckle detection to kick in
+                     more.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e68 ">Range: [0.01, 1.0]</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7145e71 ">[0.05, 0.35]</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qyq1502749761017.html" title="In AEC flash estimation, a smart ROI estimation is available to detect close objects within the scene and prevent saturation."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LED smart ROI flash estimation</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

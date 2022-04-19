@@ -1,0 +1,69 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="After tuning dual AEC, verify improvements. After tuning, test the Dual Cam Exp Comp Multiplier. Go to &gt; Parameter Editor &gt; 3A &gt; AEC &gt; Extension &gt; Dual Cam &gt; Dual Cam Exp Comp Multiplier and update ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Verify dual camera AEC" /><meta name="abstract" content="After tuning dual AEC, verify improvements." /><meta name="description" content="After tuning dual AEC, verify improvements." /><meta name="DC.Relation" scheme="URI" content="jrj1517428982623.html" /><meta name="DC.Relation" scheme="URI" content="xts1518729922125.html" /><meta name="DC.Relation" scheme="URI" content="pqx1518729949020.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="aqg1521048673478" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Verify dual camera AEC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="aqg1521048673478">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a> / <a class="navheader_parent_path" href="jrj1517428982623.html" title="Tune dual camera AEC">Tune dual camera AEC</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jrj1517428982623.html" title="Tune dual camera AEC"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune dual camera AEC</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Verify dual camera AEC</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">After tuning dual AEC, verify improvements.</p>
+
+		<ol class="ol steps"><li class="li step" id="aqg1521048673478__step_N10081_N1004A_N1000E_N10001">
+				<span class="ph cmd">After tuning, test the Dual Cam Exp Comp Multiplier.</span>
+				<ol type="a" class="ol substeps" id="aqg1521048673478__substeps_hvt_djs_1db">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Go to <span class="ph menucascade"><span class="ph uicontrol"></span> &gt; <span class="ph uicontrol">Parameter Editor</span> &gt; <span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Extension</span> &gt; <span class="ph uicontrol">Dual Cam</span> &gt; <span class="ph uicontrol">Dual Cam Exp Comp Multiplier</span></span> and update <span class="ph uicontrol">Dual Cam Exp Comp
+								Multiplier</span> with the tuned value.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Set all CCT Based Comp to 1.0 as not to apply CCT-based
+							adjustments. Go to <span class="ph menucascade"><span class="ph uicontrol">Parameter Editor</span> &gt; <span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Extension</span> &gt; <span class="ph uicontrol">Dual Cam</span> &gt; <span class="ph uicontrol">CCT Based Exp Comp</span></span> and set the Compensation Ration of each array to
+							1.0.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Capture one raw image per camera and open in Chromatix
+							7 to measure the average luma.</span>
+						<div class="itemgroup stepresult">The luma should be improved (i.e., closer)
+							compared to before tuning.</div>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step" id="aqg1521048673478__step_N100CF_N1004A_N1000E_N10001">
+				<span class="ph cmd">Test the CCT Based Comp.</span>
+				<ol type="a" class="ol substeps" id="aqg1521048673478__substeps_sh5_rjs_1db">
+					<li class="li substep">
+						<span class="ph cmd">Go to <span class="ph menucascade"><span class="ph uicontrol">Utilities</span> &gt; <span class="ph uicontrol">Parameter Editor</span> &gt; <span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Extension</span> &gt; <span class="ph uicontrol">Dual Cam</span> &gt; <span class="ph uicontrol">CCTBased Exp Comp</span></span> and complete the tuning array for CCT and Compensation
+							Ratio values.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Capture one raw image per camera and open in Chromatix
+							7 to measure the average luma.</span>
+					</li>
+
+				</ol>
+
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="xts1518729922125.html" title="Tuning the compensation factor, Dual Cam Exp Comp Multiplier, helps align the exposures of multiple cameras.">Tune Dual Cam Exp Comp Multiplier</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="pqx1518729949020.html" title="CCT Based Exp Comp tuning improves exposure matching across multiple illuminants.">Tune CCT Based Exp Comp</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jrj1517428982623.html" title="Tune dual camera AEC"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune dual camera AEC</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

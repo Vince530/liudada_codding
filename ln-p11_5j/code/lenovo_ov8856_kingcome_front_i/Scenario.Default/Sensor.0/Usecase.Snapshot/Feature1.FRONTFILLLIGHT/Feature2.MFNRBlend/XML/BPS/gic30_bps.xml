@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2021 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<gic30_bps
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\..\..\..\..\XSD\isp\gic_3_0_0.xsd">
+  <enable_section>
+    <gic_global_enable>1</gic_global_enable>
+  </enable_section>
+  <module_version major_revision="3" minor_revision="0" incr_revision="0"/>
+  <parameter_version>
+    <revision>0</revision>
+  </parameter_version>
+  <control_variables>
+    <control_var_type>control_aec_exp_sensitivity_ratio</control_var_type>
+    <control_var_type>control_gain</control_var_type>
+  </control_variables>
+  <control_method>
+    <aec_exp_control>control_gain</aec_exp_control>
+    <aec_hdr_control>control_aec_exp_sensitivity_ratio</aec_hdr_control>
+  </control_method>
+  <dynamic_enable_triggers>
+    <gic_global_enable>
+      <enable>0</enable>
+      <hyst_control_var>control_gain</hyst_control_var>
+      <hyst_mode>UPWARD</hyst_mode>
+      <hyst_trigger>
+        <start1>0.9</start1>
+        <end1>0.91</end1>
+        <start2>0.9</start2>
+        <end2>0.91</end2>
+      </hyst_trigger>
+    </gic_global_enable>
+  </dynamic_enable_triggers>
+  <chromatix_gic30_reserve>
+    <radial_anchor_tab>
+      <radial_anchor>0 0.2 0.3 0.4 0.6 0.8 1</radial_anchor>
+    </radial_anchor_tab>
+  </chromatix_gic30_reserve>
+  <chromatix_gic30_core>
+    <mod_gic30_hdr_aec_data>
+      <hdr_aec_trigger>
+        <exp_time_start>1</exp_time_start>
+        <exp_time_end>16</exp_time_end>
+        <aec_sensitivity_start>1</aec_sensitivity_start>
+        <aec_sensitivity_end>16</aec_sensitivity_end>
+        <exp_gain_start>1</exp_gain_start>
+        <exp_gain_end>16</exp_gain_end>
+      </hdr_aec_trigger>
+      <hdr_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>1</gain_start>
+            <gain_end>1.2</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 3.31662488 4.690416 5.656854 6.55743837 7.34846926 8.062258 8.717798 9.273619 9.848858 10.3923044 10.9087124 11.4017544 11.83216 12.2882061 12.7279224 13.1529465 13.56466 13.9283886 14.3178215 14.6969385 15.0665188 15.394804 15.7480154 16.0934772 16.4316769 16.7630539 17.0587215 17.3781471 17.6918068 18 18.3030052 18.5741749 18.8679619 19.1572437 19.4422226 19.7230835 19.9749851 20.248457 20.5182838 20.7846088 21.0475655 21.2837963 21.540659 21.7944946 22.0454082 22.2934971 22.51666 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613 22.759613</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>1</gic_noise_scale>
+            <gic_correction_strength>0.6</gic_correction_strength>
+            <thin_line_noise_offset>400</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>1.3</gain_start>
+            <gain_end>3.5</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 4.472136 6.3245554 7.68114567 8.888194 9.949874 10.9087124 11.74734 12.5698051 13.3416643 14.0712471 14.73092 15.394804 16.03122 16.6433163 17.20465 17.7763882 18.3303032 18.8679619 19.3649158 19.8746071 20.37155 20.8566532 21.3072758 21.7715416 22.22611 22.6715679 23.10844 23.5159512 23.937418 24.3515911 24.7588367 25.13961 25.53429 25.9229622 26.3058929 26.6645832 27.0370121 27.4043789 27.7668877 28.10694 28.4604988 28.809721 29.15476 29.4788055 29.816103 30.1496277 30.4795017 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434 30.8058434</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>1.5</gic_noise_scale>
+            <gic_correction_strength>1</gic_correction_strength>
+            <thin_line_noise_offset>400</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>3.98</gain_start>
+            <gain_end>8</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 6.244998 8.774964 10.7703295 12.4499 13.8924437 15.2315464 16.4316769 17.5783958 18.6547585 19.646883 20.6155281 21.540659 22.4053574 23.259407 24.062418 24.8596058 25.6320114 26.3628521 27.0924339 27.8028774 28.4780617 29.15476 29.816103 30.4466743 31.08054 31.6859589 32.29551 32.89377 33.4664 34.04409 34.6121368 35.15679 35.70714 36.2491379 36.7695541 37.2961121 37.8021164 38.3144875 38.8201 39.306488 39.7994957 40.2864723 40.7553673 41.2310562 41.6893272 42.1544762 42.61455 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581 43.0581</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>1</gic_noise_scale>
+            <gic_correction_strength>0.6</gic_correction_strength>
+            <thin_line_noise_offset>400</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>8.1</gain_start>
+            <gain_end>16.98</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 12.60952 17.8325539 21.84033 25.21904 28.1957436 30.88689 33.3616562 35.6651077 37.82856 39.88734 41.833 43.6921043 45.47527 47.1911 48.8467 50.4479942 52 53.5070076 54.97272 56.4003563 57.7927322 59.1523476 60.4814034 61.7818756 63.05553 64.30396 65.52862 66.7308044 67.91907 69.0796661 70.22108 71.34424 72.44998 73.53911 74.6123352 75.6703339 76.71375 77.7431641 78.7591248 79.762146 80.75271 81.73127 82.69825 83.65405 84.59905 85.53362 86.4580841 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849 87.37849</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>1</gic_noise_scale>
+            <gic_correction_strength>0.6</gic_correction_strength>
+            <thin_line_noise_offset>400</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>17.2</gain_start>
+            <gain_end>32</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 12.2474489 17.3493519 21.2367611 24.5153 27.4043789 30.0333157 32.43455 34.6698723 36.7695541 38.7685432 40.6571045 42.4617462 44.19276 45.86938 47.47631 49.0306 50.5371132 52.009613 53.4322 54.81788 56.1693878 57.4978256 58.7877541 60.04998 61.2862129 62.506 63.6945839 64.86139 66.007576 67.14164 68.24954 69.3397446 70.41307 71.47727 72.51897 73.5459061 74.5587 75.5645447 76.55064 77.52419 78.4856644 79.4418 80.38035 81.30806 82.2253 83.1384354 84.0357056 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349 84.92349</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>1</gic_noise_scale>
+            <gic_correction_strength>0.6</gic_correction_strength>
+            <thin_line_noise_offset>400</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>33</gain_start>
+            <gain_end>40.98</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 15.8429794 22.4053574 27.4226189 31.6701756 35.41186 38.79433 41.9046555 44.7995529 47.5078926 50.079937 52.5261841 54.86347 57.1051674 59.26213 61.335144 63.3482437 65.29931 67.19375 69.0362244 70.82372 72.5741 74.28324 75.95393 77.58866 79.1896439 80.75271 82.29216 83.8033447 85.28775 86.74676 88.18163 89.587944 90.97802 92.34717 93.69632 95.02631 96.332756 97.62684 98.90399 100.164864 101.410057 102.640144 103.850853 105.052368 106.240295 107.415085 108.577164 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936 109.726936</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>1</gic_noise_scale>
+            <gic_correction_strength>0.6</gic_correction_strength>
+            <thin_line_noise_offset>400</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>43</gain_start>
+            <gain_end>64</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 16.1864147 22.8910465 28.01785 32.35738 36.1801033 39.63584 42.81355 45.77117 48.5386429 51.1663971 53.66563 56.0535469 58.3438072 60.53924 62.66578 64.72248 66.71581 68.65129 70.5336761 72.36021 74.1485 75.89466 77.60155 79.27168 80.90118 82.50455 84.07735 85.62126 87.137825 88.6227951 90.0888443 91.53142 92.9516 94.35041 95.72878 97.0824356 98.42256 99.7446747 101.049492 102.337677 103.605019 104.861816 106.103722 107.331261 108.544922 109.745163 110.9279 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631 112.102631</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>3</gic_noise_scale>
+            <gic_correction_strength>1</gic_correction_strength>
+            <thin_line_noise_offset>16383</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>65</gain_start>
+            <gain_end>95</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 16.2480774 22.97825 28.1602554 32.5115356 36.345562 39.8120575 43 45.9782562 48.76474 51.40039 53.90733 56.3027534 58.60887 60.8194046 62.9523621 65.01538 67.01492 68.96376 70.85196 72.691124 74.4849 76.23647 77.9487 79.630394 81.27115 82.87943 84.45709 86.00581 87.53285 89.02808 90.49862 91.94563 93.37023 94.77869 96.16132 97.52435 98.8686 100.194809 101.508621 102.800781 104.0769 105.337555 106.5833 107.81929 109.03669 110.240646 111.431595 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947 112.609947</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>3</gic_noise_scale>
+            <gic_correction_strength>1</gic_correction_strength>
+            <thin_line_noise_offset>16383</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+        <mod_gic30_aec_data>
+          <aec_trigger>
+            <lux_idx_start>1</lux_idx_start>
+            <lux_idx_end>900</lux_idx_end>
+            <gain_start>96</gain_start>
+            <gain_end>128</gain_end>
+          </aec_trigger>
+          <gic30_rgn_data>
+            <enable_gic>1</enable_gic>
+            <enable_pnr>1</enable_pnr>
+            <noise_std_lut_tab>
+              <noise_std_lut>0 16.4316769 23.2379 28.4604988 32.8633537 36.7423477 40.2367973 43.4626274 46.4650421 49.2848854 51.9519 54.48853 56.9122124 59.2368126 61.47357 63.631752 65.7191 67.73478 69.6993561 71.610054 73.4710846 75.28612 77.05842 78.79086 80.48602 82.14621 83.7735062 85.36978 86.93101 88.47034 89.98333 91.4713058 92.93546 94.37691 95.79666 97.19568 98.5748444 99.93498 101.276848 102.5963 103.9038 105.195061 106.47065 107.731148 108.977058 110.208893 111.427109 112.632141 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425 113.824425</noise_std_lut>
+            </noise_std_lut_tab>
+            <gic_noise_scale>3</gic_noise_scale>
+            <gic_correction_strength>1</gic_correction_strength>
+            <thin_line_noise_offset>16383</thin_line_noise_offset>
+            <pnr_noise_scale_tab>
+              <pnr_noise_scale>1 1 1 1</pnr_noise_scale>
+            </pnr_noise_scale_tab>
+            <pnr_correction_strength>0.6</pnr_correction_strength>
+            <radial_pnr_str_adj_tab>
+              <radial_pnr_str_adj>1 1 1 1 1 1 1</radial_pnr_str_adj>
+            </radial_pnr_str_adj_tab>
+          </gic30_rgn_data>
+        </mod_gic30_aec_data>
+      </hdr_aec_data>
+    </mod_gic30_hdr_aec_data>
+  </chromatix_gic30_core>
+</gic30_bps>

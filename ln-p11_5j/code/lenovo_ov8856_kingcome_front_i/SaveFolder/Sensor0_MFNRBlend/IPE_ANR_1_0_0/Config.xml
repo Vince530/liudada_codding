@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ANRConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./ANRConfiguration.xsd">
+  <RegionsConfig RegionIndex="6">
+    <RegionConfig Index="0">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+    <RegionConfig Index="8">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+    <RegionConfig Index="7">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+    <RegionConfig Index="6">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+    <RegionConfig Index="5">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+    <RegionConfig Index="4">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+    <RegionConfig Index="3">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+    <RegionConfig Index="2">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+    <RegionConfig Index="1">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+      <TotalZoom>1</TotalZoom>
+      <TotalZoomUpperBound>1</TotalZoomUpperBound>
+    </RegionConfig>
+  </RegionsConfig>
+  <TriggersStartEndIndexes>HDR AEC:0;AEC:1;</TriggersStartEndIndexes>
+  <ShowHideDCViewer>true</ShowHideDCViewer>
+  <FishEye>false</FishEye>
+  <lnr>
+    <top Pass="PASS_FULL" Threshold="Y" bit_depth="15u, Q14">
+      <Center_Slider_X>4096</Center_Slider_X>
+      <Center_Slider_Y>4096</Center_Slider_Y>
+      <Radius_Slider_X>4096</Radius_Slider_X>
+      <Radius_Slider_Y>4096</Radius_Slider_Y>
+    </top>
+    <top Pass="PASS_FULL" Threshold="UV" bit_depth="15u, Q14">
+      <Center_Slider_X>4096</Center_Slider_X>
+      <Center_Slider_Y>4096</Center_Slider_Y>
+      <Radius_Slider_X>4096</Radius_Slider_X>
+      <Radius_Slider_Y>4096</Radius_Slider_Y>
+    </top>
+    <top Pass="PASS_DC4" Threshold="Y" bit_depth="15u, Q14">
+      <Center_Slider_X>4096</Center_Slider_X>
+      <Center_Slider_Y>4096</Center_Slider_Y>
+      <Radius_Slider_X>4096</Radius_Slider_X>
+      <Radius_Slider_Y>4096</Radius_Slider_Y>
+    </top>
+    <top Pass="PASS_DC4" Threshold="UV" bit_depth="15u, Q14">
+      <Center_Slider_X>4096</Center_Slider_X>
+      <Center_Slider_Y>4096</Center_Slider_Y>
+      <Radius_Slider_X>4096</Radius_Slider_X>
+      <Radius_Slider_Y>4096</Radius_Slider_Y>
+    </top>
+    <top Pass="PASS_DC16" Threshold="Y" bit_depth="15u, Q14">
+      <Center_Slider_X>4096</Center_Slider_X>
+      <Center_Slider_Y>4096</Center_Slider_Y>
+      <Radius_Slider_X>4096</Radius_Slider_X>
+      <Radius_Slider_Y>4096</Radius_Slider_Y>
+    </top>
+    <top Pass="PASS_DC16" Threshold="UV" bit_depth="15u, Q14">
+      <Center_Slider_X>4096</Center_Slider_X>
+      <Center_Slider_Y>4096</Center_Slider_Y>
+      <Radius_Slider_X>4096</Radius_Slider_X>
+      <Radius_Slider_Y>4096</Radius_Slider_Y>
+    </top>
+    <top Pass="PASS_DC64" Threshold="Y" bit_depth="15u, Q14">
+      <Center_Slider_X>4096</Center_Slider_X>
+      <Center_Slider_Y>4096</Center_Slider_Y>
+      <Radius_Slider_X>4096</Radius_Slider_X>
+      <Radius_Slider_Y>4096</Radius_Slider_Y>
+    </top>
+    <top Pass="PASS_DC64" Threshold="UV" bit_depth="15u, Q14">
+      <Center_Slider_X>4096</Center_Slider_X>
+      <Center_Slider_Y>4096</Center_Slider_Y>
+      <Radius_Slider_X>4096</Radius_Slider_X>
+      <Radius_Slider_Y>4096</Radius_Slider_Y>
+    </top>
+    <linear Pass="PASS_FULL" Threshold="Y" bit_depth="9u, Q7">
+      <LinearParam_X>128</LinearParam_X>
+      <LinearParam_Y>128</LinearParam_Y>
+    </linear>
+    <linear Pass="PASS_FULL" Threshold="UV" bit_depth="9u, Q7">
+      <LinearParam_X>128</LinearParam_X>
+      <LinearParam_Y>128</LinearParam_Y>
+    </linear>
+    <linear Pass="PASS_DC4" Threshold="Y" bit_depth="9u, Q7">
+      <LinearParam_X>128</LinearParam_X>
+      <LinearParam_Y>128</LinearParam_Y>
+    </linear>
+    <linear Pass="PASS_DC4" Threshold="UV" bit_depth="9u, Q7">
+      <LinearParam_X>128</LinearParam_X>
+      <LinearParam_Y>128</LinearParam_Y>
+    </linear>
+    <linear Pass="PASS_DC16" Threshold="Y" bit_depth="9u, Q7">
+      <LinearParam_X>128</LinearParam_X>
+      <LinearParam_Y>128</LinearParam_Y>
+    </linear>
+    <linear Pass="PASS_DC16" Threshold="UV" bit_depth="9u, Q7">
+      <LinearParam_X>128</LinearParam_X>
+      <LinearParam_Y>128</LinearParam_Y>
+    </linear>
+    <linear Pass="PASS_DC64" Threshold="Y" bit_depth="9u, Q7">
+      <LinearParam_X>128</LinearParam_X>
+      <LinearParam_Y>128</LinearParam_Y>
+    </linear>
+    <linear Pass="PASS_DC64" Threshold="UV" bit_depth="9u, Q7">
+      <LinearParam_X>128</LinearParam_X>
+      <LinearParam_Y>128</LinearParam_Y>
+    </linear>
+  </lnr>
+</ANRConfiguration>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="If AF is good for mid-distance but not for macro or infinity objects, do the following: Use the log to record the final lens position for the problematic scene. Enable the full-sweep search and record ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AF is good for mid-distance but not good for macro/ infinity objects" /><meta name="DC.Relation" scheme="URI" content="vmf1495661056854.html" /><meta name="DC.Relation" scheme="URI" content="ijv1495660905642.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="oto1477085287466" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AF is good for mid-distance but not good for macro/ infinity objects</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="oto1477085287466">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">AF is good for mid-distance but not good for macro/ infinity objects</h1>
+
+   <div class="body conbody">
+      <p class="p">If AF is good for mid-distance but not for macro or infinity objects, do the following:</p>
+
+      <ol class="ol">
+         <li class="li">Use the log to record the final lens position for the problematic scene.</li>
+
+         <li class="li">Enable the full-sweep search and record the final lens position.</li>
+
+         <li class="li">Compare final positions from two measurements.<ul class="ul">
+               <li class="li">If the lens positions are the same (or very close), the issue could be due to
+                  incorrect calibration or setup from the AF Tuning tab. Verify that all of the
+                  parameters are accurately populated to the AF and actuator headers. If they are
+                  correctly populated, this could indicate that the data in the AF Tuning tab is
+                  incorrect.</li>
+
+               <li class="li">If the lens positions are different, it indicates that there is a severe peak
+                  shift in the FV curve or that tuning for step size is too aggressive. Either
+                  condition causes the peak estimation to be inaccurate.</li>
+
+            </ul>
+</li>
+
+         <li class="li">Run the AF sanity test to check the lens DAC range validity. If the test fails, then
+            review the AF Tuning tab.</li>
+
+         <li class="li">Verify that all parameters are correctly propagated.<ol class="ol" type="a">
+               <li class="li">Use the golden module selected in Chapter to record final lens position with full
+                  sweep for the problematic scene.</li>
+
+            </ol>
+</li>
+
+         <li class="li">For infinity object, skip to the last step. For macro object, proceed to the next step.</li>
+
+         <li class="li">For macro object:</li>
+
+         <li class="li">If the sanity test passes, expand the fine search by setting
+               <span class="keyword cmdname">fine_srch_rgn</span> to <span class="keyword cmdname">SINGLE_NEAR_LIMIT_IDX</span>.<em class="ph i"> </em>This executes the fine search for optimal accuracy.<ol class="ol" type="a">
+               <li class="li">Record adb log while focusing on the target object.</li>
+
+               <li class="li">From the log, record the estimated peak in prescan and the peak found in the fine
+                  search, then record the value that is closer to macro end.</li>
+
+               <li class="li">Find and record the next entry in the index [] array included in
+                  af_tuning_single_t in AF header that is smaller than the recorded position.</li>
+
+               <li class="li">Replace the existing fine_srch_rgn with the corresponding index (single_index_t)
+                  of the position found in last step.</li>
+
+               <li class="li">Update device with new setting and test.</li>
+
+               <li class="li">For macro objects, if adding fine search causes a delay to AF speed, reduce the
+                  step size in the step table to reduce the peak shift.</li>
+
+            </ol>
+</li>
+
+         <li class="li">For infinity object, reduce the step size by 10% for each iteration to test accuracy improvement until the goal is met or the limit is reached.</li>
+
+      </ol>
+
+      <p class="p">The focus should improve with the new settings. The down side of this approach is a decrease in AF speed. Minimize the trade-off by only reducing the step table. However, the final accuracy improvement might not be better than adding fine search, even though there is less impact on speed.</p>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="vmf1495661056854.html" title="Enable full-sweep search and AF core logging">Enable full-sweep search and AF core logging</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="ijv1495660905642.html" title="Conduct AF sanity tests">Conduct AF sanity tests</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

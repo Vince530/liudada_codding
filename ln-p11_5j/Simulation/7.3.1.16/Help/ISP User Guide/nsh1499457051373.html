@@ -1,0 +1,622 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The following tables lists the parameters used for tuning the ABF module for Preview/Video mode. The default values for the parameters are suitable for most situations but may require adjustment in ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="ABF Parameters" /><meta name="DC.Relation" scheme="URI" content="kok1494872095058.html" /><meta name="DC.Relation" scheme="URI" content="jin1499905208720.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nsh1499457051373" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ABF Parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nsh1499457051373">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="adl1504650516665.html" title="IFE tuning">IFE tuning</a> / <a class="navheader_parent_path" href="kok1494872095058.html" title="ABF tuning concepts">ABF tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="kok1494872095058.html" title="ABF tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ABF tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">ABF Parameters </h1>
+
+	<div class="body conbody">
+		<div class="p">The following tables lists the parameters used for tuning the ABF module for
+			Preview/Video mode. The default values for the parameters are suitable for most
+			situations but may require adjustment in some use cases to achieve your specific
+			objectives. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="nsh1499457051373__ID-table-0000000f" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table :   Basic ABF parameters
+					(Preview/Video)</span></caption><colgroup><col style="width:1.875in" /><col style="width:2in" /><col style="width:2in" /><col style="width:1.25in" /><col style="width:1.313in" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d20800e43">Parameter Name</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d20800e46">Description</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d20800e49">Tuning</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d20800e52">Factory Default</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d20800e55">Must Tune?</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">ABF34 Enable (Enable
+								Section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Enable flag for ABF34. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">Set to 1 to use the ABF
+								module.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">1</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Take default
+								value</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">SBPC Enable (Enable
+								Section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Enable flag to turn on
+								single BPC and turn off full BPC. Useful for low power mode.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">For low power mode, set
+								to 1. Otherwise, use default of 0.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">0</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Take default value unless
+								low power mode.</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">AEC Exposure Control
+								(Control Method section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Set exposure control
+								triggers to be based on Gain or Lux Index. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">Select the appropriate
+								trigger type.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">Gain</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes, required</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">Cross Plane Enable
+								(Chromatix ABF34 Reserve)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Enable flag for cross
+								channel processing for GrGb channels. Affects pixel neighborhood
+								definition.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">Always set to 1 to help
+								correct GrGb mismatch. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">1</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Take default
+								value</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">Noise Stdlut Level Table
+								(ABF34 Rgn Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">
+								<p class="p">A table that plots the noise intensity (in terms
+									of standard deviation) at 65 points on the image. Known as the
+									Noise Profile.</p>
+
+								<p class="p">Affects both the bilateral filter and soft
+									thresholding steps of ABF. Same profile is used for all
+									channels.</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<p class="p">The table is computed by the Chromatix tool.
+									Generally, the noise profile does not need tuning. Compute for
+									each sensor.</p>
+
+								<p class="p">A larger noise value = stronger denoising.</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">Computed by the Chromatix tool based upon the
+									uploaded image.</p>
+
+								<p class="p">Intensity value range = [0, 256]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Take computed
+								values</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">Edge Softness (ABF34 Rgn
+								Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 "> Works with the noise
+								profile to control bilateral filter strength. One value controls all
+								four channels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<p class="p">Focus on image quality at center. A larger value
+									= more denoising (e.g., flatter uniform regions, less detail,
+									softened edges)</p>
+
+								<p class="p">(see ABF examples)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">3.000000 </p>
+
+								<p class="p">Range = [0, 15.996]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">
+								<p class="p">Noise Prsv Lo</p>
+
+								<p class="p">Noise Prsv Hi</p>
+
+								<p class="p">(ABF34 Rgn Data)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">
+								<ul class="ul" id="nsh1499457051373__ul_fvw_fr4_n1b">
+									<li class="li">Minimum and maximum values for how much
+										noise to retain. </li>
+
+									<li class="li">Helpful for removing dark artifacts,
+										especially crosshatch patterns, but dark details are
+										impacted.</li>
+
+									<li class="li">Noise Prsv Lo[0] and Noise Prsv Hi[0]
+										adjust RB channels </li>
+
+									<li class="li">Noise Prsv Lo[1] and Noise Prsv Hi[1]
+										adjust GrGb channels </li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<ul class="ul" id="nsh1499457051373__ul_abm_js4_n1b">
+									<li class="li">A larger value = less denoising</li>
+
+									<li class="li">Set Noise Prsv Lo smaller than Noise Prsv
+										Hi so dark pixels have stronger denoising</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">{0,0} </p>
+
+								<p class="p">Range = [0.0, 1.0]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">
+								<p class="p">Noise Prsv Anchor Lo</p>
+
+								<p class="p">Noise Prsv Anchor Hi</p>
+
+								<p class="p">(ABF34 Rgn Data)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">
+								<p class="p">Minimum and maximum thresholds for local
+									intensity.</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<ul class="ul" id="nsh1499457051373__ul_uw2_cry_p1b">
+									<li class="li">If intensity ≤ Noise Prsv Anchor Lo, noise
+										preservation = Noise Prsv Lo</li>
+
+									<li class="li">If intensity ≥ Noise Prsv Anchor Hi, noise
+										preservation = Noise Prsv Hi</li>
+
+								</ul>
+
+								<p class="p">The interpolation range corresponds to intensity
+									40-56 for 8u values.</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">{160,224}</p>
+
+								<p class="p">Range = [0, 1023]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">
+								<p class="p">Blk Pix Matching Rb</p>
+
+								<p class="p">Blk Pix Matching G</p>
+
+								<p class="p">(ABF34 Rgn Data)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">
+								<ul class="ul" id="nsh1499457051373__ul_fsm_zf4_n1b">
+									<li class="li">Control the weighted average of block
+										matching vs pixel matching in the bilateral filter
+										update.</li>
+
+									<li class="li">Set blk_pix_matching_rb to adjust RB
+										channels </li>
+
+									<li class="li">Set blk_pix_matching_g to adjust G
+										channels</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<ul class="ul" id="nsh1499457051373__ul_usw_vg4_n1b">
+									<li class="li">A larger value = more pixel matching and
+										less block matching. </li>
+
+									<li class="li">Pixel matching tends to give results with
+										more noise and detail.</li>
+
+									<li class="li">0=pure block matching, 4=pure pixel
+										matching, values 1-3 are a combination of block and pixel
+										matching</li>
+
+								</ul>
+
+								<p class="p">(see ABF examples)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">{0,0}</p>
+
+								<p class="p">Range = [1, 4]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">Distance Ker (ABF34 Rgn
+								Data) </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">
+								<ul class="ul" id="nsh1499457051373__ul_wm5_bsn_n1b">
+									<li class="li">A bit-shifting value corresponding to
+										distance weight.</li>
+
+									<li class="li">Bilateral filter coefficients are adjusted
+										based on pixel location (p0-center pixel, p1-adjacent pixel,
+										p2-diagonal pixel)</li>
+
+									<li class="li">Coefficients of each group (p0, p1, p2) are
+										left shifted by (n-1) bits, (n = Distance Ker value)</li>
+
+									<li class="li">Distance Ker table entries [0] - [2]
+										control the RB channels and entries [3] - [5] control the
+										GrGb channels</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<ul class="ul" id="nsh1499457051373__ul_gkq_ptn_n1b">
+									<li class="li">Recommend using the default values. Adjust
+										Edge Softness instead.</li>
+
+									<li class="li">A larger value for center pixel = less
+										denoising. </li>
+
+									<li class="li">A larger value for groups p1/p2 = more
+										denoising.</li>
+
+									<li class="li">Non-zero value n means left shift
+										(n-1).</li>
+
+								</ul>
+
+								<p class="p">(see ABF examples)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">{3,2,2,3,2,2}</p>
+
+								<p class="p">Range = [1, 4]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Take default
+								values</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">Curve Offset (ABF34 Rgn
+								Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">
+								<ul class="ul" id="nsh1499457051373__ul_rc4_bb4_n1b">
+									<li class="li">An offset that causes more filtering of
+										similar pixels resulting in smoother images.</li>
+
+									<li class="li">The four Curve Offset entries in the table
+										correspond to the RGGB channels</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<ul class="ul" id="nsh1499457051373__ul_m4k_1d4_n1b">
+									<li class="li">Recommend using the default values unless
+										the sensor is extremely noisy.</li>
+
+									<li class="li">A larger value = more denoising. </li>
+
+									<li class="li">Larger value smooths out details and noise,
+										producing very soft images.</li>
+
+								</ul>
+
+								<p class="p">(see ABF examples)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">{0,0,0,0}</p>
+
+								<p class="p">Range = [1, 127]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Take default
+								values</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">Radial anchor table
+								(ABF34 Reserve)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Table that specifies
+								five radial control points that partition the image into 4 regions.
+								Each control point is defined by the radius percentage from the
+								center point. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<ul class="ul" id="nsh1499457051373__ul_wch_qf5_n1b">
+									<li class="li">The first and fifth entries are hard coded
+										as the image center (0.0) and corner (1.0).</li>
+
+									<li class="li">Use the Chromatix tool to tune the 2nd
+										point and the tool generates the 3rd and 4th points.</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">{0,0.4,0.6,0.8}</p>
+
+								<p class="p">Range = [0, 1]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes, using Sigma LUT RNR
+								dialog &gt; Radial Control Points tab</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">Radial gain table (ABF34
+								Rgn Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">
+								<ul class="ul" id="nsh1499457051373__ul_bdv_z35_n1b">
+									<li class="li">A table of gain adjustment entries that
+										correspond to each of the five RNR control points.</li>
+
+									<li class="li">Radial gain entries [0] - [4] adjust edge
+										softness</li>
+
+									<li class="li">Radial gain entries [5] - [9] adjust the
+										noise preservation</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 ">
+								<ul class="ul" id="nsh1499457051373__ul_wgp_sj5_n1b">
+									<li class="li">Default is no adjustment at control
+										points</li>
+
+									<li class="li">Smaller Radial Gain results in larger Edge
+										Softness or smaller Noise Preservation, which results in
+										more denoising.</li>
+
+									<li class="li">Radial gain entries [0] and [5] are
+										hardcoded at 255 so no adjustment can be made to the center
+										point.</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">{255, 255, 255, 255, 255, 255, 255, 255, 255,
+									255}</p>
+
+								<p class="p">Range = [0.0, 1.0] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">BPC FMax (ABF34 Rgn
+								Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Upper offset factor used
+								in single BPC applied to center pixel.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">16</p>
+
+								<p class="p">Range = [0, 63] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes, if low power
+								mode</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">BPC FMin (ABF34 Rgn
+								Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Lower offset factor used
+								in single BPC applied to center pixel.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">16</p>
+
+								<p class="p">Range = [0, 63] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes, if low power
+								mode</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">BPC MaxShft (ABF34 Rgn
+								Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Upper offset (as
+								right-shifting) used in single BPC applied to neighbor
+								pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">4</p>
+
+								<p class="p">Range = [0, 16] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes, if low power
+								mode</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">BPC MinShft (ABF34 Rgn
+								Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Lower offset (as
+								right-shifting) used in single BPC applied to neighbor
+								pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">4</p>
+
+								<p class="p">Range = [0, 16] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes, if low power
+								mode</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e43 ">BPC Offset (ABF34 Rgn
+								Data)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e46 ">Common absolute offset
+								value used in single BPC applied to both center pixel and
+								neighboring pixel.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e49 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e52 ">
+								<p class="p">64</p>
+
+								<p class="p">Range = [0, 4095] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d20800e55 ">Yes, if low power
+								mode</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+</div>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="jin1499905208720.html" title="The following examples illustrate the effects of adjusting specific ABF parameter values for a preview or video project.">Examples of ABF parameter effects</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="kok1494872095058.html" title="ABF tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ABF tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

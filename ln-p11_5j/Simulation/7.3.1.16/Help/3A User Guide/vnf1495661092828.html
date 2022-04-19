@@ -1,0 +1,104 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="AEC histogram target adjustment can be performed to prevent saturation. Excessive saturation prevention can cause images to look darker. Figure : (L) Original image; (R) Image with reduced luma target ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="ADRC" /><meta name="abstract" content="AEC histogram target adjustment can be performed to prevent saturation. Excessive saturation prevention can cause images to look darker." /><meta name="description" content="AEC histogram target adjustment can be performed to prevent saturation. Excessive saturation prevention can cause images to look darker." /><meta name="DC.Relation" scheme="URI" content="pxo1495660918715.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jxg1475703544401" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ADRC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jxg1475703544401">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">ADRC</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">AEC histogram target adjustment can be performed to prevent saturation. Excessive
+		saturation prevention can cause images to look darker.</p>
+
+		<div class="p">
+			<div class="fig fignone nonumber" id="jxg1475703544401__fig_jwd_qcb_lcb"><span class="figcap">Figure : (L) Original image; (R) Image with reduced luma target</span>
+				
+				<img class="image" id="jxg1475703544401__image_opb_pbm_nx" src="ptw1495660894597.png" />
+			</div>
+
+		</div>
+
+		<p class="p">To avoid this, luma target caps are used to limit the saturation prevention effect.</p>
+
+		
+		<p class="p">To increase overall brightness but preserve the highlights (GTM and LTM), apply
+			a digital gain later in the pipeline. This option allows the histogram AEC to adopt a
+			lower luma target without causing underexposure.<br /><img class="image" id="jxg1475703544401__image_zy3_dgj_tz" src="rhx1495660810528.svg" /><br /></p>
+
+		<div class="section" id="jxg1475703544401__section_N10081_N10012_N10001"><h2 class="title sectiontitle">Tuning concept</h2>
+			
+			<p class="p">AEC uses both the min_target_adjust_ratio (in histogram AEC) and the max_drc_gain
+				parameters to determine the minimum allowed luma target. If saturation is detected,
+				the min_target_adjust_ratio parameter is enabled and ADRC gain is not applied until
+				the luma target reaches the min_target_adjust_ratio parameter value.</p>
+
+			<p class="p">For example, if the default target is 50, with the min_target_adjust_ratio value set
+				to 40, then ADRC gain will be 1 when the luma target is between 50 to 40. If
+				saturation still exists after the luma target is set to 40, then the luma target
+				will decrease further with ADRC gain applied, to offset the decreased
+				brightness.</p>
+
+			<p class="p"><img class="image" id="jxg1475703544401__image_jnd_vbm_nx" src="rkh1495660865909.svg" /></p>
+
+		</div>
+
+		<div class="section" id="jxg1475703544401__section_N1009E_N10012_N10001"><h2 class="title sectiontitle">GTM vs. LTM</h2>
+			
+			<p class="p">When LTM is used, contrast can be improved. A dramatic improvement should not be
+				expected, however, and LTM should not be used excessively, as it can cause various
+				artifacts.If the max_drc_gain parameter value is 4, then the minimum luma target will be 40 / 4
+				= 10.</p>
+
+			<div class="p">
+				<div class="fig fignone nonumber" id="jxg1475703544401__fig_rpt_2jb_lcb"><span class="figcap">Figure : (L) 50-50 LTM + GTM; (R) GTM only</span>
+					
+					<img class="image" id="jxg1475703544401__image_u41_wbm_nx" src="syr1495661096416.png" />
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="jxg1475703544401__section_N100B3_N10012_N10001"><h2 class="title sectiontitle">Boost dark areas</h2>
+			
+			<p class="p">If the max_drc_gain parameter value is 4, then the minimum luma target will be 40 / 4Use other AEC features to bias metering, including bright region discarding and
+				increasing the luma target.</p>
+
+			<p class="p">For advanced users, adjust the gain lookup table (LUT). A 64-entry gain LUT is
+				available in the ISP driver. The LUT defines the ADRC gain curve, which is similar
+				to the tone curve. By adjusting the dark end of the curve, dark areas can be
+				boosted.</p>
+
+			<div class="p">
+				<div class="fig fignone nonumber" id="jxg1475703544401__fig_cg4_4jb_lcb"><span class="figcap">Figure : (L) ADRC off, Exp time 1/120, Gain 1.38; (R) ADRC on, Exp time 1/349,
+						Gain 1.0, ADRC gain 4.0</span>
+					
+					<img class="image" id="jxg1475703544401__image_ob2_xbm_nx" src="dfl1495661030037.png" />
+				</div>
+
+			</div>
+
+			<div class="p">
+				<div class="fig fignone nonumber" id="jxg1475703544401__fig_afd_bkb_lcb"><span class="figcap">Figure : (L) ADRC off, Exp time 1/12, Gain 21.13; (R) ADRC on, Exp time 1/12, Gain
+						5.13, ADRC gain 4.0</span>
+					
+					<img class="image" id="jxg1475703544401__image_ops_xbm_nx" src="lsp1495660799749.png" />
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="pxo1495660918715.html" title="High dynamic range (HDR) AEC will not be effective in a low contrast scenes. The first step toward testing HDR AEC is to build a simple HDR scene.">Tune high dynamic range</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

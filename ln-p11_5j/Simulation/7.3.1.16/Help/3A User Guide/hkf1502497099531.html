@@ -1,0 +1,117 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="To view the advanced gray world scene analyzer parameters, open a project and select Utilities &gt; Parameter Editor . Table :   AGW SA confidence level tuning parameters Parameter Name Description ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AGW SA parameters" /><meta name="DC.Relation" scheme="URI" content="rel1502497036725.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="hkf1502497099531" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AGW SA parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hkf1502497099531">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="rel1502497036725.html" title="Advanced gray world scene analyzer concept">Advanced gray world scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="rel1502497036725.html" title="Advanced gray world scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced gray world scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">AGW SA parameters</h1>
+
+	<div class="body conbody">
+		<p class="p">To view the advanced gray world scene analyzer parameters, open a project and
+			select <span class="ph menucascade"><span class="ph uicontrol">Utilities</span> &gt; <span class="ph uicontrol">Parameter Editor</span></span>.</p>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="hkf1502497099531__table_dxk_k2t_v1b" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table :   AGW SA confidence level tuning parameters</span></caption><colgroup><col /><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22403e51">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22403e54">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22403e57">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22403e60">Factory Default</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22403e63">Must Tune?</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e51 ">1st and 2nd Trigger Levels</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e54 ">
+							<p class="p">Defines type of data used for confidence level
+								triggers</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e57 ">Do not change</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e60 ">1st trigger: Lux Index<p class="p">2nd trigger: Ratio number
+								of valid stats</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e63 ">Take default value</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e51 ">1st trigger level data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e54 ">Start and end values for the specified trigger type. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e57 ">Add at least one trigger range. <p class="p">Set the trigger point and confidence level considering a consistent
+								AWB decision and smooth transition.</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e60 ">(0.0, 999.0)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e63 ">Use default or customize</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e51 ">2nd trigger level data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e54 ">Start and end values for the specified trigger
+							type.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e57 ">Add at least one trigger range. <p class="p">Set the trigger point and confidence level considering a consistent
+								AWB decision and smooth transition.</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e60 ">
+							<p class="p">(0.000, 0.005)</p>
+
+							<p class="p">(0.01, 0.02)</p>
+
+							<p class="p">(0.10, 1.00)</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e63 ">Use default or customize</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e51 ">Confidence level core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e54 ">A designation of how well an image, that meets the
+							criteria of the specified trigger, matches the characteristics of the
+							AGW SA</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e57 ">Specify applicable confidence level for each trigger
+							level row</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e60 ">0.0, 0.2, 1.0</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22403e63 ">Use default or customize</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="rel1502497036725.html" title="Advanced gray world scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced gray world scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

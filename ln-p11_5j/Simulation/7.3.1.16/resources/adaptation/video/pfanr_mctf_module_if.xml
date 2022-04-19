@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="PREFILT_ANR_MCTF">
+	<param id="1"  name="full_lfdetect_thy" autotune="1" submodule="yfull">0:4:40</param>
+	<param id="2"  name="full_lfdetect_thu" autotune="0" submodule="yfull">0:2:20</param>
+	<param id="3" name="full_lfdetect_thv" autotune="0" submodule="yfull">0:2:20</param>
+	
+	<param id="4" name="full_lfdetect_thy_close3" autotune="1" submodule="yfull">16:8:40</param>
+	<param id="5" name="full_lfdetect_thy_far" autotune="1" submodule="yfull">8:4:16</param>
+	<param id="6" name="full_lfdetect_thu_far" autotune="0" submodule="yfull">8:4:16</param>
+	<param id="7" name="full_lfdetect_thv_far" autotune="0" submodule="yfull">8:4:16</param>
+	
+	<param id="8" name="full_cfdetect_thy" autotune="1" submodule="cfull">0:5:50</param>
+	<param id="9" name="full_cfdetect_thu" autotune="1" submodule="cfull">0:2:20</param>
+	<param id="10"  name="full_cfdetect_thv" autotune="0" submodule="cfull">0:2:20</param>
+	
+	<param id="11" name="full_cfdetect_thy_far" autotune="1" submodule="cfull">8:4:16</param>
+	<param id="12" name="full_cfdetect_thu_far" autotune="1" submodule="cfull">8:4:16</param>
+	<param id="13" name="full_cfdetect_thv_far" autotune="0" submodule="cfull">8:4:16</param>
+
+	<param id="14"  name="full_grey_der_th0" autotune="0" submodule="adv_chroma">10:5:40</param>
+	<param id="15"  name="full_grey_der_th1" autotune="0" submodule="adv_chroma">10:10:60</param>
+	<param id="16"  name="full_grey_chr_th0" autotune="0" submodule="adv_chroma">3:1:10</param>
+	<param id="17"  name="full_grey_chr_th1" autotune="0" submodule="adv_chroma">4:2:16</param>
+	<param id="18"  name="full_median_chr_th" autotune="0" submodule="adv_chroma">3:1:10</param>
+	<param id="19"  name="full_median_der_th" autotune="0" submodule="adv_chroma">10:10:60</param>
+
+	<param id="20"  name="full_dcblend2_y" autotune="1" submodule="yfull">20:20:100</param>
+	<param id="21"  name="full_dcblend2_c" autotune="1" submodule="cfull">100:7:128</param>
+
+	<param id="22"  name="dc4_lfdetect_thy" autotune="1" submodule="ydc4">0:5:20</param>	
+	<param id="23" name="dc4_lfdetect_thu" autotune="0" submodule="ydc4">0:3:12</param>
+	<param id="24" name="dc4_lfdetect_thv" autotune="0" submodule="ydc4">0:3:12</param>
+
+	<param id="25" name="dc4_lfdetect_thy_close3" autotune="1" submodule="ydc4">16:8:40</param>
+	<param id="26" name="dc4_lfdetect_thy_far" autotune="1" submodule="ydc4">8:4:16</param>
+	<param id="27" name="dc4_lfdetect_thu_far" autotune="0" submodule="ydc4">8:4:16</param>
+	<param id="28" name="dc4_lfdetect_thv_far" autotune="0" submodule="ydc4">8:4:16</param>
+	
+	<param id="29" name="dc4_cfdetect_thy" autotune="1" submodule="cdc4">0:10:50</param>
+	<param id="30" name="dc4_cfdetect_thu" autotune="1" submodule="cdc4">0:5:20</param>
+	<param id="31"  name="dc4_cfdetect_thv" autotune="0" submodule="cdc4">0:5:20</param>
+
+	<param id="32" name="dc4_cfdetect_thy_far" autotune="1" submodule="cdc4">8:4:16</param>
+	<param id="33" name="dc4_cfdetect_thu_far" autotune="1" submodule="cdc4">8:4:16</param>
+	<param id="34" name="dc4_cfdetect_thv_far" autotune="0" submodule="cdc4">8:4:16</param>
+	
+	<param id="35"  name="dc4_grey_der_th0" autotune="0" submodule="adv_chroma">10:5:50</param>
+	<param id="36"  name="dc4_grey_der_th1" autotune="0" submodule="adv_chroma">10:10:70</param>
+	<param id="37"  name="dc4_grey_chr_th0" autotune="0" submodule="adv_chroma">3:1:10</param>
+	<param id="38"  name="dc4_grey_chr_th1" autotune="0" submodule="adv_chroma">3:2:14</param>
+	<param id="39"  name="dc4_median_chr_th" autotune="0" submodule="adv_chroma">3:1:10</param>
+	<param id="40"  name="dc4_median_der_th" autotune="0" submodule="adv_chroma">10:10:60</param>
+
+	<param id="41"  name="dc16_lfdetect_thy" autotune="1" submodule="ydc16">0:2:10</param>
+	<param id="42" name="dc16_lfdetect_thu" autotune="0" submodule="ydc16">0:2:8</param>
+	<param id="43" name="dc16_lfdetect_thv" autotune="0" submodule="ydc16">0:2:8</param>
+
+	<param id="44" name="dc16_lfdetect_thy_close3" autotune="1" submodule="ydc16">16:8:32</param>
+	<param id="45" name="dc16_lfdetect_thy_far" autotune="1" submodule="ydc16">8:4:16</param>
+	<param id="46" name="dc16_lfdetect_thu_far" autotune="0" submodule="ydc16">8:4:16</param>
+	<param id="47" name="dc16_lfdetect_thv_far" autotune="0" submodule="ydc16">8:4:16</param>
+	
+	<param id="48" name="dc16_cfdetect_thy" autotune="1" submodule="cdc16">0:2:12</param>
+	<param id="49" name="dc16_cfdetect_thu" autotune="1" submodule="cdc16">0:5:10</param>
+	<param id="50" name="dc16_cfdetect_thv" autotune="0" submodule="cdc16">0:5:10</param>
+
+	<param id="51" name="dc16_cfdetect_thy_far" autotune="1" submodule="cdc16">8:4:16</param>
+	<param id="52" name="dc16_cfdetect_thu_far" autotune="1" submodule="cdc16">8:4:16</param>
+	<param id="53" name="dc16_cfdetect_thv_far" autotune="0" submodule="cdc16">8:4:16</param>
+
+        <param id="54" name="full_intlen_modscl" autotune="1" submodule="yintlen">24:8:48</param>
+        <param id="55" name="dc4_intlen_sensit" autotune="1" submodule="yintlen">64:10:90</param>
+        <param id="56" name="dc4_intlen_modscl" autotune="1" submodule="yintlen">24:8:54</param>
+        <param id="57" name="dc16_intlen_sensit" autotune="1" submodule="yintlen">64:10:90</param>
+
+	<lin_ineq_constraints>
+		<param_id_list> 14, 15, 16, 17, 35, 36, 37, 38</param_id_list>
+		<A>             1,-1, 0, 0, 0, 0, 0, 0;
+                        0, 0, 1,-1, 0, 0, 0, 0;
+                        0, 0, 0, 0, 1,-1, 0, 0;
+						0, 0, 0, 0, 0, 0, 1,-1
+        </A>
+		<B>0;0;0;0</B>
+	</lin_ineq_constraints>  
+	<lin_ineq_constraints>
+		<param_id_list> 22, 1, 41, 22</param_id_list>
+		<A>             1,-1, 0, 0;
+                        0, 0, 1,-1
+        </A>
+		<B>0;0</B>
+	</lin_ineq_constraints>
+	<lin_ineq_constraints>
+		<param_id_list> 48, 29, 8</param_id_list>
+		<A>             1,-1, 0;
+                        0, 1,-1
+        </A>
+		<B>0;0</B>
+	</lin_ineq_constraints>
+	<lin_ineq_constraints>
+		<param_id_list> 49, 30, 9</param_id_list>
+		<A>             1,-1, 0;
+                        0, 1,-1
+        </A>
+		<B>0;0</B>
+	</lin_ineq_constraints>
+    <mapping dest="pcsim">update_xml_pfanr_mctf</mapping>
+    <mapping dest="chromatix">update_xml_pfanr_mctf</mapping>
+    <isp_pipeline>IPE</isp_pipeline>
+    <chromatix_tag>anr10_ipe</chromatix_tag>
+    <gen_pop_function>gen_pop_anr_in</gen_pop_function>
+</module_if>

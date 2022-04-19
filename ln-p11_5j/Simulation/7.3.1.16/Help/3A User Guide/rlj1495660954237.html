@@ -1,0 +1,87 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Flash triggers control the lux level at which flash will fire when used in auto mode. See LED Flash for more information. Prerequisite: Ensure that the battery is fully charged before performing this ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune flash triggers" /><meta name="DC.Relation" scheme="URI" content="cpr1495660858748.html" /><meta name="DC.Relation" scheme="URI" content="eik1495660858826.html" /><meta name="DC.Relation" scheme="URI" content="okf1502400597310.html" /><meta name="DC.Relation" scheme="URI" content="vdt1502400619212.html" /><meta name="DC.Relation" scheme="URI" content="out1495661076354.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jhv1477084249412" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune flash triggers</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jhv1477084249412">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cpr1495660858748.html" title="Required AEC tuning procedures">Required AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune flash triggers</h1>
+
+	<div class="body taskbody">
+		<div class="section context" id="jhv1477084249412__context_N10011_N1000E_N10001">
+			<p class="p">Flash triggers control the lux level at which flash will fire when used in auto
+				mode. See <cite class="cite">LED Flash</cite> for more information.</p>
+
+		</div>
+
+		<ol class="ol steps" id="jhv1477084249412__steps_mhp_k2t_kx"><li class="li step stepexpand" id="jhv1477084249412__step_N1001B_N10018_N1000E_N10001">
+				<span class="ph cmd">Prerequisite: Ensure that the battery is fully charged before
+					performing this procedure. As described in <cite class="cite">PM8952/PM8956 +
+						PMI8952 Power Management IC Design Guidelines/Training Slides</cite>
+					(80-NT390-5), flash current is derated beyond a certain threshold at lower
+					battery levels, resulting in lower intensity flash and thus degraded image
+					quality. Work with the QTI PMIC team to understand the device behavior, assess
+					the image quality impact, and determine whether to allow flash below a certain
+					battery level.</span>
+			</li>
+<li class="li step stepexpand" id="jhv1477084249412__step_N10028_N10018_N1000E_N10001">
+				<span class="ph cmd">Enable the 3A debug log.</span>
+			</li>
+<li class="li step stepexpand" id="jhv1477084249412__step_N10031_N10018_N1000E_N10001">
+				<span class="ph cmd">Point the camera at the scene where the LED flash is to be
+					used. Note the value of the <span class="keyword parmname">Lux Index</span>
+					parameter from the 3A debug log. </span>
+			</li>
+<li class="li step stepexpand" id="jhv1477084249412__step_N1003A_N10018_N1000E_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+					navigaet to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Flash Ext</span> &gt; <span class="ph uicontrol">Flash Lux Trigger</span></span>.</span>
+			</li>
+<li class="li step stepexpand" id="jhv1477084249412__step_N10068_N10018_N1000E_N10001">
+				<span class="ph cmd">Enter the Lux Index start and end values as noted in step 3
+					from the debug log.</span>
+			</li>
+<li class="li step stepexpand" id="jhv1477084249412__step_N10071_N10018_N1000E_N10001">
+				<span class="ph cmd">If necessary, adjust the value of the <span class="keyword parmname">flashLuxTrigger start</span> and <span class="keyword parmname">flashLuxTrigger end</span> parameters to trigger auto flash based on
+					scene brightness:</span>
+				<ul class="ul choices" id="jhv1477084249412__choices_ohp_k2t_kx">
+					<li class="li choice">
+						<p class="p">Increase the value to trigger LED flash in darker scenes.
+						</p>
+
+					</li>
+
+					<li class="li choice">
+						<p class="p">Decrease the value to trigger LED flash in brighter
+							scenes.</p>
+
+					</li>
+
+				</ul>
+
+				<div class="itemgroup info">It is recommended to separate the <span class="keyword parmname">flashLuxTrigger start</span> and <span class="keyword parmname">flashLuxTrigger end</span> parameter values by a minimum of 10 lx. The
+						<span class="keyword parmname">flashLuxTrigger start</span> value must always
+					be a smaller than the <span class="keyword parmname">flashLuxTrigger end</span>
+					value.</div>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="eik1495660858826.html" title="LED flash">LED flash</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="okf1502400597310.html" title="Dual LED calibration">Dual LED calibration</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="vdt1502400619212.html" title="LED measurement tuning controls the parameters that compute flux, and r/g and b/g ratios during flash tuning and calibration. LED measurement applies to LED tuning and LED calibration.">LED measurement</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="out1495661076354.html" title="Flash is sometimes needed for low-light settings or as a flash-fill to remove harsh shadows.">Tune flux and color ratios</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

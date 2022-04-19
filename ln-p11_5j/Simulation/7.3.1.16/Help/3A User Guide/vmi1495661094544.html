@@ -1,0 +1,104 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Extreme color detection and luma adjustment compensate for images that contain a large amount of a particular bold color. This prevents overexposure by applying Lens Shading Correction (LSC), ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune extreme color detection and luma adjustment" /><meta name="abstract" content="Extreme color detection and luma adjustment compensate for images that contain a large amount of a particular bold color. This prevents overexposure by applying Lens Shading Correction (LSC), linearization, and white balance to adjust the region of influence based on extreme color." /><meta name="description" content="Extreme color detection and luma adjustment compensate for images that contain a large amount of a particular bold color. This prevents overexposure by applying Lens Shading Correction (LSC), linearization, and white balance to adjust the region of influence based on extreme color." /><meta name="DC.Relation" scheme="URI" content="cyt1495661060161.html" /><meta name="DC.Relation" scheme="URI" content="nsl1495660810404.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xpn1474864616061" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune extreme color detection and luma adjustment</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xpn1474864616061">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune extreme color detection and luma adjustment</h1>
+
+   
+   <div class="body taskbody"><p class="shortdesc">Extreme color detection and luma adjustment compensate for images that
+      contain a large amount of a particular bold color. This prevents overexposure by applying Lens
+      Shading Correction (LSC), linearization, and white balance to adjust the region of influence
+      based on extreme color.</p>
+
+      <div class="section prereq p" id="xpn1474864616061__prereq_vrk_2jg_lw">Tune the AWB Reference Points for D65.</div>
+
+      <div class="section context" id="xpn1474864616061__context_N10019_N10012_N10001"><div class="p">Each region is verified to determine whether it is outside the R/G, B/G, and R/B
+            combinations. This compensation prevents extreme colored scenes from being overexposed
+            or saturated. Luma weighting and frame luma biasing can be adjusted for extreme red,
+            blue, and green regions.<div class="fig fignone nonumber" id="xpn1474864616061__fig_lhx_22l_kcb"><span class="figcap">Figure : (L) Extreme color luma biasing; (R) Normal metering</span>
+               
+               <br /><img class="image" id="xpn1474864616061__image_rbs_33g_lw" src="rwo1495660933956.png" /><br />
+            </div>
+</div>
+
+         <p class="p">The extreme color detection feature is tuned using the generic multi-zone
+            tuning guidelines. Default AEC triggers are initially tuned in a common step and then
+            copied over. </p>
+</div>
+
+      <ol class="ol steps" id="xpn1474864616061__steps_utw_jlg_lw"><li class="li step stepexpand" id="xpn1474864616061__step_N10041_N1003D_N10019_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+               navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Metering</span> &gt; <span class="ph uicontrol">Mtr Luma Target</span> &gt; <span class="ph uicontrol">Extrm Clr Luma Target</span></span>.</span>
+         </li>
+<li class="li step stepexpand" id="xpn1474864616061__step_N10068_N1003D_N10019_N10001">
+            <span class="ph cmd">To enable extreme color luma target adjustment, select the
+                  <span class="ph uicontrol">Value</span> check box.</span>
+         </li>
+<li class="li step stepexpand" id="xpn1474864616061__step_N10067_N1002E_N10012_N10001">
+            <span class="ph cmd">Adjust the following <span class="ph uicontrol">Extrm Clr Luma
+                  Target</span> parameters by entering the new value in the appropriate field. </span>
+            <div class="itemgroup info">
+               <ul class="ul" id="xpn1474864616061__ul_wnt_ljg_lw">
+                  <li class="li"><span class="ph uicontrol">Theshold/Interpolation Percentage
+                        Red</span>: Defines threshold of RG ratio as extreme red; interpolation
+                     percentage (<span class="keyword parmname">interpPct</span>) extends from the threshold for
+                     stable transition in detection.</li>
+
+                  <li class="li"><span class="ph uicontrol">Theshold/Interpolation Percentage Blue</span>: Defines
+                     threshold of BG ratio as extreme blue; interpPct extends from the threshold for
+                     stable transition in detection.</li>
+
+                  <li class="li"><span class="ph uicontrol">Theshold/Interpolation Percentage Green B</span>: Defines
+                     threshold of BG ratio as extreme green; interpPct extends from the threshold
+                     for stable transition in detection.</li>
+
+                  <li class="li"><span class="ph uicontrol">Theshold/Interpolation Percentage Green R</span>: Defines
+                     threshold of RG ratio as extreme green; interpPct extends from the threshold
+                     for stable transition in detection.</li>
+
+                  <li class="li"><span class="ph uicontrol">Theshold/Interpolation Percentage Green Center</span>: Defines
+                     threshold of RG and BG ratio jointly as extreme green; interpPct extends from
+                     the threshold for stable transition in detection.</li>
+
+                  <li class="li"><span class="ph uicontrol">Low Threshold for region
+                        Luma</span>: Defines the effect of the color stats by luma value of
+                     stats point. Effect is discounted if the luma value is below the
+                     threshold.</li>
+
+                  <li class="li"><span class="ph uicontrol">High Threshold for region
+                        Luma</span>: Defines the effect of the color stats by luma value of
+                     stats point. Effect is discounted if the luma value is below the
+                     threshold.</li>
+
+                  <li class="li"><span class="ph uicontrol">Threshold Color Stats
+                        Percentage</span>: A range in terms of percentage of color stats to
+                     determine strength of luma target adjustment.</li>
+
+                  <li class="li"><span class="ph uicontrol">Extrm Clr Luma Target Zone</span>: Defines the luma target
+                     adjustment scaler for each detected extreme color. A smaller value means a
+                     lower luma target.</li>
+
+               </ul>
+
+            </div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="nsl1495660810404.html">Extreme color adjustment</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,34 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The weight FCM parameters are used to determine the ratio for mixing GCM and FCM for use in HCM mode. In general, the use of GCM is recommended. Because GCM compares the average ratio of the gray ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Weight FCM parameters for AWB dual camera sync" /><meta name="DC.Relation" scheme="URI" content="jxy1518115164603.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="hbv1518466063728" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Weight FCM parameters for AWB dual camera sync</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hbv1518466063728">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="nra1518044265573.html" title="AWB dual camera sync concept">AWB dual camera sync concept</a> / <a class="navheader_parent_path" href="jxy1518115164603.html" title="AWB dual camera sync parameters">AWB dual camera sync parameters</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jxy1518115164603.html" title="AWB dual camera sync parameters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync parameters</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Weight FCM parameters for AWB dual camera sync</h1>
+
+	<div class="body conbody">
+		<p class="p">The weight FCM parameters are used to determine the ratio for mixing GCM
+			and FCM for use in HCM mode.</p>
+
+		<p class="p">In general, the use of GCM is recommended. Because GCM compares the
+			average ratio of the gray stats in the GCM region between the master camera and the
+			slave camera, it is less likely to be misjudged because it does not use a fixed target
+			point like FCM does. Also GCM is stronger than FCM with respect to module-to-module
+			deviation.</p>
+
+		<p class="p">However, when the gcmNumRatio is low, the GCM result is not reliable and FCM
+			is recommended. To do this, increase weight FCM when the gcmNumRatio is low as shown in
+			the following example.</p>
+
+		<img class="image" id="hbv1518466063728__image_jpb_vp5_5cb" src="sne1518047296660.png" />
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jxy1518115164603.html" title="AWB dual camera sync parameters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync parameters</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

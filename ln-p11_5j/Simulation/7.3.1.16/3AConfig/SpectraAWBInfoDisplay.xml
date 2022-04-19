@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  See DisplayTest.xml for format documentation
+-->
+<MetadataDisplays
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataDisplaySchema.xsd">
+  <!-- AWB Info Display -->
+  <Display Name="AWB Info" Title="AWB Info" MetadataType="Spectra">
+    <Variable Name="AGW number grid point" Value="241"/>
+    <Variable Name="Reference point RG min" Section="AWB ReferencePoints"
+              A="[0].R/G Ratio"
+              B="[1].R/G Ratio"
+              C="[2].R/G Ratio"
+              D="[3].R/G Ratio"
+              E="[4].R/G Ratio"
+              F="[5].R/G Ratio"
+              G="[6].R/G Ratio"
+              H="[7].R/G Ratio"
+              I="[8].R/G Ratio"
+              J="[9].R/G Ratio"
+              Value="({min}(A,B,C,D,E,F,G,H,I,J)*0.5)"/>
+    <Variable Name="Reference point RG max" Section="AWB ReferencePoints"
+              A="[0].R/G Ratio"
+              B="[1].R/G Ratio"
+              C="[2].R/G Ratio"
+              D="[3].R/G Ratio"
+              E="[4].R/G Ratio"
+              F="[5].R/G Ratio"
+              G="[6].R/G Ratio"
+              H="[7].R/G Ratio"
+              I="[8].R/G Ratio"
+              J="[9].R/G Ratio"
+              Value="({max}(A,B,C,D,E,F,G,H,I,J)*1.5)"/>
+    <Variable Name="Reference point BG min" Section="AWB ReferencePoints"
+              A="[0].B/G Ratio"
+              B="[1].B/G Ratio"
+              C="[2].B/G Ratio"
+              D="[3].B/G Ratio"
+              E="[4].B/G Ratio"
+              F="[5].B/G Ratio"
+              G="[6].B/G Ratio"
+              H="[7].B/G Ratio"
+              I="[8].B/G Ratio"
+              J="[9].B/G Ratio"
+              Value="({min}(A,B,C,D,E,F,G,H,I,J)*0.5)"/>
+    <Variable Name="Reference point BG max" Section="AWB ReferencePoints"
+              A="[0].B/G Ratio"
+              B="[1].B/G Ratio"
+              C="[2].B/G Ratio"
+              D="[3].B/G Ratio"
+              E="[4].B/G Ratio"
+              F="[5].B/G Ratio"
+              G="[6].B/G Ratio"
+              H="[7].B/G Ratio"
+              I="[8].B/G Ratio"
+              J="[9].B/G Ratio"
+              Value="({max}(A,B,C,D,E,F,G,H,I,J)*1.5)"/>
+    <Variable Name="Reference point min"
+              A="Reference point RG min" B="Reference point BG min"
+              Value="({[min}(A,B))"/>
+    <Variable Name="Reference point max"
+              A="Reference point RG max" B="Reference point BG max"
+              Value="({max}(A,B))"/>
+    <Variable Name="Green zone delta"
+              A="Reference point max" B="Reference point min" C="AGW number grid point" D="0.5"
+              Value="((A)-(B))/(C+D)"/>
+    <Variable Name="AWB Summary Max" Section="AWB CurFrameDecision[2]"
+              A="Point.R/G Ratio"
+              B="Point.B/G Ratio"
+              C="1"
+              Value="({max}(A,B,C))"/>
+    <Variable Name="AWB Summary Gain Red" Section="AWB CurFrameDecision[2]"
+              A="AWB Summary Max"
+              B="Point.R/G Ratio"
+              Value="(A/B)"/>
+    <Variable Name="AWB Summary Gain Blue" Section="AWB CurFrameDecision[2]"
+              A="AWB Summary Max"
+              B="Point.B/G Ratio"
+              Value="(A/B)"/>
+    <Panel Type="Splitter">
+      <Panel>
+        <Panel Type="Resize">
+          <!-- AWB Stats -->
+          <!--Chart Title="AWB Stats" XTitle="R/G Stats" YTitle="B/G Stats"-->
+          <Chart Title="AWB Stats" XTitle="R/G Stats" YTitle="B/G Stats" XDecimalPlaces="4" YDecimalPlaces="4"
+                  FixedDimensions="true" XMin="Reference point RG min" XMax="Reference point RG max" YMin="Reference point BG min" YMax="Reference point BG max">
+            <!-- Grid Stats -->
+            <Line Title="Grid Stats" Type="SpectraGridStats" Section="AWB StatsInfo" StatsCount="Stats Count" StatsData="Stats Data"/>
+            <!-- OTP reference points -->
+            <Line Title="OTP ref points" Type="Point" Marker="Circle" Color="Red">
+              <Point Array="AWB ReferencePoints" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Distance Weight Vector -->
+            <Line Title="Distance Weight Vector" Type="DistWeightVect" ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+            <!-- Gain Adjusted Point -->
+            <Line Condition="R/G ratio" Title="Gain Adjusted Point" Type="Point" Marker="Circle" Color="Jungle" Section="AWB TriangleGainAdjust" Structure="Final Decision Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- TmpConv Output -->
+            <Line Condition="R/G ratio" Title="TmpConv Output" Type="Point" Marker="Circle" Color="Atlantic" Section="AWB TriangleGainAdjust" Structure="Decision Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Decision Aggregator Output -->
+            <Line Condition="R/G ratio" Title="DA Output" Type="Point" Marker="Circle" Color="Atlantic" Section="AWB DecisionAggregator" Structure="AWB Decision Data.Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Decision Aggregator Adjusted Target Points -->
+            <Line Condition="SA Data[1].Adjusted Target Point.R/G ratio" Title="DA Adjusted Target Points" Type="Point" Marker="Circle" Color="Spring" Section="AWB DecisionAggregator">
+              <Point Array="SA Data" ArrayStart="1" X="Adjusted Target Point.R/G ratio" XTitle="R/G" Y="Adjusted Target Point.B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Weighted Average Point -->
+            <Line Condition="R/G ratio" Title="Weighted Average Point" Type="Point" Marker="Circle" Color="Tropical" Section="AWB AGWData" Structure="Weighted Average Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Simple Average Point -->
+            <Line Condition="R/G ratio" Title="Simple Average Point" Type="Point" Marker="Circle" Color="Redwood" Section="AWB AGWData" Structure="Simple Average Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+
+            <!-- Scene Analyzer Information Group -->
+            <Line Color="Mediterranean" Title="SA description" LegendGroup="Scene Analyzer Information"  Type="SAInfo" Array="AWB SAGen1Data"  ZoneCount="Detection Zone Count" ZoneArray="Detection Zones"
+                   ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+
+            <!-- Scene Analyzer V2 Information Group -->
+            <Line Color="Mediterranean" Title="SA description" LegendGroup="Scene Analyzer V2 Information"  Type="SAInfo" Array="AWB SAGen2Data"  ZoneCount="Detection Zone Count" ZoneArray="Detection Zones"
+                   ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+
+            <!-- MLC Information Group -->
+            <!-- Misleading color zone -->
+            <Line Condition="AWB MLCZData.Module Info.Enabled" LegendGroup="MLC Information" Color="Red" Title="Misleading color zones" Type="SpectraZone"
+                  ZoneCount="AWB MLCZData.MLC Zone Count" ZoneArray="AWB MLCZData.MLC Zone Data"
+                  ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+            <!-- Misleading detection zone -->
+            <Line Condition="AWB MLCZData.Module Info.Enabled" LegendGroup="MLC Information" Color="Blue" Title="Misleading detection zones" Type="SpectraZone"
+                  ZoneCount="AWB MLCZData.Detection Zone Count" ZoneArray="AWB MLCZData.Detection Zones"
+                  ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+
+            <!-- MLC V2 Information Group -->
+            <!-- Misleading color zone -->
+            <Line Condition="AWB MLCZV2.AWB Module Data.Enabled" LegendGroup="MLC V2 Information" Color="Dahlia" Title="Misleading color zones" Type="SpectraZone"
+                  ZoneCount="AWB MLCZV2.MLC Zone Count" ZoneArray="AWB MLCZV2.MLC Zone Data"
+                  ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+            <!-- Misleading detection zone -->
+            <Line Condition="AWB MLCZV2.AWB Module Data.Enabled" LegendGroup="MLC V2 Information" Color="Redwood" Title="Misleading detection zones" Type="SpectraZone"
+                  ZoneCount="AWB MLCZV2.Detection Zone Count" ZoneArray="AWB MLCZV2.Detection Zones"
+                  ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+
+            <!-- MLC V3 Information Group -->
+            <!-- Misleading color zone -->
+            <Line Condition="AWB MLCZ3Data.AWB Module Data.Enabled" LegendGroup="MLC V3 Information" Color="Rose" Title="Misleading color zones" Type="SpectraZone"
+                  ZoneCount="AWB MLCZ3Data.MLC Zone Count" ZoneArray="AWB MLCZ3Data.MLC Zone Data"
+                  ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+            <!-- Misleading detection zone -->
+            <Line Condition="AWB MLCZ3Data.AWB Module Data.Enabled" LegendGroup="MLC V3 Information" Color="Atlantic" Title="Misleading detection zones" Type="SpectraZone"
+                  ZoneCount="AWB MLCZ3Data.Detection Zone Count" ZoneArray="AWB MLCZ3Data.Detection Zones"
+                  ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+
+            <!-- Pre Valid DA Point -->
+            <Line Condition="R/G ratio" Title="Pre Valid DA Point" Type="Point" Marker="Square" Color="Cyan" Section="AWB PreValidDAPoint" Structure="Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- AWB Cust Ref Point -->
+            <Line Condition="Module Info.Enabled{and}Reference Point Count" Title="Custom Reference Points" Type="Point" Marker="Circle" Color="Aqua" Section="AWB CustRefPoint">
+              <Point Array="Custom Reference" X="Reference Point.R/G ratio" XTitle="R/G" Y="Reference Point.B/G ratio" YTitle="B/G"/>
+            </Line>
+            <Line Condition="AWB MWBGains[0].R/G ratio" Title="Manual White Balance Gains" Type="Point" Marker="Circle" Color="Pine">
+              <Point Array="AWB MWBGains" X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- DA Output -->
+            <Line Condition="R/G ratio" Title="Pre Frame DA Output" Type="Point" Marker="Circle" Color="Black" Section="AWB PreFrameDecision[0]" Structure="Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- After Temporal Convergence -->
+            <Line Condition="R/G ratio" Title="Pre Frame After Temporal Convergence" Type="Point" Marker="Triangle" Color="Green" Section="AWB PreFrameDecision[1]" Structure="Point">
+              <Point X="R/G ratio" XTitle="R/G"  Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- After Gain Adjust -->
+            <Line Condition="R/G ratio" Title="Pre Frame After Gain Adjust" Type="Point" Marker="Circle" Color="Mustard" Section="AWB PreFrameDecision[2]" Structure="Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <Line Condition="R/G ratio" Title="Curr Frame DA Output" Type="Point" Marker="Circle" Color="TitleGray" Section="AWB CurFrameDecision[0]" Structure="Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- After Temporal Convergence -->
+            <Line Condition="R/G ratio" Title="Curr Frame After Temporal Convergence" Type="Point" Marker="Algae" Color="TitleGray" Section="AWB CurFrameDecision[1]" Structure="Point">
+              <Point X="R/G ratio" XTitle="R/G"  Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- After Gain Adjust -->
+            <Line Condition="R/G ratio" Title="Curr Frame After Gain Adjust" Type="Point" Marker="Circle" Color="Brass" Section="AWB CurFrameDecision[2]" Structure="Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Light Skin Target Point -->
+            <Line Condition="R/G ratio" Title="Light Skin Target Point" Type="Point" Marker="Circle" Color="Gold" Section="AWB SA Face Assist" Structure="Light Skin Target Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Dark Skin Target Point -->
+            <Line Condition="R/G ratio" Title="Dark Skin Target Point" Type="Point" Marker="Circle" Color="Soil" Section="AWB SA Face Assist" Structure="Light Skin Target Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Light Skin GW -->
+            <Line Condition="R/G ratio" Title="Light Skin GW" Type="Point" Marker="Circle" Color="Honey" Section="AWB SA Face Assist" Structure="Light Skin GW">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Dark Skin GW -->
+            <Line Condition="R/G ratio" Title="Dark Skin GW" Type="Point" Marker="Circle" Color="Grape" Section="AWB SA Face Assist" Structure="Dark Skin GW">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Face Assists Target Point -->
+            <Line Condition="R/G ratio" Title="Face Assist Target Point" Type="Point" Marker="Circle" Color="Grape" Section="AWB SA Face Assist" Structure="Face Assist Target Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Triangle Mesh -->
+            <!-- Line Condition="Vertex Infos[0].R/G ratio" Title="Triangle Mesh" Type="TriangleMesh" Section="AWB TriangleGainAdjust" VertexArray="Vertex Infos" GainArray="Gain Infos"/-->
+            <!-- Triangle Mesh Vertices -->
+            <Line Condition="Vertices[0].R/G ratio" LegendGroup="Triangle Mesh" Title="Vertices" Type="TriangleMeshVertices" Color="Cherry" Section="AWB TriangleGainAdjust" VertexArray="Vertices" GainArray="Vertex Gas"/>
+            <!-- DFS Decision -->
+            <Line Condition="R/G ratio" Title="DFS Decision" Type="Point" Marker="Circle" Color="Sky" Section="AWB DSFData" Structure="Decision Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- DSF Prev Decision -->
+            <Line Condition="R/G ratio" Title="DSF Prev Decision" Type="Point" Marker="Circle" Color="Cherry" Section="AWB DSFData" Structure="Previous Decision Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- LED Off Point -->
+            <Line Condition="R/G ratio" Title="LED Off Point" Type="Point" Marker="Circle" Color="Yellow" Section="AWB FlashData" Structure="LED Off Point.Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Preflash MWB Point -->
+            <Line Condition="R/G ratio" Title="Preflash MWB Point" Type="Point" Marker="Circle" Color="Rose" Section="AWB FlashData" Structure="Preflash MWB Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Preflash Preview Point -->
+            <Line Condition="R/G ratio" Title="Preflash Preview Point" Type="Point" Marker="Circle" Color="Carribean" Section="AWB FlashData" Structure="Preflash Preview Point.Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Preflash Point -->
+            <Line Condition="R/G ratio" Title="Preflash Point" Type="Point" Marker="Circle" Color="Imperial" Section="AWB FlashData" Structure="Preflash Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Flash MWB Point -->
+            <Line Condition="R/G ratio" Title="Flash MWB Point" Type="Point" Marker="Circle" Color="Mediterranean" Section="AWB FlashData" Structure="Flash MWB Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Main Flash Point -->
+            <Line Condition="R/G ratio" Title="Main Flash Point" Type="Point" Marker="Circle" Color="Gold" Section="AWB FlashData" Structure="Main Flash Point.Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- LCD Flash Ref Point -->
+            <Line Condition="R/G ratio" Title="LCD Flash Ref Point" Type="Point" Marker="Circle" Color="Ceramic" Section="AWB LCDFlashData" Structure="Data.Reference Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- LED Torch Ref Point -->
+            <Line Condition="R/G ratio" Title="LED Torch Ref Point" Type="Point" Marker="Circle" Color="QCBlue" Section="AWB LEDTorchData" Structure="Data.Reference Point">
+              <Point X="R/G ratio" XTitle="R/G" Y="B/G ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Final Gain -->
+            <Line Condition="[0]" Title="Final Gain" Type="Point" Marker="Circle" Color="Rain" Section="Tuning AWB Data" Structure="AWB Gains">
+              <Point A="[0]" B="[1]" C="[2]" X="(B/A)" XTitle="R/G" Y="(B/C)" YTitle="B/G"/>
+            </Line>
+            <!-- Dual Cam Sync reference points -->
+            <!-- Master reference points -->
+            <Line Title="Master Reference Points" LegendGroup="Dual Cam Sync" Type="Point" Marker="Circle" Color="Sky" Section="AWB SADualCamSyncData">
+              <Point Array="Master Ref Pts" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <Line Title="Slave Reference Points" LegendGroup="Dual Cam Sync" Type="Point" Marker="Circle" Color="Spring" Section="AWB SADualCamSyncData">
+              <Point Array="Slave Ref Pts" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <Line Title="Master GCM Center Point" LegendGroup="Dual Cam Sync" Type="Point" Marker="Circle" Color="Atlantic" Section="AWB SADualCamSyncData">
+              <Point Array="Master GCM Center Pt" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <Line Title="Master GCM Point" LegendGroup="Dual Cam Sync" Type="Point" Marker="Circle" Color="Tropical" Section="AWB SADualCamSyncData">
+              <Point Array="Master GCM Pt" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <Line Title="Slave GCM Center Point" LegendGroup="Dual Cam Sync" Type="Point" Marker="Circle" Color="Mint" Section="AWB SADualCamSyncData">
+              <Point Array="Slave GCM Center Pt" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <Line Title="Slave GCM Point" LegendGroup="Dual Cam Sync" Type="Point" Marker="Circle" Color="Algae" Section="AWB SADualCamSyncData">
+              <Point Array="Slave GCM Pt" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <Line Title="Origin Decision Point" LegendGroup="Dual Cam Sync" Type="Point" Marker="Circle" Color="Rain" Section="AWB SADualCamSyncData">
+              <Point Array="Orig Decision Pt" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <Line Title="Slave Init Decision" LegendGroup="Dual Cam Sync" Type="Point" Marker="Circle" Color="Carribean" Section="AWB SADualCamSyncData">
+              <Point Array="Slave Init Decision" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+          </Chart>
+        </Panel>
+      </Panel>
+      <Panel>
+        <Panel Type="Scroll">
+          <Panel Type="Open" Title="SF Information">
+            <Grid>
+              <Row>
+                <Value Text="LUX Index:" Bold="true"/>
+                <Value Value="AWB LuxIndex" Span="3"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="Total Stats Count:" Bold="true"/>
+                <Value Value="AWB SubSampleData.SubSampled Stats Count" Span="3"/>
+              </Row>
+              <Row>
+                <Value Text="Valid Stats Count:" Bold="true"/>
+                <Value A="Valid Stat Flag" Array="AWB StatsInfo.Stats Data" Value="({sum}(A))" Span="3"/>
+              </Row>
+              <Row>
+                <Value Text="MLC Stats Count:" Bold="true"/>
+                <Value A="MLC Flag" Array="AWB StatsInfo.Stats Data" Value="({sum}(A))" Span="3" />
+              </Row>
+              <Row>
+                <Value Text="Dark Stats Count:" Bold="true"/>
+                <Value A="Dark Flag" Array="AWB StatsInfo.Stats Data" Value="({sum}(A))" Span="3" />
+              </Row>
+              <Row>
+                <Value Text="Sat Stats Count:" Bold="true"/>
+                <Value A="Saturation Flag" Array="AWB StatsInfo.Stats Data" Value="({sum}(A))" Span="3" />
+              </Row>
+              <Row>
+                <Value Text="Zero Weight Stats Count:" Bold="true"/>
+                <Value A="Total WV" B="Subsample Flag" C="MLC Flag" D="Dark Flag" E="Saturation Flag" Array="AWB StatsInfo.Stats Data" 
+                       Value="({sum}(({if}({and}(({not}(A)),B,({not}(C)),({not}(D)),({not}(E))),1,0))))" Span="3" />
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+                <Value Text="RED" Bold="true"/>
+                <Value Text="GREEN" Bold="true"/>
+                <Value Text="BLUE" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="Dark Threshold:" Bold="true"/>
+                <Value Value="AWB StatsScreenData.Dark Threshold.Red"  />
+                <Value Value="AWB StatsScreenData.Dark Threshold.Green"/>
+                <Value Value="AWB StatsScreenData.Dark Threshold.Blue" />
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="Saturation Percentage:" Bold="true"/>
+                <Value Value="AWB StatsScreenData.Saturation Threshold.Red" Span="3" />
+              </Row>
+            </Grid>
+          </Panel>
+          <Panel Title="MLC Zone Information">
+            <Grid>
+              <Row>
+                <Value Text="" Bold="true"/>
+                <Value Text="Trigger Values" Bold="true" Span="3" Alignment="Center"/>
+              </Row>
+              <Row>
+                <Value Text="INDEX" Bold="true"/>
+                <Value Text="1ST" Bold="true"/>
+                <Value Text="2ND" Bold="true"/>
+                <Value Text="3RD" Bold="true"/>
+              </Row>
+              <Row ArrayCount="AWB MLCZData.MLC Zone Count" Array="AWB MLCZData.MLC Zone Data" Columns="Trigger Values[0],Trigger Values[1],Trigger Values[2]" />
+            </Grid>
+          </Panel>
+          <Panel  Title="SA Information">
+            <Grid>
+              <Row>
+                <Value Text="" Bold="true"/>
+                <Value Text="" Bold="true"/>
+                <Value Text="Target Point" Bold="true" Span="3" Alignment="Center"/>
+                <Value Text=""/>
+                <Value Text="Level 1 Confidence" Bold="true" Span="3" Alignment="Center"/>
+                <Value Text=""/>
+                <Value Text="Level 2 Confidence" Bold="true" Span="3" Alignment="Center"/>
+                <Value Text=""/>
+                <Value Text="Level 3 Confidence" Bold="true" Span="3" Alignment="Center"/>
+                <Value Text=""/>
+                <Value Text="Level 4 Confidence" Bold="true" Span="3" Alignment="Center"/>
+              </Row>
+              <Row>
+                <Value Text="ID" Bold="true"/>
+                <Value Text="DESCRIPTION" Bold="true"/>
+                <Value Text="R/G" Bold="true"/>
+                <Value Text="B/G" Bold="true"/>
+                <Value Text="CONFIDENCE" Bold="true"/>
+                <Value Text=""/>
+                <Value Text="1ST TGR" Bold="true"/>
+                <Value Text="2ND TGR" Bold="true"/>
+                <Value Text="CONFIDENCE" Bold="true"/>
+                <Value Text=""/>
+                <Value Text="1ST TGR" Bold="true"/>
+                <Value Text="2ND TGR" Bold="true"/>
+                <Value Text="CONFIDENCE" Bold="true"/>
+                <Value Text=""/>
+                <Value Text="1ST TGR" Bold="true"/>
+                <Value Text="2ND TGR" Bold="true"/>
+                <Value Text="CONFIDENCE" Bold="true"/>
+                <Value Text=""/>
+                <Value Text="1ST TGR" Bold="true"/>
+                <Value Text="2ND TGR" Bold="true"/>
+                <Value Text="CONFIDENCE" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+                <Value Text="AGW"/>
+                <Value Value="AWB AGWData.Weighted Average Point.R/G Ratio"/>
+                <Value Value="AWB AGWData.Weighted Average Point.B/G Ratio"/>
+                <Value Value="AWB AGWData.Confidence Value.Confidence Value"/>
+                <Separator Line="true"/>
+                <Value Value="AWB AGWData.Confidence Value.Control Value[0]"/>
+                <Value Value="AWB AGWData.Confidence Value.Control Value[1]"/>
+                <Value Value="AWB AGWData.Confidence Value.Confidence Value"/>
+                <Separator Line="true"/>
+                <Value Text=""/>
+                <Value Text=""/>
+                <Value Text=""/>
+                <Separator Line="true"/>
+                <Value Text=""/>
+                <Value Text=""/>
+                <Value Text=""/>
+                <Separator Line="true"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+                <Value Text="Face Assist"/>
+                <Value Value="AWB SA Face Assist.Face Assist Target Point.R/G Ratio"/>
+                <Value Value="AWB SA Face Assist.Face Assist Target Point.B/G Ratio"/>
+                <Value Value="AWB SA Face Assist.Face Assist Confidence"/>
+              </Row>
+              <Row ArrayCondition="Target Point.Point.R/G ratio" Array="AWB SAGen1Data" ShowIndex="False"
+                   Columns="Module Info.Submodule ID,SA Description,Final Target Point.R/G Ratio,Final Target Point.B/G Ratio,Final Confidence,
+                            Confidences[0].Control Value[0],Confidences[0].Control Value[1],Confidences[0].Confidence Value,
+                            Confidences[1].Control Value[0],Confidences[1].Control Value[1],Confidences[1].Confidence Value,
+                            Confidences[2].Control Value[0],Confidences[2].Control Value[1],Confidences[2].Confidence Value,
+                            Confidences[3].Control Value[0],Confidences[3].Control Value[1],Confidences[3].Confidence Value" />
+            </Grid>
+          </Panel>
+          <Panel Title="DA Information">
+            <Grid Section="AWB DecisionAggregator">
+              <Row>
+                <Value Text="AGW Final Confidence Level: " Bold="true" Span="3"/>
+                <Value Value="SA Data[0].Adjustment Factor[0]" Span="2"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="Adjusted SA Target Point and Confidence" Bold="true" Span="6"/>
+              </Row>
+              <Row>
+                <Value Text="ID" Bold="true"/>
+                <Value Text="R/G" Bold="true" Alignment="Center"/>
+                <Value Text="B/G" Bold="true" Alignment="Center"/>
+                <Value Text="Confidence" Bold="true" Alignment="Center"/>
+              </Row>
+              <Row ArrayCount="SA Count" Array="SA Data" ShowIndex="False" ArrayStart="SA Data[1]"
+                   Columns="Submodule ID,Adjusted Target Point.R/G Ratio,Adjusted Target Point.B/G Ratio,Adjusted Confidence" />
+              <Row>
+                <Value Text="" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+                <Value Text="DA Output and Confidence" Bold="true" Span="3"/>
+              </Row>
+              <Row>
+                <Value Text="AWB Decision:" Bold="true" Span="2"/>
+                <Value Value="AWB Decision Data.Point.R/G Ratio"/>
+                <Value Value="AWB Decision Data.Point.B/G Ratio" Span="2"/>
+              </Row>
+              <Row>
+                <Value Text="CCT:" Bold="true" Span="2"/>
+                <Value Value="AWB Decision Data.Point.CCT"/>
+              </Row>
+              <Row>
+                <Value Text="Confidence:" Bold="true" Span="2"/>
+                <Value Value="Confidence"/>
+              </Row>
+            </Grid>
+          </Panel>
+          <Panel Title="AWB Output Summary">
+            <Grid>
+              <Row>
+                <Value Text="" Bold="true"/>
+                <Value Text="R/G" Bold="true"/>
+                <Value Text="B/G" Bold="true"/>
+                <Value Text="CCT" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="SGW:" Bold="true"/>
+                <Value Value="AWB AGWData.Simple Average Point.R/G Ratio"/>
+                <Value Value="AWB AGWData.Simple Average Point.B/G Ratio"/>
+                <Value Value="AWB AGWData.Simple Average CCT"/>
+              </Row>
+              <Row>
+                <Value Text="AGW:" Bold="true"/>
+                <Value Value="AWB AGWData.Weighted Average Point.R/G Ratio"/>
+                <Value Value="AWB AGWData.Weighted Average Point.B/G Ratio"/>
+                <Value Value="AWB AGWData.Weighted Average CCT"/>
+              </Row>
+              <Row>
+                <Value Text="After Decision Aggregator:" Bold="true"/>
+                <Value Value="AWB CurFrameDecision[0].Point.R/G Ratio"/>
+                <Value Value="AWB CurFrameDecision[0].Point.B/G Ratio"/>
+                <Value Value="AWB CurFrameDecision[0].CCT"/>
+              </Row>
+              <Row>
+                <Value Text="After Temporal Convergence:" Bold="true"/>
+                <Value Value="AWB CurFrameDecision[1].Point.R/G Ratio"/>
+                <Value Value="AWB CurFrameDecision[1].Point.B/G Ratio"/>
+                <Value Value="AWB CurFrameDecision[1].CCT"/>
+              </Row>
+              <Row>
+                <Value Text="After Gain Adjust:" Bold="true"/>
+                <Value Value="AWB CurFrameDecision[2].Point.R/G Ratio"/>
+                <Value Value="AWB CurFrameDecision[2].Point.B/G Ratio"/>
+                <Value Value="AWB CurFrameDecision[2].CCT"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+                <Value Text="RED" Bold="true"/>
+                <Value Text="GREEN" Bold="true"/>
+                <Value Text="BLUE" Bold="true"/>
+                <Value Text="CCT" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="Adjust Gain:" Bold="true"/>
+                <Value Value="AWB TriangleGainAdjust.Adjusted Gain.Red"/>
+                <Value Value="AWB TriangleGainAdjust.Adjusted Gain.Green"/>
+                <Value Value="AWB TriangleGainAdjust.Adjusted Gain.Blue"/>
+              </Row>
+              <Row>
+                <Value Text="Final AWB Decision:" Bold="true"/>
+                <Value Value="AWB Summary Gain Red"/>
+                <Value Value="AWB Summary Max"/>
+                <Value Value="AWB Summary Gain Blue"/>
+                <Value Value="AWB CurFrameDecision[1].CCT"/>
+              </Row>
+              <Row>
+                <Value Text="" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text="Triangle Index:" Bold="true"/>
+                <Value Value="AWB TriangleGainAdjust.Triangle Index"/>
+              </Row>
+            </Grid>
+          </Panel>
+        </Panel>
+      </Panel>
+    </Panel>
+  </Display>
+</MetadataDisplays>

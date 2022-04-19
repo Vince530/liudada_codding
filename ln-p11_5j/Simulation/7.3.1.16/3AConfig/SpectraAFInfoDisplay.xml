@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  See DisplayTest.xml for format documentation
+-->
+<MetadataDisplays
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataDisplaySchema.xsd">
+  <!-- AF Info Display -->
+  <Display Name="AF Info" Title="AF Info" MetadataType="Spectra">
+    <Panel Type="Scroll">
+      <!-- AF Information Panel -->
+      <Panel Title="AF Information" Type="Open">
+        <Grid>
+          <Row>
+            <Value Text="Far End:" Bold="true"/>
+            <Value Value="AF FarEnd"/>
+          </Row>
+          <Row>
+            <Value Text="Near End:" Bold="true"/>
+            <Value Value="AF NearEnd"/>
+          </Row>
+          <Row>
+            <Value Text="Focal Length:" Bold="true"/>
+            <Value Value="AF FocalLength"/>
+          </Row>
+          <Row>
+            <Value Text="Focal Number:" Bold="true"/>
+            <Value Value="AF FocalNumber"/>
+          </Row>
+          <Row>
+            <Value Text="Pixel Size:" Bold="true"/>
+            <Value Value="AF PixelSize"/>
+          </Row>
+          <Row>
+            <Value Text="Focus Distance:" Bold="true"/>
+            <Value Value="AF FocusDistance"/>
+          </Row>
+          <Row>
+            <Value Text="Actuator Sensitivity:" Bold="true"/>
+            <Value Value="AF ActuatorSensitivity"/>
+          </Row>
+          <Row>
+            <Value Text="CamIF Width:" Bold="true"/>
+            <Value Value="AF CamifWidth"/>
+          </Row>
+          <Row>
+            <Value Text="CamIF Height:" Bold="true"/>
+            <Value Value="AF CamifHeight"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- BAF Configure Panel -->
+      <Panel Title="BAF Configure">
+        <Grid>
+          <Row>
+            <Value Text="Request ID:" Bold="true"/>
+            <Value Value="AF ConfigFrameId"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="ROI" Bold="true"/>
+            <Value Text="X/Horizontal" Bold="true"/>
+            <Value Text="Y/Vertical" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Position:" Bold="true"/>
+            <Value Value="AF RoiInfo.X"/>
+            <Value Value="AF RoiInfo.Y"/>
+          </Row>
+          <Row>
+            <Value Text="Length:" Bold="true"/>
+            <Value Value="AF RoiInfo.Dx"/>
+            <Value Value="AF RoiInfo.Dy"/>
+          </Row>
+          <Row>
+            <Value Text="Grid Size:" Bold="true"/>
+            <Value Value="AF RoiGridSizeH"/>
+            <Value Value="AF RoiGridSizeV"/>
+          </Row>
+          <Row>
+            <Value Text="Grid Gap:" Bold="true"/>
+            <Value Value="AF RoiGridGapH"/>
+            <Value Value="AF RoiGridGapV"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Gamma Table:" Bold="true"/>
+            <Check Value="AF GammaTableEnable"/>
+          </Row>
+          <Row>
+            <Value Text="Horizontal Kernel:" Bold="true"/>
+            <Check Value="AF HorizontalKernel.Valid"/>
+          </Row>
+          <Row>
+            <Value Text="Vertical Kernel:" Bold="true"/>
+            <Check Value="AF VerticalKernel.Valid"/>
+          </Row>
+          <Row>
+            <Value Text="Software Stats:" Bold="true"/>
+            <Check Value="AF SoftwareKernel.Valid"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Input Channel" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Channel Selection:" Bold="true"/>
+            <Value Value="AF InputSel"/>
+            <Value Text="G Selection:" Bold="true"/>
+            <Value Value="AF GreenChannelSel"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Y Weight" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="R" Bold="true"/>
+            <Value Text="G" Bold="true"/>
+            <Value Text="B" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Value="AF YChannelWeight[0]" Bold="true"/>
+            <Value Value="AF YChannelWeight[1]" Bold="true"/>
+            <Value Value="AF YChannelWeight[2]" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Scale Configure:" Bold="true"/>
+            <Check Value="AF ScaleEnable"/>
+          </Row>
+          <Row>
+            <Value Text="M:" Bold="true"/>
+            <Value Value="AF ScaleM" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="N:" Bold="true"/>
+            <Value Value="AF ScaleN" Bold="true"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- BAF Gamma Configure Panel -->
+      <Panel Title="BAF Gamma Configure">
+        <Grid>
+          <Row>
+            <Value Text="Enabled:" Bold="true"/>
+            <Value Value="AF GammaTableEnable"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Gamma Table" Bold="true" Span="2" Alignment="Center"/>
+          </Row>
+          <Row>
+            <Value Text="Index" Bold="true"/>
+            <Value Text="Value" Bold="true"/>
+          </Row>
+          <Row Array="AF GammaTableContent"/>
+        </Grid>
+      </Panel>
+      <!-- Horizontal Filter Configure Panel -->
+      <Panel Title="Horizontal Filter Configure" Section="AF HorizontalKernel">
+        <Grid>
+          <Row>
+            <Value Text="FIR Filter:" Bold="true"/>
+            <Check Value="FIR Filter Configuration.Enabled"/>
+          </Row>
+          <Row>
+            <Value Text="A:" Bold="true"/>
+            <Value Value="FIR Filter Configuration.Coefficient A"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="IIR Filter:" Bold="true"/>
+            <Check Value="IIR Filter Configuration.Enabled"/>
+          </Row>
+          <Row>
+            <Value Text="A:" Bold="true"/>
+            <Value Value="IIR Filter Configuration.Coefficient A"/>
+          </Row>
+          <Row>
+            <Value Text="B:" Bold="true"/>
+            <Value Value="IIR Filter Configuration.Coefficient B"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Coring" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Threshold:" Bold="true"/>
+            <Value Value="Coring Configuration.Threshold"/>
+          </Row>
+          <Row>
+            <Value Text="Gain:" Bold="true"/>
+            <Value Value="Coring Configuration.Gain"/>
+          </Row>
+          <Row>
+            <Value Text="Index:" Bold="true"/>
+            <Value Value="Coring Configuration.Indices"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- Vertical Filter Configure Panel -->
+      <Panel Title="Vertical Filter Configure" Section="AF VerticalKernel">
+        <Grid>
+          <Row>
+            <Value Text="FIR Filter:" Bold="true"/>
+            <Check Value="FIR Filter Configuration.Enabled"/>
+          </Row>
+          <Row>
+            <Value Text="A:" Bold="true"/>
+            <Value Value="FIR Filter Configuration.Coefficient A"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="IIR Filter:" Bold="true"/>
+            <Check Value="IIR Filter Configuration.Enabled"/>
+          </Row>
+          <Row>
+            <Value Text="A:" Bold="true"/>
+            <Value Value="IIR Filter Configuration.Coefficient A"/>
+          </Row>
+          <Row>
+            <Value Text="B:" Bold="true"/>
+            <Value Value="IIR Filter Configuration.Coefficient B"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Coring" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Threshold:" Bold="true"/>
+            <Value Value="Coring Configuration.Threshold"/>
+          </Row>
+          <Row>
+            <Value Text="Gain:" Bold="true"/>
+            <Value Value="Coring Configuration.Gain"/>
+          </Row>
+          <Row>
+            <Value Text="Index:" Bold="true"/>
+            <Value Value="Coring Configuration.Indices"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AF Converge Overview Panel -->
+      <Panel Title="Converge Overview" Section="AF ConvergeCommonData">
+        <Grid>
+          <Row>
+            <Value Text="Final Lens Position:" Bold="true"/>
+            <Value Value="Final Lens Position"/>
+          </Row>
+          <Row>
+            <Value Text="Search History Frame Size:" Bold="true"/>
+            <Value Value="AF ConvergeHistorySize"/>
+          </Row>
+          <Row>
+            <Value Text="Focus Result:" Bold="true"/>
+            <Value Value="Focus Result"/>
+          </Row>
+          <Row>
+            <Value Text="ROI Type:" Bold="true"/>
+            <Value Value="ROI Type"/>
+          </Row>
+          <Row>
+            <Value Text="Spotlight Detected:" Bold="true"/>
+            <Check Value="Spotlight Detected"/>
+          </Row>
+          <Row>
+            <Value Text="Fine Scan Range:" Bold="true"/>
+            <Value Text="Near:"/>
+            <Value Value="Fine Search Near Range"/>
+            <Value Text="Far:"/>
+            <Value Value="Fine Search Far Range"/>
+          </Row>
+          <Row>
+            <Value Text="Fine Scan Step Size:" Bold="true"/>
+            <Value Value="Fine Search Step Size"/>
+          </Row>
+          <Row>
+            <Value Text="AF Mode:" Bold="true"/>
+            <Value Value="AF Mode"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- History Data Panel -->
+      <Panel Title="History Data" Section="AF ConvergeCommonData">
+        <Grid>
+          <Row>
+            <Value Text="Index" Bold="true"/>
+            <Value Text="Request ID" Bold="true"/>
+            <Value Text="Current Lens" Bold="true"/>
+            <Value Text="Next Lens" Bold="true"/>
+            <Value Text="HAF Progress" Bold="true"/>
+            <Value Text="Exp. Index" Bold="true"/>
+            <Value Text="Gyro" Bold="true"/>
+            <Value Text="SAD" Bold="true"/>
+            <Value Text="FV H" Bold="true"/>
+            <Value Text="FV V" Bold="true"/>
+            <Value Text="FV HV" Bold="true"/>
+          </Row>
+          <Row Array="History Data" ArrayCount="AF ConvergeHistorySize" Columns="Frame ID,Current Lens Position,Next Lens Position,HAF Progress,Exposure Index,Gyro Value,SAD Value,Focus Value H,Focus Value V,Focus Value HV"/>
+        </Grid>
+      </Panel>
+    </Panel>
+  </Display>
+</MetadataDisplays>

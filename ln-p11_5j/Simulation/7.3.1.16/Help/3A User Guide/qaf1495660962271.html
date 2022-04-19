@@ -1,0 +1,47 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Verify with the sensor vendor that the correct sensor gain and line count (exposure time) setting has been implemented in the sensor driver. Usually, the group parameter hold register is used so that ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Reduce flickering during AE convergence" /><meta name="DC.Relation" scheme="URI" content="tbv1495660804257.html" /><meta name="DC.Relation" scheme="URI" content="arm1495660890214.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jbk1474864618479" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Reduce flickering during AE convergence</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jbk1474864618479">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Reduce flickering during AE convergence</h1>
+
+   <div class="body taskbody">
+      <ol class="ol steps"><li class="li step" id="jbk1474864618479__step_N10014_N10011_N1000E_N10001">
+            <span class="ph cmd">Verify with the sensor vendor that the correct sensor gain and line count (exposure
+               time) setting has been implemented in the sensor driver. Usually, the group parameter
+               hold register is used so that gain and line count (exposure) can be
+               synchronized.</span>
+         </li>
+<li class="li step" id="jbk1474864618479__step_N1001D_N10011_N1000E_N10001">
+            <span class="ph cmd">Read the I2C and dump the kernel log for the AEC registers.</span>
+         </li>
+<li class="li step" id="jbk1474864618479__step_N10026_N10011_N1000E_N10001">
+            <span class="ph cmd">Follow the guidelines provided by the sensor vendor to implement the sensor driver
+               for AEC tuning. Verify the camera AE after making any adjustments suggested by the
+               vendor. </span>
+         </li>
+<li class="li step" id="jbk1474864618479__step_N1002F_N10011_N1000E_N10001">
+            <span class="ph cmd">If the issue persists, use the exposure table to verify that the step between each
+                  <span class="keyword parmname">exp_index</span> value is close to 3%. Flickering can occur if the
+               step is too far away from 3%. Tune the exposure table to reduce flickering.</span>
+         </li>
+<li class="li step" id="jbk1474864618479__step_N1003C_N10011_N1000E_N10001">
+            <span class="ph cmd">Capture an image with the test condition to verify the results.</span>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="tbv1495660804257.html" title="Generate a common set of AEC zone triggers by capturing images under given lux levels in the light booth.">Tune the AEC default triggers (3A v5.x and v6.0)</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="arm1495660890214.html" title="Tune the exposure table">Tune the exposure table</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="TF_LMC_MCTF">
+
+	<param id="1"  name="a1_y" autotune="0" submodule="ytbf">0:16:255</param>
+	<param id="2"  name="a1_c" autotune="0" submodule="ctbf">0:16:255</param>
+
+	<param id="3"  name="full_noise_y_ytb" autotune="0" submodule="yfull">0:50:500</param>
+	<param id="4"  name="full_noise_c_ytb" autotune="0" submodule="cfull">0:12:125</param>
+	<param id="5"  name="full_fs_decision_y_c3" autotune="0" submodule="yfull">16:8:64</param>
+	<param id="6"  name="full_fs_decision_y_c4" autotune="0" submodule="yfull">0:8:64</param>
+	<param id="7"  name="full_fs_decision_c_c3" autotune="0" submodule="cfull">16:8:64</param>
+	<param id="8"  name="full_fs_decision_c_c4" autotune="0" submodule="cfull">0:8:64</param>
+
+	<param id="9"  name="dc4_noise_y_ytb" autotune="0" submodule="ydc4">0:25:250</param>
+	<param id="10"  name="dc4_noise_c_ytb" autotune="0" submodule="cdc4">0:6:64</param>
+	<param id="11"  name="dc4_fs_decision_y_c3" autotune="0" submodule="ydc4">16:8:64</param>
+	<param id="12"  name="dc4_fs_decision_y_c4" autotune="0" submodule="ydc4">0:8:64</param>
+	<param id="13"  name="dc4_fs_decision_c_c3" autotune="0" submodule="cdc4">16:8:64</param>
+	<param id="14"  name="dc4_fs_decision_c_c4" autotune="0" submodule="cdc4">0:8:64</param>
+
+	<param id="15"  name="dc16_noise_y_ytb" autotune="0" submodule="ydc16">0:12:128</param>
+	<param id="16"  name="dc16_noise_c_ytb" autotune="0" submodule="cdc16">0:4:32</param>
+
+	<param id="17"  name="a2min_y" autotune="1" submodule="ysbf">0:5:22</param>
+	<param id="18"  name="a2max_y" autotune="1" submodule="ysbf">204:16:255</param>
+	<param id="19"  name="a2slp_y" autotune="1" submodule="ysbf">0:16:128</param>
+
+	<param id="20"  name="a2min_c" autotune="1" submodule="csbf">0:5:25</param>
+	<param id="21"  name="a2max_c" autotune="1" submodule="csbf">220:16:255</param>
+	<param id="22"  name="a2slp_c" autotune="1" submodule="csbf">0:16:128</param>
+	
+	<param id="23"  name="full_lmc_enable" autotune="0" submodule="yfull_lmc">0:0:0</param>
+	<param id="24"  name="full_lmc_conf" autotune="0" submodule="yfull_lmc">0:0:0</param>
+	<param id="25"  name="full_lmc_smoothness_a" autotune="0" submodule="yfull_lmc">8:1:16</param>
+	
+	<param id="26"  name="dc4_lmc_enable" autotune="0" submodule="ydc4_lmc">1:1:1</param>
+	<param id="27"  name="dc4_lmc_conf" autotune="0" submodule="ydc4_lmc">0:100:65536</param>
+	<param id="28"  name="dc4_lmc_smoothness_a" autotune="0" submodule="ydc4_lmc">8:1:16</param>
+	
+	<param id="29"  name="dc16_lmc_enable" autotune="0" submodule="ydc16_lmc">1:1:1</param>
+	<param id="30"  name="dc16_lmc_conf" autotune="0" submodule="ydc16_lmc">0:100:65536</param>
+	<param id="31"  name="dc16_lmc_smoothness_a" autotune="0" submodule="ydc16_lmc">8:1:16</param>
+
+	<lin_ineq_constraints>
+		<param_id_list> 18, 21, 19, 22</param_id_list>
+		<A>             1,-1, 0, 0;
+                        0, 0,-1, 1
+        </A>
+		<B>0;0</B>
+	</lin_ineq_constraints>  
+
+    <mapping dest="pcsim">update_xml_tf_lmc_mfcf</mapping>
+    <mapping dest="chromatix">update_xml_tf_lmc_mfcf</mapping>
+    <isp_pipeline>IPE</isp_pipeline>
+    <chromatix_tag>tf20_ipe</chromatix_tag>
+    <gen_pop_function></gen_pop_function>
+</module_if>

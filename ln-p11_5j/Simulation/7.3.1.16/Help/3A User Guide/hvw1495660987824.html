@@ -1,0 +1,62 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="This test checks the boundary range at macro and infinity. It checks if there is enough range for the lens to move so that it can focus on macro/infinity objects. Setup Place the ISO 12233 resolution ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Actuator range test" /><meta name="DC.Relation" scheme="URI" content="doh1495660841869.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qwa1477085279120" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Actuator range test</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qwa1477085279120">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="mdk1495660907421.html" title="Test actuator driver">Test actuator driver</a> / <a class="navheader_parent_path" href="doh1495660841869.html" title="Run CAF Scan tests">Run CAF Scan tests</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="doh1495660841869.html" title="Run CAF Scan tests"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Run CAF Scan tests</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Actuator range test</h1>
+
+   <div class="body conbody">
+      <p class="p">This test checks the boundary range at macro and infinity. It checks if there is enough range for the lens to move so that it can focus on macro/infinity objects.</p>
+
+      <div class="section" id="qwa1477085279120__section_N10015_N1000E_N10001"><h2 class="title sectiontitle">Setup</h2><p class="p">Place the ISO 12233 resolution chart 10 cm from the device on a tripod with a 500+ lux light condition for the macro test. Repeat the test at 200 cm for the infinity test.</p>
+<p class="p">If the actuator is an open-loop actuator, then also test the device in the following positions:</p>
+<ul class="ul">
+            <li class="li">Mount the device on a tripod with the lens facing down (i.e., face-down position)</li>
+
+            <li class="li">Mount the device on a tripod with the lens facing up (i.e., face-up position)</li>
+
+         </ul>
+</div>
+
+      <div class="section" id="qwa1477085279120__section_N1002D_N1000E_N10001"><h2 class="title sectiontitle">Analysis and corrective action</h2>
+         
+         <br /><img class="image" id="qwa1477085279120__image_sbl_snp_rx" src="cwv1495660835629.svg" /><br />
+         <p class="p">If graph looks like the macro and infinity (pass) graphs, then the
+            actuator settings and OTP data are correct.</p>
+
+         <p class="p">If the graph looks like macro and infinity (fail) graphs, then either
+            the OTP data or actuator settings are not correct. Repeat the test two more times to
+            confirm the problem. If confirmed, check with the vendor to verify the OTP data. In
+            addition, verify that the MARGIN is applied in the actuator for far and near.</p>
+
+         <p class="p">Increase the margin percentage value applied over the OTP data. To get
+            to this value, find the EEPROM file associated with the sensor. For example, if the
+            EEPROM name is onsemi_cat24c32, then its EEPROM file is onsemi_cat24c32.c at:</p>
+
+         <p class="p"><span class="keyword cmdname">mm-camera/mm-camera2/media-controller/modules/sensors/eeprom/libs/onsemi_cat24c32</span>/</p>
+
+         <p class="p">Search for <span class="keyword cmdname">FAR_MARGIN</span> and <span class="keyword cmdname">NEAR_MARGIN</span>. Contact CE or the sensor driver team if there
+            is any difficulty finding these values. In the following example, the far margin is 15%
+            and the near margin is 30%. Try increasing the margins and repeating the test.</p>
+
+         <pre class="pre codeblock"><code>#define FAR_MARGIN (-0.15)
+#define NEAR_MARGIN (0.3)
+</code></pre>
+         <div class="note note" id="qwa1477085279120__note_N10089_N1002D_N1000E_N10001"><span class="notetitle">Note:</span> Do not increase the
+            number to a point where there is a risk of the lens hitting the mechanical end because
+            it causes physical damage to the lens.</div>
+
+      </div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="doh1495660841869.html" title="Run CAF Scan tests"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Run CAF Scan tests</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

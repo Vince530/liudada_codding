@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Gamma also impacts the final brightness, so tuning the gamma curve must be done before tuning the AE luma target. Recommendation : Tune the luma target for both the gray chart and resolution chart ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Increase image brightness in gray chart and resolution chart scenes" /><meta name="DC.Relation" scheme="URI" content="wor1495661116524.html" /><meta name="DC.Relation" scheme="URI" content="tbv1495660804257.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="syj1474864617324" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Increase image brightness in gray chart and resolution chart scenes</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="syj1474864617324">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Increase image brightness in gray chart and resolution chart scenes</h1>
+
+   <div class="body taskbody">
+      <div class="section prereq p" id="syj1474864617324__prereq_h5f_phf_zw">Gamma also impacts the final brightness, so tuning the gamma
+         curve must be done before tuning the AE luma target.</div>
+
+      <div class="section context" id="syj1474864617324__context_N10016_N1000E_N10001"><p class="p"><span class="ph uicontrol">Recommendation</span>: Tune the luma target for both the gray chart and resolution chart scenes. </p>
+
+         <br /><img class="image" id="syj1474864617324__image_mjg_nhf_zw" src="icl1495661105121.png" /><br /></div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="syj1474864617324__step_N10029_N10026_N1000E_N10001">
+            <span class="ph cmd">Capture test images with 3A EXIF information and AEC log messages.</span>
+         </li>
+<li class="li step stepexpand" id="syj1474864617324__step_N10032_N10026_N1000E_N10001">
+            <span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Open Image</span></span> and open the images in the Image Viewer.</span>
+         </li>
+<li class="li step stepexpand" id="syj1474864617324__step_N10047_N10026_N1000E_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">3A Debug</span> dialog box, click the
+                  <span class="ph uicontrol">Data</span> tab and select <span class="ph menucascade"><span class="ph uicontrol">AEC Debug Info</span> &gt; <span class="ph uicontrol">Convergence Information</span> &gt; <span class="ph uicontrol">. </span></span>Note the <span class="ph uicontrol">Lux index</span> value.<br /><img class="image" id="syj1474864617324__image_rv1_5hf_zw" src="dfa1495660983487.png" /><br /></span>
+         </li>
+<li class="li step stepexpand" id="syj1474864617324__step_N10079_N10026_N1000E_N10001">
+            <span class="ph cmd">On the <span class="ph uicontrol">Data</span> tab select <span class="ph uicontrol">AEC Debug Info &gt; Luma
+                  and Luma Target Information</span>. Ensure the <span class="ph uicontrol">Bayer Metered
+                  Luma</span> (frame luma) is almost equal to the <span class="ph uicontrol">AE
+                  target</span> before continuing with the next step.<br /><img class="image" src="rez1495660976498.png" /><br /></span>
+         </li>
+<li class="li step stepexpand" id="syj1474864617324__step_N10096_N10026_N1000E_N10001">
+            <span class="ph cmd">Tune AE luma target and tolerance. </span>
+         </li>
+<li class="li step stepexpand" id="syj1474864617324__step_N1009F_N10026_N1000E_N10001">
+            <span class="ph cmd">On the <span class="ph uicontrol">AEC Fine Tuning</span> tab,
+               open the <span class="ph uicontrol">Luma Target Tuning</span> panel. Compare the
+                  <span class="ph uicontrol">Luma Target Tuning</span> panel configuration to
+               the <span class="ph uicontrol">Lux Index</span> to see which <span class="ph uicontrol">Luma Target</span> is used in the test condition (for
+               example: Zone 0, Zone 1, Zone 2).<br /><img class="image" id="syj1474864617324__image_hzw_ztf_zw" src="jid1495660929136.png" /><br />
+            </span>
+            <div class="itemgroup info">
+               <p class="p">For example, if the <span class="keyword parmname">Lux Index</span> is 318 then <span class="keyword parmname">Trigger 0
+                     End</span> &lt; <span class="keyword parmname">Lux Index</span> &lt; <span class="keyword parmname">Trigger 1
+                     Start</span>, so the <span class="keyword parmname">Luma Target</span> (50) of
+                     <span class="keyword parmname">Zone 1</span> is used for this image. If the <span class="keyword parmname">Lux
+                     Index</span> is within a trigger, e.g., <span class="keyword parmname">Lux Index</span> =
+                  397, the luma target value is a interpolated value between luma targets of
+                     <span class="keyword parmname">Zone 1</span> and <span class="keyword parmname">Zone 2</span>. The real number
+                  used in the algorithm is 45.</p>
+
+               <p class="p"> Real_luma_target = luma_target_zone_1 + (luma_target_zone_2 –
+                  luma_target_zone_1) * [(lux_idx – trigger1_start) / (trigger1_end –
+                  trigger1_start)].</p>
+
+            </div>
+         </li>
+<li class="li step stepexpand" id="syj1474864617324__step_N100F6_N10026_N1000E_N10001">
+            <span class="ph cmd">On the <span class="ph uicontrol">AEC Fine Tuning</span> tab, click <span class="ph uicontrol">Edit
+                  Header</span>. Select <span class="ph uicontrol">Header type:</span> 3A and navigate to <span class="ph menucascade"><span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Luma Targets</span> &gt; <span class="ph uicontrol">Luma Target Data</span></span>.</span>
+         </li>
+<li class="li step stepexpand" id="syj1474864617324__step_N1011B_N10026_N1000E_N10001">
+            <span class="ph cmd">Enter the <span class="ph uicontrol">Luma Target</span> in the appropriate
+                  <span class="ph uicontrol">Region</span>. <br /><img class="image" src="zlo1495660815396.png" /><br /></span>
+         </li>
+<li class="li step stepexpand" id="syj1474864617324__step_N10130_N10026_N1000E_N10001">
+            <span class="ph cmd">Capture these images in the resulting test condition: </span>
+            <ul class="ul choices">
+               <li class="li choice"><p class="p">Flat gray surface in a light source box (LSBD) </p>
+</li>
+
+               <li class="li choice"><p class="p">Image of the ISO resolution chart </p>
+</li>
+
+            </ul>
+
+            <div class="itemgroup stepresult">A side effect may be the image is overexposed if the luma target is too
+               large. Tuning engineers can repeat this procedure to get the desired
+               results.</div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="wor1495661116524.html" title="The luma target of AEC determines the target brightness that AEC is aiming at (based on fixed gamma curves and tone mapping). Different luma targets can be assigned for different brightness conditions. For example, in low light, a smaller luma target is generally preferred to decrease the image brightness for a more natural appearance of the images as well as for better noise performance.">Tune AE luma target</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="tbv1495660804257.html" title="Generate a common set of AEC zone triggers by capturing images under given lux levels in the light booth.">Tune the AEC default triggers (3A v5.x and v6.0)</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

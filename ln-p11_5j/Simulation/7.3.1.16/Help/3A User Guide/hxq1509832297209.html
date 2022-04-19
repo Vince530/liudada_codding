@@ -1,0 +1,152 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The FA SA module computes the final face WB gain using three skin type interpolation weight factors that aim to avoid misleading skin targets. To determine the final face WB gain, the Skin Type ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="FA SA determination of face WB gain" /><meta name="abstract" content="The FA SA module computes the final face WB gain using three skin type interpolation weight factors that aim to avoid misleading skin targets." /><meta name="description" content="The FA SA module computes the final face WB gain using three skin type interpolation weight factors that aim to avoid misleading skin targets." /><meta name="DC.Relation" scheme="URI" content="jdc1509824323481.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="hxq1509832297209" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>FA SA determination of face WB gain</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hxq1509832297209">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="jdc1509824323481.html" title="Face-assist scene analyzer concept">Face-assist scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">FA SA determination of face WB gain</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">The FA SA module computes the final face WB gain using three skin type
+		interpolation weight factors that aim to avoid misleading skin targets.</p>
+
+		<div class="p">To determine the final face WB gain, the <span class="ph uicontrol">Skin Type Interpolation
+				Weight </span>submodule does the following:<ol class="ol" id="hxq1509832297209__ol_xtg_kxr_tbb">
+				<li class="li">Computes the distance ratio between light skin WB gain and dark
+					skin WB gain, as detailed in <cite class="cite">Example of computing
+						Interpolation Weight 1</cite>, to determine if the situation is a light
+					skin, dark skin, or unpredictable case. </li>
+
+				<li class="li">Based on the results of Step 1, assesses the skin CCT and lux index of the
+					face stats to adjust for possible misleading skin targets. <ul class="ul" id="hxq1509832297209__ul_wmq_btf_bcb">
+						<li class="li">For the light skin case, perform the assessment as
+							detailed in <cite class="cite">Example of computing Interpolation
+								Weight 2</cite></li>
+
+						<li class="li">For the dark skin case, perform the assessment as
+							detailed in <cite class="cite">Example of computing Interpolation
+								Weight 3</cite></li>
+
+						<li class="li">For the unpredictable case, perform the assessment as
+							detailed in <cite class="cite">Example of computing interpolation
+								weight for unpredictable case</cite>.</li>
+
+					</ul>
+</li>
+
+				<li class="li">Uses the result of Step 2 to weight the face WB gain to get the final face
+					WB gain. </li>
+
+			</ol>
+</div>
+
+		<div class="section" id="hxq1509832297209__section_wsq_pqg_5bb"><h2 class="title sectiontitle">Example of computing Interpolation Weight 1 (light skin distance
+				factor)</h2>
+			
+			<p class="p">The Skin Type Interpolation Weight submodule compares the distance of
+				light skin WB gain and regular WB gain, with the distance of dark skin WB gain and
+				regular WB gain. Because the slope and distance between light skin and dark skin WB
+				gain are fixed, three cases can be distinguished as illustrated in the following
+				figure:</p>
+
+			<br /><img class="image" id="hxq1509832297209__image_hfb_g24_5bb" src="hrt1510097401605.svg" /><br />
+			<p class="p">The Skin Type Interpolation Weight submodule computes the Interpolation Weight
+				1 parameter (light skin distance factor) as follows:</p>
+
+			<ul class="ul" id="hxq1509832297209__ul_wxr_s5g_5bb">
+				<li class="li">Computes distance ratio = dark distance/light distance. Dark distance is the
+					distance between dark WB gain and regular WB gain. Light distance is the
+					distance between light WB gain and regular WB gain.</li>
+
+				<li class="li">(Light skin case) If the distance ratio is greater than the user-defined
+					distance high threshold, it means the light skin WB gain is closer to the
+					regular WB gain, so the Interpolation Weight 1 is set to 1.</li>
+
+				<li class="li">(Dark skin case) If the distance ratio is less than the user-defined
+					distance low threshold, it means the dark skin WB gain is closer to the regular
+					WB gain, so the Interpolation Weight 1 is set to 0.</li>
+
+				<li class="li">(Unpredictable case) If the distance ratio is between the low and high
+					thresholds, then the Interpolation Weight 1 is computed by linear
+					interpolation.</li>
+
+			</ul>
+
+			<br /><img class="image" id="hxq1509832297209__image_wfv_324_5bb" src="acu1510097398142.svg" /><br />
+		</div>
+
+		<div class="section" id="hxq1509832297209__section_bq5_4tg_5bb"><h2 class="title sectiontitle">Example of computing Interpolation Weight 2 (light skin weighted
+				ratio)</h2>
+			
+			<p class="p"> The Interpolation Weight 2 parameter is applicable to the light skin case
+				(distance ratio &gt; distance high threshold). Sometimes the regular WB gain becomes
+				bluish due to misleading color zones. Although the dark skin target is the correct
+				choice, the light skin target may be chosen because of the misleading stats. To
+				avoid this situation, the Skin Type Interpolation Weight submodule evaluates the lux
+				index and light skin CCT to compute the value of Interpolation Weight 2. </p>
+
+			<br /><img class="image" id="hxq1509832297209__image_qrd_fjv_5bb" src="umv1510182812525.svg" /><br />
+			<ul class="ul" id="hxq1509832297209__ul_wjn_5vg_5bb">
+				<li class="li">The user defines the low and high light skin CCT thresholds.</li>
+
+				<li class="li">In outdoor condition, give much lower light skin weighted ratio
+					(interpolation weight 2) if light skin CCT is low</li>
+
+				<li class="li">In indoor condition, give a little bit lower light skin weighted
+					ratio (interpolation weight 2) if light skin CCT is high</li>
+
+				<li class="li">If lux index is between outdoor and indoor, use linear
+					interpolation to compute light skin weighted ratio (interpolation weight 2)</li>
+
+			</ul>
+
+		</div>
+
+		<div class="section" id="hxq1509832297209__section_wqw_4tg_5bb"><h2 class="title sectiontitle">Example of computing Interpolation Weight 3 (dark skin weighted
+				ratio)</h2>
+			
+			<p class="p">The Interpolation Weight 3 parameter is applicable to the dark skin case
+				(distance ratio &lt; distance low threshold). Sometimes the regular WB gain becomes
+				yellowish due to misleading color zones. Although the light skin target is the
+				correct choice, the dark skin target may be chosen because of the misleading stats.
+				To avoid this situation, the Skin Type Interpolation Weight submodule evaluates the
+				lux index and dark skin CCT to compute the value of Interpolation Weight 3.</p>
+
+			<br /><img class="image" id="hxq1509832297209__image_g2l_gjv_5bb" src="jpq1510182815520.svg" /><br />
+			<ul class="ul" id="hxq1509832297209__ul_mbc_2wg_5bb">
+				<li class="li">The user defines the low and high dark skin CCT thresholds.</li>
+
+				<li class="li">In outdoor condition, give much higher dark skin weighted ratio
+					(interpolation weight 3) if dark skin CCT is high</li>
+
+				<li class="li">In indoor condition, give much lower dark skin weighted ratio
+					(interpolation weight 3) if dark skin CCT is high</li>
+
+				<li class="li">If lux index is between outdoor and indoor, use linear interpolation to compute
+					dark skin weighted ratio (interpolation weight 3)</li>
+
+			</ul>
+
+		</div>
+
+		<div class="section" id="hxq1509832297209__section_rnm_ptg_5bb"><h2 class="title sectiontitle">Example of computing interpolation weight for unpredictable case</h2>
+			
+			<p class="p">In the unpredictable case (distance low threshold &lt; distance ratio &lt;
+				distance high threshold), the skin weighted ratio is determined by interpolating
+				Interpolation Weight 2 (light skin weight ratio) and Interpolation weight 3 (dark
+				skin weight ratio) by using Interpolation Weight 1 (distance weight ratio). The
+				following image illustrates the unpredictable case computation. <br /><img class="image" id="hxq1509832297209__image_l11_yx1_xbb" src="dos1510866802709.svg" /><br /></p>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

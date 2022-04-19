@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="AWB processing collects gray stats for estimating the AWB gain. The gray stat literally indicates the stat inside a gray zone that empirically defines regions around the reference points and reference ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Distance weight vector concept" /><meta name="DC.Relation" scheme="URI" content="yqt1502923722746.html" /><meta name="DC.Relation" scheme="URI" content="vvj1502822276198.html" /><meta name="DC.Relation" scheme="URI" content="oig1502047313305.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="bqr1502047245663" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Distance weight vector concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="bqr1502047245663">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="yqt1502923722746.html" title="AWB stats filters">AWB stats filters</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Distance weight vector concept</h1>
+
+	<div class="body conbody">
+		<p class="p">AWB processing collects gray stats for estimating the AWB gain. The gray
+			stat literally indicates the stat inside a gray zone that empirically defines regions
+			around the reference points and reference lines. Therefore, it is very important to
+			select real gray stats in the given input stats. </p>
+
+		<p class="p">The distance weight of a given stat is a probability of the stat; it
+			represents how likely the stat is gray or not gray. This concept is based on
+			observations that some stats are highly likely the gray stat with respect to their
+			distance from the reference points and reference line. The distance from the reference
+			point is the probablility of the grayness of a stat. </p>
+
+		<p class="p">AWB distance-based weight assignment builds a flexible gray zone that is
+			defined by the distance weight itself. The distance with zero (0) weight represents a
+			boundary of the gray zone. Distance weight assignment allows the gray zone to extend
+			outward to form a buffer zone with very low distance weight ( ≤0.01). The buffer gray
+			zone makes the AWB decisions in consecutive frames as consistent as possible when stats
+			cross either side of the gray zone boundary in frame-by-frame.</p>
+
+		<div class="fig fignone nonumber" id="bqr1502047245663__fig_lv4_zd1_x1b"><span class="figcap">Figure : The buffer zone is defined by the distance weight stats
+				filter.</span>
+			
+			<img class="image" id="bqr1502047245663__image_o1q_15m_51b" src="fbi1501973982884.svg" />
+		</div>
+
+		<p class="p">AWB measures the minimum distance from the stat to the reference line as
+			the Euclidean distance between an input stat and an intersection point between the
+			reference line and a perpendicular line passing through the input stat.</p>
+
+		<div class="fig fignone nonumber" id="bqr1502047245663__fig_btv_xzy_y1b"><span class="figcap">Figure : The minimum distance from the stat to the reference line is the
+				Euclidean distance between an input stat and an intersection point between the
+				reference line and a perpendicular line passing through the input stat.</span>
+			
+			<img class="image" id="bqr1502047245663__image_b5p_zzy_y1b" src="ldm1503429984213.svg" />
+		</div>
+
+		<div class="fig fignone nonumber" id="bqr1502047245663__fig_jgc_sps_y1b"><span class="figcap">Figure : Stats to the right side of the reference line are signed positive
+				(+) and stats to the left side of the reference line are signed negative (-)</span>
+			
+			<img class="image" id="bqr1502047245663__image_jz3_rps_y1b" src="upn1503354025190.svg" />
+		</div>
+
+		<p class="p">Distance weight vectors are configured in a three-level triggering system. As
+			shown in the following image, the Chromatix tool user interface presents the first
+			trigger (lux level), the second trigger (CCT), and the third trigger (distance) in the
+			first three columns. The last column is the core data (weight) for a given lux
+			level/CCT/distance trigger range. The table is defined during the AWB autotuning process
+			based on the user-entered Indoor Lux Index and Max Lux Index and the images
+				uploaded.<br /><img class="image" id="bqr1502047245663__image_ylj_sd1_x1b" src="rlg1502825788291.png" /><br /></p>
+
+		<p class="p">Given a lux index, the stats filter automatically computes the
+			corresponding 2-D weight vector with respect to CCT and distance. Each stat has a
+			distance to the reference line and CCT. Using the 2-D weight vector, the final weight is
+			computed with respect to the CCT and distance of the input stat. </p>
+
+		<p class="p">The distance weight vector module follows the common AWB trigger system
+			that provides for interpolation of weight values that fall outside or between the
+			defined trigger ranges.</p>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="vvj1502822276198.html">Distance weight vector parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="oig1502047313305.html">Fine-tune distance weight vector</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

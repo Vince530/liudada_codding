@@ -1,0 +1,278 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Table : AWB  dual camera sync tuning parameters Parameter Name Description Tuning options and tips Factory Default Enable Flag Enables/disables smooth transition of AWB from master camera to slave ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AWB dual camera sync parameters" /><meta name="DC.Relation" scheme="URI" content="nra1518044265573.html" /><meta name="DC.Relation" scheme="URI" content="hbv1518466063728.html" /><meta name="DC.Relation" scheme="URI" content="swt1518466261413.html" /><meta name="DC.Relation" scheme="URI" content="htw1518466422251.html" /><meta name="DC.Relation" scheme="URI" content="hda1518466535306.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jxy1518115164603" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AWB dual camera sync parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jxy1518115164603">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="nra1518044265573.html" title="AWB dual camera sync concept">AWB dual camera sync concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="nra1518044265573.html" title="AWB dual camera sync concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">AWB dual camera sync parameters</h1>
+
+	<div class="body conbody">
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="jxy1518115164603__table_dxk_k2t_v1b" class="table" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : AWB  dual camera sync tuning parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30188e36">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30188e39">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30188e42">Tuning options and tips</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30188e45">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Enable Flag</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Enables/disables smooth transition of AWB from
+							master camera to slave cameras.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 ">Should be enabled if device has dual
+							cameras.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">
+							<p class="p">1</p>
+
+							<p class="p">Range: 0 and 1</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Mode Selection</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Determines the method for starting slave preview AWB.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 ">
+							<p class="p"></p>
+
+							<p class="p">[ON] = start slave preview with the dualcam sync AWB result during
+								dualcam sync period [OFF] = start slave preview with AWB result from slave obtained
+								during dualcam sync period</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">ON<p class="p">Range: OFF and ON</p>
+</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Conv Speed</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Used to determine the ratio of mixing the transition AWB result and
+							the slave AWB result.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 ">To use slow convergence, use a small value. To use fast convergence,
+							use a large value.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">0.1<p class="p">Range: [0.0, 1.0]</p>
+</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Ref Pt Selection</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Used to control whether regular reference points or custom reference
+							points are used to transform the master decision point and the master
+							GCM center point to the slave decision point and the slave GCM center
+							point.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 ">
+							<p class="p">[UseBoth] = use both regular and custom reference points</p>
+
+							<p class="p">[UseRefPtOnly] = only use regular reference
+								points</p>
+
+							<p class="p">[UseCustRefPtOnly] = only use custom reference points</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">UseBoth</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Custom Ref Pt: Lux Threshold</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Used to distinguish between outdoor and indoor condition</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 ">Compare the max luxIdx of outdoor with the min luxIdx of indoor and
+							fine tune the value, if necessary.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">indoor index - 100</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Custom Ref Pt: Lux Range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Determines whether the scene has changed by comparing the Lux Index
+							at the time the camera was switched to the current Lux Index</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 ">Fine tune this value when there is an image difference due to other
+							reference selection at the boundary between outdoor and indoor.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">1.1f</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Custom Ref Pt: Ref Pt: Condition</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Identifies the light condition that enables this custom reference
+							point</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 ">AllCondition, Outdoor, Indoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">AllCondition</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Custom Ref Pt: Ref Pt: Cal Factor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">The calibration index of this custom reference point.<p class="p"> The factor
+								can be changed by considering which light condition this custom
+								reference point is meant for.</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 ">Calibration factor values are: <p class="p">1 = D75</p>
+<p class="p">2 = D65</p>
+<p class="p">3 =
+								D50</p>
+<p class="p">4 = CW</p>
+<p class="p">6 = TL84</p>
+<p class="p">7 = A</p>
+<p class="p">8 = H</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">3 (D50)</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Custom Ref Pt: Ref Pt: Point (Rg, Bg)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">The coordinates of the custom reference point (rg, bg ratio)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 "> </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">0.0f, 0.0f</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Outlier Distance 1st Trigger Level (Lux Index) Start/End</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Lux index start and end values for the trigger range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 "> </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">[0, 999] </td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Outlier Distance 2nd Trigger Level (CCT) Start/End</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">CCT start and end values for the trigger range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 "> </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">[0, 12000]  </td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Outlier Distance data (gcmOutlierDistance)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Outlier distance for the applicable trigger range. Used to set the
+							GCM region to collect GCM stats.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 "> </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">Computed by the formula. </td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Weight FCM 1st Trigger Level (Lux Index) Start/End</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">Lux index start and end values for the trigger range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 "> </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">[0, 999] </td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Weight FCM 2nd Trigger Level (CCT) Start/End</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">CCT start and end values for the trigger range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 "> </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">[0, 12000] </td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Weight FCM 3rd Trigger Level (gcmNumRatio) Start/End</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">gcmNumRatio start and end values for the trigger range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 "> </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">[0, 0.03] (Weight FCM=1)<p class="p">[0.06, 1.0] (Weight FCM=0)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e36 ">Weight FCM data (Weight FCM)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e39 ">FCM weight for the applicable trigger range. Used to mix GCM and FCM
+							results for HCM.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e42 "> </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30188e45 ">1 (for gcmNumRatio trigger 0 - 0.03)<p class="p">0 (for gcmNumRatio trigger 0.06
+								- 1.0]</p>
+
+						</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="hbv1518466063728.html">Weight FCM parameters for AWB dual camera sync</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="swt1518466261413.html">Outlier distance parameters for AWB dual camera sync</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="htw1518466422251.html">Custom reference point parameters for AWB dual camera sync</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="hda1518466535306.html">Convergence speed parameter for AWB dual camera sync</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="nra1518044265573.html" title="AWB dual camera sync concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

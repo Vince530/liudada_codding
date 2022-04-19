@@ -1,0 +1,47 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The main functionality in the AF monitor state is scene change detection. Intuitively, scene change means that the current scene is not in-focus, which causes the algorithm to trigger a search to find ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AF monitor" /><meta name="DC.Relation" scheme="URI" content="eqh1495660907483.html" /><meta name="DC.Relation" scheme="URI" content="fdm1495661053219.html" /><meta name="DC.Relation" scheme="URI" content="wqt1495660852274.html" /><meta name="DC.Relation" scheme="URI" content="yey1495661039585.html" /><meta name="DC.Relation" scheme="URI" content="jqm1495661051800.html" /><meta name="DC.Relation" scheme="URI" content="sxm1495660978916.html" /><meta name="DC.Relation" scheme="URI" content="nom1495661063328.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="dnk1477085273956" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AF monitor</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="dnk1477085273956">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eqh1495660907483.html" title="Autofocus concepts">Autofocus concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="eqh1495660907483.html" title="Autofocus concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Autofocus concepts</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">AF monitor</h1>
+
+   <div class="body conbody">
+      <p class="p">The main functionality in the AF monitor state is <em class="ph i">scene change</em> detection. Intuitively, scene change means that the current scene is not in-focus, which causes the algorithm to trigger a search to find the best lens position for focus.</p>
+
+      <p class="p">Each algorithm has its own criteria for detecting scene changes. For example, CAF relies on
+         gyro parameters, sum of absolute differences (SAD) parameters, and SAD with respect to
+         reference frames (SADR) parameters to detect a scene change. In comparison, PDAF relies on
+         a combination of the defocus value of the current frame, the confidence of the algorithm,
+         and the stability of the scene.</p>
+
+      <p class="p">The AF monitor is also responsible for <em class="ph i">scene panning</em> detection. To avoid unnecessary searches, the algorithms differentiates between scene changes and scene panning. The search algorithms do not start searching until the scene is stable, that is, not panning. In short, scene change and scene panning detection are the two fundamental functionalities in AF monitor state.</p>
+
+   </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="fdm1495661053219.html">Value monitor overview</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="wqt1495660852274.html">Monitor algo config parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="yey1495661039585.html">Value monitor decision logic</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="jqm1495661051800.html">Value monitor components</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="sxm1495660978916.html">Value monitor bank</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="nom1495661063328.html" title="Contrast AF (CAF)">Contrast AF (CAF)</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="eqh1495660907483.html" title="Autofocus concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Autofocus concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

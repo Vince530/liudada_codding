@@ -1,0 +1,134 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="AEC decisions based on the frame average/weighted luma can result in overexposure on bright areas for scenes with many dark regions. Often the goal is to reduce saturation and preserve more detail. ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Dark region" /><meta name="DC.Relation" scheme="URI" content="gpc1495660795131.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="scd1474864614938" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Dark region</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="scd1474864614938">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gpc1495660795131.html" title="AEC tuning concepts">AEC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gpc1495660795131.html" title="AEC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AEC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Dark region</h1>
+
+   <div class="body conbody">
+      <p class="p">AEC decisions based on the frame average/weighted luma can result in overexposure on bright areas for scenes with many dark regions. Often the goal is to reduce saturation and preserve more detail. There are options to achieve this, such as bright region reduction and histogram AEC. But such options may not be fully effective in certain scenes where dark regions dominate the image area.</p>
+
+      <p class="p">When enabled, this feature reduces dark region metering weights for regions that are darker than a threshold. The weighted dark region luma values are used for the frame average luma calculation to prevent overexposure on brighter objects in scenes that contain many dark objects.</p>
+
+      <p class="p">The dark regions feature is primarily designed for two special conditions: </p>
+
+      <ul class="ul">
+         <li class="li">Bright outdoor scenes with shadows </li>
+
+         <li class="li">Low-light scenes with light sources</li>
+
+      </ul>
+
+      <p class="p">The Parameter Editor includes dark region parameters that that can be
+         adjusted to reduce the dark region metering weight for very dark areas of the scene to
+         prevent image underexposure. </p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="scd1474864614938__ID-table-00000016" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.464in" /><col style="width:3.122in" /><col style="width:0.739in" /><col style="width:1.1in" /></colgroup><thead class="thead" style="text-align:left;">
+               <tr class="row">
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d59986e57">Parameter</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d59986e60">Description</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d59986e63">Range</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d59986e66">Default</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e57 ">dark_region_enable</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e60 ">Use this flag to enable/disable the dark region feature.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e63 "><p class="p">0 (disable)</p>
+<p class="p">1 (enable)</p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e66 ">0 (disable)</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e57 ">dark_region_high_thres</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e60 "><p class="p">Any region below this brightness value is considered a dark region. A dark region adjust weight is applied to increase/decrease the influence of this region. </p>
+<p class="p">Interpolation is used so that the darker the region is, the larger the adjustment.</p>
+<p class="p">Multi-zone enabled</p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e63 ">0 to 100</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e66 ">15 (for all 3 default zones)</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e57 ">dark_region_low_thres</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e60 "><p class="p">Any region below this brightness value has the largest dark region adjustment applied.</p>
+<p class="p">This value must be smaller than dark_region_high_thres. A lower value reduces the impact of the dark region feature.</p>
+<p class="p">Multi-zone enabled</p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e63 ">0 to 100</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e66 ">5 (for all 3 default zones)</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e57 ">dark_weight</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e60 "><p class="p">The adjustment weight applied to the stats region if it falls into the dark region category. </p>
+<p class="p">The parameter is used to adjust the bias table weight corresponding to the stats region. </p>
+<p class="p">A falue lower than 1.0 discards dark regions and helps to prevent saturation in certain cases.</p>
+<p class="p">Multi-zone enabled </p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e63 ">0.5 to 1.2</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e66 ">0.75 (for all 3 default zones)</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e57 ">min_tweight</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e60 ">Minimum threshold on the bias table weight. Any stats regions with weight values that are smaller than min_tweight do not have dark region effects applied. </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e63 ">0.0 to 1.0</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e66 ">0.0</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e57 ">max_dark_pct</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e60 ">The maximum percentage of all dark regions in the image frame to be adjusted. If the dark region percentage exceeds this number, the remaining dark regions do not have dark region effects applied. </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e63 ">0.0 to 1.0</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59986e66 ">0.25</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gpc1495660795131.html" title="AEC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AEC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

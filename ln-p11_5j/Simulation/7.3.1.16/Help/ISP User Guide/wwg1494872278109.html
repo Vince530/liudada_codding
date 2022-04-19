@@ -1,0 +1,98 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Due to the characteristics of optics (lens, color filters, etc.) and sensors used in the camera system, the native RGB data may not provide faithful color rendition to the human eye when the image is ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="CC tuning concepts" /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="DC.Relation" scheme="URI" content="rjm1494872145680.html" /><meta name="DC.Relation" scheme="URI" content="rjm1494872145680.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="cgp1464113077082" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>CC tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="cgp1464113077082">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">CC tuning concepts </h1>
+
+	<div class="body conbody">
+		<p class="p">Due to the characteristics of optics (lens, color filters, etc.) and
+			sensors used in the camera system, the native RGB data may not provide faithful color
+			rendition to the human eye when the image is presented on a particular output media.
+			Therefore, color correction is required.</p>
+
+		<p class="p">In modern digital camera designs, color correction is an essential part of the
+			color signal processing chain because it helps the system achieve higher color quality
+			and fidelity. Typically, a 3x3 matrix (in the case of a three-color camera) is used for
+			color correction. Color correction matrix (CCM) tuning minimizes the color reproduction
+			inaccuracies and improves color fidelity. </p>
+
+		<p class="p">The color correction parameters in the Color Correction module are in the form
+			of 3x3 matrices. </p>
+
+		<div class="fig fignone nonumber" id="cgp1464113077082__fig_szk_lg4_p1b"><span class="figcap">Figure : (L) color correction matrix in CC module window, (R) color
+				correction matrix values in Region Parameters</span>
+			
+			<img class="image" id="cgp1464113077082__image_t3g_ztc_q1b" src="avd1500694584131.png" />
+		</div>
+
+		<div class="p">Color correction optimization fine-tunes the CC matrices to boost color
+			saturation. The diagonal row of values from top left to bottom right are the color
+			saturation parameters for the lighting condition:<ul class="ul" id="cgp1464113077082__ul_zcw_1xn_1w">
+				<li class="li">Higher values mean higher color saturation </li>
+
+				<li class="li">Lower values mean lower color saturation</li>
+
+			</ul>
+</div>
+
+		<div class="p">You may want to set up CC matrices to tune for various lighting conditions. Do
+			this by defining Regions defined by triggers. Examples of conditions for which you might
+			need additional matrices include:<ul class="ul" id="cgp1464113077082__ul_jv3_kxn_1w">
+				<li class="li">Matrices for different color temperatures (TL84, A, H, D50 and
+					D65) </li>
+
+				<li class="li">Matrices for low-light and outdoor (based on AEC trigger)</li>
+
+				<li class="li">Matrices for LED flash (based on LED Index trigger)</li>
+
+			</ul>
+</div>
+
+		<div class="p">The final CC matrix is first interpolated between the matrices based on color
+			temperature. The calculated matrix is then interpolated according to AEC conditions. <ul class="ul" id="cgp1464113077082__ul_hgh_sxn_1w">
+				<li class="li">If the LED is off, the matrix is interpolated between the
+					low-light or outdoor matrix, and is controlled by AEC lighting conditions.</li>
+
+				<li class="li">If the LED is on, the matrix is interpolated between the LED
+					flash matrices, and is controlled by LED trigger points.</li>
+
+			</ul>
+</div>
+
+		<p class="p">Because there can be many CC matrices, you must first determine which matrix
+			to tune. This is done with AWB logs, and A-light or D65 trigger points. These trigger
+			points indicate which matrix dominates in current conditions. If the flash LED is on,
+			tune the LED flash CC matrix first.</p>
+
+		<p class="p">The AEC logs show gain and lux index information, and the low-light trigger
+			points determine whether the low-light CC matrix is being used. However, whether the
+			outdoor CC matrix is used is determined by the outdoor trigger points in gamma.  </p>
+
+		<p class="p">You can obtain the A-light and D65 trigger points, and low-light and outdoor
+			trigger points from the embedded 3A debug information in JPEG images. To confirm the
+			gain and lux index, use the AEC debug log and search for the keywords luxidx and
+			aec_process_pack_out. To find the color temperature, look in the AWB debug log message
+			for the keyword <span class="ph uicontrol">Bayer AWB CCT</span>. </p>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="rjm1494872145680.html">Tune CC</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="rjm1494872145680.html" title="Use the Color Correction (CC) module to minimize color reproduction inaccuracies and improve color fidelity.">Tune CC</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

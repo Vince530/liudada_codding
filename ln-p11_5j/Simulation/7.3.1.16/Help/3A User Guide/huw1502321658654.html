@@ -1,0 +1,294 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="AWB processing estimates the illuminant in a given scene and computes the RGB gain to adjust the white balance of the image. Even though AWB processing has modules such as weight vector and misleading ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Generalized scene analyzer concept" /><meta name="DC.Relation" scheme="URI" content="eha1508957872352.html" /><meta name="DC.Relation" scheme="URI" content="vtj1502321870786.html" /><meta name="DC.Relation" scheme="URI" content="brk1502321929895.html" /><meta name="DC.Relation" scheme="URI" content="xeo1502322048846.html" /><meta name="DC.Relation" scheme="URI" content="vtj1502321870786.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="huw1502321658654" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Generalized scene analyzer concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="huw1502321658654">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="eha1508957872352.html" title="AWB scene analyzers"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB scene analyzers</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Generalized scene analyzer concept</h1>
+
+	<div class="body conbody">
+		<p class="p">AWB processing estimates the illuminant in a given scene and computes the RGB gain to adjust
+			the white balance of the image. Even though AWB processing has modules such as weight
+			vector and misleading color zone, it is helpful to have an advanced module that can
+			adjust the decision based on real life scene detection in corner cases. The Generalized
+			Scene Analyzer module was designed for this need by providing tuning flexibility for
+			scene detection, confidence control, and decision adjustment. Each individual scene
+			analyzer (SA) analyzes a given scene based on configurable items, such as brightness of
+			scene or the stats count from the detection zone. Each SA is tuned to improve
+			performance in a given scene while avoiding side effects on other scenes.</p>
+
+		<p class="p">An SA is defined to detect a specific set of scene characteristics. For example, you can
+			define an SA to detect an "outdoor green scene" that is very bright (based on lux index)
+			and has a higher ratio of green stats (from green grass). If a scene is a good match to
+			the defined characteristics, the SA estimates the illuminant to be outdoor sunlight and
+			adjusts the AWB decision based on this assumption. The SA also computes a confidence
+			level that indicates how well the scene matches the defined characteristics. Then based
+			on the scene detection results and confidence level, the SA estimates the illuminant and
+			adjusts the AWB decision.</p>
+
+		<p class="p">The following diagram shows the SA process of collecting data in the
+			detection zones, analyzing that data to assign confidence levels, and merging the
+			decision points (weighted by confidence level) to determine a target decision point.</p>
+
+		<img class="image" id="huw1502321658654__image_e5l_c3p_v1b" src="tuu1502386988157.svg" />
+		<div class="p">As shown in the following illustration, the Chromatix tool user interface allows
+			you to do the following: <ul class="ul" id="huw1502321658654__ul_tfm_lnx_v1b">
+				<li class="li">Create an SA </li>
+
+				<li class="li">Tune the detection zones, confidence levels, and decision point adjustment </li>
+
+				<li class="li">Delete an SA</li>
+
+			</ul>
+.</div>
+
+		<div class="fig fignone nonumber" id="huw1502321658654__fig_umn_m3x_v1b"><span class="figcap">Figure : In the AWB tab, select or add an SA from the Scene Analyzer list on the bottom
+				left to open the editing window on the right. Select a detection zone, confidence
+				level, or a target point to open the editing pane specific to that item.</span>
+			
+			<img class="image" id="huw1502321658654__image_z14_43x_v1b" src="kij1502483380632.png" />
+		</div>
+
+		<div class="p">In addition to creating an SA from scratch, AWB initial tuning sets up
+			five predefined SAs that you can customize to your preferences: <ul class="ul" id="huw1502321658654__ul_sc4_n1p_v1b">
+				<li class="li">SA Outdoor Green</li>
+
+				<li class="li">SA Outdoor Blue Sky</li>
+
+				<li class="li">SA Bright Outdoor</li>
+
+				<li class="li">SA Night Outdoor</li>
+
+				<li class="li">SA Low CCT Single Outdoor</li>
+
+			</ul>
+</div>
+
+		<div class="section" id="huw1502321658654__section_N10036_N1000E_N10001"><h2 class="title sectiontitle">Example of planning a scene analyzer</h2>
+			
+			<p class="p">Creating an SA requires careful advanced planning. For example, consider the
+				image on the left as an example of an outdoor green scene that can be improved with
+				a scene analyzer. </p>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_lwp_bfp_v1b"><span class="figcap">Figure : (L) Image looks bluish (wall, green foliage, and grass); (R) preferred
+					tuned image</span>
+				
+				<img class="image" id="huw1502321658654__image_a1n_43p_v1b" src="bud1502388369452.png" />
+			</div>
+
+			<div class="p">To improve this scene, we can design "SA Outdoor Green" to adjust the AWB
+				decision point only when the scene has the following characteristics: <ul class="ul" id="huw1502321658654__ul_svp_sfp_v1b">
+					<li class="li">Is bright enough to be outdoor (based on lux index)</li>
+
+					<li class="li">Has enough green grass and foliage (stats count from green
+						detection zone)</li>
+
+					<li class="li">Has a small number of outdoor valid gray stats (stats count
+						from CCT range such as 4500k ~ 6500) </li>
+
+				</ul>
+ Creating an SA for these characteristics requires definition of the following
+				parameters: <ul class="ul" id="huw1502321658654__ul_vcc_wgp_v1b">
+					<li class="li">Detection groups for green stats and valid day stats </li>
+
+					<li class="li">Confidence level triggers for lux index, stats count ratio
+						of green detection zone, and stats count ratio of day gray zone</li>
+
+					<li class="li">Selection of a decision point adjustment method</li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="huw1502321658654__section_N10099_N1000F_N10001"><h2 class="title sectiontitle">Detection zone definition </h2>
+			
+			<p class="p">Each SA has at least one <span class="ph uicontrol">Detection Zone</span> and each zone is
+				assigned to an <span class="ph uicontrol">AWB Zone Group</span>. A zone group can be made up of
+				one or more detection zones. For example, two detection zones can be defined to
+				cover the green stats area and they can both be assigned to a single zone group.
+				Within an SA, there can be up to four zone groups. </p>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_nhv_3xv_x1b"><span class="figcap">Figure : (L) Using one zone for detecting green stats could include non-green
+					stats; (R) using two zones for detecting green stats can define detection zone
+					more precisely</span>
+				
+				<img class="image" id="huw1502321658654__image_yjf_zxv_x1b" src="aur1503084549839.svg" />
+			</div>
+
+			<p class="p">The following figure illustrates the <span class="ph uicontrol">Detection Zone
+					Type</span> (shape) options that can be used to define a detection zone. </p>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_lm5_w5p_v1b"><span class="figcap">Figure : Green lines: define detection Zone Group 0 to collect green
+					stats, consists of one triangle zone and one rectangle zone. Yellow lines:
+					define detection Zone Group 1 to collect day stats, consists of two triangle
+					zones. Brown lines: define detection Zone Group 2 to collect valid indoor stats,
+					consists of one zone in shape of CCT range.</span>
+				
+				<img class="image" id="huw1502321658654__image_g5z_v5p_v1b" src="aib1502394000230.svg" />
+			</div>
+
+			<p class="p">The SA enables a detection zone shape based on the triggers defined for the
+				detection zone. The following figure from the Chromatix tool shows the parameter
+				values for a rectangular detection zone named Yellowish Green Detect. The only
+				trigger available for any detection zone is Lux Index. The example shows two trigger
+				ranges: {0, 153} and {230, 354} in the first column. The core data to the right of
+				each trigger range represent the vertices that define the zone type/shape. </p>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_n2l_3jq_v1b"><span class="figcap">Figure : Sample definition of a rectangular detection zone enabled by
+					lux index value of the scene.</span>
+				
+				<img class="image" id="huw1502321658654__image_cbc_jjq_v1b" src="fev1502400602266.png" />
+			</div>
+
+			<p class="p">In this example, if the lux index of the scene is in the range {0, 153}, the
+				SA enables a detection zone defined by the core data (orange box). Since the zone
+				type is rectangle, the first two entries of the core data are the vertices that
+				define the rectangular detection zone. SA detection zone triggers follow the common
+				AWB trigger system that provides for interpolation of values that fall outside or
+				between the defined trigger ranges. </p>
+
+			<p class="p">The SA collects the stats count and average R/G, B/G ratio from each detection zone
+				group. The collected information is used as the trigger control type in confidence
+				level and decision point adjustment computations.</p>
+
+		</div>
+
+		<div class="section" id="huw1502321658654__section_N100F0_N1000F_N10001"><h2 class="title sectiontitle">Confidence level definition </h2>
+			
+			<p class="p">Each SA has at least one <span class="ph uicontrol">Confidence
+					Level</span> that indicates how well the scene matches the characteristics
+				of the SA. A confidence level of 1.0 means that a given scene matches the predefined
+				characteristics and the Decision Aggregator puts a higher weight on the target point
+				from this SA. </p>
+
+			<p class="p">A confidence level is defined by a configurable set of triggers.The following
+				figure illustrates how you can set confidence levels in one or two dimensions.</p>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_ot1_3sq_v1b"><span class="figcap">Figure : (L) Confidence level with 2 dimensions: lux index + detection zone group
+					1; (C) confidence level with 1 dimension: stats count ratio from detection zone
+					group; (R) confidence level with 1 dimension: valid stats count.</span>
+				
+				<img class="image" id="huw1502321658654__image_arh_3zq_v1b" src="nqx1502407115254.svg" />
+			</div>
+
+			<p class="p">The following example from the Chromatix tool shows the parameter values for a
+				confidence level defined with a 2-dimensional trigger. Trigger ranges set for the
+				first trigger (CCT) are visible in the first column. Trigger ranges for the second
+				trigger (Zone Group 0 Count Ratio) are visible in the second column. The core data
+				to the right of the trigger values represent the confidence level assigned to an
+				image that meets that criteria. SA confidence level triggers follow the common AWB
+				trigger system that provides for interpolation of values that fall outside or
+				between the defined trigger ranges. </p>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_qt1_3sq_v1b"><span class="figcap">Figure : Sample definition of a confidence level defined with two triggers (Lux
+					Idx and Zone Group 0 Count Ratio). Click an entry for the first level trigger to
+					view the associated confidence level plot.</span>
+				
+				<img class="image" id="huw1502321658654__image_yf5_3sq_v1b" src="fdg1502404559603.png" />
+			</div>
+
+			<p class="p">Set the trigger point and confidence level considering a consistent AWB decision and
+				smooth transition. You can control the confidence level more precisely by adding
+				more confidence levels and adding more trigger zones in a confidence level.</p>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_hsc_1qw_v1b"><span class="figcap">Figure : (L) If confidence level is set as on left, the AWB decision will change
+					often around lux index 280-290; (R) better to set confidence level as on right
+					with a larger transition zone.</span>
+				
+				<img class="image" id="huw1502321658654__image_zmf_pqw_v1b" src="twu1502475226943.svg" />
+			</div>
+
+			<p class="p">Within an SA, there can be up to six confidence levels. A final confidence
+				level is computed by merging all the confidence levels using a configurable
+				computation type (multiply, weighted average, minimum, maximum, type max). The final
+				confidence level indicates how much a given scene matches the SA characteristics. </p>
+
+		</div>
+
+		<div class="section" id="huw1502321658654__section_N10138_N1000F_N10001"><h2 class="title sectiontitle">Target point definition </h2>
+			
+			<p class="p">The target point is the expected AWB decision point if the given scene had a
+				final confidence level of 1.0. As part of the AWB process, the Decision Aggregator
+				merges the target points for all SAs and interpolates them based on their confidence
+				level. </p>
+
+			<div class="p">Each SA has a <span class="ph uicontrol">Target Point Type</span> that
+				indicates the format of the decision point adjustment. The format options are a
+				fixed point or one of several types of gain adjustment: <ul class="ul" id="huw1502321658654__ul_nx4_pvs_v1b">
+					<li class="li">Fixed target point</li>
+
+					<li class="li">Adjust gain to advance gray world decision point (GAAGW
+						Point)</li>
+
+					<li class="li">Adjust gain to R/G, B/G average ratio from Zone Group 0 (GA
+						Zone 0)</li>
+
+					<li class="li">Adjust gain to R/G, B/G average ratio from Zone Group 1 (GA
+						Zone 1)</li>
+
+					<li class="li">Adjust gain to R/G, B/G average ratio from Zone Group 2 (GA
+						Zone 2)</li>
+
+					<li class="li">Type MAX</li>
+
+				</ul>
+
+			</div>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_cj5_z2r_v1b"><span class="figcap">Figure : (L) When the target point type is Fixed Target Point, the
+					core data is the fixed target point. (R) When the target point type is Adjust
+					gain to Advanced Gray World point, the core data is the gain.</span>
+				
+				<img class="image" id="huw1502321658654__image_zqd_ghr_v1b" src="jqc1502411543558.svg" />
+			</div>
+
+			<p class="p">The decision point adjustment is defined by a configurable set of triggers.
+				The following example shows the parameter values for a fixed point type target
+				point. Trigger ranges set for the first trigger (Lux ID) are visible in the first
+				column. Trigger ranges for the second trigger (Zone Group 0 Count Ratio) are visible
+				in the second column. The core data to the right of the trigger values are the
+				coordinates of the fixed decision point or the Rg/Bg gain values assigned to an
+				image that meets the trigger criteria. SA target point triggers follow the common
+				AWB trigger system that provides for interpolation of values that fall outside or
+				between the defined trigger ranges. </p>
+
+			<div class="fig fignone nonumber" id="huw1502321658654__fig_ej5_z2r_v1b"><span class="figcap">Figure : Sample definition of a target point in the Chromatix
+					tool</span>
+				
+				<img class="image" id="huw1502321658654__image_pby_hhr_v1b" src="qzq1502410869879.png" />
+			</div>
+
+			<p class="p">For accurate and easy tuning, it is recommended to tune the decision point
+				adjustment for the scene that has 1.0 confidence level first, after disabling all
+				other SAs. In this condition, the decision point is used directly for the final AWB
+				decision point.</p>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="vtj1502321870786.html">Predefined generalized scene analyzers</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="brk1502321929895.html">Generalized scene analyzer parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="xeo1502322048846.html">Fine-tune generalized scene analyzers</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="vtj1502321870786.html" title="Predefined generalized scene analyzers">Predefined generalized scene analyzers</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="eha1508957872352.html" title="AWB scene analyzers"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB scene analyzers</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

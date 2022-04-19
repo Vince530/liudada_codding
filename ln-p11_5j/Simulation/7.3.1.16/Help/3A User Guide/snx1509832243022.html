@@ -1,0 +1,130 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The FA SA module estimates the skin CCT by mapping the face stats decision into the gray world decision. To estimate the skin CCT, the FA SA module converts the face stats decision into two gray world ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="FA SA estimation of skin CCT" /><meta name="abstract" content="The FA SA module estimates the skin CCT by mapping the face stats decision into the gray world decision." /><meta name="description" content="The FA SA module estimates the skin CCT by mapping the face stats decision into the gray world decision." /><meta name="DC.Relation" scheme="URI" content="jdc1509824323481.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="snx1509832243022" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>FA SA estimation of skin CCT</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="snx1509832243022">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="jdc1509824323481.html" title="Face-assist scene analyzer concept">Face-assist scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">FA SA estimation of skin CCT</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">The FA SA module estimates the skin CCT by mapping the face stats decision into the gray
+		world decision. </p>
+
+		<div class="p">To estimate the skin CCT, the FA SA module converts the face stats decision into
+			two gray world decisions by using the dark and light skin WB target points as detailed
+			in <cite class="cite">Example of computing the light skin gray world decision</cite>.
+			The module then uses the mapped light skin and dark skin decisions to estimate skin CCT,
+			by the original gray world reference point.<div class="fig fignone nonumber" id="snx1509832243022__fig_flp_xbs_tbb"><span class="figcap">Figure : Convert face stats decision into gray world decision by
+					applying dark and light skin WB target </span>
+				
+				<br /><img class="image" id="snx1509832243022__image_v5g_4cs_tbb" src="trd1509835228855.svg" /><br />
+			</div>
+</div>
+
+		<div class="section" id="snx1509832243022__section_jq5_sxr_tbb"><h2 class="title sectiontitle">Example of computing the light skin gray world decision</h2>
+			
+			<div class="p">The following steps show how the module computes the light skin gray world
+				decision. The same computation is repeated with dark skin data to compute the dark
+				skin gray world decision.<div class="note note" id="snx1509832243022__note_N10054_N10050_N10046_N10014_N10001"><span class="notetitle">Note:</span> The computation makes the assumption that a correct WB is to
+					make R = G = B, so the regular gray WB target point is 1.0 for r/g and b/g
+					ratio.</div>
+</div>
+
+			<ol class="ol" id="snx1509832243022__ol_cv2_yds_tbb">
+				<li class="li">Measures the r/g and b/g ratio of MCC block 22 (gray) under D50.</li>
+
+				<li class="li">Calculates the AWB r gain and b gain using the following formulas: <br /><img class="image" id="snx1509832243022__image_onw_y2s_tbb" src="ecd1509836317690.png" /><br /></li>
+
+				<li class="li">Measures the r/g and b/g ratio of MCC block 2 (light skin) under D50.</li>
+
+				<li class="li">Calculates the light skin WB target point of r gain and b gain using the
+					following formulas:<br /><img class="image" id="snx1509832243022__image_edg_ffs_tbb" src="xcq1509836316646.png" /><br /><div class="note note" id="snx1509832243022__note_N1007C_N10072_N10059_N10046_N10014_N10001"><span class="notetitle">Note:</span> Fine
+						tuning parameters are available to add flexibility for the user to adjust
+						the target points computed in the prior step. See the explanation below in
+							<em class="ph i">Sample fine tuning of light/dark skin white balance
+							target</em>.</div>
+</li>
+
+				<li class="li">Calculates the light skin gray world decision using the following formulas:
+						<br /><img class="image" id="snx1509832243022__image_zkt_nz2_bcb" src="bgo1509836313779.png" /><br /></li>
+
+				<li class="li">The FA SA module repeats this procedure with dark skin data (MCC block 1) to
+					compute the dark skin gray world decision.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="snx1509832243022__section_zxt_5xr_tbb"><h2 class="title sectiontitle">Fine tune light/dark skin white balance target points</h2>
+			
+			<p class="p">The light/dark skin WB target points computed by the FA SA module are
+				a base value that covers most test cases, but the light/dark skin WB target can be
+				fine tuned if needed. </p>
+
+			<p class="p">The FA SA module includes two submodules that provide flexibility for fine
+				tuning the light/dark skin target points. Tthe<span class="ph uicontrol"> Light Skin
+					WB Target</span> submodule and the <span class="ph uicontrol">Dark Skin WB
+					Target</span> submodule  provide a user-defined two-dimensional trigger
+				that allows the user to adjust the target point based on lux index and CCT as shown
+				in the following diagram. <br /><img class="image" id="snx1509832243022__image_b2c_zhs_tbb" src="zkc1509837724837.svg" /><br /></p>
+
+		</div>
+
+		<div class="section" id="snx1509832243022__section_ltr_lyq_cdb"><h2 class="title sectiontitle">Sample fine tuning of light skin WB target point of R gain and B
+				gain</h2>
+			
+			<div class="p">The target value computed in Step 4 is a base value and is adequate for most
+				cases. If the computed light skin target point needs adjustment, use the <span class="ph uicontrol">Light Skin WB Target</span> module to assign a different
+				target point value for a user-defined lux index range or CCT range. The image below
+				is an example of fine tuning the light skin WB target point. The example image
+				defines the following conditions:<ul class="ul" id="snx1509832243022__ul_ggk_wyq_cdb">
+					<li class="li">Regardless of the Lux Index (range 0-999), when CCT is in
+						the range 0-1000, the light skin target (red, blue) is (1.0, 1.0).</li>
+
+					<li class="li">Regardless of the Lux Index (range 0-999), when CCT is in
+						the range 1001-10000, the light skin target (red, blue) is (1.2, 1.2).</li>
+
+				</ul>
+</div>
+
+			<br /><img class="image" id="snx1509832243022__image_gzv_4yq_cdb" src="qwh1520630380466.png" /><br />
+			<p class="p">Similarly, adjust the dark skin target point with the<span class="ph uicontrol"> Dark Skin WB
+					Target</span> module.</p>
+
+		</div>
+
+		<div class="section" id="snx1509832243022__section_eph_nts_fdb"><h2 class="title sectiontitle">Eliminating extreme stats from the BG average ratio</h2>
+			
+			<div class="p">Very dark stats and very bright (saturated) stats, easily mislead BG
+				stats information such as R/G and B/G stat average values. Very dark stats can be
+				contaminated by noise. Highly saturated non-gray stats can be treated as gray stats
+				and act as misleading color stats. So, like the stat screening process, face-assist
+				AWB excludes the dark and saturated stats to prevent them from contributing to a
+				final BG stat. The following parameters, found in the <span class="ph uicontrol">Dark/Saturated
+					Pixel Threshold</span> AWB module, enable the user to refine the
+				dark/saturated stats screening in a face-dominated scene.<ul class="ul" id="snx1509832243022__ul_yjr_yts_fdb">
+					<li class="li">Dark Pixel Threshold: Trigger (Lux index range)</li>
+
+					<li class="li">Dark Pixel Threshold: Data (Threshold)</li>
+
+					<li class="li">Saturated Pixel Threshold: Trigger (Lux index range)</li>
+
+					<li class="li">Saturated Pixel Threshold: Data (Threshold)</li>
+
+				</ul>
+</div>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

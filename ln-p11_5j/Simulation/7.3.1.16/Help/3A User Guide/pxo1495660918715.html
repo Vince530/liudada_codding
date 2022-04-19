@@ -1,0 +1,96 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="High dynamic range (HDR) AEC will not be effective in a low contrast scenes. The first step toward testing HDR AEC is to build a simple HDR scene. Use a lightbooth with an outdoor standard-illuminant, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune high dynamic range" /><meta name="abstract" content="High dynamic range (HDR) AEC will not be effective in a low contrast scenes. The first step toward testing HDR AEC is to build a simple HDR scene." /><meta name="description" content="High dynamic range (HDR) AEC will not be effective in a low contrast scenes. The first step toward testing HDR AEC is to build a simple HDR scene." /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qpx1476892332716" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune high dynamic range</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qpx1476892332716">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune high dynamic range</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">High dynamic range (HDR) AEC will not be effective in a low contrast
+		scenes. The first step toward testing HDR AEC is to build a simple HDR scene.</p>
+
+		<ol><li class="li step" id="qpx1476892332716__step_N10018_N10015_N10012_N10001">
+				<span class="ph cmd">Use a lightbooth with an outdoor standard-illuminant, such as D50 or D65.</span>
+			</li>
+<li class="li step" id="qpx1476892332716__step_N10021_N10015_N10012_N10001">
+				<span class="ph cmd">Place an MCC chart upsidedown against the light box wall.</span>
+			</li>
+<li class="li step" id="qpx1476892332716__step_N1002A_N10015_N10012_N10001">
+				<span class="ph cmd">Place another MCC chart upsidedown approximately two feet in front of the
+						lightbooth<br /><img class="image" id="qpx1476892332716__image_whj_rjc_rx" src="rlb1495660828110.png" /><br /></span>
+			</li>
+<li class="li step" id="qpx1476892332716__step_N10038_N10015_N10012_N10001">
+				<span class="ph cmd">Place the test device one foot away from the second MCC chart and secure it on
+					a tripod to ensure it does not move.</span>
+			</li>
+<li class="li step" id="qpx1476892332716__step_N10041_N10015_N10012_N10001">
+				<span class="ph cmd">Use the viewfinder to adjust the alignment of the MCC chart so that the gray
+					patches of both charts are in the center of the image.</span>
+			</li>
+</ol><p class="li stepsection">To capture images and analysis:</p><ol start="6"><li class="li step" id="qpx1476892332716__step_N1004E_N10015_N10012_N10001">
+				<span class="ph cmd">Capture one image with both HDR and ADRC disabled.</span>
+			</li>
+<li class="li step" id="qpx1476892332716__step_N10057_N10015_N10012_N10001">
+				<span class="ph cmd">Without moving the test device, capture a second image with HDR enabled.</span>
+			</li>
+<li class="li step" id="qpx1476892332716__step_N10060_N10015_N10012_N10001">
+				<span class="ph cmd">Open Chromatix and select <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Open Image</span></span>.</span>
+				<ol type="a" class="ol substeps" id="qpx1476892332716__substeps_p4t_lfd_rx">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Select the image where HDR was enabled and click
+								<span class="ph uicontrol">Open</span>.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">In the <span class="ph uicontrol">3A Debug</span>
+							window, click the <span class="ph uicontrol">Data</span> tab.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Expand the <span class="ph uicontrol">AEC Debug
+								Info</span> group and select <span class="ph uicontrol">HDR
+								Gains Information</span>.</span>
+						<div class="itemgroup info">This will show the short and long gains and line
+							counts for HDR when it is enabled.</div>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step" id="qpx1476892332716__step_N100AA_N10015_N10012_N10001">
+				<span class="ph cmd">Open the image where HDR and ADRC were disabled and retrieve the line count and
+					gain information.</span>
+				<ol type="a" class="ol substeps" id="qpx1476892332716__substeps_zrf_xfd_rx">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">In the <span class="ph uicontrol">3A Debug</span> window, click the
+								<span class="ph uicontrol">Data</span> tab</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Expand the <span class="ph uicontrol">AEC Debug Info</span> group and select
+								<span class="ph uicontrol">HDR Gains Information</span>.</span>
+						<div class="itemgroup info">This will show the short and long gains and line counts for HDR when
+							it is disabled.</div>
+						<div class="itemgroup info">The gain and line count when HDR is disabled should be similar to the
+							gain and line count of the long real gain and long line count of the
+							image where HDR was enabled, assuming all other parameters are
+							identical. To make HDR more effective, it is preferable to increase the
+							image brightness so that HDR can kick in and correct for saturation. For
+							that purpose, see <cite class="cite">Tune dynamic metering for bright
+								region</cite> to allow more saturated stats.</div>
+					</li>
+
+				</ol>
+
+			</li>
+</ol>
+	</div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

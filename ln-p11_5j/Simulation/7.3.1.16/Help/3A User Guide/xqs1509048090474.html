@@ -1,0 +1,132 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Use this procedure to provide the main flash MWB gains and interpolation information required to combine multiple AWB decisions into a final decision. Refer to Retrieve MWB target points for main ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune LED flash decision" /><meta name="abstract" content="Use this procedure to provide the main flash MWB gains and interpolation information required to combine multiple AWB decisions into a final decision." /><meta name="description" content="Use this procedure to provide the main flash MWB gains and interpolation information required to combine multiple AWB decisions into a final decision." /><meta name="DC.Relation" scheme="URI" content="qej1508358564206.html" /><meta name="DC.Relation" scheme="URI" content="cnc1522035567644.html" /><meta name="DC.Relation" scheme="URI" content="out1495661076354.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xqs1509048090474" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune LED flash decision</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xqs1509048090474">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gkr1508957723817.html" title="AWB flash">AWB flash</a> / <a class="navheader_parent_path" href="qej1508358564206.html" title="LED flash concept">LED flash concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qej1508358564206.html" title="LED flash concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LED flash concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune LED flash decision</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Use this procedure to provide the main flash MWB gains and
+		interpolation information required to combine multiple AWB decisions into a final
+		decision.</p>
+
+		<div class="section prereq p" id="xqs1509048090474__prereq_wd2_24f_hdb">Refer to <cite class="cite">Retrieve MWB target points
+				for main flash</cite>.</div>
+
+		<div class="section context" id="xqs1509048090474__context_N10018_N10011_N10001"></div>
+
+		<ol class="ol steps" id="xqs1509048090474__steps_tpg_2wd_rbb"><li class="li step stepexpand" id="xqs1509048090474__step_N1001F_N1001C_N10011_N10001">
+				<span class="ph cmd">In the left pane, click the <span class="ph uicontrol">AWB</span> tab, then click <span class="ph uicontrol">LED flash
+					</span> in the list.</span>
+			</li>
+<li class="li step stepexpand" id="xqs1509048090474__step_N10034_N1001C_N1000F_N10001">
+				<span class="ph cmd">In the LED Flash window, click <span class="ph uicontrol">Flash
+						Decision</span> in the Tuning Module panel.</span>
+			</li>
+<li class="li step stepexpand" id="xqs1509048090474__step_N1003F_N10016_N1000E_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Flash WB Point</span>
+					panel, select the appropriate <span class="ph uicontrol">LED Type</span>.
+						<br /><img class="image" id="xqs1509048090474__image_pcb_d1k_hdb" src="cll1522095652520.png" /><br /></span>
+				<div class="itemgroup info">
+					<div class="note note" id="xqs1509048090474__note_N10060_N1005D_N1004A_N10021_N1000F_N10001"><span class="notetitle">Note:</span> If applying a
+						calibration factor for single LED, select 'DualLED' as the <span class="ph uicontrol">LED Type</span>.</div>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="xqs1509048090474__step_N1002B_N1001C_N10011_N10001">
+				<span class="ph cmd">For single LED (without calibration factor), set up the
+						<span class="ph uicontrol">Flash WB Point</span> by entering the MAIN
+					FLASH gains in the <span class="ph uicontrol">RG:</span> and <span class="ph uicontrol">BG:</span> fields. </span>
+			</li>
+<li class="li step stepexpand" id="xqs1509048090474__step_N10064_N10016_N1000E_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">LED WB Point
+						Interpolation</span> panel, do the following to specify the ratio to
+					use for interpolating the ambient AWB decision and the MWB decision with respect
+					to K2:</span>
+				<ol type="a" class="ol substeps" id="xqs1509048090474__substeps_n53_zwd_rbb">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">In the <span class="ph uicontrol">K2</span>
+							column, double-click the {0, 0} entry to open the edit dialog. Update
+							the MAIN FLASH K2 start and end values and click outside the box to save
+							the change. <br /><img class="image" id="xqs1509048090474__image_y5n_zzj_hdb" src="izb1522095622411.svg" /><br /></span>
+						<div class="itemgroup info">Use the information gathered from the AWB log to
+							determine how to fine-tune the K2 triggers. Refer to<cite class="cite"> Retrieve K2 values for pre-flash and main
+								flash</cite>.</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">In the <span class="ph uicontrol">Data</span>
+							column, double-click the (0) entry to open the edit dialog. Update the
+							LED point interpolation ratio value for this trigger zone and click
+							outside the box to save the change.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">To add more triggers, use the <span class="ph uicontrol">Add above</span> or <span class="ph uicontrol">Add below</span> buttons to add a new blank flash sensitivity
+							trigger row. Repeat the previous two steps to set the trigger range and
+							associated interpolation ratio.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="xqs1509048090474__step_N10056_N1001C_N1000F_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Pre-flash LED WB Interpolation</span>
+					panel, do the following to specify the ratio to use for interpolating the
+					pre-flash AWB decision with respect to lux index and valid stats count
+					ratio:</span>
+				<ol type="a" class="ol substeps" id="xqs1509048090474__substeps_omy_4xd_rbb">
+					<li class="li substep">
+						<span class="ph cmd">In the 1st Trigger column, double-click the {0, 0}
+							entry to open the edit dialog. Update the lux index start and end values
+							and click outside the box to save the change. </span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">In the 2nd Trigger column, double-click the {0, 0}
+							entry to open the edit dialog. Update the valid stats count ratio start
+							and end values and click outside the box to save the change. </span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">In the data column, double-click the (0) entry to open
+							the edit dialog. Update the pre-flash LED interpolation ratio value for
+							this trigger zone and click outside the box to save the change.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">To add more triggers, use the <span class="ph uicontrol">Add above</span> or <span class="ph uicontrol">Add below</span> buttons to add a new blank
+							lux index or stats count ratio trigger row. Repeat the previous two
+							steps to set the trigger range and associated interpolation ratio.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="xqs1509048090474__step_N100CF_N10018_N1000F_N10001">
+				<span class="ph cmd">To adjust a trigger range or data value, double-click the
+					appropriate entry to open the edit dialog. Update the value and click outside
+					the box to save the change.</span>
+			</li>
+<li class="li step stepexpand" id="xqs1509048090474__step_N100D8_N10018_N1000F_N10001">
+				<span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span>.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="cnc1522035567644.html" title="Retrieve flash sensitivity (K2) values to use for setting triggers. Retrieve MWB target points required for tuning AWB flash modules.">Retrieve K2 and MWB target points for pre-flash and main flash</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="out1495661076354.html" title="Flash is sometimes needed for low-light settings or as a flash-fill to remove harsh shadows.">Tune flux and color ratios</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qej1508358564206.html" title="LED flash concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LED flash concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

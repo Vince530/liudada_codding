@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<QLLCalcFrameConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="QLL_calc_frame_config.xsd" xsi:version="titan_1.0.00">
+  <log_flags></log_flags>
+  <TFI>
+    <zsl_tfi_buffer_path></zsl_tfi_buffer_path>
+    <zsl_tfi_buffer_width></zsl_tfi_buffer_width>
+    <zsl_tfi_buffer_height></zsl_tfi_buffer_height>
+    <zsl_tfi_buffer_stride></zsl_tfi_buffer_stride>
+  </TFI>
+  <InputFiles>
+    <gyro_csv_in_path></gyro_csv_in_path>
+    <aec_csv_in_path></aec_csv_in_path>
+    <meta_csv_in_path></meta_csv_in_path>
+    <bhist_csv_in_path></bhist_csv_in_path>
+    <tfi_path></tfi_path>
+  </InputFiles>
+  <Initialize>
+    <max_frame_buffer_size></max_frame_buffer_size>
+    <max_sensor_analog_gain></max_sensor_analog_gain>
+    <preview_mode></preview_mode>
+    <camera_position>0</camera_position>
+  </Initialize>
+</QLLCalcFrameConfig>

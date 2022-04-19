@@ -1,0 +1,62 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Face recognition allows the camera sensor to detect the presence of faces in an image. Luma metering weight is modified between the face UI detection region and background to ensure that facial colors ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune face AEC" /><meta name="DC.Relation" scheme="URI" content="lqj1495660918778.html" /><meta name="DC.Relation" scheme="URI" content="jde1502311987462.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="fzn1474864612956" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune face AEC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="fzn1474864612956">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune face AEC</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="fzn1474864612956__context_N10011_N1000E_N10001">Face recognition allows the camera sensor to detect the presence of faces in an
+         image. Luma metering weight is modified between the face UI detection region and background
+         to ensure that facial colors are correct and natural. </div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="fzn1474864612956__step_N10019_N10016_N1000E_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+               navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Face</span> &gt; <span class="ph uicontrol">Face Mtr</span></span>.</span>
+         </li>
+<li class="li step stepexpand" id="fzn1474864612956__step_N10044_N1001D_N10014_N10001">
+            <span class="ph cmd">To enable Face ROI, select the <span class="ph uicontrol">Value</span> check box next to
+                  <span class="ph uicontrol">Enable Face ROI</span>.</span>
+         </li>
+<li class="li step stepexpand" id="fzn1474864612956__step_N1004C_N10016_N1000E_N10001">
+            <span class="ph cmd">Next to <span class="ph uicontrol">Face Size</span>, click <img class="image" id="fzn1474864612956__image_kqv_1p1_v1b" src="yir1498763075953.png" /> and set the applicable values
+               to indicate the face area size. The <span class="ph uicontrol">Start</span> value sets the
+               minimum size, while the <span class="ph uicontrol">End</span> value sets the maximum size.</span>
+         </li>
+<li class="li step stepexpand" id="fzn1474864612956__step_N10072_N1001D_N10014_N10001">
+            <span class="ph cmd">Next to <span class="ph uicontrol">Face Weight</span>, click <img class="image" id="fzn1474864612956__image_dfr_1q1_v1b" src="yir1498763075953.png" /> and set the applicable values
+               to indicate the level of brightness metering that is based on face areas. The
+                  <span class="ph uicontrol">Start</span> value sets the minimum weight, while the
+                  <span class="ph uicontrol">End</span> value sets the maximum weight.</span>
+         </li>
+<li class="li step stepexpand" id="fzn1474864612956__step_N10086_N10016_N1000E_N10001">
+            <span class="ph cmd">Verify face AEC tuning by capturing a set of 50% FOV images with
+                  <span class="ph uicontrol">Face ROI</span> enabled and compare to the same images with
+                  <span class="ph uicontrol">Face ROI</span> disabled..</span>
+            <div class="itemgroup info">
+               <p class="p">Compare the difference in brightness. There should be a difference
+                  in brightness between the two images such that the skin tone in the image with
+                     <span class="ph uicontrol">Face ROI</span> enabled is optimized. The left
+                  image is without face AEC and the right image is with face AEC.<br /><img class="image" id="fzn1474864612956__image_gx1_rhz_yw" src="pvt1495661119910.png" /><br /></p>
+
+            </div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="jde1502311987462.html">Dominant face AEC</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

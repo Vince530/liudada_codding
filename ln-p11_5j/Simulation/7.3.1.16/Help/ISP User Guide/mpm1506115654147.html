@@ -1,0 +1,216 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="A defective pixel has a response that is noticeably different from that of the other pixels in the array under dark or uniformly illuminated conditions. Defective pixels may show up on an image as ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Pixel correction tuning concepts" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="gav1504650254694.html" /><meta name="DC.Relation" scheme="URI" content="hwk1506115822207.html" /><meta name="DC.Relation" scheme="URI" content="sdf1506116094086.html" /><meta name="DC.Relation" scheme="URI" content="wlj1506124447051.html" /><meta name="DC.Relation" scheme="URI" content="hwk1506115822207.html" /><meta name="DC.Relation" scheme="URI" content="wlj1506124447051.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="mpm1506115654147" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Pixel correction tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="mpm1506115654147">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Pixel correction tuning concepts </h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">A defective pixel has a response that is noticeably different from that of the
+			other pixels in the array under dark or uniformly illuminated conditions. Defective
+			pixels may show up on an image as bright points (hot pixels) or as dark points (cold
+			pixels). The pixel correction module includes processing for sensors with or without PD
+			pixels and for both Bayer and zzHDR patterns. </p>
+
+		<div class="fig fignone nonumber" id="mpm1506115654147__fig_mhm_1gp_hbb"><span class="figcap">Figure : (L) Bad pixel correction off; (R) Bad pixel correction on,
+				defective pixels corrected</span>
+			
+			<br /><img class="image" id="mpm1506115654147__image_m23_ghp_hbb" src="ryf1506094423012.png" /><br />
+		</div>
+
+		<p class="p">Defective pixels can be caused by the following: </p>
+
+		<ul class="ul" id="mpm1506115654147__ul_2A63ED6975B541AE978FECDF58CEA348">
+			<li class="li" id="mpm1506115654147__li_6A7165F7A3204708A2D3BD10538CDC91">Imperfections in the
+				semiconductor processing of the sensor module (CMOS or CCD) – During manufacturing,
+				bad pixels or clusters can be caused by leakage to or from the well, abnormal pixel
+				sensitivity, or resistance losses. </li>
+
+			<li class="li" id="mpm1506115654147__li_6FF0F7DD54AD4ED393CCA87215C6852F">Dust introduced when lens
+				is mounted – A dust particle can fall on top of the sensor when the lens is mounted. </li>
+
+			<li class="li" id="mpm1506115654147__li_47E5A0E671D948E9B0929F60BCDC2F82">Age of the sensor module –
+				Over time, a sensor module accumulates more bad pixels. </li>
+
+		</ul>
+
+		<div class="section" id="mpm1506115654147__section_N10098_N10015_N10001"><h2 class="title sectiontitle">PD pixel correction concepts</h2>
+			
+			<p class="p">A CMOS sensor can have phase pixels to speed up autofocus. One
+				difference between phase pixels and the normal pixels in a sensor is that the
+				location of the phase pixels is known. The PDPC module takes advantage of this
+				location information to correct defective PD pixels that occur in those locations.
+				Camera software detects phase pixel information in the sensor or driver information
+				file and passes it to the simulator. Currently, the PDPC module only corrects bad PD
+				pixels if they are on a red or blue pixel. Green pixels are not corrected at this
+				time.</p>
+
+			<p class="p">Because the PDPC module knows the location of a defective phase
+				pixel, it has all the information it needs to make a correction based on the
+				neighboring pixels. Thus, there is no parameter tuning required for PD pixel
+				correction. The PD pixel correction supports sensors that use the Bayer and zzHDR
+				pattern. </p>
+
+			<div class="fig fignone nonumber" id="mpm1506115654147__fig_qj3_w5l_dbb"><span class="figcap">Figure : (L) Original image, PDPC off, defective PD pixels on blue
+					locations; (R) PDPC on, defective PD pixels corrected</span>
+				
+				<br /><img class="image" id="mpm1506115654147__image_bzt_45l_dbb" src="wci1504817582509.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="mpm1506115654147__section_N100BE_N10015_N10001"><h2 class="title sectiontitle">Non-PD pixel correction concepts</h2>
+			
+			<p class="p">The pixel correction module includes processing to correct bad pixels for a
+				non-PD pixel sensor project that uses either the Bayer or zzHDR pattern. The
+				following table identifies the types of single and couplet pixel defects that can be
+				corrrected in the flat region.</p>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="mpm1506115654147__table_qqn_1hr_hbb" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Flat region defects supported by bad pixel correction</span></caption><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d17090e93">Type of defect</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d17090e96">Example</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d17090e99">Supported</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e93 ">Single</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e96 "><img class="image" id="mpm1506115654147__image_nk2_5hr_hbb" src="adn1506118672736.png" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e99 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e93 ">Same channel couplet</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e96 "><img class="image" id="mpm1506115654147__image_sbv_5hr_hbb" src="xmq1506118672159.png" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e99 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e93 ">Cross channel couplet</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e96 "><img class="image" id="mpm1506115654147__image_n3j_vhr_hbb" src="egp1506118670209.png" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e99 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e93 ">Cluster ≥ 3</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e96 "><img class="image" id="mpm1506115654147__image_shw_vhr_hbb" src="ivl1506118671566.png" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d17090e99 ">No</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			<div class="p">To correct hot pixels, the module evaluates the value of the bad
+				pixel with the formula: (Fmax * MP) + Offset <ul class="ul" id="mpm1506115654147__ul_mwv_glj_hbb">
+					<li class="li">MP is the maximum pixel value from among the neighboring
+						pixels of the same channel</li>
+
+					<li class="li">Fmax is a user-defined threshold factor that specifies which
+						pixels to correct</li>
+
+					<li class="li">Offset is a user-defined adjustment value that further
+						refines the threshold for a bad pixel or pixel couplet</li>
+
+					<li class="li">If the value of the bad pixel is greater than the result,
+						replace the bad pixel with the value of MP. If the bad pixel value is less
+						than or equal to the result, do not change the bad pixel value.</li>
+
+				</ul>
+</div>
+
+			<p class="p">The following figure is a sample plot of the hot pixel equation. <br /><img class="image" id="mpm1506115654147__image_yw1_1q4_ndb" src="ftn1524003930205.svg" /><br /></p>
+
+			<div class="p">Similarly, to correct cold pixels, the module evaluates the value of
+				the bad pixel with the formula: (Fmax * mP) + Offset <ul class="ul" id="mpm1506115654147__ul_jrf_24j_hbb">
+					<li class="li">mP is the minimum pixel value from among the neighboring
+						pixels of the same channel</li>
+
+					<li class="li">Fmin is a user-defined threshold factor that specifies which
+						pixels to correct</li>
+
+					<li class="li">Offset is a user-defined adjustment value that further
+						refines the threshold for a bad pixel</li>
+
+					<li class="li">If the value of the bad pixel is less than the result,
+						replace the bad pixel with the value of mP. If the bad pixel value is
+						greater than or equal to the result, do not change the bad pixel value.</li>
+
+				</ul>
+</div>
+
+			<p class="p">The following figure is a sample plot of the cold pixel equation. <br /><img class="image" id="mpm1506115654147__image_zrd_cq4_ndb" src="uga1524003933341.svg" /><br /></p>
+
+		</div>
+
+		<div class="section" id="mpm1506115654147__section_N10038_N10015_N10001"><h2 class="title sectiontitle">Coordinating pixel correction with other BPS modules</h2>
+			
+			<div class="p">Keep the following considerations in mind when tuning BPS modules:
+					<ul class="ul" id="mpm1506115654147__ul_g2z_fwl_dbb">
+					<li class="li">If the sensor used for the project is a PD sensor, PD pixel correction
+						must be enabled</li>
+
+					<li class="li">The pixel correction module does not rely on other modules
+						to be tuned, but if the pixel correction module is not properly tuned, all
+						modules that follow it in the pipeline are impacted </li>
+
+					<li class="li">For pixel correction tuning, only enable the basic modules
+						that are needed to result in final YUV images </li>
+
+					<li class="li">Consider disabling bad pixel correction module while tuning other modules to
+						avoid any negative impact of untuned pixel correction parameters.</li>
+
+				</ul>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="hwk1506115822207.html">Pixel correction parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="sdf1506116094086.html">Examples of pixel correction parameter effects</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="wlj1506124447051.html">Tune pixel correction</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="hwk1506115822207.html" title="Pixel correction parameters">Pixel correction parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="wlj1506124447051.html" title="Tune pixel correction">Tune pixel correction</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

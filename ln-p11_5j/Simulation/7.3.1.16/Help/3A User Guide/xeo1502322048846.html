@@ -1,0 +1,263 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Prerequisite : Before performing any fine-tuning, be sure to run the AWB initial tuning procedure to generate initial parameter values and predefined scene analyzers. Use this procedure to create a ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Fine-tune generalized scene analyzers" /><meta name="DC.Relation" scheme="URI" content="huw1502321658654.html" /><meta name="DC.Relation" scheme="URI" content="oos1501884619125.html" /><meta name="DC.Relation" scheme="URI" content="brk1502321929895.html" /><meta name="DC.Relation" scheme="URI" content="vtj1502321870786.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xeo1502322048846" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Fine-tune generalized scene analyzers</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xeo1502322048846">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="huw1502321658654.html" title="Generalized scene analyzer concept">Generalized scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="huw1502321658654.html" title="Generalized scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Generalized scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Fine-tune generalized scene analyzers</h1>
+
+	<div class="body conbody">
+		<p class="p"><strong class="ph b">Prerequisite</strong>: Before performing any fine-tuning, be sure
+			to run the AWB initial tuning procedure to generate initial parameter values and
+			predefined scene analyzers.</p>
+
+		<p class="p">Use this procedure to create a new scene analyzer or to customize any of the
+			predefined scene analyzers.</p>
+
+		<div class="section" id="xeo1502322048846__section_N10020_N1000F_N10001x"><h2 class="title sectiontitle">Add a generalized scene analyzer</h2>
+			
+			<ol class="ol" id="xeo1502322048846__ol_ozc_mjw_v1b">
+				<li class="li">Before adding a new SA, review the predefined SAs to determine if one can be
+					tuned to improve your test scene. It is recommended not to add too many SAs. </li>
+
+				<li class="li">If an available SA is not helpful for your test scene, clearly design the
+					concept of the SA you want to add. Refer to the predefined SAs for
+					examples.</li>
+
+				<li class="li">Click the <span class="ph uicontrol">AWB</span> tab and
+					click the <span class="ph uicontrol">List View</span> tab.</li>
+
+				<li class="li">Select any option in the <span class="ph uicontrol">Scene
+						Analyzer</span> section, then click the green plus sign to add a new
+					SA. An "unnamed" instance of an SA appears in the Scene Analyzer section. The
+					instance is initialized with the following data structure: 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="xeo1502322048846__table_wq2_cmw_v1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:20%" /><col style="width:20%" /><col style="width:20%" /><col style="width:20%" /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d68618e71">Module</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d68618e74">Trigger level</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d68618e77">Trigger control type</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d68618e80">Trigger zone</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d68618e83">Notes</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e71 ">Detection zone</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e74 ">1 level trigger</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e77 ">Lux index</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e80 ">1 trigger zone</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e83 ">Group ID: 0, Zone type: rectangle</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e71 ">Confidence level</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e74 ">2 level trigger</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e77 ">Lux index for both levels</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e80 ">1 trigger zone for each level</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e83 ">Confidence comute type: multiply,
+										Confidence weight: 1.0</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e71 ">Target point</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e74 ">2 level trigger</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e77 ">Lux index for both levels</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e80 ">1 trigger zone for each level</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d68618e83 ">Target point type: Fixed target
+										point</td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+</li>
+
+				<li class="li">Add a descriptive name for the SA in the <span class="ph uicontrol">SA
+						Description</span> field. This name replaces "unnamed" in the SA
+					selection list.</li>
+
+				<li class="li">Enter a unique identification number in the <span class="ph uicontrol">SA SubID</span> field. </li>
+
+				<li class="li">If needed, modify the <span class="ph uicontrol">SA
+						Enable</span> flag to enable (1) or disable (0) the SA. </li>
+
+				<li class="li">If needed, modify the <span class="ph uicontrol">SA
+						Weight</span> field. <div class="note note" id="xeo1502322048846__note_N10104_N100FB_N1002A_N10020_N1000F_N10001"><span class="notetitle">Note:</span> This value is used to weight this SA when
+						the Decision Aggregator computes a weighted average among all SA decision
+						points.</div>
+</li>
+
+				<li class="li">Tune the default structure for the detection zones, confidence
+					level, and target point to match the planned design of the SA. Refer to the
+					sections <em class="ph i">Tune or add detection zones</em>, <em class="ph i">Tune or add confidence
+						levels</em>, and <em class="ph i">Tune target point</em>.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="xeo1502322048846__section_N10020_N1000F_N10001"><h2 class="title sectiontitle">Tune or add detection zones</h2>
+			
+			<ol class="ol" id="xeo1502322048846__ol_fp1_kwh_v1b">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Scene Analyzer</span>
+					section, select the SA you want to modify.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Detection Zones</span>
+					section, select the zone you want to modify or click the green plus sign to add
+					a new detection zone. <br /><img class="image" id="xeo1502322048846__image_b54_k1x_v1b" src="imu1502479666622.png" /><br /></li>
+
+				<li class="li">Enter a descriptive name for the zone in the <span class="ph uicontrol">Zone Description</span> field.</li>
+
+				<li class="li">Determine which group is applicable to this detection zone and
+					enter the number in the <span class="ph uicontrol">AWB Zone Group</span>
+					field. </li>
+
+				<li class="li">Select the appropriate zone type (rectangle, triangle, or CCT)
+					from the <span class="ph uicontrol">AWB Zone Type</span> list.</li>
+
+				<li class="li">Leave the <span class="ph uicontrol">1st Trigger
+						Level</span> as Lux Idx. That is the only trigger available for
+					detection zones.</li>
+
+				<li class="li">Adjust, add, or delete lux index ranges in the first column to
+					set the preferred lux level triggers.</li>
+
+				<li class="li">Adjust or add entries to the second column to set the core data.
+					The core data for detection zones represent the rectangle/triangle vertices or
+					CCT range that defines the detection area enabled by the associated lux index
+						trigger.<ul class="ul" id="xeo1502322048846__ul_jrn_mb3_v1b">
+						<li class="li">Rectangle – Set first two entries [(top-left vertex), (bottom-right
+							vertex), (0,0)]</li>
+
+						<li class="li">Triangle – Set all three entries to three vertices of the triangle.</li>
+
+						<li class="li">CCT – Set the first entry to the CCT range [(lowCCT, highCCT), (0,0) ,
+							(0,0)]</li>
+
+					</ul>
+</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="xeo1502322048846__section_N10089_N1000F_N10001"><h2 class="title sectiontitle">Tune or add confidence levels</h2>
+			
+			<ol class="ol" id="xeo1502322048846__ol_t1x_s23_v1b">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Scene Analyzer</span>
+					section, select the SA you want to modify. <br /><img class="image" id="xeo1502322048846__image_qxj_1qx_v1b" src="skf1502486850063.png" /><br /></li>
+
+				<li class="li">In the <span class="ph uicontrol">Confidence Levels</span> section,
+					select the computation type for this SA from the list.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Confidence
+						Levels</span> section, select the confidence level you want to modify
+					or click the green plus sign to add a new confidence level.</li>
+
+				<li class="li">If needed, update the <span class="ph uicontrol">Confidence
+						Weight</span> field. <div class="note note" id="xeo1502322048846__note_N101FF_N101F6_N101C2_N101B8_N1000F_N10001"><span class="notetitle">Note:</span> This is the weight to apply to the specified
+						confidence level. Only used if the Confidence Compute Type is Weighted
+						Average.</div>
+</li>
+
+				<li class="li">Set the <span class="ph uicontrol">1st Trigger Level</span>
+					to the preferred trigger type.</li>
+
+				<li class="li">Set the<span class="ph uicontrol">2nd Trigger Level</span>
+					to the preferred trigger type. If a second level trigger is not needed, set this
+					to match the value of the <span class="ph uicontrol">1st Trigger
+						Level</span>.</li>
+
+				<li class="li">Adjust, add, or delete trigger ranges in the first two columns
+					to set the preferred triggers.</li>
+
+				<li class="li">In the last column, adjust or add entries to set the core data.
+					The core data for confidence levels represent the confidence level to assign
+					based on the trigger configuration.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="xeo1502322048846__section_N10228_N1000F_N10001"><h2 class="title sectiontitle">Tune target point adjustment</h2>
+			
+			<div class="note note" id="xeo1502322048846__note_N10238_N1022E_N1000F_N10001"><span class="notetitle">Note:</span> For accurate and easy tuning, first
+				tune the decision point adjustment for the scene that has 1.0 confidence level,
+				after disabling all other SAs.</div>
+
+			<ol class="ol" id="xeo1502322048846__ol_emg_grx_v1b">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Scene Analyzer</span>
+					section, select the SA you want to modify.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Target Point</span>
+					section, select <span class="ph uicontrol">Target Point</span>. <img class="image" id="xeo1502322048846__image_emb_krx_v1b" src="ocw1502487405707.png" /></li>
+
+				<li class="li">Select the appropriate adjustment (fixed point or gain
+					adjustment) from the <span class="ph uicontrol">Target Point Type</span>
+					list.</li>
+
+				<li class="li">Set the <span class="ph uicontrol">1st Trigger Level</span>
+					to the preferred trigger type.</li>
+
+				<li class="li">Set the <span class="ph uicontrol">2nd Trigger Level</span> to the
+					preferred trigger type.</li>
+
+				<li class="li">Adjust, add, or delete trigger ranges in the first two columns
+					to set the preferred triggers.</li>
+
+				<li class="li">In the last column, adjust or add entries to set the core data.
+					The core data for target point adjustment are the coordinates of the fixed
+					decision point or the Rg/Bg gain values assigned to an image that meets the
+					trigger criteria.</li>
+
+			</ol>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="brk1502321929895.html" title="Generalized scene analyzer parameters">Generalized scene analyzer parameters</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="vtj1502321870786.html" title="Predefined generalized scene analyzers">Predefined generalized scene analyzers</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="oos1501884619125.html" title="AWB initial tuning">AWB initial tuning</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="huw1502321658654.html" title="Generalized scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Generalized scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,178 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="For normal tuning: Ensure overall AEC is tuned. Tune gamma to match the overall contrast. Tune LTM. For advanced ADRC tuning: Ensure the normal DRC gain = 1.0 scene gamma and LTM are tuned. Ensure ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune LTM and Gamma and GTM ADRC" /><meta name="DC.Relation" scheme="URI" content="rgk1523651306437.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="dpk1523651427557" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune LTM and Gamma and GTM ADRC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="dpk1523651427557">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a> / <a class="navheader_parent_path" href="rgk1523651306437.html" title="ADRC includes tuning LTM and gamma and GTM.">ADRC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="rgk1523651306437.html" title="ADRC includes tuning LTM and gamma and GTM."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ADRC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune LTM and Gamma and GTM ADRC</h1>
+
+	<div class="body taskbody">
+		<div class="section context" id="dpk1523651427557__context_N10018_N10011_N10001">For normal tuning:<ul class="ul" id="dpk1523651427557__ul_q1z_zgv_ndb">
+				<li class="li">Ensure overall AEC is tuned.</li>
+
+				<li class="li">Tune gamma to match the overall contrast.</li>
+
+				<li class="li">Tune LTM.</li>
+
+			</ul>
+<div class="p">For advanced ADRC tuning:<ul class="ul" id="dpk1523651427557__ul_mvg_dhv_ndb">
+					<li class="li">Ensure the normal DRC gain = 1.0 scene gamma and LTM are tuned.</li>
+
+					<li class="li">Ensure ADRC AEC is tuned.</li>
+
+					<li class="li">Tune GTM and LTM percentage.</li>
+
+					<li class="li">Tune LTM again.</li>
+
+					<li class="li">Tune noise and texture if the DRC gain value is larger.</li>
+
+				</ul>
+</div>
+</div>
+
+		<p class="li stepsection">Capture GTM/LTM images</p><ol><li class="li step stepexpand" id="dpk1523651427557__step_N1001F_N1001C_N10011_N10001">
+				<span class="ph cmd">Capture HDR raw images covering six exposure lux index zones and
+					exposure ratios from 1x to 16x. For each scene, capture raw images of HDR mode
+					and non-HDR mode.</span>
+				<div class="itemgroup info">
+					
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="dpk1523651427557__table_qqf_zsb_4db" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:107.25pt" /><col style="width:124.5pt" /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d3353e74">Lux index</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d3353e77">Exposure ratio</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e74 ">100-200</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e77 ">1-2</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e74 ">200-250</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e77 ">2-4</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e74 ">250-300</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e77 ">4-6</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e74 ">300-380</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e77 ">6-8</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e74 ">380-450</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e77 ">8-12</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e74 ">450-600</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3353e77 ">12-16</td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="dpk1523651427557__step_N1002B_N1001C_N10011_N10001">
+				<span class="ph cmd">Set all parameters to the default values.</span>
+			</li>
+<li class="li step stepexpand" id="dpk1523651427557__step_N100F4_N1004C_N1000F_N10001">
+				<span class="ph cmd">For each region tune <span class="keyword parmname">ltm_dark_boost</span>,
+						<span class="keyword parmname">ltm_bright_suppress</span>, <span class="keyword parmname">ltm_strength</span>,
+					and <span class="keyword parmname">lce_strength</span>.</span>
+				<div class="itemgroup info">
+					<ul class="ul" id="dpk1523651427557__ul_xts_qft_pdb">
+						<li class="li">For more dark boost, increase the
+							<span class="keyword parmname">ltm_dark_boost</span>value.</li>
+
+						<li class="li">For more highlight suppression, increase the
+								<span class="keyword parmname">ltm_bright_suppress</span> value.</li>
+
+						<li class="li">For a stronger LTM effect, increase the
+								<span class="keyword parmname">ltm_strength</span> value.</li>
+
+						<li class="li">For a stronger LCE effect, increase the
+								<span class="keyword parmname">lce_strength</span> value.</li>
+
+					</ul>
+
+					<p class="p">When increasing the dark boost, users should ensure the noise level is
+						acceptable.</p>
+
+				</div>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Tune noise</strong></p><ol start="4"><li class="li step stepexpand" id="dpk1523651427557__step_N10140_N1004C_N1000F_N10001">
+				<span class="ph cmd">Ensure AEC and max DRC gain are finely tuned.</span>
+			</li>
+<li class="li step stepexpand" id="dpk1523651427557__step_N10149_N1004C_N1000F_N10001">
+				<span class="ph cmd">Fine-tune HNR, ABF, GIC, and ASF for each ISO where the DRC gain is 1x.</span>
+			</li>
+<li class="li step stepexpand" id="dpk1523651427557__step_N10152_N1004C_N1000F_N10001">
+				<span class="ph cmd">Fine-tune scenes where the DRC gain is larger than 2x.</span>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">HNR tuning</strong></p><ol start="7"><li class="li step stepexpand" id="dpk1523651427557__step_N10161_N1004C_N1000F_N10001">
+				<span class="ph cmd">Complete HNR trigger tuning.</span>
+			</li>
+<li class="li step stepexpand" id="dpk1523651427557__step_N1016A_N1004C_N1000F_N10001">
+				<span class="ph cmd">Complete the HNR LNR curve calculation.</span>
+				<div class="itemgroup info">Ensure the GTM/LTM ratio was tuned before tuning noise. GTM comes before HNR,
+					and LTM is after HNR, which means different DRC compensation ratios affect the
+					HNR settings.<p class="p">HNR can get the DRC gain, GTM curve, and GTM ratio. Normally,
+						the GTM curve is power (DRC gain, GTM ratio) in the log domain. Dump the log
+						to get gtm_curve (33 entries from TMC in the linear domain, where 32 means a
+						1.0 gain).</p>
+</div>
+				<div class="itemgroup info">Manual mode calculation:<ul class="ul" id="dpk1523651427557__ul_lmq_mnt_pdb">
+						<li class="li">drc_lnr_curve = 32 * lnr_base_curve/gtm_curve</li>
+
+						<li class="li">final_lnr_curve = scale_lnr_ratio x drc_lnr_curve</li>
+
+						<li class="li">trigger = drc_gain ^ gtm_ratio (to pick up each final LRN curve)</li>
+
+					</ul>
+</div>
+				<div class="itemgroup info">Auto mode calculation (convert gtm_curve to lnr_curve):<ul class="ul" id="dpk1523651427557__ul_x24_4nt_pdb">
+						<li class="li">lnr_adrc_adj_curve = ((gtm_curve -32.0) * scale +32.0)) / 32 (where
+							scale is a tunable value with a range between 0 and 1.0)</li>
+
+						<li class="li">lnr_curve = lnr_base_curve / lnr_adrc_adj_curve</li>
+
+					</ul>
+</div>
+			</li>
+<li class="li step stepexpand" id="dpk1523651427557__step_N1019E_N1004C_N1000F_N10001">
+				<span class="ph cmd">Complete HNR noise-reduction adjustments.</span>
+			</li>
+</ol>
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="rgk1523651306437.html" title="ADRC includes tuning LTM and gamma and GTM."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ADRC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

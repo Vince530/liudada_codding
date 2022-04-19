@@ -1,0 +1,43 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="This CAF Scan test checks the quality distance in millimeters returned by the laser sensor driver. Setup Repeat the test for multiple distances like 10 cm, 20 cm, and 100 cm from the device on a ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Run HAF: TOF test" /><meta name="DC.Relation" scheme="URI" content="doh1495660841869.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="sfb1477085282973" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Run HAF: TOF test</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="sfb1477085282973">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Run HAF: TOF test</h1>
+
+   <div class="body conbody">
+      <p class="p">This CAF Scan test checks the quality distance in millimeters returned by the laser sensor driver.</p>
+
+      <div class="section" id="sfb1477085282973__section_N10015_N1000E_N10001"><h2 class="title sectiontitle">Setup</h2><p class="p">Repeat the test for multiple distances like 10 cm, 20 cm, and 100 cm from the device on a tripod with 500+ lux light condition.</p>
+</div>
+
+      <div class="section" id="sfb1477085282973__section_N1002D_N1000E_N10001"><h2 class="title sectiontitle">Analysis and corrective action</h2>
+         
+         <img class="image" id="sfb1477085282973__image_vdq_hsp_rx" src="uid1495660922163.svg" height="NaN" width="NaN" />
+         <p class="p">If graph looks like Graph A, then the distance returned by the sensor is
+            correct for the test distances. If the graph looks like Graph B, then the distance
+            returned by sensor has a huge deviation from the expectation. Contact the vendor to
+            determine why the library is returning the wrong distance output. In most cases, the
+            issue is because the cover glass that is applied on top of the laser sensor needs
+            calibration. If the calibration is incorrect, then it is likely to output inconsistent
+            distances.</p>
+
+         <div class="note note" id="sfb1477085282973__note_N1006D_N1002D_N1000E_N10001"><span class="notetitle">Note:</span> Qualcomm does not
+            modify an external vendor’s library.</div>
+
+      </div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="doh1495660841869.html" title="Run CAF Scan tests">Run CAF Scan tests</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

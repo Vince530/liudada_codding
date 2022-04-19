@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<ValueStoreDataSet xmlns="http://tempuri.org/ValueStoreDataSet.xsd">
+  <ValueStoreInfo>
+    <Scenario />
+    <Pipeline />
+    <Module />
+    <Name>settings</Name>
+    <Date>2021-06-08T15:18:56.9477674+08:00</Date>
+  </ValueStoreInfo>
+</ValueStoreDataSet>

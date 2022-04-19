@@ -1,0 +1,198 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Temporal Filtering (TF) removes unwanted frequencies (noise) within an image. Tune ANR. On the Pipeline tab, click TF and then click a region in the Regions group. Click Load MCC Images and load the ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune TF" /><meta name="abstract" content="Temporal Filtering (TF) removes unwanted frequencies (noise) within an image." /><meta name="description" content="Temporal Filtering (TF) removes unwanted frequencies (noise) within an image." /><meta name="DC.Relation" scheme="URI" content="wik1508440000259.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qlx1510767494210" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune TF</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qlx1510767494210">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="wik1508440000259.html" title="Temporal Filtering (TF) removes unwanted frequencies (noise) within an image.">TF tuning concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="wik1508440000259.html" title="Temporal Filtering (TF) removes unwanted frequencies (noise) within an image."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">TF tuning concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune TF</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Temporal Filtering (TF) removes unwanted frequencies (noise) within an
+		image.</p>
+
+		<div class="section prereq p" id="qlx1510767494210__prereq_N1001A_N10017_N10001">Tune ANR.</div>
+
+		<ol><li class="li step stepexpand" id="qlx1510767494210__step_N10021_N1001A_N10017_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab, click
+						<span class="ph uicontrol">TF</span> and then click a region in the
+					Regions group.</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N10032_N1001A_N10017_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load MCC Images</span>
+					and load the preferred image sequence with a minimum of 10 frames.</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N1006C_N1001A_N10017_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load Flat Image</span>
+					and load a flat field image.</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N1007D_N1001A_N10017_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Calibrate</span>.</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N10097_N1001D_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Calibrate LNR</span> to
+					run lens-dependent noise reduction (LNR). To manually adjust the LNR, see <cite class="cite">(Advanced) Lnr Setting</cite>.</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N10080_N10023_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load Test Image</span> and select a video file or
+					sequence or images (select frame _0).</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N1008D_N10023_N1001A_N10001">
+				<span class="ph cmd">Select the number of frames to review and click
+					<span class="ph uicontrol">Run!</span>.</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N1009A_N10023_N1001A_N10001">
+				<span class="ph cmd">Compare the final images of frames 0 and the last frame. The
+					last frame should have less noise.</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N100A5_N10023_N1001A_N10001">
+				<span class="ph cmd">Compare the ANR image and the final image from TF. The final
+					image should have less noise and more details.</span>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Basic Level</strong></p><ol start="10"><li class="li step stepexpand" id="qlx1510767494210__step_N1008A_N1001A_N10017_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span>
+					group, click <span class="ph uicontrol">Basic Level</span>.</span>
+				<ol type="a" class="ol substeps" id="qlx1510767494210__substeps_f2h_wvx_m1b">
+					<li class="li substep">
+						<span class="ph cmd">Adjust the <span class="ph uicontrol">Spatial Noise
+								Reduction</span> luma and chroma values as needed.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Adjust the <span class="ph uicontrol">Temporal Noise
+								Reduction</span> luma and chroma values as needed.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Adjust the <span class="ph uicontrol">Motion
+								Detection</span> luma and chroma values as needed for 1:16
+							scale and 1:4 scale.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">From the reserved parameters, select the <span class="ph uicontrol">High Quality (High Power) Mode</span> check
+							box to enable 1:1 scale luma and chroma adjustments, if necessary.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Save</span> to
+							retain all changes.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Close</span> to
+							return to the main TF tuning screen.</span>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Base Functions</strong></p><ol start="11"><li class="li step stepexpand" id="qlx1510767494210__step_N10169_N1001D_N1001A_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span>
+					group, click <span class="ph uicontrol">Base Functions</span>.</span>
+				<ol type="a" class="ol substeps" id="qlx1510767494210__substeps_o2r_tql_pbb">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Tune the gain from lowest pass to highest (i.e., DC16
+							&gt; DC4). Full resolution is required only in High Quality mode and D64
+							is not required for videos.</span>
+						<div class="itemgroup info">If an issue arises, find the lowest pass where the
+							issue occurs, place a point of interest (POI), and try to resolve the
+							issue.</div>
+						<div class="itemgroup info">DC64s typically do not require tuning.</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Add POI markers on stationary and moving
+							objects.</span>
+						<div class="itemgroup info">The I marker shows the highest and lowest derivatives
+							around the POI and helps separate noise from details. Stationary object
+							POIs should be below the green <span class="ph uicontrol">FS=Max</span> line. Moving objects should be above the red
+								<span class="ph uicontrol">FS=0</span> line.<br /><img class="image" id="qlx1510767494210__image_ikg_ptt_wbb" src="pqb1510781662425.png" /><br /></div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Adjust the <span class="ph uicontrol">FS=Max</span> and <span class="ph uicontrol">FS=0</span>
+							lines using the <span class="ph uicontrol">Gain</span> controls (+
+							and -).</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Assess the tuning quality by looking at the filtering
+							strength (FS).</span>
+						<div class="itemgroup info">Moving objects should have an FS of 0. Stationary
+							objects should have an FS of 63.</div>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Blend Factor</strong></p><ol start="12"><li class="li step stepexpand" id="qlx1510767494210__step_N1017D_N1001F_N10017_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span>
+					group, click <span class="ph uicontrol">Blend Factor</span>.</span>
+			</li>
+<li class="li step stepexpand" id="qlx1510767494210__step_N10190_N1001F_N10017_N10001">
+				<span class="ph cmd">Adjust the <span class="ph uicontrol">Spatial
+						blend(a2)</span> values to control the strength of TF.<br /><img class="image" id="qlx1510767494210__image_sqz_mjd_12b" src="qpz1527886248570.png" /><br /></span>
+				<div class="itemgroup info">The <span class="ph uicontrol">a2 max</span> value
+					should be almost 100% where lower values restore fine details on moving
+						objects.<p class="p">The <span class="ph uicontrol">a2
+							min</span> value adjusts the amount of spatial denoising to add to
+						temporal denoising on stationary objects. For a weaker value, use 0%. For
+						noisy videos, a value of up to 70% may be required.</p>
+</div>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">(Advanced) Options</strong></p><ol start="14"><li class="li step stepexpand" id="qlx1510767494210__step_N101B2_N1001F_N10017_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span>
+					group, click <span class="ph uicontrol">Options</span>.</span>
+				<ol type="a" class="ol substeps" id="qlx1510767494210__substeps_i12_pyt_wbb">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Set <span class="keyword parmname">DisableChromaGhostDetection</span> if there is not
+							enough data for chroma tuning (e.g., no color chart).</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Adjust the <span class="ph uicontrol">ErodeFilterSize</span> and <span class="ph uicontrol">DilateFilterSize</span> values as needed.</span>
+						<div class="itemgroup info">0 = disabled; 1 = 5x5; 2 = 3x3.<p class="p">If
+								the erode filter value is larger than the dilate filter value, there
+								are less ghost artifacts. If the erode filter value is equal to the
+								dilate filter, there is more noise reduction on moving objects. The
+								erode filter value cannot be smaller than the dilate filter
+								value.</p>
+</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Adjust <span class="ph uicontrol">BlockNumX</span>,
+								<span class="ph uicontrol">BlockNumY</span>, and
+								<span class="ph uicontrol">trDeadZone</span> as needed.</span>
+						<div class="itemgroup info">For warping transform refinement, enable
+								<span class="ph uicontrol">trEnable</span> in the DC16 and DC4 tabs. To assess
+							the image alignment quality, compare the current image with the previous
+							image in the Full tab.</div>
+						<div class="itemgroup info">For <span class="ph uicontrol">BlockNumX</span> and
+								<span class="ph uicontrol">BlockNumY</span>, the image with
+								<span class="ph uicontrol">trEnable</span> enabled should appear better.
+							Decrease <span class="ph uicontrol">BlockNumX</span> and
+								<span class="ph uicontrol">BlockNumY</span> if the images appear the same or
+							worse. If <span class="ph uicontrol">BlockNumX</span> and
+								<span class="ph uicontrol">BlockNumY</span> are 1 and are still worse, set
+								<span class="ph uicontrol">trEnable</span> to 0.</div>
+					</li>
+
+				</ol>
+
+			</li>
+</ol>
+		<div class="section postreq" id="qlx1510767494210__postreq_ksp_phd_12b">If ANR tuning changes, retune TF blending factors and
+			recheck TF base functions.</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="wik1508440000259.html" title="Temporal Filtering (TF) removes unwanted frequencies (noise) within an image."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">TF tuning concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

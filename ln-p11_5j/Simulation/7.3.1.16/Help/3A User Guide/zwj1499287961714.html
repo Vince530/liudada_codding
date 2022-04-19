@@ -1,0 +1,47 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Antibanding makes the exposure times multiples of 1/100s (50 Hz flicker) or 1/120s (60 Hz flicker). This may affect the minimum FPS requirement at 15/30 FPS etc. when 50 Hz, and exposure time is close ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune anti-banding vs FPS" /><meta name="abstract" content="Antibanding makes the exposure times multiples of 1/100s (50 Hz flicker) or 1/120s (60 Hz flicker). This may affect the minimum FPS requirement at 15/30 FPS etc. when 50 Hz, and exposure time is close to 1/15 or 1/30. This is due to minimal vertical blanking time that must be inserted to the frame time. By tuning this option, the user can choose what behaviors they want from AEC to handle the priorities of minimum FPS and antibanding. By default, antibanding takes priority, and FPS may drop a bit from the minimum FPS when needed." /><meta name="description" content="Antibanding makes the exposure times multiples of 1/100s (50 Hz flicker) or 1/120s (60 Hz flicker). This may affect the minimum FPS requirement at 15/30 FPS etc. when 50 Hz, and exposure time is close to 1/15 or 1/30. This is due to minimal vertical blanking time that must be inserted to the frame time. By tuning this option, the user can choose what behaviors they want from AEC to handle the priorities of minimum FPS and antibanding. By default, antibanding takes priority, and FPS may drop a bit from the minimum FPS when needed." /><meta name="DC.Relation" scheme="URI" content="lqj1495660918778.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="zwj1499287961714" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune anti-banding vs FPS</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="zwj1499287961714">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune anti-banding vs FPS</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Antibanding makes the exposure times multiples of 1/100s (50 Hz flicker)
+		or 1/120s (60 Hz flicker). This may affect the minimum FPS requirement at 15/30 FPS etc.
+		when 50 Hz, and exposure time is close to 1/15 or 1/30. This is due to minimal vertical
+		blanking time that must be inserted to the frame time. By tuning this option, the user can
+		choose what behaviors they want from AEC to handle the priorities of minimum FPS and
+		antibanding. By default, antibanding takes priority, and FPS may drop a bit from the minimum
+		FPS when needed.</p>
+
+		<div class="li step p" id="zwj1499287961714__step_N10023_N10020_N1001D_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">AEC</span>tab, choose one
+					of the following from the <span class="ph uicontrol">Antibanding vs FPS</span> menu:</span>
+				<ul class="ul choices" id="zwj1499287961714__choices_ad4_yvz_ddb">
+					<li class="li choice"><span class="ph uicontrol">Legacy Allow FPS To Drop</span> – Use if
+						FPS is not a concern; allows full compensation of anti-banding.</li>
+
+					<li class="li choice"><span class="ph uicontrol">Strictly Enforce FPS</span> – Use if
+						there is a strict FPS requirement; allows guaranteed FPS, but anti-banding
+						may fail.</li>
+
+					<li class="li choice"><span class="ph uicontrol">Maximize Exposure Time</span> – Use if
+						FPS can drop slightly; allows FPS to drop below the requirement slightly and
+						anti-banding is not always fully compensated.</li>
+
+				</ul>
+
+			</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

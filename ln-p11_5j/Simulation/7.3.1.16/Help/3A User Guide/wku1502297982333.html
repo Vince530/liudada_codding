@@ -1,0 +1,112 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="MLC stats filter creates four predefined detection zones during the AWB initial tuning process. The predefined detection zones are set up to evaluate the number of gray stats in daylight and in F ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Predefined MLC detection zones" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="llr1502214354401.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="wku1502297982333" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Predefined MLC detection zones</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="wku1502297982333">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="yqt1502923722746.html" title="AWB stats filters">AWB stats filters</a> / <a class="navheader_parent_path" href="llr1502214354401.html" title="Misleading color zones concept">Misleading color zones concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="llr1502214354401.html" title="Misleading color zones concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Misleading color zones concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Predefined MLC detection zones</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">MLC stats filter creates four predefined detection zones during the AWB initial
+			tuning process. The predefined detection zones are set up to evaluate the number of gray
+			stats in daylight and in F light areas of an image. If a given image has enough gray
+			stats in a detection zone, the MLC zones associated with that detection zone are
+			enabled; otherwise, they remain disabled. </p>
+
+		<div class="p">The predefined detection zones can be customized to meet your preferences
+			using the Chromatix tool and the MLC fine-tune procedure. <div class="fig fignone nonumber" id="wku1502297982333__fig_fwv_hsz_y1b"><span class="figcap">Figure : Sample detection zone configuration from the Chromatix
+					tool</span>
+				
+				<br /><img class="image" id="wku1502297982333__image_dgb_ky1_x1b" src="hne1502218814093.png" /><br />
+			</div>
+</div>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="wku1502297982333__table_zrs_2s1_v1b" class="table" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table :   AWB predefined detection zones</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65244e51">Detection Zone ID</th>
+
+						<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65244e54">Group, Type, Detect
+							color</th>
+
+						<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65244e57">Lux Index trigger</th>
+
+						<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65244e60">Notes</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e51 ">Zone 1</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e54 ">Group 1, Rectangle, Gray in Daylight </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e57 ">Gray around D75 and D65
+							daylight for shade condition </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e60 ">Set detection zone that mostly covers gray
+							stats with day decisions. The coverage of each detection zone should not
+							excessively include nongray stats.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e51 ">Zone 2</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e54 ">Group 1, Rectangle, Gray in Daylight </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e57 ">Gray around D50 daylight for
+							shade condition </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e60 ">Set detection zone that mostly covers gray
+							stats with day decisions. The coverage of each detection zone should not
+							excessively include nongray stats. </td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e51 ">Zone 3</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e54 ">Group 2, Rectangle, Gray in F light </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e57 ">Gray around CW light for
+							shade condition </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e60 ">Set detection zone that mostly covers gray
+							stats with CW, TL84, and F decisions The coverage of each detection zone
+							should not excessively include nongray stats </td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e51 ">Zone 4</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e54 ">Group 2, Rectangle, Gray in F light </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e57 ">Gray around TL84 light for
+							shade condition </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65244e60 ">Set detection zone that mostly covers gray
+							stats with CW, TL84, and F decisions. The coverage of each detection
+							zone should not excessively include nongray stats. </td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="llr1502214354401.html" title="Misleading color zones concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Misleading color zones concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

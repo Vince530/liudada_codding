@@ -1,0 +1,62 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The grain adder (GRA) module controls the amount of fine grain added to an image. The default settings are adequate in most cases, so tuning the GRA module is at the descretion of the user. Figure : ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="GRA tuning concepts" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="DC.Relation" scheme="URI" content="jgl1510606398019.html" /><meta name="DC.Relation" scheme="URI" content="pek1510604703257.html" /><meta name="DC.Relation" scheme="URI" content="jgl1510606398019.html" /><meta name="DC.Relation" scheme="URI" content="pek1510604703257.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="yfm1510604615899" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>GRA tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="yfm1510604615899">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">GRA tuning concepts</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">The grain adder (GRA) module controls the amount of fine grain added to an image. The default
+			settings are adequate in most cases, so tuning the GRA module is at the descretion of
+			the user.</p>
+
+		<div class="fig fignone nonumber" id="yfm1510604615899__fig_mdn_t1g_wbb"><span class="figcap">Figure : (L) GRA off; (R) GRA on</span>
+			
+			<img class="image" id="yfm1510604615899__image_g22_y1g_wbb" src="tbw1510618558531.png" />
+		</div>
+
+		<p class="p">If changes are made to noise reduction modules such as ANR, HNR, and TF, there
+			may be a need to adjust the <span class="ph uicontrol">Grain Strength</span>
+			parameter. </p>
+
+		<div class="fig fignone nonumber" id="yfm1510604615899__fig_lyr_z1g_wbb"><span class="figcap">Figure : (Top L) GRA off; (Top R) Low GRA strength; (Bottom L) Medium GRA
+				strength; (Bottom R) High GRA strength</span>
+			
+			<img class="image" id="yfm1510604615899__image_gdb_gbg_wbb" src="gun1510618547925.png" />
+		</div>
+
+		<p class="p">The GRA module includes three LUTs that affect luma <span class="ph uicontrol">(Y Weight LUT</span>) and chroma (<span class="ph uicontrol">CB
+				Weight LUT</span>, <span class="ph uicontrol">CR Weight LUT</span>). For
+			example, use the chroma LUTs to apply less grain for skin (Cr) or sky (Cb) colors. If
+			tuned, it should be the last module tuned in the pipeline.</p>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="jgl1510606398019.html">GRA parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="pek1510604703257.html">Tune GRA</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="jgl1510606398019.html" title="GRA parameters">GRA parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="pek1510604703257.html" title="Tune GRA">Tune GRA</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

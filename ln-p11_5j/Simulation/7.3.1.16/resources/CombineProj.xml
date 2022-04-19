@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CombineProject>
+	<!-- 0-Uses Metaconfig XML;1-Uses Settings XML-->
+	<CombineMethod>1</CombineMethod>
+
+	<WorkDir>..\wtestComb_20190131_Mehtod2</WorkDir>
+	<!--<C7Project>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\cepheus_imx586_c7project</C7Project>-->
+	<C7Project>C:\Users\c_arara\work\CombineProject2201\Autotune_u1\Autotune_u1\cepheus_imx586_c7project</C7Project>
+	<C7SimBlendDir>C:\Users\c_arara\work\CombineProject2201\Autotune_u1\Autotune_u1\cepheus_imx586_c7project\Simulation\MFNRBlend</C7SimBlendDir>
+	<DeltaXMLBlendDir>C:\Users\c_arara\work\CombineProject2201\Autotune_u1\Autotune_u1\cepheus_imx586_c7project\Scenario.Default\Sensor.1\Usecase.Snapshot\Feature1.None\Feature2.MFNRBlend\XML</DeltaXMLBlendDir>
+	<C7SimPostFDir>C:\Users\c_arara\work\CombineProject2201\Autotune_u1\Autotune_u1\cepheus_imx586_c7project\Simulation\MFNRPostFilter</C7SimPostFDir>
+	<DeltaXMLPFDir>C:\Users\c_arara\work\CombineProject2201\Autotune_u1\Autotune_u1\cepheus_imx586_c7project\Scenario.Default\Sensor.1\Usecase.Snapshot\Feature1.None\Feature2.MFNRPostFilter\XML</DeltaXMLPFDir>
+
+	<TriggerCheckEnable>1</TriggerCheckEnable>
+	<RegionOverlapCheckEnable>1</RegionOverlapCheckEnable>
+	<RegionMergeEnable>1</RegionMergeEnable>
+	<C7SimulationEnable>1</C7SimulationEnable>
+	<C7SimulationExePath>C:\Users\c_arara\work\CombineProject2201\Autotune_u1\qualcommspectracamerasim3.win.1.0_files_00005.2\Bin\QualcommSpectraSim380.exe</C7SimulationExePath>
+	
+	<!--
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\Autotune_u1\cepheus_imx586_c7project</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\CloneBranch\Autotune_u1\Autotune_u1\data_1210\A-1lux\meta_config.xml</metaConfigXML>
+	</Region>
+	-->
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\C7Project_Setting_0_reg1</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\1227_8150Runs\regions\region1\meta_config.xml</metaConfigXML>
+		<SettingsXML>C:\Users\c_arara\work\CombineProject2201\Settings\Setting_0_reg1.xml</SettingsXML>
+		<ImageFile>C:\Users\c_arara\work\1227_8150Runs\regions\region1\raw_0.raw</ImageFile>
+		<!--Add to all Region If Required-->
+		<!--
+		<streamConfigXML></streamConfigXML>
+		<ManualInput></ManualInput>
+		-->
+	</Region>
+		
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\C7Project_Setting_1_reg2</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\1227_8150Runs\regions\region2\meta_config.xml</metaConfigXML>
+		<SettingsXML>C:\Users\c_arara\work\CombineProject2201\Settings\Setting_1_reg2.xml</SettingsXML>
+		<ImageFile>C:\Users\c_arara\work\1227_8150Runs\regions\region2\raw_0.raw</ImageFile>
+	</Region>
+
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\C7Project_Setting_1_reg3</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\1227_8150Runs\regions\region3\meta_config.xml</metaConfigXML>
+		<SettingsXML>C:\Users\c_arara\work\CombineProject2201\Settings\Setting_1_reg3.xml</SettingsXML>
+		<ImageFile>C:\Users\c_arara\work\1227_8150Runs\regions\region3\raw_0.raw</ImageFile>
+	</Region>
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\C7Project_Setting_1_reg4</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\1227_8150Runs\regions\region4\meta_config.xml</metaConfigXML>
+		<SettingsXML>C:\Users\c_arara\work\CombineProject2201\Settings\Setting_1_reg4.xml</SettingsXML>
+		<ImageFile>C:\Users\c_arara\work\1227_8150Runs\regions\region4\raw_0.raw</ImageFile>
+	</Region>
+
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\C7Project_Setting_0_reg5</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\1227_8150Runs\regions\region5\meta_config.xml</metaConfigXML>
+		<SettingsXML>C:\Users\c_arara\work\CombineProject2201\Settings\Setting_0_reg5.xml</SettingsXML>
+		<ImageFile>C:\Users\c_arara\work\1227_8150Runs\regions\region5\raw_0.raw</ImageFile>
+	</Region>
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\C7Project_Setting_1_reg6</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\1227_8150Runs\regions\region6\meta_config.xml</metaConfigXML>
+		<SettingsXML>C:\Users\c_arara\work\CombineProject2201\Settings\Setting_1_reg6.xml</SettingsXML>
+		<ImageFile>C:\Users\c_arara\work\1227_8150Runs\regions\region6\raw_0.raw</ImageFile>
+	</Region>
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\C7Project_Setting_0_reg7</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\1227_8150Runs\regions\region7\1227\meta_config.xml</metaConfigXML>
+		<SettingsXML>C:\Users\c_arara\work\CombineProject2201\Settings\Setting_0_reg7.xml</SettingsXML>
+		<ImageFile>C:\Users\c_arara\work\1227_8150Runs\regions\region7\raw_0.raw</ImageFile>
+	</Region>
+	<Region>
+		<c7ProjBase>C:\Users\c_arara\work\CloneBranch\Autotune_u1\C7Project_CoarseTuned\C7Project_Setting_0_reg8</c7ProjBase>
+		<metaConfigXML>C:\Users\c_arara\work\1227_8150Runs\regions\region8\1227\meta_config.xml</metaConfigXML>
+		<SettingsXML>C:\Users\c_arara\work\CombineProject2201\Settings\Setting_0_reg8.xml</SettingsXML>
+		<ImageFile>C:\Users\c_arara\work\1227_8150Runs\regions\region8\raw_0.raw</ImageFile>
+	</Region>
+	<!--
+	<Region>
+		<c7ProjBase></c7ProjBase>
+		<metaConfigXML></metaConfigXML>
+	</Region>
+	-->
+</CombineProject>

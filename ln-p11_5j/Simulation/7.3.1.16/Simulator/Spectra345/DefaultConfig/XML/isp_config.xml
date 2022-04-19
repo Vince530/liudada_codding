@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ISPConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\XSD\isp_config.xsd">
+    <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+    <Common>
+        <TopCfg>
+            <StartFrameIdx>0</StartFrameIdx>
+            <TotalFrameNumber>1</TotalFrameNumber>
+            <DigitalZoomEnable>0</DigitalZoomEnable>
+            <DZStartX>0</DZStartX>
+            <DZStartY>0</DZStartY>
+        </TopCfg>
+        <Tintless>
+            <MajorVersion>2</MajorVersion>
+            <MinorVersion>2</MinorVersion>
+        </Tintless>
+        <InputCropConfig>
+            <Enable>0</Enable>
+            <InputCropOpt>1</InputCropOpt>
+            <FirstPixel>0</FirstPixel>
+            <LastPixel>3999</LastPixel>
+            <FirstLine>0</FirstLine>
+            <LastLine>3023</LastLine>
+        </InputCropConfig>
+        <ifeStatsOnlyModeEnable>0</ifeStatsOnlyModeEnable>
+        <CamifEnable>0</CamifEnable>
+        <CamifConfig>
+            <ClipFirstLine>3</ClipFirstLine>
+            <ClipLastLine>1099</ClipLastLine>
+            <ClipFirstPixel>5</ClipFirstPixel>
+            <ClipLastPixel>2099</ClipLastPixel>
+        </CamifConfig>
+        <MotionDumpEnable>0</MotionDumpEnable>
+        <ManualAnchorSelection>0</ManualAnchorSelection>
+		<UseHWStats>0</UseHWStats>
+		<SW_PDPC>
+			<Enable>0</Enable>
+			<pdaf_global_offset_x>16</pdaf_global_offset_x>
+			<pdaf_global_offset_y>16</pdaf_global_offset_y>
+			<pdaf_x_end>4623</pdaf_x_end>
+			<pdaf_y_end>3471</pdaf_y_end>
+			<pdaf_table_x_offset>16</pdaf_table_x_offset>
+			<pdaf_table_y_offset>16</pdaf_table_y_offset>
+			<PDAF_PD_Mask>
+			0x0, 0x0, 0x0, 0x0800080008000800,
+			0x0, 0x0, 0x0, 0x0008000800080008,
+			0x0, 0x0, 0x0, 0x0800080008000800,
+			0x0, 0x0, 0x0, 0x0008000800080008,
+			0x0, 0x0, 0x0, 0x0800080008000800,
+			0x0, 0x0, 0x0, 0x0008000800080008,
+			0x0, 0x0, 0x0, 0x0800080008000800,
+			0x0, 0x0, 0x0, 0x0008000800080008,
+			0x0, 0x0, 0x0, 0x0800080008000800,
+			0x0, 0x0, 0x0, 0x0008000800080008,
+			0x0, 0x0, 0x0, 0x0800080008000800,
+			0x0, 0x0, 0x0, 0x0008000800080008,
+			0x0, 0x0, 0x0, 0x0800080008000800,
+			0x0, 0x0, 0x0, 0x0008000800080008,
+			0x0, 0x0, 0x0, 0x0800080008000800,
+			0x0, 0x0, 0x0, 0x0008000800080008
+			</PDAF_PD_Mask>
+		</SW_PDPC>
+	<AIDEEnable>0</AIDEEnable>
+    </Common>
+	<TFE>
+		<TFEMNDSBDSVideoPath>
+			<lumaImgSizeChange>0</lumaImgSizeChange>
+			<OutLumaWidth>640</OutLumaWidth>
+			<OutLumaHeight>480</OutLumaHeight>
+			<EnableChromaHorizSample>1</EnableChromaHorizSample>
+			<EnableChromaVertiSample>1</EnableChromaVertiSample>
+			<v_cnt_init>0</v_cnt_init>
+			<h_cnt_init>0</h_cnt_init>
+			<rounding_option_h>0</rounding_option_h>
+			<rounding_option_v>0</rounding_option_v>
+		</TFEMNDSBDSVideoPath>
+	</TFE>
+	<OPE>	
+		<OPEUpscalerCfg>
+			<Enable>0</Enable>
+			<OutputWidth>8064</OutputWidth>
+			<OutputHeight>6048</OutputHeight>
+		</OPEUpscalerCfg>
+		<OPEMNDownScaleDispPath>
+			<lumaImgSizeChange>0</lumaImgSizeChange>
+			<OutLumaWidth>1920</OutLumaWidth>
+			<OutLumaHeight>1080</OutLumaHeight>
+			<EnableChromaHorizSample>1</EnableChromaHorizSample>
+			<EnableChromaVertiSample>1</EnableChromaVertiSample>
+			<v_cnt_init>0</v_cnt_init>
+			<h_cnt_init>0</h_cnt_init>
+			<rounding_option_h>0</rounding_option_h>
+			<rounding_option_v>0</rounding_option_v>
+		</OPEMNDownScaleDispPath>
+		<OPECropDispPath>
+			<CropEnable>0</CropEnable>
+			<FirstPixel>0</FirstPixel>
+			<LastPixel>1919</LastPixel>
+			<FirstLine>0</FirstLine>
+			<LastLine>1079</LastLine>
+		</OPECropDispPath>
+		<OPECDS>
+			<Enable>0</Enable>
+		</OPECDS>
+	</OPE>
+    <MFNR>
+        <AnchorPick>
+            <enable>0</enable>
+        </AnchorPick>
+        <Registration>
+            <Scale_X>1</Scale_X>
+            <Scale_Y>1</Scale_Y>
+        </Registration>
+        <!-- 0: Don't Use Modified Gain for PostFiltering (Use Anchor Frame Gain), 1: Use Modified gain in PostFiltering -->
+        <UseModifiedGain>0</UseModifiedGain>
+		<ProcessingFrameIdx>0</ProcessingFrameIdx>
+    </MFNR>
+</ISPConfig>

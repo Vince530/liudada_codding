@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--========================================================================-->
+<!-- Copyright (c) 2016-2017 Qualcomm Technologies, Inc.                    -->
+<!-- All Rights Reserved.                                                   -->
+<!-- Confidential and Proprietary - Qualcomm Technologies, Inc.             -->
+<!--========================================================================-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="simulationglobalelements" />
+    <xs:simpleType name="intvar">
+        <xs:list itemType="xs:int"/>
+    </xs:simpleType>
+    <xs:simpleType name="uintvar">
+        <xs:list itemType="xs:unsignedInt"/>
+    </xs:simpleType>
+    <xs:simpleType name="floatvar">
+        <xs:list itemType="xs:float"/>
+    </xs:simpleType>
+    <xs:simpleType name="Hex8">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="0x[0-9A-Fa-f]{1,2}|[0-9]{1,3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Hex16">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="0x[0-9A-Fa-f]{1,4}|[0-9]{1,5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Hex32">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="0x[0-9A-Fa-f]{1,8}|[0-9]{1,10}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="OnTarget_StreamFormat">
+        <!-- 0x25: Raw10, 0x7fa30c0a: P010, 0x7fa30c08: PD10, 0x23: YUV420_888, 0x21: Blob -->
+        <xs:restriction base="Hex32">
+            <xs:enumeration id="Raw10" value="0x25"/>
+            <xs:enumeration id="P010" value="0x7fa30c0a"/>
+            <xs:enumeration id="PD10" value="0x7fa30c08"/>
+            <xs:enumeration id="YUV420_888" value="0x23"/>
+            <xs:enumeration id="Blob" value="0x21"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

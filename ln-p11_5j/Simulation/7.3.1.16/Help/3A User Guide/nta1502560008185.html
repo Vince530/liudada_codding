@@ -1,0 +1,322 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The advanced gray world SA and each generalized SA output their own AWB decision point and corresponding confidence level. The Decision Aggregator (DA) uses this information to merge all SA decision ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Decision aggregator concept" /><meta name="DC.Relation" scheme="URI" content="ygi1502560061663.html" /><meta name="DC.Relation" scheme="URI" content="yyl1502560114656.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nta1502560008185" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Decision aggregator concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nta1502560008185">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Decision aggregator concept</h1>
+
+	<div class="body conbody">
+		<p class="p">The advanced gray world SA and each generalized SA output their own AWB decision point and
+			corresponding confidence level. The Decision Aggregator (DA) uses this information to
+			merge all SA decision points to compute a final AWB decision and confidence level.</p>
+
+		<div class="fig fignone nonumber" id="nta1502560008185__fig_ufy_cwd_w1b"><span class="figcap">Figure : In the AWB process, the DA computes the final AWB decision point by merging
+				decision points from all SAs </span>
+			
+			<img class="image" id="nta1502560008185__image_iqh_s12_w1b" src="ghl1502562805299.svg" />
+		</div>
+
+		<p class="p">The DA uses a simple and generalized method for merging all decision points to achieve
+			robust performance on accuracy and consistency. To improve accuracy and tuning
+			flexibility, the weight adjustment tuning concept for the merging operation uses three
+			trigger control types: SA confidence value, SA confidence ranking, and AGW SA confidence
+			level. The merging and interpolation process is illustrated below.</p>
+
+		
+<table cellpadding="4" cellspacing="0" border="1" class="tableborder"><tr><td>
+<table cellpadding="4" cellspacing="0" summary="" id="nta1502560008185__table_ify_rc2_w1b" class="table landscape" border="0"><colgroup><col style="width:25%" /><col style="width:25%" /><col style="width:25%" /><col style="width:25%" /></colgroup><tbody class="tbody">
+					<tr class="row">
+						<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_tyh_tc2_w1b" src="qqh1502562751479.png" /></td>
+
+						<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_td3_5c2_w1b" src="teu1502562756705.png" /></td>
+
+						<td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_tkh_vc2_w1b" src="ypu1502562754708.png" /></td>
+
+						<td class="entry cell-norowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_tvv_vc2_w1b" src="oqn1502562755893.png" /></td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry row-nocellborder" style="text-align:left;vertical-align:top;"><em class="ph i">DA uses output from each SA. Percentage next to
+								each SA decision point represents the confidence level.</em></td>
+
+						<td class="entry row-nocellborder" style="text-align:left;vertical-align:top;"><em class="ph i">An adjustment is made to the SA confidence level.
+								The adjustment is based on SA confidence value and SA ranking
+								triggers.</em></td>
+
+						<td class="entry row-nocellborder" style="text-align:left;vertical-align:top;"><em class="ph i">Interpolate between each SA decision point and AGW
+								SA decision point to get revised decision points.</em></td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;"><em class="ph i">Weight revised decision points to get final decision
+								point.</em></td>
+
+					</tr>
+
+				</tbody>
+</table>
+</td></tr></table>
+
+		<div class="section" id="nta1502560008185__section_N100AE_N10013_N10001"><h2 class="title sectiontitle">Confidence level adjustment</h2>
+			
+			<div class="p">The DA adjusts the confidence level of each generalized SA based on its value
+				and ranking. Ranking refers to SA confidence levels ordered from highest to
+				lowest.The following table lists the parameters required for the confidence level
+				adjustment process.  
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="nta1502560008185__table_gw2_nbg_w1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /><col style="width:33.33333333333333%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d40052e103">Parameter Categories</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d40052e106">Parameter Specifications</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d40052e109">Default values {triggers}:: (adjustment
+									factor)</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d40052e103 ">Weight SA confidence </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d40052e106 ">
+									<p class="p">Trigger Level = 1</p>
+
+									<p class="p">Trigger Control Type = Confidence level</p>
+
+									<p class="p">Core Data = User-defined adjustment
+										factor</p>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d40052e109 ">
+									<ul class="ul" id="nta1502560008185__ul_sxy_wbg_w1b">
+										<li class="li">{0.00, 0.10} :: (0.00)</li>
+
+										<li class="li">{0.10, 0.11} :: (1.00)</li>
+
+										<li class="li">{0.50, 0.10} :: (1.00)</li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d40052e103 ">Weight SA confidence level ranking</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d40052e106 ">
+									<p class="p">Trigger Level = 1</p>
+
+									<p class="p">Trigger Control Type = Ranking of confidence
+										level (highest confidence level = 1, second highest = 2,
+										etc)</p>
+
+									<p class="p">Core Data = User-defined adjustment
+										factor</p>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d40052e109 ">
+									<ul class="ul" id="nta1502560008185__ul_lwx_bdg_w1b">
+										<li class="li">{1.00, 2.00} :: (1.00)</li>
+
+										<li class="li">{4.00, 5.00} :: (0.00)</li>
+
+										<li class="li">{6.00, 10.00} :: (0.00)</li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+The sample scenario below illustrates the adjustment process performed on
+				each SA confidence level.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="nta1502560008185__table_fyx_bv2_w1b" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /><col /></colgroup><tbody class="tbody">
+							<tr class="row" style="vertical-align:top;">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">Step 1</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">DA evaluates SA
+									confidence level. <p class="p">Based on sample DA trigger
+										values, a 53% Confidence Level = .66 Adjustment Factor
+									</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_e1d_cjf_w1b" src="isx1502578545103.svg" /></td>
+
+							</tr>
+
+							<tr class="row" style="vertical-align:top;">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">Step 2</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">DA evaluates
+									ranking of SA confidence level. <p class="p">Based on
+										sample DA trigger values, a confidence level Ranking of 1.0
+										= 1.0 Adjustment Factor</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_rb4_xjf_w1b" src="rog1502578548410.svg" /></td>
+
+							</tr>
+
+							<tr class="row" style="vertical-align:top;">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">Step 3</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">DA multiplies the
+									product of the two adjustment factors to the original SA
+									confidence level to get the revised confidence level. <p class="p">(Adjustment from 1st Trigger * Adjustment
+										from 2nd Trigger) * original Confidence Level = Adjusted
+										Confidence Level</p>
+<p class="p">(.66 * 1.0) * 53% =
+										40%</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_ujt_skf_w1b" src="kvv1502578568378.png" /></td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+</div>
+
+		</div>
+
+		<div class="section" id="nta1502560008185__section_N101ED_N1000F_N10001"><h2 class="title sectiontitle">Interpolation between AGW decision point and SA decision
+				points</h2>
+			
+			<div class="p">In the process of determining the final decision point, the DA interpolates
+				between AGW decision point and each SA’s decision point using a weight formula. The
+				weight for AWG SA (W_agw) and each generalized SA (W_sa) used in the interpolation
+				is computed based on the SA’s confidence level (CF_sa) and weight adjustment factor
+				(F_adj). The SA weight adjustment factor is the SA Weight parameter from the
+				generalized SA parameters. as follows: <ul class="ul" id="nta1502560008185__ul_rjw_3kg_w1b">
+					<li class="li">W_agw = [1.0 - (CF_sa)] * F_adj </li>
+
+					<li class="li">W_sa = 1.0 - W_agw</li>
+
+				</ul>
+</div>
+
+			<div class="p">The following table lists the weight parameters required for the AGW vs SA
+				decision point interpolation process. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="nta1502560008185__table_xj4_1hg_w1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d40052e276">Parameter Specifications</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d40052e279">Default values [triggers}:: (adjustment
+									factor)</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d40052e276 ">
+									<p class="p">Trigger Level = 1</p>
+
+									<p class="p">Trigger Control Type = AGW SA confidence
+										level</p>
+
+									<p class="p">Core Data = User-defined adjustment
+										factor</p>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d40052e279 ">
+									<ul class="ul" id="nta1502560008185__ul_yj4_1hg_w1b">
+										<li class="li">{0.00, 0.01} :: (0.00)</li>
+
+										<li class="li">{0.03, 0.05} :: (0.50)</li>
+
+										<li class="li">{0.07, 1.00} :: (1.00)</li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+The sample scenario below illustrates the weight and interpolation process
+				performed to compute the final decision point. If all SAs havea “0” confidence
+				level, DA uses the AGW SA decision point as final decision point.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="nta1502560008185__table_ak4_1hg_w1b" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /><col /></colgroup><tbody class="tbody">
+							<tr class="row" style="vertical-align:top;">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">Step 1</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">DA evaluates AGW SA
+									confidence level to get AGW weight adjustment factor.<p class="p">Based on sample DA trigger values, a 4%
+										Confidence Level = .50 Adjustment Factor </p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_atw_f4h_w1b" src="lgn1502603933583.svg" /></td>
+
+							</tr>
+
+							<tr class="row" style="vertical-align:top;">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">Step 2</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">DA interpolates
+									between the AGW SA decision point and each SA’s decision point
+									using a weight formula. Note: This figure only shows one of the
+									SA points. Same would be done with other SAs.<p class="p">Using the weight formula, the interpolated point is 30% AGW
+										and 70% SA. </p>
+<p class="p">Interpolation weight for AGW = (100% -
+										40% SA conf level) * 0.5 SA Weight = 30%</p>
+<p class="p">Interpolation
+										weight for SA = (100% - 30% AGW weight)</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_lnp_g4h_w1b" src="pzy1502603935829.svg" /></td>
+
+							</tr>
+
+							<tr class="row" style="vertical-align:top;">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">Step 3</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;">Multiply the
+									adjusted confidence level of the interpolated SA points with the
+									applicable SA Weight. <p class="p">Use that factor to do a weighted
+										average of all the decision points to get the final decision
+										point.</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;"><img class="image" id="nta1502560008185__image_fnx_h4h_w1b" src="dxp1502604703772.svg" /></td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+</div>
+
+			<p class="p">All DA triggers follow the common AWB trigger system that provides for
+				interpolation of values that fall outside or between the defined trigger ranges </p>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="ygi1502560061663.html">Decision aggregator parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="yyl1502560114656.html">Fine-tune decision aggregator</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

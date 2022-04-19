@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2019 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<Metering
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\aec\aecMetering.xsd">
+  <module_version major_revision="8" minor_revision="0" incr_revision="1"/>
+  <parameter_version>
+    <revision>0</revision>
+  </parameter_version>
+  <mtrLumaCalc>
+    <indexCalc>
+      <enableLuxIndexComp>false</enableLuxIndexComp>
+      <refSensitivityForExpIndexZero>10000</refSensitivityForExpIndexZero>
+      <luxIndexFilterFactor>0.5</luxIndexFilterFactor>
+      <bayerGridSubsmplSelect>SW4</bayerGridSubsmplSelect>
+    </indexCalc>
+    <lumaWeight>
+      <weight>0.2988</weight>
+      <weight>0.5869</weight>
+      <weight>0.1137</weight>
+      <enableColorAndSensorComp>false</enableColorAndSensorComp>
+      <refGain>1.8</refGain>
+      <refGain>1</refGain>
+      <refGain>1.5</refGain>
+    </lumaWeight>
+    <mtrTables>
+      <centerWeighted>
+        <weights>0.1016 0.10333 0.10822 0.11542 0.12369 0.1316 0.13778 0.14116 0.14116 0.13778 0.1316 0.12369 0.11542 0.10822 0.10333 0.1016 0.10333 0.10693 0.1171 0.13208 0.14929 0.16575 0.17861 0.18565 0.18565 0.17861 0.16575 0.14929 0.13208 0.1171 0.10693 0.10333 0.10822 0.1171 0.1422 0.17919 0.22167 0.26229 0.29404 0.31141 0.31141 0.29403 0.26229 0.22167 0.17919 0.1422 0.1171 0.10822 0.11542 0.13208 0.17919 0.2486 0.32831 0.40454 0.4641 0.4967 0.4967 0.4641 0.40454 0.32831 0.2486 0.17919 0.13208 0.11542 0.12369 0.14929 0.22167 0.32831 0.45078 0.56789 0.6594 0.70949 0.70949 0.6594 0.56789 0.45077 0.32831 0.22167 0.14929 0.12369 0.1316 0.16575 0.26229 0.40454 0.56789 0.7241 0.84617 0.91297 0.91297 0.84616 0.7241 0.56789 0.40453 0.26229 0.16575 0.1316 0.13778 0.17861 0.29404 0.4641 0.6594 0.84617 0.9921 1 1 0.9921 0.84616 0.65939 0.4641 0.29403 0.17861 0.13778 0.14116 0.18565 0.31141 0.4967 0.70949 0.91297 1 1 1 1 0.91296 0.70948 0.49669 0.3114 0.18564 0.14116 0.14116 0.18565 0.31141 0.4967 0.70949 0.91297 1 1 1 1 0.91296 0.70948 0.49669 0.3114 0.18564 0.14116 0.13778 0.17861 0.29403 0.4641 0.6594 0.84616 0.9921 1 1 0.99209 0.84616 0.65939 0.46409 0.29403 0.17861 0.13778 0.1316 0.16575 0.26229 0.40454 0.56789 0.7241 0.84616 0.91296 0.91296 0.84616 0.72409 0.56788 0.40453 0.26229 0.16575 0.1316 0.12369 0.14929 0.22167 0.32831 0.45077 0.56789 0.65939 0.70948 0.70948 0.65939 0.56788 0.45077 0.32831 0.22167 0.14929 0.12369 0.11542 0.13208 0.17919 0.2486 0.32831 0.40453 0.4641 0.49669 0.49669 0.46409 0.40453 0.32831 0.2486 0.17919 0.13208 0.11542 0.10822 0.1171 0.1422 0.17919 0.22167 0.26229 0.29403 0.3114 0.3114 0.29403 0.26229 0.22167 0.17919 0.1422 0.1171 0.10822 0.10333 0.10693 0.1171 0.13208 0.14929 0.16575 0.17861 0.18564 0.18564 0.17861 0.16575 0.14929 0.13208 0.1171 0.10693 0.10333 0.1016 0.10333 0.10822 0.11542 0.12369 0.1316 0.13778 0.14116 0.14116 0.13778 0.1316 0.12369 0.11542 0.10822 0.10333 0.1016</weights>
+      </centerWeighted>
+      <spotWeighted>
+        <weights>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</weights>
+      </spotWeighted>
+    </mtrTables>
+    <lumaRgnAdj>
+      <enableBrightRgnAdj>false</enableBrightRgnAdj>
+      <enableDarkRgnAdj>false</enableDarkRgnAdj>
+      <minTableWeightForBright>0</minTableWeightForBright>
+      <maxStatsPctForBright>0.25</maxStatsPctForBright>
+      <minTableWeightForDark>0</minTableWeightForDark>
+      <maxStatsPctForDark>0.25</maxStatsPctForDark>
+      <rgnAdjZone>
+        <zoneTrigger>
+          <start>0</start>
+          <end>190</end>
+        </zoneTrigger>
+        <zoneData>
+          <thresBrightRgn>
+            <start>150</start>
+            <end>220</end>
+          </thresBrightRgn>
+          <!--Base Type Tuning Definition -->
+          <thresDarkRgn>
+            <start>0</start>
+            <end>5</end>
+          </thresDarkRgn>
+          <weightBrightRgnAdj>1.2</weightBrightRgnAdj>
+          <weightDarkRgnAdj>1</weightDarkRgnAdj>
+        </zoneData>
+      </rgnAdjZone>
+      <rgnAdjZone>
+        <zoneTrigger>
+          <start>230</start>
+          <end>360</end>
+        </zoneTrigger>
+        <zoneData>
+          <thresBrightRgn>
+            <start>150</start>
+            <end>220</end>
+          </thresBrightRgn>
+          <!--Base Type Tuning Definition -->
+          <thresDarkRgn>
+            <start>0</start>
+            <end>5</end>
+          </thresDarkRgn>
+          <weightBrightRgnAdj>1.2</weightBrightRgnAdj>
+          <weightDarkRgnAdj>1</weightDarkRgnAdj>
+        </zoneData>
+      </rgnAdjZone>
+      <rgnAdjZone>
+        <zoneTrigger>
+          <start>420</start>
+          <end>1000</end>
+        </zoneTrigger>
+        <zoneData>
+          <thresBrightRgn>
+            <start>150</start>
+            <end>220</end>
+          </thresBrightRgn>
+          <!--Base Type Tuning Definition -->
+          <thresDarkRgn>
+            <start>0</start>
+            <end>5</end>
+          </thresDarkRgn>
+          <weightBrightRgnAdj>1</weightBrightRgnAdj>
+          <weightDarkRgnAdj>0.5</weightDarkRgnAdj>
+        </zoneData>
+      </rgnAdjZone>
+    </lumaRgnAdj>
+  </mtrLumaCalc>
+  <mtrLumaTarget>
+    <luxLumaTarget>
+      <luxLumaTargetZone>
+        <zoneTrigger>
+          <start>0</start>
+          <end>190</end>
+        </zoneTrigger>
+        <!--AEC Tuning: Key metering structures -->
+        <zoneData>
+          <lumaTarget>45</lumaTarget>
+        </zoneData>
+      </luxLumaTargetZone>
+      <luxLumaTargetZone>
+        <zoneTrigger>
+          <start>230</start>
+          <end>360</end>
+        </zoneTrigger>
+        <!--AEC Tuning: Key metering structures -->
+        <zoneData>
+          <lumaTarget>45</lumaTarget>
+        </zoneData>
+      </luxLumaTargetZone>
+      <luxLumaTargetZone>
+        <zoneTrigger>
+          <start>420</start>
+          <end>1000</end>
+        </zoneTrigger>
+        <!--AEC Tuning: Key metering structures -->
+        <zoneData>
+          <lumaTarget>30</lumaTarget>
+        </zoneData>
+      </luxLumaTargetZone>
+    </luxLumaTarget>
+    <histLumaTarget>
+      <enableHistMetering>true</enableHistMetering>
+      <enableADRC>false</enableADRC>
+      <enableNonLinearTargetEstimate>false</enableNonLinearTargetEstimate>
+      <enableDarkBoost>false</enableDarkBoost>
+      <enableAntiBandingPrioOverADRC>false</enableAntiBandingPrioOverADRC>
+      <antiBandingPrioTriggerRange>15</antiBandingPrioTriggerRange>
+      <targetFilterFactor>0</targetFilterFactor>
+      <histLumaTargetZone>
+        <zoneTrigger>
+          <start>0</start>
+          <end>190</end>
+        </zoneTrigger>
+        <zoneData>
+          <minTargetAdjRatio>0.95</minTargetAdjRatio>
+          <maxTargetAdjRatio>1.75</maxTargetAdjRatio>
+          <satRefLow>150</satRefLow>
+          <satRefHigh>230</satRefHigh>
+          <darkRefLow>1</darkRefLow>
+          <darkRefHigh>70</darkRefHigh>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.04</start>
+            <end>0.1</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.04</start>
+            <end>0.1</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.04</start>
+            <end>0.1</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <maxDRCGain>2.5</maxDRCGain>
+          <maxADRCGain>2.5</maxADRCGain>
+          <maxDarkBoostGain>1</maxDarkBoostGain>
+        </zoneData>
+      </histLumaTargetZone>
+      <histLumaTargetZone>
+        <zoneTrigger>
+          <start>230</start>
+          <end>360</end>
+        </zoneTrigger>
+        <zoneData>
+          <minTargetAdjRatio>0.95</minTargetAdjRatio>
+          <maxTargetAdjRatio>1.75</maxTargetAdjRatio>
+          <satRefLow>160</satRefLow>
+          <satRefHigh>230</satRefHigh>
+          <darkRefLow>1</darkRefLow>
+          <darkRefHigh>100</darkRefHigh>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.02</start>
+            <end>0.08</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.02</start>
+            <end>0.08</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.02</start>
+            <end>0.08</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <maxDRCGain>2.5</maxDRCGain>
+          <maxADRCGain>2.5</maxADRCGain>
+          <maxDarkBoostGain>1</maxDarkBoostGain>
+        </zoneData>
+      </histLumaTargetZone>
+      <histLumaTargetZone>
+        <zoneTrigger>
+          <start>420</start>
+          <end>1000</end>
+        </zoneTrigger>
+        <zoneData>
+          <minTargetAdjRatio>0.9</minTargetAdjRatio>
+          <maxTargetAdjRatio>1.2</maxTargetAdjRatio>
+          <satRefLow>160</satRefLow>
+          <satRefHigh>230</satRefHigh>
+          <darkRefLow>1</darkRefLow>
+          <darkRefHigh>100</darkRefHigh>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.02</start>
+            <end>0.08</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.02</start>
+            <end>0.08</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushupRange>
+            <start>0.02</start>
+            <end>0.08</end>
+          </histSatPushupRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histSatPushdownRange>
+            <start>0.02</start>
+            <end>0.05</end>
+          </histSatPushdownRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <!--Base Type Tuning Definition -->
+          <histDarkRange>
+            <start>0</start>
+            <end>0.15</end>
+          </histDarkRange>
+          <maxDRCGain>2.5</maxDRCGain>
+          <maxADRCGain>2.5</maxADRCGain>
+          <maxDarkBoostGain>1</maxDarkBoostGain>
+        </zoneData>
+      </histLumaTargetZone>
+      <enableWBClipping>false</enableWBClipping>
+      <enableBinGrouping>false</enableBinGrouping>
+      <EVHandling>Legacy</EVHandling>
+      <SensorHDRGainAdjust>
+        <enableADRGGainAdjust>false</enableADRGGainAdjust>
+        <ADRCGainAdjustZone>
+          <zoneTrigger>
+            <start>0</start>
+            <end>0</end>
+          </zoneTrigger>
+          <zoneData>
+            <tolerance>0</tolerance>
+          </zoneData>
+        </ADRCGainAdjustZone>
+      </SensorHDRGainAdjust>
+    </histLumaTarget>
+    <extrmClrLumaTarget>
+      <enableExtrmClr>true</enableExtrmClr>
+      <thresRed>
+        <thres>1.9</thres>
+        <interpPct>0.07</interpPct>
+      </thresRed>
+      <thresGreenR>
+        <thres>1.1</thres>
+        <interpPct>0.05</interpPct>
+      </thresGreenR>
+      <thresGreenB>
+        <thres>0.95</thres>
+        <interpPct>0.05</interpPct>
+      </thresGreenB>
+      <thresGreenCenter>
+        <thres>0.15</thres>
+        <interpPct>0.05</interpPct>
+      </thresGreenCenter>
+      <thresBlue>
+        <thres>1.2</thres>
+        <interpPct>0.07</interpPct>
+      </thresBlue>
+      <!--Base Type Tuning Definition -->
+      <thresColorStatsPct>
+        <start>0.05</start>
+        <end>0.5</end>
+      </thresColorStatsPct>
+      <thresLumaLow>30</thresLumaLow>
+      <thresLumaHigh>225</thresLumaHigh>
+      <extrmClrLumaTargetZone>
+        <zoneTrigger>
+          <start>0</start>
+          <end>190</end>
+        </zoneTrigger>
+        <zoneData>
+          <channelAdjRatio>0.8</channelAdjRatio>
+          <channelAdjRatio>0.8</channelAdjRatio>
+          <channelAdjRatio>0.8</channelAdjRatio>
+        </zoneData>
+      </extrmClrLumaTargetZone>
+      <extrmClrLumaTargetZone>
+        <zoneTrigger>
+          <start>230</start>
+          <end>360</end>
+        </zoneTrigger>
+        <zoneData>
+          <channelAdjRatio>0.9</channelAdjRatio>
+          <channelAdjRatio>0.9</channelAdjRatio>
+          <channelAdjRatio>0.9</channelAdjRatio>
+        </zoneData>
+      </extrmClrLumaTargetZone>
+      <extrmClrLumaTargetZone>
+        <zoneTrigger>
+          <start>420</start>
+          <end>1000</end>
+        </zoneTrigger>
+        <zoneData>
+          <channelAdjRatio>1</channelAdjRatio>
+          <channelAdjRatio>1</channelAdjRatio>
+          <channelAdjRatio>1</channelAdjRatio>
+        </zoneData>
+      </extrmClrLumaTargetZone>
+    </extrmClrLumaTarget>
+    <EVLumaTarget>
+      <stepsPerEV>6</stepsPerEV>
+      <minEVValue>-2</minEVValue>
+      <maxEVValue>2</maxEVValue>
+      <EVCompTable>
+        <EVCompTableElements>0.25 0.2806 0.315 0.3536 0.3969 0.4454 0.5 0.5612 0.6299 0.7071 0.7937 0.8909 1 1.1225 1.2599 1.4142 1.5874 1.7818 2 2.2449 2.5198 2.8284 3.1748 3.5636 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</EVCompTableElements>
+      </EVCompTable>
+      <dynamicEVLock>
+        <enable>false</enable>
+        <convDelayOffset>0</convDelayOffset>
+        <SCConsTh>0</SCConsTh>
+        <SCRatio>0</SCRatio>
+      </dynamicEVLock>
+    </EVLumaTarget>
+    <advancedTarget>
+      <advLuxTgt>
+        <nonLinLuxTgt>
+          <enableNonLinearEstimate>true</enableNonLinearEstimate>
+          <errPct>0.1</errPct>
+          <maxIterations>10</maxIterations>
+        </nonLinLuxTgt>
+        <enableForYOnly>false</enableForYOnly>
+        <suppressNonLinearLuma>
+          <suppressNonLinearZone>
+            <zoneTrigger>
+              <start>0</start>
+              <end>0</end>
+            </zoneTrigger>
+            <zoneData>
+              <outputGain>0</outputGain>
+            </zoneData>
+          </suppressNonLinearZone>
+        </suppressNonLinearLuma>
+      </advLuxTgt>
+      <advHistTgt>
+        <nonLinHistTgt>
+          <enableNonLinearEstimate>true</enableNonLinearEstimate>
+          <errPct>0.1</errPct>
+          <maxIterations>10</maxIterations>
+        </nonLinHistTgt>
+      </advHistTgt>
+    </advancedTarget>
+  </mtrLumaTarget>
+</Metering>

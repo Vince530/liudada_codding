@@ -1,0 +1,62 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="An entire set of stats often requires time to compute and load. While AWB can estimate a subset of stats through a skip process that selects stats every 2 to 4 columns, this does not contribute to ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Stats subsample concept" /><meta name="DC.Relation" scheme="URI" content="yqt1502923722746.html" /><meta name="DC.Relation" scheme="URI" content="mxl1507323676196.html" /><meta name="DC.Relation" scheme="URI" content="ptr1507324200500.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ivx1507317552439" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Stats subsample concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ivx1507317552439">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="yqt1502923722746.html" title="AWB stats filters">AWB stats filters</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Stats subsample concept</h1>
+
+	<div class="body conbody">
+		<p class="p">An entire set of stats often requires time to compute and load. While AWB can
+			estimate a subset of stats through a skip process that selects stats every 2 to 4
+			columns, this does not contribute to uniform sampling. </p>
+
+		<p class="p">The stats subsample filter provides a versatile way to select stats using masks that can
+			be configured. AWB can then compute and directly use the set of subsampled stats or
+			compute and load the average. </p>
+
+		<div class="fig fignone nonumber" id="ivx1507317552439__fig_y4r_cq4_lbb"><span class="figcap">Figure : (L) Example of an image with no subsampling applied; (R) example of an image in
+				which a subsampling mask has been specified every fourth column </span>
+			
+			<br /><img class="image" id="ivx1507317552439__image_okq_gq4_lbb" src="xdu1507317750139.png" /><br />
+		</div>
+
+		<p class="p">The stats subsampling module consists of a mode parameter (skip stats or binning stats)
+			and a pattern parameter. The subsampling pattern uses a 4x3 mask for selecting stats to
+			process, with 4096 possible combinations. The following are examples of a 6-stat
+			selection pattern (1 = use stat, 0 = discard stat):</p>
+
+		<br /><img class="image" id="ivx1507317552439__image_lbm_zq4_lbb" src="gdl1507317757003.png" /><br />
+		<p class="p">When skip mode is selected, the subsampling process picks the stats in the cells
+			marked with 1. For example, the figure on the left shows the 6-stat skip pattern. The
+			figure on the right shows the skip mode result.</p>
+
+		<br /><img class="image" id="ivx1507317552439__image_rzk_hr4_lbb" src="bsi1507317748767.png" /><br />
+		<p class="p">When binning mode is selected, the subsampling process picks the stats in the
+			cells marked with 1 and averages them. For example, the first figure shows a 4-stat
+			binning pattern. The second figure shows the binning result, which generates 256 stats
+			in the 64x48 stats example.</p>
+
+		<br /><img class="image" id="ivx1507317552439__image_cvf_pr4_lbb" src="tpw1507317755896.png" /><br />
+		<p class="p">On 64x48 grid stats, the pattern does not overlap; each stat is processed one time
+			only.</p>
+
+		<br /><img class="image" id="ivx1507317552439__image_ysl_zr4_lbb" src="aji1507317754835.png" /><br />
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="mxl1507323676196.html">Stats subsample parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="ptr1507324200500.html">Fine-tune stats subsampling</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

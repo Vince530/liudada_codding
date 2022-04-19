@@ -1,0 +1,212 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The Adaptive Bayer Filter (ABF) tuning module performs denoising for the Bayer domain. Regular 2D convolution filtering deteriorates image quality, particularly when applied on Bayer pixels. ABF can ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="ABF tuning concepts" /><meta name="DC.Relation" scheme="URI" content="adl1504650516665.html" /><meta name="DC.Relation" scheme="URI" content="nsh1499457051373.html" /><meta name="DC.Relation" scheme="URI" content="jin1499905208720.html" /><meta name="DC.Relation" scheme="URI" content="vtx1503689759985.html" /><meta name="DC.Relation" scheme="URI" content="nsh1499457051373.html" /><meta name="DC.Relation" scheme="URI" content="vtx1503689759985.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="aev1458948387028" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ABF tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="aev1458948387028">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="adl1504650516665.html" title="IFE tuning">IFE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="adl1504650516665.html" title="IFE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IFE tuning</span></a></span>  </div></td></tr></tbody></table> 
+  <h1 class="title topictitle1" id="ariaid-title1">ABF tuning concepts</h1>
+ 
+  <div class="body conbody">
+		<p class="p">The Adaptive Bayer Filter (ABF) tuning module performs denoising for the Bayer
+			domain. Regular 2D convolution filtering deteriorates image quality, particularly when
+			applied on Bayer pixels. ABF can adapt its kernel based on neighboring pixel values to
+			reduce noise without blurring sharp edges. ABF includes a low pass filter followed by
+			soft thresholding.<br /><img class="image" id="aev1458948387028__image_ggv_ccy_41b" src="mmz1500329961552.svg" /><br /></p>
+
+		<div class="p"> ABF is not the primary module for denoising in Qualcomm Spectra 2xx. Noise
+			tuning is primarily accomplished with the following modules: <ul class="ul" id="aev1458948387028__ul_8BD631AD9122421192821314961489E0">
+				<li class="li" id="aev1458948387028__li_63443BB8B1F74315BEF9D52A56391C40">Advanced Noise Reduction
+					(ANR) + Temporal Noise Filtering (TF) for preview/view mode</li>
+
+				<li class="li" id="aev1458948387028__li_0C1B0A3E792B41489C34D7AFD7EBF903">Hybrid Noise Reduction
+					(HNR) + ANR for snapshot mode</li>
+
+			</ul>
+
+		</div>
+
+		<div class="section" id="aev1458948387028__section_N10037_N1000F_N10001"><h2 class="title sectiontitle">Coordination with other modules</h2>
+			
+			<p class="p">In general, the factory defaults for ABF parameters should be adequate because ABF is
+				not the primary module for denoising. Use a mild setting for the ABF bilateral
+				filtering strength to preserve more detail and texture. Allow the ANR, HNR, and TF
+				modules to control the noise. </p>
+
+			<p class="p"> ABF processes pixels in a linear domain while other modules are in a
+				non-linear YUV domain. Therefore, it is good to have a certain level of noise
+				reduction in the linear domain, especially for getting high quality snapshots. </p>
+
+			<div class="p">ABF coordinates with other tuning modules in the following ways:<ul class="ul" id="aev1458948387028__ul_yyp_lm2_p1b">
+					<li class="li">The kernel size of ABF is similar to the kernel size of
+						GIC, HNR and the first pass of ANR.<ul class="ul" id="aev1458948387028__ul_oqn_pm2_p1b">
+							<li class="li">For snapshot, the balance is among GIC, HNR, and
+								ABF</li>
+
+							<li class="li">For video, the balance is among GIC, ABF, and the
+								first pass of ANR</li>
+
+						</ul>
+</li>
+
+					<li class="li">If using a special RCCB or RGBW sensor, ABF can help reduce
+						noise in the early part of the pipeline</li>
+
+					<li class="li">When doing initial spatial tuning, rely on edge alignment in ASF and
+						disable directional smoothing available in ABF</li>
+
+					<li class="li">When doing initial spatial tuning, rely on HNR and disable activity-based
+						strength adjustment available in ABF</li>
+
+					<li class="li">During normal tuning, turn off full BPC and rely on these other blocks
+						that have the same function: <ul class="ul" id="aev1458948387028__ul_qpp_h42_p1b">
+							<li class="li">BPC/BCC/PDPC (single BPC)</li>
+
+							<li class="li">Peak noise reduction (PNR) in GIC</li>
+
+						</ul>
+</li>
+
+				</ul>
+</div>
+
+		</div>
+
+		<div class="section" id="aev1458948387028__section_N1003E_N10015_N10001"><h2 class="title sectiontitle">Key ABF parameters for preview/video mode</h2>
+			
+			<p class="p">A noise profile is a 65-entry LUT that represents noise statistics for a
+				specific sensor. The first to last entries correspond to a noise value (in terms of
+				standard deviation) at intensity levels 0-255. The local average intensity is used
+				to index the noise profile entry. A larger value for the <span class="keyword parmname">Noise Stdlut Level</span> equals a stronger denoising. Calibrate a noise
+				profile for each sensor using the Chromatix tool. Usually the computed noise profile
+				does not require any manual adjustment. </p>
+
+			<p class="p">The <span class="keyword parmname">Edge Softness</span> parameter, together with the noise profile,
+				controls the strength of the bilateral filter. The greater the edge softness value,
+				the more denoising is done. Less noise results in flatter uniform regions, less
+				detail, and softened edges.</p>
+
+			<p class="p">Noise preservation determines how much noise to retain in the soft
+				thresholding step. These settings are helpful for removing dark artifacts,
+				especially crosshatch patterns, but dark details are impacted. There are four
+				parameters that affect noise preservation: <span class="keyword parmname">Noise Prsv
+					Lo</span> and <span class="keyword parmname">Noise Prsv Hi</span> set the
+				minimum and maximum for how much noise to preserve; <span class="keyword parmname">Noise
+					Prsv Anchor Lo</span> and <span class="keyword parmname">Noise Prsv Anchor
+					Hi</span> set the minimum and maximum thresholds for local intensity. </p>
+
+			<div class="p">Noise preservation is determined by local intensity as follows: <ul class="ul" id="aev1458948387028__ul_h4z_kcd_41b">
+					<li class="li">If local intensity ≤ Noise Prsv Anchor Lo, noise preservation = Noise Prsv
+						Lo</li>
+
+					<li class="li">If local intensity ≥ Noise Prsv Anchor Hi, noise preservation = Noise Prsv
+						Hi</li>
+
+					<li class="li">Otherwise, linear interpolation is used to determine the noise preservation
+						value as shown in the following graph</li>
+
+				</ul>
+<br /><img class="image" id="aev1458948387028__image_yg5_wcd_41b" src="xzl1499972738323.svg" /><br /></div>
+
+			<p class="p">Bilateral filter coefficients are adjusted based on pixel location. Pixels are
+				grouped into three categories: the center pixel (p0), near neighbors (p1), and far
+				neighbors (p2). The coefficient for each pixel is left shifted by (n-1) bits, where
+					n=<span class="keyword parmname">Distance Kernel</span>. </p>
+
+			<p class="p">The format of the distance kernel array is illustrated below: <br /><img class="image" id="aev1458948387028__image_ixw_32d_41b" src="bzh1500074399319.svg" /><br /></p>
+
+			<p class="p">Typically the distance kernel array does not need to be tuned, it is recommended to
+				use the default value {3,2,2,3,2,2}. Adjust edge softness and other parameters
+				instead. </p>
+
+			<p class="p">The <span class="keyword parmname">Curve Offset</span> parameter causes more filtering
+				of similar pixels resulting in smoother images. The four entries in the curve offset
+				table correspond to the RGGB channels. A larger value smooths out details and noise,
+				producing very soft images.  Unless the sensor is extremely noisy, use the default
+				values.</p>
+
+			<p class="p">A key step of the bilateral filter is an update based on the weighted average
+				of block matching vs pixel matching. Pixel matching tends to give results with more
+				noise and detail. However, pixel matching can produce a more uniform noise pattern
+				than block matching for some sensors under very low light conditions. Set <span class="keyword parmname">Blk Pix Matching RB</span> and <span class="keyword parmname">Blk
+					Pix Matching G</span> to adjust RB and GrGb channels, respectively. </p>
+
+			<p class="p">Most of the ABF parameters are <em class="ph i">regional</em>, which means they must be tuned
+				separately for different lighting conditions. An ABF region is defined by three
+				specific nested triggers: DRC Gain Triggers, HDR AEC Triggers, and AEC Triggers.
+				Define as many regions as you need to accomplish the preferred tuning specificity.
+				It is important to define the regions for ABF before you begin tuning. Refer to
+					<cite class="cite">Add and edit triggers in the parameter editor</cite> for examples and
+				instructions.</p>
+
+		</div>
+
+		<div class="section" id="aev1458948387028__section_N100CF_N10015_N10001"><h2 class="title sectiontitle">RNR parameters</h2>
+			
+			<p class="p"> Noise in an image field of view (FOV) is not uniformly distributed.
+				The corner of an image often has more noise due to rolloff correction. Radial noise
+				reduction (RNR) is used to uniformly distribute noise in the FOV. ABF is early in
+				the pipeline, so LSC information later in the pipeline can be used to adjust
+				denoising.</p>
+
+			<p class="p">RNR processing partitions an image into four regions by five control points as
+				illustrated in the following diagram. <br /><img class="image" id="aev1458948387028__image_kqy_gny_41b" src="kll1500335071992.svg" /><br /></p>
+
+			<p class="p">The <span class="keyword parmname">Radial Anchor Table</span>, in the ABF Reserve
+				parameters, specifies the five radial control points that are defined by the radius
+				percentage from the center point. The first and fifth points are hard coded as the
+				image center (0.0) and corner (1.0). Use the Chromatix tool to tune the second point
+				and the tool generates the remaining points.</p>
+
+			<p class="p">Edge softness and noise preservation can be adjusted based on radial distance. Use
+				the <span class="keyword parmname">Radial Base Table</span> to define radial based adjustment. Radial
+				gain entries [0] - [4] adjust edge softness at each control point and entries
+				[5] - [9] adjust noise preservation at each control point.</p>
+
+			<ul class="ul" id="aev1458948387028__ul_m1q_pyy_41b">
+				<li class="li">At each control point [i] edgeSoftness’[i] =
+					edgeSoftness/((base_table[i]+1)/256). i=0-4</li>
+
+				<li class="li">Noise preservation is first determined by local intensity, and then adjusted
+					with the radius. Noise preservation’[i] = noise preservation *
+					(base_table[i]+1)/256. i=5-9</li>
+
+			</ul>
+
+			<p class="p">A smaller radial gain results in a larger edge softness or smaller noise
+				preservation, which results in more denoising. To use a stronger ABF at the image
+				corners, program decreasing values into the base table. </p>
+
+			<p class="p">Refer to the <em class="ph i">ABF Parameters</em> section for more
+				detail about how to adjust the parameter values.</p>
+
+			
+		</div>
+
+	</div>
+ 
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="nsh1499457051373.html">ABF Parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="jin1499905208720.html">Examples of ABF parameter effects</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="vtx1503689759985.html">Tune ABF</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="nsh1499457051373.html" title="ABF Parameters">ABF Parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="vtx1503689759985.html" title="Tune ABF">Tune ABF</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="adl1504650516665.html" title="IFE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IFE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

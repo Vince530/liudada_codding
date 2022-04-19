@@ -1,0 +1,975 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Edge enhancement increases the local contrast at boundaries which makes the image appear sharper. The ASF block in the CPP hardware uses high-pass filters to enhance the edges. Smoothing can be ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="ASF tuning concepts" /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="DC.Relation" scheme="URI" content="ovc1494872157022.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qpg1458948389415" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ASF tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qpg1458948389415">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div></td></tr></tbody></table> 
+  <h1 class="title topictitle1" id="ariaid-title1">ASF tuning concepts</h1>
+ 
+  <div class="body conbody">
+		<p class="p">Edge enhancement increases the local contrast at boundaries which makes
+			the image appear sharper. The ASF block in the CPP hardware uses high-pass filters to
+			enhance the edges. Smoothing can be applied to nontexture regions to suppress noise. </p>
+
+		<p class="p">The ASF module is located in PPS of IPE and should be tuned last.</p>
+
+		<p class="p">
+			<br /><img class="image" id="qpg1458948389415__image_er1_mpp_h1b" src="ibf1498066650901.svg" /><br />
+		</p>
+
+		<p class="p">Sharpening gain is calculated by combining sharpening strength based on
+			local brightness and local activity. Sharpening gain is controlled by three LUTs per
+			layer: <span class="keyword parmname">layer_1_gain_positive_lut</span>,
+				<span class="keyword parmname">layer_1_gain_negative_lut</span>, and
+				<span class="keyword parmname">layer_1_gain_weight_lut</span>. For layer 2, the LUTs are
+				<span class="keyword parmname">layer_2_gain_positive_lut</span>,
+				<span class="keyword parmname">layer_2_gain_negative_lut</span>, and
+				<span class="keyword parmname">layer_2_gain_weight_lut</span>.</p>
+
+		<div class="section" id="qpg1458948389415__section_N10052_N10014_N10001"><h2 class="title sectiontitle">Strength reduction</h2>
+			
+			<p class="p">Strength reduction is controlled by four parameters:
+					<span class="keyword parmname">gain_contrast_negative</span>,
+					<span class="keyword parmname">gain_contrast_positive</span>, <span class="keyword parmname">skingain</span>, and
+					<span class="keyword parmname">skinactivity</span>. These parameters adjust the contrast
+				strength, skin strength, and chroma edge strength.</p>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_N1006F_N10014_N10001"><h2 class="title sectiontitle">Symmetric kernel</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_csn_4bw_l1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e100">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e103">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e106">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e109">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e112">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e100 ">layer_1_hpf_symmetric_coeff</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e103 ">This controls the first layer 7x7 sharpening coefficients.
+									The thin kernel shows small details and makes the image sharper.
+									The thick kernel smooths edges. The sum of the kernel should be
+									zero. It is not recommended to change the kernel
+										manually.<p class="p">Length: 10; Q10</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e106 "> </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e109 ">
+									<ul class="ul" id="qpg1458948389415__ul_skr_5bw_l1b">
+										<li class="li">Thin kernel (for outdoor): 0, 0, 0, -1, -2, -25, -86,
+											-173, -180, 1968</li>
+
+										<li class="li">Mid kernel (for indoor): 0, 0, -3, -5, -10, -57, -106,
+											-132, 65, 1232</li>
+
+										<li class="li">Thick kernel (for low light): 0, -2, -9, -15, -22, -67,
+											-89, -46, 144, 736</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e112 ">Use defaults</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_bcp_csh_2cb"><span class="figcap">Figure : (L) Thin kernel; (C) Mid kernel; (R) Thick kernel</span>
+				
+				<br /><img class="image" id="qpg1458948389415__image_dwc_pdc_m1b" src="rsw1499451403012.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_1C950B3D9FBB49049BA4BDA71930CF6D"><h2 class="title sectiontitle">gain_positive/negative_lut</h2>
+			
+			<p class="p">Thses LUTs affect sharpness in the output image where the positive
+				gain LUT affects white or lighter edges and the negative gain LUT affects black or
+				darker edges. Larger values increase sharpness in busy areas of the image. Positive
+				and negative gain LUTs are calculated by:</p>
+
+			<p class="p">Level = Y intensity value/4</p>
+
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_osv_bcw_l1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e195">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e198">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e201">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e204">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e207">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e195 ">layer_1_gain_positive_lut[level]</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e198 ">Level-based sharpening gain LUT for positive halo<p class="p">Length:
+										64</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e201 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e204 ">All 1.65f<p class="p">Min: 0.0f; Max: 7.9f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e207 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e195 ">layer_1_gain_negative_lut[level]</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e198 ">Level-based sharpening gain LUT for negative halo<p class="p">Length:
+										64</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e201 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e204 ">All 1.65f<p class="p">Min: 0.0f; Max: 7.9f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e207 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e195 ">layer_1_gain_weight_lut[activity]</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e198 ">Normalized activity-based sharpening gain LUT<p class="p">Length:
+										64</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e201 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e204 ">From 0.5 to 1.0<p class="p">Min: 0.0f; Max: 0.996f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e207 ">Use defaults</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<p class="p">For bright or normal light, there is a U-shaped curve with a
+				stronger enhancement for highlights and shadows (see orange line below). For low
+				light, there is a flat curve with the same enhancement for all intensity levels and
+				the default is all 0.6f (see brown line below).<br /><img class="image" id="qpg1458948389415__image_gg5_42c_m1b" src="aig1499451885725.png" /><br /></p>
+
+			<p class="p">For manual curve tuning, obtain the level data (Y intensity) for the section that
+				requires enhancement, or release sharpening and tune the level manually.<br /><img class="image" id="qpg1458948389415__image_gjy_p2c_m1b" src="ktn1499451884353.png" /><br /></p>
+
+			<p class="p">Increasing gain LUTs increases sharpness but also increases noise.</p>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_gqf_1vh_2cb"><span class="figcap">Figure : (L) Flat: 1.00f; (C) Flat: 1.65f; (R) Flat: 3.0f</span>
+				
+				<br /><img class="image" id="qpg1458948389415__image_lrz_s2c_m1b" src="hbd1499451886755.png" /><br />
+			</div>
+
+			<p class="p">U-shape generates stronger highlight sharpening and manual shape sharpening
+				is similar.</p>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_glw_w23_2cb"><span class="figcap">Figure : (L) Flat: 1.00f; (C) Flat: 1.65f; (R) U-shape: 1.65f</span>
+				
+				<img class="image" id="qpg1458948389415__image_qfh_nf3_2cb" src="vde1513112193863.png" />
+			</div>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_wjg_1f3_2cb"><span class="figcap">Figure : (L) Flat: 1.00f; (C) Flat: 1.65f; (R) Manual shape:
+					1.65f</span>
+				
+				<img class="image" id="qpg1458948389415__image_g2x_qf3_2cb" src="ztw1513112196499.png" />
+			</div>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_95B7159167E4422D9AD192BC7384DE80"><h2 class="title sectiontitle">activity_normalization_lut</h2>
+			
+			<p class="p">This LUT is tuned to reduce noise in dark areas of the image.
+				Activity is calculated by:</p>
+
+			<p class="p">Activity = Local variation/4</p>
+
+			<p class="p">The activity is normalized 5x5 BPF and LPF input. It can be adjusted with the
+				following parameters.</p>
+
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_jqk_ntj_h1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e352">Change to perform</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e355">Parameter to adjust</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e352 ">BPF</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e355 ">layer_1_activity_band_pass_coeff</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e352 ">Scale</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e355 ">layer_1_norm_scale and layer_1_L2_norm_en</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e352 ">Clamp</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e355 ">layer_1_activity_clamp_threshold</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e352 ">Normalization</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e355 ">layer_1_activity_normalization_lut</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<div class="p">The following example illustrates the effects of changing the LUT to decrease
+				scaling on darker pixels. The dark areas indicate low levels of activity and the
+				light areas indicate high levels of activity. <div class="fig fignone nonumber" id="qpg1458948389415__fig_g3j_kth_2cb"><span class="figcap">Figure : (L) Flat: 1.00f; (C) Bright/normal setting; (R) Lowlight setting</span>
+					
+					<br /><img class="image" id="qpg1458948389415__image_yhm_2hc_m1b" src="iro1499453034423.png" /><br />
+				</div>
+</div>
+
+			<p class="p">Using smaller normalization values decreases the normalized activity
+				factor, which in turn provides dark noise suppression but also creates less contrast
+				on dark edge areas. Avoid using values close to zero for this LUT. </p>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_N1026F_N10014_N10001"><h2 class="title sectiontitle">Layer 2 kernel and LUTs</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_r4x_cdw_l1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e443">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e446">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e449">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e452">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e455">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" colspan="5" style="text-align:left;vertical-align:top;" headers="d24374e443 d24374e446 d24374e449 d24374e452 d24374e455 ">Layer 2 kernel</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e443 ">layer_2_hpf_sharpening_coeff</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e446 ">This parameter controls the second layer sharpening
+									coefficients. The sum of the kernel should be zero. It is not
+									recommended to change the kernel manually.<p class="p">Length: 6;
+									Q10</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e449 ">5x5 kernel on x2 downscaled image and 2x upsampled</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e452 ">-1, -4, -6, -16, -24, 220</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e455 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" colspan="5" style="text-align:left;vertical-align:top;" headers="d24374e443 d24374e446 d24374e449 d24374e452 d24374e455 ">Layer 2 LUTs</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e443 ">layer_2_gain_positive_lut[level]</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e446 ">Level-based sharpening gain LUT for positive halo. This can
+									be the same as layer 1.<p class="p">Length: 64</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e449 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e452 ">All 1.65f<p class="p">Min: 0.0f; Max: 7.9f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e455 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e443 ">layer_2_gain_negative_lut[level]</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e446 ">Level-based sharpening gain LUT for negative halo. This can
+									be the same as layer 1.<p class="p">Length: 64</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e449 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e452 ">All 1.65f<p class="p">Min: 0.0f; Max: 7.9f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e455 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e443 ">layer_2_gain_weight_lut[activity]</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e446 ">Normalized activity-based sharpening gain LUT. This can be
+									the same as layer 1.<p class="p">Length: 64</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e449 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e452 ">All 1.65f<p class="p">Min: 0.0f; Max: 0.996f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e455 ">Use defaults</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<p class="p">In the following example, layer 1 and layer 2 gain LUT parameters are the
+				same, but the effects are different.</p>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_gmm_133_2cb"><span class="figcap">Figure : (L) ASF input; (C) Layer 1 output; (R) Layer 1 and layer 2
+					output</span>
+				
+				<img class="image" id="qpg1458948389415__image_qxr_r33_2cb" src="tmw1513117280524.png" />
+			</div>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_llb_d33_2cb"><span class="figcap">Figure : (L) Layer 1 only; (C) Layer 2 only; (R) Layer 1 and layer
+					2</span>
+				
+				<img class="image" id="qpg1458948389415__image_wpy_s33_2cb" src="scq1513117282099.png" />
+			</div>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_N1035A_N10014_N10001"><h2 class="title sectiontitle">Gain and skin LUTs</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_hkn_wzb_m1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e611">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e614">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e617">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e620">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e623">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e611 ">gain_contrast_positive[contrast]</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e614 ">Contrast-based sharpening gain LUT. The strength is based on
+									contrast and a value of 1 bypasses the effects.<p class="p">Length:
+									32</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e617 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e620 ">From 1.0 to 0.25<p class="p">Min: 0.004f; Max: 1.0f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e623 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e611 ">gain_contrast negative[contrast]</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e614 ">Contrast-based sharpening gain LUT. The strength is based on
+									contrast and a value of 1 bypasses the effects.<p class="p">Length:
+									32</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e617 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e620 ">From 1.0 to 0.25<p class="p">Min: 0.004f; Max: 1.0f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e623 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e611 ">skingain</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e614 ">Skin color based sharpening gain LUT.<p class="p">Length:
+									17</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e617 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e620 ">From 1.0 to 0.76<p class="p">Min: 0.004f; Max: 1.0f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e623 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e611 ">skinactivity</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e614 ">Skin color based sharpening gain activity LUT.<p class="p">Length:
+										17</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e617 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e620 ">From 1.0 to 0.5<p class="p">Min: 0.004f; Max: 1.0f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e623 ">Use defaults</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<p class="p">The contrast value for gain_contrast_positive is calculated using:</p>
+
+			<p class="p">Contrast = Y min max diff/4</p>
+
+			<p class="p">Define the areas that may have halos and reduce the contrast strength to remove them.
+				Typically, a positive halo appears worse than a negative halo.</p>
+
+			<p class="p">For skin gain, define the skin color and face area and reduce the gain strength on
+				the face. Face areas can be smoothed with FD information, which is set via the
+				face_boundary and face_transition parameters.</p>
+
+			<p class="p">For skin activity, the activity strength is based on skin color. Define the
+				skin color and face area and reduce the activity data on the face. Face areas can be
+				smoothed with FD information, which is set via the face_boundary and face_transition
+				parameters.</p>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_gg1_2j3_2cb"><span class="figcap">Figure : (L) All 1.0 (skin color control off); (C) Skin color control on; (R) Skin
+					color control and FD data on</span>
+				
+				<br /><img class="image" id="qpg1458948389415__image_q31_vsc_m1b" src="gry1499454086775.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_N10444_N10014_N10001"><h2 class="title sectiontitle">Smoothing</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_tsf_j1c_m1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e773">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e776">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e779">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e782">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e785">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e773 ">smoothing_strength</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e776 ">The blending factor between original pixel and the
+									edge-smoothed pixel.<p class="p">Length: 1</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e779 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e782 ">0.5f<p class="p">Min: 0.0f; Max: 0.999f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e785 ">Use defaults</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<p class="p">If the output image edges are not clean or have a checkered-like effect, use the
+				smoothing_strength parameter to blend the edges of pixels. The edge is smoothed by
+				direction (horizontal, diagonal, ect.). If an edge is not detected by other
+				parameters, this parameter will not work.</p>
+
+			<p class="p">The following images show coarse edges that are aligned without reducing the
+				texture. Details are not affected by edge alignment.</p>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_qjk_zj3_2cb"><span class="figcap">Figure : (L) Edge alignment off; (C) Edge alignment; strength 1.0; (R) Edge alignment;
+					strength 0.6</span>
+				
+				<br /><img class="image" id="qpg1458948389415__image_x5p_3tc_m1b" src="dgk1499458597247.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_4A82719CEF41447AA655BC395CA36E4C"><h2 class="title sectiontitle">Clamps</h2>
+			
+			<p class="p">Clamping parameters help correct the overshooting that can occur in
+				edge sharpening. </p>
+
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_jhx_m1c_m1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e863">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e866">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e869">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e872">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e875">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e863 ">layer_1_clamp_UL<p class="p">layer_2_clamp_UL</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e866 ">Manual fixed positive clamping-level sharpening<p class="p">Length:
+										1</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e869 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e872 ">255<p class="p">Min: 0; Max: 255</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e875 ">Yes</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e863 ">layer_1_clamp_LL<p class="p">layer_2_clamp_LL</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e866 ">Manual fixed negative clamping-level sharpening<p class="p">Length:
+										1</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e869 ">Higher value = weaker sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e872 ">-255<p class="p">Min: -255; Max: 0</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e875 ">Yes</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<p class="p">It is recommended to use halo control parameters over clamps where possible.</p>
+
+			<p class="p">Tighter clamps, values with a smaller absolute value, should be used
+				in the final steps of ASF tuning. These tighter clamp values can reduce halo
+				effects, which typically occur in normal to low lighting conditions. </p>
+
+			<p class="p">The following example shows the effects of two different clamp
+					values.<br /><img class="image" id="qpg1458948389415__image_mhd_k1d_m1b" src="xsz1499461836982.png" /><br />
+			</p>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_N10583_N10014_N10001"><h2 class="title sectiontitle">Radial adjustments</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_w1g_fbc_m1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e973">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e976">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e979">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e982">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e985">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e973 ">radial_activity_adj</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e976 ">The correction factor for activity based on
+									radial distance.<p class="p">Length: 4</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e979 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e982 ">From 1.0 to 0.6<p class="p">Min:
+										0.0f; Max: 7.96f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e985 ">Yes</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e973 ">radial_gain_adj</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e976 ">The correction factor for gain based on
+									radial distance.<p class="p">Length: 4</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e979 ">Higher value = weaker sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e982 ">From 1.0 to 1.0<p class="p">Min:
+										0.0f; Max: 7.96f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e985 ">Yes</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<p class="p">Apply the radial_activity_adj parameter to activity and the
+				radial_gain_adj parameter to gain. Both parameters can be increased to enhance
+				corner edges.</p>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_gsy_rk3_2cb"><span class="figcap">Figure : (L) Corner: all 1.0; (R) Corner: both activity/gain</span>
+				
+				<br /><img class="image" id="qpg1458948389415__image_bgb_zbd_m1b" src="mhu1499462522981.png" /><br />
+			</div>
+
+			<p class="p">To preserve image corner details, use the radial_activity_adj
+				parameter for radial processing.</p>
+
+			<div class="fig fignone nonumber" id="qpg1458948389415__fig_lpg_tl3_2cb"><span class="figcap">Figure : (L) Gain adjust only; (C) Activity adjust only; (R) Gain and activity
+					adjust</span>
+				
+				<br /><img class="image" id="qpg1458948389415__image_bbx_zbd_m1b" src="cij1499462526132.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_N1062C_N10014_N10001"><h2 class="title sectiontitle">Chroma edge</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_rzw_nbc_m1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1090">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1093">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1096">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1099">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1102">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1090 ">gain_chroma_positive[chroma_halo]<p class="p">gain_chroma_negative[chroma_halo]</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1093 ">Contrast-based sharpening gain LUT<p class="p">Length: 32</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1096 ">Higher value = stronger sharpening</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1099 ">From 1.0 to 0.25<p class="p">Min: 0.004f; Max: 1.00f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1102 ">Use defaults, but can be tuned to preference</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<div class="p">The gain_chroma_positive/negative parameters control strength based on the
+				chroma edge. Define the area where a halo may occur around chroma and reduce the
+				strength around the chroma edge when there is no contrast (between chroma to
+				chroma). These parameters are primarily for positive halo control surrounding
+					chroma.<div class="fig fignone nonumber" id="qpg1458948389415__fig_dqd_tfg_dcb"><span class="figcap">Figure : (L) All 1.0 (chroma halo control off); (C) Curve 1 for
+						positive/negative; (R) Curve 1 for positive, Curve 2 for negative </span>
+					
+					<br /><img class="image" id="qpg1458948389415__image_ovw_qcd_m1b" src="zoj1499462867197.png" /><br />
+				</div>
+</div>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_N106B2_N10014_N10001"><h2 class="title sectiontitle">Edge alignment</h2>
+			
+			<p class="p">Edge alignment can be adjusted with the <span class="keyword parmname">smothing_strength</span>
+				parameter.</p>
+
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_xqb_rbc_m1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1180">Parameter name</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1183">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1186">Tuning</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1189">Default</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1192">Must tune?</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1180 ">flat_threshold</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1183 ">Apply edge smoothing only when the maximum of each edge value
+									is larger or equal to the flat_threshold parameter value.
+									Increasing this threshold causes edges to not be detected so
+									edge smoothing will not work.<p class="p">Length: 1</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1186 ">Higher value = less edge detection and less smoothing</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1189 ">8<p class="p">Min: 0; Max: 255</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1192 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1180 ">similarity_threshold (corner_threshold)</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1183 ">The edge smoothing value is applied only when the maximum
+									value is greater or equal to the minimum value *
+										similarity_threshold.<p class="p">Length: 1</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1186 ">Higher value = less edge detection and less smoothing</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1189 ">2<p class="p">Min: 0; Max: 63.999f</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1192 ">Use defaults</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1180 ">texture_threshold (max_smoothing_clamp)</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1183 ">Gray colors are not smoothed as they are considered texture.
+									The edge smoothing value change is clamped by
+										texture_threshold.<p class="p">Length: 1</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1186 ">Higher value = stronger smoothing</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1189 ">8<p class="p">Min: 0; Max: 255</p>
+</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1192 ">Use defaults</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="qpg1458948389415__section_N1076E_N10014_N10001"><h2 class="title sectiontitle">Parameters</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="qpg1458948389415__table_t3g_ypc_r1b" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1289">Parameter</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24374e1292">If disabled</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1289 ">layer_1_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1292 ">1st layer is disabled</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1289 ">layer_2_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1292 ">2nd layer is disabled</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1289 ">radial_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1292 ">No gain applied for radial location</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1289 ">contrast_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1292 ">No gain applied for contrast</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1289 ">chroma_gradient_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1292 ">No gain applied for chroma</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1289 ">skin_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1292 ">No gain applied for skin</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1289 ">face_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1292 ">No face detection data used for skin</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1289 ">edge_alignment_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24374e1292 ">No edges are smoothed</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+			<div class="p">To bypass ASF using parameters:<ol class="ol" id="qpg1458948389415__ol_jcq_jmq_h1b">
+					<li class="li">Set layer_1_clamp_UL/layer_2_clamp_UL to 0.</li>
+
+					<li class="li">Set layer_1_clamp_LL/layer_2_clamp_LL to 0.</li>
+
+					<li class="li">Set layer_1_sp to 0.</li>
+
+					<li class="li">Set smoothing_strength to 0.</li>
+
+				</ol>
+</div>
+
+		</div>
+
+	</div>
+ 
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="ovc1494872157022.html">Tune ASF</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

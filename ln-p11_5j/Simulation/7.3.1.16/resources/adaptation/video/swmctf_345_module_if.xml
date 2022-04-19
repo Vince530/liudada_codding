@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="SWMCTF">
+
+	<param id="1"  name="blend_strength" autotune="0" submodule="ySubModule1">0:0.1:1</param>
+	<param id="2"  name="motion_detection_sensitivity" autotune="0" submodule="ySubModule1">0:0.1:1</param>
+	<param id="3"  name="spatial_denoising_strength" autotune="1" submodule="ySubModule1">0:0.1:0.6</param>
+	
+	<param id="4"  name="tnr_blend_strength" autotune="0" submodule="ySubModule1">0:0.1:1</param>
+	<param id="5"  name="tnr_motion_detection_sensitivity" autotune="0" submodule="ySubModule1">0:0.1:1</param>
+	<param id="6"  name="tnr_spatial_denoising_strength" autotune="1" submodule="ySubModule1">0:0.1:1</param>
+	
+	<param id="7"  name="guided_filter_weight_luma" autotune="1" submodule="ySubModule1">0:0.1:1</param>
+	<param id="8"  name="laplace_mask_threshold_luma" autotune="1" submodule="ySubModule1">0:0.1:1</param>
+	<param id="9"  name="guided_filter_weight_chroma" autotune="1" submodule="cSubModule1">0:0.1:1</param>
+	<param id="10"  name="laplace_mask_threshold_chroma" autotune="1" submodule="cSubModule1">0:0.1:1</param>
+	
+
+    <mapping dest="pcsim">update_xml_swmctf</mapping>
+    <mapping dest="chromatix">update_xml_swmctf</mapping>
+    <isp_pipeline>SW_CONTROL</isp_pipeline>
+    <chromatix_tag>swmctf20_sw</chromatix_tag>
+    <gen_pop_function></gen_pop_function>
+</module_if>

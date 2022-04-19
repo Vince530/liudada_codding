@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="simulationglobalelements.xsd"/>
+    <xs:element name="SpectraCamSimConfig">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="module_version">
+                    <xs:complexType>
+                        <xs:attribute name="major_revision" type="xs:int" fixed="1"/>
+                        <xs:attribute name="minor_revision" type="xs:int" fixed="0"/>
+                        <xs:attribute name="incr_revision" type="xs:int" fixed="0"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="UseCase">
+                    <!-- 0: None;  1: Snapshot;  2: Video;  3: MFNR -->
+                    <xs:simpleType>
+                        <xs:restriction base="xs:unsignedByte">
+                            <xs:enumeration value="0"/>
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                            <xs:enumeration value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="RunPipeline">
+                    <!-- 0x01: IFE;  0x02:  BPS;   0x04:  PPS;   0x08:  NPS -->
+                    <!-- i.e. IFE+PPS+NPS:  0x0D;  BPS+PPS+NPS:  0x0E; -->
+                    <xs:simpleType>
+                        <xs:restriction base="Hex8">
+                            <xs:enumeration id="IFE" value="0x1"/>
+                            <xs:enumeration id="BPS" value="0x2"/>
+                            <xs:enumeration id="PPS" value="0x4"/>
+                            <xs:enumeration id="NPS" value="0x8"/>
+                            <xs:enumeration id="IPE" value="0xc"/>
+                            <xs:enumeration id="IFEIPE" value="0xd"/>
+                            <xs:enumeration id="BPSIPE" value="0xe"/>
+                            <xs:enumeration id="Preproc" value="0xf"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="MFNRStageConfig">
+                    <!-- 0x01: Bayer processing 0x02: Prefiltering 0x04: Blending 0x08: Postfiltering -->
+                    <xs:simpleType>
+                        <xs:restriction base="Hex8">
+                            <xs:enumeration id="BayerProcessing" value="0x1"/>
+                            <xs:enumeration id="Prefiltering" value="0x2"/>
+                            <xs:enumeration id="PreFilt_Blending" value="0x6"/>
+                            <xs:enumeration id="Postfiltering" value="0x8"/>
+                            <xs:enumeration id="All" value="0xf"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="InputSetting">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ImageFormat">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration value="0"/>
+                                        <xs:enumeration value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ImageFile" type="xs:string" />
+                            <xs:element name="DualPDImageFormat" type="xs:unsignedByte" default="0" minOccurs="0"/>
+                            <xs:element name="DualPDImageFile" type="xs:string" default="0" minOccurs="0"/>
+                            <xs:element name="InputFolder" type="xs:string" />
+                            <xs:element name="ManualLoadFile" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="RegisterDump">
+                    <!-- 0: disable dump;  1: enable dump -->
+                    <xs:simpleType>
+                        <xs:restriction base="xs:unsignedByte">
+                            <xs:enumeration value="0"/>
+                            <xs:enumeration value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ISPConfig" type="xs:string" />
+                <xs:element name="MetaConfig" type="xs:string" />
+                <xs:element name="StreamConfig" type="xs:string" />
+                <xs:element name="DataStoreFile" type="xs:string" minOccurs="0"/>
+                <xs:element name="IFESchemaFile" type="xs:string" />
+                <xs:element name="BPSSchemaFile" type="xs:string" />
+                <xs:element name="IPESchemaFile" type="xs:string" />
+                <xs:element name="SWCONTROLSchemaFile" type="xs:string" />
+                <xs:element name="IFEDataFile" type="xs:string" />
+                <xs:element name="BPSDataFile" type="xs:string" />
+                <xs:element name="IPEDataFile" type="xs:string" />
+                <xs:element name="SWCONTROLDataFile" type="xs:string" />
+                <xs:element name="MFConfig">
+                    <!--MFNR specific configuration-->
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Part1Process">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="BPSDataFile" type="xs:string" />
+                                        <xs:element name="IPEDataFile" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Part2Process">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="BPSDataFile" type="xs:string" />
+                                        <xs:element name="IPEDataFile" type="xs:string" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SchemaValidation" type="xs:unsignedByte" />
+                <xs:element name="OutputSetting">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ImageFormat">
+                                <xs:simpleType>
+                                    <!-- 1: BMP;  2: YUV;  3: BMP+YUV -->
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration value="1"/>
+                                        <xs:enumeration value="2"/>
+                                        <xs:enumeration value="3"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="OutputFolder" type="xs:string" />
+                            <xs:element name="OutputPrefix" type="xs:string" />
+                            <xs:element name="RegisterDumpOnlyModeCfg">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="AWBMode">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Enable" type="xs:unsignedByte" />
+                                                    <xs:element name="BPSCCEnable" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="IntermediateSetting">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="QDebugEnable" type="xs:unsignedByte" />
+                            <xs:element name="Enable" type="Hex8" />
+                            <xs:element name="statsDump" type="Hex16" />
+                            <xs:element name="ImageFormat" type="xs:unsignedByte" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="CustomTriggerModule" type="xs:unsignedByte" minOccurs="0" default="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

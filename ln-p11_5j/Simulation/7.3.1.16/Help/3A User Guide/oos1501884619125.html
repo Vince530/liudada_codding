@@ -1,0 +1,243 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Before running AWB initial tuning, tune the black level and lens shading ISP modules. When the camera starts, if the white balance gain is not set for the ISP module, colors in images will not be ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="AWB initial tuning" /><meta name="DC.Relation" scheme="URI" content="fgg1524684900917.html" /><meta name="DC.Relation" scheme="URI" content="blp1524684855052.html" /><meta name="DC.Relation" scheme="URI" content="oqy1505840201772.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="oos1501884619125" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AWB initial tuning</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="oos1501884619125">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">AWB initial tuning</h1>
+
+	<div class="body taskbody">
+		<div class="section prereq p" id="oos1501884619125__prereq_ogw_ltm_pdb">Before running AWB initial tuning, tune the black level and
+			lens shading ISP modules.</div>
+
+		<div class="section context" id="oos1501884619125__context_N10018_N10011_N10001">When the camera starts, if the white
+			balance gain is not set for the ISP module, colors in images will not be accurate. So
+			even before AWB processing runs, it is necessary to set a reasonable white balance gain
+			value in the ISP module and to provide an initial CCT value to other modules. <p class="p">This
+				procedure generates many initial AWB parameter values based on uploaded
+			images.</p>
+</div>
+
+		<ol class="ol steps"><li class="li step stepexpand" id="oos1501884619125__step_N1001F_N1001C_N10011_N10001">
+				<span class="ph cmd">Capture RAW images with the characteristics indicated in the
+					table. All images used during the tuning process must be captured with the
+					device that is being tuned.</span>
+				<div class="itemgroup info">
+					
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="oos1501884619125__table_k4d_zng_51b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:25%" /><col style="width:25%" /><col style="width:25%" /><col style="width:25%" /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d42495e50">Images</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d42495e53">Illuminant</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d42495e56">Lux level</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d42495e59">Notes</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e50 ">Gray chart</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e53 ">D75, D65, D50, CW, TL84, A, H</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e56 ">700 Lux</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e59 ">100% FOV</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e50 ">MCC chart</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e53 ">D75, D65, D50, CW, TL84, A, H</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e56 ">700 Lux</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e59 ">80% FOV</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e50 ">Gray chart</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e53 ">TL84</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e56 ">200 Lux</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e59 ">100% FOV</td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="oos1501884619125__step_N100BA_N10021_N10013_N10001">
+				<span class="ph cmd">Click the <span class="ph uicontrol">AWB</span> tab.
+				</span>
+			</li>
+<li class="li step stepexpand" id="oos1501884619125__step_N100C8_N10021_N10013_N10001">
+				<span class="ph cmd">In the List View tab, click <span class="ph uicontrol">Initial Tuning</span>. The
+					Initial Tuning window opens in the right pane.<br /><img class="image" id="oos1501884619125__image_utf_lbt_w1b" src="ipc1502740851774.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="oos1501884619125__step_N1002B_N1001C_N10011_N10001">
+				<span class="ph cmd">Upload all images collected in Step 1 to the image gallery. In
+					each row, click <span class="ph uicontrol">Load</span>, navigate to the
+					location of the appropriate image, select the image, and click <span class="ph uicontrol">Open</span>. </span>
+			</li>
+<li class="li step stepexpand" id="oos1501884619125__step_N100F8_N10018_N1000F_N10001">
+				<span class="ph cmd"><span class="ph uicontrol">Load
+						Metadata</span>, navigate to the location of the xml file, select the
+					file, and click <span class="ph uicontrol">Open</span>. If the metadata
+					matches the image on the same row, the red box on the right changes to
+					green.</span>
+			</li>
+<li class="li step stepexpand" id="oos1501884619125__step_N100F7_N10018_N1000F_N10001">
+				<span class="ph cmd">In the Lux Index Calculation section, enter the appropriate value in the
+						<span class="ph uicontrol">Indoor Lux Index</span> field. <br /><img class="image" id="oos1501884619125__image_wsp_wbt_w1b" src="euh1502740854723.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="oos1501884619125__step_N100E0_N10021_N10013_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Calculate</span>. </span>
+			</li>
+<li class="li step stepexpand" id="oos1501884619125__step_N10136_N10018_N1000F_N10001">
+				<span class="ph cmd">Upload metadata xml files associated with each of the images uploaded in theSet the MCC markers as each MCC image is processed. The tool
+					opens a second window for aligning the MCC markers. Drag the top-left MCC grid
+					marker to the center of the top-left color patch and drag the bottom-right MCC
+					grid marker to the center of the bottom right color patch, so that all of the
+					grid markers align within the color patches. Close the window to accept the
+					markers. </span>
+				<div class="itemgroup info">
+					<div class="note note" id="oos1501884619125__note_N10141_N1013E_N10135_N10018_N1000F_N10001"><span class="notetitle">Note:</span> This
+						second window may appear behind the main window, so it may be hidden
+						initally. The initial tuning does not complete until all of the MCC markers
+						have been set and accepted.</div>
+
+				</div>
+				<div class="itemgroup stepresult">The AWB auto-tune function computes an initial set of
+					AWB parameter values as indicated in the following table. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="oos1501884619125__table_o4v_jj3_51b" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d42495e204">AWB parameter category</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d42495e207">Effect of Initial Tuning</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">Reference Points</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">
+										<p class="p">Generates R/G and B/G ratio for D75, D65,
+											D50, CW, TL84, A, and H from the uploaded images.</p>
+
+										<p class="p">Computes R/G and B/G ratio for high CCT,
+											F, and low CCT based on the uploaded images.</p>
+
+									</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">Initial Gain and CCT</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">Computes initial gain based on D50
+										illuminant and initial CCT value with 5000k.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">Illuminant Weight Vector</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">Tunes weights for stats using predefined
+										illuminant weight triggers</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">Distance Weight Vector</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">Tunes weights for stats using predefined
+										distance weight triggers</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">Misleading Color Zone</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">Tunes 4 predefined detection zones and 10
+										predefined MLC zones </td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">General Scene Analyzer</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">Tunes 5 predefined Scene
+										Analyzers</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">Triangle Gain Adjust</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">Tunes initial triangle mesh, all vertices
+										of triangles, lux index trigger for each vertex, and adjust
+										gain value</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">Manual White Balance</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">Tunes initial gains</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e204 ">All modules</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d42495e207 ">Lux index trigger data</td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+</div>
+			</li>
+<li class="li step stepexpand" id="oos1501884619125__step_N101D2_N10018_N1000F_N10001">
+				<span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save project</span></span> .</span>
+			</li>
+</ol>
+
+		<div class="section postreq" id="oos1501884619125__postreq_N10035_N10011_N10001">If you need to adjust the initial
+			parameter values, use the fine tune procedures provided for the applicable AWB
+			module.</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="fgg1524684900917.html">Examples of AWB initial tuning parameter effects</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="blp1524684855052.html">Fine-tune AWB initial tuning parameters</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="oqy1505840201772.html" title="AWB sensor calibration data">AWB sensor calibration data</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="simulationglobalelements.xsd"/>
+    <xs:element name="MetaConfig">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="module_version">
+                    <xs:complexType>
+                        <xs:attribute name="major_revision" type="xs:int" fixed="1"/>
+                        <xs:attribute name="minor_revision" type="xs:int" fixed="0"/>
+                        <xs:attribute name="incr_revision" type="xs:int" fixed="0"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="CCT" type="xs:float" default="5000" />
+                <xs:element name="LuxIdx" type="xs:float" default="130.0"/>
+                <xs:element name="Gain" type="xs:float" default="1.0" />
+                <xs:element name="predictiveGain" type="xs:float" />
+                <xs:element name="shortGain" type="xs:float" default="1.0" />
+                <xs:element name="digitalGain" type="xs:float" default="1.0"/>
+                <xs:element name="ExpSensitivityRatio" type="xs:float" default="1.0"/>
+                <xs:element name="ExpTimeRatio" type="xs:float" default="1.0"/>
+                <xs:element name="ExpGainRatio" type="xs:float" default="1.0"/>
+                <xs:element name="HistStretchOffset" type="xs:unsignedByte" />
+                <xs:element name="HistStretchFactor" type="xs:unsignedByte" />
+                <xs:element name="DrcGain" type="xs:float" default="1.0"/>
+                <xs:element name="DrcGainDark" type="xs:float" default="1.0"/>
+                <xs:element name="LensPosition" type="xs:float" default="1.0"/>          
+                <xs:element name="HDRMode">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:unsignedInt">
+                                <xs:attribute name="range" type="xs:string" default="[0,1]"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="gain_r" type="xs:float" default="1.0"/>
+                <xs:element name="gain_g" type="xs:float" default="1.0"/>
+                <xs:element name="gain_b" type="xs:float" default="1.0"/>
+                <xs:element name="ExpIdx" type="xs:float" default="1.0"/>
+                <xs:element name="PrevExpIdx" type="xs:float" default="1.0"/>
+                <xs:element name="NumOfLed" type="xs:unsignedByte" default="1"/>
+                <xs:element name="Led1IdxRatio" type="xs:float" default="0.1"/>
+                <xs:element name="Led2IdxRatio" type="xs:float" default="0.9"/>
+                <xs:element name="HDRZrecSel" type="xs:unsignedByte" default="0"/>
+                <xs:element name="HDRZrecPattern" type="xs:unsignedByte" default="0"/>
+                <xs:element name="HDRZrecFirstRBExp" type="xs:unsignedByte" default="0"/>
+                <xs:element name="LEDSensitivity" type="xs:float" default="1.0"/>     
+                <xs:element name="SensorType">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:unsignedByte">
+                            <xs:enumeration id="SENSOR_MONO" value="0"/>
+                            <xs:enumeration id="SENSOR_BAYER" value="1"/>
+                            <xs:enumeration id="SENSOR_PDAF" value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ExposureType" type="xs:unsignedByte" />
+                <xs:element name="ExposureInfo">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ExposureTime">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Short" type="xs:float" />
+                                        <xs:element name="Safe" type="xs:float" />
+                                        <xs:element name="Long" type="xs:float" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Sensitivity">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Short" type="xs:float" />
+                                        <xs:element name="Safe" type="xs:float" />
+                                        <xs:element name="Long" type="xs:float" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ExposureGain">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Short" type="xs:float" />
+                                        <xs:element name="Safe" type="xs:float" />
+                                        <xs:element name="Long" type="xs:float" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="aec_exp_time">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Short" type="xs:unsignedInt" />
+                            <xs:element name="Safe" type="xs:unsignedInt" />
+                            <xs:element name="Long" type="xs:unsignedInt" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="CustomAec">
+                    <xs:simpleType>
+                        <xs:restriction base="floatvar">
+                            <xs:length value="32"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CustomAwb">
+                    <xs:simpleType>
+                        <xs:restriction base="floatvar">
+                            <xs:length value="32"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CustomAf">
+                    <xs:simpleType>
+                        <xs:restriction base="floatvar">
+                            <xs:length value="32"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CCM">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="IFE">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Flag" type="xs:unsignedByte" />
+                                        <xs:element name="Matrix">
+                                            <xs:simpleType>
+                                                <xs:restriction base="floatvar">
+                                                    <xs:length value="9"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="Offset">
+                                            <xs:simpleType>
+                                                <xs:restriction base="floatvar">
+                                                    <xs:length value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="BPS">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Flag" type="xs:unsignedByte" />
+                                        <xs:element name="Matrix">
+                                            <xs:simpleType>
+                                                <xs:restriction base="floatvar">
+                                                    <xs:length value="9"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="Offset">
+                                            <xs:simpleType>
+                                                <xs:restriction base="floatvar">
+                                                    <xs:length value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="IPE">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Flag" type="xs:unsignedByte" />
+                                        <xs:element name="Matrix">
+                                            <xs:simpleType>
+                                                <xs:restriction base="floatvar">
+                                                    <xs:length value="9"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="Offset">
+                                            <xs:simpleType>
+                                                <xs:restriction base="floatvar">
+                                                    <xs:length value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

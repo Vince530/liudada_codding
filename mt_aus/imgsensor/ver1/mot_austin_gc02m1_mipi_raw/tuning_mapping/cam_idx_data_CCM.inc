@@ -1,0 +1,120 @@
+#define IDX_DATA_CCM_DIM_NS    7
+#define IDX_DATA_CCM_FACTOR_SZ    6
+#define IDX_DATA_CCM_ENTRY_NS    46
+
+static unsigned int _cam_data_entry_CCM_key0000[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X11000030, 0X500008E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0001[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0X500008E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0002[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X11000030, 0X600008E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0003[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0X600008E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0004[] = {0X03E00001, 0X00000000, 0X00004000, 0X08000000, 0X702000A0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0005[] = {0X03E00001, 0X00000000, 0X00004000, 0X08000000, 0X5FFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0006[] = {0X03E00001, 0X00000000, 0X00004000, 0X10000000, 0X5FFFF8A0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0007[] = {0X03E00001, 0X00000000, 0X00004000, 0X08000000, 0X6FFFF8A0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0008[] = {0X03E00001, 0X00000000, 0X00004000, 0X10000000, 0X6FFFFCA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0009[] = {0X03E00002, 0X00000000, 0X00008000, 0X20000000, 0X7FFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0010[] = {0X03E00002, 0X00000000, 0X00008000, 0X20000000, 0XBFFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0011[] = {0X03E00002, 0X00000000, 0X00008000, 0X20000000, 0X3FFFFFA0, 0X00000001, };
+static unsigned int _cam_data_entry_CCM_key0012[] = {0X03E00002, 0X00000000, 0X00008000, 0X20000000, 0X3FFFFFA0, 0X00000002, };
+static unsigned int _cam_data_entry_CCM_key0013[] = {0X03E00001, 0X00000000, 0X00004000, 0X20000000, 0X7FFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0014[] = {0X03E00001, 0X00000000, 0X00004000, 0X20000000, 0XBFFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0015[] = {0X03E00001, 0X00000000, 0X00004000, 0X20000000, 0X3FFFFFA0, 0X00000001, };
+static unsigned int _cam_data_entry_CCM_key0016[] = {0X03E00001, 0X00000000, 0X00004000, 0X20000000, 0X3FFFFFA0, 0X00000002, };
+static unsigned int _cam_data_entry_CCM_key0017[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X21000030, 0X7FFFFFE0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0018[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X21000030, 0XBFFFFFE0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0019[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X21000030, 0X3FFFFFE0, 0X00000001, };
+static unsigned int _cam_data_entry_CCM_key0020[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X21000030, 0X3FFFFFE0, 0X00000002, };
+static unsigned int _cam_data_entry_CCM_key0021[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0X520000E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0022[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0X620000E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0023[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0X740000E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0024[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0XFFFFFB60, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0025[] = {0X03E00001, 0X00000000, 0X00004000, 0X10000000, 0XDFFFFB20, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0026[] = {0X03E00001, 0X00000000, 0X00004000, 0X10000000, 0XEFFFFB20, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0027[] = {0X00000000, 0X00000000, 0X00000000, 0XF8000040, 0XFFFFFFFF, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0028[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0XBFFFF8E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0029[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0X3FFFF8E0, 0X00000001, };
+static unsigned int _cam_data_entry_CCM_key0030[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0X3FFFF8E0, 0X00000002, };
+static unsigned int _cam_data_entry_CCM_key0031[] = {0X03E00001, 0X00000000, 0X00004000, 0X08000000, 0XBFFFFFE0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0032[] = {0X03E00001, 0X00000000, 0X00004000, 0X08000000, 0X3FFFFFE0, 0X00000001, };
+static unsigned int _cam_data_entry_CCM_key0033[] = {0X03E00001, 0X00000000, 0X00004000, 0X08000000, 0X3FFFFFE0, 0X00000002, };
+static unsigned int _cam_data_entry_CCM_key0034[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X01000030, 0XFFFFFFE2, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0035[] = {0X03E00001, 0X00000000, 0X00004000, 0X00000000, 0XFFFFFFE2, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0036[] = {0X000FFFFC, 0X00000000, 0X03FF0000, 0X09000030, 0X780000E0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0037[] = {0X03E00002, 0X00000000, 0X00008000, 0X40000000, 0X7FFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0038[] = {0X03E00002, 0X00000000, 0X00008000, 0X40000000, 0XBFFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0039[] = {0X03E00001, 0X00000000, 0X00004000, 0X40000000, 0X7FFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0040[] = {0X03E00001, 0X00000000, 0X00004000, 0X40000000, 0XBFFFFFA0, 0X00000000, };
+static unsigned int _cam_data_entry_CCM_key0041[] = {0X03E00000, 0X10000000, 0X00000000, 0XF8000000, 0XF10007FF, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0042[] = {0X03E00000, 0X20000000, 0X00000000, 0XF8000000, 0XF10007FF, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0043[] = {0XFFFFFFFF, 0XFFFFFFFF, 0XFFFFFFFF, 0X17FFFFFF, 0XFFFFFFE0, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0044[] = {0XFFFFFFFF, 0XFFFFFFFF, 0XFFFFFFFF, 0X0FFFFFFF, 0XFFFFFFFF, 0X00000003, };
+static unsigned int _cam_data_entry_CCM_key0045[] = {0XFFFFFFFF, 0XFFFFFFFF, 0XFFFFFFFF, 0XE7FFFFFF, 0XFFFFFFE0, 0X00000003, };
+
+static IDX_MASK_ENTRY _cam_data_entry_CCM[IDX_DATA_CCM_ENTRY_NS] =
+{
+    {(unsigned int*)&_cam_data_entry_CCM_key0000, 0, 0, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0001, 0, 1, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0002, 6, 2, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0003, 6, 3, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0004, 0, 4, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0005, 0, 5, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0006, 0, 6, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0007, 6, 7, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0008, 6, 8, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0009, 0, 9, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0010, 0, 10, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0011, 0, 11, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0012, 0, 12, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0013, 0, 13, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0014, 0, 14, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0015, 0, 15, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0016, 0, 16, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0017, 0, 17, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0018, 0, 18, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0019, 0, 19, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0020, 0, 20, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0021, 0, 21, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0022, 0, 22, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0023, 0, 23, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0024, 12, 24, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0025, 0, 25, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0026, 6, 26, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0027, 0, 27, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0028, 0, 28, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0029, 0, 29, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0030, 0, 30, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0031, 0, 31, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0032, 0, 32, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0033, 0, 33, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0034, 0, 34, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0035, 0, 35, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0036, 0, 36, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0037, 0, 37, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0038, 0, 38, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0039, 0, 39, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0040, 0, 40, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0041, 0, 41, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0042, 0, 42, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0043, 0, 43, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0044, 0, 44, 2, 0},
+    {(unsigned int*)&_cam_data_entry_CCM_key0045, 0, 45, 2, 0},
+};
+
+static unsigned short _cam_data_dims_CCM[] = 
+{
+    EDim_IspProfile,
+    EDim_SensorMode,
+    EDim_FrontBin,
+    EDim_Flash,
+    EDim_App,
+    EDim_FaceDetection,
+    EDim_Zoom,
+};
+
+static unsigned short _cam_data_expand_CCM[] = 
+{1, 0, 0};
+
+const IDX_MASK_T cam_data_CCM =
+{
+    {IDX_ALGO_MASK, IDX_DATA_CCM_DIM_NS, (unsigned short*)&_cam_data_dims_CCM, (unsigned short*)&_cam_data_expand_CCM},
+    {IDX_DATA_CCM_ENTRY_NS, IDX_DATA_CCM_FACTOR_SZ, (IDX_MASK_ENTRY*)&_cam_data_entry_CCM}
+};

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Some Bayer sensors may have a strong imbalance between the Gb and Gr channels. The artifacts caused by this imbalance may not be fully corrected by the ABF noise reduction block in the Bayer domain. ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="GIC tuning concepts" /><meta name="DC.Relation" scheme="URI" content="gav1504650254694.html" /><meta name="DC.Relation" scheme="URI" content="mzz1505409578957.html" /><meta name="DC.Relation" scheme="URI" content="dge1505409822775.html" /><meta name="DC.Relation" scheme="URI" content="sby1505410096129.html" /><meta name="DC.Relation" scheme="URI" content="mzz1505409578957.html" /><meta name="DC.Relation" scheme="URI" content="sby1505410096129.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="upk1458948391740" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>GIC tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="upk1458948391740">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  </div></td></tr></tbody></table> 
+  <h1 class="title topictitle1" id="ariaid-title1">GIC tuning concepts</h1>
+ 
+  <div class="body conbody">
+		<p class="p">Some Bayer sensors may have a strong imbalance between the Gb and Gr channels.
+			The artifacts caused by this imbalance may not be fully corrected by the ABF noise
+			reduction block in the Bayer domain. Green imbalance correction (GIC) removes the
+			banding artifacts caused by the different sensitivities between Gr and Gb channels. </p>
+
+		<div class="fig fignone nonumber" id="upk1458948391740__fig_mwd_mrh_sbb"><span class="figcap">Figure : (L) Sensor showing gr/gb mismatch due to different channel sensitivity creating a
+				gr/gb imbalance artifact. (R) Sensor without gr/gb imbalance, channels have same
+				gr/gb sensitivity.</span>
+			
+			<br /><img class="image" id="upk1458948391740__image_F170864E3E2E4E45AAD74E2FF720F421" src="wpm1494872150563.png" /><br />
+		</div>
+
+		<div class="fig fignone nonumber" id="upk1458948391740__fig_apl_3sh_sbb"><span class="figcap">Figure : (R) Enlarged sky insert from left image shows vertical banding caused by an
+				imbalance between the gr and gb channels in the Bayer domain.</span>
+			
+			<br /><img class="image" id="upk1458948391740__image_E4DFAC5CFD9B408B8C0FE15359365B52" src="aut1494872193588.png" /><br />
+		</div>
+
+		<div class="fig fignone nonumber" id="upk1458948391740__fig_ps1_wsh_sbb"><span class="figcap">Figure : (L) Global green imbalance pattern. Global grid patterns, uniform throughout the
+				image. (R) Local green imbalace artifacts. Local cross hatch artifacts that
+				typically show up in uniform areas; very common in noisy sensors.</span>
+			
+			<br /><img class="image" id="upk1458948391740__image_eds_vl2_ww" src="ola1494872116555.png" /><br />
+		</div>
+
+		<div class="p">The Qualcomm Spectra 2xx GIC module combines green imbalance correction with
+			peak noise reduction (PNR). The PNR submodule is used to remove peak noise in flat
+			regions. Imbalance between the Gb and Gr channels is corrected first. Corrected Gb and
+			Gr channels then work with R and B channels to reduce peak noise. The following figure
+			shows the GIC and PNR flow, and the parameters used to correct green imbalance. <div class="fig fignone" id="upk1458948391740__fig_rk2_cxl_fbb">
+				<img class="image" id="upk1458948391740__image_aff_1xl_fbb" src="ydf1505429903044.svg" />
+			</div>
+</div>
+
+	</div>
+ 
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="mzz1505409578957.html">GIC parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="dge1505409822775.html">Examples of GIC parameter effects</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="sby1505410096129.html">Tune GIC</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="mzz1505409578957.html" title="GIC parameters">GIC parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="sby1505410096129.html" title="Tune GIC">Tune GIC</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

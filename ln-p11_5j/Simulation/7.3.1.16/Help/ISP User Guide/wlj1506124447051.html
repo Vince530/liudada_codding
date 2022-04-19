@@ -1,0 +1,90 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Before tuning the pixel correction module, determine how many lighting regions to define for this module and create them in the Parameter Editor. The pixel correction module includes processing for ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune pixel correction" /><meta name="DC.Relation" scheme="URI" content="mpm1506115654147.html" /><meta name="DC.Relation" scheme="URI" content="qnq1499365175979.html" /><meta name="DC.Relation" scheme="URI" content="hwk1506115822207.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="wlj1506124447051" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune pixel correction</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="wlj1506124447051">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a> / <a class="navheader_parent_path" href="mpm1506115654147.html" title="Pixel correction tuning concepts">Pixel correction tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="mpm1506115654147.html" title="Pixel correction tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Pixel correction tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune pixel correction </h1>
+
+	<div class="body taskbody">
+		<div class="section prereq p" id="wlj1506124447051__prereq_N10015_N10012_N10001">
+			<p class="p">Before tuning the pixel correction module, determine how many lighting
+				regions to define for this module and create them in the Parameter Editor.
+					</p>
+
+		</div>
+
+		<div class="section context" id="wlj1506124447051__context_N10027_N10013_N10001">The pixel correction module includes
+			processing for sensors with or without phase detection pixels and with a non-zzHDR or
+			zzHDR pattern. </div>
+
+		<ol class="ol steps" id="wlj1506124447051__steps_nqk_f5r_hbb"><li class="li step stepexpand" id="wlj1506124447051__step_N100F2_N1002F_N10015_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab,
+					click <span class="ph menucascade"><span class="ph uicontrol">BPS</span> &gt; <span class="ph uicontrol">PDPC</span></span>. </span>
+			</li>
+<li class="li step stepexpand" id="wlj1506124447051__step_N10051_N1002F_N10015_N10001">
+				<span class="ph cmd">PDPC is disabled by default. To enable PD pixel correction,
+					open the Parameter Editor, navigate to <span class="ph menucascade"><span class="ph uicontrol">Pdpc 20 BPS </span> &gt; <span class="ph uicontrol">Enable Section</span> &gt; <span class="ph uicontrol">Pdpc Enable</span></span>, and change the value from 0 to 1. This completes PDPC tuning for
+					a PD pixel sensor project.</span>
+			</li>
+<li class="li step stepexpand" id="wlj1506124447051__step_N1008F_N1002F_N10015_N10001">
+				<span class="ph cmd">If tuning for a non-PD pixel sensor, click the <span class="ph uicontrol">Region Data</span> button and tune the following
+					parameters as needed: </span>
+				<div class="itemgroup info">
+					<ul class="ul" id="wlj1506124447051__ul_f12_vhp_hbb">
+						<li class="li">Fmax Pixel Q 6</li>
+
+						<li class="li">Fmin Pixel Q 6</li>
+
+						<li class="li">Hot Pixel Correction Disable</li>
+
+						<li class="li">Cold Pixel Correction Disable</li>
+
+						<li class="li">BPC Offset</li>
+
+						<li class="li">Bcc Offset</li>
+
+						<li class="li">BPC Offset T 2</li>
+
+						<li class="li">Bcc Offset T 2</li>
+
+						<li class="li">Correction Threshold</li>
+
+					</ul>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="wlj1506124447051__step_N101B8_N1002F_N10015_N10001">
+				<span class="ph cmd">Repeat the previous step for each lighting region you set
+					up.</span>
+			</li>
+<li class="li step stepexpand" id="wlj1506124447051__step_N100D2_N1002F_N10015_N10001">
+				<span class="ph cmd">Capture test images to see if any bad pixels are missed or if
+					there is any resolution loss or false color. Make fine tuning adjustments to the
+					parameters as needed. </span>
+			</li>
+<li class="li step stepexpand" id="wlj1506124447051__step_N101DD_N1002F_N10015_N10001">
+				<span class="ph cmd">To save the adjustments made to pixel correction parameters,
+					click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span>. </span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="hwk1506115822207.html" title="Pixel correction parameters">Pixel correction parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="qnq1499365175979.html" title="A region is a set of triggers that are indicative of light conditions, lens positions or other conditions as applicable to a given module. A project which is created with the build XSD and XML files has only one region for each module. Chromatix 7 gives the flexibility to create multiple regions for an ISP module. Adding regions to the module enables to optimize camera performance based on the established triggers for each region. Add regions to the pipeline before tuning the ISP and before adding modes to the project.">Add and edit region triggers</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="mpm1506115654147.html" title="Pixel correction tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Pixel correction tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

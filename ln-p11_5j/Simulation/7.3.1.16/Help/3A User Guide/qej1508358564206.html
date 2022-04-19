@@ -1,0 +1,278 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="LED flash processing can improve the AWB decision under the following light conditions: Flash-only light condition (very dark condition) Mixed lighting condition: Flash light + other illuminants (dim ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="LED flash concept" /><meta name="DC.Relation" scheme="URI" content="gkr1508957723817.html" /><meta name="DC.Relation" scheme="URI" content="cej1508358677060.html" /><meta name="DC.Relation" scheme="URI" content="cnc1522035567644.html" /><meta name="DC.Relation" scheme="URI" content="fbs1508358787082.html" /><meta name="DC.Relation" scheme="URI" content="hjd1509047220572.html" /><meta name="DC.Relation" scheme="URI" content="xqs1509048090474.html" /><meta name="DC.Relation" scheme="URI" content="jlj1509049772688.html" /><meta name="DC.Relation" scheme="URI" content="fbs1508358787082.html" /><meta name="DC.Relation" scheme="URI" content="hjd1509047220572.html" /><meta name="DC.Relation" scheme="URI" content="xqs1509048090474.html" /><meta name="DC.Relation" scheme="URI" content="jlj1509049772688.html" /><meta name="DC.Relation" scheme="URI" content="cej1508358677060.html" /><meta name="DC.Relation" scheme="URI" content="cnc1522035567644.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qej1508358564206" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>LED flash concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qej1508358564206">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gkr1508957723817.html" title="AWB flash">AWB flash</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gkr1508957723817.html" title="AWB flash"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB flash</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">LED flash concept</h1>
+
+	<div class="body conbody">
+		<div class="p">LED flash processing can improve the AWB decision under the following light
+			conditions: <ul class="ul" id="qej1508358564206__ul_hnl_jwx_4bb">
+				<li class="li">Flash-only light condition (very dark condition)</li>
+
+				<li class="li">Mixed lighting condition: Flash light + other illuminants (dim
+					and/or normal light conditions)</li>
+
+			</ul>
+</div>
+
+		<p class="p">Under mixed lighting conditions, input stats of the given scene are located in
+			various regions of the gray zone. LED flash processing considers the influence of the
+			flash light. The luminous flash influence on a scene, referred to as Flash Sensitivity
+			or K2, is computed by AEC processing. </p>
+
+		<div class="fig fignone nonumber" id="qej1508358564206__fig_xqd_sml_pbb"><span class="figcap">Figure : This example shows the following stats: (L) Flash off at A 50
+				lux. (C) Mixed light (A 50 lux + preflash); stats move in the direction of preflash
+				gray influenced by light from the flash. (R) Preflash in darkness. </span>
+			
+			<br /><img class="image" id="qej1508358564206__image_g2f_hnl_pbb" src="woo1508447709325.svg" /><br />
+		</div>
+
+		<p class="p">Tuning parameters in stat filters are typically optimized for normal scenes.
+			When there are mixed light conditions with flash, LED flash processing adjusts the stat
+			filter tuning parameters with respect to flash sensitivity, including mixing the
+			different AWB decisions. </p>
+
+		<br /><img class="image" id="qej1508358564206__image_oyc_bwh_qbb" src="hxx1508786572889.svg" /><br />
+		<div class="p">There are four submodules in LED flash processing that support all illumination
+				conditions:<ul class="ul" id="qej1508358564206__ul_j34_pj2_pbb">
+				<li class="li"><strong class="ph b">Flash Reference Point</strong> – Updates gray zone
+					with respect to flash light influence </li>
+
+				<li class="li"><strong class="ph b">Flash Weight Vector</strong> – Updates stat weight
+					with respect to flash light influence</li>
+
+				<li class="li"><strong class="ph b">Flash Decision</strong> – Combines AWB decisions
+					and special gains with respect to flash light influence</li>
+
+				<li class="li"><strong class="ph b">Flash Gain Adjust</strong> – Compensates for
+					varying influence of flash induced by ambient lights of different CCT</li>
+
+			</ul>
+</div>
+
+		<div class="section" id="qej1508358564206__section_N10065_N1000F_N10001"><h2 class="title sectiontitle">Flash reference point submodule</h2>
+			
+			<p class="p">LED light strength can affect the normal gray zone configuration,
+				especially the gray zone location, because the LED light is an additional illuminant
+				source. The effect of flash sensitivity is to shift the normal gray zone toward the
+				R/G and B/G point of the LED light as shown in the following figure: </p>
+
+			<br /><img class="image" id="qej1508358564206__image_lcm_tyh_qbb" src="mxi1508787900539.svg" /><br />
+			<div class="p">Improved accuracy for flash AWB decisions requires that the AWB flash process
+				creates three gray zone configurations: <ul class="ul" id="qej1508358564206__ul_bfr_bgm_pbb">
+					<li class="li">Flash gray zone – LED light under a totally dark
+						environment; around the R/G and B/G point of LED light</li>
+
+					<li class="li">Normal gray zone – LED light under a bright environment</li>
+
+					<li class="li">Shifted gray zone – LED light under a dim environment;
+						between flash gray zone and normal gray zone</li>
+
+				</ul>
+</div>
+
+			<p class="p">Use the Chromatix user interface to define the amount of shift (<span class="ph uicontrol">Ref Points Shift Ratio</span>) in the original AWB
+				reference points towards the <span class="ph uicontrol">LED target
+					point</span> by setting user-defined flash sensitivity trigger zones, as
+				illustrated in the following example:</p>
+
+			<img class="image" id="qej1508358564206__image_gyr_hfh_sbb" src="nsl1509396820141.png" />
+		</div>
+
+		<div class="section" id="qej1508358564206__section_N10092_N1000F_N10001"><h2 class="title sectiontitle">Flash weight vector submodule</h2>
+			
+			<p class="p">As shown in the following figure, the LED flash process constructs the three
+				gray zones so that it can reject nongray stats effectively in all conditions: in
+				dark conditions, in dim conditions in which LED light and ambient lights are mixed,
+				and in bright conditions. The dim gray zone illustrates how a CCT restriction can
+				reduce the size of the gray zone.<br /><img class="image" id="qej1508358564206__image_khc_v13_qbb" src="cqa1508788908893.svg" /><br /></p>
+
+			<p class="p">To define the dark condition gray zone, specify the gray zone distance
+					(<span class="ph uicontrol">Valid Distance</span>) when the flash light
+				source is dominant (Flash Sensitivity = 0).</p>
+
+			<img class="image" id="qej1508358564206__image_mrt_bc3_qbb" src="sks1508776045861.svg" />
+			<p class="p">The flash weight vector submodule reshapes the reconstructed dim condition
+				gray zone using a user-provided weight vector adjustment and CCT range. Given an
+				input stat, the flash weight vector interpolation ratio makes further adjustments to
+				the weights assigned by the illuminant and distance weight vector stat filters. In
+				addition, the CCT start/end range restricts the reconstructed gray zone. If the CCT
+				of the input stat is out-of-range, the weight for this stat is set to zero.  </p>
+
+			<p class="p">Use the Chromatix 7 user interface to define the weight vector
+				interpolation ratio (<span class="ph uicontrol">Red</span>) and CCT start
+					(<span class="ph uicontrol">Green</span>) and CCT end (<span class="ph uicontrol">Blue</span>) values for each user-defined flash
+				sensitivity trigger zone, as illustrated in the following example. The CCT
+				out-of-range area is shaded yellow for the purpose of the example.</p>
+
+			<img class="image" id="qej1508358564206__image_dsk_lfh_sbb" src="tsw1509396751638.png" />
+		</div>
+
+		<div class="section" id="qej1508358564206__section_N1009F_N1000F_N10001"><h2 class="title sectiontitle">Flash decision submodule</h2>
+			
+			<div class="p">The flash AWB decision combines three different AWB decisions : <ol class="ol" id="qej1508358564206__ol_zxw_4yb_qbb">
+					<li class="li">The preflash AWB decision.</li>
+
+					<li class="li">The main flash MWB decision (<span class="keyword parmname">Main Flash
+							Pt</span>).</li>
+
+					<li class="li">The ambient AWB decision (the AWB decision just before turning on
+						preflash).</li>
+
+				</ol>
+</div>
+
+			<div class="p">The flash AWB decision estimation takes into account the following
+				information: <ul class="ul" id="qej1508358564206__ul_fvg_rxs_pbb">
+					<li class="li">The flash sensitivity (K2): <ul class="ul" id="qej1508358564206__ul_igx_s2c_qbb">
+							<li class="li">If K2 is close to 100 (bright condition), the
+								preflash AWB decision is ignored because the flash light has little
+								influence.</li>
+
+							<li class="li">If K2 is close to 100, the ambient AWB decision is
+								more reliable than the MWB decision.</li>
+
+							<li class="li">If K2 is close to 0 (strong influence from the
+								flash light source), the MWB decision is more reliable than the
+								ambient AWB decision.</li>
+
+						</ul>
+
+					</li>
+
+					<li class="li">The percentage of valid gray stats in the preflash AWB decision estimation:
+							<ul class="ul" id="qej1508358564206__ul_ryf_wgc_qbb">
+							<li class="li">The percentage determines the confidence level for
+								the preflash AWB decision estimate. </li>
+
+							<li class="li">If the percentage of valid gray stats is low in the
+								preflash period, there is less confidence in the preflash AWB
+								decision, so the MWB decision is a better choice for the estimation. </li>
+
+							<li class="li">If there is a high percentage of valid gray stats
+								in the preflash period, there is more confidence in the preflash AWB
+								decision.</li>
+
+						</ul>
+
+					</li>
+
+				</ul>
+</div>
+
+			<div class="p">The calculation of the flash AWB decision includes the following
+				steps: <ol class="ol" id="qej1508358564206__ol_mx3_lmc_qbb">
+					<li class="li">Interpolate the ambient AWB decision and the MWB decision using this
+						equation: [<span class="keyword parmname">Interp Ratio LED Pt</span> *
+							<span class="keyword parmname">Main Flash Pt</span>] + [(1-<span class="keyword parmname">Interp Ratio LED Pt</span>) * ambient AWB decision
+						point].</li>
+
+					<li class="li">Interpolation of the preflash AWB decision and the result of the first
+						step using this equation: [<span class="keyword parmname">Interp Ratio
+							Preflash</span> * decision point from step 1] + [(1-<span class="keyword parmname">Interp Ratio Preflash</span>) * preflash AWB
+						decision point]. </li>
+
+				</ol>
+</div>
+
+			<img class="image" id="qej1508358564206__image_wtl_mc3_qbb" src="miz1508778756828.svg" />
+			<p class="p">As illustrated in the following example, use the Chromatix 7 user interface
+				to specify the main flash MWB rg and bg gains (<span class="ph uicontrol">Flash WB
+					Point</span>) and the <span class="ph uicontrol">LED Type</span> (single or dual) as
+				shown in the <span class="ph uicontrol">Flash WB Point</span> area. Use the
+					<span class="ph uicontrol">LED WB Point Interpolation</span> area to
+				define the LED point interpolation ratio for each user-defined flash sensitivity
+				trigger zone. Use the <span class="ph uicontrol">Pre-flash LED WB
+					Interpolation</span> panel to define the pre-flash interpolation ratio for
+				each two-level trigger zone based on Lux Index (first column) and Valid Stats Cnt
+				Ratio (second column).</p>
+
+			<br /><img class="image" id="qej1508358564206__image_wcb_3yb_qbb" src="lmd1508716466185.svg" /><br />
+		</div>
+
+		<div class="section" id="qej1508358564206__section_N1011A_N1000F_N10001"><h2 class="title sectiontitle">Flash gain adjust submodule</h2>
+			
+			<p class="p">The flash AWB decision is calculated by the preflash AWB decision because the
+				main flash period is not enough long to estimate an AWB decision. However, due to
+				reducing power consumption, the light intensity in the preflash period is lower than
+				that in the main flash period. Therefore, the estimated flash AWB decision from the
+				preflash AWB decision should be adjusted to compensate for influences from other
+				light intensities.</p>
+
+			<p class="p">The <span class="keyword parmname">Flash Gain Adjust</span> compensates for
+				differences in the influence of flash light induced by ambient lights with different
+				color temperatures, despite having the same flash sensitivity. As shown in the
+				following figure, the color temperature of ambient light of the first case (red
+				line) is farther from the flash gray zone (yellow dots) than that of the second case
+				(blue line). Thus, the color temperature of the ambient AWB decision is an important
+				trigger to set up for assigning gain adjust values.</p>
+
+			<img class="image" id="qej1508358564206__image_zf3_dd3_qbb" src="dpe1508781193969.svg" />
+			<p class="p">As illustrated in the following example, use the Chromatix 7 user interface
+				to assign the Flash Gain Adjust rg and bg values for a three-level trigger based on
+				Lux Index (first column), CCT (second column), and Flash Sensitivity (third column).
+				If needed, using the three trigger levels, it is possible to set up a scenario where
+				normal outdoor conditions only use the Flash Sensitivity trigger, and indoor
+				conditions use both CCT and Flash Sensitivity triggers.</p>
+
+			<img class="image" id="qej1508358564206__image_bcj_gld_qbb" src="dci1508733938723.png" />
+		</div>
+
+		<div class="section" id="qej1508358564206__section_N1013D_N1000F_N10001"><h2 class="title sectiontitle">MLC zones adjustment</h2>
+			
+			<p class="p">Because the gray zone can vary with respect to flash sensitivity,
+				some misleading color zones may need to move along with the moving gray zone. In
+				addition, new MLC zones may be required. To evaluate which MLC changes are
+				necessary, evaluate using Flash Sensitivity as a trigger in the <cite class="cite">Misleading color zones concept</cite> section.</p>
+
+			<div class="fig fignone nonumber" id="qej1508358564206__fig_dct_qd3_qbb"><span class="figcap">Figure : This MLC zone is set to remove yellow table stats in TL84
+					environment. However, as shown in the figure, this MLC zone has a side effect
+					that removes gray stats when a flash image is captured under 20 lux A light
+					source. To solve the issue, remove the MLC zone with the 3rd level Flash
+					Sensitivity trigger. </span>
+				
+				<br /><img class="image" id="qej1508358564206__image_pnl_nd3_qbb" src="hkx1508782200711.png" /><br />
+			</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="cej1508358677060.html">LED flash parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="cnc1522035567644.html">Retrieve K2 and MWB target points for pre-flash and main flash</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="fbs1508358787082.html">Tune LED flash reference points</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="hjd1509047220572.html">Tune LED flash weight vector</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="xqs1509048090474.html">Tune LED flash decision</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="jlj1509049772688.html">Tune LED flash gain adjust</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="cej1508358677060.html" title="LED flash parameters">LED flash parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="fbs1508358787082.html" title="Use this procedure to record the pre-flash reference points and define the amount of shift in the original AWB reference points towards the LED target point.">Tune LED flash reference points</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="hjd1509047220572.html" title="Use this procedure to reshape the reconstructed dim condition gray zone using a user-provided weight vector adjustment and CCT range.">Tune LED flash weight vector</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="xqs1509048090474.html" title="Use this procedure to provide the main flash MWB gains and interpolation information required to combine multiple AWB decisions into a final decision.">Tune LED flash decision</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="jlj1509049772688.html" title="Use this procedure to adjust the estimated flash AWB decision to compensate for influences from other light intensities.">Tune LED flash gain adjust</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="cnc1522035567644.html" title="Retrieve flash sensitivity (K2) values to use for setting triggers. Retrieve MWB target points required for tuning AWB flash modules.">Retrieve K2 and MWB target points for pre-flash and main flash</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gkr1508957723817.html" title="AWB flash"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB flash</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

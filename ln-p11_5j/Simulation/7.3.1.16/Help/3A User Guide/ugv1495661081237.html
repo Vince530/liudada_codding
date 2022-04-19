@@ -1,0 +1,66 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Note: The parameters described in this section are in the STATS&gt;STATS&gt;Chromatix TOF&gt;Scene Change structure within the Parameter Editor. TOF monitors the scene for changes by evaluating the distance ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="TOF monitor" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ptn1477085277232" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>TOF monitor</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ptn1477085277232">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">TOF monitor</h1>
+
+   <div class="body conbody">
+      <div class="note note" id="ptn1477085277232__note_N10061_N1000F_N10001"><span class="notetitle">Note:</span> The parameters described in
+         this section are in the STATS&gt;STATS&gt;Chromatix TOF&gt;Scene Change structure within
+         the Parameter Editor.</div>
+
+      <p class="p">TOF monitors the scene for changes by evaluating the distance reported by the laser sensor. The laser sensor also generates an error code that signifies the confidence of the reported distance.</p>
+
+      <p class="p">If the algorithm is confident in the reported distance, then the laser-assisted coarse search is triggered. The search moves the lens to the near limit of the fine search. This move is called focus converge. If the algorithm is not confident, it can:</p>
+
+      <ul class="ul">
+         <li class="li">Move the lens to the hyperfocal position and start a fine search from there. This is the action if the error code indicates that the object is beyond 60 cm.</li>
+
+         <li class="li">Fallback to contrast AF. This is action if the error code indicates that there is too much ambient light.</li>
+
+      </ul>
+
+      <p class="p">In general, TOF scene change detection has the following logic:</p>
+
+      <ul class="ul">
+         <li class="li">A referential distance is recorded during the start of the monitor phase.</li>
+
+         <li class="li">Distance is divided into multiple regions (Distance Regions) in mm [0,
+            10000].</li>
+
+         <li class="li">Each region has its own scene change threshold (Scene Change Distance
+            Threshold).</li>
+
+         <li class="li">The average distance reported by the laser is calculated across a
+            number of frames (Num Monitor Samples).</li>
+
+         <li class="li">The standard deviation in distances is calculated across the number of samples.</li>
+
+         <li class="li"><p class="p">TOF detects a scene change and triggers a search if the following conditions are met:</p>
+<ul class="ul">
+               <li class="li">The difference between the referential distance and the average
+                  distance is more than the Scene Change Distance Thres for more than the number of
+                  frames specified in the Normal Light Cnt or the Lowlight Cnt.</li>
+
+               <li class="li">The standard deviation is less than the Scene Change Distance Std
+                  Dev Thres.</li>
+
+            </ul>
+</li>
+
+      </ul>
+
+      <p class="p">The algorithm also monitors stats from gyro and, to a lesser extent, SAD to detect scene
+         changes and trigger focus converge.</p>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Because a sensor may have different color sensitivity or IR cut filter may have module-to-module variations, each module has differences in RGB response in the same scene. We know this because luma is ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune AWB gain for luma compensation" /><meta name="DC.Relation" scheme="URI" content="lqj1495660918778.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="fyy1474996977233" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune AWB gain for luma compensation</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="fyy1474996977233">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune AWB gain for luma compensation</h1>
+
+	<div class="body taskbody">
+		<div class="section context" id="fyy1474996977233__context_N10014_N10011_N10001">Because a sensor may have different color sensitivity or IR cut filter may have
+			module-to-module variations, each module has differences in RGB response in the same
+			scene. We know this because luma is calculated as: <br /><img class="image" id="fyy1474996977233__image_sxh_1hy_kx" src="rbq1495660931819.png" /><br /><p class="p">The module-to-module variation of RGB
+				response impacts the result of pixel luma. Even the same module is impacted under
+				different CCT. The AWB gain for luma compensation feature helps to auto-calibrate
+				RBG response of different CCT and module-to-module variations by using D50 manual
+				white balance gain of the golden module. This feature gives almost the same output
+				luma with the typical/max/min module under same scene.</p>
+</div>
+
+		<ol class="ol steps"><li class="li step stepexpand" id="fyy1474996977233__step_N1002A_N10027_N10014_N10001">
+				<span class="ph cmd">Verify the weight vector has a default weight for each color channel.</span>
+			</li>
+<li class="li step stepexpand" id="fyy1474996977233__step_N10024_N10021_N10011_N10001">
+				<span class="ph cmd">Find the AWB golden module and record the white balance R/G/B gain under D50
+					illumination.</span>
+			</li>
+<li class="li step stepexpand" id="fyy1474996977233__step_N10057_N10021_N10011_N10001">
+				<span class="ph cmd">Enable the <span class="keyword parmname">Enable Color And Sensor
+						Comp</span> parameter.</span>
+				<ol type="a" class="ol substeps" id="fyy1474996977233__substeps_mdq_l2w_j1b">
+					<li class="li substep">
+						<span class="ph cmd">In the <span class="ph uicontrol">Parameter
+								Editor</span>, navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Metering</span> &gt; <span class="ph uicontrol">Mtr Luma Calc</span> &gt; <span class="ph uicontrol">Luma Weight</span></span>.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Select the <span class="ph uicontrol">Value</span> check box.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="fyy1474996977233__step_N10064_N10021_N10011_N10001">
+				<span class="ph cmd">Next to <span class="ph uicontrol">Ref Gain</span>, click <img class="image" id="fyy1474996977233__image_wkk_hfw_j1b" src="yir1498763075953.png" /> and enter the D50 gains
+					for each reference gain in the <span class="keyword parmname">Ref Gain[0]</span>,
+						<span class="keyword parmname">Ref Gain[1]</span>, and <span class="keyword parmname">Ref Gain[2]</span> parameters.</span>
+				<div class="itemgroup info">Ref gain [0], [1], and [3] correspond to R, G, and B channels,
+					respectively.</div>
+			</li>
+<li class="li step stepexpand" id="fyy1474996977233__step_N10079_N10021_N10011_N10001">
+				<span class="ph cmd">Verify the behavior of this function as follows: </span>
+				<ol type="a" class="ol substeps" id="fyy1474996977233__substeps_a3h_d3y_kx">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Prepare the AWB max/min/typical module devices. </span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Disable this function and capture an image for each device under the
+							same scene. </span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Enable this function and capture an image for each device under the
+							same scene. </span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Compare the images to verify that the max/min/typical images have
+							different luma values with the function disabled and the similar luma
+							values with the function enabled.</span>
+						<div class="itemgroup info">AWB gain for luma compensation is disabled in the top row images and
+							enabled in the bottom row images.</div>
+					</li>
+
+				</ol>
+
+				<div class="itemgroup info"><img class="image" id="fyy1474996977233__image_ddz_x3y_kx" src="sco1495660833632.png" /></div>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

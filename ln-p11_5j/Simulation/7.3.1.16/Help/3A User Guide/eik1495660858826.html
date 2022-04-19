@@ -1,0 +1,115 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="In AECAlgoLEDModeAuto mode, the flash will go off only if the lux index of the scene drops and triggers the flash tuning parameter, flashLuxTrigger . This parameter is a trigger to avoid oscillating ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="LED flash" /><meta name="DC.Relation" scheme="URI" content="gpc1495660795131.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="zvq1474864609119" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>LED flash</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="zvq1474864609119">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gpc1495660795131.html" title="AEC tuning concepts">AEC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gpc1495660795131.html" title="AEC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AEC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">LED flash</h1>
+
+   <div class="body conbody">
+      <p class="p">In AECAlgoLEDModeAuto mode, the flash will go off only if the lux index of
+         the scene drops and triggers the flash tuning parameter,
+            <span class="keyword parmname">flashLuxTrigger</span>. This parameter is a trigger to avoid oscillating
+         between flash and nonflash photos. If the lux index is larger than the trigger end, the
+         flash is used. The using flash decision remains in effect unless the lux level dips below
+         the trigger start.</p>
+
+      <br /><img class="image" id="zvq1474864609119__image_ilz_xvl_1x" src="pas1495661029086.svg" /><br />
+      <p class="p">During flash capture, the torch LED power (small LED current) first
+         illuminates the scene to allow AEC and AF to calculate their settings for flash (large LED
+         current). AEC relies on a parameter called <span class="keyword parmname">flux</span> to
+         estimate the scene brightness under flash illumination. Flux is an estimate of the
+         brightness ratio between torch and flash. Flux is tuned in the Parameter Editor.</p>
+
+      <p class="p">The derating feature allows the driver to lower the maximum amount of power
+         allocated for flash. Therefore, it is preferable to tune flux for several intermediate
+         power settings between torch (minimum power) and full flash. Tuning is achieved by using
+         the LED tuning tool and should not be done manually. <br /><img class="image" id="zvq1474864609119__image_jlq_gd1_x1b" src="eug1495660903583.svg" /><br /></p>
+
+      <p class="p">Flash r/g and b/g color ratios help AWB determine the snapshot gray point. Tuning color
+         ratios helps match the ambient illuminant (dual LED solutions) and determine the gray point
+         in scenes that are in complete darkness (both single and dual LED solutions).</p>
+
+      <div class="section" id="zvq1474864609119__section_N100F5_N10014_N10001"><h2 class="title sectiontitle">Flash flux and color ratios</h2>
+         
+         <p class="p">There are four main aspects involved in tuning flash LED settings:</p>
+
+         <ul class="ul" id="zvq1474864609119__ul_xgw_jxp_rx">
+            <li class="li">Triggering – Tune the lux level at which the flash will go off.</li>
+
+            <li class="li">Flux tuning – Flux is a measure of brightness difference between
+               pre-flash and main flash. Pre-flash is necessary to adjust 3A settings before
+               capturing the actual image. To save battery life, pre-flash typically uses only 20%
+               of the main flash power. Derating allows the system to reduce the
+               main flash power during snapshot capture when the battery power is low.</li>
+
+            <li class="li">Scene r/g and b/g matching tuning – This applies to dual LED
+               solutions only. The goal of dual LED solutions is to match the color of ambient light
+               source by mixing the driving current between a low CT LED and high CT LED.</li>
+
+            <li class="li">Zero lux AWB – When a scene is in complete darkness before the preflash LED turns
+               on, AWB relies on the r/g and b/g flash tuning to compute the white point. This
+               applies to both single and dual LED.</li>
+
+         </ul>
+
+      </div>
+
+      <div class="section" id="zvq1474864609119__section_N1011B_N10014_N10001"><h2 class="title sectiontitle">Interpolation slope (dual LED)</h2>
+         
+         <p class="p">With dual CCT LEDs, the AEC algorithm finds the mix of LEDs that produces
+            the r/g and b/g flash illumination that best matches the current AWB r/g and b/g
+            measurements of the scene.</p>
+
+         <p class="p">The current exact AWB r/g and b/g combination will not be found in the
+            flash LED table. Therefore, AEC must interpolate the closest LED mix based on the
+            nearest tuning data points. The <span class="ph uicontrol">dualLEDIntersectSlope</span> parameter allows interpolation decision
+            tuning.</p>
+
+         <p class="p">The <span class="keyword parmname">Dual LED Intersect Slope</span>
+            parameter can be found in the Parameter Editor:</p>
+
+         <p class="p"><span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Flash</span> &gt; <span class="ph uicontrol">Flash Ext</span> &gt; <span class="ph uicontrol">LED Table</span></span></p>
+
+         <p class="p">The tuned value must be larger than zero and smaller or equal to 5. The
+            default slope value is 1.0.</p>
+
+         <p class="p"><img class="image" id="zvq1474864609119__image_fzc_td1_x1b" src="xjh1495660938402.svg" /></p>
+
+      </div>
+
+      
+      <div class="section" id="zvq1474864609119__section_N1011D_N10015_N10001"><h2 class="title sectiontitle">Flash sensitivity</h2>
+         
+         <p class="p">When capturing a flash snapshot, AEC quantifies the luminous flash influence on the
+            scene. Flash influence is computed at each frame during the preflash sequence by
+            calculating the exposure ratio when flash is off over the exposure when low-power
+            preflash is on.</p>
+
+         <p class="p">Flash influence = exposure_sensitivity_off / exposure_sensitivity_preflash</p>
+
+         <p class="p">For main flash, AEC provides a flash influence estimate. AEC computes the main flash
+            exposure sensitivity with:</p>
+
+         <p class="p"> Flash influence = sensitivity_off / sensitivity_main_flash</p>
+
+         <p class="p">AWB also uses the influence ratio (K2) without normalization. The K2
+            range is now [1.0, 100.0].</p>
+
+         <p class="p">A K2 value of 100 indicates significant flash influence (e.g., a dark
+            scene), whereas a K2 value of 1.0 indicates the flash has very little influence (e.g., a
+            bright scene).</p>
+
+      </div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gpc1495660795131.html" title="AEC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AEC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,49 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Each illuminant has a different spectral power distribution and each sensor has a different spectral sensitivity. Reference points refer to the gray R/G and B/G ratio measured under each illuminant ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Reference points concept" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="yqt1502923722746.html" /><meta name="DC.Relation" scheme="URI" content="clp1501884564415.html" /><meta name="DC.Relation" scheme="URI" content="diy1501976490429.html" /><meta name="DC.Relation" scheme="URI" content="oig1502047313305.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="byt1501884502061" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Reference points concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="byt1501884502061">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="yqt1502923722746.html" title="AWB stats filters">AWB stats filters</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Reference points concept</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">Each illuminant has a different spectral power distribution and each
+			sensor has a different spectral sensitivity. Reference points refer to the gray R/G and
+			B/G ratio measured under each illuminant for each sensor. Based on these points, AWB
+			creates a gray zone for screening stats from a given scene. The gray zone is used for
+			excluding stats that come from a non-gray color object.</p>
+
+		<p class="p">Reference points are used as anchor points for computing the Color
+			Correlated Temperature (CCT) for each bayer grid stat and estimated illuminant in a
+			given scene. Reference points and the lines between two neighboring reference points are
+			used as anchor points to compute the distance of stats.</p>
+
+		<br /><img class="image" id="byt1501884502061__image_zf4_bmg_51b" src="fbi1501973982884.svg" /><br />
+		<div class="note note" id="byt1501884502061__note_N1001C_N10011_N10001"><span class="notetitle">Note:</span> Tune the gray zone and buffer zone using
+			the distance weight vector. The distance is calculated based on reference points and
+			lines. See <em class="ph i">Tune Distance Weight Vector</em> for more detail.</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="clp1501884564415.html">Reference points parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="diy1501976490429.html">Fine-tune AWB reference points</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="oig1502047313305.html" title="Fine-tune distance weight vector">Fine-tune distance weight vector</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,142 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Consistency and accuracy of AF are closely related to each other. Normally, the consistency of the AF searches should be optimized at a fixed scene before moving onto accuracy optimization. Issue ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Common issues: consistency and accuracy" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="hht1477085286296" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Common issues: consistency and accuracy</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hht1477085286296">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Common issues: consistency and accuracy</h1>
+
+   <div class="body conbody">
+      <p class="p">Consistency and accuracy of AF are closely related to each other. Normally, the consistency of the AF searches should be optimized at a fixed scene before moving onto accuracy optimization.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="hht1477085286296__ID-table-00000023" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.901in" /><col style="width:4.224in" /></colgroup><thead class="thead" style="text-align:left;">
+               <tr class="row">
+                  <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d27871e29">Issue</th>
+
+                  <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d27871e32">Description</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">Fine-tune search boundary is set too far</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">If the boundary to enable fine
+                     search is tuned to be too far (thus skipping fine search for some distances
+                     that needs it), change the Fine Search Region  in header to the CAF Near End.
+                     This enables fine search for all distances. If accuracy improves, tune the Fine
+                     Search Region up to the problematic object distance. The parameters are locaed
+                     at <span class="ph menucascade"><span class="ph uicontrol">3 A</span> &gt; <span class="ph uicontrol">AF</span> &gt; <span class="ph uicontrol">Chromatix Contrast AF</span> &gt; <span class="ph uicontrol">Optics</span></span> in the Parameter Editor. </td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">ROI is set too large</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">If the ROI contains objects in multiple distances,
+                     it could contaminate the curve and peak estimation. Gradually decrease ROI size
+                     by decreasing the appropriate clip ratios in the header, and observe if the
+                     focus is improved or not. If the change improves the issue, see <a class="xref" href="wwv1495660879387.html">Tune ROI parameters</a>.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">Actuator has a long settle time, which contaminated the FV curve (peak shift)</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">If you are unable to reduce the actuator settle time, then reduce the step size to improve accuracy. This change adversely impacts AF speed. To ensure that the actuator is moving correctly, use laser to check if damping is correct. If there is no issue with damping, optimize the AEC table for better AF performance.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">Test scene does not have detail</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">Lack of detail in the test scene causes the FV
+                     curve to be flat. This makes it difficult to find a peak accurately. If
+                     software statistics are used, see <a class="xref" href="fht1495661081112.html">Tune FV_min</a> for
+                        <span class="keyword cmdname">FV_min</span> tuning to enhance FV contrast. Decreasing the
+                        <span class="keyword cmdname">FV_min</span> can produce a better contrast curve, but it leads
+                     to adding noise the FVs, thus lowering overall contrast of FV in other
+                     scenes.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">Shaky with low fps</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">FV is susceptible to hand motion especially under medium-low light condition. Limit the minimum fps to be higher to avoid shaky hands from causing inaccurate or failed searches.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">Step size is too large</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">If step size is set to too large a value, the DOF
+                     of each lens movement in the search might miss some object distances. Compare
+                     the lens position obtained in a full sweep with the lens position using the AF
+                     search algorithm. If the difference in the lens position is too large, then
+                     reduce the step size. After reducing the step size, the lens positions obtained
+                     with the algorithm should be close to the positions obtained in the full sweep.
+                     Follow <a class="xref" href="pmt1495660866548.html">Tune AF step size manually</a> for step size tuning.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">Hysteresis of actuator is too large</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">Reduce the effect of hysteresis by enabling fine
+                     search for all distances (setting fine_srch_rgn to near_index). Check if
+                     enabling fine search (by adjusting the fine_srch_rgn towards macro side) helps
+                     the issue. Fine search can cover hysteresis if the hysteresis is not severe
+                     (less than 10 µm). See <a class="xref" href="rgp1495661049491.html">Bi-directional full-sweep test</a>.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">AF stats kernel coefficient is not optimal for a particular test scene</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">Customers can generate their own set of coefficients rather than use the default coefficients provided by QTI.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">Low-light condition causing low contrast FV curve (tune step table and thresholds)</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 ">The step table may need to be adjusted for
+                     low-light conditions. Step sizes are typically increased to compensate for long
+                     frame time and long search time. When increased too aggressively, it could
+                     result in DOF search step failures. See <a class="xref" href="pmt1495660866548.html">Tune AF step size manually</a>
+                  </td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e29 ">Low contrast scenes</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d27871e32 "><p class="p">This is a challenging area. Improve performance by tuning the following areas:</p>
+<ul class="ul">
+                        <li class="li"><span class="keyword cmdname">FV_min</span> tuning</li>
+
+                        <li class="li">Gamma tuning (for software stats)</li>
+
+                        <li class="li">Algorithm threshold tuning (high difficulty with sensitive trade-off in normal scenes)</li>
+
+                     </ul>
+</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,182 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Use the Color Correction (CC) module to minimize color reproduction inaccuracies and improve color fidelity. Set up Regions in the CC section of the Parameter Editor to support the various CC matrices ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune CC" /><meta name="abstract" content="Use the Color Correction (CC) module to minimize color reproduction inaccuracies and improve color fidelity." /><meta name="description" content="Use the Color Correction (CC) module to minimize color reproduction inaccuracies and improve color fidelity." /><meta name="DC.Relation" scheme="URI" content="wwg1494872278109.html" /><meta name="DC.Relation" scheme="URI" content="wwg1494872278109.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="bkn1458948387964" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune CC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="bkn1458948387964">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="wwg1494872278109.html" title="CC tuning concepts">CC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="wwg1494872278109.html" title="CC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">CC tuning concepts</span></a></span>  </div></td></tr></tbody></table> 
+  <h1 class="title topictitle1" id="ariaid-title1">Tune CC </h1>
+
+	 
+  <div class="body taskbody"><p class="shortdesc">Use the <span class="keyword wintitle">Color Correction (CC)</span>
+		module to minimize color reproduction inaccuracies and improve color fidelity.</p>
+
+		<div class="section prereq p" id="bkn1458948387964__prereq_N1001B_N10018_N10001">
+			<ul class="ul" id="bkn1458948387964__ul_b32_ccb_q1b">
+				<li class="li">Set up Regions in the CC section of the <span class="ph uicontrol">Parameter Editor</span>
+					to support the various CC matrices you need to tune. For example:<ul class="ul" id="bkn1458948387964__ul_ykg_1gb_q1b">
+						<li class="li">Regions can be defined using the AEC Trigger to segregate tuning for
+							outdoor conditions vs indoor conditions.</li>
+
+						<li class="li">A region can be defined by the LED Index Trigger to allow for specific
+							CC tuning for LED flash. </li>
+
+					</ul>
+
+				</li>
+
+				<li class="li">The gamma curve must be accurate prior to tuning the color correction matrix
+					(CCM). Any change to the gamma curve requires retuning the CC module.</li>
+
+			</ul>
+
+		</div>
+ 
+	 <ol class="ol steps" id="bkn1458948387964__steps_434F7FE0D0414DE4906E0C5717C2F4BA"><li class="li step stepexpand" id="bkn1458948387964__step_CBFE3E1ED06B46D6B214C960A83E1B36">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab, click <span class="ph menucascade"><span class="ph uicontrol">IPE </span> &gt; <span class="ph uicontrol">CC </span></span> to open the <span class="keyword wintitle">Color Correction </span>
+					window. <br /><img class="image" id="bkn1458948387964__image_r4m_gjb_q1b" src="xdc1500677570288.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_N1003E_N10020_N10018_N10001">
+				<span class="ph cmd">If it is necessary to modify the standard gamma curve or to
+					create a new gamma curve, click <span class="ph uicontrol">Edit
+						Gamma</span> and make the changes before tuning the color correction
+					matrix. </span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_N10081_N10045_N1001E_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Regions</span> panel, click the region that you want to
+					tune.</span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_507B725E0331421582825BD04B55976D">
+				<span class="ph cmd"> In the <span class="ph uicontrol">CCT</span> field, select
+					the color temperature you want to tune. </span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_N10227_N10020_N10018_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Gamma </span> field,
+					select the applicable gamma curve. The gamma curve must be accurate before
+					continuing with the CCM optimization.</span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_57FB8D801FCD498D9F2DA07D0BD4F383">
+				<span class="ph cmd" id="bkn1458948387964__ID-64-0000073f">Color correction uses the SRGB color transform unless
+					you select another <span class="ph uicontrol">Transform Type </span>from the list box.
+					Other options are AdobeRGB, BT2020, and Custom. <br /><img class="image" id="bkn1458948387964__image_bfy_4nb_q1b" src="kdb1500679650543.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_2F05A26AD4D9494284FE6CA9EDAC5866">
+				<span class="ph cmd">Load an MCC chart image that was captured under the appropriate
+					lighting condition.</span>
+				<ol type="a" class="ol substeps" id="bkn1458948387964__substeps_2279A2EB99524B3DB75E42BCF6B90116">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">To load a RAW image, in the <span class="ph uicontrol">MCC</span>
+							field click the arrow and select<span class="ph uicontrol"> Open Dialog...</span>.
+							Select the appropriate image.<br /><img class="image" id="bkn1458948387964__image_ypb_ynb_q1b" src="lew1500677572784.png" /><br /></span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">To load a previously loaded  image, click <span class="ph uicontrol">Image...</span> and select an image saved to
+							the <span class="ph uicontrol">Images</span> panel.</span>
+					</li>
+
+					<li class="li substep substepexpand" id="bkn1458948387964__substep_9F069F41EF914D32B15551D628E0B985">
+						<span class="ph cmd">When the MCC image opens, select <span class="ph menucascade"><span class="ph uicontrol">Mark</span> &gt; <span class="ph uicontrol">Macbeth</span> &gt; <span class="ph uicontrol">Macbeth</span></span> and set the grid markers. Drag the top-left MCC grid
+							marker to the center of the top-left color patch and drag the
+							bottom-right MCC grid marker to the center of the bottom-right color
+							patch so that all of the grid markers align within the color patches of
+							the MCC chart image. Close the window. </span>
+						<div class="itemgroup info">If the image is taken with a fisheye lens, hold the Ctrl Key (or Shift
+							Key) while moving the markers.</div>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_N1012F_N1004B_N1001F_N10001">
+				<span class="ph cmd">(Optional) Load a flat field image that was captured under the
+					appropriate lighting condition.</span>
+				<ol type="a" class="ol substeps" id="bkn1458948387964__substeps_xnb_2bb_qdb">
+					<li class="li substep">
+						<span class="ph cmd">To load a RAW image, in the <span class="ph uicontrol">Flat
+								Field</span> field click the arrow and select<span class="ph uicontrol"> Open
+								Dialog...</span>. Select the appropriate image.<br /><img class="image" id="bkn1458948387964__image_mmz_kcb_qdb" src="lnc1524770087455.png" /><br /></span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">To load a previously loaded flat field image, click
+								<span class="ph uicontrol">Image...</span>and select an image
+							saved to the <span class="ph uicontrol">Images</span> panel.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_N10114_N1004B_N1001F_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Optimize</span>. </span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_N10122_N1004B_N1001F_N10001">
+				<span class="ph cmd">Examine the three diagonal values of the color correction
+					matrix to see how they changed as a result of the optimization..<br /><img class="image" id="bkn1458948387964__image_mbr_btb_q1b" src="kib1494872360290.png" /><br />
+				</span>
+				<div class="itemgroup info">For tuning purposes, only the highest value of the three
+					values matters. In this example, the highest value is the bottom-right value. A
+					higher noise weight value produces lower diagonal parameters in the color
+					correction matrix. For the diagonal parameters, higher values indicate higher
+					color saturation and increased noise. The ideal range for the highest diagonal
+					value is 1.8 to 3. </div>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_0B5DFAFB6BB944AABBF0DA52D320480C">
+				<span class="ph cmd"> Open the image again and select <img class="image" id="bkn1458948387964__image_w5s_drb_q1b" src="uls1500681397079.png" /> &gt; <span class="ph uicontrol">DeltaE</span>. When the Illuminant Selection dialog
+					opens, select the appropriate illuminant. The DeltaE plot opens and shows the
+					changes made by the optimization. <br /><img class="image" id="bkn1458948387964__image_ilt_b5b_q1b" src="sje1500682444913.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_A8CD23E2BB53470694848C1644B775B8">
+				<span class="ph cmd" id="bkn1458948387964__ID-64-0000078a">If adjustments are necessary, drag the
+						<span class="ph uicontrol">Noise weight</span> slider to change the
+					balance between color reproduction and noise reduction. </span>
+				<div class="itemgroup info">The noise weight setting determines how much significance is
+					given to noise. If the slider is set to 0, color reproduction is given full
+					priority, with no consideration or weight given to noise. Moving the slider to
+					the right minimizes noise, but sacrifices color reproduction. </div>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_263DC015A29E4AC8BD384EDC319BA21B">
+				<span class="ph cmd">If saturation changes are needed, mark the <span class="ph uicontrol">Target saturation</span> check box and drag the slider
+					to change the saturation level. </span>
+				<div class="itemgroup info">The saturation level is not normally adjusted, but use this method to increase
+					saturation resulting from an increase in noise weight.</div>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_561234E665964DC5B620B9D26D640BC6">
+				<span class="ph cmd">Click <span class="ph uicontrol">Optimize</span>.
+					Continue adjusting noise weight and saturation, and clicking <span class="ph uicontrol">Optimize</span> until the highest diagonal value in
+					the CCM is in the ideal range. </span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_571A353F1F3D46ECAEC3B1614A002416">
+				<span class="ph cmd" id="bkn1458948387964__ID-64-000007ae">To run a full simulation using the new
+					values, click <span class="ph uicontrol">Simulate</span>. A simulated
+					image appears. If the simulated image is acceptable, continue to the next step.
+					If not, repeat the preceding steps. </span>
+				<div class="itemgroup info">To run a faster simulation, click <span class="ph uicontrol">Preview</span>. This type of
+					simulation uses a loaded YUV or JPEG file.</div>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_81313AC54993486CB986AC8E0AD7EC2D">
+				<span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the settings for this Region/CCT. </span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_N102DD_N10015_N10012_N10001">
+				<span class="ph cmd">Repeat this process for each remaining
+						<span class="ph uicontrol">CCT</span> in this Region.</span>
+			</li>
+<li class="li step stepexpand" id="bkn1458948387964__step_N101C4_N1004B_N1001F_N10001">
+				<span class="ph cmd">Repeat this process for each
+					<span class="ph uicontrol">Region</span>.</span>
+			</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="wwg1494872278109.html" title="CC tuning concepts">CC tuning concepts</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="wwg1494872278109.html" title="CC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">CC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Basic verification of the touch/face PDAF feature involves validating the PD value returned by the PD library. To tune the touch/face PDAF feature, do the following: Enable pdaf.reserve [40] . Create ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Touch/face PDAF feature" /><meta name="DC.Relation" scheme="URI" content="jdr1495661039647.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="zgd1479486854502" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Touch/face PDAF feature</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="zgd1479486854502">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Touch/face PDAF feature</h1>
+
+	<div class="body taskbody">
+		<div class="section context" id="zgd1479486854502__context_N10011_N1000E_N10001">Basic verification of the touch/face
+			PDAF feature involves validating the PD value returned by the PD library. To tune the
+			touch/face PDAF feature, do the following:</div>
+
+		<ol class="ol steps"><li class="li step stepexpand" id="zgd1479486854502__step_N10019_N10016_N1000E_N10001">
+				<span class="ph cmd">Enable <code class="ph codeph">pdaf.reserve [40]</code>. </span>
+			</li>
+<li class="li step stepexpand" id="zgd1479486854502__step_N10026_N10016_N1000E_N10001">
+				<span class="ph cmd">Create a scene with objects at multiple depths like the
+					following image where the object in the foreground is not the center. <img class="image" id="zgd1479486854502__image_p34_fbm_zx" src="mhl1495660912974.jpg" /></span>
+			</li>
+<li class="li step stepexpand" id="zgd1479486854502__step_N1002F_N10016_N1000E_N10001">
+				<span class="ph cmd">Touch the area with the foreground object, which is the flower
+					in this example. </span>
+			</li>
+<li class="li step stepexpand" id="zgd1479486854502__step_N1003D_N10016_N1000E_N10001">
+				<span class="ph cmd">Verify if the ROI configuration is correct by checking the logs. The logs
+					should specify the ROI type as TOUCH and include the coordinates of the touch
+					event. You should see something like this: </span>
+				<div class="itemgroup info"><code class="ph codeph">af_util_adjust_roi: TOUCH ROI</code></div>
+				<div class="itemgroup info"><code class="ph codeph"> af_util_adjust_roi: Calculated new ROI: (1068, 736, 534
+					534)</code>)</div>
+			</li>
+<li class="li step stepexpand" id="zgd1479486854502__step_N10053_N10016_N1000E_N10001">
+				<span class="ph cmd">Verify if the PD value returned by the library is correct after
+					the touch event. The logs should have a high PD value when we touch the
+					foreground object. Here is an example:</span>
+				<div class="itemgroup info"><code class="ph codeph">af_pdaf_proc_pd:grid[0-47]: pd=4.6,
+						defocus=213, conf=286, weight=0.34</code></div>
+			</li>
+<li class="li step stepexpand" id="zgd1479486854502__step_N10062_N10016_N1000E_N10001">
+				<span class="ph cmd">Evaluate your results as follows:</span>
+				<ul class="ul choices" id="zgd1479486854502__choices_und_szl_zx">
+					<li class="li choice">If ROI configuration and PD value are correct, then PDAF should focus
+						well on the foreground object.</li>
+
+					<li class="li choice">If the ROI and PD are correct and PDAF does not focus well,
+						troubleshoot the common issues that affect consistency and accuracy. </li>
+
+					<li class="li choice">If we do not see a correct ROI configuration or if we see the wrong PD
+						value, then there is an issue in the ROI software configuration or PD
+						library configuration. Contact CE engineer for help.</li>
+
+				</ul>
+
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="jdr1495661039647.html" title="Common issues: consistency and accuracy">Common issues: consistency and accuracy</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

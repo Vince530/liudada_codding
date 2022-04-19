@@ -1,0 +1,152 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The AEC exposure table controls image brightness through combinations of sensor exposure times and sensor analog gains. When creating a new tuning project, the sensor driver info file is used to ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune the exposure table" /><meta name="DC.Relation" scheme="URI" content="cpr1495660858748.html" /><meta name="DC.Relation" scheme="URI" content="uey1495660950274.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="rbo1471615355701" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune the exposure table</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="rbo1471615355701">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cpr1495660858748.html" title="Required AEC tuning procedures">Required AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune the exposure table</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="rbo1471615355701__context_N10015_N10012_N10001">The AEC exposure table controls
+         image brightness through combinations of sensor exposure times and sensor analog gains.
+         When creating a new tuning project, the sensor driver info file is used to automatically
+         create the exposure table using the values provided by the sensor vendor. However, these
+         values can be modified using this procedure.<p class="p"><span class="ph uicontrol">Per Scenario</span> values
+            are taken from any 3A defaults provided in Chromatix.</p>
+<p class="p">The <span class="ph uicontrol">Max Analog
+               Gain</span> value comes from the sensor data and cannot be
+            changed.</p>
+<div class="note note" id="rbo1471615355701__note_N1002A_N10018_N10015_N10001"><span class="notetitle">Note:</span> When changing between modes (e.g., Snapshot and Video), the exposure
+            table must be tuned.</div>
+</div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="rbo1471615355701__step_N10032_N1002F_N10015_N10001">
+            <span class="ph cmd">On the <span class="ph uicontrol">AEC</span> tab, click <span class="ph uicontrol">Exposure Table</span>
+               under the <span class="ph uicontrol">List View</span>.</span>
+            <div class="itemgroup stepresult">The first exposure table shown is created based on defaults within
+                     Chromatix.<div class="note note" id="rbo1471615355701__note_N10048_N10045_N10032_N1002F_N10015_N10001"><span class="notetitle">Note:</span> <span class="ph uicontrol">Tree View</span> is for advanced users
+                  only.</div>
+</div>
+         </li>
+<li class="li step stepexpand" id="rbo1471615355701__step_N10052_N1002F_N10015_N10001">
+            <span class="ph cmd">To add another exposure table, click <span class="ph uicontrol">Add Table</span>.</span>
+            <ol type="a" class="ol substeps" id="rbo1471615355701__substeps_e4q_5y3_qdb">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click <span class="ph uicontrol">Add</span> to add as many additional exposure table
+                     rows (knee points) as needed.</span>
+               </li>
+
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Adjust <span class="ph uicontrol">Gain</span> and <span class="ph uicontrol">Exp Time (ms)</span>
+                     to adjust the exposure index.</span>
+               </li>
+
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Select the increment priority for every knee point under
+                        <span class="ph uicontrol">IncrementPriority</span>. The final knee point is always set
+                     to <span class="ph uicontrol">Gain</span>.</span>
+               </li>
+
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Table Usage</span> group, select the table number that
+                     applies for <span class="ph uicontrol">Snapshot</span>, <span class="ph uicontrol">Pre Flash</span>,
+                        <span class="ph uicontrol">Main Flash</span>, <span class="ph uicontrol">Flash Measurement</span>,
+                        <span class="ph uicontrol">Aggresive</span>, and <span class="ph uicontrol">Fast AEC</span>.</span>
+                  <div class="itemgroup info">e.g., Snapshot may use table 0, but Pre Flash may use table 1.</div>
+               </li>
+
+            </ol>
+
+         </li>
+<li class="li step stepexpand" id="rbo1471615355701__step_N100B8_N1002F_N10015_N10001">
+            <span class="ph cmd">Check the gain and exposure time values as shown in the Exposure Plot.</span>
+            <div class="itemgroup info">The plot is multi-axis. To read the gain, use the left axis
+                  (<span class="ph uicontrol">Gain</span>); to read the exposure time, use the
+               right axis (<span class="ph uicontrol">Exposure Time (ms)</span>.<p class="p">The increments on the plot will adjust based on the chosen
+                  increment priority.</p>
+</div>
+         </li>
+<li class="li step stepexpand" id="rbo1471615355701__step_N100D0_N1002F_N10015_N10001">
+            <span class="ph cmd">Adjust <span class="ph uicontrol">Histogram</span>
+               values.</span>
+            <div class="itemgroup info">The <span class="ph uicontrol">Enable Hist Metering</span>,
+                  <span class="ph uicontrol">Enable ADRC</span>, and <span class="ph uicontrol">Enable Dark Boost</span> selections and triggers are based
+               on defaults within Chromatix.</div>
+            <ol type="a" class="ol substeps" id="rbo1471615355701__substeps_mvs_51j_qdb">
+               <li class="li substep">
+                  <span class="ph cmd">Double-click a trigger to edit the start and end
+                     values.</span>
+               </li>
+
+               <li class="li substep">
+                  <span class="ph cmd">Click <img class="image" id="rbo1471615355701__image_y55_jbj_qdb" src="qyc1524864673441.png" /> or <img class="image" id="rbo1471615355701__image_vlj_kbj_qdb" src="gwq1524864675309.png" /> to add a trigger above or below
+                     the currently selected trigger, respectively.</span>
+               </li>
+
+               <li class="li substep">
+                  <span class="ph cmd">To delete a trigger, select it and click <img class="image" id="rbo1471615355701__image_mzn_tbj_qdb" src="ias1524864842996.png" />.</span>
+               </li>
+
+               <li class="li substep">
+                  <span class="ph cmd">To copy one trigger value to another, select one trigger and
+                     click <img class="image" id="rbo1471615355701__image_x3j_vbj_qdb" src="baq1524864843423.png" />. To paste, select another trigger and click <img class="image" id="rbo1471615355701__image_n12_ybj_qdb" src="wkl1524864841980.png" />.</span>
+               </li>
+
+            </ol>
+
+         </li>
+<li class="li step stepexpand" id="rbo1471615355701__step_N10130_N1002F_N10015_N10001">
+            <span class="ph cmd">Double-click any parameter in the <span class="ph uicontrol">Data</span> column to edit the
+               values.</span>
+            <div class="itemgroup info">The parameters shown in the histogram plot are <span class="ph uicontrol">Sat Ref Low</span>,
+                  <span class="ph uicontrol">Sat Ref High</span>, <span class="ph uicontrol">Dark Ref Low</span>, and
+                  <span class="ph uicontrol">Dark Ref High</span>. The range for these parameters is
+               [0,255].</div>
+         </li>
+<li class="li step stepexpand" id="rbo1471615355701__step_N10151_N1002F_N10015_N10001">
+            <span class="ph cmd">Select the plot data source.</span>
+            
+<table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder" id="rbo1471615355701__choicetable_agc_mcj_qdb">
+<col style="width:50%" /><col style="width:50%" /><thead><tr class="sthead chhead"><th class="stentry choptionhd" style="vertical-align:bottom;text-align:left;" id="d1418e238-option">Choice</th>
+<th class="stentry chdeschd" style="vertical-align:bottom;text-align:left;" id="d1418e238-desc">Description</th></tr></thead>
+<tbody><tr class="strow chrow">
+                  <th style="vertical-align:top;" headers="d1418e238-option" id="d1418e251" class="stentry choption">Project</th>
+
+                  <td style="vertical-align:top;" headers="d1418e238-desc d1418e251" class="stentry chdesc">Plots data from the project only.</td>
+
+               </tr>
+<tr class="strow chrow">
+                  <th style="vertical-align:top;" headers="d1418e238-option" id="d1418e260" class="stentry choption">Image</th>
+
+                  <td style="vertical-align:top;" headers="d1418e238-desc d1418e260" class="stentry chdesc">Plots data from any JPEG loaded only.</td>
+
+               </tr>
+<tr class="strow chrow">
+                  <th style="vertical-align:top;" headers="d1418e238-option" id="d1418e269" class="stentry choption">Both</th>
+
+                  <td style="vertical-align:top;" headers="d1418e238-desc d1418e269" class="stentry chdesc">Plots data from both the project and any JPEG loaded.</td>
+
+               </tr>
+</tbody></table>
+
+            <div class="itemgroup info">Black data points shown on the plot are taken from any loaded image and are not
+               adjustable; red data points are taken from the current project and are
+               adjustable.</div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="uey1495660950274.html" title="Exposure table">Exposure table</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Use this procedure to run an AWB or JPEG simulation, or generate simulation XML files using the Command Line Assistant. AWB simulation Perform AWB tuning and generate a new binary file for the target. ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Run a simulation using Command Line Assistant" /><meta name="abstract" content="Use this procedure to run an AWB or JPEG simulation, or generate simulation XML files using the Command Line Assistant." /><meta name="description" content="Use this procedure to run an AWB or JPEG simulation, or generate simulation XML files using the Command Line Assistant." /><meta name="DC.Relation" scheme="URI" content="fcl1494872328107.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jsf1542739347133" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Run a simulation using Command Line Assistant</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jsf1542739347133">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="fcl1494872328107.html" title="Simulation Tools">Simulation Tools</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="fcl1494872328107.html" title="Simulation Tools"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Simulation Tools</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Run a simulation using Command Line Assistant</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Use this procedure to run an AWB or JPEG simulation, or generate simulation XML files
+		using the Command Line Assistant.</p>
+
+		<p class="li stepsection"><strong class="ph b">AWB simulation</strong></p><ol><li class="li step" id="jsf1542739347133__step_N10028_N1001E_N10012_N10001">
+				<span class="ph cmd">Perform AWB tuning and generate a new binary file for the target.</span>
+			</li>
+<li class="li step" id="jsf1542739347133__step_N10031_N1001E_N10012_N10001">
+				<span class="ph cmd">Go to <span class="ph menucascade"><span class="ph uicontrol">Utilities</span> &gt; <span class="ph uicontrol">Command Line Assistant</span></span> and select <span class="ph uicontrol">AWB simulation</span>
+					from the <span class="ph uicontrol">Use Case</span> menu.<br /><img class="image" id="jsf1542739347133__image_zf2_kkc_2gb" src="zvm1545173974115.png" /><br /></span>
+				<ol type="a" class="ol substeps" id="jsf1542739347133__substeps_v3p_snq_2gb">
+					<li class="li substep">
+						<span class="ph cmd">Next to <span class="ph uicontrol">AWB DLL</span>,
+							click <img class="image" id="jsf1542739347133__image_mgt_tnq_2gb" src="jbw1531257886288.png" /> and select the AWB simulation .dll provided
+							in the software build.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Next to <span class="ph uicontrol">BIN
+							File</span>, click <img class="image" id="jsf1542739347133__image_vjg_5nq_2gb" src="jbw1531257886288.png" /> and select the tuned project .bin file. <strong class="ph b">NOTE:</strong> For subsequent simulations, it is
+							important to update the .bin file after making any tuning parameter
+							updates.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Next to <span class="ph uicontrol">JPEG
+								Image</span>, click <img class="image" id="jsf1542739347133__image_cfr_5nq_2gb" src="jbw1531257886288.png" /> and select the
+							JPEG file to use as input for the simulation.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Next to <span class="ph uicontrol">Meta Config
+								Template</span>, click <img class="image" id="jsf1542739347133__image_ag2_vnq_2gb" src="jbw1531257886288.png" /> and navigate to
+								<span class="ph filepath">&lt;project&gt;\Simulation\Default\meta_config.xml</span>.
+							Before selecting, verify the file values are set the way you want them;
+							edit if needed.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Next to <span class="ph uicontrol">Output Meta File</span>, click
+								<img class="image" id="jsf1542739347133__image_nts_vnq_2gb" src="jbw1531257886288.png" /> and select the meta file.</span>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">JPEG simulation</strong></p><ol start="3"><li class="li step" id="jsf1542739347133__step_N100CF_N1001E_N10012_N10001">
+				<span class="ph cmd">Perform AWB tuning and generate a new binary file for the target. Using this
+					target device, capture a JPEG image with 3A debug data and metadata.</span>
+			</li>
+<li class="li step" id="jsf1542739347133__step_N100D8_N1001E_N10012_N10001">
+				<span class="ph cmd">Go to <span class="ph menucascade"><span class="ph uicontrol">Utilities</span> &gt; <span class="ph uicontrol">Command Line Assistant</span></span> and select <span class="ph uicontrol">JPEG simulation</span>
+					from the <span class="ph uicontrol">Use Case</span> menu.<br /><img class="image" id="jsf1542739347133__image_xkq_mkc_2gb" src="pbc1545173970069.png" /><br /></span>
+				<ol type="a" class="ol substeps" id="jsf1542739347133__substeps_xk5_xnq_2gb">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">From the <span class="ph uicontrol">Mode</span>
+							menu, select whether the simulation is for a single image or multiple
+							images.</span>
+						<div class="itemgroup info">
+							<ul class="ul" id="jsf1542739347133__ul_rqh_14q_2gb">
+								<li class="li">For a single image, click <img class="image" id="jsf1542739347133__image_rhl_c4q_2gb" src="jbw1531257886288.png" /> next to
+										<span class="ph uicontrol">JPG Image</span> and select
+									the JPEG image captured from Step 3.</li>
+
+								<li class="li">For multiple images, click <img class="image" id="jsf1542739347133__image_fzh_d4q_2gb" src="jbw1531257886288.png" /> next to
+										<span class="ph uicontrol">Images Folder</span> and
+									select the folder containing all JPEG images captured from Step
+									8.</li>
+
+							</ul>
+
+						</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Next to <span class="ph uicontrol">AWB DLL</span>,
+							click <img class="image" id="jsf1542739347133__image_l2y_d4q_2gb" src="jbw1531257886288.png" /> and select the AWB simulation .dll
+							provided in the software build.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Next to <span class="ph uicontrol">BIN
+							File</span>, click <img class="image" id="jsf1542739347133__image_p1h_24q_2gb" src="jbw1531257886288.png" /> and select the tuned project .bin file. and
+							select the AWB simulation .dll provided in the software build.<strong class="ph b">NOTE:</strong> For subsequent simulations, it is
+							important to update the .bin file after making any tuning parameter
+							updates.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Next to <span class="ph uicontrol">Meta Config
+								Template</span>, click <img class="image" id="jsf1542739347133__image_knr_24q_2gb" src="jbw1531257886288.png" /> and navigate to
+								<span class="ph filepath">&lt;project&gt;\Simulation\Default\meta_config.xml</span>.
+							Before selecting, verify the file values are set the way you want them;
+							edit if needed.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Next to <span class="ph uicontrol">Output
+								Folder</span>, click <img class="image" id="jsf1542739347133__image_umk_f4q_2gb" src="jbw1531257886288.png" /> and select the
+							folder where the simulation output should be saved.</span>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Generate XMLs for simulation</strong></p><ol start="5"><li class="li step" id="jsf1542739347133__step_N10185_N1001E_N10012_N10001">
+				<span class="ph cmd">Go to <span class="ph menucascade"><span class="ph uicontrol">Utilities</span> &gt; <span class="ph uicontrol">Command Line Assistant</span></span> and select <span class="ph uicontrol"> and select the AWB simulation .dll provided in theGenerate XMLs for
+						simulation</span> from the <span class="ph uicontrol">Use
+						Case</span> menu.<br /><img class="image" id="jsf1542739347133__image_zwc_pkc_2gb" src="saj1545173959084.png" /><br /></span>
+				<ol type="a" class="ol substeps" id="jsf1542739347133__substeps_zzs_g4q_2gb">
+					<li class="li substep">
+						<span class="ph cmd">Next to <span class="ph uicontrol">Scenario
+								Folder</span>, click <img class="image" id="jsf1542739347133__image_y3m_h4q_2gb" src="jbw1531257886288.png" /> and select the
+							scenario from which to generate XMLs.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Next to <span class="ph uicontrol">Output
+								Folder</span>, click <img class="image" id="jsf1542739347133__image_p5w_h4q_2gb" src="jbw1531257886288.png" /> and select the
+							folder where the simulation output should be saved.</span>
+					</li>
+
+				</ol>
+
+			</li>
+</ol>
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="fcl1494872328107.html" title="Simulation Tools"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Simulation Tools</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

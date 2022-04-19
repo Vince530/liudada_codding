@@ -1,0 +1,90 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="It is important to know the factors that affect tuning. This section describes the impact and trade-offs of various hardware and tuning dependencies. Tuning dependency Descriptions Hardware ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AF tuning considerations" /><meta name="DC.Relation" scheme="URI" content="wgc1495661020287.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nyr1477085277997" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AF tuning considerations</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nyr1477085277997">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="wgc1495661020287.html" title="AF tuning overview">AF tuning overview</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="wgc1495661020287.html" title="AF tuning overview"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AF tuning overview</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">AF tuning considerations</h1>
+
+   <div class="body conbody">
+      <p class="p">It is important to know the factors that affect tuning. This section describes the impact and trade-offs of various hardware and tuning dependencies.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="nyr1477085277997__ID-table-00000009" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:2.292in" /><col style="width:3.708in" /></colgroup><thead class="thead" style="text-align:left;">
+               <tr class="row">
+                  <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d14218e32">Tuning dependency</th>
+
+                  <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d14218e35">Descriptions</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr class="row">
+                  <td class="entry cellrowborder" colspan="2" style="text-align:left;vertical-align:top;" headers="d14218e32 d14218e35 "><em class="ph i">Hardware dependencies</em>	</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e32 ">Actuator type (opened-loop vs. closed-loop)</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e35 ">Closed-loop actuator typically yields faster algorithm convergence time. It also results in more consistent sharpness, minor/no lens sag, and reliable performance.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e32 ">Actuator settling time</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e35 ">An actuator with settle time longer than 12 ms is less desirable to achieve good AF performance. This is because of the focus value (FV) stats contamination caused by the overlapping of exposure time with the lens move. To ensure the same focus quality, frame skip is introduced which extends the AF search time.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e32 ">Module variations</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e35 ">If OTP data is presented, then module variation can be abstracted. However, if there is no OTP data and if module variation is severe, then typical tuning might not be able to cover outlier failure. The trade-off to accommodate module variation can, therefore, limit search algorithm performance.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" colspan="2" style="text-align:left;vertical-align:top;" headers="d14218e32 d14218e35 "><em class="ph i">Tuning dependencies</em></td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e32 ">AEC exposure table design</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e35 ">Design of the AEC table affects the time the actuator has for the lens to move without contaminating FV. The AEC table should be constructed to keep low exposure time in most indoor/outdoor lighting conditions.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e32 ">Stats type (software vs. hardware stats)</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e35 "><p class="p">QTI provides both hardware and software stats solutions. The software stats (namely PAAF) can be used for large sensors (&gt;13 MP) with VFE4.4 or earlier. Tuning parameters for each stats type can be tuned separately. Customers can choose accordingly. See tune software based AF stats engine and tune Bayer AF (BAF) stats engine.</p>
+</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e32 ">Calibration (availability of OTP data)</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d14218e35 ">The AF algorithm operates on the linear region of the actuator digital-to-analog converter (DAC) range. Because of this, if OTP data is not available, then the tuned linear range may not be reliable for some modules. This can cause the search algorithm to fail for some scenes.</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="wgc1495661020287.html" title="AF tuning overview"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AF tuning overview</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

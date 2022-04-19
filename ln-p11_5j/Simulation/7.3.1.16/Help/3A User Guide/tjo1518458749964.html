@@ -1,0 +1,54 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Calculate slave init gains and CCT Search “GetFCMAndGCMMappedOutput” keyword in log file Set slave init gains and CCT Search “HandleSetCameraInfo” keyword in log file If the role of both cameras is ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AWB dual camera sync debug message" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="nra1518044265573.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="tjo1518458749964" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AWB dual camera sync debug message</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="tjo1518458749964">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="nra1518044265573.html" title="AWB dual camera sync concept">AWB dual camera sync concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="nra1518044265573.html" title="AWB dual camera sync concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">AWB dual camera sync debug message</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<ul class="ul" id="tjo1518458749964__ul_g2r_qxp_vcb">
+			<li class="li">Calculate slave init gains and CCT<ul class="ul" id="tjo1518458749964__ul_rz4_sxp_vcb">
+					<li class="li">Search “GetFCMAndGCMMappedOutput” keyword in log file <br /><img class="image" id="tjo1518458749964__image_zd1_2zp_vcb" src="ydt1518047367595.png" /><br /></li>
+
+				</ul>
+</li>
+
+			<li class="li">Set slave init gains and CCT<ul class="ul" id="tjo1518458749964__ul_cfx_5xp_vcb">
+					<li class="li">Search “HandleSetCameraInfo” keyword in log file<ul class="ul" id="tjo1518458749964__ul_cc4_15q_vcb">
+							<li class="li">If the role of both cameras is switched, the message
+								is output in log message</li>
+
+						</ul>
+<img class="image" id="tjo1518458749964__image_kjc_gzp_vcb" src="ogk1518047240406.png" /></li>
+
+					<li class="li">Search “SetRoleSwitch” keyword in log file <ul class="ul" id="tjo1518458749964__ul_i1v_25q_vcb">
+							<li class="li">When the camera role is switched, previous slave
+								becomes new master. “fixed setting” log should has same values with
+								the values from GetFCMAndGCMMappedOutput</li>
+
+							<li class="li">New master outputs “Slave to Master, Update master
+								parameters” log message together </li>
+
+						</ul>
+</li>
+
+				</ul>
+<br /><img class="image" id="tjo1518458749964__image_lmp_hzp_vcb" src="wgp1518047348235.png" /><br /></li>
+
+		</ul>
+
+		
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="nra1518044265573.html" title="AWB dual camera sync concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

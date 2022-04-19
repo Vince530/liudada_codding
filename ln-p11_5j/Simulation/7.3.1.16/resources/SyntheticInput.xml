@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntheticInput>
+  <SpectrCamSimConfig>C:\LocalDrive\konaSanity_v0\Spectra480\c7_480_project\Simulation\MFNR\2019_8_21_21_49_44\MFNRBlend\spectracamsim_config.xml</SpectrCamSimConfig>
+  <WorkDir>C:\LocalDrive\konaSanity_v0\WD</WorkDir>
+  <PatchXML>C:\LocalDrive\konaSanity_v0\regressionData\regMfnrF1Region1\region1\patch_prop.xml</PatchXML>
+  <NumberOfFrames>3</NumberOfFrames>
+  <MF11XMLPath>
+  </MF11XMLPath>
+  <TMC12XMLPath>
+  </TMC12XMLPath>
+  <SWMFNRXMLPath>
+  </SWMFNRXMLPath>
+  <SpectraSimBinDir></SpectraSimBinDir>
+  <SpectraSimExe></SpectraSimExe>
+</SyntheticInput>

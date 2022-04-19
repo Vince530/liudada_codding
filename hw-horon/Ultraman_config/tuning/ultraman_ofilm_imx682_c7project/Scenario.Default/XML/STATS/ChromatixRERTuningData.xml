@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2019 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<ChromatixRERTuningData
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\rer\rerTuning.xsd">
+  <module_version>
+    <major_revision>1</major_revision>
+    <minor_revision>0</minor_revision>
+    <incr_revision>0</incr_revision>
+  </module_version>
+  <enableRedEyeReductionXenonStrobe>false</enableRedEyeReductionXenonStrobe>
+  <enableRedEyeReductionFlashStrobe>false</enableRedEyeReductionFlashStrobe>
+  <preflashCyclesCount>3</preflashCyclesCount>
+  <msIntervalBetweenPulses>45</msIntervalBetweenPulses>
+  <usXenonPulsesDuration>20</usXenonPulsesDuration>
+  <msLEDPulsesDuration>30</msLEDPulsesDuration>
+  <preflashLEDCurrent>600</preflashLEDCurrent>
+</ChromatixRERTuningData>

@@ -1,0 +1,118 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The AEC snapshot parameters control exposure table selection, EV bracketing exposure index values, and low light shot (LLS) tuning. For snapshot mode, an alternate exposure table must be defined if an ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune AEC snapshot parameters" /><meta name="abstract" content="The AEC snapshot parameters control exposure table selection, EV bracketing exposure index values, and low light shot (LLS) tuning." /><meta name="description" content="The AEC snapshot parameters control exposure table selection, EV bracketing exposure index values, and low light shot (LLS) tuning." /><meta name="DC.Relation" scheme="URI" content="lqj1495660918778.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="hyu1501863063709" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune AEC snapshot parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hyu1501863063709">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune AEC snapshot parameters</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">The AEC snapshot parameters control exposure table selection, EV bracketing exposure
+		index values, and low light shot (LLS) tuning.</p>
+
+		<div class="section context" id="hyu1501863063709__context_N1001A_N10017_N10001"> For snapshot mode, an alternate
+			exposure table must be defined if an exposure table other than that from preview mode is
+			required. If the exposure table for snapshot mode is not defined, it defaults to the
+			exposure table from preview mode.<p class="p">Adjust exposure index values to set
+				the EV exposure during exposure bracketing. If the EV exposure values are not set,
+				they default to strict settings.</p>
+<p class="p">With LLS, darker scenes can
+				use lower gains and longer exposure times, and avoid triggering the flash by
+				adjusting the exposure times and gains. LLS is disabled by default. Enable image
+				stablization to avoid blurry images from extending the exposure time.</p>
+<p class="p"><span class="keyword parmname">flashLuxTrigger</span> has a pair of
+				numbers <span class="keyword parmname">LED Trigger Start Lux Index</span> and
+					<span class="keyword parmname">LED Trigger End Lux Index</span>. This adds
+				hysteresis to LED triggering. If the flash is in AUTO mode, when the lux index
+				exceeds the end lux index threshold, the LED fires and the lux index must dip below
+				the start lux index threshold for the LED to stop firing. This prevents frequent
+				decision switching seen with the 0x308 header when the scene lux index is around the
+				original <span class="keyword parmname">wLED Trigger Index</span> value.</p>
+<p class="p">When enabled, the flash luma target used for preflash is determined.
+				When disabled, flash snapshot uses the same luma target as a nonflash
+				snapshot.</p>
+<div class="p">To use the flash luma target, do the following:<ul class="ul" id="hyu1501863063709__ul_j2n_bjd_px">
+					<li class="li">Navigate to <span class="ph menucascade"><span class="ph uicontrol">Stats</span> &gt; <span class="ph uicontrol">Stats</span> &gt; <span class="ph uicontrol">Flash</span> &gt; <span class="ph uicontrol">Flash Mtr</span> &gt; <span class="ph uicontrol">Flash Luma Target</span></span></li>
+
+					<li class="li">To enable the flash luma target, select the <span class="ph uicontrol">Value</span> check box next to <span class="ph uicontrol">Enable Flash Target</span>.</li>
+
+					<li class="li">Next to <span class="ph uicontrol">Flash Target</span>, click <img class="image" id="hyu1501863063709__image_hrk_llq_v1b" src="yir1498763075953.png" /> and
+						set the start and end values for each lux index zone in the <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Flash</span> &gt; <span class="ph uicontrol">Flash Mtr</span> &gt; <span class="ph uicontrol">Flash Luma Target</span> &gt; <span class="ph uicontrol">Flash Target</span> &gt; <span class="ph uicontrol">Lux Luma Target Zone</span></span> parameters. <br /><img class="image" id="hyu1501863063709__image_cj1_gnq_v1b" src="qra1502402426125.png" /><br /></li>
+
+					<li class="li">If needed, set the start and end values for <span class="ph uicontrol">Flash Influence Target Interpolation</span>. Lower
+						the values to have the flash target prevail over the regular target for
+						lower flash influences.</li>
+
+				</ul>
+</div>
+</div>
+
+		<p class="li stepsection">Set the exposure table ID</p><ol><li class="li step" id="hyu1501863063709__step_N1002C_N10025_N10017_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>
+					navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Snapshot Control</span> &gt; <span class="ph uicontrol">Snap Ctrl Arb</span></span>.</span>
+			</li>
+<li class="li step" id="hyu1501863063709__step_N1004D_N10025_N10017_N10001">
+				<span class="ph cmd">Enter an ID value for the <span class="ph uicontrol">Exp Table ID Snapshot</span>
+					parameter.</span>
+			</li>
+<li class="li step" id="hyu1501863063709__step_N1005A_N10025_N10017_N10001">
+				<span class="ph cmd">Using the Arbitration XSD file, verify that the table ID value is less than the
+					number of exposure tables generated.</span>
+			</li>
+</ol><p class="li stepsection">Tune EV bracketing</p><ol start="4"><li class="li step" id="hyu1501863063709__step_N10067_N10025_N10017_N10001">
+				<span class="ph cmd">If the EV image is too bright, decrease the <span class="keyword parmname">Bracketing Adj For EV Pos
+						2</span> and <span class="keyword parmname">Bracketing Adj For EV Neg 2</span> parameters
+					to less than 1.</span>
+			</li>
+<li class="li step" id="hyu1501863063709__step_N10078_N10025_N10017_N10001">
+				<span class="ph cmd">If the EV image is too dark, increase the <span class="keyword parmname">Bracketing Adj For EV Pos
+						2</span> and <span class="keyword parmname">Bracketing Adj For EV Neg 2</span>
+					parameters.</span>
+			</li>
+</ol><p class="li stepsection">Tune LLS</p><ol start="6"><li class="li step" id="hyu1501863063709__step_N1008D_N10025_N10017_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+					navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Snapshot Control</span> &gt; <span class="ph uicontrol">Snap Ctrl Ext</span></span>.</span>
+			</li>
+<li class="li step" id="hyu1501863063709__step_N100AE_N10025_N10017_N10001">
+				<span class="ph cmd">To enable LLS, select the <span class="ph uicontrol">Value</span> check box next to
+						<span class="ph uicontrol">Enable LLS</span>.</span>
+			</li>
+<li class="li step" id="hyu1501863063709__step_N100BF_N10025_N10017_N10001">
+				<span class="ph cmd">Next to <span class="ph uicontrol">LLS Lux Hysteresis</span> click <img class="image" id="hyu1501863063709__image_glp_dzy_t1b" src="yir1498763075953.png" />.</span>
+				<ol type="a" class="ol substeps" id="hyu1501863063709__substeps_b3b_gzy_t1b">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Set the <span class="ph uicontrol">Start</span> value as the flash trigger.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Set the <span class="ph uicontrol">End</span> value as the
+								<span class="ph uicontrol">Start</span> value + 100.</span>
+						<div class="itemgroup info">Adjust the <span class="ph uicontrol">End</span> value by determining the highest
+							exposure index (i.e., the darkest scene) that LLS can handle without
+							flash.</div>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step" id="hyu1501863063709__step_N100FB_N10025_N10017_N10001">
+				<span class="ph cmd">Next to <span class="ph uicontrol">LLS Exp Time LUT</span>, click <img class="image" id="hyu1501863063709__image_szl_4zy_t1b" src="yir1498763075953.png" /> and adjust the exposure
+					time LUT by adding the preferred exposure for each corresponding exposure
+					index.</span>
+			</li>
+<li class="li step" id="hyu1501863063709__step_N1010E_N10025_N10017_N10001">
+				<span class="ph cmd">Verify that the exposure time w.r.t. exposure index is in monotonic order for
+					consistent behavior.</span>
+			</li>
+</ol>
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

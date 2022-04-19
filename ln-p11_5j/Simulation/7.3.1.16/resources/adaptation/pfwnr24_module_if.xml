@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="PFWNR">
+	<param id="1"  name="edge_softness_y1"  autotune="1" submodule="ystage1">0.01:0.25:128</param>
+	<param id="2"  name="scale_y1"          autotune="1" submodule="ystage1">0:0.5:255</param>
+	<param id="3"  name="weight_y1"         autotune="1" submodule="ystage1">0.0:0.0625:1.0</param>
+	
+	<param id="4"  name="edge_softness_c1"  autotune="1" submodule="cstage1">0.01:0.25:128</param>
+	<param id="5"  name="scale_c1"          autotune="1" submodule="cstage1">0:0.5:255</param>
+	<param id="6"  name="weight_c1"         autotune="1" submodule="cstage1">0.0:0.0625:1.0</param>
+
+	<param id="7"  name="edge_softness_y2"  autotune="1" submodule="ystage2">0.01:0.25:128</param>
+	<param id="8"  name="scale_y2"          autotune="1" submodule="ystage2">0:0.5:255</param>
+	<param id="9"  name="weight_y2"         autotune="1" submodule="ystage2">0.0:0.0625:1.0</param>
+	
+	<param id="10"  name="edge_softness_c2" autotune="1" submodule="cstage2">0.01:0.25:128</param>
+	<param id="11"  name="scale_c2"         autotune="1" submodule="cstage2">0:0.5:255</param>
+	<param id="12"  name="weight_c2"        autotune="1" submodule="cstage2">0.0:0.0625:1.0</param>
+
+	<param id="13"  name="edge_softness_y3" autotune="1" submodule="ystage3">0.01:0.25:128</param>
+	<param id="14"  name="scale_y3"         autotune="1" submodule="ystage3">0:0.5:255</param>
+	<param id="15"  name="weight_y3"        autotune="1" submodule="ystage3">0.0:0.0625:1.0</param>
+	
+	<param id="16"  name="edge_softness_c3" autotune="1" submodule="cstage3">0.01:0.25:128</param>
+	<param id="17"  name="scale_c3"         autotune="1" submodule="cstage3">0:0.5:255</param>
+	<param id="18"  name="weight_c3"        autotune="1" submodule="cstage3">0.0:0.0625:1.0</param>
+
+	<param id="19"  name="edge_softness_c4" autotune="1" submodule="cstage4">0.01:0.25:128</param>
+	<param id="20"  name="scale_c4"         autotune="1" submodule="cstage4">0:0.5:255</param>
+	<param id="21"  name="weight_c4"        autotune="1" submodule="cstage4">0.0:0.0625:1.0</param>
+    
+
+    <mapping dest="pcsim">update_xml_wnr_24</mapping>
+    <mapping dest="chromatix">wnr24_autotune2chromatix</mapping>
+    <isp_pipeline>OPE</isp_pipeline>
+    <chromatix_tag>wnr24_ope</chromatix_tag>
+    <gen_pop_function>gen_pop_for_wnr_24</gen_pop_function>
+</module_if>

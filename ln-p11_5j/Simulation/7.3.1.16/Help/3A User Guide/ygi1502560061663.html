@@ -1,0 +1,187 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="To view the decision aggregator parameters, open a project and select Utilities &gt; Parameter Editor . Table :   Decision aggregator tuning parameters Parameter Name Description Tuning Factory Default ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Decision aggregator parameters" /><meta name="DC.Relation" scheme="URI" content="nta1502560008185.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ygi1502560061663" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Decision aggregator parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ygi1502560061663">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="nta1502560008185.html" title="Decision aggregator concept">Decision aggregator concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="nta1502560008185.html" title="Decision aggregator concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Decision aggregator concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Decision aggregator parameters</h1>
+
+	<div class="body conbody">
+		<p class="p">To view the decision aggregator parameters, open a project and select
+				<span class="ph menucascade"><span class="ph uicontrol">Utilities</span> &gt; <span class="ph uicontrol">Parameter Editor</span></span>.</p>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="ygi1502560061663__table_dxk_k2t_v1b" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table :   Decision aggregator tuning parameters</span></caption><colgroup><col /><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d71671e51">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d71671e54">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d71671e57">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d71671e60">Factory Default</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d71671e63">Must Tune?</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e51 ">Weight SA confidence trigger</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e54 ">Start and end confidence level values for the
+							trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e57 ">Default includes three trigger ranges. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e60 ">
+							<ul class="ul" id="ygi1502560061663__ul_sxy_wbg_w1b">
+								<li class="li">{0.00, 0.10}</li>
+
+								<li class="li">{0.10, 0.11}</li>
+
+								<li class="li">{0.50, 0.10} </li>
+
+							</ul>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e63 ">Use default or customize</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e51 ">Weight SA confidence core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e54 ">Adjustment factor for each trigger range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e57 ">Default includes adjustment factors for three
+							trigger ranges.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e60 ">
+							<ul class="ul" id="ygi1502560061663__ul_wjn_syh_w1b">
+								<li class="li">0.00</li>
+
+								<li class="li">1.00</li>
+
+								<li class="li">1.00</li>
+
+							</ul>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e63 ">Use default or customize</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e51 ">Weight SA ranking trigger</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e54 ">Start and end ranking values for the trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e57 ">Default includes three trigger ranges. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e60 ">
+							<ul class="ul" id="ygi1502560061663__ul_lwx_bdg_w1b">
+								<li class="li">{1.00, 2.00} </li>
+
+								<li class="li">{4.00, 5.00} </li>
+
+								<li class="li">{6.00, 10.00}</li>
+
+							</ul>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e63 ">Use default or customize</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e51 ">Weight SA ranking core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e54 ">Adjustment factor for each trigger range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e57 ">Default includes adjustment factors for three
+							trigger ranges.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e60 ">
+							<ul class="ul" id="ygi1502560061663__ul_clk_2zh_w1b">
+								<li class="li">1.00</li>
+
+								<li class="li">0.00</li>
+
+								<li class="li">0.00</li>
+
+							</ul>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e63 ">Use default or customize</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e51 ">Weight AGW SA confidence trigger</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e54 ">Start and end confidence level values for the
+							trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e57 ">Default includes three trigger ranges. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e60 ">
+							<ul class="ul" id="ygi1502560061663__ul_yj4_1hg_w1b">
+								<li class="li">{0.00, 0.01} </li>
+
+								<li class="li">{0.03, 0.05} </li>
+
+								<li class="li">{0.07, 1.00} </li>
+
+							</ul>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e63 ">Use default or customize</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e51 ">Weight AGW SA confidence core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e54 ">Adjustment factor for each trigger range</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e57 ">Default includes adjustment factors for three
+							trigger ranges.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e60 ">
+							<ul class="ul" id="ygi1502560061663__ul_jfr_mzh_w1b">
+								<li class="li">0.00</li>
+
+								<li class="li">0.50</li>
+
+								<li class="li">1.00</li>
+
+							</ul>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d71671e63 ">Use default or customize</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="nta1502560008185.html" title="Decision aggregator concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Decision aggregator concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

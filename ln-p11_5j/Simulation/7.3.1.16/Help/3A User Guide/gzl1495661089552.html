@@ -1,0 +1,203 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Repeat the following steps for each mode (snapshot, display, video, etc.) in the tuning project. All of the parameter and parameter structures in this section are located at Copy the lens postion ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Initial tuning procedure for unidirectional actuator" /><meta name="DC.Relation" scheme="URI" content="yoh1495660973487.html" /><meta name="DC.Relation" scheme="URI" content="yoh1495660973487.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="lwj1477085278309" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Initial tuning procedure for unidirectional actuator</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="lwj1477085278309">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Initial tuning procedure for unidirectional actuator</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="lwj1477085278309__context_N10011_N1000E_N10001"><p class="p">Repeat the following steps for each mode (snapshot, display, video, etc.) in the
+            tuning project. All of the parameter and parameter structures in this section are
+            located at </p>
+</div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="lwj1477085278309__step_N1001B_N10018_N1000E_N10001">
+            <span class="ph cmd">Copy the lens postion references from the worksheet to the Index
+               located at <span class="ph menucascade"><span class="ph uicontrol">3 A</span> &gt; <span class="ph uicontrol">AF</span> &gt; <span class="ph uicontrol">Chromatix  Contrast AF</span> &gt; <span class="ph uicontrol">Single Search</span></span> in the Parameter Editor.</span>
+         </li>
+<li class="li step stepexpand" id="lwj1477085278309__step_N10030_N10018_N1000E_N10001">
+            <span class="ph cmd">Click the <span class="ph uicontrol">AF Tuning</span> tab.</span>
+         </li>
+<li class="li step stepexpand" id="lwj1477085278309__step_N1003D_N10018_N1000E_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">Lens Position Tuning Input</span> group, clear the <span class="ph uicontrol">Bi-Directional</span> check box.</span>
+            <div class="itemgroup info"><img class="image" id="lwj1477085278309__image_vkw_xfl_rx" src="eyx1495661112406.png" /></div>
+         </li>
+<li class="li step stepexpand" id="lwj1477085278309__step_N10056_N10018_N1000E_N10001">
+            <span class="ph cmd">Enter the appropriate values in the <span class="ph uicontrol">Lens Position Tuning Input</span> group and click <span class="ph uicontrol">Calculate</span>. Based on the information you enter, the tool calculates and displays the initial set of tuning values used for lens positions, TAF steps, CAF steps, and SAD parameters.</span>
+         </li>
+<li class="li step stepexpand" id="lwj1477085278309__step_N10067_N10018_N1000E_N10001">
+            <span class="ph cmd">Chromatix also calculates the default values for the parameters in the <span class="ph uicontrol">Optics</span> structure. These parameters control the search behavior, boundaries, and search regions of the single AF algorithm. Click Edit Header, change the header type to 3A, and search for Optics to view these parameters.</span>
+            <div class="itemgroup info"><img class="image" id="lwj1477085278309__image_mxq_1ht_v1b" src="wwn1502434987179.png" /><p class="p">The following table describes the purpose of each parameter and
+                  cases where the defaults require adjustment.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="lwj1477085278309__ID-table-0000000a" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+                        <tr class="row">
+                           <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d21075e103">Parameters</th>
+
+                           <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d21075e106">Search behavior</th>
+
+                           <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d21075e109">Description</th>
+
+                        </tr>
+
+                     </thead>
+<tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e103 ">
+                              <ul class="ul">
+                                 <li class="li"><span class="ph uicontrol">CAF Far
+                                       End</span></li>
+
+                                 <li class="li"><span class="ph uicontrol">CAF Near
+                                       End</span></li>
+
+                                 <li class="li"><span class="ph uicontrol">TAF Far
+                                       End</span></li>
+
+                                 <li class="li"><span class="ph uicontrol">TAF Near
+                                       End</span></li>
+
+                              </ul>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e106 ">Search boundary</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e109 ">
+                              <p class="p">Typically, search boundaries are set as same near
+                                 end and far end for the opened lens position range. However,
+                                 because of defocus and other limitations, reduce the search range
+                                 to avoid search failures. In this case, adjust the range by
+                                 adjusting the <span class="ph uicontrol">CAF Far End</span>
+                                 and <span class="ph uicontrol">CAF Near End</span> for CAF
+                                 mode, and <span class="ph uicontrol">TAF Near End</span> and
+                                    <span class="ph uicontrol">TAF Far End</span> for TAF
+                                 mode.</p>
+
+                              <p class="p">For video, the <span class="ph uicontrol">CAF Near
+                                    End</span> is set to 14 cm by default because of the
+                                 limitation of defocus associated with small step size.</p>
+
+                           </td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e103 ">
+                              <ul class="ul">
+                                 <li class="li"><span class="ph uicontrol">Search Region
+                                       1</span></li>
+
+                                 <li class="li"><span class="ph uicontrol">Search Region 2
+                                    </span></li>
+
+                                 <li class="li"><span class="ph uicontrol">Search Region
+                                       3</span></li>
+
+                              </ul>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e106 ">Search regions</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e109 ">
+                              <p class="p">Used for obtaining step size. When selecting the
+                                 step size <span class="ph uicontrol">Search Region 1, Search Region
+                                    2, and Search Region 3</span> are looked up for the
+                                 corresponding entry. When adjusted correctly with the step table, a
+                                 flexible search behavior can be created. By default, the region
+                                 boundaries are set to hyper focal, 50 cm, 20 cm, and 14 cm for
+                                 mapping. If the module lens has a large aperture, the region
+                                 settings can be shifted by one index entry separately.</p>
+
+                           </td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e103 "><span class="ph uicontrol">Fine Search
+                                 Region</span></td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e106 ">Fine search
+                              boundary</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e109 ">Fine search improves the
+                              accuracy of the images, but it costs extra frames for this search.
+                              Therefore, to balance the trade-off, typically the<span class="ph uicontrol">Fine
+                                 Search Region</span>  is set to the value of the
+                              SINGLE_50CM_INDEX as an initial tuning value. For speed improvement,
+                              the boundary can be increased to reduce using fine search. For
+                              accuracy improvement, expand the fine search range down toward the
+                              macro objects distances. To disable fine search, set it to Infinity
+                              index.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e103 ">
+                              <ul class="ul">
+                                 <li class="li"><span class="ph uicontrol">Far
+                                    Zone</span></li>
+
+                                 <li class="li"><span class="ph uicontrol">Near
+                                       Zone</span></li>
+
+                              </ul>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e106 ">Near and far zone</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e109 ">Used to limit the chance
+                              of defocus at both ends of the range. If defocus is causing AF failure
+                              close to near and far end of the search, reduce the far zone boundary
+                              (or increase for near zone) to increase success rate.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e103 "><span class="ph uicontrol">Initial
+                                 Position</span></td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e106 ">Initial position</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e109 ">This parameter specifies
+                              where the lens position is upon the first AF search in camera
+                              start-up. Set to hyperfocal by default. However, to accommodate lens
+                              sag in some open-loop actuators, it might have to move back to the
+                              infinity limit position.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e103 "><span class="ph uicontrol">Mid Zone</span></td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e106 ">Mid zone</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d21075e109 ">This parameter defines the
+                              starting direction of the lens because the lens moves towards the mid
+                              zone.</td>
+
+                        </tr>
+
+                     </tbody>
+</table>
+</div>
+</div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="yoh1495660973487.html" title="Tune CAF triggering">Tune CAF triggering</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

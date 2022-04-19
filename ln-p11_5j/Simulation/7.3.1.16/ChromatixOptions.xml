@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ChromatixConfig>
+  <Options>
+    <Option Name="EnforceTuningOrder"    Value="True"/>
+    <Option Name="SimulationFolderCount" Value="2"/>
+    <Option Name="CacheFolderCount"      Value="2"/>
+    <Option Name="CacheEnabled"          Value="True"/>
+  </Options>
+</ChromatixConfig>

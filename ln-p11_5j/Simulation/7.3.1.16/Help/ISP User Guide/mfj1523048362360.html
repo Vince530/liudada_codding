@@ -1,0 +1,102 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Bright areas in an image sometimes appear with a slight color tint that can be caused by incorrect white balance or tinting in the lens. The chroma suppression (CS) module removes or reduces color ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="CS tuning concepts" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="DC.Relation" scheme="URI" content="fgr1523056256984.html" /><meta name="DC.Relation" scheme="URI" content="odf1523056326593.html" /><meta name="DC.Relation" scheme="URI" content="ess1523056120839.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="mfj1523048362360" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>CS tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="mfj1523048362360">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">CS tuning concepts</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">Bright areas in an image sometimes appear with a slight color tint that can be
+			caused by incorrect white balance or tinting in the lens. The chroma suppression (CS)
+			module removes or reduces color tints for a specified luma range.  </p>
+
+		<div class="fig fignone nonumber" id="mfj1523048362360__fig_lql_zfm_kdb"><span class="figcap">Figure : Yellowish tint is removed using CS. (L) CS off; (R) CS on</span>
+			
+			<img class="image" id="mfj1523048362360__image_tjv_fhm_kdb" src="gft1523049148830.png" />
+		</div>
+
+		<div class="fig fignone nonumber" id="mfj1523048362360__fig_f24_jhm_kdb"><span class="figcap">Figure : Color artifacts in lowlight are suppressed using CS. (Top) CS off;
+				(Bottom) CS on</span>
+			
+			<img class="image" id="mfj1523048362360__image_gch_nhm_kdb" src="dcu1523049158674.png" />
+		</div>
+
+		<p class="p">The chroma suppression processing uses both luma and chroma input to calculate the
+			suppression weight, as illustrated in the diagram. <br /><img class="image" id="mfj1523048362360__image_ol4_4jm_kdb" src="ljz1523049254880.svg" /><br /></p>
+
+		<div class="p">Calculation of the luma weight and chroma weight both require the definition of a LUT
+			that specifies the luma knee points the user wants to control
+				(<span class="keyword parmname">knee_point_LUT</span>). The default knee point LUT has sixteen evenly
+			spaced points:<ul class="ul" id="mfj1523048362360__ul_gw4_rmm_kdb">
+				<li class="li">0  17 34  51  68  85  102  119  136  153  170  187  204  221  238  256</li>
+
+			</ul>
+<div class="fig fignone nonumber" id="mfj1523048362360__fig_h3j_3nm_kdb"><span class="figcap">Figure : Evenly spaced knee points</span>
+				
+				<img class="image" id="mfj1523048362360__image_bpw_hnm_kdb" src="ljx1523049147722.png" />
+			</div>
+</div>
+
+		<div class="p">If unevenly spaced points are preferred, it is recommended to use finer knee
+			points for dark areas and highlight areas to have more flexible control, such as the
+			following points:<ul class="ul" id="mfj1523048362360__ul_n4s_vmm_kdb">
+				<li class="li">0 4 8 12 16 20 63 106 149 192 236 240 244 2428 252 256</li>
+
+			</ul>
+<div class="fig fignone nonumber" id="mfj1523048362360__fig_xgn_lnm_kdb"><span class="figcap">Figure : Example of unevenly spaced knee points</span>
+				
+				<img class="image" id="mfj1523048362360__image_dh3_nnm_kdb" src="tby1523049150281.png" />
+			</div>
+</div>
+
+		<div class="p">The luma weight index in the LUT associates a luma weight (<span class="keyword parmname">y_weight_lut</span>) with each knee point. When the luma weight
+			has a value of 0.0, the chroma suppression process is fully affected by the computed
+			chroma weight. When the luma weight has a value of 1.0, no chroma suppression is
+			applied. In general, apply a strong suppression for dark and highlight areas and do not
+			touch a middle tone color.<div class="fig fignone nonumber" id="mfj1523048362360__fig_eh1_hlm_kdb"><span class="figcap">Figure : Example luma weight index on knee point LUT</span>
+				
+				<img class="image" id="mfj1523048362360__image_owq_2lm_kdb" src="xac1523049252961.svg" />
+			</div>
+</div>
+
+		<div class="p">Two chroma threshold indexes in the LUT (<span class="keyword parmname">c_thr1_lut</span> and <span class="keyword parmname">c_thr2_lut</span>) define
+			which chroma values are suppressed. A chroma value less than <span class="keyword parmname">c_thr1_lut</span> is suppressed with y_weight. A chroma value larger than
+				<span class="keyword parmname">c_thr2_lut</span> is not suppressed. A chroma value in
+			the area between the thresholds is suppressed with an interpolated chroma weight.<div class="fig fignone nonumber" id="mfj1523048362360__fig_jxr_vsm_kdb"><span class="figcap">Figure : Example chroma thresholds on knee point LUT</span>
+				
+				<img class="image" id="mfj1523048362360__image_tpp_5sm_kdb" src="jxm1523049243944.svg" />
+			</div>
+</div>
+
+		<p class="p">The following diagram illustrates how each parameter affects the chroma suppression
+			processing.</p>
+
+		<div class="fig fignone nonumber" id="mfj1523048362360__fig_wh3_x5m_kdb"><span class="figcap">Figure : Effect of CS parameters</span>
+			
+			<img class="image" id="mfj1523048362360__image_hsm_z5m_kdb" src="byi1523049249108.svg" />
+		</div>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="fgr1523056256984.html">CS parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="odf1523056326593.html">Examples of CS parameter effects</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="ess1523056120839.html">Tune CS</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

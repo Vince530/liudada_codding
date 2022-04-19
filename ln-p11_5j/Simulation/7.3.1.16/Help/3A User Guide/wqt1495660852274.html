@@ -1,0 +1,409 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="There are four monitor algo configs by default. One for each of the default monitor algorithms (Topo CAF, Topo PDAF, Topo TOF, and Topo DCIAF). Because each algorithm may rely on different stats, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Monitor algo config parameters" /><meta name="DC.Relation" scheme="URI" content="ppb1495661036667.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jwj1477085275080" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Monitor algo config parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jwj1477085275080">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eqh1495660907483.html" title="Autofocus concepts">Autofocus concepts</a> / <a class="navheader_parent_path" href="ppb1495661036667.html" title="AF monitor">AF monitor</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="ppb1495661036667.html" title="AF monitor"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AF monitor</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Monitor algo config parameters</h1>
+
+   <div class="body conbody">
+      <p class="p">There are four monitor algo configs by default. One for each of the default
+         monitor algorithms (Topo CAF, Topo PDAF, Topo TOF, and Topo DCIAF). Because each algorithm
+         may rely on different stats, there are different sensitivity parameters for each config.
+         The following tables list the parameters for each monitor algo config.</p>
+
+      <p class="p"><strong class="ph b">NOTE:</strong> Setting a sensitivity parameter to 0 disables the parameters in the
+         corresponding value monitor bank. For example, setting SADR to 0 disables the parameters in
+         SADR VM set type. The output decision in such cases is 0.</p>
+
+      <div class="section" id="jwj1477085275080__section_N1001D_N1000F_N10001"><h2 class="title sectiontitle">Parameters for logical sensitivity in Topo CAF </h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="jwj1477085275080__ID-table-00000001" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:2.0in" /><col style="width:2.246in" /><col style="width:1.9in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d65800e42"> </th>
+
+                     <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65800e44">Descriptions</th>
+
+                     <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65800e47">Default Value,
+                        {Range}</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e42 "><span class="ph uicontrol">Profile Index</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e44 ">Index for topology selection. An
+                        option for choosing topology for scene change/panning detection.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e47 "><p class="p">Default:
+                              <span class="ph uicontrol">Simple</span></p>
+<p class="p">Options:</p>
+
+                        <span class="ph uicontrol">Advanced</span>, <span class="ph uicontrol">Max</span></td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e42 "><span class="ph uicontrol">SADR</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e44 ">Logical sensitivity for
+                        SADR</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e47 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e42 "><span class="ph uicontrol">Gyro</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e44 ">Logical sensitivity for
+                        Gyro</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e47 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e42 "><span class="ph uicontrol">Gyro
+                           Panning</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e44 ">Logical sensitivity for gyro
+                        panning</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e47 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e42 "><span class="ph uicontrol">SAD
+                           Panning</span>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e44 ">Logical sensitivity for SAD
+                        panning</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e47 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e42 "><span class="ph uicontrol">FV</span>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e44 ">Logical sensitivity for
+                        FV</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e47 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d65800e42 "><span class="ph uicontrol">Face Trigger Hold</span></td>
+
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d65800e44 ">Logical sensitivity for face
+                        trigger hold</td>
+
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d65800e47 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e42 "><span class="ph uicontrol">CAF
+                           Scene Change Hold</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e44 ">Logical sensitivity for CAF
+                        scene change hold</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e47 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+</div>
+
+      <div class="section" id="jwj1477085275080__section_N1019D_N1000F_N10001"><h2 class="title sectiontitle">Parameters for logical sensitivity in Topo PDAF </h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="jwj1477085275080__ID-table-00000002" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:2.0in" /><col style="width:2.32in" /><col style="width:1.9in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d65800e234"> </th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d65800e236">Descriptions</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d65800e239">Default Value, {Range}</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e234 "><span class="ph uicontrol">Profile Index</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e236 ">Index for topology selection. An
+                        option for choosing topology for different sensor settings.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e239 ">
+                        <p class="p">Default: <span class="ph uicontrol">Sparse</span></p>
+
+                        <p class="p">Options:</p>
+
+                        <p class="p"><span class="ph uicontrol">2PD</span><span class="ph uicontrol">Advanced</span>, <span class="ph uicontrol">Max</span></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e234 "><span class="ph uicontrol">Defocus Low</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e236 ">Logical sensitivity for Defocus
+                        Low</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e239 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e234 "><span class="ph uicontrol">Defocus High</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e236 ">Logical sensitivity for Defocus
+                        High</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e239 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e234 "><span class="ph uicontrol">PDA
+                           Fconfidence</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e236 ">Logical sensitivity for PDA
+                        Fconfidence</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e239 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+</div>
+
+      <div class="section" id="jwj1477085275080__section_N1028C_N1000F_N10001"><h2 class="title sectiontitle">Parameters for logical sensitivity in Topo TOF </h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="jwj1477085275080__ID-table-00000003" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.934in" /><col style="width:2.38in" /><col style="width:1.9in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:justify;vertical-align:top;" id="d65800e355"> </th>
+
+                     <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65800e357">Descriptions</th>
+
+                     <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65800e360">Default Value,
+                        {Range}</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e355 "><span class="ph uicontrol">Profile Index</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e357 ">Index for topology selection. An
+                        option for choosing topology for scene change/panning detection.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e360 ">
+                        <p class="p">Default: <span class="ph uicontrol">Simple</span></p>
+
+                        <p class="p">Options:</p>
+
+                        <p class="p"><span class="ph uicontrol">Advanced</span>,
+                              <span class="ph uicontrol">Max</span></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e355 "><span class="ph uicontrol">Distance</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e357 ">Logical sensitivity for
+                        Distance</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e360 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e355 "><span class="ph uicontrol">TOF
+                           Confidence High</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e357 ">Logical sensitivity for TOF
+                        Confidence High</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e360 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e355 "><span class="ph uicontrol">TOF
+                           Confidence Medium</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e357 ">Logical sensitivity for TO F
+                        Confidence Medium</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e360 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+ </div>
+
+        <div class="section" id="jwj1477085275080__section_N10382_N1000F_N10001"><h2 class="title sectiontitle">Parameters for logical sensitivity in Topo DCIAF</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="jwj1477085275080__ID-table-00000004" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.926in" /><col style="width:2.53in" /><col style="width:1.9in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:justify;vertical-align:top;" id="d65800e476"> </th>
+
+                     <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65800e478">Descriptions</th>
+
+                     <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d65800e481">Default Value,
+                        {Range}</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e476 "><span class="ph uicontrol">Profile Index</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e478 ">Index for topology selection.
+                        An option for choosing topology for scene change/panning detection.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e481 ">
+                        <p class="p">Default: <span class="ph uicontrol">Simple</span></p>
+
+                        <p class="p">Options:</p>
+
+                        <p class="p"><span class="ph uicontrol">Advanced</span>,
+                              <span class="ph uicontrol">Max</span></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e476 "><span class="ph uicontrol">Distance</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e478 ">Logical sensitivity for
+                        Distance</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e481 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e476 "><span class="ph uicontrol">Confidence</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e478 ">Logical sensitivity for
+                        Confidence</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d65800e481 ">
+                        <p class="p">Default: 50</p>
+
+                        <p class="p">Options: [0-100]</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="ppb1495661036667.html" title="AF monitor"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AF monitor</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

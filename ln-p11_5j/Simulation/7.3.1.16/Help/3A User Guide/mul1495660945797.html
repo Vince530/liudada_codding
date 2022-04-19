@@ -1,0 +1,41 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="In the search phase of autofocus, the algorithms use various methods to determine the best lens position to achieve focus and to trigger the actuator to move the lens to that position. The search ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AF search" /><meta name="DC.Relation" scheme="URI" content="eqh1495660907483.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="syt1477085275641" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AF search</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="syt1477085275641">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eqh1495660907483.html" title="Autofocus concepts">Autofocus concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="eqh1495660907483.html" title="Autofocus concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Autofocus concepts</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">AF search</h1>
+
+   <div class="body conbody">
+      <br /><img class="image" id="syt1477085275641__image_sp2_fp3_yz" src="joo1495660966763.svg" /><br />
+      <p class="p">In the search phase of autofocus, the algorithms use various methods to
+         determine the best lens position to achieve focus and to trigger the actuator to move the
+         lens to that position. The search phase is divided into a coarse search and a fine
+         search.</p>
+
+      <p class="p">The goal of the coarse search is to move the lens towards the near limit of
+         fine search. The following figure illustrates the basic operation of the coarse search and
+         the fine search in the DCIAF algorithm. The coarse search quickly moves the lens to the
+         proper position to start the fine search. The fine search then moves the lens to the
+         position with the highest focus value. The boundaries, thresholds, steps sizes, and limits
+         for the coarse search and the fine search are configurable. The search parameters can be
+         tuned to balance speed and accuracy or with an emphasis on either speed or accuracy.</p>
+
+      <p class="p"><strong class="ph b">NOTE: </strong>The coarse search is sometimes referred to as focus converge.</p>
+
+      <br /><img class="image" id="syt1477085275641__image_dgl_gp3_yz" src="jas1495660990491.png" /><br />
+      <p class="p">Each algorithm uses a different method calculate the lens positions for the
+         searches. See Contrast AF (CAF), phase detection AF (PDAF), time-of-flight (TOF) AF, and
+         dual camera instant AF (DCIAF) for more information on each algorithm.</p>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="eqh1495660907483.html" title="Autofocus concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Autofocus concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

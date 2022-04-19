@@ -1,0 +1,12 @@
+enableTuningMetadata=TRUE
+enable3ADebugData=TRUE
+enableFeature2Dump=1
+forceHWMFFixedNumOfFrames=5
+
+
+
+
+
+
+
+

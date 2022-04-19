@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="simulationglobalelements.xsd"/>
+    <xs:element name="ISPConfig">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="module_version">
+                    <xs:complexType>
+                        <xs:attribute name="major_revision" type="xs:int" fixed="1"/>
+                        <xs:attribute name="minor_revision" type="xs:int" fixed="0"/>
+                        <xs:attribute name="incr_revision" type="xs:int" fixed="0"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Common">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="TopCfg">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="StartFrameIdx" type="xs:unsignedByte" />
+                                      <xs:element name="TotalFrameNumber" type="xs:unsignedByte" />
+                                      <xs:element name="DigitalZoomEnable" type="xs:unsignedByte" />
+                                      <xs:element name="DZStartX" type="xs:unsignedByte" />
+                                      <xs:element name="DZStartY" type="xs:unsignedByte" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                          <xs:element name="Tintless">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="MajorVersion" type="xs:unsignedByte" />
+                                <xs:element name="MinorVersion" type="xs:unsignedByte" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="InputCropConfig">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Enable" type="xs:unsignedByte" />
+                                <xs:element name="InputCropOpt" type="xs:unsignedByte" />
+                                <xs:element name="FirstPixel" type="xs:unsignedShort" />
+                                <xs:element name="LastPixel" type="xs:unsignedShort" />
+                                <xs:element name="FirstLine" type="xs:unsignedShort" />
+                                <xs:element name="LastLine" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ifeStatsOnlyModeEnable" type="xs:unsignedByte" />
+							              <xs:element name="CamifEnable" type="xs:unsignedByte" />
+							              <xs:element name="CamifConfig">
+                                              <xs:complexType>
+                                                  <xs:sequence>
+                                                      <xs:element name="ClipFirstLine" type="xs:unsignedShort" />
+                                                      <xs:element name="ClipLastLine" type="xs:unsignedShort" />
+										              <xs:element name="ClipFirstPixel" type="xs:unsignedShort" />
+                                                      <xs:element name="ClipLastPixel" type="xs:unsignedShort" />
+                                                  </xs:sequence>
+                                              </xs:complexType>
+                                          </xs:element>
+							              <xs:element name="MotionDumpEnable" type="xs:unsignedByte"/>
+                            <xs:element name="ManualAnchorSelection" type="xs:unsignedByte"/>
+                            <xs:element name="AIDEEnable" type="xs:unsignedByte" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="TFE">
+					<xs:complexType>
+						<xs:sequence>
+              <xs:element name="TFEMNDSBDSVideoPath">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="lumaImgSizeChange" type="xs:unsignedByte" />
+                    <xs:element name="OutLumaWidth" type="xs:unsignedShort" />
+                    <xs:element name="OutLumaHeight" type="xs:unsignedShort" />
+                    <xs:element name="EnableChromaHorizSample" type="xs:unsignedByte" />
+                    <xs:element name="EnableChromaVertiSample" type="xs:unsignedByte" />
+                    <xs:element name="v_cnt_init" type="xs:unsignedByte" />
+                    <xs:element name="h_cnt_init" type="xs:unsignedByte" />
+                    <xs:element name="rounding_option_h" type="xs:unsignedByte" />
+                    <xs:element name="rounding_option_v" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OPE">
+					<xs:complexType>
+						<xs:sequence>
+						<xs:element name="OPEUpscalerCfg">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Enable" type="xs:unsignedByte" />
+										<xs:element name="OutputWidth" type="xs:unsignedShort" />
+										<xs:element name="OutputHeight" type="xs:unsignedShort" />
+									</xs:sequence>
+								</xs:complexType>
+							 </xs:element>
+							<xs:element name="OPEMNDownScaleDispPath">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="lumaImgSizeChange" type="xs:unsignedByte" />
+										<xs:element name="OutLumaWidth" type="xs:unsignedShort" />
+										<xs:element name="OutLumaHeight" type="xs:unsignedShort" />
+										<xs:element name="EnableChromaHorizSample" type="xs:unsignedByte" />
+										<xs:element name="EnableChromaVertiSample" type="xs:unsignedByte" />
+										<xs:element name="v_cnt_init" type="xs:unsignedByte" />
+										<xs:element name="h_cnt_init" type="xs:unsignedByte" />
+										<xs:element name="rounding_option_h" type="xs:unsignedByte" />
+										<xs:element name="rounding_option_v" type="xs:unsignedByte" />
+									</xs:sequence>
+								</xs:complexType>
+							 </xs:element>
+							 <xs:element name="OPECropDispPath">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CropEnable" type="xs:unsignedByte" />
+										<xs:element name="FirstPixel" type="xs:unsignedShort" />
+										<xs:element name="LastPixel" type="xs:unsignedShort" />
+										<xs:element name="FirstLine	" type="xs:unsignedShort" />
+										<xs:element name="LastLine" type="xs:unsignedShort" />
+									</xs:sequence>
+								</xs:complexType>
+							 </xs:element>
+							 <xs:element name="OPECDS">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Enable" type="xs:unsignedByte" />
+									</xs:sequence>
+								</xs:complexType>
+							 </xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+                <xs:element name="MFNR">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="AnchorPick">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="enable" type="xs:unsignedByte" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Registration">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Scale_X" type="xs:unsignedByte" />
+                                        <xs:element name="Scale_Y" type="xs:unsignedByte" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="UseModifiedGain" type="xs:unsignedByte" />
+							<xs:element name="ProcessingFrameIdx" type="xs:unsignedShort" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+         </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MetaConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\XSD\meta_config.xsd">
+    <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+    <CCT>5000</CCT>
+    <LuxIdx>130.0</LuxIdx>
+    <Gain>1.0</Gain>
+    <shortGain>1.0</shortGain>
+    <digitalGain>1.0</digitalGain>
+    <ExpSensitivityRatio>1.0</ExpSensitivityRatio>
+    <ExpTimeRatio>1.0</ExpTimeRatio>
+    <ExpGainRatio>1.0</ExpGainRatio>
+    <DrcGain>1.0</DrcGain>
+    <DrcGainDark>1.0</DrcGainDark>
+    <LensPosition>0.0</LensPosition>
+    <HDRMode>0</HDRMode>
+    <gain_r>1</gain_r>
+    <gain_g>1</gain_g>
+    <gain_b>1</gain_b>
+    <HDRZrecSel>0</HDRZrecSel>
+    <HDRZrecPattern>0</HDRZrecPattern>
+    <HDRZrecFirstRBExp>0</HDRZrecFirstRBExp>
+    <LEDSensitivity>0.0</LEDSensitivity>
+    <NumOfLed>1</NumOfLed>
+    <Led1IdxRatio>0.1</Led1IdxRatio>
+    <Led2IdxRatio>0.9</Led2IdxRatio>
+    <SensorType>1</SensorType>
+    <!-- Exposure type 0: Default, 1: ShortExposure, 2: MiddleExposure, 3: LongExposure , 4: AllExposures -->
+    <ExposureType>0</ExposureType>
+<!--3A Exposure time info -->
+    <aec_exp_time>
+        <Short>1</Short>
+        <Safe>1</Safe>
+        <Long>1</Long>
+    </aec_exp_time>
+
+<CustomAec>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</CustomAec>
+    <CustomAwb>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</CustomAwb>
+    <CustomAf>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</CustomAf>
+    <CCM>
+        <IFE>
+            <Flag>0</Flag>
+            <Matrix>
+                1 0 0
+                0 1 0
+                0 0 1
+            </Matrix>
+            <Offset>
+                0 0 0
+            </Offset>
+        </IFE>
+        <BPS>
+            <Flag>0</Flag>
+            <Matrix>
+                1 0 0
+                0 1 0
+                0 0 1
+            </Matrix>
+            <Offset>
+                0 0 0
+            </Offset>
+        </BPS>
+        <IPE>
+            <Flag>0</Flag>
+            <Matrix>
+                1 0 0 
+                0 1 0 
+                0 0 1 
+            </Matrix>
+            <Offset>
+                0 0 0
+            </Offset>
+        </IPE>
+    </CCM>
+    <TuningNode>
+        <Snapshot>
+            <SubModeValue0>0</SubModeValue0>
+            <SensorMode>0</SensorMode>
+            <Usecase>0</Usecase>
+            <ModeFeature1SubModeType>0</ModeFeature1SubModeType>
+            <ModeFeature2SubModeType>0</ModeFeature2SubModeType>
+            <ModeSceneSubModeType>0</ModeSceneSubModeType>
+            <ModeEffectSubModeType>0</ModeEffectSubModeType>
+        </Snapshot>
+        <Video>
+            <SubModeValue0>0</SubModeValue0>
+            <SensorMode>0</SensorMode>
+            <Usecase>0</Usecase>
+            <ModeFeature1SubModeType>0</ModeFeature1SubModeType>
+            <ModeFeature2SubModeType>0</ModeFeature2SubModeType>
+            <ModeSceneSubModeType>0</ModeSceneSubModeType>
+            <ModeEffectSubModeType>0</ModeEffectSubModeType>
+        </Video>
+    </TuningNode>
+</MetaConfig>

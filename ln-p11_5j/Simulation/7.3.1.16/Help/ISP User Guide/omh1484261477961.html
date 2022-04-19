@@ -1,0 +1,108 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="2D LUT adjusts specific colors without affecting others. Tune color correction and gamma. On the Pipeline tab, click 2DLut and then click a region in the Regions group. On the Main tab, click ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune 2D LUT" /><meta name="abstract" content="2D LUT adjusts specific colors without affecting others." /><meta name="description" content="2D LUT adjusts specific colors without affecting others." /><meta name="DC.Relation" scheme="URI" content="gkw1484866075402.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="omh1484261477961" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune 2D LUT</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="omh1484261477961">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="gkw1484866075402.html" title="2D LUT tuning concepts">2D LUT tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gkw1484866075402.html" title="2D LUT tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">2D LUT tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune 2D LUT</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">2D LUT adjusts specific colors without affecting others.</p>
+
+		<div class="section prereq p" id="omh1484261477961__prereq_N10019_N10016_N10001">Tune color correction and gamma.<p class="p"><img class="image" id="omh1484261477961__image_cbm_ygd_d1b" src="rqx1496684505720.svg" /></p>
+</div>
+
+		<ol class="ol steps"><li class="li step stepexpand" id="omh1484261477961__step_N1002E_N1001E_N10016_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab,
+					click <span class="ph uicontrol">2DLut</span> and then click a region in the Regions
+					group.</span>
+			</li>
+<li class="li step stepexpand" id="omh1484261477961__step_N10043_N1002C_N1001A_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Main</span> tab, click <span class="ph uicontrol">LoadImage</span>
+					and select an image to tune. </span>
+			</li>
+<li class="li step stepexpand" id="omh1484261477961__step_N10054_N1002C_N1001A_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Main</span> tab, in the color wheel, drag knee points to
+					the perferred color (e.g., drag a green knee point to a brighter shade of green)
+					and the hue and saturation will be adjusted accordingly in the
+						<span class="ph uicontrol">Saturation Lut</span> and <span class="ph uicontrol">Hue Lut</span>
+					tabs. White lines denote the original RGB colors and the black lines denote the
+					target RGB colors.</span>
+				<div class="itemgroup info">Adjust the <span class="ph uicontrol">Hue Nodes</span> and <span class="ph uicontrol">Saturation
+						Nodes</span> values in the Impacted Range group to adjust how many
+					neighboring knee points are affected during adjustments. If a larger color
+					adjustment is being made, increase the impacted range so the changes are
+					smoother.</div>
+			</li>
+<li class="li step stepexpand" id="omh1484261477961__step_N10075_N1002C_N1001A_N10001">
+				<span class="ph cmd">(Optional) Click the <span class="ph uicontrol">1-D Lut</span> tab and set
+					the knee points for <span class="keyword parmname">lut_1d_h[25]</span> and
+						<span class="keyword parmname">lut_1d_s[16]</span> for 1D colors that need
+					adjustments.</span>
+				<div class="itemgroup info"><span class="keyword parmname">lut_1d_h[25]</span> represents the hue angle
+					and <span class="keyword parmname">lut_1d_s[16]</span> represents the saturation.
+					LUTs are always programmed in ascending order, and no two entries can be
+					equal.</div>
+			</li>
+<li class="li step stepexpand" id="omh1484261477961__step_N1009C_N1002C_N1001A_N10001">
+				<span class="ph cmd">Obtain the hue and saturation LUT (HSL) values for the original
+					colors and target colors.</span>
+				<ol type="a" class="ol substeps" id="omh1484261477961__substeps_v4d_3v2_pbb">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">On the <span class="ph uicontrol">Main</span> tab, set the values for the
+								<span class="ph uicontrol">Original RGB</span> and <span class="ph uicontrol">Target
+								RBG</span> fields.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Set the 2D delta hue and saturation LUTs. To preserve
+							the gray areas, hue and saturation should not change when the saturation
+							is zero.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Click <span class="ph uicontrol">Adjust Lut</span> to adjust the color wheel knee
+							points to match the original and target RGB values.</span>
+						<div class="itemgroup info">The <span class="ph uicontrol">Saturation Lut</span> and <span class="ph uicontrol">Hue
+								Lut</span> tabs are automatically updated. To preserve the gray
+							areas, hue and saturation should not change when the saturation is
+							zero.</div>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="omh1484261477961__step_N10058_N1001E_N10016_N10001">
+				<span class="ph cmd">(Optional) Click the <span class="ph uicontrol">Boundary</span> tab and
+					enter values to set the L boundary points to maintain adjustments within a
+					specified brightness range.</span>
+				<div class="itemgroup info">By default, <span class="ph uicontrol">L start A</span> and <span class="ph uicontrol">L
+						start B</span>= 0, and <span class="ph uicontrol">L end A</span> and <span class="ph uicontrol">L
+						end B</span> = 1.0.</div>
+			</li>
+<li class="li step stepexpand" id="omh1484261477961__step_N10061_N1001E_N10016_N10001">
+				<span class="ph cmd">(Optional) Set the <span class="ph uicontrol">Y Offset Weight</span> value
+					for the preferred luma preservation and color enhancement.</span>
+				<div class="itemgroup info">The <span class="ph uicontrol">Y Offset Weight</span> range is 0 to 1.0,
+					where the default value is 0. A value of 0 is recommended for best colors. When
+					the value is 1, the Y value is best preserved.</div>
+			</li>
+<li class="li step stepexpand" id="omh1484261477961__step_N1011C_N1002C_N1001A_N10001">
+				<span class="ph cmd">Repeat process for each region.</span>
+			</li>
+<li class="li step stepexpand" id="omh1484261477961__step_N100F2_N1002C_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save to Project</span></span> to save any changes made.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gkw1484866075402.html" title="2D LUT tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">2D LUT tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

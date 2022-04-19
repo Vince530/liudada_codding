@@ -1,0 +1,121 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Due to variation in LED modules, per-unit calibration is recommended for dual LED solutions. Per-unit calibration improves AWB consistency for zero lux photos and helps match ambient light sources. ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Dual LED calibration" /><meta name="DC.Relation" scheme="URI" content="cyt1495661060161.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="okf1502400597310" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Dual LED calibration</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="okf1502400597310">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Dual LED calibration</h1>
+
+	<div class="body conbody">
+		<p class="p">Due to variation in LED modules, per-unit calibration is recommended for dual
+			LED solutions. Per-unit calibration improves AWB consistency for zero lux photos and
+			helps match ambient light sources. Per-unit calibration requires a fixture to isolate
+			the device from ambient light on the production floor. As a prerequisite, tune the flux
+			and color ratios.</p>
+
+		<p class="p">Calibration is adjusted via the following parameters. Some basic settings
+			are automatically populated by flux and color ratio tuning, but further tuning is
+			required.</p>
+
+		<div class="p">
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="okf1502400597310__ID-table-0000001d" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.853in" /><col style="width:2.96in" /><col style="width:0.743in" /><col style="width:0.882in" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d41994e43">Parameter</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d41994e46">Description</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d41994e49">Tuning</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d41994e52">Default</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e43 ">numOfCalibration</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e46 ">Specifies the umber of
+								points to calibrate. It is recommended tp calibrate at least three
+								points (three different LED mixes in the max power level).</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e49 ">Range: [0, 12]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e52 ">4</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e43 ">enableCornerSampleScreen</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e46 ">Screens out obvious
+								outliers when enabled.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e49 ">
+								<p class="p">0 (disable)</p>
+
+								<p class="p">1 (enable)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e52 ">1</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e43 ">calibEntries</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e46 ">Enter the mix index and
+								power index of each entry that must be calibrated, up to the number
+								of entries specified by the numOfCalibration parameter.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e49 ">–</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e52 ">–</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e43 ">statsRatioOKRange</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e46 ">If enabled, set the
+								pass/fail criteria so that only outliers are screened out. Increase
+								the range to loosen tolerance.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e49 ">Range: [0.7, 1.3]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e52 ">[0.8, 1.2]</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e43 ">fixedExpIndex</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e46 ">For each calibration
+								point, enter a fixed exposure index.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e49 ">Range: [0, 500]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d41994e52 ">[100, 200]</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

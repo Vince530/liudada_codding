@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="TMC">
+	<param id="1"  name="abf_strength_offset" autotune="0" submodule="yabf">0:0.25:1</param>
+	<param id="2"  name="abf_edge_softness_offset" autotune="0" submodule="yabf">0:0.25:15.99</param>
+	<param id="3"  name="abf_noise_std_lut_scale" autotune="0" submodule="yabf">0:0.5:8</param>
+	
+	<param id="4"  name="anr_luma_threshold_scale" autotune="1" submodule="yanrScale">0:0.5:8</param>
+	<param id="5"  name="anr_luma_threshold_offset" autotune="0" submodule="yanrOffset">0:0.5:8</param>
+	<param id="6"  name="anr_chroma_threshold_scale" autotune="1" submodule="canrScale">0:0.5:8</param>
+	<param id="7"  name="anr_chroma_threshold_offset" autotune="0" submodule="canrOffset">0:0.5:256</param>
+	<param id="8"  name="anr_dcblend2_luma_strength_scale" autotune="0" submodule="yanrBlendScale">0:0.5:128</param>
+	<param id="9"  name="anr_dcblend2_luma_strength_offset" autotune="0" submodule="yanrBlendOffset">0:0.5:128</param>
+	<param id="10"  name="anr_dcblend2_chroma_strength_scale" autotune="0" submodule="canrBlendScale">0:0.5:128</param>
+	<param id="11"  name="anr_dcblend2_chroma_strength_offset" autotune="0" submodule="canrBlendOffset">0:0.5:128</param>
+	
+	<param id="12"  name="anr_final_blender_luma_min_strength_high_freq_scale" autotune="0" submodule="ytf">0:1:256</param>
+	<param id="13"  name="anr_final_blender_chroma_min_strength_high_freq_scale" autotune="0" submodule="ctf">0:1:256</param>
+
+    <mapping dest="pcsim">update_xml_nrm1_0</mapping>
+    <mapping dest="chromatix">nrml_autotune2chromatix</mapping>
+    <isp_pipeline>SW_CONTROL</isp_pipeline>
+    <chromatix_tag>nrm10_sw_l</chromatix_tag>
+    <gen_pop_function>gen_pop_for_abf4_0</gen_pop_function>
+</module_if>

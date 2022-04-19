@@ -1,0 +1,273 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="As shown in the following figure, the value monitor is composed of a meta filter, basic monitor, and a set of parameters for each type of monitor. With these generic functionalities, the value monitor ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Value monitor components" /><meta name="DC.Relation" scheme="URI" content="ppb1495661036667.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xbi1477085275314" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Value monitor components</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xbi1477085275314">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eqh1495660907483.html" title="Autofocus concepts">Autofocus concepts</a> / <a class="navheader_parent_path" href="ppb1495661036667.html" title="AF monitor">AF monitor</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="ppb1495661036667.html" title="AF monitor"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AF monitor</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Value monitor components</h1>
+
+   <div class="body conbody">
+      <p class="p">As shown in the following figure, the value monitor is composed of a meta filter, basic monitor, and a set of parameters for each type of monitor. With these generic functionalities, the value monitor is suitable for many signal analysis processes.</p>
+
+      <div class="fig fignone" id="xbi1477085275314__ID-fig-00000005">
+         <br /><img class="image" src="fut1495660855691.svg" height="NaN" width="NaN" /><br />
+      </div>
+
+      <p class="p">The meta filter contains a series of filtering processes, such as a median filter, a moving average (MVAVG) filter, and an infinite impulse response (IIR) filter. When these filtering processes are enabled, the meta filter is capable of dealing with the noisy input signal.</p>
+
+      <p class="p">The basic monitor is a detector with two detection types:</p>
+
+      <ul class="ul">
+         <li class="li">Stable – detects if the signal is above the threshold or not</li>
+
+         <li class="li">Unstable – detects if the signal is below the threshold or not</li>
+
+      </ul>
+
+      <p class="p">A continual count of decisions above or below the thresholds is maintained and is used in the monitoring logic.</p>
+
+      <p class="p">The set of parameters are implemented via the value monitor set types in
+         the value monitor bank. Each set type contains three sensitivity profiles (low, med, high).
+         The profiles for a given set type (e.g., Gyro) contain the same parameters, but the values
+         vary by profile. For example, the high sensitivity profile for Gyro contains the same
+         parameters as the medium and low profiles. However, the values for the high profile result
+         in a higher sensitivity to the detected signal stability.</p>
+
+      <p class="p">The following tables list the value monitor set type parameters. The first table lists the parameters related to sensitivity and the second table lists parameters that are not related to sensitivity. In most cases you do not modify the set type parameters and instead you adjust the sensitivity. The parameters not related to sensitivity should be defined during the design stage.</p>
+
+      <div class="section" id="xbi1477085275314__section_N10040_N1000E_N10001">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="xbi1477085275314__ID-table-00000005" class="table landscape" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Set type parameters related to sensitivity</span></caption><colgroup><col style="width:100%" /><col style="width:1.56in" /><col style="width:3.08in" /><col style="width:1.79in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" colspan="2" style="text-align:left;vertical-align:top;" id="d29045e70">Parameter name</th>
+
+                     <th class="entry cellrowborder" style="text-align:center;vertical-align:middle;" id="d29045e73">Description</th>
+
+                     <th class="entry cellrowborder" style="text-align:center;vertical-align:middle;" id="d29045e76">Data type</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="2" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Trigger Threshold</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Threshold that determines if a
+                        signal is unstable or not. It is defined as the absolute difference between
+                        metafilter output and baseline.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Float</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="2" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Consecutive Count
+                        Threshold</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Counting threshold for the
+                        continual counts that detector detects the signal is stable/unstable. If the
+                        threshold is reached, the value monitor outputs 1 for the
+                        VM_DETECTOR_UNSTABLE mode, and 0 for the VM_DETECTOR_STABLE mode.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="2" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Frame To Armed</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">A number that forces the value
+                        monitor to start the detection process. For example, if frame2armed=2, the
+                        value monitor starts the detection process after 2 frames from the scene in
+                        focus(rebase is called).</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Median Filter
+                        Config</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Enable</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Flag to enable median
+                        filter.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Num of
+                        Samples</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Length of the median
+                        filter.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Mvavg Fltr Cf</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Enable</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Flag for enabling moving average
+                        filter in metafilter block.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Num of Samples</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Number of samples to be filtered
+                        in moving average filter in metafilter block.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" rowspan="4" style="text-align:left;vertical-align:top;" headers="d29045e70 ">IIR Fltr Cfg</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Enable</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Flag for enable IIR filter in
+                        metafilter block.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Num of Samples</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Buffer size for the IIR filter
+                        (restrict the value to be 2 in current version).</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Coeff Numerator</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Coefficient in the numerator
+                        (require tuning engineer to check filter stability)</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Float</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e70 ">Coeff Denominator</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e73 ">Coefficient in the denominator
+                        (require tuning engineer to check filter stability).</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e76 ">Float</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+</div>
+
+      <div class="section" id="xbi1477085275314__section_N101A6_N1000E_N10001">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="xbi1477085275314__ID-table-00000006" class="table landscape" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Set type parameters not related to sensitivity</span></caption><colgroup><col style="width:102.75pt" /><col style="width:1.41in" /><col style="width:3.54in" /><col style="width:1.73in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry row-nocellborder" colspan="2" style="text-align:left;vertical-align:top;" id="d29045e249">Parameter name</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:middle;" id="d29045e252">Description</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:middle;" id="d29045e255">Data
+                        type</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry row-nocellborder" colspan="2" style="text-align:left;vertical-align:top;" headers="d29045e249 ">Detection Type</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e252 ">
+                        <p class="p">Flag of the detection type of the value monitor. There
+                           are two options:</p>
+
+                        <div class="p">
+                           <ul class="ul" id="xbi1477085275314__ul_ny5_wz4_v1b">
+                              <li class="li">Unstable</li>
+
+                              <li class="li">Stable</li>
+
+                           </ul>
+
+                        </div>
+
+                        <p class="p">If Unstable is selected, the designated value monitor is
+                           determining whether the signal is getting unstable or not. The value
+                           monitor output is1 if the signal is unstable, 0 if the signal IS NOT
+                           unstable.</p>
+
+                        <p class="p">If Stable is selected, the designated value monitor is
+                           determining whether the signal is getting stable or not. The value
+                           monitor output is 1 if the signal IS NOT stable, 0 if the signal is
+                           stable.</p>
+
+                        <p class="p">The consecutive count is usually considered during the
+                           stable/unstable detection. Therefore, these two configurations have
+                           different detection logic.</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e255 ">enum</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d29045e249 ">Absolute Mode Cfg</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e249 ">Enable</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e252 ">Flag for the mode selection of
+                        the baseline determination. If the absolute mode is enabled (==1), the
+                        designated value monitor uses the absolute_mode_cfg.baseline parameter as
+                        the fixed baseline during the detection process. If the absolute mode is
+                        disabled (==0), the designated value monitor adaptively configures the
+                        baseline. The baseline is the metafilter output at the time frame2armed
+                        value is reached.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e255 ">Int</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e249 ">Baseline</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e252 ">Baseline value if the absolute
+                        mode is enabled.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d29045e255 ">Float</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+</div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="ppb1495661036667.html" title="AF monitor"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AF monitor</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

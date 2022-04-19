@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="TMC">
+	<param id="1"  name="hdr_t1t2_w_mad" autotune="0" submodule="t1t2_MotionBlendingWeight">0:1:16</param>
+	<param id="2"  name="hdr_t1t2_w_mad_4x" autotune="0" submodule="t1t2_MotionBlendingWeight">0:1:16</param>
+	<param id="3"  name="hdr_t1t2_w_mad_max" autotune="0" submodule="t1t2_MotionBlendingWeight">0:1:16</param>
+	<param id="4"  name="hdr_t1t2_motion_th1" autotune="0" submodule="t1t2_MotionBlendingWeight">0:1:4095</param>
+	<param id="5"  name="hdr_t1t2_motion_th2" autotune="0" submodule="t1t2_MotionBlendingWeight">0:1:65535</param>
+	<param id="6"  name="hdr_t1t2_motion_strength" autotune="0" submodule="t1t2_MotionBlendingWeight">0:1:15</param>
+	
+	<param id="7"  name="hdr_t1t2_highlight_motion_weight" autotune="0" submodule="t1t2_HighlightBlendingWeight">0:1:256</param>
+	<param id="8"  name="hdr_t1t2_highlight_th1" autotune="1" submodule="t1t2_HighlightBlendingWeight">1000:1:3500</param>
+	<param id="9"  name="hdr_t1t2_highlight_th2" autotune="1" submodule="t1t2_HighlightBlendingWeight">2000:1:4095</param>
+	
+	<param id="10"  name="hdr_t1t2_lowlight_th1" autotune="0" submodule="t1t2_LowlightBlendingWeight">0:1:4095</param>
+	<param id="11"  name="hdr_t1t2_lowlight_th2" autotune="0" submodule="t1t2_LowlightBlendingWeight">0:1:4095</param>
+	
+	<param id="12"  name="hdr_t2t3_w_mad" autotune="0" submodule="t2t3_MotionBlendingWeight">0:1:16</param>
+	<param id="13"  name="hdr_t2t3_w_mad_4x" autotune="0" submodule="t2t3_MotionBlendingWeight">0:1:16</param>
+	<param id="14"  name="hdr_t2t3_w_mad_max " autotune="0" submodule="t2t3_MotionBlendingWeight">0:1:16</param>
+	<param id="15"  name="hdr_t2t3_motion_th1" autotune="0" submodule="t2t3_MotionBlendingWeight">0:1:4095</param>
+	<param id="16"  name="hdr_t2t3_motion_th2" autotune="0" submodule="t2t3_MotionBlendingWeight">0:1:65535</param>
+	<param id="17"  name="hdr_t2t3_motion_strength" autotune="0" submodule="t2t3_MotionBlendingWeight">0:1:15</param>
+	
+	<param id="18"  name="hdr_t2t3_highlight_motion_weight" autotune="0" submodule="t2t3_HighlightBlendingWeight">0:1:256</param>
+	<param id="19"  name="hdr_t2t3_highlight_th1" autotune="1" submodule="t2t3_HighlightBlendingWeight">1000:1:3500</param>
+	<param id="20"  name="hdr_t2t3_highlight_th2" autotune="1" submodule="t2t3_HighlightBlendingWeight">2000:1:4095</param>
+	
+	<param id="21"  name="hdr_t2t3_lowlight_th1" autotune="0" submodule="t2t3_LowlightBlendingWeight">0:1:4095</param>
+	<param id="22"  name="hdr_t2t3_lowlight_th2" autotune="0" submodule="t2t3_LowlightBlendingWeight">0:1:4095</param>
+	
+	<lin_ineq_constraints>
+		<param_id_list> 4, 5, 8, 9,10,11</param_id_list>
+		            <A> 1,-1, 0, 0, 0, 0;
+						0, 0, 1,-1, 0, 0;
+						0, 0, 0, 0, 1,-1</A>
+		            
+		<B>  0; 0; 0</B>
+	</lin_ineq_constraints>  
+	<lin_ineq_constraints>
+		<param_id_list>15,16,19,20,21,22</param_id_list>
+		            <A> 1,-1, 0, 0, 0, 0;
+						0, 0, 1,-1, 0, 0;
+						0, 0, 0, 0, 1,-1</A>
+		            
+		<B>  0; 0; 0</B>
+	</lin_ineq_constraints>  
+    <mapping dest="pcsim">update_xml_hdr4_0</mapping>
+    <mapping dest="chromatix">hdr_autotune2chromatix</mapping>
+    <isp_pipeline>MFHDRFusion</isp_pipeline>
+    <chromatix_tag>hdr40_ipe</chromatix_tag>
+    <gen_pop_function>gen_pop_for_hdr4_0</gen_pop_function>
+</module_if>

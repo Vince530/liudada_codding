@@ -1,0 +1,115 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The HNR block is a blending architecture to reduce luminance noise, but keep texture detail. This block is located at the end of the Bayer Processing Segment (BPS), and therefore is available only for ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="HNR tuning concepts" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="gav1504650254694.html" /><meta name="DC.Relation" scheme="URI" content="nfi1501192001556.html" /><meta name="DC.Relation" scheme="URI" content="evb1500930652845.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="zgv1500930636668" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>HNR tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="zgv1500930636668">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">HNR tuning concepts</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<div class="p">The HNR block is a blending architecture to reduce luminance noise, but keep
+			texture detail. This block is located at the end of the Bayer Processing Segment (BPS),
+			and therefore is available only for snapshot. It consists of DCT-based frequency domain
+			noise reduction, gradient smoothing, and spatial domain blending. Unlike conventional
+			spatial domain noise reduction, DCT-based frequency domain distinguishes weak texture
+			and noise. Using this, HNR reduces noise while preserving edges and texture.<div class="fig fignone nonumber" id="zgv1500930636668__fig_qxt_4jb_ccb"><span class="figcap">Figure : (L) Conventional spatial domain noise reduction; (R)
+					DCT-based frequency domain noise reduction</span>
+				
+				<br /><img class="image" id="zgv1500930636668__image_oc4_5rs_r1b" src="pwo1501192286036.svg" /><br />
+			</div>
+</div>
+
+		<div class="p">HNR attributes:<ul class="ul" id="zgv1500930636668__ul_elc_bss_r1b">
+				<li class="li">Spatial and frequency-domain noise reduction<ul class="ul" id="zgv1500930636668__ul_d5c_vss_r1b">
+						<li class="li">Noise reduction controls: level, radial, chroma, skin, flatness, and
+							frequency</li>
+
+					</ul>
+</li>
+
+				<li class="li">Blending with input image with weighting factors<ul class="ul" id="zgv1500930636668__ul_ir5_qts_r1b">
+						<li class="li">Blending controls: level, chroma, and skin</li>
+
+					</ul>
+</li>
+
+				<li class="li">Gradient smoothing for jaggy edge treatment<ul class="ul" id="zgv1500930636668__ul_yts_sts_r1b">
+						<li class="li">Gradient smoothing: percentage</li>
+
+					</ul>
+</li>
+
+				<li class="li">Multiple controls in both noise reduction and blending stages. </li>
+
+				<li class="li">Luma noise reduction only</li>
+
+				<li class="li">10-bit input and 10-bit output</li>
+
+			</ul>
+</div>
+
+		<div class="section" id="zgv1500930636668__section_N10055_N10011_N10001"><h2 class="title sectiontitle">Parameters to enable controls</h2>
+			
+			<div class="p">Parameters in the enable section:<ul class="ul" id="zgv1500930636668__ul_cbs_l5s_r1b">
+					<li class="li"><span class="keyword parmname">Hnr nr enable</span>: noise reduction
+						enable</li>
+
+					<li class="li"><span class="keyword parmname">Hnr blend enable</span>: noise blending
+						enable</li>
+
+				</ul>
+</div>
+
+			<div class="p">Parameters in the reserve section:<ul class="ul" id="zgv1500930636668__ul_zgk_55s_r1b">
+					<li class="li"><span class="keyword parmname">Lnr en</span>: level-based noise reduction
+						enable</li>
+
+					<li class="li"><span class="keyword parmname">Rnr en</span>: radial-based noise reduction
+						enable</li>
+
+					<li class="li"><span class="keyword parmname">Cnr enable</span>: chroma-based noise
+						reduction enable</li>
+
+					<li class="li"><span class="keyword parmname">Snr enable</span>: skin-color based noise
+						reduction enable</li>
+
+					<li class="li"><span class="keyword parmname">Fd snr enable</span>: face detection assisted
+						SNR enable</li>
+
+					<li class="li"><span class="keyword parmname">Fnr enable</span>: flatness control
+						enable</li>
+
+					<li class="li"><span class="keyword parmname">Lpf3 en</span>: gradient smoothing
+						enable</li>
+
+					<li class="li"><span class="keyword parmname">Blend cnr en</span>: chroma-based blending
+						enable</li>
+
+					<li class="li"><span class="keyword parmname">Blend snr en</span>: skin-color based
+						blending enable</li>
+
+				</ul>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="nfi1501192001556.html">HNR Parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="evb1500930652845.html">Tune HNR</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SpectraCamSimConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\XSD\spectracamsim_config.xsd">
+    <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+    <!-- 0: None;  1: Snapshot;  2: Video;  3: MFNR "4:XXX"-->
+    <UseCase>1</UseCase>
+    <!-- 0x01: IFE;  0x02:  BPS;   0x04:  PPS;   0x08:  NPS -->
+    <!-- i.e. IFE+PPS+NPS:  0x0D;  BPS+PPS+NPS:  0x0E; -->
+    <RunPipeline>0xe</RunPipeline>
+    <IOTPipeline>1</IOTPipeline>
+    <InputSetting>
+        <!-- 0: RAW;  1: YUV -->
+        <ImageFormat>0</ImageFormat>
+        <ImageFile>_reference\in_out_file\scene6_long_short.raw</ImageFile>
+        <!-- Make it for future multiple image processing from a folder -->
+        <InputFolder>..\c7_iot_middleware\_reference\in_out_file\</InputFolder>
+    </InputSetting >
+    <!-- 0: disable dump;  1: enable dump -->
+    <RegisterDump>0</RegisterDump>
+    <ISPConfig>_reference\Simulation\Default\isp_config.xml</ISPConfig>
+    <MetaConfig>_reference\Simulation\Default\meta_config.xml</MetaConfig>
+    <StreamConfig>_reference\Simulation\Default\stream_config.xml</StreamConfig>
+    <DataStoreFile>_reference\Simulation\Default\dump_config.xml</DataStoreFile>
+
+    <STATSSchemaFile>_reference\XSD\stats\3a.xsd</STATSSchemaFile>
+    <PreprocSchemaFile>_reference\XSD\iot\iot.xsd</PreprocSchemaFile>
+    <IPEPreprocSchemaFile>_reference\XSD\iot\iot.xsd</IPEPreprocSchemaFile>
+    <IFESchemaFile>_reference\XSD\isp\ife_spectra280_000.xsd</IFESchemaFile>
+    <BPSSchemaFile>_reference\XSD\isp\bps_spectra280_000.xsd</BPSSchemaFile>
+    <IPESchemaFile>_reference\XSD\isp\ipe_spectra280_000.xsd</IPESchemaFile>
+    <SWCONTROLSchemaFile>_reference\XSD\isp\sw_control_spectra280_000.xsd</SWCONTROLSchemaFile>
+
+    <STATSDataFile>_reference\Simulation\Default\XML\STATS.xml</STATSDataFile>
+    <PreprocDataFile>_reference\Simulation\Default\XML\IOT.xml</PreprocDataFile>
+    <IPEPreprocDataFile>_reference\Simulation\Default\XML\IOT.xml</IPEPreprocDataFile>
+    <IFEDataFile>_reference\Simulation\Default\XML\IFE.xml</IFEDataFile>
+    <BPSDataFile>_reference\Simulation\Default\XML\BPS.xml</BPSDataFile>
+    <IPEDataFile>_reference\Simulation\Default\XML\IPE.xml</IPEDataFile>
+    <SWCONTROLDataFile>_reference\Simulation\Default\XML\SW_CONTROL.xml</SWCONTROLDataFile>
+    <OutputSetting>
+        <!-- 1: BMP;  2: YUV;  3: BMP+YUV -->
+        <ImageFormat>3</ImageFormat>
+        <OutputFolder>_reference\in_out_file\</OutputFolder>
+        <OutputFileName>output_shdr.raw</OutputFileName>
+        <OutputPrefix>out_</OutputPrefix>
+    </OutputSetting>
+    <IntermediateSetting>
+        <Enable>1</Enable>
+        <ImageFormat>1</ImageFormat>
+    </IntermediateSetting>
+    <CustomTriggerModule>0</CustomTriggerModule>
+</SpectraCamSimConfig>

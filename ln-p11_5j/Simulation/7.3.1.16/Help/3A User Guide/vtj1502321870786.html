@@ -1,0 +1,873 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Outdoor Green SA If a given scene is bright enough and there are enough stats from green grass or foliage, we can assume that the scene is outdoor with sunlight illuminant. Table : Detection zone ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Predefined generalized scene analyzers" /><meta name="DC.Relation" scheme="URI" content="huw1502321658654.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="vtj1502321870786" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Predefined generalized scene analyzers</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="vtj1502321870786">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="huw1502321658654.html" title="Generalized scene analyzer concept">Generalized scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="huw1502321658654.html" title="Generalized scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Generalized scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Predefined generalized scene analyzers</h1>
+
+	<div class="body conbody">
+		<div class="section" id="vtj1502321870786__section_N10016_N10013_N10001"><h2 class="title sectiontitle">Outdoor Green SA</h2>
+			
+			<p class="p">If a given scene is bright enough and there are enough stats from green grass
+				or foliage, we can assume that the scene is outdoor with sunlight illuminant. <br /><img class="image" id="vtj1502321870786__image_ach_3dl_x1b" src="pbq1502956227293.svg" /><br /></p>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_edh_p33_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Detection zone tuning</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e45">Detection zone group</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e48">Zone# <p class="p">Zone Type Detection color </p>
+</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e53">Trigger zone – 1st level (Lux index) </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e56">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d61296e45 ">AWB zone group 0 </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e48 ">
+								<ul class="ul" id="vtj1502321870786__ul_ejf_z33_x1b">
+									<li class="li">AWB zone 0</li>
+
+									<li class="li">Rectangle type</li>
+
+									<li class="li">Yellowish green </li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e53 "><img class="image" id="vtj1502321870786__image_es3_2nk_x1b" src="dpx1502948850400.svg" /></td>
+
+							<td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d61296e56 ">
+								<ul class="ul" id="vtj1502321870786__ul_dqs_ymg_sbb">
+									<li class="li">Detection AWB zone 0: Detect lower area
+										(yellowish green) of green stats. Detection AWB zone 1:
+										Detect upper area (bluish green) of green stats.</li>
+
+									<li class="li">Use images captured with various green
+										colored grasses or foliage when you tune detection zone for
+										each trigger zone, to improve robustness and accuracy.</li>
+
+									<li class="li">Two detection zones are used for precise
+										detection without including nongreen stats.</li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e48 ">
+								<ul class="ul" id="vtj1502321870786__ul_tw5_kj3_x1b">
+									<li class="li">AWB zone 1</li>
+
+									<li class="li">Rectangle type</li>
+
+									<li class="li">Bluish green </li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e53 "><img class="image" id="vtj1502321870786__image_tyg_fnk_x1b" src="dpx1502948850400.svg" /></td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e45 ">AWB zone group 1</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e48 ">
+								<ul class="ul" id="vtj1502321870786__ul_tp5_jk3_x1b">
+									<li class="li">AWB zone 1</li>
+
+									<li class="li">CCT range type</li>
+
+									<li class="li">Gray in day light</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e53 ">Zone 1: Bright &amp; shade outdoor </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e56 ">
+								<ul class="ul" id="vtj1502321870786__ul_sjc_vng_sbb">
+									<li class="li">This detection AWB zone is for detecting
+										valid Day gray stats with CCT range zone type.
+										Recommendation: Use default value.</li>
+
+									<li class="li">If you need to tune, adjust CCT range
+										within boundary of min(4500k) and max(7500k). </li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_o4m_qk3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Confidence level tuning</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e180">Confidence level</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e183">Trigger zone</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e186">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e180 ">Confidence level 0 <p class="p">Weight: 1.0 </p>
+<p class="p">Trigger level: 2 </p>
+<div class="p">Trigger
+									control type: <ul class="ul" id="vtj1502321870786__ul_e4x_1m3_x1b">
+										<li class="li">1st: Lux index</li>
+
+										<li class="li">2nd: Zone group 0 count ratio</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e183 "><img class="image" id="vtj1502321870786__image_jcd_hnk_x1b" src="sbp1502948841539.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e186 ">
+								<ul class="ul" id="vtj1502321870786__ul_tks_bl3_x1b">
+									<li class="li">If scene is bright, SA sets high confidence level even if there are
+										small blue sky stats.</li>
+
+									<li class="li"> If scene is shade/lowlight outdoor, SA needs more blue sky stats to
+										set high confidence level.</li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e180 ">Confidence level 1<p class="p"> Weight: 1.0 </p>
+<p class="p">Trigger level: 1
+									</p>
+<p class="p">Trigger control type: </p>
+<p class="p">1st: Zone group 1 count
+									ratio </p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e183 "><img class="image" id="vtj1502321870786__image_zkx_hnk_x1b" src="ldr1502948846344.svg" />
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e186 ">If there are enough day valid stats, we assume that AGW SA’s
+								decision  is accurate, so in this case, we want to decrease
+								confidence level of this SA to reduce influence of this SA </td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_z5k_jm3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Decision point adjustment</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e270">Decision point adjustment</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e273">Triggering zone (1st: Lux level, 2nd: Zone group 0 count ratio) </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e276">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e270 ">Adjustment type: Fixed point<p class="p">Trigger level: 2 </p>
+<div class="p">Trigger
+									control type: <ul class="ul" id="vtj1502321870786__ul_avk_jm3_x1b">
+										<li class="li">1st: Lux index</li>
+
+										<li class="li">2nd: Zone group 0 count ratio</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e273 "><img class="image" id="vtj1502321870786__image_zmm_jnk_x1b" src="rfu1502948851539.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e276 ">Use lux index and grass stats count ratio information to adjust
+								decision point to improve accuracy and tuning flexibility in various
+								scenes for user preference. </td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+		<div class="section" id="vtj1502321870786__section_N10036_N10013_N10001"><h2 class="title sectiontitle">Outdoor Blue Sky SA</h2>
+			
+			<p class="p">If a given scene is bright and there are enough stats from blue sky, we can
+				assume that the scene is outdoor with daylight illuminant. <br /><img class="image" id="vtj1502321870786__image_rr2_mp4_x1b" src="sdw1502997484578.svg" /><br /></p>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_N101D9_N101CA_N1000F_N10001" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Detection zone tuning</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e340">Detection zone group</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e343">Zone# <p class="p">Zone Type Detection
+									color</p>
+
+							</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e349">Trigger zone – 1st level (Lux level) </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e352">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e340 ">Detection zone group 0 </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e343 ">
+								<ul class="ul" id="vtj1502321870786__ul_jlb_ym3_x1b">
+									<li class="li">Detect zone 0</li>
+
+									<li class="li">Rectangle type</li>
+
+									<li class="li">Blue sky </li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e349 "><img class="image" id="vtj1502321870786__image_glj_cbl_x1b" src="abx1502955098247.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e352 ">
+								<ul class="ul" id="vtj1502321870786__ul_b3p_j4g_sbb">
+									<li class="li">Detect blue sky color. </li>
+
+									<li class="li">Use images captured with various blue sky colors when you
+										tune detection zone for each triggering zone, to improve
+										robustness and accuracy. </li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e340 ">Detection zone group 1</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e343 ">
+								<ul class="ul" id="vtj1502321870786__ul_klb_ym3_x1b">
+									<li class="li">Detect zone 1</li>
+
+									<li class="li">CCT range type</li>
+
+									<li class="li">Gray in Daylight </li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e349 ">Zone 1: Bright &amp; shade outdoor </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e352 ">
+								<ul class="ul" id="vtj1502321870786__ul_gxc_q4g_sbb">
+									<li class="li">Detect valid day gray stats with fixed CCT range.
+										Recommendation: Use default value. </li>
+
+									<li class="li">If you need to tune, adjust CCT range within boundary of min(4500k)
+										and max(7500k).</li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_tch_mn3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Confidence level tuning</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e452">Confidence level</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e455">Triggering zone </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e458">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e452 ">Confidence level 0<p class="p">Weight: 1.0 </p>
+<p class="p">Trigger level: 2
+									</p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_uch_mn3_x1b">
+										<li class="li">1st: lux index</li>
+
+										<li class="li">2nd: Zone group 0 count ratio</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e455 "><img class="image" id="vtj1502321870786__image_rrm_2bl_x1b" src="knb1502955102833.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e458 ">
+								<ul class="ul" id="vtj1502321870786__ul_w5r_rrg_sbb">
+									<li class="li">If scene is bright, SA sets high confidence level even if there are
+										small blue sky stats.</li>
+
+									<li class="li">If scene is shade/lowlight outdoor, SA needs more blue sky
+										stats to set high confidence level. </li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e452 ">Confidence level 1<p class="p">Weight: 1.0 </p>
+<p class="p">Trigger level: 1
+									</p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_zys_xn3_x1b">
+										<li class="li">1st: Zone group 1 count ratio</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e455 "><img class="image" id="vtj1502321870786__image_sfn_fbl_x1b" src="zfj1502955107217.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e458 ">
+								<p class="p">If there are enough day valid stats, we assume that AGW SA’s decision is
+									accurate, so in this case, we want to decrease confidence level
+									of this SA to reduce influence of this SA. </p>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_jnh_d43_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Decision point adjustment</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e548">Decision point adjustment</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e551">Triggering zone (1st: Lux level, 2nd: Zone group 0 count ratio) </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e554">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e548 ">Adjustment type: Fixed point<p class="p">Weight: 1.0 </p>
+<p class="p">Trigger level:
+									2 </p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_knh_d43_x1b">
+										<li class="li">1st: Lux index</li>
+
+										<li class="li">2nd : Zone group 0 count ratio</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e551 "><img class="image" id="vtj1502321870786__image_dtz_gbl_x1b" src="ebq1502955111694.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e554 ">Use lux index and blue sky stats count ratio information to adjust
+								decision point to improve accuracy and tuning flexibility in various
+								scenes for user preference. </td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+		<div class="section" id="vtj1502321870786__section_N10056_N10013_N10001"><h2 class="title sectiontitle">Bright Outdoor SA</h2>
+			
+			<p class="p">If a given scene is very bright based on lux index, SA assumes that the scene
+				is under the direct sunlight illuminant. <br /><img class="image" id="vtj1502321870786__image_rx5_4q4_x1b" src="ohl1502997494422.svg" /><br /></p>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_zlb_543_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Confidence level tuning</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e618">Confidence level</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e621">Triggering zone </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e624">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e618 ">Confidence level 1<p class="p">Weight: 1.0 </p>
+<p class="p">Trigger level: 1
+									</p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_bmb_543_x1b">
+										<li class="li">1st: Lux index</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e621 "><img class="image" id="vtj1502321870786__image_vs1_mbl_x1b" src="wlx1502955104284.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e624 ">
+								<p class="p">If the scene is very bright, SA increases confidence level. </p>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_evy_1p3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Decision point adjustment</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e678">Target point</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e681">Triggering zone</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e684">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e678 ">Adjustment type: Fixed point<p class="p">Trigger level: 1 </p>
+<div class="p">Trigger
+									control type: <ul class="ul" id="vtj1502321870786__ul_fvy_1p3_x1b">
+										<li class="li">1st: Lux index</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e681 "><img class="image" id="vtj1502321870786__image_ay3_nbl_x1b" src="odr1502955108403.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e684 ">Use lux index information to adjust decision point to improve
+								accuracy and tuning flexibility in various scenes for user
+								preference. </td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+		<div class="section" id="vtj1502321870786__section_N10070_N10013_N10001"><h2 class="title sectiontitle">Night Outdoor SA</h2>
+			
+			<p class="p">If a given scene is lowlight based on lux index and there are enough stats
+				from dark sky and grayish road, SA assumes that the scene is dark night outdoor.
+					<br /><img class="image" id="vtj1502321870786__image_chb_rq4_x1b" src="wox1502997488666.svg" /><br /></p>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_jkr_fp3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Detection zone tuning</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e745">Detection zone group</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e748">Zone# <p class="p">Zone Type Detection
+									color</p>
+
+							</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e754">Trigger zone – 1st level (Lux level) </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e757">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d61296e745 ">Detection zone group 0 </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e748 ">
+								<ul class="ul" id="vtj1502321870786__ul_kkr_fp3_x1b">
+									<li class="li">Detect zone 0</li>
+
+									<li class="li">Rectangle type</li>
+
+									<li class="li">Dark sky </li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e754 "><img class="image" id="vtj1502321870786__image_m1y_qbl_x1b" src="lso1502954983275.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e757 ">
+								<ul class="ul" id="vtj1502321870786__ul_jqp_lsg_sbb">
+									<li class="li">Detect dark night sky color.</li>
+
+									<li class="li">Use images captured with various dark night sky colors when
+										you tune the detection zone for each triggering zone, to
+										improve robustness and accuracy.</li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e748 ">
+								<ul class="ul" id="vtj1502321870786__ul_lkr_fp3_x1b">
+									<li class="li">Detect zone 1</li>
+
+									<li class="li">Rectangle type</li>
+
+									<li class="li">Grayish road</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e754 "><img class="image" id="vtj1502321870786__image_ckm_tbl_x1b" src="lso1502954983275.svg" />
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e757 ">
+								<ul class="ul" id="vtj1502321870786__ul_ekf_vtg_sbb">
+									<li class="li">Detect grayish road under the dark night.</li>
+
+									<li class="li">Use images captured with various grayish road colors when
+										you tune the detection zone for each triggering zone, to
+										improve robustness and accuracy. </li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_ets_xp3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Confidence level tuning</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e855">Confidence level</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e858">Triggering zone </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e861">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e855 ">Confidence level 1<p class="p">Weight: 1.0 </p>
+<p class="p">Trigger level: 2
+									</p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_fts_xp3_x1b">
+										<li class="li">1st: Lux index</li>
+
+										<li class="li">2nd: Zone group 0 count ratio</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e858 "><img class="image" id="vtj1502321870786__image_s2c_vbl_x1b" src="iwe1502954976988.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e861 ">
+								<p class="p">If a given scene is dark night condition based on lux index and there is
+									enough stats from dark nigh sky and road, SA increases
+									confidence level. </p>
+
+								<p class="p">If a given scene is bright or very lowlight, SA decreases confidence
+									level. </p>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_znl_jq3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Decision point adjustment</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e921">Target point</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e924">Triggering zone</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e927">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e921 ">Adjustment type: Fixed point<p class="p">Gain adjusts to AGW decision
+									point</p>
+<p class="p">Trigger level: 1 </p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_a4l_jq3_x1b">
+										<li class="li">1st: Lux index</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e924 "><img class="image" id="vtj1502321870786__image_nr1_xbl_x1b" src="vcm1502954982074.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e927 ">Use lux index information to adjust target point for achieving AWB
+								accuracy and tuning flexibility for user preference. </td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+		<div class="section" id="vtj1502321870786__section_N10090_N10013_N10001"><h2 class="title sectiontitle">Low CCT Single Outdoor SA</h2>
+			
+			<p class="p">If a given scene is lowlight and there are enough stats from the very low CCT
+				area, SA assumes that the scene is under a halogen street light or under another
+				very low CCT illuminant. <br /><img class="image" id="vtj1502321870786__image_wpt_tq4_x1b" src="dno1502997491552.svg" /><br /></p>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_tq2_qq3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Detection zone tuning</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e990">Detection zone group</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e993">Zone# <p class="p">Zone Type Detection
+									color</p>
+
+							</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e999">Trigger zone – 1st level (Lux level) </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e1002">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d61296e990 ">Detection zone group 0 </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e993 ">
+								<ul class="ul" id="vtj1502321870786__ul_uq2_qq3_x1b">
+									<li class="li">Detect zone 0</li>
+
+									<li class="li">Rectangle type</li>
+
+									<li class="li">Low CCT stats </li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e999 "><img class="image" id="vtj1502321870786__image_jtl_zbl_x1b" src="nef1502954972480.svg" /></td>
+
+							<td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d61296e1002 ">
+								<ul class="ul" id="vtj1502321870786__ul_rsz_p5g_sbb">
+									<li class="li">Detect low CCT stats with fixed rectangle zone. </li>
+
+									<li class="li">Use images captured with various low CCT scenes like under
+										halogen street light when you tune detection zone to improve
+										accuracy and robustness.</li>
+
+									<li class="li">Two detection zones are used for precise detection without
+										including unexpected CCT stats.  </li>
+
+								</ul>
+
+							</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e993 ">
+								<ul class="ul" id="vtj1502321870786__ul_vq2_qq3_x1b">
+									<li class="li">Detect zone 1</li>
+
+									<li class="li">Rectangle type</li>
+
+									<li class="li">Low CCT stats</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e999 "><img class="image" id="vtj1502321870786__image_jlk_1cl_x1b" src="nef1502954972480.svg" />
+							</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_o5c_yq3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Confidence level tuning</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e1091">Confidence level</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e1094">Triggering zone </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e1097">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1091 ">Confidence level 0<p class="p">Weight: 1.0 </p>
+<p class="p">Trigger level: 2
+									</p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_p5c_yq3_x1b">
+										<li class="li">1st: Lux index</li>
+
+										<li class="li">2nd: Zone group 0 count ratio</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1094 "><img class="image" id="vtj1502321870786__image_cb1_pd4_x1b" src="ovc1502954987378.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1097 ">
+								<p class="p">SA is designed for lowlight scenes so if a given scene is bright, SA
+									will not make any influence by setting 0 confidence level. </p>
+
+								<p class="p">If a given scene is bright, SA sets 0 confidence level regardless of low
+									CCT stats. </p>
+
+								<p class="p">If a given scene is very lowlight condition, SA sets higher confidence
+									level even with small stats from low CCT stats zone. </p>
+
+							</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1091 ">Confidence level 1<p class="p">Weight: 1.0 </p>
+<p class="p">Trigger level: 1
+									</p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_tp3_hr3_x1b">
+										<li class="li">1st: Valid stats count ratio</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1094 "><img class="image" id="vtj1502321870786__image_ans_2cl_x1b" src="hab1502954978455.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1097 ">If there are enough valid stats, we assume that AGW SA’s decision is
+								quite accurate, so in this case, we want to decrease confidence
+								level of this SA.</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vtj1502321870786__table_o2t_kr3_x1b" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Decision point adjustment</span></caption><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e1184">Target point</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e1187">Triggering zone (1st: Lux level, 2nd: Zone group 0 count ratio) </th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d61296e1190">Tuning guide</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1184 ">Adjustment type: Fixed point<p class="p">Gain adjusts to AGW decision
+									point</p>
+<p class="p">Trigger level: 1 </p>
+<div class="p">Trigger control type: <ul class="ul" id="vtj1502321870786__ul_p2t_kr3_x1b">
+										<li class="li">1st: Lux index</li>
+
+									</ul>
+
+								</div>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1187 "><img class="image" id="vtj1502321870786__image_fzt_gcl_x1b" src="bog1502954974258.svg" /></td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d61296e1190 ">Use lux index information to adjust target point for achieving AWB
+								accuracy and tuning flexibility for user preference. </td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="huw1502321658654.html" title="Generalized scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Generalized scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

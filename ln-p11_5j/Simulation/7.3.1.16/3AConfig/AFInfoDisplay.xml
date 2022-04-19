@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  See DisplayTest.xml for format documentation
+-->
+<MetadataDisplays
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataDisplaySchema.xsd">
+  <!-- AF Info Display -->
+  <Display Name="AF Info" Title="AF Info" Section="AF Debug Info">
+    <Panel Type="Scroll">
+      <!-- Focus History Panel -->
+      <Panel Title="Focus History" Type="Open">
+        <!-- Correlated Lens Position and Focus Value Chart -->
+        <Chart Title="Correlated Lens Position and Focus Value" YTitle="Focus Value" YMin="0" XMin="0" XDecimalPlaces="0" YDecimalPlaces="-2" Height="200">
+          <Line Type="Line" Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History" PointLabel="#VALY">
+            <Point Y="Focus History Information.Current Focus Value History" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+        </Chart>
+        <Chart XTitle="Frame History" YTitle="Lens Position" YMin="0" XMin="0"  XDecimalPlaces="0" YDecimalPlaces="-1" Height="200">
+          <Line Type="Line" Color="Blue"  Marker="Triangle" MarkerSize="3" IgnoreZeros="true" Title="Lens Position History" PointLabel="#VALY">
+            <Point Y="Focus History Information.Current Focus Lens Position History" XTitle="Frame" YTitle="Lens Position"/>
+          </Line>
+        </Chart>
+      </Panel>
+      <!-- Lens Position vs. Focus Value Panel -->
+      <Panel Title="Lens Position vs. Focus Value">
+        <!-- Lens Position vs. Focus Value Chart -->
+        <Chart Title="Correlated Lens Position and Focus Value" YTitle="Focus Value" YMin="0" XDecimalPlaces="0" YDecimalPlaces="-2" TopDown="true" Height="200">
+          <Line Type="Column" Title="Lens Position vs Focus Value" Color="Blue" Palette="Pastel" PointLabel="FV: #VALY\nLP: #VALX" IgnoreZeros="true">
+            <Point X="Focus History Information.Current Focus Lens Position History"
+                   Y="Focus History Information.Current Focus Value History" XTitle="Lens Position" YTitle="Focus Value"/>
+          </Line>
+        </Chart>
+      </Panel>
+    </Panel>
+  </Display>
+    <!-- AF Info Display for 3A version 5.0 and 5.1 -->
+  <Display Name="AF Info 5.x" Title="AF Info" Section="AF Debug Info">
+    <Panel Type="Scroll">
+      <!-- Bayer Grid Stats Panel -->
+      <Panel Title="Focus History" Type="Open">
+        <!-- Bayer Grid Stats Chart -->
+        <Chart Title="Correlated Lens Position and Focus Value" YTitle="Focus Value" XMin="0" XDecimalPlaces="0" YDecimalPlaces="-2" Height="200">
+          <Line Type="Line" Condition="Scan information type.Fine search/curve fitting focus curve selection{eq}AF Focus Curve Selection Map.H1"
+                Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History H1" PointLabel="#VALY">
+            <Point Y="Focus History Information.Focus value history H1 (horizontal kernel 1)" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+          <Line Type="Line" Condition="Scan information type.Fine search/curve fitting focus curve selection{eq}AF Focus Curve Selection Map.H2"
+                Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History H2" PointLabel="#VALY">
+            <Point Y="Focus History Information.Focus value history H2 (horizontal kernel 2)" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+          <Line Type="Line" Condition="Scan information type.Fine search/curve fitting focus curve selection{eq}AF Focus Curve Selection Map.V1"
+                 Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History H3" PointLabel="#VALY">
+            <Point Y="Focus History Information.Focus value history V1 (vertical kernel 1)" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+          <Line Type="Line" Condition="Scan information type.Fine search/curve fitting focus curve selection{eq}AF Focus Curve Selection Map.SW"
+                Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History SW" PointLabel="#VALY">
+            <Point Y="Focus History Information.Focus value history SW" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+        </Chart>
+        <Chart XTitle="Frame History" YTitle="Lens Position" XMin="0"  XDecimalPlaces="0" YDecimalPlaces="-1" Height="200">
+          <Line Type="Line" Color="Blue" Marker="Triangle" MarkerSize="3" IgnoreZeros="true" PointLabel="#VALY" Title="Lens Position History">
+            <Point Y="Focus History Information.Current Focus Lens Position History" XTitle="Frame" YTitle="Lens Position"/>
+          </Line>
+        </Chart>
+      </Panel>
+      <!-- Lens Position vs. Focus Value Panel -->
+      <Panel Title="Lens Position vs. Focus Value">
+        <!-- Lens Position vs. Focus Value Chart -->
+        <Chart Title="Correlated Lens Position and Focus Value" YTitle="Focus Value" XDecimalPlaces="0" YDecimalPlaces="-2" TopDown="true" Height="200">
+          <Line Type="Column" Title="Lens Position vs Focus Value" Color="Blue" Palette="Pastel" PointLabel="FV: #VALY\nLP: #VALX" IgnoreZeros="true">
+            <Point X="Focus History Information.Current Focus Lens Position History"
+                   Y="Focus History Information.Focus value history H1 (horizontal kernel 1)" XTitle="Lens Position" YTitle="Focus Value"/>
+          </Line>
+        </Chart>
+      </Panel>
+    </Panel>
+  </Display>
+  <!-- AF Info Display for 3A version 5.2 and later -->
+  <Display Name="AF Info 5.2" Title="AF Info" Section="AF Debug Info">
+    <Panel Type="Scroll">
+      <!-- Bayer Grid Stats Panel -->
+      <Panel Title="Focus History" Type="Open">
+        <!-- Bayer Grid Stats Chart -->
+        <Chart Title="Correlated Lens Position and Focus Value" YTitle="Focus Value" XMin="0" XDecimalPlaces="0" YDecimalPlaces="-2" Height="200">
+          <Line Type="Line"
+                Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History H1" PointLabel="#VALY">
+            <Point Y="Common History.Last Search FV History H1" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+          <Line Type="Line" 
+                Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History H2" PointLabel="#VALY">
+            <Point Y="Common History.Last Search FV History H2" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+          <Line Type="Line" 
+                 Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History H3" PointLabel="#VALY">
+            <Point Y="Common History.Last Search FV History V1" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+          <Line Type="Line"
+                Color="Green" Marker="Square" MarkerSize="3" IgnoreZeros="true" Title="Focus History SW" PointLabel="#VALY">
+            <Point Y="Common History.Last Search FV History SW" XTitle="Frame" YTitle="Focus Value"/>
+          </Line>
+        </Chart>
+        <Chart XTitle="Frame History" YTitle="Lens Position" XMin="0"  XDecimalPlaces="0" YDecimalPlaces="-1" Height="200">
+          <Line Type="Line" Color="Blue" Marker="Triangle" MarkerSize="3" IgnoreZeros="true" PointLabel="#VALY" Title="Lens Position History">
+            <Point Y="Common History.Last Search Lens Position History" XTitle="Frame" YTitle="Lens Position"/>
+          </Line>
+        </Chart>
+      </Panel>
+      <!-- Lens Position vs. Focus Value Panel -->
+      <Panel Title="Lens Position vs. Focus Value">
+        <!-- Lens Position vs. Focus Value Chart -->
+        <Chart Title="Correlated Lens Position and Focus Value" YTitle="Focus Value" XDecimalPlaces="0" YDecimalPlaces="-2" TopDown="true" Height="200">
+          <Line Type="Column" Title="Lens Position vs Focus Value" Color="Blue" Palette="Pastel" PointLabel="FV: #VALY\nLP: #VALX" IgnoreZeros="true">
+            <Point X="Common History.Last Search Lens Position History"
+                   Y="Common History.Last Search FV History H1" XTitle="Lens Position" YTitle="Focus Value"/>
+          </Line>
+        </Chart>
+      </Panel>
+    </Panel>
+  </Display>  
+</MetadataDisplays>

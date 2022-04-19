@@ -1,0 +1,2809 @@
+<?xml version="1.0" standalone="yes"?>
+<ValueStoreDataSet xmlns="http://tempuri.org/ValueStoreDataSet.xsd">
+  <ValueStoreInfo>
+    <Scenario />
+    <Pipeline />
+    <Module />
+    <Name>settings</Name>
+    <Date>2021-05-25T11:12:01.0533123+08:00</Date>
+  </ValueStoreInfo>
+  <ValueStoreData>
+    <Scenario>Default</Scenario>
+    <Pipeline />
+    <Module>WB</Module>
+    <Category />
+    <Name>CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6500</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario>Default</Scenario>
+    <Pipeline />
+    <Module>WB</Module>
+    <Category />
+    <Name>R</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario>Default</Scenario>
+    <Pipeline />
+    <Module>WB</Module>
+    <Category />
+    <Name>G</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario>Default</Scenario>
+    <Pipeline />
+    <Module>WB</Module>
+    <Category />
+    <Name>B</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>WB</Module>
+    <Category />
+    <Name>ENABLE</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>_2DLutData</Category>
+    <Name>RegionCount</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">15</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>CVData</Category>
+    <Name>RegionCount</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">7</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>0</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>0</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1584008</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>CVData</Category>
+    <Name>CurrentIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1582693</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>0</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1619961</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>1</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1620743</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>2</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>_2DLutData</Category>
+    <Name>CurrentIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">14</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>CC</Category>
+    <Name>RegionCount</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">3</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>CC</Category>
+    <Name>RegionCount</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">8</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>CC</Category>
+    <Name>RegionCount</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1509655</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1582109</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>0</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>0</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1504141</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1609501</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1618373</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>0</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>1</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>1</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ife</Module>
+    <Category>CC</Category>
+    <Name>CurrentIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1618394</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1609534</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>2</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>2</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">3</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1618415</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_bps</Module>
+    <Category>CC</Category>
+    <Name>CurrentIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>3</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">4</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1618444</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>4</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">5</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1618465</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>5</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1618486</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>6</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">7</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1618507</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_WBGainR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_WBGainG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_WBGainB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_fSaturation</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_fNoiseRate</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:float" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_bSaturationEnable</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_CCT</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_RGBTransformType</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>7</Category>
+    <Name>m_nGammaIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cc13_ipe</Module>
+    <Category>CC</Category>
+    <Name>CurrentIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>1</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>1</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1630933</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>2</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>2</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1630952</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>3</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">3</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>3</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1630979</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>4</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">4</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>4</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1630998</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>5</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">5</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>5</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1631017</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>6</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">3</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>cv12</Module>
+    <Category>6</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1631044</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1621525</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>3</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">4</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1622315</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>4</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">5</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1623097</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>5</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">6</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1623879</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>6</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">7</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1624661</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>7</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">8</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1625451</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>8</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">9</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1626233</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>9</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">10</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1627015</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>10</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">11</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1627797</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>11</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">12</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1628587</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>12</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">13</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1629369</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>13</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_RegionIdx</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">14</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_ID</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:unsignedInt" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1630151</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_HueNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_SatNodeRange</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_SourceR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_SourceG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_SourceB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_TargetR</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_TargetG</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>tdl10</Module>
+    <Category>14</Category>
+    <Name>m_TargetB</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+</ValueStoreDataSet>

@@ -1,0 +1,230 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="If the sensor driver information file is not available, create a text file based on the sensor setting information provided by the sensor vendor or enter the sensor information directly into the ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Create a sensor driver information file" /><meta name="abstract" content="If the sensor driver information file is not available, create a text file based on the sensor setting information provided by the sensor vendor or enter the sensor information directly into the Sensor Information dialog box. A separate file is needed for each mode in the project." /><meta name="description" content="If the sensor driver information file is not available, create a text file based on the sensor setting information provided by the sensor vendor or enter the sensor information directly into the Sensor Information dialog box. A separate file is needed for each mode in the project." /><meta name="DC.Relation" scheme="URI" content="fsm1494872136835.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="fty1463598647597" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Create a sensor driver information file</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="fty1463598647597">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="ufk1494872219078.html" title="Prerequisites">Prerequisites</a> / <a class="navheader_parent_path" href="fsm1494872136835.html" title="Create a new tuning project">Create a new tuning project</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="fsm1494872136835.html" title="Create a new tuning project"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Create a new tuning project</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Create a sensor driver information file</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">If the sensor driver information file is not available, create a text
+		file based on the sensor setting information provided by the sensor vendor or enter the
+		sensor information directly into the <span class="keyword wintitle">Sensor Information</span>
+		dialog box. A separate file is needed for each mode in the project. </p>
+
+		<div class="section context" id="fty1463598647597__context_N1001D_N1001A_N10001">It is important that this information
+			match the intended raw input files, i.e., image dimension, Bayer pattern, etc., or
+			Chromatix will not able to correctly read the input files.<div class="p">If you choose to
+				manually create a text file, the required format of the sensor driver information
+				text file is as follows:
+				<pre class="pre codeblock"><code>
+30.000000f,     /* Maximum fps */
+1,              /* Minimum line count */
+3186,           /* Maximum line count in max fps */
+6372,           /* Maximum line count */
+1,              /* Minimum gain */
+4,              /* Maximum gain fix fps */
+50,              /* Maximum gain after linear AFR */
+4208,           /* Raw image width */
+3120,           /* Raw image height */
+BGGR,           /* Bayer pattern */
+10,              /* Bits per pixel
+1,              /* Packed or not, packed=1, unpacked=0
+0,              /* Crop top after CAMIF */
+0,              /* Crop bottom after CAMIF */
+0,              /* Crop left after CAMIF */
+0,              /* Crop right after CAMIF */
+256,            /* Black level in 12-bit value based on spec
+256,            /* Black level under low light
+256,            /* Black level under bright light</code></pre></div>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="fty1463598647597__table_n5c_qr1_1w" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Sensor driver information fields</span></caption><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d3861e44">Fields</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d3861e47">Sample value</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Maximum FPS</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">30.0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Minimum line count</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">1</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Maximum line count in max fps</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">3186</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Maximum line count</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">6372</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Minimum gain</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">1.0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Maximum gain for fixed fps</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">4.0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Maximum gain after linear AFR (Note: Analog
+								sensor gain – not including digital gain)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">50.0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Raw image width</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">4208</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Raw image height</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">3120</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Bayer pattern</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">BGGR</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Bits per pixel</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">10</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Packed or not</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">1</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Crop top after CAMIF</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Crop bottom after CAMIF</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Crop left after CAMIF</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Crop right after CAMIF</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Black level in 12-bit based on
+								specification</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">256</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Black level under low light</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">256</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e44 ">Black level under bright light</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d3861e47 ">256</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+<p class="p">The other option is to enter sensor information directly into
+				Chromatix when creating a project.</p>
+</div>
+
+		<ol class="ol steps"><li class="li step" id="fty1463598647597__step_N10149_N10146_N1001A_N10001">
+				<span class="ph cmd">From the new project window, click <span class="ph uicontrol">Custom</span> to open the <span class="keyword wintitle">Sensor
+						Information</span> dialog box. <br /><img class="image" id="fty1463598647597__image_jxv_1rk_d1b" src="roh1496772393116.png" /><br /></span>
+			</li>
+<li class="li step" id="fty1463598647597__step_N10195_N10174_N10019_N10001">
+				<span class="ph cmd">Enter the <span class="ph uicontrol">Image Width</span>,
+						<span class="ph uicontrol">Image Height</span>, and <span class="ph uicontrol">Bits per Pixel</span> of the raw image.</span>
+			</li>
+<li class="li step" id="fty1463598647597__step_N1018D_N10146_N1001A_N10001">
+				<span class="ph cmd">Choose whether the raw image is in <span class="ph uicontrol">Unpacked</span>, <span class="ph uicontrol">Packed</span>, or
+						<span class="ph uicontrol">MIPI</span> format.</span>
+			</li>
+<li class="li step" id="fty1463598647597__step_N101C8_N10174_N10019_N10001">
+				<span class="ph cmd">Select the appropriate raw image <span class="ph uicontrol">Bayer start pattern</span>.</span>
+			</li>
+<li class="li step" id="fty1463598647597__step_N101F1_N1017B_N1001E_N10001">
+				<span class="ph cmd">Set the <span class="ph uicontrol">Image Cropping</span>
+					fields, if needed.</span>
+			</li>
+<li class="li step" id="fty1463598647597__step_N101E8_N10174_N10019_N10001">
+				<span class="ph cmd">Enter the <span class="ph uicontrol">Digital Gains</span>, if needed.</span>
+			</li>
+<li class="li step" id="fty1463598647597__step_N101A2_N10146_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">OK</span>.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="fsm1494872136835.html" title="Create a new tuning project"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Create a new tuning project</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

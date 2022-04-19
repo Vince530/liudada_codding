@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<LRMEConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./LRMEConfiguration.xsd">
+  <RegionsConfig RegionIndex="0">
+    <RegionConfig Index="0">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>3</Passes>
+      <PassesManual>3</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+    </RegionConfig>
+  </RegionsConfig>
+  <TriggersStartEndIndexes></TriggersStartEndIndexes>
+  <ShowHideDCViewer>true</ShowHideDCViewer>
+</LRMEConfiguration>

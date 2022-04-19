@@ -1,0 +1,7 @@
+<SynthGenConfig>
+<EnOutputDel>0</EnOutputDel><!-- Deleting output content when metics does not match -->
+<EnToleranceCheck>0</EnToleranceCheck>
+<EnFullPatchMovement>0</EnFullPatchMovement>
+<DisablePatchMovement>0</DisablePatchMovement>
+<EnHcdlSTNCoord>0</EnHcdlSTNCoord>
+</SynthGenConfig>

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The AEC lux index normalization feature can reduce the effort for updating a new trigger point for each mode. Tune, at a minimum, one exposure table. It is recommended to tune the preview mode ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune AEC lux index normalization" /><meta name="abstract" content="The AEC lux index normalization feature can reduce the effort for updating a new trigger point for each mode." /><meta name="description" content="The AEC lux index normalization feature can reduce the effort for updating a new trigger point for each mode." /><meta name="DC.Relation" scheme="URI" content="cpr1495660858748.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="sco1474930278863" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune AEC lux index normalization</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="sco1474930278863">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cpr1495660858748.html" title="Required AEC tuning procedures">Required AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune AEC lux index normalization</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">The AEC lux index normalization feature can reduce the effort for
+		updating a new trigger point for each mode.</p>
+
+		<div class="section prereq p" id="sco1474930278863__prereq_N10014_N10011_N10001">Tune, at a minimum, one exposure table. It
+			is recommended to tune the preview mode exposure table.</div>
+
+		<div class="section context" id="sco1474930278863__context_N10019_N10011_N10001">AEC uses the exposure table for
+			adjusting shutter speed and gain. The index of the exposure table (AWB Exp Index/Lux
+			Index) is used as the operation trigger point for AWB, AF, or ISP modules. But if the
+			exposure table is different for each camera mode, the exposure index or lux index may be
+			different even in the same test condition, so a different operation trigger point is
+			needed for AWB, AF, and ISP modules in each camera mode. <p class="p">Tuning this
+				feature sets a reference table and sensitivity that is used to calculate a
+				normalized lux index and AWB exposure index by the reference setting. Using this
+				feature, even if the exposure table is different in each camera mode, the output lux
+				index and AWB exposure index will be the same in the same test
+			condition.</p>
+</div>
+
+		<ol class="ol steps"><li class="li step stepexpand" id="sco1474930278863__step_N1002F_N1002C_N10019_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+					navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Metering</span> &gt; <span class="ph uicontrol">Mtr Luma Calc</span> &gt; <span class="ph uicontrol">Index Calc</span></span>.</span>
+			</li>
+<li class="li step stepexpand" id="sco1474930278863__step_N10052_N1002C_N10019_N10001">
+				<span class="ph cmd">Enable <span class="keyword parmname">enableLuxIndexComp</span> by selecting
+					the <span class="ph uicontrol">Value</span> check box. </span>
+				<div class="itemgroup info">
+					<br /><img class="image" id="sco1474930278863__image_hn5_qvv_j1b" src="tad1498758690684.png" /><br />
+				</div>
+			</li>
+<li class="li step stepexpand" id="sco1474930278863__step_N10068_N1002C_N10019_N10001">
+				<span class="ph cmd">Calculate <span class="keyword parmname">refSensitivityForExpIndexZero</span> for the tuned reference table
+					using the following equation.</span>
+				<div class="itemgroup info">
+					<br /><img class="image" id="sco1474930278863__image_hwy_dwv_j1b" src="gps1498758923405.png" /><br />
+				</div>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

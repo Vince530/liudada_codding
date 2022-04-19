@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  Condition attribute:
+    All operators are strings surrounded by square brackes, except for the grouping operators ()
+    [not]    - Not operator, placed before an operator, true if the operation evaluates to false
+    [and]    - And operator, condition 1 and condition 2
+    [or]     - Or  operator, condition 1 or  condition 2
+    [eq]     - Equals operator, condition 1 == condition 2, both sides must evaluate to integral or enum/bitmask values
+    [gt]     - Greater than or equals operator, condition 1 is greater than or equal to condition 2, both sides must evaluate to integral values
+    [lt]     - Less than or equals operator, condition 1 is less than or equal to condition 2, both sides must evaluate to integral values
+    [exists] - True if the object exists in the metadata
+    - Metadata version testing: Where '*' is e: Equals, l: Less than or equals, g: Greater than or equals
+    [v*]    - Test version: [vl]: Less than or equals,  [vg]: Greater than or equals, [ve]: Equals 
+              (ex: Condition="[vg]5.1.0" - Version is greater than or equal to 5.1.0)
+    - Grouping
+    ()       - Grouping operator.  Variable names and multiple conditions must be wrapped in parenthesis.
+    Condition examples:
+    Condition="MyStructure.MyValue"  - True if MyStructure.MyValue is not zero
+    Condition="[not]MyStructure.MyValue" - True if MyStructure.MyValue is zero
+    Condition="MyStructure.MyValue1[and]MyStructure.MyValue2" - True if MyStructure.MyValue1 is not zero and MyStructure.MyValue2 is not zero
+    Condition="MyStructure.MyValue1[or]MyStructure.MyValue2"  - True if MyStructure.MyValue1 is not zero or  MyStructure.MyValue2 is not zero
+    Condition="[vg]5.1.0 - True if version is 5.1.0 or greater
+    Note: Check Value attributes can use Condition strings
+    
+  Using Expressions
+    Since metadata variable names can contain mathmatical symbols ('-', '\', etc), to use an expression, you must follow these steps:
+    1) Define valiables attributes A, B, C ... W that you need to use in the expression (A="MetadataVariable")
+    2) Wrap the entire Expression in parenthesis (), this indicates an expression to evaluate, instead of a metadata value.
+    Example: The valriables A-C are defined, then used in a formula for Y
+         <Point Title="Green Zone Line 4" A="Green Zone Information.Green line slope"
+                                          B="Green Zone Information.Green zone right top half"
+                                          C="Green Zone Information.Green line y-intercept top half"
+                                          X="Green Zone Information.Green zone right top half"  XTitle="R/G"
+                                          Y="((A*B)+C)"                                         YTitle="B/G"/>
+                                             
+    Supported Expression Operations:
+    [min](A,...,N) - Minimun of A, through N, if a value is a, will return the minimum of all the elements in the array
+    [max](A,...,N) - Maximun of A, through N, if a value is a, will return the minimum of all the elements in the array
+    +, -, /, *
+    
+    Chart:
+    Line Types:   Any of the System.Windows.Forms.DataVisualization.Charting.SeriesChartType values.
+                  "GrayZone" is also supported, and generates a Gray Zone calculation based on the given points
+    Marker Types: Any of the System.Windows.Forms.DataVisualization.Charting.MarkerStyle values
+    Axes extents:  XMin/YMin/XMax/YMax - Directly set the axis min/max values, or prefix a '+' or '-', to increase or decrease the min/max value by the specified amount.
+                   XDecimalPlaces/YDecimalPlaces - Set the min/max values to the nearest decmal place for the min/max data point values.
+-->
+<MetadataDisplays
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataDisplaySchema.xsd">
+  <!-- AEC Info Display -->
+  <Display Name="0x48" Title="Tag ID 0x48" Section="Simple Tag ID 0x48" MetadataType="Spectra">
+    <Panel Title="Tag ID 0x48 Data">
+      <Grid>
+        <Row>
+          <Value Text="ID: 1"/>
+          <Value Value="ID: 1"/>
+        </Row>
+      </Grid>
+    </Panel>
+    <!--
+    <Variable Name="AGW number grid point" Value="241"/>
+    <Variable Name="Reference point min" Section="AWB Debug Info" Structure="OTP Corrected Reference Points"
+              A="D75 reference point RG Ratio"                      B="D75 reference point BG Ratio"
+              C="D65 reference point RG Ratio"                      D="D65 reference point BG Ratio"
+              E="Noon reference point RG Ratio"                     F="Noon reference point BG Ratio"
+              G="D50 reference point RG Ratio"                      H="D50 reference point BG Ratio"
+              I="Cold fluorescent (CW) reference point RG Ratio"    J="Cold fluorescent (CW) reference point BG Ratio"
+              K="Warm fluorescent (TL84) reference point RG Ratio"  L="Warm fluorescent (TL84) reference point BG Ratio"
+              M="Incandescent reference point RG Ratio"             N="Incandescent reference point BG Ratio"
+              O="Horizon reference point RG Ratio"                  P="Horizon reference point BG Ratio"
+              Q="Custom fluorescent reference point RG Ratio"       R="Custom fluorescent reference point BG Ratio"
+              S="Custom daylight reference point RG Ratio"          T="Custom daylight reference point BG Ratio"
+              U="U30 reference point RG Ratio"                      V="U30 reference point BG Ratio"
+              Value="([min](A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V))"/>
+    <Variable Name="Reference point max" Section="AWB Debug Info" Structure="OTP Corrected Reference Points"
+              A="D75 reference point RG Ratio"                      B="D75 reference point BG Ratio"
+              C="D65 reference point RG Ratio"                      D="D65 reference point BG Ratio"
+              E="Noon reference point RG Ratio"                     F="Noon reference point BG Ratio"
+              G="D50 reference point RG Ratio"                      H="D50 reference point BG Ratio"
+              I="Cold fluorescent (CW) reference point RG Ratio"    J="Cold fluorescent (CW) reference point BG Ratio"
+              K="Warm fluorescent (TL84) reference point RG Ratio"  L="Warm fluorescent (TL84) reference point BG Ratio"
+              M="Incandescent reference point RG Ratio"             N="Incandescent reference point BG Ratio"
+              O="Horizon reference point RG Ratio"                  P="Horizon reference point BG Ratio"
+              Q="Custom fluorescent reference point RG Ratio"       R="Custom fluorescent reference point BG Ratio"
+              S="Custom daylight reference point RG Ratio"          T="Custom daylight reference point BG Ratio"
+              U="U30 reference point RG Ratio"                      V="U30 reference point BG Ratio"
+              Value="([max](A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V))"/>
+    <Variable Name="Green zone delta" Section="AWB Debug Info"  Structure="OTP Corrected Reference Points"
+              A="Reference point max" B="Reference point min" C="AGW number grid point"
+              Value="((A*1.5)-(B*0.5))/C"/>
+    <!- AE Information Panel ->
+    <Panel Title="Test" Section="AWB Debug Info" Structure="Green Zone Information">
+      <Grid>
+        <Row>
+          <Value Text ="Green zone" Bold="True" />
+          <Value Text ="Reference point min"/>
+          <Value Value="Reference point min"/>
+        </Row>
+        <Row>
+          <Value Text ="Green zone" Bold="True" />
+          <Value Text ="Reference point max"/>
+          <Value Value="Reference point max"/>
+        </Row>
+        <Row>
+          <Value Text ="Green zone" Bold="True" />
+          <Value Text ="Green zone delta"/>
+          <Value Value="Green zone delta"/>
+        </Row>
+        <Row>
+          <Value Text ="Green zone" Bold="True" />
+          <Value Text ="Green Zone Ln4, Pt1"/>
+          <Value Text ="R/G:"/>
+          <Value
+                 A="Green zone top"
+                 B="Green line y-intercept top half"
+                 C="Green line slope"
+                 D="Green zone delta"
+                 Value="(((A-B)/C)*D)"/>
+          <Value Text ="B/G:"/>
+          <Value
+                 A="Green zone top"
+                 B="Green line y-intercept top half"
+                 C="Green line slope"
+                 D="Green zone delta"
+                 Value="(A*D)"/>
+        </Row>
+      </Grid>
+    </Panel>
+    <!- Metering Information Panel ->
+    <Panel Title="Graph Test"  Section="AWB Debug Info">
+      <Chart>
+        <Line Title="Grid stats" Type="Point" Marker="None" Color="MediumBlue" Section="3A Stats Info" Structure="Bayer Grid Stats Data">
+          <Point Title="" A="Red channel sum"   B="Red channel counts"
+                          C="Blue channel sum"  D="Blue channel counts"
+                          E="Gr channel sum"    F="Gr channel counts"
+                          G="Gb channel sum"    H="Gb channel counts"
+                          X="((A/B)/((E+G)/(F+H)))" XTitle="RAvg/GAvg"
+                          Y="((C/D)/((E+G)/(F+H)))" YTitle="BAvg/GAvg"/>
+        </Line>
+        <!- Green zone line->
+        <Line Title="Green zone" Type="Line" Marker="Square" Color="Green" Structure="Green Zone Information">
+          <!-Point Title="Green Zone Line 1" X="Green zone left"              XTitle="Ln 1, Pt 1: R/G"
+                                           Y="Green zone bottom lower half" YTitle="Ln 1, Pt 1: B/G"/>
+          <Point Title="Green Zone Line 1" X="Green zone right bottom half" XTitle="Ln 1, Pt 2: R/G"
+                                           Y="Green zone bottom lower half" YTitle="Ln 1, Pt 2: B/G"/>
+          <Point Title="Green Zone Line 4" A="Green zone top"
+                                           B="Green line y-intercept top half"
+                                           C="Green line slope"
+                                           X="((A-B)/C)"                    XTitle="Ln 4, Pt 1: B/G"
+                                           Y="Green zone top"               YTitle="Ln 4, Pt 1: B/G"/>
+          <Point Title="Green Zone Line 4" A="Green line slope"
+                                           B="Green zone right top half"
+                                           C="Green line y-intercept top half"
+                                           X="Green zone right top half"    XTitle="Ln 4, Pt 2: R/G"
+                                           Y="((A*B)+C)"                    YTitle="Ln 4, Pt 2: B/G"/>
+          <Point Title="Green Zone Line 5" X="Green zone right top half"    XTitle="Ln 5, Pt 1: R/G"
+                                           Y="Green zone bottom top half"   YTitle="Ln 5, Pt 1: B/G"/>
+          <Point Title="Green Zone Line 3" X="Green zone left"              XTitle="Ln 3, Pt 1: R/G"
+                                           Y="Green zone top"               YTitle="Ln 3, Pt 1: B/G"/>
+          <Point Title="Green Zone Line 3" A="Green zone top"
+                                           B="Green line y-intercept top half"
+                                           C="Green line slope"
+                                           X="((A-B)/C)"                    XTitle="Ln 3, Pt 2: B/G"
+                                           Y="Green zone top"               YTitle="Ln 3, Pt 2: B/G"/>
+          <Point Title="Green Zone Line 6" A="Green zone bottom top half"
+                                           B="Green line y-intercept bottom half"
+                                           C="Green line slope"
+                                           X="((A-B)/C)"                    XTitle="Ln 6, Pt 1: B/G"
+                                           Y="Green zone bottom top half"   YTitle="Ln 6, Pt 1: B/G"/>
+          <Point Title="Green Zone Line 6" A="Green line slope"
+                                           B="Green zone right top half"
+                                           C="Green line y-intercept top half"
+                                           X="Green zone right bottom half" XTitle="Ln 6, Pt 2: R/G"
+                                           Y="((A*B)+C)"                    YTitle="Ln 6, Pt 2: B/G"/>
+          <Point Title="Green Zone Line 7" X="Green zone right bottom half" XTitle="Ln 7, Pt 1: R/G"
+                                           Y="Green zone bottom lower half" YTitle="Ln 7, Pt 1: B/G"/>
+          <Point Title="Green Zone Line 2" X="Green zone left"              XTitle="Ln 2, Pt 1: R/G"
+                                           Y="Green zone bottom top half"   YTitle="Ln 2, Pt 1: B/G"/>
+          <Point Title="Green Zone Line 2" A="Green zone bottom top half"
+                                           B="Green line y-intercept bottom half"
+                                           C="Green line slope"
+                                           D="Green zone right top half"
+                                           X="([max](((A-B)/C),D))"         XTitle="Ln 2, Pt 2: B/G"
+                                           Y="Green zone bottom top half"   YTitle="Ln 2, Pt 2: B/G"/->
+        </Line>
+      </Chart>
+    </Panel>
+    -->
+  </Display>
+</MetadataDisplays>

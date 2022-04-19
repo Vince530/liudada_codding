@@ -1,0 +1,91 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The Chromatix 7 data structure begins with a default scenario created in the root folder of your project. Add child scenarios to your project so that you can tune for various use cases, features, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Add scenarios" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="ufk1494872219078.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xpt1513792394052" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Add scenarios</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xpt1513792394052">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="ufk1494872219078.html" title="Prerequisites">Prerequisites</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="ufk1494872219078.html" title="Prerequisites"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Prerequisites</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Add scenarios</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">The Chromatix 7 data structure begins with a default scenario created in the
+			root folder of your project. Add child scenarios to your project so that you can tune
+			for various use cases, features, scenes, and effects that diverge from the parent of the
+			child. A directory structure for the scenario is added to its parent in the project
+			folder whenever you add a scenario. When you tune the parameters for a child scenario,
+			you only need to tune the deltas. XML representing the deltas is created and stored in
+			the child scenario directory structure. When you generate a binary, the child inherits
+			the settings of its parent except for the parameters that are tuned explicitly for the
+			child. Refer to <em class="ph i">Chromatix 7 Mode Tree: Inheritance, Use Cases, Scenes, and Other
+				Scenarios (Part 1)</em> and <em class="ph i">Chromatix 7 Mode Tree: Inheritance, Use Cases, Scenes,
+				and Other Scenarios (Part 2)</em>for more information. </p>
+
+		<p class="p">The following image is for example purposes and is meant to highlight the
+			hierarchy of modes (e.g., default, sensor, usecase, etc.). It does not include all
+			available options for each mode. Notice that it is possible to link modes at the same
+			level. In doing so, the source mode (Video|None|None|Night in the example) is configured
+			with the XML of its target. <img class="image" id="xpt1513792394052__image_wf2_tqn_gcb" src="axw1513796994690.svg" /></p>
+
+		<p class="p"><strong class="ph b">Note</strong>: If you want a child scenario to have the same
+			regions and triggers as its parent, add regions to the default scenario before adding
+			child scenarios.</p>
+
+		<p class="p"><strong class="ph b">Prerequisites</strong>: A loaded project is required before
+			you can add or edit a scenario. </p>
+
+		<div class="p">To add a scenario to a project, do the following:<ol class="ol" id="xpt1513792394052__ol_gjr_dgn_gcb">
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">Edit</span> &gt; <span class="ph uicontrol"> Edit Scenario</span></span> to display the Tuning Scenario Configuration window.</li>
+
+				<li class="li">Select the parent scenario in the <span class="ph uicontrol">Scenario Hierarchy View</span> panel on the left-side of the window.
+					The scenario you add becomes a child of the selected scenario. </li>
+
+				<li class="li">Do one of the following:<ul class="ul" id="xpt1513792394052__ul_tfz_4gn_gcb">
+						<li class="li">Select the appropriate sub mode from the <span class="ph uicontrol">Sub Mode</span> list.</li>
+
+						<li class="li">If applicable, select <span class="ph uicontrol">Add all
+								sub modes</span> from the <span class="ph uicontrol">Sub
+								Mode</span> list.</li>
+
+					</ul>
+</li>
+
+				<li class="li">To link the scenario to a scenario that already in the
+					hierarchy, select the target scenario from the <span class="ph uicontrol">Link</span> to list. This field is disabled if you selected Add all
+					sub modes in the previous step, but links can be established after. See step
+					?</li>
+
+				<li class="li">If you are adding scenarios to Snapshot, select <span class="ph uicontrol">BPS+IPE</span> in the <span class="ph uicontrol">Pipeline</span> list. Otherwise, accept the default.</li>
+
+				<li class="li"> (Optional) If the driver information differs from the parent
+					scenario, load the additional driver information files or click <span class="ph uicontrol">Custom</span> to create new information. </li>
+
+				<li class="li">Click <span class="ph uicontrol">Add</span>. The new
+					scenario is added to the <span class="ph uicontrol">Scenario Hierarchy
+						View</span> and a directory structure for the scenario is added to
+					parent in the project root folder. If you selected Add all sub modes, a prompt
+					appears asking you to confirm that you want to add all sub modes. Click
+						<span class="ph uicontrol">OK</span> to confirm.</li>
+
+				<li class="li">Repeat Steps 2-7 as necessary.</li>
+
+				<li class="li">The active scenario is the last scenario added. To change the
+					current scenario, click another scenario in the Scenario Hierarchy view and
+					click Set Current.</li>
+
+				<li class="li">Click Close. </li>
+
+			</ol>
+</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="ufk1494872219078.html" title="Prerequisites"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Prerequisites</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

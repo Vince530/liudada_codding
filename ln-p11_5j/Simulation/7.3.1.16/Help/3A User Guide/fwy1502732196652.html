@@ -1,0 +1,174 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Preflash tuning controls the way AEC converges once the preflash turns on and illuminates the scene. Several parameters are considered advanced and are not recommended to tune. Parameter Description ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Preflash tuning" /><meta name="abstract" content="Preflash tuning controls the way AEC converges once the preflash turns on and illuminates the scene. Several parameters are considered advanced and are not recommended to tune." /><meta name="description" content="Preflash tuning controls the way AEC converges once the preflash turns on and illuminates the scene. Several parameters are considered advanced and are not recommended to tune." /><meta name="DC.Relation" scheme="URI" content="cyt1495661060161.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="fwy1502732196652" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Preflash tuning</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="fwy1502732196652">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Preflash tuning</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">Preflash tuning controls the way AEC converges once the preflash turns on and
+		illuminates the scene. Several parameters are considered advanced and are not recommended to
+		tune.</p>
+
+		<div class="p">
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="fwy1502732196652__ID-table-0000001d" class="table landscape" frame="border" border="1" rules="all"><colgroup><col style="width:1.3in" /><col style="width:2.96in" /><col style="width:2.0in" /><col style="width:0.882in" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d19596e40">Parameter</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d19596e43">Description</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d19596e46">Tuning</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d19596e49">Default</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">frameSkipMethod </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">Specifies which type of
+								frame skip is desired.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">
+								<ul class="ul" id="fwy1502732196652__ul_zqg_jls_w1b">
+									<li class="li">SmoothNoSkip – Continuous smooth
+										frame-to-frame adjustments</li>
+
+									<li class="li">SkipOne – Use this option only if
+										synchronization issues occur between sensor and stats</li>
+
+									<li class="li">SkipSystemLatency – Specifies that the next
+										exposure adjustment will take place only once stats are
+										updated to reflect previous exposure adjustment; use if
+										convergence speed is critical</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">SmoothNoSkip</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">aggressiveness </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">Increase this value to
+								converge faster.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">Range: [0.0, 1.0]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">1</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">settledFrameCountThres </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">The number of extra
+								frames AEC should wait before declaring settled; reduce if sensor
+								sync is reliable and thoroughly tested.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">Range: [0, 3]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">2</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">thresBrightLevelDiff </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">Lower this value to make
+								preflash convergence reach a darker exposure before declaring
+								settled.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">Range: [5, 50]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">30</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">thresBrightLevel </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">Increase this value to
+								make preflash convergence reach a darker exposure before declaring
+								settled.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">Range: [180, 210]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">190</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">thresBrightSatDiff </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">Lower this value to make preflash convergence
+								reach a darker exposure before declaring settled.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">Range: [0.03, 0.15]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">0.1</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">thresBrightSat </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">Increase this value to make preflash convergence
+								reach a darker exposure before declaring settled.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">Range: [0.15, 0.3]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">minLuma </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">AEC stops adjusting exposure during preflash
+								convergence if luma drops below this threshold.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">Range: [8, 25]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">15</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e40 ">minLumaAdj </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e43 ">Increase this parameter to make convergence
+								faster. Decrease this parameter to make convergence reach the same
+								exposure repeatedly.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e46 ">Range: [0.5, 1.0]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d19596e49 ">0.55</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

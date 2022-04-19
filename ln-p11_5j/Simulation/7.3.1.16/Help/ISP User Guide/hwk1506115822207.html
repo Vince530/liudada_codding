@@ -1,0 +1,369 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The following table lists the parameters used for tuning the pixel correction module for snapshot mode. The default values for the parameters are suitable for most situations but may require ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Pixel correction parameters" /><meta name="DC.Relation" scheme="URI" content="mpm1506115654147.html" /><meta name="DC.Relation" scheme="URI" content="sdf1506116094086.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="hwk1506115822207" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Pixel correction parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hwk1506115822207">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a> / <a class="navheader_parent_path" href="mpm1506115654147.html" title="Pixel correction tuning concepts">Pixel correction tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="mpm1506115654147.html" title="Pixel correction tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Pixel correction tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Pixel correction parameters </h1>
+
+	<div class="body conbody">
+		<div class="p">The following table lists the parameters used for tuning the pixel
+			correction module for snapshot mode. The default values for the parameters are suitable
+			for most situations but may require adjustment in some use cases to achieve your
+			specific objectives. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="hwk1506115822207__ID-table-0000000f" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table :   Pixel correction parameters (Snapshot)</span></caption><colgroup><col style="width:1.875in" /><col style="width:2in" /><col style="width:2in" /><col style="width:1.25in" /><col style="width:1.313in" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d10553e43">Parameter Name</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d10553e46">Description</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d10553e49">Tuning</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d10553e52">Factory Default</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d10553e55">Must Tune?</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Pdpc Enable (Enable
+								Section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Enables or disables PD
+								pixel correction. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set to 1 if the project
+								uses a PD sensor and you want to correct bad PD pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">0<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Yes, if
+								applicable</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Dspbc Enable (Enable
+								Section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Enables or disables
+								single bad pixel correction for zzHDR when using a non-PD pixel
+								sensor.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set to 1 if the project
+								uses a non-PD sensor with a zzHDR pattern and you want to correct
+								bad pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">1<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Yes, if
+								applicable</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Fmax Pixel Q 6 (Pdpc 20
+								Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Specifies the threshold
+								for a hot pixel value to be selected for correction. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">
+								<p class="p">If the project uses a non-PD sensor, set this
+									value to control how many hot pixels are corrected.</p>
+
+								<p class="p"> A higher value results in fewer pixels detected
+									as bad hot pixels.</p>
+
+								<p class="p">For a high light region, lowering Fmax has more
+									impact on missed pixels than lowering the offset. </p>
+
+								<p class="p">For a low light region, lowering the offset has
+									more impact on missed pixels than lowering Fmax.</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">
+								<p class="p">96</p>
+
+								<p class="p">Range: [0, 127] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Fmin Pixel Q 6 (Pdpc 20
+								Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Specifies the threshold
+								for a cold pixel value to be selected for correction. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">If the project uses a
+								non-PD sensor, set this value to control how many cold pixels are
+								corrected. A higher value results in fewer pixels detected as bad
+								cold pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">
+								<p class="p">32</p>
+
+								<p class="p">Range: [0, 127] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Hot Pixel Correction Disable  (Pdpc 20
+								Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Enables or disables
+								correction of hot pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set to 0 to correct hot
+								pixels</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">0<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Yes, if
+								applicable</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Cold Pixel Correction
+								Disable  (Pdpc 20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Enables or disables
+								correction of cold pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set to 0 to correct cold
+								pixels</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">0<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Yes, if
+								applicable</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">BPC Offset (Pdpc 20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Specifies the offset
+								adjustment to further refine the threshold for a single bad pixel.
+								Used for processing of a Bayer pattern or a zzHDR pattern with long
+								exposure (T1).</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set this value to adjust
+								how many bad pixels are corrected. A higher value results in fewer
+								pixels detected as bad pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">
+								<p class="p">512</p>
+
+								<p class="p">Range: [0, 16383] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Bcc Offset  (Pdpc 20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Specifies the offset
+								adjustment to further refine the threshold for a couplet bad pixel.
+								Used for processing of a Bayer pattern or a zzHDR pattern with long
+								exposure (T1).</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set this value to adjust
+								how many bad pixels are corrected. A higher value results in fewer
+								pixels detected as bad pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">
+								<p class="p">512</p>
+
+								<p class="p">Range: [0, 16383] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">BPC Offset T2 (Pdpc 20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Specifies the offset adjustment to further
+								refine the threshold for a sigle bad pixel. Used only for processing
+								of an zzHDR pattern with short exposure (T2).</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set this value to adjust
+								how many bad pixels are corrected. A higher value results in fewer
+								pixels detected as bad pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">
+								<p class="p">512</p>
+
+								<p class="p">Range: [0, 16383] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Bcc Offset T2 (Pdpc 20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Specifies the offset
+								adjustment to further refine the threshold for a couplet bad pixel.
+								Used only for processing of an zzHDR pattern with short exposure
+								(T2).</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set this value to adjust
+								how many bad pixels are corrected. A higher value results in fewer
+								pixels detected as bad pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">
+								<p class="p">512</p>
+
+								<p class="p">Range: [0, 16383] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Correction Threshold
+								(Pdpc 20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Specifies the minimum
+								value change allowed to the bad pixel. If the value change is less
+								than this threshold, the change is not made.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Set this value to adjust
+								how many bad pixels are corrected. A larger value results in fewer
+								pixels corrected.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">
+								<p class="p">128</p>
+
+								<p class="p">Range: [0, 819] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Remove Along Edge (Pdpc
+								20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Enables enhanced
+								correction of bad pixels on edges.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Keep the setting at 0 to avoid unexpected
+								artifacts on edges.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">0<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Use default
+								value</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Using Cross Channel
+								(Pdpc 20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Enables cross-channel
+								information for detection and correction.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">Use default
+								value.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">1<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Rarely tune</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e43 ">Saturation Threshold
+								(Pdpc 20 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e46 ">Specifies the maximum
+								pixel value that is detected as a bad pixel. Past this point, the
+								pixel is saturated. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e49 ">
+								<p class="p">Set this value to adjust how many bad pixels are corrected. </p>
+
+								<p class="p">A larger value results in more pixels detected.</p>
+
+								<p class="p">A larger value can result in false detection.</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e52 ">
+								<p class="p">1023</p>
+
+								<p class="p">Range: [0, 16383] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d10553e55 ">Rarely tune</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+</div>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="sdf1506116094086.html" title="The following examples illustrate the effects of adjusting specific pizel correction parameter values for a snapshot project.">Examples of pixel correction parameter effects</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="mpm1506115654147.html" title="Pixel correction tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Pixel correction tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The FA SA module selects the proper face ROI information from uploaded images. To collect face ROI information, the user uploads one or more face-dominant images and the module selects the face ROI ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="FA SA selection of face ROI information" /><meta name="abstract" content="The FA SA module selects the proper face ROI information from uploaded images." /><meta name="description" content="The FA SA module selects the proper face ROI information from uploaded images." /><meta name="DC.Relation" scheme="URI" content="jdc1509824323481.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="bdw1509838418388" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>FA SA selection of face ROI information</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="bdw1509838418388">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="jdc1509824323481.html" title="Face-assist scene analyzer concept">Face-assist scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">FA SA selection of face ROI information</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">The FA SA module selects the proper face ROI information from uploaded images. </p>
+
+		<div class="p">To collect face ROI information, the user uploads one or more face-dominant
+			images and the module selects the face ROI information, as illustrated below: <br /><img class="image" id="bdw1509838418388__image_vmj_lkr_tbb" src="asw1509826903436.svg" /><br /><ul class="ul" id="bdw1509838418388__ul_h2l_tkr_tbb">
+				<li class="li">Reduces the regular face ROI width (x) and height (y) using the
+					ROIXScale and ROIYScale parameters to avoid collecting misleading background BG
+					stats</li>
+
+				<li class="li">If there are multiple faces in the image, choose the biggest
+					face for collecting the BG stats</li>
+
+				<li class="li">If another face (ROI) size is bigger than the current one, the
+					new biggest face replaces the original one</li>
+
+			</ul>
+</div>
+
+		<p class="p">If a face ROI is detected, AWB processing uses a slower convergence speed for face AWB to
+			avoid unstable face ROI input, as illustrated in the following diagram. </p>
+
+		<div class="fig fignone nonumber" id="bdw1509838418388__fig_rpq_2md_2db"><span class="figcap">Figure : (A) When ROI is detected, convergence speed will keep original convergence speed
+				for few frames; (B) After ROI is gone, convergence speed will keep face AWB
+				convergence speed for a few frames </span>
+			
+			<img class="image" id="bdw1509838418388__image_wsl_pmd_2db" src="qzo1521085973657.svg" />
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

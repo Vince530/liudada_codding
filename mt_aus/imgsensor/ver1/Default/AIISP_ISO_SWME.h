@@ -1,0 +1,20 @@
+
+const FEATURE_NVRAM_AIISP_ISO_SWME_T AIISP_ISO_SWME_%04d = {
+        .mmap_enable={.bits ={.AIISP_SWME_MMap_Enable=0}},
+        .mmap_reg00={.bits ={.AIISP_SWME_MMap_Reg00=0}},
+        .mmap_reg01={.bits ={.AIISP_SWME_MMap_Reg01=0}},
+        .mmap_reg02={.bits ={.AIISP_SWME_MMap_Reg02=0}},
+        .mmap_reg03={.bits ={.AIISP_SWME_MMap_Reg03=0}},
+        .mmap_reg04={.bits ={.AIISP_SWME_MMap_Reg04=0}},
+        .mmap_reg05={.bits ={.AIISP_SWME_MMap_Reg05=0}},
+        .mmap_reg06={.bits ={.AIISP_SWME_MMap_Reg06=0}},
+        .mmap_reg07={.bits ={.AIISP_SWME_MMap_Reg07=0}},
+        .mmap_reg08={.bits ={.AIISP_SWME_MMap_Reg08=0}},
+        .mmap_reg09={.bits ={.AIISP_SWME_MMap_Reg09=0}},
+        .mmap_reg10={.bits ={.AIISP_SWME_MMap_Reg10=0}},
+        .mmap_reg11={.bits ={.AIISP_SWME_MMap_Reg11=0}},
+        .mmap_reg12={.bits ={.AIISP_SWME_MMap_Reg12=0}},
+        .mmap_reg13={.bits ={.AIISP_SWME_MMap_Reg13=0}},
+        .mmap_reg14={.bits ={.AIISP_SWME_MMap_Reg14=0}},
+        .mmap_reg15={.bits ={.AIISP_SWME_MMap_Reg15=0}},
+};

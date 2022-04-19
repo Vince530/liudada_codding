@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="QLLCalcFrameConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="log_flags" type="xs:unsignedByte" />
+        <xs:element name="TFI">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="zsl_tfi_buffer_path" type="xs:string" />
+              <xs:element name="zsl_tfi_buffer_width" type="xs:unsignedByte" />
+              <xs:element name="zsl_tfi_buffer_height" type="xs:unsignedByte" />
+              <xs:element name="zsl_tfi_buffer_stride" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InputFiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gyro_csv_in_path" type="xs:string" />
+              <xs:element name="aec_csv_in_path" type="xs:string" />
+              <xs:element name="meta_csv_in_path" type="xs:string" />
+              <xs:element name="bhist_csv_in_path" type="xs:string" />
+              <xs:element name="tfi_path" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Initialize">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="max_frame_buffer_size" type="xs:unsignedByte" />
+              <xs:element name="max_sensor_analog_gain" type="xs:unsignedByte" />
+              <xs:element name="preview_mode" type="xs:unsignedByte" />
+              <xs:element name="camera_position" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

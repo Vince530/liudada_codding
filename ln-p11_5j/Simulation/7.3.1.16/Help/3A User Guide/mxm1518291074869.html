@@ -1,0 +1,114 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Prerequisite : Complete the initial AWB tuning process for each camera in its own Chromatix project. In the initial AWB tuning, measure the regular reference points of both cameras under the same ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Fine tune AWB dual camera sync outlier distance" /><meta name="DC.Relation" scheme="URI" content="nra1518044265573.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="mxm1518291074869" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Fine tune AWB dual camera sync outlier distance</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="mxm1518291074869">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="nra1518044265573.html" title="AWB dual camera sync concept">AWB dual camera sync concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="nra1518044265573.html" title="AWB dual camera sync concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Fine tune AWB dual camera sync outlier distance </h1>
+
+	<div class="body conbody">
+		<p class="p"><strong class="ph b">Prerequisite</strong>: Complete the initial AWB tuning
+			process for each camera in its own Chromatix project. In the initial AWB tuning, measure
+			the regular reference points of both cameras under the same light condition.</p>
+
+		<div class="section" id="mxm1518291074869__section_yc5_4wb_vcb"><h2 class="title sectiontitle">Fine tune GCM outlier distance</h2>
+			
+			<ol class="ol" id="mxm1518291074869__ol_zc5_4wb_vcb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Parameter
+					Editor</span>, navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AWB</span> &gt; <span class="ph uicontrol">Dual Cam Sync (V1)</span> &gt; <span class="ph uicontrol">Outlier Distance</span></span> to view the existing outlier distance configuration. Determine
+					what additional trigger structures or value changes are needed.</li>
+
+				<li class="li">To add a new first level (LuxIdx) trigger range, do the
+					following: <ol class="ol" type="a" id="mxm1518291074869__ol_vh2_lxk_vcb">
+						<li class="li">In the left pane, navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AWB</span> &gt; <span class="ph uicontrol">Dual Cam Sync (V1)</span> &gt; <span class="ph uicontrol">Outlier Distance</span></span> and select <span class="ph uicontrol">Trigger</span>.</li>
+
+						<li class="li"> In the right pane, click the plus sign (<strong class="ph b">+</strong>) next to the row under which you want to add
+							a blank trigger structure (for example, click + next to Trigger [0] to
+							create Trigger [1]). Add as many first level trigger structures as
+							required.</li>
+
+						<li class="li"> In each new LuxIdx trigger structure row, click the
+							dots in the <span class="ph uicontrol">Value</span> column to set
+							the LuxIdx <span class="ph uicontrol">Start/End</span> values.
+							Repeat for each first level structure you added. <p class="p">For
+								each first level (LuxIdx) trigger, the system sets up one second
+								level (CCT) trigger structure. </p>
+</li>
+
+					</ol>
+</li>
+
+				<li class="li">Configure new second level (CCT) triggers as follows: <ol class="ol" type="a" id="mxm1518291074869__ol_rrz_byk_vcb">
+						<li class="li">In the left pane, navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AWB</span> &gt; <span class="ph uicontrol">Dual Cam Sync (V1)</span> &gt; <span class="ph uicontrol">Outlier Distance</span> &gt; <span class="ph uicontrol">Trigger[x]</span></span> and select <span class="ph uicontrol">Trigger</span>.</li>
+
+						<li class="li"> To add an additional second level (CCT) trigger for
+							the same LuxIdx range, in the right pane, click the plus sign (<strong class="ph b">+</strong>) next to the row under which you want to add
+							a blank trigger structure (for example, click + next to Trigger [0] to
+							create Trigger [1]). Add as many second level trigger structures as
+							required.</li>
+
+						<li class="li">In the right pane, click the dots in the <span class="ph uicontrol">Value</span> column of the <span class="ph uicontrol">Trigger Pt</span> row to set the CCT
+								<span class="ph uicontrol">Start/End</span> values for each
+							second level structure you added.<p class="p">For each second
+								level (CCT) trigger, the system creates one outlier distance data
+								field.</p>
+</li>
+
+					</ol>
+</li>
+
+				<li class="li">Configure the GCM outlier distance value associated with the
+					second level trigger as follows:<ol class="ol" type="a" id="mxm1518291074869__ol_iss_pyk_vcb">
+						<li class="li"> In the left pane, navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AWB</span> &gt; <span class="ph uicontrol">Dual Cam Sync (V1)</span> &gt; <span class="ph uicontrol">Outlier Distance</span> &gt; <span class="ph uicontrol">Trigger[x]</span> &gt; <span class="ph uicontrol">Trigger[x]</span></span>.</li>
+
+						<li class="li"> In the right pane, click the dots in the <span class="ph uicontrol">Value</span> column of the <span class="ph uicontrol">Trigger</span> row and enter the GCM outlier
+							distance value.</li>
+
+					</ol>
+</li>
+
+				<li class="li">To update an existing trigger configuration, navigate to
+						<span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AWB</span> &gt; <span class="ph uicontrol">Dual Cam Sync (V1)</span> &gt; <span class="ph uicontrol">Outlier Distance</span></span> and do the following: <ul class="ul" id="mxm1518291074869__ul_sv2_pkm_vcb">
+						<li class="li">To adjust the Lux Index trigger range, navigate to
+								<span class="ph menucascade"><span class="ph uicontrol">Trigger[x]</span> &gt; <span class="ph uicontrol">Trigger Pt (LuxID)</span></span> and make the necessary changes. </li>
+
+						<li class="li">To adjust the CCT trigger range, navigate to
+								<span class="ph menucascade"><span class="ph uicontrol">Trigger[x]</span> &gt; <span class="ph uicontrol">Trigger[x]</span> &gt; <span class="ph uicontrol">Trigger Pt (CCT)</span></span> and make the necessary changes. </li>
+
+						<li class="li">To adjust the outlier distance value, navigate to
+								<span class="ph menucascade"><span class="ph uicontrol">Trigger[x]</span> &gt; <span class="ph uicontrol">Trigger[x]</span> &gt; <span class="ph uicontrol">Trigger (Data)</span></span> and make the necessary changes.</li>
+
+					</ul>
+</li>
+
+				<li class="li">To delete an existing trigger configuration, navigate to
+						<span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AWB</span> &gt; <span class="ph uicontrol">Dual Cam Sync (V1)</span> &gt; <span class="ph uicontrol">Outlier Distance</span></span> and do the following: <ul class="ul" id="mxm1518291074869__ul_st3_skm_vcb">
+						<li class="li">Navigate to <span class="ph menucascade"><span class="ph uicontrol">Trigger[x]</span> &gt; <span class="ph uicontrol">Trigger[x]</span></span>and click the minus sign (<strong class="ph b">-</strong>) to
+							delete an existing CCT trigger.</li>
+
+						<li class="li"> Navigate to <span class="ph uicontrol">Trigger[x]</span> and click the minus sign (<strong class="ph b">-</strong>) to delete an existing Lux Index
+							trigger.</li>
+
+					</ul>
+</li>
+
+				<li class="li">Click <span class="ph uicontrol">File</span> &gt;
+						<span class="ph uicontrol">Save to project</span>.</li>
+
+			</ol>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="nra1518044265573.html" title="AWB dual camera sync concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

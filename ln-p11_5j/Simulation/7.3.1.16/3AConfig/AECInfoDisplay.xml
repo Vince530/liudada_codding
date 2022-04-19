@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  See DisplayTest.xml for format documentation
+-->
+<MetadataDisplays
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataDisplaySchema.xsd">
+  <!-- AEC Info Display -->
+  <Display Name="AEC Info" Title="AEC Info" Section="AEC Debug Info">
+    <Panel Type="Scroll">
+      <!-- AE Information Panel -->
+      <Panel Title="AE Information" Type="Open">
+        <Grid>
+          <Row>
+            <Value Text="Exposure index:" Bold="true"/>
+            <Value Value="Convergence Information.Expsoure index"/>
+          </Row>
+          <Row>
+            <Value Text="Lux index:" Bold="true"/>
+            <Value Value="Convergence Information.Lux index"/>
+          </Row>
+          <Row>
+            <Value Text="Frame rate:" Bold="true"/>
+            <Value Value="Convergence Information.Frame rate"/>
+          </Row>
+          <Row>
+            <Value Text="Preview gain:" Bold="true"/>
+            <Value Value="Gain and Line Count Information.AE Preview Gain"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure time:" Bold="true"/>
+            <Value Value="Gain and Line Count Information.AE Preview Exposure Time"/>
+          </Row>
+          <Row>
+            <Value Text="Luma target:" Bold="true"/>
+            <Value Value="Luma and Luma Target Information.AE Target"/>
+          </Row>
+          <Row>
+            <Value Text="Current luma:" Bold="true"/>
+            <Value Value="Luma and Luma Target Information.Bayer Metered Luma"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- Metering Information Panel -->
+      <Panel Title="Metering Information">
+        <Grid>
+          <Row>
+            <Value Text="AE metering:" Bold="true"/>
+            <Value Value="Luma and Luma Target Information.Bayer Metered Luma"/>
+          </Row>
+          <Row>
+            <Value Text="Bright region:" Bold="true"/>
+            <Value Value="Bright Region Information.Total bright region count"/>
+          </Row>
+          <Row>
+            <Value Text="Flat scene:" Bold="true"/>
+            <Value Value="Flat Scene Information.Severity"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- Flash Information Panel -->
+      <Panel Title="AEC Flash Information">
+        <Grid Structure="AEC Flash Information">
+          <Row>
+            <Value Text="Flash-off exposure index:" Bold="true"/>
+            <Value Value="Exposure index flash off value"/>
+          </Row>
+          <Row>
+            <Value Text="Flash-on exposure index:" Bold="true"/>
+            <Value Value="Exposure index flash on"/>
+          </Row>
+          <Row>
+            <Value Text="Flash-off luma:" Bold="true"/>
+            <Value Value="AE Snapshot Flash Off Luma Value"/>
+          </Row>
+          <Row>
+            <Value Text="Flash-on luma:" Bold="true"/>
+            <Value Value="AE Snapshot Flash On Luma Value"/>
+          </Row>
+          <Row>
+            <Value Text="Flash-off ROI:" Bold="true"/>
+            <Value Value="AEC Flash Off Luma Value with ROI"/>
+          </Row>
+          <Row>
+            <Value Text="Flash-on ROI:" Bold="true"/>
+            <Value Value="AEC Flash Off Luma Value with ROI"/>
+          </Row>
+          <Row>
+            <Value Text="LED state:" Bold="true"/>
+            <Value Value="LED state"/>
+          </Row>
+          <Row>
+            <Value Text="LED mode:" Bold="true"/>
+            <Value Value="LED mode"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- Bright Region Metering Panel -->
+      <Panel Title="Bright Region Metering">
+        <Check Title="Bright region detection" Value="Bright Region Information.Bright region detection enable"/>
+        <Grid Structure="Bright Region Information">
+          <Row>
+            <Value Text="Count:" Bold="true"/>
+            <Value Value="Total bright region count"/>
+          </Row>
+          <Row>
+            <Value Text="Weight:" Bold="true"/>
+            <Value Value="Bright region weight"/>
+          </Row>
+          <Row>
+            <Value Text="Threshold:" Bold="true"/>
+            <Value Value="Bright region threshold after interpolation"/>
+          </Row>
+          <Row>
+            <Value Text="Severity:" Bold="true"/>
+            <Value Value="Bright region severity"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- Flat Scene Metering Panel -->
+      <Panel Title="Flat Scene Metering">
+        <Grid>
+          <Row>
+            <Grid>
+              <Row>
+                <Check Title="Flat scene detected" Value="Flat Scene Information.Flat scene detection enable"/>
+              </Row>
+              <Row>
+                <Check Title="Bright flat detected" Value="Flat Scene Information.Bright flat scene detected"/>
+              </Row>
+              <Row>
+                <Check Title="Dark flat detected" Value="Flat Scene Information.Dark flat scene detected"/>
+              </Row>
+            </Grid>
+            <Grid>
+              <Row>
+                <Value Text="Severity:" Bold="true"/>
+                <Value Value="Flat Scene Information.Severity"/>
+              </Row>
+              <Row>
+                <Value Text="Severity factor:" Bold="true"/>
+                <Value Value="Flat Scene Information.Severity factor"/>
+              </Row>
+              <Row>
+                <Value Text="Near-flat severity:" Bold="true"/>
+                <Value Value="Flat Scene Information.Near flat severity"/>
+              </Row>
+              <Row>
+                <Value Text="Dark threshold:" Bold="true"/>
+                <Value Value="Metering Information.Threshold gray vs color gray - dark flat scene"/>
+              </Row>
+              <Row>
+                <Value Text="Bright threshold:" Bold="true"/>
+                <Value Value="Metering Information.Threshold gray vs color gray - bright flat scene"/>
+              </Row>
+              <Row Condition="{vl}5.1.0">
+                <Value Text="Luma compensation:" Bold="true"/>
+                <Value Value="Influence Information.Flat Scene Luma Compensation"/>
+              </Row>
+            </Grid>
+          </Row>
+        </Grid>
+      </Panel>
+    </Panel>      
+  </Display>
+</MetadataDisplays>

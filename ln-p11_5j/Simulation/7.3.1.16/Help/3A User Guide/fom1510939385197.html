@@ -1,0 +1,67 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Ensure that you can access the preset XMLs. The default location for these files is: $BUILDROOT\LINUX\android\vendor\qcom\proprietary\chi-cdk\cdk\chromatix\presets\stats\af : Load the AF preset XMLs ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Load AF preset XMLs" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="oxm1495661074482.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="fom1510939385197" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Load AF preset XMLs</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="fom1510939385197">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="oxm1495661074482.html" title="Initial tuning">Initial tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="oxm1495661074482.html" title="Initial tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Initial tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Load AF preset XMLs</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc"></p>
+
+		<div class="section prereq p" id="fom1510939385197__prereq_N10014_N10011_N10001">Ensure that you can access the preset
+			XMLs. The default location for these files is:
+				<p class="p">$BUILDROOT\LINUX\android\vendor\qcom\proprietary\chi-cdk\cdk\chromatix\presets\stats\af</p>
+</div>
+
+		<div class="section context" id="fom1510939385197__context_N10019_N10011_N10001">: <p class="p"><img class="image" id="fom1510939385197__image_wpc_bph_xbb" src="eum1510940055568.png" /></p>
+<div class="p">Load the AF preset XMLs that correspond to the sensor and that match
+				the expected device characteristics (e.g., low sensitivity, high accuracy, fast
+				convergence, etc.) before beginning any other tuning. The presets are configured
+				with parameter settings that provide specific behaviors for specific sensors or
+				performance characteristics. For example:<ul class="ul" id="fom1510939385197__ul_vsq_2gh_xbb">
+					<li class="li">If you are using the imx362 sensor, load
+						afmonitor_2PD.xml.</li>
+
+					<li class="li">If you are using imx230/imx398 sensors, load
+						afmonitor_sparse.xml.</li>
+
+					<li class="li">For other sensors, load afmonitor_default.xml.</li>
+
+				</ul>
+</div>
+<p class="p">The presets provide you with a solid baseline for AF
+				tuning. After you evaluate the AF performance, you can load a different preset if
+				you want to modify the behavior in a specific area (e.g., BAF, PDAF, etc.) that did
+				not meet your performance criteria. We recommend evaluating other presets for the
+				problem area before manually adjusting the AF parameters.</p>
+</div>
+
+		<ol class="ol steps"><li class="li step" id="fom1510939385197__step_N10041_N1003E_N10011_N10001">
+				<span class="ph cmd">On the<span class="ph uicontrol"> AF</span> tab, click <span class="ph uicontrol">BAF
+					Presets</span>.</span>
+			</li>
+<li class="li step" id="fom1510939385197__step_N10052_N1003E_N10011_N10001">
+				<span class="ph cmd">Navigate to and open the BAF preset XML that is appropriate for your device and
+					expected performance characteristics. A message appears notifying you that the
+					preset was successfully parsed. </span>
+			</li>
+<li class="li step" id="fom1510939385197__step_N1005B_N1003E_N10011_N10001">
+				<span class="ph cmd">Repeat Steps 1-2 for each additional preset.</span>
+			</li>
+<li class="li step" id="fom1510939385197__step_N10064_N1003E_N10011_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">File &gt; Save to Project </span>to save changes.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="oxm1495661074482.html" title="Initial tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Initial tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

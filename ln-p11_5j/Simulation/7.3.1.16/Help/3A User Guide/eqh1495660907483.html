@@ -1,0 +1,60 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Autofocus determines the best lens position to achieve focus and triggers the actuator to move the lens to that position. There are many hardware and software components involved in autofocus, but in ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Autofocus concepts" /><meta name="DC.Relation" scheme="URI" content="ppb1495661036667.html" /><meta name="DC.Relation" scheme="URI" content="mul1495660945797.html" /><meta name="DC.Relation" scheme="URI" content="nom1495661063328.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="lgq1477085273832" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Autofocus concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="lgq1477085273832">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Autofocus concepts</h1>
+
+   <div class="body conbody">
+      <p class="p">Autofocus determines the best lens position to achieve focus and triggers
+         the actuator to move the lens to that position. There are many hardware and software
+         components involved in autofocus, but in general, the process is as follows:</p>
+
+      <ol class="ol">
+         <li class="li">AF algorithms concurrently <strong class="ph b">monitor</strong>  hardware and software stats
+            to determine if there is a scene change.</li>
+
+         <li class="li">If the algorithm detects a scene change, the algorithm triggers a
+               <strong class="ph b">search</strong>. If any depth-based algorithms are enabled, CAF is only called as a
+            fallback.</li>
+
+         <li class="li">The coarse search of the algorithm determines next lens position.</li>
+
+         <li class="li">The actuator incrementally moves the lens to the next position.</li>
+
+         <li class="li">The fine search finds the final lens position.</li>
+
+         <li class="li">The actuator moves the lens to the final position.</li>
+
+      </ol>
+
+      <img class="image" id="lgq1477085273832__image_swq_lzk_rx" src="wxa1495661079677.svg" height="NaN" width="NaN" />
+      <p class="p">The AF algorithms are contained within the hybrid AF (HAF) infrastructure.
+         The infrastructure is extensible and by default implements three depth-based algorithms
+         (i.e., PDAF, TOF, DCIAF), as well as Contrast AF (CAF). Each algorithm implements monitor
+         and search functionality.</p>
+
+      <p class="p">The infrastructure is designed to allow customers and third parties to
+         introduce their own logic into the AF decision process. Using HAF, it is possible to
+         integrate new algorithms, modify the behavior of existing algorithms, and even change the
+         mixing logic when multiple algorithms are combined.</p>
+
+   </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="ppb1495661036667.html">AF monitor</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="mul1495660945797.html">AF search</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="nom1495661063328.html">Contrast AF (CAF)</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

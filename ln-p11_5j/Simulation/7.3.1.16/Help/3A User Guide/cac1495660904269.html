@@ -1,0 +1,38 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Tune the step tables for TAF and CAF separately. Check the step tables (separate table for CAF and TAF) available in the af_single_t structure in the AF header. There are different sets for normal ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AF and TAF need to be optimized for speed but CAF needs to be optimized for smoothness" /><meta name="DC.Relation" scheme="URI" content="yxl1495661025201.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="meg1477085287138" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AF and TAF need to be optimized for speed but CAF needs to be optimized for smoothness</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="meg1477085287138">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">AF and TAF need to be optimized for speed but CAF needs to be optimized for smoothness</h1>
+
+   <div class="body conbody">
+      <p class="p">Tune the step tables for TAF and CAF separately.</p>
+
+      <ol class="ol">
+         <li class="li">Check the step tables (separate table for CAF and TAF) available in the <span class="keyword cmdname">af_single_t </span>structure in the AF header. There are different sets for normal light and low light.</li>
+
+         <li class="li">To prioritize for fast AF speed, tune the step table to be more aggressive, however,
+            there is the possibility of sacrificing accuracy in certain cases.</li>
+
+         <li class="li">To improve smoothness, reduce the step size from the macro entry first (last entry of the step table) and then scale the reduction of the step size for the other entries.</li>
+
+      </ol>
+
+      <div class="note note" id="meg1477085287138__note_N10029_N1000E_N10001"><span class="notetitle">Note:</span> Tune the step table to be more conservative (hence accuracy), however, there is the possibility of sacrificing overall AF speed and failure rate in certain cases.</div>
+
+      <p class="p">It should be trivial to see the immediate effect of changing the step size. Changing the step size affects the contrast between the samples, which affects the strength of the algorithm thresholds for determining the FV curve trend and the ensuing AF decision. Although tuning values are available, it would be very hard to tune the thresholds individually because they are tightly related to each other. Because the defaults are set up by balancing different AF priorities (e.g., steps size, speed, and success rate), the thresholds should also be tuned to accommodate changes in the step table. For example, if you increase the step size, then reduce the thresholds. Correspondingly, if you decrease the step size, then increase the thresholds.</p>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="yxl1495661025201.html" title="Common issues: AF speed">Common issues: AF speed</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,316 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Extreme red, blue, and green regions are detected and used to adjust AEC luma target. Parameter Description Range Default extreme_color _enable Use this flag to enable/disable the extreme color ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Extreme color adjustment" /><meta name="DC.Relation" scheme="URI" content="vmi1495661094544.html" /><meta name="DC.Relation" scheme="URI" content="vmi1495661094544.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="sxi1474864616279" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Extreme color adjustment</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="sxi1474864616279">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a> / <a class="navheader_parent_path" href="vmi1495661094544.html" title="Extreme color detection and luma adjustment compensate for images that contain a large amount of a particular bold color. This prevents overexposure by applying Lens Shading Correction (LSC), linearization, and white balance to adjust the region of influence based on extreme color.">Tune extreme color detection and luma adjustment</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="vmi1495661094544.html" title="Extreme color detection and luma adjustment compensate for images that contain a large amount of a particular bold color. This prevents overexposure by applying Lens Shading Correction (LSC), linearization, and white balance to adjust the region of influence based on extreme color."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune extreme color detection and luma adjustment</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Extreme color adjustment</h1>
+
+   <div class="body conbody">
+      <p class="p">Extreme red, blue, and green regions are detected and used to adjust AEC luma target.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="sxi1474864616279__ID-table-00000018" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.875in" /><col style="width:2.75in" /><col style="width:0.773in" /><col style="width:0.977in" /></colgroup><thead class="thead" style="text-align:left;">
+               <tr class="row">
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d39070e38">Parameter</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d39070e41">Description</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d39070e44">Range</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d39070e47">Default</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">extreme_color _enable</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 ">Use this flag to enable/disable the extreme color metering feature.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 "><p class="p">0 (disable)</p>
+<p class="p">1 (enable)</p>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">1 (enable)</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">luma_low_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 ">If the region luma for an extreme
+                     color region is smaller than this threshold, the region is weighted less in the
+                     extreme color feature.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">1 to 255</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">30</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">luma_high_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 ">If the region luma for an extreme
+                     color region is larger than this threshold, the region is weighted less in the
+                     extreme color feature.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">1 to 255</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">225</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">color_stats_pct_low_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 ">Minimum percentage of extreme color
+                     regions considered in each image frame.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.0 to 1.0</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.05</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">color_stats_pct_high_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 ">Maximum percentage of extreme color
+                     regions considered in each image frame.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.0 to 1.0</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.5</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">adj_ratio</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">The adjustment ratios for R/G/B channels used to generate the decrease ratio of the luma_target. </li>
+
+                        <li class="li">Provide individual adjustment ratios for each channel/lux zone combination. </li>
+
+                        <li class="li">The smaller the adjustment ratio, the bigger the effect.</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.5 to 1.0</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 "><p class="p">{0.8, 0.9, 0.8} for Zone 0 </p>
+<p class="p">{0.9, 0.9, 0.9} for Zone 1</p>
+<p class="p">{1.0, 1.0, 1.0} for Zone 2</p>
+</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">green_rg_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">The R/G ratio threshold that is used with the B/G ratio threshold and the distance threshold to (1, 1) in R/G and B/G space to detect extreme green. </li>
+
+                        <li class="li">The interpolation zone of this threshold is given by green_rg_interp_pct. </li>
+
+                        <li class="li">The bigger the threshold, the more regions are detected as extreme green.</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.8 to 1.2</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">1.1</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">green_rg_interp_pct</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">Interpolation percentage that is used with green_rg_th for extreme green detection. </li>
+
+                        <li class="li">The bigger the value, the bigger the interpolation range.</li>
+
+                        <li class="li">Constraint: green_rg_th*(1+green_rg_interp_pct) &lt; 1.2</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.0 to 0.2</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.05</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">green_bg_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">The B/G ratio threshold that is used with the R/G ratio threshold and the distance threshold to (1, 1) in R/G and B/G space to detect extreme green. </li>
+
+                        <li class="li">The interpolation zone of this threshold is given by green_bg_interp_pct. </li>
+
+                        <li class="li">The bigger the threshold, the more regions are detected as extreme green.</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.8 to 1.1</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.95</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">green_bg_interp_pct</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">Interpolation percentage that is used with green_bg_th for extreme green detection.</li>
+
+                        <li class="li">The bigger the value, the bigger the interpolation range.</li>
+
+                        <li class="li">Constraint: green_bg_th*(1+green_bg_interp_pct) &lt; 1.0</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.0 to 0.2</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.05</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">green_ctr_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">The distance threshold to (1, 1) in the R/G and B/G space, that is used with R/G and B/G ratio thresholds to detect extreme green. </li>
+
+                        <li class="li">The interpolation zone of this threshold is given by green_cntr_interp_pct. </li>
+
+                        <li class="li">The smaller the threshold, the more regions are detected as extreme green.</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.05 to 0.3</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.15</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">green_ctr_interp_pct</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">Interpolation percentage that is used with green_cntr_th for extreme green detection. </li>
+
+                        <li class="li">The bigger the value, the bigger the interpolation range.</li>
+
+                        <li class="li">Constraint: green_cntr_th*(1-green_cntr_interp_pct) &gt; 0.05</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.0 to 0.2</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.05</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">red_rg_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">The ratio threshold that is used with red_interp_pct to detect extreme red. </li>
+
+                        <li class="li">The smaller the threshold, the more regions are detected as extreme red.</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">1.0 to 4.0</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">1.9</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">red_rg_interp_pct</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">The interpolation percentage that is used with red_th to detect extreme red. </li>
+
+                        <li class="li">The bigger the value, the bigger the interpolation range.</li>
+
+                        <li class="li">Constraint: red_th*(1-red_interp_pct) &gt; 1.05</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.0 to 0.5</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.07</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">blue_rg_th</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">Threshold that is used with blue_interp_pct to detect extreme blue. </li>
+
+                        <li class="li">The smaller the threshold, the more regions are detected as extreme blue region.</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">1.0 to 2.0</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">1.2</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e38 ">blue_rg_interp_pct</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e41 "><ul class="ul">
+                        <li class="li">Interpolation percentage that is used with blue_th to detect extreme blue. </li>
+
+                        <li class="li">The bigger the value, the bigger the interpolation range.</li>
+
+                        <li class="li">Constraint: blue_th*(1-blue_interp_pct) &gt; 1.05</li>
+
+                     </ul>
+</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e44 ">0.0 to 0.5</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39070e47 ">0.07</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="vmi1495661094544.html" title="Extreme color detection and luma adjustment compensate for images that contain a large amount of a particular bold color. This prevents overexposure by applying Lens Shading Correction (LSC), linearization, and white balance to adjust the region of influence based on extreme color.">Tune extreme color detection and luma adjustment</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="vmi1495661094544.html" title="Extreme color detection and luma adjustment compensate for images that contain a large amount of a particular bold color. This prevents overexposure by applying Lens Shading Correction (LSC), linearization, and white balance to adjust the region of influence based on extreme color."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune extreme color detection and luma adjustment</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

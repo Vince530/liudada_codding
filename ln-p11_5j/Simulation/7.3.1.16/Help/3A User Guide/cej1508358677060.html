@@ -1,0 +1,476 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Table : Flash reference points tuning parameters Parameter Name Description Tuning Factory Default Enable Flag Enables/disables the flash reference points module Set to 1 to use LED flash tuning. ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="LED flash parameters" /><meta name="DC.Relation" scheme="URI" content="qej1508358564206.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="cej1508358677060" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>LED flash parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="cej1508358677060">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gkr1508957723817.html" title="AWB flash">AWB flash</a> / <a class="navheader_parent_path" href="qej1508358564206.html" title="LED flash concept">LED flash concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qej1508358564206.html" title="LED flash concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LED flash concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">LED flash parameters</h1>
+
+	<div class="body conbody">
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="cej1508358677060__table_dxk_k2t_v1b" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Flash reference points tuning parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e36">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e39">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e42">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e45">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e36 ">Enable Flag</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e39 ">Enables/disables the flash reference points
+							module</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e42 ">Set to 1 to use LED flash tuning.<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e45 ">1</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e36 ">LEDTarget Pt: Rg/Bg</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e39 ">Specifies vertices of light source reference point (r/g, b/g) in a
+							100% dark condition</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e42 ">Enter the appropriate values in the RG and BG fields.<p class="p">Valid range [0.0, 15000.0]</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e45 ">(0.5, 0.4)</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e36 ">Ref Points Shift Ratio: K2 Trigger</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e39 ">Structure that defines trigger zones bounded by
+							start/end flash sensitivity values. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e42 ">
+							<p class="p">Set up one or more flash sensitivity trigger zones
+								to which a Ref Points Shift Ratio can be assigned. </p>
+
+							<p class="p">Valid range [-100.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e45 ">
+							<p class="p"> (0.0, 0.2)</p>
+
+							<p class="p"> (0.4, 0.6)</p>
+
+							<p class="p"> (0.7, 1.0)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e36 ">Ref Points Shift Ratio: Data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e39 ">Specifies the shift ratio of reference points toward
+							the LED light point in pre-flash mode. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e42 ">
+							<p class="p">Assign a value to each flash sensitivity trigger
+								zone.</p>
+
+							<p class="p">Valid range [0.0, 9999.9]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e45 ">
+							<p class="p">1</p>
+
+							<p class="p">0.5</p>
+
+							<p class="p">0.2</p>
+
+						</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="cej1508358677060__table_d5y_r3x_qbb" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Flash weight vector tuning parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e171">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e174">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e177">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e180">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e171 ">Valid Distance</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e174 ">Specifies the gray zone distance around the LED
+							light point. This is the gray zone in a 100% dark condition.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e177 ">Enter the appropriate value.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e180 ">0.3</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e171 ">Weight Vector for Flash: K2 Trigger</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e174 ">Structure that defines trigger zones bounded by
+							start/end flash sensitivity values.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e177 ">
+							<p class="p">Set up one or more flash sensitivity trigger zones
+								to which an interpolation ratio can be assigned. </p>
+
+							<p class="p">Valid range [-100.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e180 ">
+							<p class="p"> (0.0, 0.2)</p>
+
+							<p class="p"> (0.5, 0.7)</p>
+
+							<p class="p"> (0.9, 1.0)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e171 ">Weight Vector for Flash: Data: Red </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e174 ">Specifies the interpolation ratio to use for
+							adjusting the normal illuminant/distance weight with respect to flash
+							sensitivity. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e177 ">
+							<p class="p">Assign a value to each flash sensitivity trigger
+								zone.</p>
+
+							<p class="p">Valid range [0.0, 9999.9]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e180 ">
+							<p class="p">0</p>
+
+							<p class="p">0.5</p>
+
+							<p class="p">1</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e171 ">Weight Vector for Flash: Data: Blue/Green</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e174 ">Specifies the CCT range that acts to restrict the
+							reconstructed gray zone in each flash sensitivity trigger zone.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e177 ">
+							<p class="p">Assign a start/end CCT value to each flash
+								sensitivity trigger zone.</p>
+
+							<p class="p">Valid range [0.0, 9999.9]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e180 ">
+							<p class="p">(4000, 5000)</p>
+
+							<p class="p">(3000, 6000)</p>
+
+							<p class="p">(2000, 10000)</p>
+
+						</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="cej1508358677060__table_cqh_wbz_qbb" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Flash decision tuning parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e315">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e318">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e321">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e324">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e315 ">LED Type</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e318 ">The LED type of the main flash on the camera. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e321 ">Enter the appropriate value.<p class="p">Valid values are SingleLED and DualLED.</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e324 ">SingleLED</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e315 ">LED WB Point: RG/BG</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e318 ">Specifies the rg/bg coordinates of the main flash
+							decision point. Referred to as MWB.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e321 ">Enter the rg and bg coordinates for flash in a 100% dark condition. <p class="p">Valid range [0.0, 15000.0]</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e324 ">(0.500, 0.540)</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e315 ">LED WB Point Interpolation: K2 Trigger</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e318 ">Structure that defines trigger zones bounded by
+							start/end flash sensitivity values. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e321 ">
+							<p class="p">Set up one or more flash sensitivity trigger zones
+								to which an interpolation ratio can be assigned. </p>
+
+							<p class="p">Valid range [-100.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e324 ">
+							<p class="p"> (0.0, 0.03)</p>
+
+							<p class="p"> (0.1, 0.15)</p>
+
+							<p class="p"> (0.25, 1.0)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e315 ">LED WB Point Interpolation: Data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e318 ">Specifies the ratio to use for interpolating the
+							ambient AWB decision and the MWB decision with respect to flash
+							sensitivity.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e321 ">
+							<p class="p">Assign a value to each flash sensitivity trigger
+								zone.</p>
+
+							<p class="p">Valid range [0.0, 9999.9]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e324 ">
+							<p class="p">1</p>
+
+							<p class="p">0.85</p>
+
+							<p class="p">0</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e315 ">Pre-flash LED WB Interpolation: 1st level Trigger
+							(Lux Index)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e318 ">Structure that defines first level trigger zones
+							bounded by start/end lux index values. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e321 ">
+							<p class="p">Set up one or more lux index trigger zones to which
+								an interpolation ratio can be assigned. </p>
+
+							<p class="p">Valid range [-100.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e324 ">
+							<p class="p">(0, 220)</p>
+
+							<p class="p">(250, 999)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e315 ">Pre-flash LED WB Interpolation: 2nd level Trigger
+							(Valid Stat Cnt Ratio)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e318 ">Structure that defines second level trigger zones
+							bounded by start/end valid stat count ratio values. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e321 ">
+							<p class="p">Set up one or more stat count ratio trigger zones to
+								which an interpolation ratio can be assigned. </p>
+
+							<p class="p">Valid range [-100.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e324 ">Refer to Chromatix UI</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e315 ">Pre-flash LED WB Interpolation: Data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e318 ">Specifies the ratio to use for interpolation of the
+							preflash AWB decision with respect to lux index and valid stats count
+							ratio.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e321 ">
+							<p class="p">Assign a value to each trigger zone.</p>
+
+							<p class="p">Valid range [0.0, 9999.9]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e324 ">Refer to Chromatix UI</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="cej1508358677060__table_o1z_ydd_rbb" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Flash gain adjust tuning parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e518">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e521">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e524">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d5796e527">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e518 ">Flash Gain Adjust: 1st Trigger (Lux Index)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e521 ">Structure that defines first level trigger zones
+							bounded by start/end lux index values. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e524 ">
+							<p class="p">Set up one or more lux index trigger zones to which
+								a gain adjustment can be assigned. </p>
+
+							<p class="p">Valid range [-100.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e527 ">
+							<p class="p">(0, 220)</p>
+
+							<p class="p">(250, 999)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e518 ">Flash Gain Adjust: 2nd Trigger (CCT)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e521 ">Structure that defines second level trigger zones
+							bounded by start/end CCT values. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e524 ">
+							<p class="p">Set up one or more CCT trigger zones to which a gain
+								adjustment can be assigned. </p>
+
+							<p class="p">Valid range [-100.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e527 ">Refer to Chromatix UI</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e518 ">Flash Gain Adjust: 3rd Trigger (K2 Flash Sensitivity)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e521 ">Structure that defines third level trigger zones
+							bounded by start/end flash sensitivity values. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e524 ">
+							<p class="p">Set up one or more flash sensitivity trigger zones
+								to which a gain adjustment can be assigned. </p>
+
+							<p class="p">Valid range [-100.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e527 ">Refer to Chromatix UI</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e518 ">Flash Gain Adjust: Data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e521 ">Specifies the rg and bg gain adjustments needed to
+							compensate for differences in the influence of flash light induced by
+							ambient lights with different color temperatures. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e524 ">
+							<p class="p">Assign an rg, bg gain value to each trigger
+								zone.</p>
+
+							<p class="p">Valid range [0.0, 15000.0]</p>
+
+						</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5796e527 ">Refer to Chromatix UI</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qej1508358564206.html" title="LED flash concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LED flash concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

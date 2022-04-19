@@ -1,0 +1,87 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Motion compensated temporal filter (MCTF) futher reduces noise in images. Tune ANR and TF and load presets as needed. On the Pipeline tab, click TF and then click a region in the Regions group. Click ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune MCTF" /><meta name="abstract" content="Motion compensated temporal filter (MCTF) futher reduces noise in images." /><meta name="description" content="Motion compensated temporal filter (MCTF) futher reduces noise in images." /><meta name="DC.Relation" scheme="URI" content="ych1523569278173.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="oil1523569302618" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune MCTF</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="oil1523569302618">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="ych1523569278173.html" title="Motion compensated temporal filter (MCTF) futher reduces noise in images.">MCTF tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="ych1523569278173.html" title="Motion compensated temporal filter (MCTF) futher reduces noise in images."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">MCTF tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune MCTF</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Motion compensated temporal filter (MCTF) futher reduces noise in
+		images.</p>
+
+		<div class="section prereq p" id="oil1523569302618__prereq_N10014_N10011_N10001">Tune ANR and TF and load presets as
+			needed.</div>
+
+		<div class="section context" id="oil1523569302618__context_N10018_N10011_N10001"></div>
+
+		<ol class="ol steps"><li class="li step stepexpand" id="oil1523569302618__step_N1001F_N1001C_N10011_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab, click
+						<span class="ph uicontrol">TF</span> and then click a region in the Regions
+					group.</span>
+			</li>
+<li class="li step stepexpand" id="oil1523569302618__step_N1002B_N1001C_N10011_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load MCC Images</span> and load at least
+					20 MCC images.</span>
+			</li>
+<li class="li step stepexpand" id="oil1523569302618__step_N1004C_N10027_N10019_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load Flat Image</span> and load at least
+					20 flat images.</span>
+			</li>
+<li class="li step stepexpand" id="oil1523569302618__step_N1005B_N10027_N10019_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Base Functions</span> and tune after the
+					20th frame from DC64 to DC4 (Full pass is not used for MCTF).</span>
+				<ol type="a" class="ol substeps" id="oil1523569302618__substeps_ysn_mf2_mdb">
+					<li class="li substep">
+						<span class="ph cmd">Set the thresholds (Ytrsh, Utrsh, and Vtrsh) to be smaller than the SAD
+							of POIs for moving objects.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Set the thresholds (Ytrsh, Utrsh, and Vtrsh) to be larger than the SAD
+							of POIs for stationary objects.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Save</span> to apply all changes.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="oil1523569302618__step_N1008B_N10027_N10019_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Blend Factor</span>.</span>
+				<ol type="a" class="ol substeps" id="oil1523569302618__substeps_as2_wf2_mdb">
+					<li class="li substep">
+						<span class="ph cmd">Set a2 to make moving and stationary objects have a similar noise
+							level.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Set a2 according to the filter strength (FS) (e.g., if FS is high, set
+							a2 as high).</span>
+					</li>
+
+				</ol>
+
+				<div class="itemgroup info">
+					<div class="fig fignone" id="oil1523569302618__fig_p2g_f2k_mdb"><span class="figcap">Figure : Blending factors of MCTF</span>
+						
+						<br /><img class="image" id="oil1523569302618__image_kqs_22k_mdb" src="hxk1523642094815.svg" /><br />
+					</div>
+
+				</div>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="ych1523569278173.html" title="Motion compensated temporal filter (MCTF) futher reduces noise in images."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">MCTF tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

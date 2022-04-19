@@ -1,0 +1,85 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Touch AEC modifies the luma metering weight based on the specific region touched on the preview display screen. In the Parameter Editor , navigate to 3A &gt; AEC &gt; Touch &gt; Touch Mtr . To enable Touch ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune touch AEC" /><meta name="DC.Relation" scheme="URI" content="mkw1495661038118.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nwl1474864612520" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune touch AEC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nwl1474864612520">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a> / <a class="navheader_parent_path" href="mkw1495661038118.html" title="Touch AEC">Touch AEC</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="mkw1495661038118.html" title="Touch AEC"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Touch AEC</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune touch AEC</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="nwl1474864612520__context_N10011_N1000E_N10001"><p class="p">Touch AEC modifies the luma metering weight based on the specific region touched on the preview
+            display screen. </p>
+</div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="nwl1474864612520__step_N1001B_N10018_N1000E_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+               navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Touch</span> &gt; <span class="ph uicontrol">Touch Mtr</span></span>.</span>
+         </li>
+<li class="li step stepexpand" id="nwl1474864612520__step_N10047_N10020_N10014_N10001">
+            <span class="ph cmd">To enable Touch ROI, select the <span class="ph uicontrol">Value</span> check box next to
+                  <span class="ph uicontrol">Enable Touch ROI</span>.</span>
+         </li>
+<li class="li step stepexpand" id="nwl1474864612520__step_N1004D_N10018_N1000E_N10001">
+            <span class="ph cmd">For <span class="ph uicontrol">Weight Touch ROI</span>, enter a weight value
+               between 0 and 1. The metering weight determines the effect that the touch area has on
+               the overall frame luma. Enter a higher value to apply more weight on the touch
+               region. </span>
+            <div class="itemgroup info">
+               <ul class="ul" id="nwl1474864612520__ul_sxr_s35_kx">
+                  <li class="li">0 − No influence from selected touch UI area</li>
+
+                  <li class="li">1 − Spot meter on the selected UI area</li>
+
+                  <li class="li">0.5 − Both the selected touch are and full frame FOV are
+                     averaged</li>
+
+                  <li class="li">The default value for touch Weight is 0.8.</li>
+
+               </ul>
+
+            </div>
+         </li>
+<li class="li step stepexpand" id="nwl1474864612520__step_N1007F_N10018_N1000E_N10001">
+            <span class="ph cmd">Verify touch AEC tuning by pointing the camera to a chart similar
+               to the following image and tapping the touchscreen. Repeat for all four corners and
+               the center rectangle.<br /><img class="image" src="nfw1495660919370.png" /><br /></span>
+         </li>
+<li class="li step stepexpand" id="nwl1474864612520__step_N10095_N10020_N10014_N10001">
+            <span class="ph cmd">To enable dynamic ROI AEC tuning, select the <span class="ph uicontrol">Value</span> check box
+               next to <span class="ph uicontrol">Enable Touch ROI Hist Adj</span>.</span>
+            <ul class="ul choices" id="nwl1474864612520__choices_icy_pxh_v1b">
+               <li class="li choice">Dark ROI hist adjustments</li>
+
+               <li class="li choice">Bright ROI hist adjustments</li>
+
+            </ul>
+
+            <ol type="a" class="ol substeps" id="nwl1474864612520__substeps_t2b_txh_v1b">
+               <li class="li substep">
+                  <span class="ph cmd">For brighter ROI to be darker, increase the end value for
+                        <span class="keyword parmname">darkLumaRatioRange</span>. For dark ROI to remain dark,
+                     decrease the start value for <span class="keyword parmname">darkLumaRatioRange</span>.</span>
+               </li>
+
+               <li class="li substep">
+                  <span class="ph cmd">For brighter ROI to remain bright, increase the end value for
+                        <span class="keyword parmname">brightLumaRatioRange</span>. For darker ROI to be brighter,
+                     decrease the value for <span class="keyword parmname">brightLumaRatioRange</span></span>
+               </li>
+
+            </ol>
+
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="mkw1495661038118.html" title="Touch AEC"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Touch AEC</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

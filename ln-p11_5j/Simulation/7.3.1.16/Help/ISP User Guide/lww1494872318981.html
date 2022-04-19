@@ -1,0 +1,69 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Based on the size and quality of the camera lens, the center of an image may appear brighter than the corner regions. Lens rolloff tuning corrects brightness attenuation and nonuniform color shading ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune LSC" /><meta name="abstract" content="Based on the size and quality of the camera lens, the center of an image may appear brighter than the corner regions. Lens rolloff tuning corrects brightness attenuation and nonuniform color shading (tint)." /><meta name="description" content="Based on the size and quality of the camera lens, the center of an image may appear brighter than the corner regions. Lens rolloff tuning corrects brightness attenuation and nonuniform color shading (tint)." /><meta name="DC.Relation" scheme="URI" content="lhi1494872401333.html" /><meta name="DC.Relation" scheme="URI" content="lhi1494872401333.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="bgp1476472969626" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune LSC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="bgp1476472969626">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="lhi1494872401333.html" title="LSC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LSC tuning concepts</span></a></span>  
+<span class="navparent"><a class="link" href="lhi1494872401333.html" title="LSC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LSC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune LSC</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Based on the size and quality of the camera lens, the center of an image
+		may appear brighter than the corner regions. Lens rolloff tuning corrects brightness
+		attenuation and nonuniform color shading (tint). </p>
+
+		<div class="section prereq p" id="bgp1476472969626__prereq_N10015_N10012_N10001">
+			<p class="p">Before tuning the LSC module, determine how many lighting regions you
+				need to define and create them in the Parameter Editor. </p>
+
+		</div>
+
+		<ol class="ol steps" id="bgp1476472969626__steps_A0A6C737DD3C49B084473EDA1AA0EF55"><li class="li step stepexpand" id="bgp1476472969626__step_7ECFB46E67A04838A9239B5A4CD2C4C2">
+				<span class="ph cmd"> On the <span class="ph uicontrol">Pipeline</span> tab,
+					click <span class="ph uicontrol">LSC</span> and then click a region in the
+					Regions group.</span>
+				<div class="itemgroup info">
+					<div class="note note" id="bgp1476472969626__note_N10045_N10042_N1002A_N10015_N10012_N10001"><span class="notetitle">Note:</span>  Tintless correction is enabled by default. To disable tintless
+						correction, go to the Parameter Editor and navigate to <span class="ph menucascade"><span class="ph uicontrol">SW_CONTROL</span> &gt; <span class="ph uicontrol">Tintless 20 Sw</span> &gt; <span class="ph uicontrol">Enable Section</span> &gt; <span class="ph uicontrol">Tintless En</span></span>, and enter a value of 0 to disable this parameter. Low light
+						and normal light conditions use the same set of images. Different percentage
+						correction values are applied to the two different lighting conditions to
+						generate LSC compensation tables. </div>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="bgp1476472969626__step_A6B5C65B50E14801A2B47DC7A8ECEEA1">
+				<span class="ph cmd">In the <span class="keyword wintitle">LSC</span> section, click
+						<span class="ph uicontrol">Load Image</span> and select a rolloff raw
+					image. Click <span class="ph uicontrol">Open</span>. </span>
+			</li>
+<li class="li step stepexpand" id="bgp1476472969626__step_098798ED058C459AB5E23BC89CC2C7B4">
+				<span class="ph cmd">Use the <span class="ph uicontrol">Radius</span>
+					percentage slider to adjust the area (from the center of the image) to be
+					corrected. Use the <span class="ph uicontrol">Correction</span> percentage
+					slider to adjust the amount of correction to apply. Click <span class="ph uicontrol">Optimize</span>. </span>
+			</li>
+<li class="li step stepexpand" id="bgp1476472969626__step_N1008E_N10017_N10014_N10001">
+				<span class="ph cmd"> Continue to apply additional radius percentage and correction
+					percentage settings until the updated rolloff curve achieves a more flattened
+					appearance. </span>
+			</li>
+<li class="li step stepexpand" id="bgp1476472969626__step_5ABCF1C97E4C4D58AFEBE9C0682BE464">
+				<span class="ph cmd">Repeat this procedure for the remaining regions. </span>
+			</li>
+<li class="li step stepexpand" id="bgp1476472969626__step_170649B2C97F472285122E9AA41C2B89">
+				<span class="ph cmd">When complete, click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to preserve the tuned LSC settings. </span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="lhi1494872401333.html" title="LSC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LSC tuning concepts</span></a></span>  
+<span class="navparent"><a class="link" href="lhi1494872401333.html" title="LSC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LSC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

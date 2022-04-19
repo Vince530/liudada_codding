@@ -1,0 +1,923 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The default values for the TOF parameters are suitable for most situations but may require adjustments in some use cases to achieve your specific objectives. The following table lists the TOF ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="TOF parameters" /><meta name="DC.Relation" scheme="URI" content="ugv1495661081237.html" /><meta name="DC.Relation" scheme="URI" content="mky1495661069474.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="agm1477085282287" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>TOF parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="landscape" id="agm1477085282287">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">TOF parameters</h1>
+
+   <div class="body conbody">
+      <div class="p">The default values for the TOF parameters are suitable for most situations
+         but may require adjustments in some use cases to achieve your specific objectives. The
+         following table lists the TOF parameters that are commonly adjusted. The table also
+         identifies if the parameter affects AF speed, accuracy, or user experience. The list is not
+         exhaustive. The parameters are listed in the sequence in which they appear in the header.
+         Parameters that are not normally updated are not included in the table.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="agm1477085282287__ID-table-00000014" class="table landscape" frame="border" border="1" rules="all"><colgroup><col style="width:1.875in" /><col style="width:2.438in" /><col style="width:2.813in" /><col style="width:0.813in" /><col style="width:0.813in" /><col style="width:1.188in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d16910e37">Parameter
+                        names</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d16910e40">Description</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d16910e43">Tuning</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d16910e46">Default values</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d16910e49">Required or
+                        optional</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d16910e53">Affect
+                        (accuracy/speed/&#8232;user experience)</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">lens_laser_dist_comp_mm</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_lrn_nx5_sx">
+                           <li class="li">Physical displacement in millimeters between the
+                              camera lens and the laser sensor.</li>
+
+                           <li class="li">Distance between lens module and laser sensor has to
+                              be close enough or parallel to get the accurate mapping of range and
+                              lens position.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">Not used in software,
+                        no need to tune.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">0</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e49 ">Optional</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Search
+                        accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">jump_to_start_limit</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_mrn_nx5_sx">
+                           <li class="li">The largest allowed lens position jump when the lens
+                              moves towards the calculated lens position as part of the focus
+                              converge process.</li>
+
+                           <li class="li">Used in bright light conditions.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_nrn_nx5_sx">
+                           <li class="li">A higher value moves the lens in fewer frames but the
+                              preview might have jumpy lens movement.</li>
+
+                           <li class="li">A smaller value gives a smoother lens movement, but
+                              consumes more frames and results in more latency.<p class="p">Range [0, 300]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">50</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">User
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">tof_step_size</span></td>
+
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d16910e40 ">Used for
+                        fine search range determination in bright light conditions.</td>
+
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_orn_nx5_sx">
+                           <li class="li">The larger the more accurate.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">20</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="4" style="text-align:left;vertical-align:top;" headers="d16910e43 d16910e46 d16910e49 d16910e53 ">
+                        <ul class="ul" id="agm1477085282287__ul_prn_nx5_sx">
+                           <li class="li">Recommend tuning<span class="keyword cmdname">
+                                 num_near_steps</span> and<span class="keyword cmdname">
+                                 num_far_steps</span> instead of this parameter and keep this
+                              parameter the same as the contrast AF result.</li>
+
+                           <li class="li">Set the value to
+                              finescan_normal_light[5]*step_index_per_um, where
+                              finescan_normal_light[5] and step_index_per_um are from the single AF
+                              tuning parameters.</li>
+
+                           <li class="li">Test the TOF performance for a close object. If the
+                              accuracy is not good enough, increase the <span class="keyword cmdname">tof_step_size</span> until reasonable accuracy is achieved. Use
+                              a trial-and-error method.<p class="p">Range [0, 50]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">normal_light_cnt</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_qrn_nx5_sx">
+                           <li class="li">Used for scene change detection in normal light
+                              conditions.</li>
+
+                           <li class="li">Use AE to judge normal light</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <p class="p">The larger, the less sensitive of scene change.</p>
+
+                        <p class="p">Range [0, 10]</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Trigger speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">lowlight_cnt</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_rrn_nx5_sx">
+                           <li class="li">Used for scene change detection in low light
+                              conditions</li>
+
+                           <li class="li">Use AE to judge low light</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <p class="p">The larger, the less sensitive of scene change.</p>
+
+                        <p class="p">Range [0, 10]</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Trigger speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">num_monitor_samples</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_srn_nx5_sx">
+                           <li class="li">The number of frames to monitor in scene change
+                              detection.</li>
+
+                           <li class="li">Scene change detection uses the average of the
+                              distance across the last num_monitor_samples frames.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_trn_nx5_sx">
+                           <li class="li">With a large number, more frames are included in the
+                              average making the scene change less sensitive.</li>
+
+                           <li class="li">A small number makes scene change quicker, but more
+                              susceptible to noise.<p class="p">Range [0, 10]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">5</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Trigger speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">scene_change_distance_thres</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_urn_nx5_sx">
+                           <li class="li">Distance (mm) difference to treat as a scene change
+                              for each <span class="keyword cmdname">distance_region</span></li>
+
+                           <li class="li">If the average distance is more than the threshold,
+                              then it is considered a scene change.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_vrn_nx5_sx">
+                           <li class="li">The larger this value, the less sensitive to scene
+                              change.</li>
+
+                           <li class="li">Use a smaller threshold for near distance regions and
+                              use a slightly higher threshold for far distance regions.<p class="p">Range [0, 200]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">{20, 40, 60, 80,
+                        100}</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Trigger speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">scene_change_distance_standard_dev_thres</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_wrn_nx5_sx">
+                           <li class="li">Standard deviation of the distance across <span class="keyword cmdname">num_monitor_samples.</span></li>
+
+                           <li class="li">Use this parameter to reduce the noise or false
+                              distance reported by the laser sensor.</li>
+
+                           <li class="li">Calculate the standard deviation on the distance
+                              reported by the sensor over the last <span class="keyword cmdname">num_monitor_samples</span> frames.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_xrn_nx5_sx">
+                           <li class="li">Scene change is less sensitive with a lower value
+                              and more sensitive with a higher value.</li>
+
+                           <li class="li">The larger the number the quicker to trigger.<p class="p">Range [0, 100]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">30</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Trigger
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">far_scene_coarse_srch_enable</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_yrn_nx5_sx">
+                           <li class="li">Indicates if fine search or coarse search is used
+                              for a far object &#8232;(&gt; 60 cm).</li>
+
+                           <li class="li">When enabled, AF falls back to contrast AF when the
+                              laser sensor cannot detect distance (e.g., when the distance reported
+                              by the sensor is the maximum).</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">0 – disable, 1 -
+                        enable</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">0</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Optional</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">User experience and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">enable</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">enable or disable
+                        TOF</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <p class="p">If camera has TOF sensor, enable it; otherwise
+                           disable.</p>
+
+                        <p class="p">Range [0, 1]</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">0</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Depending on
+                        hardware</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">outdoor_lux_idx</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_zrn_nx5_sx">
+                           <li class="li">Threshold for switching from TOF AF to contrast AF
+                              when the TOF algorithm is not confident</li>
+
+                           <li class="li">If the exposure index reported by AEC is less than
+                              this threshold, then<span class="keyword cmdname"> </span>the algorithm
+                              switches to contrast AF.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <p class="p">Check the Chromatix header to know the exact lux index
+                           threshold for bright light or outdoor light conditions.</p>
+
+                        <p class="p">Range [0, 500]</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">183</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="6" style="text-align:center;vertical-align:top;" headers="d16910e37 d16910e40 d16910e43 d16910e46 d16910e49 d16910e53 ">The following parameters are in the Reserved section of the TOF
+                        portion of the header.</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">actuator_hysteresis_</span>&#8232;<span class="keyword cmdname">comp</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_asn_nx5_sx">
+                           <li class="li">Provides for consistent VCM hysteresis compensation. </li>
+
+                           <li class="li">This parameter compensates for VCM hysteresis from
+                              infinity to macro and from macro to infinity.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">Not used in
+                        software, no need to tune.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">0</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Optional</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Search
+                        accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">actuator_shift_comp</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">Lens position
+                        default shift applied after converting object distance </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">Not used in
+                        software, no need to tune.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 "> </td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 "> </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 "> </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">sensitivity</span></td>
+
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_bsn_nx5_sx">
+                           <li class="li">Sensitivity of the lens module.</li>
+
+                           <li class="li">Microns shift per DAC (µm/DAC).</li>
+
+                           <li class="li">The module vendor provides this value.<p class="p">Note: Sensitivity should be above zero.</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <p class="p">This parameter is the initial basic tuning value and is
+                           a constant. However, if the sensitivity provided by the vendor does not
+                           exactly match the distance-to-lens position mapping, tune the parameter
+                           as follows:</p>
+
+                        <ol class="ol" id="agm1477085282287__ol_csn_nx5_sx">
+                           <li class="li">Place the device at 20 cm from the ISO chart under
+                              bright light conditions (500 lx).</li>
+
+                        </ol>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">0.6</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="4" style="text-align:left;vertical-align:top;" headers="d16910e43 d16910e46 d16910e49 d16910e53 ">
+                        <ol class="ol" id="agm1477085282287__ol_dsn_nx5_sx">
+                           <li class="li">Run the full-sweep algorithm and record the <span class="keyword cmdname">max_pos</span>, call it X1.</li>
+
+                           <li class="li">Enable TOF AF and look for <span class="keyword cmdname">af_tof_set_data: Calculated_lens position</span> to find the
+                              lens position for 20 cm. Call this position X2.</li>
+
+                           <li class="li">X1 should match or be close to X2. If there is a
+                              large difference and X2 &gt; X1, increase the sensitivity. If X2 &lt;
+                              X1, decrease the sensitivity. Repeat these steps until you see a small
+                              difference between X1 and X2.</li>
+
+                           <li class="li">For better accuracy, repeat this procedure at
+                              different distances (e.g., 30 cm or 40 cm).<p class="p">Range
+                                 [0, 5]</p>
+</li>
+
+                        </ol>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">distance_region</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_esn_nx5_sx">
+                           <li class="li">Use this parameter to divide distance (mm) into five
+                              regions.</li>
+
+                           <li class="li">Each region is associated with its own <span class="keyword cmdname">scene_change_distance_thres</span></li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_fsn_nx5_sx">
+                           <li class="li">Keep the default values unless a change is
+                              required.</li>
+
+                           <li class="li">The larger, the less sensitive of scene change.<p class="p">Range [0, 765]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">{70, 200, 350, 500,
+                        765}</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Optional</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">far_converge_point</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">When the device pans
+                        and focuses from a far object to another far object, the lens resets to
+                           <span class="keyword cmdname">far_converge_point</span> and starts the AF
+                        search from this point towards the macro direction. The lens does this
+                        because TOF has a limitation of detecting objects up to 60 cm. TOF is not
+                        confident beyond 60 cm. So, if the object in the previous search was beyond
+                        60 cm, the lens resets to the <span class="keyword cmdname">far_converge_point</span> and starts to search in the macro
+                        direction. This is true even if the object in the current search is also
+                        beyond 60 cm.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_gsn_nx5_sx">
+                           <li class="li">The value of this parameter is set to the hyperfocal
+                              position.</li>
+
+                           <li class="li">Tune the hyperfocal position value such there is no
+                              defocus when focusing on far objects.<p class="p">Range [0, far
+                                 end]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">Hyperfocal
+                        position</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">far_distance_fine_</span>&#8232;<span class="keyword cmdname">step_size</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_hsn_nx5_sx">
+                           <li class="li">Use this step size when the distance of the object
+                              is more than 60 cm.</li>
+
+                           <li class="li">This parameter facilitates smoother lens
+                              movement.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_isn_nx5_sx">
+                           <li class="li">Ideally the value is between <span class="keyword cmdname">tof_step_size</span> and <span class="keyword cmdname">tof_step_size</span>/2.</li>
+
+                           <li class="li">The larger the value the more jumpy the
+                              preview.</li>
+
+                           <li class="li">Use a smaller step for smoother movement.<p class="p">Range [0, 100]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">4</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">far_distance_unstable_cnt_factor</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_jsn_nx5_sx">
+                           <li class="li">Trigger for far distance (&gt; 60 cm).</li>
+
+                           <li class="li"> Number of frames to wait.</li>
+
+                           <li class="li">In bright light, the <span class="keyword cmdname">normal_light_cnt</span> is divided by this parameter.</li>
+
+                           <li class="li">In low light, the <span class="keyword cmdname">lowlight_cnt </span>is divided by this parameter.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_ksn_nx5_sx">
+                           <li class="li">The higher the value the more sensitive the scene
+                              change is for far distances.</li>
+
+                           <li class="li">The smaller the value the less sensitive the scene
+                              change for far distances.<p class="p">Range: [1, 3]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">2</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">jump_to_start_limit_</span>&#8232;<span class="keyword cmdname">low_light</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_lsn_nx5_sx">
+                           <li class="li">The largest allowed lens position jump when the lens
+                              moves towards the calculated lens position as part of the focus
+                              converge process.</li>
+
+                           <li class="li">Used in low light conditions.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_msn_nx5_sx">
+                           <li class="li">A higher value moves the lens in fewer frames (i.e.,
+                              faster), but the preview might have jumpy lens movement.</li>
+
+                           <li class="li">A smaller value gives a smoother lens movement, but
+                              consumes more frames and results in more latency.</li>
+
+                           <li class="li">Normally set higher than<span class="keyword cmdname">
+                                 jump_to_start_limit</span> because the frame rate is low in low
+                                 light.<p class="p">Range [0, 300]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">50</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">User
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">tof_step_size_low_</span>&#8232;<span class="keyword cmdname">light</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">Used for fine search
+                        range determination in low light conditions.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <p class="p">The smaller the better the accuracy, but AF speed is
+                           compromised. Recommend that you to <span class="keyword cmdname">num_near_steps</span> and <span class="keyword cmdname">num_far_steps</span> but keep this the same as contrast AF
+                           result.</p>
+
+                        <p class="p">Range [0, 50]</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">Finescan_low_light[5]* step_index_per_um</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">num_near_steps_near_</span>&#8232;<span class="keyword cmdname">direction</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_nsn_nx5_sx">
+                           <li class="li">This parameter is used to decide the converge point
+                              and the start of the fine search when the direction of the lens
+                              movement is towards the near end.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_osn_nx5_sx">
+                           <li class="li">The larger, the more accurate in fine search (less
+                              likely that the real lens position is outside the range) however,
+                              speed is affected.</li>
+
+                           <li class="li">A small number causes a later coarse search exit,
+                              but can result in a focus miss and an overshooting of the lens.<p class="p">Range [0, 10]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Search accuracy and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">num_far_steps_near_</span>&#8232;<span class="keyword cmdname">direction</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_psn_nx5_sx">
+                           <li class="li">This parameter is used to decide the endpoint of the
+                              fine search when the direction of the lens movement is towards the
+                              near end.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_qsn_nx5_sx">
+                           <li class="li">A large number causes the fine search range to be
+                              bigger resulting in increased latency. A small number results in a
+                              smaller fine search range.</li>
+
+                           <li class="li">Ideally it is good to have a large number for
+                                 <span class="keyword cmdname">num_near_steps_near_direction</span>
+                              and a smaller number for <span class="keyword cmdname">num_far_steps_near_direction</span> because it is good to exit
+                              convergence early and start fine search to reduce focus miss and
+                                 overshooting.<p class="p">Range [0, 10]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Search accuracy and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">num_near_steps_far_</span>&#8232;<span class="keyword cmdname">direction</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_rsn_nx5_sx">
+                           <li class="li">This parameter is used to decide the converge point
+                              and the start of the fine search when the direction of the lens
+                              movement is towards the far end.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_ssn_nx5_sx">
+                           <li class="li">A large number causes the focus convergence to exit
+                              early and move to fine search resulting in increased accuracy but also
+                              increased latency.</li>
+
+                           <li class="li">A small number causes a later convergence exit, but
+                              can result in focus miss and an overshooting of the lens.<p class="p">Range [0, 10]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Search accuracy and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">num_far_steps_far_</span>&#8232;<span class="keyword cmdname">direction</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">
+                        <ul class="ul" id="agm1477085282287__ul_tsn_nx5_sx">
+                           <li class="li">This parameter is used to decide the end of the fine
+                              search when the direction of the lens movement is towards the far
+                              end.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_usn_nx5_sx">
+                           <li class="li">A large number causes the search range to be bigger
+                              resulting in increased accuracy but also increased latency.</li>
+
+                           <li class="li">A small number results in a smaller search
+                              range.</li>
+
+                           <li class="li">Ideally it is good to have a large number for
+                                 <span class="keyword cmdname">num_near_steps_near_direction</span>
+                              and smaller number for <span class="keyword cmdname">num_far_steps_far_direction</span> because it is good to exit
+                              convergence early and start fine search to reduce focus miss and
+                                 overshooting.<p class="p">Range [0, 10]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Search accuracy and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e37 "><span class="keyword cmdname">start_pos_for_tof</span></td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e40 ">Starting position of
+                        the lens during camera launch.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e43 ">
+                        <ul class="ul" id="agm1477085282287__ul_vsn_nx5_sx">
+                           <li class="li">Must be in the middle of the DAC range.</li>
+
+                           <li class="li">Use the value of <span class="keyword cmdname">single_20cm_idx</span> from single AF tuning to give the best
+                              latency for AF during camera launch.<p class="p">Range [near
+                                 end, far end]</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e46 ">80</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d16910e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d16910e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+</div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="ugv1495661081237.html" title="TOF monitor">TOF monitor</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="mky1495661069474.html" title="TOF fine search">TOF fine search</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

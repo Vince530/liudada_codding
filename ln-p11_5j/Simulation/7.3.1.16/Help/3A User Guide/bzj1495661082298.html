@@ -1,0 +1,232 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The Parameter Editor has startup parameters that can be adjusted to achieve the fastest startup AEC convergence speed when the camera starts from the device UI. Parameter Description Tuning First ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AEC camera startup parameters" /><meta name="DC.Relation" scheme="URI" content="lqj1495660918778.html" /><meta name="DC.Relation" scheme="URI" content="yca1495661011177.html" /><meta name="DC.Relation" scheme="URI" content="nyw1501783404022.html" /><meta name="DC.Relation" scheme="URI" content="ecs1501798138929.html" /><meta name="DC.Relation" scheme="URI" content="yca1495661011177.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="asc1474864612270" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AEC camera startup parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="asc1474864612270">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">AEC camera startup parameters</h1>
+
+   <div class="body conbody">
+      <p class="p">The Parameter Editor has startup parameters that can be adjusted to achieve
+         the fastest startup AEC convergence speed when the camera starts from the device UI. </p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="asc1474864612270__ID-table-00000021" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.9in" /><col style="width:3.205in" /><col style="width:1.3in" /><col /></colgroup><thead class="thead" style="text-align:left;">
+               <tr class="row">
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d5107e37">Parameter</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d5107e40">Description</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d5107e43">Tuning</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr class="row">
+                  <td class="entry cellrowborder" colspan="3" style="text-align:left;vertical-align:top;" headers="d5107e37 d5107e40 d5107e43 ">First
+                     frame</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">firstFrameStepSizeDarkMax </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Increase this to allow a larger
+                     step size when converging from dark to bright. A larger value may cause
+                     overshoot.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [0, 200]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">maxAdjFactor </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">When converging from bright to
+                     dark, set this factor to boost the adjustment step size for the first frame. A
+                     larger value will converge faster, but may overshoot.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [1.5, 3.0]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">stepSizeBrightAdjRange </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Set this range to
+                     control when to apply maxAdjFactor. Set a lower value to apply the factor only
+                     when AEC is close to the target. Below the specified range, a factor of 1.0 is
+                     applied; above this range, maxAdjFactor is applied. In between this range, a
+                     linear interpolation within [1.0, maxAdjFactor] is applied. </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [20, 80]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" colspan="3" style="text-align:left;vertical-align:top;" headers="d5107e37 d5107e40 d5107e43 ">Convergence</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">tolMultUnitStepSize </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Similar to regular convergence
+                     tuning parameter, where increasing this parameter causes leniency on when the
+                     exposure is within an acceptable range.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [2, 6]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">frameSkipInit </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Set this to a positive value to
+                     skip frames before starting to converge.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [0, 4]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">frameSkip </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Set this value to the system delay
+                     between setting an exposure and receiving matching stats (typically, two frames
+                     are skipped).</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [2, 3]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">minSettledCount </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Increase this parameter value to
+                     make AEC wait longer before declaring itself <em class="ph i">settled</em>.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [3, 5]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">maxFrameConvTimeOut </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Decrease this parameter value to
+                     give less time for AEC to converge, taking the risk that AEC may not complete
+                     converging.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [10, 50]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" colspan="3" style="text-align:left;vertical-align:top;" headers="d5107e37 d5107e40 d5107e43 ">Arbitration</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">expTableIDAggressive </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Set to the exposure table index for
+                     aggressive AEC.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: all</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">expTableIDFastAEC </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">Set to the exposure table index for
+                     fast AEC.</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: all</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" colspan="3" style="text-align:left;vertical-align:top;" headers="d5107e37 d5107e40 d5107e43 ">Generic</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">startExpIndex</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">
+                     <ul class="ul" id="asc1474864612270__ul_h42_rtr_t1b">
+                        <li class="li">AEC exposure index when camera starts from device
+                           UI.</li>
+
+                        <li class="li">When this parameter has a higher value, the AEC is
+                           biased toward a darker environment, such as indoor and lowlight. </li>
+
+                        <li class="li">When this parameter has a lower value, the AEC is biased
+                           toward a brighter environment such as outdoor.</li>
+
+                        <li class="li">Usually a bright glitch is more annoying than a dark
+                           glitch. Therefore, it is recommended to keep this value lower, between
+                           150 and 250.</li>
+
+                     </ul>
+
+                  </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [0, 500]</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e37 ">startUpAggressiveness</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e40 ">
+                     <ul class="ul">
+                        <li class="li">Use this parameter to override the speed for AEC
+                           convergence at startup.</li>
+
+                        <li class="li">The value must not exceed 1 to avoid over/under shoot
+                           issues at startup. </li>
+
+                        <li class="li">Increase this value if you want AEC to converge faster
+                           at camera startup.</li>
+
+                        <li class="li">Decrease if overshoot/undershoot occurs at startup.</li>
+
+                     </ul>
+
+                  </td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d5107e43 ">Range: [0, 1]</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="yca1495661011177.html">Tune generic startup parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="nyw1501783404022.html">Tune fast or aggressive AEC parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="ecs1501798138929.html">Tune warm startup</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="yca1495661011177.html" title="Tune generic startup parameters">Tune generic startup parameters</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

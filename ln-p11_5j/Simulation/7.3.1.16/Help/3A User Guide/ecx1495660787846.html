@@ -1,0 +1,645 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The histogram AEC luma target adjustment feature modifies the luma target based on histogram analysis. Standard AEC tuning features primarily work by changing the luma calculation. This can result in ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune histogram AEC luma target" /><meta name="abstract" content="The histogram AEC luma target adjustment feature modifies the luma target based on histogram analysis." /><meta name="description" content="The histogram AEC luma target adjustment feature modifies the luma target based on histogram analysis." /><meta name="DC.Relation" scheme="URI" content="cyt1495661060161.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xuk1475193624960" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune histogram AEC luma target</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xuk1475193624960">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune histogram AEC luma target</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">The histogram AEC luma target adjustment feature modifies the luma
+		target based on histogram analysis. </p>
+
+		<div class="section context" id="xuk1475193624960__context_N10015_N10012_N10001">Standard AEC tuning features primarily
+			work by changing the luma calculation. This can result in stability issues if parameters
+			are overtuned (e.g., bright region, dark region). Tuning the luma target based on
+			histogram analysis results in better exposure for a variety of scenarios. Minimal tuning
+			is needed to achieve reasonable effects. Histogram AEC is not heavily tied to sensor
+			characteristics, so retuning is not necessary for different sensors. <div class="p">
+				The histogram AEC luma target feature can be effective in the following
+					situations:<ul class="ul" id="xuk1475193624960__ul_tkl_jng_lw">
+					<li class="li">Improves brightness compensation for a flat scene (e.g.,
+						white board). Histogram AEC can be used instead of the flat scene detection
+						feature.</li>
+
+					<li class="li">Increases brightness in certain low dynamic range scenes to improve
+						visibility in darker areas and overall contrast.<div class="fig fignone nonumber" id="xuk1475193624960__fig_ipy_42l_kcb"><span class="figcap">Figure : (L) Histogram metering applied; (R) Original
+								image</span>
+							
+							<br /><img class="image" id="xuk1475193624960__image_w4z_btg_lw" src="mmh1495661000584.png" /><br />
+						</div>
+<p class="p">The image on the left shows the histogram AEC
+							algorithm applied. The feature increases the exposure to fill the
+							histogram range, up to a cap, which improves contrast and dark area
+							visibility.</p>
+</li>
+
+					<li class="li">Prevents mild saturation in high dynamic range scenes that
+						have overexposed areas.</li>
+
+				</ul>
+</div>
+<p class="p">The histogram AEC feature is is tuned using the generic
+				multizone tuning guidelines. Default AEC triggers are initially tuned in a common
+				step and then copied over to histogram metering.</p>
+<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="xuk1475193624960__ID-table-00000019" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.603in" /><col style="width:3.147in" /><col style="width:0.813in" /><col style="width:0.844in" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d12378e66">Parameter</th>
+
+								<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d12378e69">Description</th>
+
+								<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d12378e72">Range</th>
+
+								<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d12378e75">Default</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_target_adjust_enable</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">Use this flag to
+									enable/disable the histogram metering feature.</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">
+									<p class="p">0 (disable)</p>
+
+									<p class="p">1 (enable)</p>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">0 (disabled)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">max_target_adjust_ratio</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_k2p_qxn_x1b">
+										<li class="li">The maximum adjustment that can be made
+											by the algorithm. This parameter is multizone
+											enabled.</li>
+
+										<li class="li">The ratio is computed as the maximum
+											luma target over the current luma target. For example,
+											if the current luma target is 40 (after lux
+											interpolation) and Max Adjust Ratio is 1.8, then max
+											luma target is 40*1.8 = 72</li>
+
+										<li class="li">For low light (Zone 2), it is possible
+											to allow positive target adjustment, but it is stongly
+											recommended not to by keeping this ratio set to
+											1.0.</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">1.0 to 2.0</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">1.0</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">min_target_adjust_ratio</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_l2p_qxn_x1b">
+										<li class="li">The minimum adjustment that can be made
+											by the algorithm. This parameter is multizone
+											enabled.</li>
+
+										<li class="li">The ratio is computed as the minimum
+											luma target over the current luma target. </li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">0.8 to 1.0</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">1.0</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">target_filter_factor</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_m2p_qxn_x1b">
+										<li class="li">Use this parameter as needed to control
+											the temporal filter on the adjusted luma target for
+											stability purposes.</li>
+
+										<li class="li">Increase the value for more stability
+											and decrease the value for more swift response. The
+											higher the value, the stronger the filtering, and the
+											more stable the transition during panning. The side
+											effect of high filtering is that convergence can be
+											slower in certain quick panning cases.</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">0 to 0.99</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">0.5</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_sat_pct (0x308
+									header)</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_n2p_qxn_x1b">
+										<li class="li">The percentage of pixels used to
+											calculate the saturation position. </li>
+
+										<li class="li">No tuning is required for this
+											parameter. Do not change this value unless you fully
+											understand the algorithm. The only benefit to tuning
+											this parameter is to improve stability by increasing
+											it.</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">0.1 to 0.2</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">0.15</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_sat_pushup_range (0x309 header) </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_w1v_rnd_px">
+										<li class="li">The saturated percentage range for
+											push-up compensation (flat/low dynamic range scenes),
+											such as when luma target is positively offset.</li>
+
+										<li class="li">It is recommended to use a bigger range
+											(e.g., 0 to 0.08) to keep AEC stable and avoid sudden
+											changes of brightness when panning in and out of a flat
+											scene. </li>
+
+										<li class="li">Allows specification from the top start
+											to top end percent of pixels. Allows for ignoring the
+											first start percent of pixels for the calculation. </li>
+
+										<li class="li">Allows for defining the range for each
+											R/G/B channel in triggered brightness. zones. </li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 "> </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">0.02 (start) <p class="p">0.08
+										(end)</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_sat_pushdown_range (0x309 header) </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_sjc_b4d_px">
+										<li class="li">The saturated percentage range for
+											push-down compensation (saturation prevention), such as
+											when luma target is negatively offset. </li>
+
+										<li class="li">It is recommended to use a smaller
+											range (e.g., 0.01 to 0.03) to allow AEC to effectively
+											respond to small saturation within the scene. Starting
+											from a value larger than 0 also allows AEC to ignore the
+											first few saturated pixels. </li>
+
+										<li class="li">Allows specification from the top start
+											to top end percent of pixels. Allows for ignoring the
+											first Start percent of pixels for the calculation. </li>
+
+										<li class="li">Allows for defining the range for each
+											R/G/B channel in triggered brightness zones. </li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 "> </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">0.01 (start) <p class="p">0.04 (end)
+									</p>
+</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_dark_pct (0x308
+									header)</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_o2p_qxn_x1b">
+										<li class="li">The percentage of pixels used to
+											calculate the darkness position.</li>
+
+										<li class="li">No tuning is required for this
+											parameter. Do not change this value unless you fully
+											understand the algorithm. The only benefit to tuning
+											this parameter is to improve stability by increasing
+											it.</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">0.1 to 0.3</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">0.15</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_dark_range (0x309 header) </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_it4_h4d_px">
+										<li class="li">The start and end percentage of pixels
+											used to calculate the darkness position. </li>
+
+										<li class="li">Allows for setting the start/end range
+											for each R/G/B channel in triggered brightness zones. </li>
+
+										<li class="li">No tuning is required for this
+											parameter. Do not change this value unless you fully
+											understand the algorithm. </li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 "> </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">0 (start) <p class="p">0.15 (end)
+									</p>
+</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">dark_end_control_enable (0x309
+									header)</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">Flag to enable/disable dark end control for
+									histogram AEC. Turning off dark end control can save
+									computational power.</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">
+									<p class="p">0 (disable)</p>
+
+									<p class="p">1 (enable)</p>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">0 (disabled)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_sat_low_ref</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_p2p_qxn_x1b">
+										<li class="li">The lower end of the control range for
+											the calculated saturation position. </li>
+
+										<li class="li">The higher the low reference point, the
+											more aggressively the algorithm pushes the luma target
+											up in flat scene and low dynamic range scenes.</li>
+
+										<li class="li">The algorithm attempts to adjust the
+											luma target so that the saturation position is within
+											the range specified. The reference points are in the
+											linear domain; consider the gamma effect that is applied
+											to these two parameters.</li>
+
+										<li class="li">The narrower the range between the low
+											and high reference points, the more likely that the luma
+											target is adjusted to shift the saturation
+											position.</li>
+
+										<li class="li">There is no guarantee that the
+											saturation position, after AEC converges, falls within
+											the specified range for all scenes because there are
+											other constraints, such as darkness control range and
+											the max/min target adjustment ratio.</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">120 to 230</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">200</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_sat_ligh_ref</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_q2p_qxn_x1b">
+										<li class="li">The higher end of the control range for
+											the calculated saturation position. </li>
+
+										<li class="li">The lower the high reference point, the
+											more aggressively the algorithm pushes the luma target
+											down for saturation prevention.</li>
+
+										<li class="li">The algorithm attempts to adjust the
+											luma target so that the saturation position is within
+											the range specified. The reference points are in the
+											linear domain; consider the gamma effect that is applied
+											to these two parameters.</li>
+
+										<li class="li">The narrower the range between the low
+											and high reference points, the more likely that the luma
+											target is adjusted to shift the saturation
+											position.</li>
+
+										<li class="li">There is no guarantee that the
+											saturation position, after AEC converges, falls within
+											the specified range for all scenes because there are
+											other constraints, such as darkness control range and
+											the max/min target adjustment ratio.</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">200 to 250</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">240</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_dark_low_ref</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_r2p_qxn_x1b">
+										<li class="li">The lower end of the control range for
+											the calculated darkness position.</li>
+
+										<li class="li">Only reduce this value if it is needed
+											to prevent saturation in a high dynamic range scene with
+											a lot of dark areas. In all other cases, do not change
+											this value.</li>
+
+										<li class="li">The algorithm attempts to adjust the
+											luma target so that the darkness position is within the
+											range specified. The reference points are in the linear
+											domain; consider the gamma effect that is applied to
+											these two parameters.</li>
+
+										<li class="li">This pair of points can have a much
+											larger range between them. If the range is too narrow,
+											there could be stability concerns. In addition, it is
+											generally not necessary to have very precise control of
+											the dark area percentage.</li>
+
+										<li class="li">There is no guarantee that the
+											saturation position, after AEC converges, falls within
+											the specified range for all scenes because there are
+											other constraints, such as saturation control range and
+											the max/min target adjustment ratio.</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">0 to 10</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">3</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e66 ">hist_dark_high_ref</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e69 ">
+									<ul class="ul" id="xuk1475193624960__ul_s2p_qxn_x1b">
+										<li class="li">The higher end of the control range for
+											the calculated darkness position.</li>
+
+										<li class="li">Only tune this value for flat scene
+											compensation. In a flat scene, if more compensation is
+											needed and the adjusted luma target has not reached the
+											max allowed, it is likely that you need to increase this
+											value to allow further increase of the luma target. Note
+											that the current default value is already tuned to
+											enable very reasonable compensation in flat scene
+											images.</li>
+
+										<li class="li">The algorithm attempts to adjust the
+											luma target so that the darkness position is within the
+											range specified. The reference points are in the linear
+											domain; consider the gamma effect that is applied to
+											these two parameters.</li>
+
+										<li class="li">This pair of points can have a much
+											larger range between them. If the range is too narrow,
+											there could be stability concerns. In addition, it is
+											generally not necessary to have very precise control of
+											the dark area percentage.</li>
+
+										<li class="li">There is no guarantee that the
+											saturation position, after AEC converges, falls within
+											the specified range for all scenes because there are
+											other constraints, such as saturation control range and
+											the max/min target adjustment ratio.</li>
+
+									</ul>
+
+								</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e72 ">30 to 100</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e75 ">70</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+</div>
+
+		<ol class="ol steps" id="xuk1475193624960__steps_bvq_vtg_lw"><li class="li step stepexpand" id="xuk1475193624960__step_N10049_N10038_N10012_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+					navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Metering</span> &gt; <span class="ph uicontrol">Mtr Luma Target</span> &gt; <span class="ph uicontrol">Hist Luma Target</span></span>.</span>
+			</li>
+<li class="li step stepexpand" id="xuk1475193624960__step_N1007A_N1004E_N10019_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Enable Hist
+						Metering</span> and select the <span class="ph uicontrol">Value</span> check box.</span>
+			</li>
+<li class="li step stepexpand" id="xuk1475193624960__step_N1005A_N10038_N10012_N10001">
+				<span class="ph cmd">Ensure that the <span class="ph uicontrol">Enable</span>
+					check box is selected and verify the results achieved from enabling the default
+					parameter values. Adjust individual parameters if necessary to achieve more
+					exact brightness matching scene-by-scene, or to improve stability. </span>
+			</li>
+<li class="li step stepexpand" id="xuk1475193624960__step_N10067_N10038_N10012_N10001">
+				<span class="ph cmd">If individual parameter adjustments are necessary, click
+						<span class="ph uicontrol">Hist Luma Target Zone</span> and add zones using <img class="image" id="xuk1475193624960__image_ic1_hld_k1b" src="hba1498761702732.png" />.</span>
+			</li>
+<li class="li step stepexpand" id="xuk1475193624960__step_N100C5_N1004E_N10019_N10001">
+				<span class="ph cmd">Adjust the <span class="ph uicontrol">Zone Trigger</span> values for each zone.</span>
+			</li>
+<li class="li step stepexpand" id="xuk1475193624960__step_N100D2_N1004E_N10019_N10001">
+				<span class="ph cmd">Adjust the <span class="ph uicontrol">Zone Data</span>
+					parameter values for each zone.</span>
+				<div class="itemgroup info">
+					
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="xuk1475193624960__table_ugx_x1n_bbb" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:42.19409282700421%" /><col style="width:57.80590717299579%" /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d12378e570">Parameter name</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d12378e573">Description</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Min Target Adj Ratio</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">The minimum adjustment that can be made
+										by the algorithm. The ratio is the minimum luma target over
+										the current luma target. The default value is 0.6.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Max Target Adj Ratio</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">The maximum adjustment that can be made
+										by the algorithm. The ratio is the maximum luma target over
+										the current luma target. The default value is 1.0.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Sat Ref Low</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">The lower end of the control range for
+										the calculated saturation position. The default value is
+										100.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Sat Ref High</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">The higher end of the control range for
+										the calculated saturation position. The default value is
+										100.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Dark Ref Low</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">The lower end of the control range for
+										the calculated darkness position.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Dark Ref High</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">The higher end of the control range for
+										the calculated darkness position.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Hist Sat Pushup Range</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">In each zone, for each color channel
+										(R/G/B), enter a Start and End value to define the saturated
+										percentage range that gets push-up compensation (flat/low
+										dynamic range scenes), such as when luma target is
+										positively offset.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Hist Sat Pushdown Range</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">In each zone, for each color channel
+										(R/G/B), enter a Start and End value to define the saturated
+										percentage range that gets push-down compensation
+										(saturation prevention), such as when luma target is
+										negatively offset.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Hist Dark Range</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">In each zone, for each color channel
+										(R/G/B), enter a Start and End value to define the range of
+										pixels used to calculate the darkness position.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e570 ">Max DRC Gain</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d12378e573 ">The max ratio between long and short
+										exposure.</td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="xuk1475193624960__step_N1007D_N10038_N10012_N10001">
+				<span class="ph cmd">(Optional) Click <span class="ph uicontrol">Target Filter Factor</span>
+					and set the value, if needed.</span>
+			</li>
+<li class="li step stepexpand" id="xuk1475193624960__step_N1015E_N1004E_N10019_N10001">
+				<span class="ph cmd">(Optional) Click <span class="ph uicontrol">Enable Sat Pos
+						Clamping</span> and select the <span class="ph uicontrol">Value</span>  check box if clamping the saturation position
+					calculation with AWB gains is needed.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

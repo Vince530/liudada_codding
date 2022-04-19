@@ -1,0 +1,80 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="An alternative method to run an AWB simulation is to use the AWB tab. This method allows for input of multiple images to get a more accurate AWB simulation. Perform AWB tuning and generate new binary ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Run AWB simulation from the AWB tab" /><meta name="abstract" content="An alternative method to run an AWB simulation is to use the AWB tab. This method allows for input of multiple images to get a more accurate AWB simulation." /><meta name="description" content="An alternative method to run an AWB simulation is to use the AWB tab. This method allows for input of multiple images to get a more accurate AWB simulation." /><meta name="DC.Relation" scheme="URI" content="fcl1494872328107.html" /><meta name="DC.Relation" scheme="URI" content="nqs1513658093062.html" /><meta name="DC.Relation" scheme="URI" content="tpm1494872218298.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="hix1520491849572" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Run AWB simulation from the AWB tab</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hix1520491849572">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="fcl1494872328107.html" title="Simulation Tools">Simulation Tools</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="fcl1494872328107.html" title="Simulation Tools"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Simulation Tools</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Run AWB simulation from the AWB tab </h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">An alternative method to run an AWB simulation is to use the AWB
+		tab. This method allows for input of multiple images to get a more accurate AWB
+		simulation.</p>
+
+		<div class="section prereq p" id="hix1520491849572__prereq_N1001B_N10018_N10001">Perform AWB tuning and generate new
+			binary for the target. Get these two DLL files from the target and  place them in a
+			local folder together: <ul class="ul" id="hix1520491849572__ul_fzz_3xj_cdb">
+				<li class="li">com.qti.stats.awb.dll </li>
+
+				<li class="li">com.qti.stats.awbsimulationwrapper.dll</li>
+
+			</ul>
+When asked for the DLL file, give the path to
+				<span class="ph filepath">com.qti.stats.awb.dll</span>. The simulator finds the other DLL file
+			in the same folder.</div>
+
+		<div class="section context" id="hix1520491849572__context_N10020_N10018_N10001"></div>
+
+		<ol class="ol steps"><li class="li step stepexpand" id="hix1520491849572__step_N10027_N10024_N10018_N10001">
+				<span class="ph cmd">Click the <span class="ph uicontrol">Single Image</span> or <span class="ph uicontrol">Multi
+						Image</span> button.</span>
+			</li>
+<li class="li step stepexpand" id="hix1520491849572__step_N10038_N10024_N10018_N10001">
+				<span class="ph cmd">When the file dialog opens, a message in the top left corner prompts for the
+					AWB Sim dll file. Navigate to the applicable file in the target build. Click
+						<span class="ph uicontrol">Open</span>.</span>
+			</li>
+<li class="li step stepexpand" id="hix1520491849572__step_N10045_N10024_N10018_N10001">
+				<span class="ph cmd">The file dialog opens again and prompts for the tuned project .bin file.
+					Navigate to the applicable file in the target. Click
+					<span class="ph uicontrol">Open</span>. <strong class="ph b">NOTE:</strong> For subsequent
+					simulations, it is important to update the .bin file after making any tuning
+					parameter updates.</span>
+			</li>
+<li class="li step stepexpand" id="hix1520491849572__step_N10057_N10024_N10018_N10001">
+				<span class="ph cmd">The file dialog opens again and prompts for a JPEG file to use as input for the
+					simulation. If you clicked the <span class="ph uicontrol">Multi Image</span> button, select
+					multiple JPEG files. Navigate to and select the input files.</span>
+				<div class="itemgroup stepresult">The AWB simulator runs immediately after the input files are
+					selected.</div>
+			</li>
+<li class="li step stepexpand" id="hix1520491849572__step_N10075_N1001D_N10012_N10001">
+				<span class="ph cmd">When the simulation is complete, a message box opens with the
+					results of the simulation and the location of the CSV file that contains the
+					resulting R, G, B, gain and CCT values.</span>
+			</li>
+<li class="li step stepexpand" id="hix1520491849572__step_N10073_N10024_N10018_N10001">
+				<span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">Help</span> &gt; <span class="ph uicontrol">Chromatix log folder</span></span> to view information about the AWB simulation that can be helpful
+					for debugging.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="nqs1513658093062.html" title="As an alternative to using the Chromatix Simulation tool UI, run an AWB simulation via the command line. To expedite AWB simulation from multiple images, create and run a batch file with multiple commands.">Run an AWB simulation from the command line</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="tpm1494872218298.html" title="Use this procedure to run an AWB simulation or a pipeline simulation, or both. The pipeline simulation generated by this tool requires the use of a raw image.">Run AWB and pipeline simulations from the simulation tab</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="fcl1494872328107.html" title="Simulation Tools"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Simulation Tools</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

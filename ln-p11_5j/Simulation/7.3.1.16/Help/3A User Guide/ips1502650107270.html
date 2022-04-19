@@ -1,0 +1,56 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="It is important that users be able to adjust the final AWB gain to obtain a user-preferred color tone. AWB processing provides for gain adjust with a triangle mesh-based AWB gain adjust module. This ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Triangle gain adjust concept" /><meta name="DC.Relation" scheme="URI" content="wzk1502650164522.html" /><meta name="DC.Relation" scheme="URI" content="fii1524865302325.html" /><meta name="DC.Relation" scheme="URI" content="kaj1502650200496.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ips1502650107270" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Triangle gain adjust concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ips1502650107270">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Triangle gain adjust concept</h1>
+
+	<div class="body conbody">
+		<p class="p">It is important that users be able to adjust the final AWB gain to obtain a
+			user-preferred color tone. AWB processing provides for gain adjust with a triangle
+			mesh-based AWB gain adjust module. This module allows users to have locally optimized
+			control of AWB gain adjust by changing the triangle configuration.</p>
+
+		<p class="p">The tuning tool uses a topological configuration for specifying the gain adjust
+			process. This enables more flexibility in making changes to the gain adjust
+			configuration (adding/deleting/modifying gain adjust values) and provides more efficient
+			matching to the reference color. </p>
+
+		<p class="p">During AWB initial tuning, a triangle mesh is generated to cover the entire
+			gray zone in the Rg/Bg space. In each point of the mesh, several different gain adjust
+			triples (R<sub class="ph sub">gain</sub>, G<sub class="ph sub">gain</sub>, B<sub class="ph sub">gain</sub>) are specified along with
+			corresponding lux index triggers. The image below of the Chromatix user interface for
+			triangle gain adjust shows a sample configuration of the related parameters. </p>
+
+		<p class="p">
+			<br /><img class="image" id="ips1502650107270__image_njl_q5n_w1b" src="tmh1502679042091.svg" /><br />
+		</p>
+
+		<p class="p">In the triangle where the final AWB decision (from the DA) is located, the gain
+			adjust values specified for each vertex of the triangle are used by the triangle gain
+			adjust module to interpolate the final gain adjust. To speed up the process of finding
+			the triangle where the DA decision is located, initial tuning configures four starting
+			triangle indexes for daylight, F-light, A-light and H-light. The DA data determines
+			which starting triangle is used. This auxiliary information can be modified as
+			necessary.</p>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="wzk1502650164522.html">Triangle gain adjust parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="fii1524865302325.html">Examples of triangle gain adjust tuning</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="kaj1502650200496.html">Fine-tune triangle gain adjust</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

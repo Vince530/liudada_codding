@@ -1,0 +1,149 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="If the camera sensor supports high dynamic range (HDR) and you want to offer an HDR setting on the device, add the ISPHDR mode to the sensor|usecase that will offer the feature. Do this for each ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune HDR" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="suq1507561528154.html" /><meta name="DC.Relation" scheme="URI" content="kzs1500489680222.html" /><meta name="DC.Relation" scheme="URI" content="sby1505410096129.html" /><meta name="DC.Relation" scheme="URI" content="wlj1506124447051.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="tvp1507561909654" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune HDR</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="tvp1507561909654">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="suq1507561528154.html" title="HDR tuning concepts">HDR tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="suq1507561528154.html" title="HDR tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">HDR tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune HDR</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc"></p>
+
+		<div class="section prereq p" id="tvp1507561909654__prereq_N10014_N10011_N10001">If the camera sensor supports high
+			dynamic range (HDR) and you want to offer an HDR setting on the device, add the ISPHDR
+			mode to the sensor|usecase that will offer the feature. Do this for each sensor|usecase
+			that will offer an HDR setting.<div class="fig fignone nonumber" id="tvp1507561909654__fig_pd5_kmn_sbb"><span class="figcap">Figure : Add the ISPHDR mode for each sensor and use case that will
+					offer an HDR setting</span>
+				
+				<br /><img class="image" id="tvp1507561909654__image_qd5_kmn_sbb" src="jsn1508883771746.png" /><br />
+			</div>
+</div>
+
+		<div class="section context" id="tvp1507561909654__context_N10018_N10011_N10001">Tuning HDR primarily involves retuning
+			other modules to compensate for the sensitivity afforded by the HDR module. The
+			following is the general procedure for HDR tuning.</div>
+
+		<ol class="ol steps"><li class="li step" id="tvp1507561909654__step_N10038_N10031_N10013_N10001">
+				<span class="ph cmd">Accept the defaults for the HDR modules. </span>
+			</li>
+<li class="li step" id="tvp1507561909654__step_N10041_N10031_N10013_N10001">
+				<span class="ph cmd">Retune the coordinating BPS modules. The tone curve tuning in
+					the GTM and LTM modules is the most important for dynamic range. </span>
+				<ul class="ul choices" id="tvp1507561909654__choices_s4p_jdv_qbb">
+					<li class="li choice">
+						<p class="p">PDPC – To remove bad pixels, tune PDPC so as not to harm
+							the resolution but still remove bad pixels. Set the T1 and T2 offsets as
+							T2 offset = T1 offset * exposure ratio. The T1 offset parameters are
+								<span class="keyword parmname">bpc_offset</span> and <span class="keyword parmname">bcc_offset</span>. The T2 offset parameters are
+								<span class="keyword parmname">bpc_offset_t2</span> and <span class="keyword parmname">bcc_offset_t</span>.</p>
+
+					</li>
+
+					<li class="li choice">
+						<p class="p">GIC – Retune GIC to remove dots and zigzags by HDR and
+							tone curve. Green imbalance is more obvious in a zzHDR sensor. </p>
+
+						<ul class="ul" id="tvp1507561909654__ul_v11_gfv_qbb">
+							<li class="li">Using <span class="keyword parmname">noise_std_lut
+								</span>as same as ABF is recommended.</li>
+
+							<li class="li">Using <span class="keyword parmname">gic_correction_strength</span> is recommended by
+								exp_sensitivity_ratio.</li>
+
+							<li class="li">Lower<span class="keyword parmname">
+									thin_line_noise_offset</span> is recommended by
+								exp_sensitivity_ratio.</li>
+
+							<li class="li">When exp_sensitivity_ratio is getting higher, the
+								lower data is filled in and has detail information that should not
+								be removed. </li>
+
+						</ul>
+
+					</li>
+
+					<li class="li choice">
+						<p class="p">ABF – Retune ABF to remove dots and zigzags by HDR and
+							tone curve. Retune the noise_std_lut when T1/T2 has a gain
+							difference.</p>
+
+					</li>
+
+					<li class="li choice">
+						<p class="p">GTM – Tone curve tuning is the most important for
+							dynamic range. Adjust the tone curve to generate 10-bit output by high
+							dynamic range.</p>
+
+					</li>
+
+					<li class="li choice">
+						<div class="p">HNR –Noise levels will be different because of changes
+							to exposure ratio and tone mapping curves, so retuning is recommended
+							after GTM changes. It is permissible to change only strength by
+							intensity. Multiply to lnr_gain_arr based on noise level by
+								intensity.<ul class="ul" id="tvp1507561909654__ul_lt1_vhv_qbb">
+								<li class="li">Increase in noise profile = gtm_hdr /
+									gtm_no_hdr </li>
+
+								<li class="li"> lnr_gain_arr[0…33] *= Increase in noise
+									profile[64/2]</li>
+
+							</ul>
+</div>
+
+					</li>
+
+				</ul>
+
+			</li>
+<li class="li step" id="tvp1507561909654__step_N100B4_N10031_N10013_N10001">
+				<span class="ph cmd">Simulate and test.</span>
+			</li>
+<li class="li step" id="tvp1507561909654__step_N100BD_N10031_N10013_N10001">
+				<span class="ph cmd">Adjust HDR parameters as necessary.</span>
+				<ol type="a" class="ol substeps" id="tvp1507561909654__substeps_s1q_43v_qbb">
+					<li class="li substep">
+						<span class="ph cmd">To achieve good resolution, tune the
+								<span class="keyword parmname">recon_h_edge_th1</span>/
+								<span class="keyword parmname">recon_motion_th1</span>/
+								<span class="keyword parmname">recon_dark_th1</span> parameters in the HDR module.
+						</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">To remove motion effect, tune the
+								<span class="keyword parmname">mac_motion0_th1</span>/<span class="keyword parmname">
+								mac_motion0_th2</span>/<span class="keyword parmname"> mac_motion_strength</span>
+							parameters in the HDR module. </span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Tune other HDR parameters as needed when there are critical HDR issues
+							with the default values.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step" id="tvp1507561909654__step_N100FB_N10031_N10013_N10001">
+				<span class="ph cmd">Repeat procedure until performance goals are met.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="kzs1500489680222.html" title="Tune ABF">Tune ABF</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="sby1505410096129.html" title="Tune GIC">Tune GIC</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="wlj1506124447051.html" title="Tune pixel correction">Tune pixel correction</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="suq1507561528154.html" title="HDR tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">HDR tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="HNR">
+	<param id="1"  name="hnr_x_0" autotune="1" submodule="SubModule1">0.0:0.10:1.0</param>
+	<param id="2"  name="hnr_x_1" autotune="1" submodule="SubModule1">0.1:0.10:1.0</param>
+	<param id="3"  name="hnr_y_0" autotune="1" submodule="SubModule1">0.0:0.10:0.5</param>
+	<param id="4"  name="hnr_y_1" autotune="1" submodule="SubModule1">0.5:0.10:0.5</param>
+	<param id="5"  name="hnr_x_2" autotune="1" submodule="SubModule2">0.0:0.05:0.3</param>
+	<param id="6"  name="hnr_y_2" autotune="1" submodule="SubModule2">0.0:0.05:1.0</param>
+	<param id="7"  name="hnr_x_3" autotune="1" submodule="SubModule3">0.1:0.05:0.6</param>
+	<param id="8"  name="hnr_y_3" autotune="1" submodule="SubModule3">0.0:0.05:1.0</param>
+	<param id="9"  name="hnr_x_4" autotune="1" submodule="SubModule4">0.3:0.05:0.9</param>
+	<param id="10" name="hnr_y_4" autotune="1" submodule="SubModule4">0.0:0.05:1.0</param>
+	<param id="11" name="hnr_x_5" autotune="1" submodule="SubModule5">0.6:0.05:1.0</param>
+	<param id="12" name="hnr_y_5" autotune="1" submodule="SubModule5">0.0:0.05:1.0</param>
+	<lin_ineq_constraints>
+		<param_id_list>1, 2, 3, 4, 5, 7, 9, 11</param_id_list>
+		            <A>1 -1  0  0  0  0  0  0; 
+                       0  0  0  0  1 -1  0  0; 
+                       0  0  0  0  0  1 -1  0; 
+                       0  0  0  0  0  0  1 -1; 
+                       0  0  1 -1  0  0  0  0</A>
+		<B>0;0;0;0;0</B>
+	</lin_ineq_constraints>  
+    <mapping dest="pcsim">update_xml_hnr1_0</mapping>
+    <mapping dest="chromatix">hnr_autotune2chromatix</mapping>
+    <isp_pipeline>BPS</isp_pipeline>
+    <chromatix_tag>hnr10_bps</chromatix_tag>
+    <gen_pop_function>gen_pop_for_hnr1_0</gen_pop_function>
+</module_if>
+

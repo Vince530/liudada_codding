@@ -1,0 +1,164 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Before tuning the ABF module, determine how many lighting regions you need and create them in the Parameter Editor. Regular 2D convolution filtering deteriorates image quality, particularly when ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune ABF" /><meta name="DC.Relation" scheme="URI" content="qet1500526421862.html" /><meta name="DC.Relation" scheme="URI" content="jkm1500495455130.html" /><meta name="DC.Relation" scheme="URI" content="qnq1499365175979.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="kzs1500489680222" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune ABF</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="kzs1500489680222">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a> / <a class="navheader_parent_path" href="qet1500526421862.html" title="ABF tuning concepts">ABF tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qet1500526421862.html" title="ABF tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ABF tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune ABF </h1>
+
+	<div class="body taskbody">
+		<div class="section prereq p" id="kzs1500489680222__prereq_N10015_N10012_N10001">
+			<p class="p">Before tuning the ABF module, determine how many lighting regions you need and
+				create them in the Parameter Editor. </p>
+
+		</div>
+
+		<div class="section context" id="kzs1500489680222__context_N100E5_N10014_N10001">Regular 2D convolution filtering
+			deteriorates image quality, particularly when applied on Bayer pixels. To reduce the
+			noise without blurring sharp edges, use an adaptive Bayer filter (ABF), which can adapt
+			its kernel based on neighboring pixel values.</div>
+
+		<ol class="ol steps" id="kzs1500489680222__steps_7FE4967F02BA4A5B82EBF4D09B7CE136"><li class="li step stepexpand" id="kzs1500489680222__step_C314EB42C91C463F9EE0E1DD448C5821">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab,
+					click <span class="ph menucascade"><span class="ph uicontrol">BPS</span> &gt; <span class="ph uicontrol">ABF</span></span>. </span>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N10048_N1002F_N10015_N10001">
+				<span class="ph cmd">Calibrate the noise profile as follows: </span>
+				<ol type="a" class="ol substeps" id="kzs1500489680222__substeps_cpn_csl_p1b">
+					<li class="li substep">
+						<span class="ph cmd" id="kzs1500489680222__ID-64-00000652">Click a region and click the
+								<span class="ph uicontrol">Load Image</span> button. </span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Select a raw image of an MCC chart taken in the
+							appropriate lighting condition for that region.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Set the MCC markers. Drag the top-left MCC grid marker
+							to the center of the top-left color patch and drag the bottom-right MCC
+							grid marker to the center of the bottom right color patch, so that all
+							of the grid markers align within the color patches. <strong class="ph b">Note</strong>: If the
+							image is taken with a fisheye lens, to set the MCC markers for tuning,
+							hold the Ctrl Key (or Shift Key) while moving the markers.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Calculate</span>
+							to compute the noise profile. View the resulting noise profile graph on
+							the <span class="ph uicontrol">Noise Profile</span> tab.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N101E9_N100EC_N10014_N10001">
+				<span class="ph cmd">To calibrate the radial noise reduction, click <span class="ph uicontrol">Sigma LUT RNR</span> and do the following steps: </span>
+				<ol type="a" class="ol substeps" id="kzs1500489680222__substeps_nvs_pfb_41b">
+					<li class="li substep">
+						<span class="ph cmd">Click the <span class="ph uicontrol">Sigma LUT</span> tab and open
+							a gray chart raw image for the appropriate lighting region. <br /><img class="image" id="kzs1500489680222__image_tjy_md2_p1b" src="epi1500401874056.png" /><br /></span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Calculate</span> to generate the
+							Sigma LUT plot. </span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click the <span class="ph uicontrol">RNR Control
+								Points</span> tab, and adjust the <span class="ph uicontrol">Radial Percentage</span> slider to set the second control
+							point. The tool computes the other points automatically. <br /><img class="image" id="kzs1500489680222__image_pnb_d22_p1b" src="vpm1500402152533.png" /><br /></span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Close</span>.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N100F2_N1002F_N10015_N10001">
+				<span class="ph cmd">(Optional) bilateral filtering is enabled by default. To
+					disable bilateral filtering, open the Parameter Editor, navigate to <span class="ph menucascade"><span class="ph uicontrol">ABF 40 BPS </span> &gt; <span class="ph uicontrol">Enable Section</span> &gt; <span class="ph uicontrol">Bilateral En</span></span>, and change the value from 1 to 0.</span>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N1010E_N1002F_N10015_N10001">
+				<span class="ph cmd">(Optional) The built-in min-max pixel filter is disabled by
+					default. To turn on min-max pixel filter, open the Parameter Editor, navigate to
+						<span class="ph menucascade"><span class="ph uicontrol">ABF 40 BPS </span> &gt; <span class="ph uicontrol">Enable Section</span> &gt; <span class="ph uicontrol">Minmax En</span></span>, and change the value from 0 to 1.</span>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N100DA_N1002F_N10015_N10001">
+				<span class="ph cmd">(Optional) Gr/Gb cross-channel processing is enabled by
+					default. To disable cross-channel processing, open the Parameter Editor,
+					navigate to <span class="ph menucascade"><span class="ph uicontrol">ABF 40 BPS </span> &gt; <span class="ph uicontrol">ABF 40 Reserve</span> &gt; <span class="ph uicontrol">Cross Plane En</span></span>, and change the value from 1 to 0.</span>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N10098_N1002F_N10015_N10001">
+				<span class="ph cmd">As needed, click the <span class="ph uicontrol">Region
+						Data</span> tab and tune the following ABF parameters: </span>
+				<div class="itemgroup info">
+					<ul class="ul" id="kzs1500489680222__ul_wk4_zpj_vbb">
+						<li class="li">Edge Softness</li>
+
+						<li class="li">Denoise Strength </li>
+
+						<li class="li">Noise Prsv Base</li>
+
+					</ul>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N10179_N10029_N10015_N10001">
+				<span class="ph cmd">As needed, tune the following ABF RNR parameters in the
+						<span class="ph uicontrol">Graphs 1</span> tab: </span>
+				<div class="itemgroup info">
+					<ul class="ul" id="kzs1500489680222__ul_kyx_dqj_vbb">
+						<li class="li">Radial Noise Prsv Adj</li>
+
+						<li class="li">Radial Edge Softness Ad </li>
+
+						<li class="li">Noise Prsv Anchor</li>
+
+					</ul>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N101AF_N1002F_N10015_N10001">
+				<span class="ph cmd">Use the default values for advanced parameters related to activity detection,
+					dark desaturation, edge direction detection, and directional smoothing. If it
+					becomes necessary to tune those parameters, request guidance from the CE
+					team.</span>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N101B8_N1002F_N10015_N10001">
+				<span class="ph cmd">Repeat all steps for each lighting region you set up.</span>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N10203_N10029_N10015_N10001">
+				<span class="ph cmd">(Optional) To see the results of the tuning adjustments, click
+						<span class="ph uicontrol">Simulate</span>. Otherwise, simulate after the entire
+					pipeline is tuned.</span>
+			</li>
+<li class="li step stepexpand" id="kzs1500489680222__step_N101DD_N1002F_N10015_N10001">
+				<span class="ph cmd">To save the adjustments made to ABF parameters, click
+						<span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span>. </span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="jkm1500495455130.html" title="ABF Parameters">ABF Parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="qnq1499365175979.html" title="A region is a set of triggers that are indicative of light conditions, lens positions or other conditions as applicable to a given module. A project which is created with the build XSD and XML files has only one region for each module. Chromatix 7 gives the flexibility to create multiple regions for an ISP module. Adding regions to the module enables to optimize camera performance based on the established triggers for each region. Add regions to the pipeline before tuning the ISP and before adding modes to the project.">Add and edit region triggers</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qet1500526421862.html" title="ABF tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ABF tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

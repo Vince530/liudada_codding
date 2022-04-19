@@ -1,0 +1,92 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="PDAF works by measuring the disparity between image pairs captured by phase detection pixels in the image sensor. The magnitude and sign of the disparity, correlates with the defocus, and is used to ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Phase detection AF (PDAF)" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nkn1477085275766" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Phase detection AF (PDAF)</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nkn1477085275766">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Phase detection AF (PDAF)</h1>
+
+   <div class="body conbody">
+      <p class="p">PDAF works by measuring the disparity between image pairs captured by phase detection
+         pixels in the image sensor. The magnitude and sign of the disparity, correlates with the
+         defocus, and is used to estimate the best lens position for optimal focus.</p>
+
+      <p class="p">In single lens reflex cameras, the AF system typically includes a separate optical path
+         leading to a dedicated PDAF sensor. On camera phones, a pixel level design creates an
+         effective aperture for left and right pixels. The left and right pixels, like human eyes,
+         independently capture light. If the light in a scene converges to adjacent left and right
+         phase detection pixels, then there is no disparity and the lens is in the correct position.
+         If the light does not converge on adjacent left and right phase detection pixels, then
+         there is disparity and the lens is not in the correct position.</p>
+
+      <p class="p">The following figure illustrates light converging on adjacent and nonadjacent phase
+         detection pixels and the resulting focus conditions based on the disparity.</p>
+
+      <br /><img class="image" id="nkn1477085275766__image_yky_m1l_rx" src="vui1495660940555.png" /><br />
+      <p class="p" id="nkn1477085275766__ID-296-0000021e">There are three common pixel design approaches for generating the left
+         and right pixels.</p>
+
+      <ul class="ul">
+         <li class="li">Sparse PDAF with metal shielding</li>
+
+         <li class="li">Dual photo diodes PDAF / 2PD</li>
+
+         <li class="li">
+            <p class="p">Sparse PDAF with 2 x 1 OCL</p>
+
+         </li>
+
+      </ul>
+
+      <img class="image" id="nkn1477085275766__image_op2_41l_rx" src="gfq1495660817002.png" />
+      <div class="section" id="nkn1477085275766__section_N10042_N1000E_N10001"><h2 class="title sectiontitle">Sparse PDAF with metal shielding</h2>
+         
+         <p class="p">Sparse PDAF is the traditional PDAF approach. In sparse PDAF, there are pairs of pixels
+            where each pixel is half-masked so that each pixel receives light through a different
+            portion of the lens. In this approach, 1% to 3% of the sensor pixels are used. On those
+            pixels, a metal shield below the u‑lens creates an effective asymmetric aperture
+            by blocking light at certain interception angles</p>
+
+         <p class="p">For imaging purposes, the value of the PD pixel is replaced by an interpolated value of
+            the surrounding pixels, in a similar way to how defective pixels are corrected.</p>
+
+      </div>
+
+      <div class="section" id="nkn1477085275766__section_N10053_N1000E_N10001"><h2 class="title sectiontitle">Dual photo diodes PDAF / 2PD</h2>
+         
+         <p class="p">In dual diode PDAF, also called 2PD, each sensor pixel consists of two photo diodes
+            topped by a single u-lens. The position of the photodiodes in relation to the u-lens
+            creates an effective asymmetric aperture. The left and right photodiodes levels are
+            summed up to recreate the regular Bayer pattern</p>
+
+         <p class="p">The higher density of PDAF pixels provides several advantages over sparse PDAF including
+            the following:</p>
+
+         <ul class="ul">
+            <li class="li">No artifacts (defect) compensation required</li>
+
+            <li class="li">No light loss</li>
+
+         </ul>
+
+      </div>
+
+      <div class="section" id="nkn1477085275766__section_N10070_N1000E_N10001"><h2 class="title sectiontitle">Sparse PDAF with 2 x 1 OCL</h2>
+         
+         <p class="p">This approach is similar to 2PD in that the effective aperture for the L/R pixels is
+            derived from the relative position of the pixels and the u-lens. It is sparse because
+            ~3% of the sensor pixels are used. However, the absence of metal shielding allows the PD
+            pixels to collect more light, making 2 x 1 superior to sparse PDAF with the
+            shielded design.</p>
+
+      </div>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

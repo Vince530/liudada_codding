@@ -1,0 +1,145 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Many AWB functions require the configuration of trigger regions that are used to assign the appropriate core data. In response to this shared need, the Chromatix user interface has a common trigger ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AWB common trigger data system" /><meta name="DC.Relation" scheme="URI" content="xgg1502697302454.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="agt1502740380308" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AWB common trigger data system</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="agt1502740380308">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="xgg1502697302454.html" title="AWB process overview">AWB process overview</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="xgg1502697302454.html" title="AWB process overview"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB process overview</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">AWB common trigger data system</h1>
+
+	<div class="body conbody">
+		<p class="p">Many AWB functions require the configuration of trigger regions that are
+			used to assign the appropriate core data. In response to this shared need, the Chromatix
+			user interface has a common trigger data system that is easily configurable and has a
+			consistent structure among AWB functions. The characteristics of the system are as
+			follows:</p>
+
+		<ul class="ul" id="agt1502740380308__ul_hhf_5rh_x1b">
+			<li class="li">Consistent data structure<ul class="ul" id="agt1502740380308__ul_cvs_vrh_x1b">
+					<li class="li">Trigger control type: Defines the triggering factor and is configurable in
+						each level of the trigger. </li>
+
+					<li class="li">Number of trigger levels: Multiple levels are allowed in the structure, but
+						the number of trigger levels is fixed in each module.</li>
+
+					<li class="li">Trigger zone: <ul class="ul" id="agt1502740380308__ul_rxp_5s4_x1b">
+							<li class="li">Trigger point: Start and end values of the trigger. </li>
+
+							<li class="li">Core data: Data used when input is within the trigger range. </li>
+
+						</ul>
+</li>
+
+				</ul>
+</li>
+
+			<li class="li">Configurable number of trigger zones and trigger control types<ul class="ul" id="agt1502740380308__ul_cxp_st4_x1b">
+					<li class="li">Trigger zone can be added and removed in each trigger level. </li>
+
+					<li class="li">Multiple options of trigger control type are available in some modules.
+					</li>
+
+				</ul>
+</li>
+
+			<li class="li">Consistent interpolation <br /><img class="image" id="agt1502740380308__image_mq5_1yp_x1b" src="tza1503013264914.svg" /><br /></li>
+
+		</ul>
+
+		<p class="p">The following image explains the common user interface for the AWB trigger data
+			system. </p>
+
+		<br /><img class="image" id="agt1502740380308__image_cly_byp_x1b" src="hfz1503013255492.svg" /><br />
+		<div class="section" id="agt1502740380308__section_N1005E_N1000F_N10001"><h2 class="title sectiontitle">AWB common trigger structure: Use case 1</h2>
+			
+			<div class="p">
+				<ul class="ul" id="agt1502740380308__ul_rry_glp_x1b">
+					<li class="li"># of Trigger levels: 1 </li>
+
+					<li class="li">Trigger control type: lux index </li>
+
+					<li class="li">Core data: threshold value</li>
+
+				</ul>
+
+				<br /><img class="image" id="agt1502740380308__image_rny_fyp_x1b" src="pze1503013261358.svg" /><br />
+				<ul class="ul" id="agt1502740380308__ul_mly_llp_x1b">
+					<li class="li">If lux index is 280 in a given scene, threshold value will be 0.8 (no
+						interpolation)  </li>
+
+					<li class="li">If lux index is 330 in a given scene, threshold value will be 0.4 (linear
+						interpolation between 0.8 and 0.0 based on lux index)  </li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="agt1502740380308__section_N1008F_N1000F_N10001"><h2 class="title sectiontitle">AWB common trigger structure: Use case 2</h2>
+			
+			<div class="p">
+				<ul class="ul" id="agt1502740380308__ul_rjv_4lp_x1b">
+					<li class="li"># of Trigger levels: 2 </li>
+
+					<li class="li">Trigger control type: lux index (1st) and stats count ratio of zone group 0
+						(2nd)  </li>
+
+					<li class="li">Core data: target point (r/g, b/g) </li>
+
+				</ul>
+
+				<br /><img class="image" id="agt1502740380308__image_r3v_hyp_x1b" src="fog1503013259423.svg" /><br />
+				<ul class="ul" id="agt1502740380308__ul_sjv_4lp_x1b">
+					<li class="li">If lux index is 150 and stats count ratio is 0.55 in a given scene, target
+						point is “0.495, 0.642” (no interpolation) </li>
+
+					<li class="li">If lux index is 270 and stats count ratio is 0.55 in a given scene, target
+						point is “0.470, 0.673” (linear interpolation between (3) and (4)) </li>
+
+					<li class="li">If lux index is 210 and stats count ratio is 0.40 in a given scene, target
+						point is “0.488, 0.638” (bilinear interpolation)   </li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="agt1502740380308__section_N100C4_N1000F_N10001"><h2 class="title sectiontitle">AWB common trigger structure: Use case 3</h2>
+			
+			<div class="p">
+				<ul class="ul" id="agt1502740380308__ul_cdd_xlp_x1b">
+					<li class="li"># of Trigger levels: 1 </li>
+
+					<li class="li">Trigger control type: lux index </li>
+
+					<li class="li">Core data: zone defined with 3 vertices </li>
+
+				</ul>
+
+				<br /><img class="image" id="agt1502740380308__image_h3w_jyp_x1b" src="nxn1503013262606.svg" /><br />
+				<ul class="ul" id="agt1502740380308__ul_ddd_xlp_x1b">
+					<li class="li">If lux index is 140, zone defined in the first trigger zone is used (left
+						top: 0.21, 1.05) (right bottom: 0.455, 0.86); no interpolation </li>
+
+					<li class="li">If lux index is 200, interpolated zone (left top: 0.225, 1.015) (right
+						bottom: 0.47, 0.8); interpolated with the first and second trigger
+						zones</li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="xgg1502697302454.html" title="AWB process overview"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB process overview</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

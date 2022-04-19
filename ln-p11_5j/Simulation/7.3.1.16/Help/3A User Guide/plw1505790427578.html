@@ -1,0 +1,50 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="More frequent use of the front camera LCD as a flashlight requires that the bright LCD light strength be considered in the AWB estimation. When used as a flashlight, the LCD light is very close to ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="LCD flash concept" /><meta name="DC.Relation" scheme="URI" content="gfm1505794542848.html" /><meta name="DC.Relation" scheme="URI" content="nrr1505796807576.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="plw1505790427578" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>LCD flash concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="plw1505790427578">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">LCD flash concept</h1>
+
+	<div class="body conbody">
+		<p class="p">More frequent use of the front camera LCD as a flashlight requires that the
+			bright LCD light strength be considered in the AWB estimation. When used as a
+			flashlight, the LCD light is very close to objects and is an additional light source, so
+			the normal AWB process should compensate for the LCD light source influence.</p>
+
+		<p class="p">A stat in the vicinity of the LCD light source point (<span class="ph uicontrol">LCD Reference
+				Point</span>) has more influence from the LCD light. The LCD distance weight
+			module assigns a distance-based weight to this stat with respect to the user-defined
+			distance zones represented by the concentric circles in the image. <br /><img class="image" id="plw1505790427578__image_m3t_3vd_pbb" src="mvv1508429790653.svg" /><br /></p>
+
+		<p class="p">The <span class="ph uicontrol">LCD Flash Weight Vector</span> start/end values define
+			distance zones (illustrated with the three red arrows) to which weight values are
+			assigned. The distance is the measurement between the LCD reference point and an input
+			stat.</p>
+
+		<p class="p">The final distance weight for the stat is computed by interpolation between the
+			two distance weights: one weight from the normal distance weight module and another
+			weight from the LCD distance weight module. The <span class="ph uicontrol">LCD Flash Weight Vector
+				Interpolation</span> start/end values define lux index trigger zones to which
+			interpolation ratio values are assigned.</p>
+
+		<p class="p">The interpolation of two different distance weights can represent a mixture of
+			light sources as illustrated.<br /><img class="image" id="plw1505790427578__image_uhf_td2_pbb" src="cqf1508433255633.svg" /><br /></p>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="gfm1505794542848.html" title="LCD flash parameters">LCD flash parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="nrr1505796807576.html" title="Tune LCD flash">Tune LCD flash</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

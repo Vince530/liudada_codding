@@ -1,0 +1,107 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Based on the size and quality of the camera lens, the center of an image may appear brighter than the corner regions. Lens shading correction (LSC) corrects brightness attenuation and tint (uneven ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="LSC tuning concepts" /><meta name="DC.Relation" scheme="URI" content="gav1504650254694.html" /><meta name="DC.Relation" scheme="URI" content="lww1494872318981.html" /><meta name="DC.Relation" scheme="URI" content="adl1504650516665.html" /><meta name="DC.Relation" scheme="URI" content="lww1494872318981.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="gla1458948387606" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>LSC tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="gla1458948387606">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  
+<span class="navparent"><a class="link" href="adl1504650516665.html" title="IFE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IFE tuning</span></a></span>  </div></td></tr></tbody></table> 
+  <h1 class="title topictitle1" id="ariaid-title1">LSC tuning concepts</h1>
+ 
+  <div class="body conbody">
+		<div class="p">Based on the size and quality of the camera lens, the center of an image may
+			appear brighter than the corner regions. Lens shading correction (LSC) corrects
+			brightness attenuation and tint (uneven color shading). <div class="fig fignone nonumber" id="gla1458948387606__fig_ocm_hsz_1cb"><span class="figcap">Figure : (L) Original; (R) Corrected</span>
+				
+				<br /><img class="image" id="gla1458948387606__image_F0A77CDDBEDF4A1A9631F64C01A1CC24" src="lxw1494872323442.png" /><br />
+			</div>
+
+		</div>
+
+		<p class="p">Tint usually results from using an infrared (IR) filter when capturing images.
+				<br /><img class="image" id="gla1458948387606__image_pv2_2xv_cv" src="gds1494872265847.svg" /><br /></p>
+
+		<p class="p">Sensor module variation, lens material and lighting conditions could also cause
+			tint. <br /><img class="image" id="gla1458948387606__image_jth_tmv_dx" src="ekb1494872208876.svg" /><br /></p>
+
+		<div class="p">The following figure illustrates where color shading is corrected in the VFE.
+			The main steps in the process are: <ol class="ol" id="gla1458948387606__ol_r2z_tb2_dv">
+				<li class="li">Values from the reference table are applied and residual stats
+					are obtained. </li>
+
+				<li class="li">Color tint (shading) is estimated based on the residual stats. </li>
+
+				<li class="li">The inverse value of color tint is multiplied by the reference table value
+					to obtain the corrected value. <br /><img class="image" id="gla1458948387606__image_ekd_nxd_dv" src="ccv1494872401364.svg" /><br />
+				</li>
+
+			</ol>
+</div>
+
+		<p class="p">
+			<br /><img class="image" id="gla1458948387606__image_fmv_m22_dv" src="gln1494872112484.svg" /><br />
+			<br /><img class="image" id="gla1458948387606__image_ns4_lyd_dv" src="uwh1494872385624.svg" /><br />
+		</p>
+
+		<div class="p">The conventional method of using AWB along with multiple calibration tables
+			cannot compensate for individual module variation, uncalibrated or different
+			illuminants, etc. Dynamic color shading correction estimates color shading from the BE
+			stats and continuously updates the reference table. It provides a more robust solution
+			and reduces the calculation burden by using a single calibration table. <div class="fig fignone nonumber" id="gla1458948387606__fig_jln_y5z_1cb"><span class="figcap">Figure : (L) Conventional method (AWB + multitable); (R) Dynamic color shading
+					correction (tintless)</span>
+				
+				<br /><img class="image" id="gla1458948387606__image_nxk_jb2_dv" src="hyl1494872229047.png" /><br />
+			</div>
+</div>
+
+		<p class="p">LSC is applied to Bayer raw images to reduce the computation load. Instead of
+			modeling the curve and performing polynomial calculations, a linear piecewise
+			approximation with the help of LUTs is used. Each color has its own LUT, so the
+			brightness attenuation and color shift problems can be solved simultaneously.</p>
+
+		<p class="p">
+			<br /><img class="image" id="gla1458948387606__image_qjk_f42_dv" src="bwy1494872244350.svg" /><br />
+		</p>
+
+		<p class="p">
+			<br /><img class="image" id="gla1458948387606__image_ivh_sn2_dv" src="lwu1494872376264.svg" /><br />
+		</p>
+
+		<div class="section" id="gla1458948387606__section_N10189_N1000F_N10001"><h2 class="title sectiontitle">Examples of lens shading correction</h2>
+			
+			<div class="fig fignone nonumber" id="gla1458948387606__fig_o4m_g5z_1cb"><span class="figcap">Figure : (L) Tintless off, indoor. (R) Tintless on, indoor</span>
+				
+				<br /><img class="image" id="gla1458948387606__image_hb5_4h2_dv" src="fsa1494872339932.png" /><br />
+			</div>
+
+			<div class="fig fignone nonumber" id="gla1458948387606__fig_t3h_jvz_1cb"><span class="figcap">Figure : (L) Tintless off, mixed light. (R) Tintless on, mixed light</span>
+				
+				<br /><img class="image" id="gla1458948387606__image_ihp_sh2_dv" src="ktu1494872216333.png" /><br />
+			</div>
+
+			<div class="fig fignone nonumber" id="gla1458948387606__fig_zpp_4vz_1cb"><span class="figcap">Figure : (L) Tintless off, lightbooth; (R) Tintless on, lightbooth</span>
+				
+				<br /><img class="image" id="gla1458948387606__image_tpr_xh2_dv" src="jwz1494872104387.png" /><br />
+			</div>
+
+			<p class="p">The following figure illustrate the same image using a commercial solution
+				(left) compared to tintless. <br /><img class="image" id="gla1458948387606__image_zrx_shd_yw" src="qqc1494872416450.png" /><br /></p>
+
+		</div>
+ 
+  </div>
+ 
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="lww1494872318981.html">Tune LSC</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  
+<span class="navparent"><a class="link" href="adl1504650516665.html" title="IFE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IFE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

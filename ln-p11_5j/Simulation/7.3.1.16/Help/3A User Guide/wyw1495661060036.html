@@ -1,0 +1,63 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="This procedure verifies that FV stats are generated and passed to the core algorithm. This decouples the issues between actuator and algorithm and is useful when debugging. Take note of what stats ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Verify FV stats" /><meta name="DC.Relation" scheme="URI" content="zyb1495660817517.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nyb1477085288402" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Verify FV stats</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nyb1477085288402">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Verify FV stats</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="nyb1477085288402__context_N10011_N1000E_N10001"><p class="p">This procedure verifies that FV stats are generated and passed to the core algorithm. This decouples the issues between actuator and algorithm and is useful when debugging.</p>
+</div>
+
+      <ol class="ol steps"><li class="li step" id="nyb1477085288402__step_N1001B_N10018_N1000E_N10001">
+            <span class="ph cmd">Take note of what stats (software or hardware) the project uses.</span>
+         </li>
+<li class="li step" id="nyb1477085288402__step_N10024_N10018_N1000E_N10001">
+            <span class="ph cmd">Enable AF logging.</span>
+         </li>
+<li class="li step" id="nyb1477085288402__step_N1002D_N10018_N1000E_N10001">
+            <span class="ph cmd">Start logging.</span>
+         </li>
+<li class="li step" id="nyb1477085288402__step_N10036_N10018_N1000E_N10001">
+            <span class="ph cmd">Open and hold the camera. After focus completes, wave your hand in front of the camera. Repeat five times.</span>
+         </li>
+<li class="li step" id="nyb1477085288402__step_N1003F_N10018_N1000E_N10001">
+            <span class="ph cmd">Observe the FV values (corresponding to your stats type).</span>
+         </li>
+<li class="li step" id="nyb1477085288402__step_N10048_N10018_N1000E_N10001">
+            <span class="ph cmd">Verify that they are nonzero and that they are changing monotonically.</span>
+         </li>
+<li class="li step" id="nyb1477085288402__step_N10051_N10018_N1000E_N10001">
+            <span class="ph cmd">Verify that the contrast of the FV is large enough when it is in-focus and out of focus (typically in-focus FV can be approximately 2x to FV out of focus).</span>
+         </li>
+</ol>
+
+      <div class="section result" id="nyb1477085288402__result_N1006C_N1000F_N10001">
+         <div class="p">The algorithm often invalidates certain frames and discards stats
+            because of the physics of the lens movement. This is normal behavior.<ul class="ul" id="nyb1477085288402__ul_u4s_sl5_2y">
+               <li class="li">If all stats are 0 for every frame, then the test did not pass
+                  and there is a potential software issue.</li>
+
+               <li class="li">If software stats are 0 randomly, it may indicate that the
+                  software stats computation is slow. If no other optimization for CPU usage can be
+                  added, then consider falling back to hardware stats.</li>
+
+            </ul>
+</div>
+
+      </div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="zyb1495660817517.html" title="Enable AF core logging">Enable AF core logging</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

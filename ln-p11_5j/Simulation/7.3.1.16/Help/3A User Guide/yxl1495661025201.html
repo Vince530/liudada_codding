@@ -1,0 +1,94 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="To tune AF speed, it is important to understand the issues and trade-offs that affect AF speed. Identify the major cause of the speed setback before making changes. The following table describes and ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Common issues: AF speed" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="tpe1477085286405" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Common issues: AF speed</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="tpe1477085286405">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Common issues: AF speed</h1>
+
+   <div class="body conbody">
+      <p class="p">To tune AF speed, it is important to understand the issues and trade-offs that affect AF speed. Identify the major cause of the speed setback before making changes. The following table describes and provides resolutions to common issues that affect AF speed.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="tpe1477085286405__ID-table-00000024" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.683in" /><col style="width:4.317in" /></colgroup><thead class="thead" style="text-align:left;">
+               <tr class="row">
+                  <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d74441e29">Issues affecting AF speed</th>
+
+                  <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d74441e32">Description</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e29 ">FPS/AEC table design</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e32 ">A typical search takes approximately 10-15 frames depending on start and target position. If the log indicates that the same number of frames are taking a long time to finish, the fps could be dropping too early. Review the AEC table design.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e29 ">Stats type</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e32 ">Stats type contributes to speed performance. Although software stats provide better stats in some chipsets, it also increases the search time. Because the software lags a frame, using search direction reverse and fine search adds a total of 100 ms to the search time. If this time saving is critical, switch to hardware stats. However, hardware stats may negatively affect the accuracy in some corner cases.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e29 ">Actuator type</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e32 ">Close-loop actuator has reliable and accurate lens movement. The algorithm can operate on a very tight limit. The close-loop actuator is recommended. For some open-loop actuators, the settle time is long (&gt;15 ms); therefore, frame skip is needed for each lens move, which doubles the search time.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e29 ">Fine search threshold trade-off</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e32 "><p class="p">Fine search is the second stage of the search. Unlike the coarse search, which emphasizes peak estimation, fine search addresses the accuracy of the peak position.</p>
+<p class="p">Typically fine search takes approximately five frames (six with software stats).</p>
+<p class="p">The parameter <span class="keyword cmdname">fine_srch_rgn</span> is a threshold to activate fine search (default 50 cm). The lower peak found in the coarse search does not use the fine search. Therefore, if fine search is not used for some distance, sharpness will still be acceptable. The threshold can be increased which can yield 150 ms saving in search time.</p>
+</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e29 ">ROI size</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e32 ">Sometimes ROI size can affect search speed because of multiple peaks in the search from objects at different depths in the ROI. Revert to the default ROI settings and log the search times to test whether ROI is affecting the speed. Reduce the ROI if the default values yield a fast time.</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e29 ">Step table design</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e32 "><p class="p">Step table has significant impact on speed. Using the default step table, it could take up to 20 frames to scan from end to end. On the other hand, if step size is too large, the algorithm may frequently fail.</p>
+<p class="p">See <a class="xref" href="pmt1495660866548.html">Tune AF step size manually</a>.</p>
+</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e29 ">Redundant search pattern</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d74441e32 ">The <span class="keyword cmdname">mid_zone</span> determines the
+                     starting search direction. The default is set to 60 cm to accommodate most
+                     focus objects. If the log indicates that the reverse scan occurs frequently
+                     over all the test cases, adjust to optimize search direction. Keep in mind that
+                     this tuning procedure optimizes search direction for scene switch (far to near,
+                     normal to near, or vice versa). See  <a class="xref" href="yhr1495660788860.html">AF is inconsistent and sometimes succeeds and fails for the same scene</a>.</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

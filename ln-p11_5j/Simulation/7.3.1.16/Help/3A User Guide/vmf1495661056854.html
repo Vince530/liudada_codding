@@ -1,0 +1,100 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="A full-sweep search is useful for measurement and verification during the tuning and debugging process. It sweeps through the entire lens position range and selects the lens position with the maximum ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Enable full-sweep search and AF core logging" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="mvk1477085283706" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Enable full-sweep search and AF core logging</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="mvk1477085283706">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Enable full-sweep search and AF core logging</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="mvk1477085283706__context_N10011_N1000E_N10001"><p class="p">A full-sweep search is useful for measurement and verification during the tuning and debugging process. It sweeps through the entire lens position range and selects the lens position with the maximum FV value for lens fly-back. Although full-sweep search is the most accurate algorithm, it is not practical for commercial products.</p>
+</div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="mvk1477085283706__step_N1001B_N10018_N1000E_N10001">
+            <span class="ph cmd">Use the following commands to enable full-sweep search (and disable the algorithm):</span>
+            <div class="itemgroup info"><pre class="pre codeblock"><code>adb root
+adb wait-for-device;
+adb remount;
+adb wait-for-devices;
+adb shell setprop debug.camera.af_fullsweep 1
+adb shell setprop persist.camera.stats.disablehaf 7</code></pre></div>
+         </li>
+<li class="li step stepexpand" id="mvk1477085283706__step_N1002B_N10018_N1000E_N10001">
+            <span class="ph cmd">Use one the following commands to enable AF core logging: </span>
+            <div class="itemgroup info">
+               <ul class="ul" id="mvk1477085283706__ul_oxr_tnn_2y">
+                  <li class="li">For a logging level of high (recommended), use:
+                     <pre class="pre codeblock"><code>adb shell setprop persist.camera.stats.af.debug 3</code></pre></li>
+
+                  <li class="li">For a logging level of low and above, use:
+                     <pre class="pre codeblock"><code>adb shell setprop persist.camera.stats.af.debug 5</code></pre></li>
+
+               </ul>
+
+            </div>
+         </li>
+<li class="li step stepexpand" id="mvk1477085283706__step_N1004D_N10018_N1000E_N10001">
+            <span class="ph cmd">Start capturing the log before opening the camera. To capture the log, use the following commands:</span>
+            <div class="itemgroup info"><pre class="pre codeblock"><code>adb logcat –c
+adb logcat –vtime &gt; “filename”.log</code></pre></div>
+         </li>
+<li class="li step stepexpand" id="mvk1477085283706__step_N1005D_N10018_N1000E_N10001">
+            <span class="ph cmd">Open the camera and point at the scene of interest or at an object with high texture.</span>
+         </li>
+<li class="li step stepexpand" id="mvk1477085283706__step_N10066_N10018_N1000E_N10001">
+            <span class="ph cmd">While the log is running, open the camera and wait for the first focus to finish (it might take up to 10 sec).</span>
+         </li>
+<li class="li step stepexpand" id="mvk1477085283706__step_N1006F_N10018_N1000E_N10001">
+            <span class="ph cmd">Close the camera and stop the logging.</span>
+         </li>
+<li class="li step stepexpand" id="mvk1477085283706__step_N10078_N10018_N1000E_N10001">
+            <span class="ph cmd">Search the log for the applicable keywords.</span>
+            <div class="itemgroup info">The  following table lists the parameters in the af_tuning_fullsweep_t
+                  configuration.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="mvk1477085283706__ID-table-00000025" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:2.101in" /><col style="width:1.503in" /><col style="width:2.488in" /></colgroup><thead class="thead" style="text-align:left;">
+                        <tr class="row">
+                           <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d60407e102">Name</th>
+
+                           <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d60407e105">Default value</th>
+
+                           <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d60407e108">Comments</th>
+
+                        </tr>
+
+                     </thead>
+<tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d60407e102 ">num_step_between_stat_points</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d60407e105 ">4</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d60407e108 ">Step size for each lens move.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d60407e102 ">frame_delay_norm</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d60407e105 ">2</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d60407e108 ">Number of frame delays between each lens
+                              move; typically 2 is enough</td>
+
+                        </tr>
+
+                     </tbody>
+</table>
+</div>
+</div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

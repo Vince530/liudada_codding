@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="TFMFNR">
+
+	<param id="1"  name="cbf_y" autotune="1" submodule="ycbf">0:10:255</param>
+	<param id="2"  name="cbf_c" autotune="1" submodule="ccbf">0:10:255</param>
+
+	<param id="3"  name="full_noise_y_ytb" autotune="0" submodule="yfull">0:50:500</param>
+	<param id="4"  name="full_noise_c_ytb" autotune="0" submodule="cfull">0:12:125</param>
+	<param id="5"  name="full_fs_decision_y_c3" autotune="0" submodule="yfull">16:8:64</param>
+	<param id="6"  name="full_fs_decision_y_c4" autotune="0" submodule="yfull">0:8:64</param>
+	<param id="7"  name="full_fs_decision_c_c3" autotune="0" submodule="cfull">16:8:64</param>
+	<param id="8"  name="full_fs_decision_c_c4" autotune="0" submodule="cfull">0:8:64</param>
+
+	<param id="9"  name="dc4_noise_y_ytb" autotune="0" submodule="ydc4">0:25:250</param>
+	<param id="10"  name="dc4_noise_c_ytb" autotune="0" submodule="cdc4">0:6:64</param>
+	<param id="11"  name="dc4_fs_decision_y_c3" autotune="0" submodule="ydc4">16:8:64</param>
+	<param id="12"  name="dc4_fs_decision_y_c4" autotune="0" submodule="ydc4">0:8:64</param>
+	<param id="13"  name="dc4_fs_decision_c_c3" autotune="0" submodule="cdc4">16:8:64</param>
+	<param id="14"  name="dc4_fs_decision_c_c4" autotune="0" submodule="cdc4">0:8:64</param>
+
+	<param id="15"  name="dc16_noise_y_ytb" autotune="0" submodule="ydc16">0:12:128</param>
+	<param id="16"  name="dc16_noise_c_ytb" autotune="0" submodule="cdc16">0:4:32</param>
+	<param id="17"  name="dc16_fs_decision_y_c3" autotune="0" submodule="ydc16">16:8:64</param>
+	<param id="18"  name="dc16_fs_decision_y_c4" autotune="0" submodule="ydc16">0:8:64</param>
+	<param id="19"  name="dc16_fs_decision_c_c3" autotune="0" submodule="cdc16">16:8:64</param>
+	<param id="20"  name="dc16_fs_decision_c_c4" autotune="0" submodule="cdc16">0:8:64</param>
+
+	<param id="21"  name="dc64_noise_y_ytb" autotune="0" submodule="ydc64">0:6:8</param>
+	<param id="22"  name="dc64_noise_c_ytb" autotune="0" submodule="cdc64">0:1:2</param>
+
+    <mapping dest="pcsim">update_xml_mfnr_tf</mapping>
+    <mapping dest="chromatix">tfmfnr_autotune2chromatix</mapping>
+    <isp_pipeline>IPE</isp_pipeline>
+    <chromatix_tag>tf10_ipe</chromatix_tag>
+    <gen_pop_function>gen_pop_tf_mfnr</gen_pop_function>
+</module_if>

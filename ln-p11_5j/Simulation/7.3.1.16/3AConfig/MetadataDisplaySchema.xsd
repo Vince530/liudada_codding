@@ -1,0 +1,393 @@
+﻿<!--
+ FILE:        Metadata Display Configuration Schema
+ SERVICES:    Metadata Display Configuration Schema
+ DESCRIPTION: Defines the format for the Metadata Display Configuration XML files
+
+Copyright (c) 2017-2020 Qualcomm Technologies, Inc.
+ All Rights Reserved.
+ Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="MetadataType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Any"/>
+      <xsd:enumeration value="Legacy"/>
+      <xsd:enumeration value="Spectra"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="MetadataDisplays">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Display" maxOccurs="unbounded" minOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="Variable" maxOccurs="unbounded" minOccurs="0">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute type="xsd:string" name="Name" use="required"/>
+                      <xsd:attribute type="xsd:string" name="Value" use="required"/>
+                      <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Places" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="A" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="B" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="C" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="D" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="E" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="F" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="G" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="H" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="I" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="J" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="K" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="L" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="M" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="N" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="O" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="P" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Q" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="R" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="S" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="T" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="U" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="V" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="W" use="optional"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element ref="Panel" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="Chart" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="Grid" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="Check" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="CCTColorMap" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute type="xsd:string" name="Name" use="required"/>
+            <xsd:attribute type="xsd:string" name="Title" use="required"/>
+            <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+            <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+            <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+            <xsd:attribute type="MetadataType" name="MetadataType" use="optional"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Chart">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="Line" maxOccurs="unbounded" minOccurs="0">
+          <xsd:complexType mixed="true">
+            <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="Point" maxOccurs="unbounded" minOccurs="0">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute type="xsd:string" name="Title" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="X" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Y" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="XTitle" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="YTitle" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Distance" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="DistanceLeft" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="DistanceTop" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Array" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="ArrayStart" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="SettledFlag" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="SettledMarker" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="A" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="B" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="C" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="D" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="E" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="F" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="G" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="H" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="I" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="J" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="K" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="L" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="M" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="N" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="O" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="P" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Q" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="R" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="S" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="T" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="U" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="V" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="W" use="optional"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute type="xsd:string"  name="Title"            use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Type"             use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Marker"           use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Color"            use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Palette"          use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Section"          use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Structure"        use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Condition"        use="optional"/>
+            <xsd:attribute type="xsd:string"  name="DecisionColors"   use="optional"/>
+            <xsd:attribute type="xsd:string"  name="OutlierColors"    use="optional"/>
+            <xsd:attribute type="xsd:string"  name="DecisionMap"      use="optional"/>
+            <xsd:attribute type="xsd:string"  name="OutlierMap"       use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Min"              use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Max"              use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Delta"            use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Left"             use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Top"              use="optional"/>
+            <xsd:attribute type="xsd:string"  name="RightUpper"       use="optional"/>
+            <xsd:attribute type="xsd:string"  name="RightLower"       use="optional"/>
+            <xsd:attribute type="xsd:string"  name="BottomUpper"      use="optional"/>
+            <xsd:attribute type="xsd:string"  name="BottomLower"      use="optional"/>
+            <xsd:attribute type="xsd:string"  name="YInterceptUpper"  use="optional"/>
+            <xsd:attribute type="xsd:string"  name="YInterceptLower"  use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Slope"            use="optional"/>
+            <xsd:attribute type="xsd:string"  name="PointLabel"       use="optional"/>
+            <xsd:attribute type="xsd:string"  name="RGCenter"         use="optional"/>
+            <xsd:attribute type="xsd:string"  name="BGCenter"         use="optional"/>
+            <xsd:attribute type="xsd:string"  name="WidthArray"       use="optional"/>
+            <xsd:attribute type="xsd:string"  name="HeightArray"      use="optional"/>
+            <xsd:attribute type="xsd:int"     name="Size"             use="optional"/>
+            <xsd:attribute type="xsd:int"     name="MarkerSize"       use="optional"/>
+            <xsd:attribute type="xsd:boolean" name="MarkerBorder"     use="optional"/>
+            <xsd:attribute type="xsd:boolean" name="TrailingZeros"    use="optional"/>
+            <xsd:attribute type="xsd:boolean" name="IgnoreZeros"      use="optional"/>
+            <xsd:attribute type="xsd:string"  name="ZoneCount"        use="optional"/>
+            <xsd:attribute type="xsd:string"  name="ZoneArray"        use="optional"/>
+            <xsd:attribute type="xsd:string"  name="VertexArray"      use="optional"/>
+            <xsd:attribute type="xsd:string"  name="GainArray"        use="optional"/>
+            <xsd:attribute type="xsd:string"  name="StatsCount"       use="optional"/>
+            <xsd:attribute type="xsd:string"  name="StatsData"        use="optional"/>
+            <xsd:attribute type="xsd:string"  name="Array"            use="optional"/>
+            <xsd:attribute type="xsd:string"  name="ReferencePoints"  use="optional"/>
+            <xsd:attribute type="xsd:string"  name="DistWeightVect"   use="optional"/>
+            <xsd:attribute type="xsd:string"  name="LuxIndex"         use="optional"/>
+            <xsd:attribute type="xsd:string"  name="LegendGroup"      use="optional"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute type="xsd:string" name="Title"/>
+      <xsd:attribute type="xsd:string" name="XTitle"/>
+      <xsd:attribute type="xsd:string" name="YTitle"/>
+      <xsd:attribute type="xsd:string" name="YMin"/>
+      <xsd:attribute type="xsd:string" name="YMax"/>
+      <xsd:attribute type="xsd:string" name="XMin"/>
+      <xsd:attribute type="xsd:string" name="XMax"/>
+      <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+      <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+      <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+      <xsd:attribute type="xsd:int" name="Height"/>
+      <xsd:attribute type="xsd:int" name="XDecimalPlaces"/>
+      <xsd:attribute type="xsd:int" name="YDecimalPlaces"/>
+      <xsd:attribute type="xsd:boolean" name="FixedDimensions" use="optional"/>
+      <xsd:attribute type="xsd:boolean" name="TopDown" use="optional"/>
+      <xsd:attribute type="xsd:boolean" name="XAxisLogarithmic" use="optional"/>
+      <xsd:attribute type="xsd:boolean" name="YAxisLogarithmic" use="optional"/>
+      <xsd:attribute type="xsd:int" name="Span" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Panel">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="Panel" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Chart" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Grid" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="Check" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="CCTColorMap" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute type="xsd:string" name="Title"/>
+      <xsd:attribute type="xsd:string" name="Type"/>
+      <xsd:attribute type="xsd:string" name="Background"/>
+      <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+      <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+      <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+      <xsd:attribute type="xsd:int" name="Height"/>
+      <xsd:attribute type="xsd:boolean" name="Border"/>
+      <xsd:attribute type="xsd:int" name="Span" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Grid">
+    <xsd:complexType>
+      <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="Row" maxOccurs="unbounded" minOccurs="1">
+          <xsd:complexType>
+            <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="Value" maxOccurs="unbounded" minOccurs="0">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <!-- Text and Value are mutually exclusive -->
+                      <xsd:attribute type="xsd:string" name="Text" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Value" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Alignment" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Places" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="A" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="B" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="C" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="D" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="E" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="F" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="G" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="H" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="I" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="J" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="K" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="L" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="M" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="N" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="O" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="P" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Q" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="R" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="S" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="T" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="U" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="V" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="W" use="optional"/>
+                      <xsd:attribute type="xsd:boolean" name="Bold" use="optional"/>
+                      <xsd:attribute type="xsd:boolean" name="Underline" use="optional"/>
+                      <xsd:attribute type="xsd:int" name="Span" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="Array" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="ArrayStart" use="optional"/>
+                      <xsd:attribute type="xsd:string" name="ArrayCount" use="optional"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+                <!-- attributeKey used to define Text/Value/Separator attributes as mutually exclusive -->
+                <xsd:key name="attributeKey">
+                  <xsd:selector xpath="."/>
+                  <xsd:field xpath="@Text|@Value"/>
+                </xsd:key>
+              </xsd:element>
+              <xsd:element ref="Separator" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="Panel" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="Chart" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="Grid" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="Check" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element ref="CCTColorMap" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+            <xsd:attribute type="xsd:string" name="Array" use="optional"/>
+            <xsd:attribute type="xsd:string" name="Columns" use="optional"/>
+            <xsd:attribute type="xsd:string" name="ArrayCount" use="optional"/>
+            <xsd:attribute type="xsd:string" name="ArrayCondition" use="optional"/>
+            <xsd:attribute type="xsd:string" name="ArrayStart" use="optional"/>
+            <xsd:attribute type="xsd:string" name="ShowIndex" use="optional"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element ref="Separator" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute type="xsd:string" name="Title"/>
+      <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+      <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+      <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+      <xsd:attribute type="xsd:boolean" name="Bold" use="optional"/>
+      <xsd:attribute type="xsd:boolean" name="Underline" use="optional"/>
+      <xsd:attribute type="xsd:int" name="Span" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Check">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute type="xsd:string" name="Title" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Value" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Places" use="optional"/>
+          <xsd:attribute type="xsd:string" name="A" use="optional"/>
+          <xsd:attribute type="xsd:string" name="B" use="optional"/>
+          <xsd:attribute type="xsd:string" name="C" use="optional"/>
+          <xsd:attribute type="xsd:string" name="D" use="optional"/>
+          <xsd:attribute type="xsd:string" name="E" use="optional"/>
+          <xsd:attribute type="xsd:string" name="F" use="optional"/>
+          <xsd:attribute type="xsd:string" name="G" use="optional"/>
+          <xsd:attribute type="xsd:string" name="H" use="optional"/>
+          <xsd:attribute type="xsd:string" name="I" use="optional"/>
+          <xsd:attribute type="xsd:string" name="J" use="optional"/>
+          <xsd:attribute type="xsd:string" name="K" use="optional"/>
+          <xsd:attribute type="xsd:string" name="L" use="optional"/>
+          <xsd:attribute type="xsd:string" name="M" use="optional"/>
+          <xsd:attribute type="xsd:string" name="N" use="optional"/>
+          <xsd:attribute type="xsd:string" name="O" use="optional"/>
+          <xsd:attribute type="xsd:string" name="P" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Q" use="optional"/>
+          <xsd:attribute type="xsd:string" name="R" use="optional"/>
+          <xsd:attribute type="xsd:string" name="S" use="optional"/>
+          <xsd:attribute type="xsd:string" name="T" use="optional"/>
+          <xsd:attribute type="xsd:string" name="U" use="optional"/>
+          <xsd:attribute type="xsd:string" name="V" use="optional"/>
+          <xsd:attribute type="xsd:string" name="W" use="optional"/>
+          <xsd:attribute type="xsd:int" name="Span" use="optional"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="CCTColorMap">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute type="xsd:string" name="Title" use="optional"/>
+          <xsd:attribute type="xsd:string" name="StatsCount" use="required"/>
+          <xsd:attribute type="xsd:string" name="StatsData" use="required"/>
+          <xsd:attribute type="xsd:string" name="Value" use="required"/>
+          <xsd:attribute type="xsd:string" name="Section" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Structure" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Condition" use="optional"/>
+          <xsd:attribute type="xsd:int"    name="Height"/>
+          <xsd:attribute type="xsd:string" name="A" use="optional"/>
+          <xsd:attribute type="xsd:string" name="B" use="optional"/>
+          <xsd:attribute type="xsd:string" name="C" use="optional"/>
+          <xsd:attribute type="xsd:string" name="D" use="optional"/>
+          <xsd:attribute type="xsd:string" name="E" use="optional"/>
+          <xsd:attribute type="xsd:string" name="F" use="optional"/>
+          <xsd:attribute type="xsd:string" name="G" use="optional"/>
+          <xsd:attribute type="xsd:string" name="H" use="optional"/>
+          <xsd:attribute type="xsd:string" name="I" use="optional"/>
+          <xsd:attribute type="xsd:string" name="J" use="optional"/>
+          <xsd:attribute type="xsd:string" name="K" use="optional"/>
+          <xsd:attribute type="xsd:string" name="L" use="optional"/>
+          <xsd:attribute type="xsd:string" name="M" use="optional"/>
+          <xsd:attribute type="xsd:string" name="N" use="optional"/>
+          <xsd:attribute type="xsd:string" name="O" use="optional"/>
+          <xsd:attribute type="xsd:string" name="P" use="optional"/>
+          <xsd:attribute type="xsd:string" name="Q" use="optional"/>
+          <xsd:attribute type="xsd:string" name="R" use="optional"/>
+          <xsd:attribute type="xsd:string" name="S" use="optional"/>
+          <xsd:attribute type="xsd:string" name="T" use="optional"/>
+          <xsd:attribute type="xsd:string" name="U" use="optional"/>
+          <xsd:attribute type="xsd:string" name="V" use="optional"/>
+          <xsd:attribute type="xsd:string" name="W" use="optional"/>
+          <xsd:attribute type="xsd:int"    name="Span" use="optional"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Separator">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute type="xsd:int" name="Size" use="optional"/>
+          <xsd:attribute type="xsd:int" name="Span" use="optional"/>
+          <xsd:attribute type="xsd:boolean" name="Line" use="optional"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

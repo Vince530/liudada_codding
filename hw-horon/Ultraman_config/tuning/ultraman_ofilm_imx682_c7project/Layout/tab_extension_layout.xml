@@ -1,0 +1,370 @@
+<?xml version="1.0" standalone="yes"?>
+<ValueStoreDataSet xmlns="http://tempuri.org/ValueStoreDataSet.xsd">
+  <ValueStoreInfo>
+    <Scenario />
+    <Pipeline />
+    <Module />
+    <Name>tab_extension_layout</Name>
+    <Date>2021-06-01T16:49:41.7383108+08:00</Date>
+  </ValueStoreInfo>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>DockingManager</Module>
+    <Category>GridPositions</Category>
+    <Name>Left</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">298</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>DockingManager</Module>
+    <Category>GridPositions</Category>
+    <Name>Right</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>DockingManager</Module>
+    <Category>GridPositions</Category>
+    <Name>Top</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline />
+    <Module>DockingManager</Module>
+    <Category>GridPositions</Category>
+    <Name>Bottom</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:double" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">153</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Floating</Pipeline>
+    <Module />
+    <Category />
+    <Name>Count</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">0</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>LeftPinTab</Pipeline>
+    <Module />
+    <Category>0</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">JPG Simulation</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>LeftPinTab</Pipeline>
+    <Module />
+    <Category>0</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>LeftPinTab</Pipeline>
+    <Module />
+    <Category>1</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AF</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>LeftPinTab</Pipeline>
+    <Module />
+    <Category>1</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>LeftPinTab</Pipeline>
+    <Module />
+    <Category>2</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Simulation</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>LeftPinTab</Pipeline>
+    <Module />
+    <Category>2</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>RightPinTab</Pipeline>
+    <Module />
+    <Category>0</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Tuning Tools</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>RightPinTab</Pipeline>
+    <Module />
+    <Category>0</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Center</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Type</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Host</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Center</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>SizePercent</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">50</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Center</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Horizontal</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Left</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Type</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Tab</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Left</Pipeline>
+    <Module>RootHost</Module>
+    <Category>0</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Pipeline</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Left</Pipeline>
+    <Module>RootHost</Module>
+    <Category>0</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Left</Pipeline>
+    <Module>RootHost</Module>
+    <Category>1</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AWB</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Left</Pipeline>
+    <Module>RootHost</Module>
+    <Category>1</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Left</Pipeline>
+    <Module>RootHost</Module>
+    <Category>2</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AEC</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Left</Pipeline>
+    <Module>RootHost</Module>
+    <Category>2</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Top</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Type</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Host</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Top</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>SizePercent</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">50</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Top</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Horizontal</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Right</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Type</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Host</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Right</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>SizePercent</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">50</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Right</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Horizontal</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Type</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Host</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>SizePercent</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">52</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>Horizontal</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>FirstHost</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">RootHost.1</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost</Module>
+    <Category />
+    <Name>SecondHost</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">RootHost.2</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost.1</Module>
+    <Category />
+    <Name>Type</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Host</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost.1</Module>
+    <Category>Content</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Images</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost.1</Module>
+    <Category>Content</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost.2</Module>
+    <Category />
+    <Name>Type</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Host</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost.2</Module>
+    <Category>Content</Category>
+    <Name>Name</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Status</Value>
+  </ValueStoreData>
+  <ValueStoreData>
+    <Scenario />
+    <Pipeline>Bottom</Pipeline>
+    <Module>RootHost.2</Module>
+    <Category>Content</Category>
+    <Name>CanClose</Name>
+    <Index>0</Index>
+    <Value xsi:type="xs:boolean" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+  </ValueStoreData>
+</ValueStoreDataSet>

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Retrieve flash sensitivity (K2) values to use for setting triggers. Retrieve MWB target points required for tuning AWB flash modules. Turn on verbose AWB log messsage Retrieve K2 values for pre-flash ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Retrieve K2 and MWB target points for pre-flash and main flash" /><meta name="abstract" content="Retrieve flash sensitivity (K2) values to use for setting triggers. Retrieve MWB target points required for tuning AWB flash modules." /><meta name="description" content="Retrieve flash sensitivity (K2) values to use for setting triggers. Retrieve MWB target points required for tuning AWB flash modules." /><meta name="DC.Relation" scheme="URI" content="qej1508358564206.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="cnc1522035567644" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Retrieve K2 and MWB target points for pre-flash and main flash</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="cnc1522035567644">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gkr1508957723817.html" title="AWB flash">AWB flash</a> / <a class="navheader_parent_path" href="qej1508358564206.html" title="LED flash concept">LED flash concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qej1508358564206.html" title="LED flash concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LED flash concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Retrieve K2 and MWB target points for pre-flash and main flash</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Retrieve flash sensitivity (K2) values to use for setting triggers. Retrieve MWB target
+		points required for tuning AWB flash modules.</p>
+
+		<div class="section prereq p" id="cnc1522035567644__prereq_N10017_N10012_N10001">Turn on <em class="ph i">verbose</em> AWB log messsage</div>
+
+		<div class="section context" id="cnc1522035567644__context_N10020_N10012_N10001"></div>
+
+		<p class="li stepsection"><strong class="ph b">Retrieve K2 values for pre-flash and main
+				flash</strong></p><ol><li class="li step stepexpand" id="cnc1522035567644__step_N1002B_N10024_N10012_N10001">
+				<span class="ph cmd">From the AWB log, find log entries that have the keyword
+						<code class="ph codeph">FlashInfo::</code> to check the flash process. <br /><img class="image" id="cnc1522035567644__image_nzs_s1f_hdb" src="hkb1522036487141.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="cnc1522035567644__step_N1003D_N10024_N10012_N10001">
+				<span class="ph cmd">Search for the phrase <code class="ph codeph">K2 in preflash</code> and
+					record the K2 value found in the log. </span>
+				<div class="itemgroup stepresult">Save this pre-flash value to fine-tune K2 triggers for
+					Reference Point Shift Ratio and Flash Weight Vector. </div>
+			</li>
+<li class="li step stepexpand" id="cnc1522035567644__step_N1004A_N10024_N10012_N10001">
+				<span class="ph cmd">Search for the phrase <code class="ph codeph">mainFlashK2</code> and record
+					the K2 value found in the log. </span>
+				<div class="itemgroup stepresult">Save this main flash value to fine-tune K2 triggers for
+					the Flash Decision and Flash Gain Adjust modules. </div>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Retrieve MWB target points for
+				pre-flash</strong></p><ol start="4"><li class="li step stepexpand" id="cnc1522035567644__step_N1007A_N10027_N10014_N10001">
+				<span class="ph cmd">Capture a raw flash snapshot of a 100% FOV gray card.</span>
+			</li>
+<li class="li step stepexpand" id="cnc1522035567644__step_N10075_N10027_N10014_N10001">
+				<span class="ph cmd">From the AWB log, find a  log entry with the phrase
+						<code class="ph codeph">FlashInfo:: prevFlashState:1, curFlashState:4</code>. <br /><img class="image" id="cnc1522035567644__image_kc5_n2f_hdb" src="gfx1522036554628.svg" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="cnc1522035567644__step_N10066_N10024_N10012_N10001">
+				<span class="ph cmd">Then find the most recent value for <code class="ph codeph">SAAGW_Target point =</code> that precedes the phrase in Step 4.</span>
+				<div class="itemgroup stepresult">Save the target points to record in the Flash Reference
+					Points module. </div>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Retrieve MWB target points for main
+				flash</strong></p><ol start="7"><li class="li step stepexpand" id="cnc1522035567644__step_N100A3_N10027_N10014_N10001">
+				<span class="ph cmd">Capture a raw flash snapshot of a 100% FOV gray card.</span>
+			</li>
+<li class="li step stepexpand" id="cnc1522035567644__step_N100AE_N10027_N10014_N10001">
+				<span class="ph cmd">Measure the average R/G, B/G in the 20-30% center region of the
+					image.</span>
+				<div class="itemgroup stepresult">Save the main flash MWB points to record in the Flash
+					Decision module. </div>
+			</li>
+</ol>
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qej1508358564206.html" title="LED flash concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">LED flash concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

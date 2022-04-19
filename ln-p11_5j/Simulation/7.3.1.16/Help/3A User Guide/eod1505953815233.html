@@ -1,0 +1,92 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Each illuminant has a different spectral power distribution and each sensor has a different spectral sensitivity. Reference points refer to the gray R/G and B/G ratio measured under each illuminant ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Custom reference point concept" /><meta name="DC.Relation" scheme="URI" content="yqt1502923722746.html" /><meta name="DC.Relation" scheme="URI" content="liv1505954047160.html" /><meta name="DC.Relation" scheme="URI" content="dya1505954249446.html" /><meta name="DC.Relation" scheme="URI" content="byt1501884502061.html" /><meta name="DC.Relation" scheme="URI" content="bqr1502047245663.html" /><meta name="DC.Relation" scheme="URI" content="agt1502740380308.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="eod1505953815233" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Custom reference point concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="eod1505953815233">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="yqt1502923722746.html" title="AWB stats filters">AWB stats filters</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Custom reference point concept</h1>
+
+	<div class="body conbody">
+		<p class="p">Each illuminant has a different spectral power distribution and each
+			sensor has a different spectral sensitivity. Reference points refer to the gray R/G and
+			B/G ratio measured under each illuminant for each sensor. Based on these points, AWB
+			creates a gray zone for screening stats from a given scene. As there may be different
+			illuminants from ones typically handled by the reference points module, the custom
+			reference points module allows you to add custom reference points for different
+			illuminants.</p>
+
+		<p class="p">The reference points module and distance weight vector module set valid
+			zones and compute the weight for each stat. The custom reference point module adds other
+			valid zones, such as the one shown in the circle in the figure. If there are custom
+			reference points, the final distance weight is computed by merging weights from the
+			distance weight module and the custom reference point module.</p>
+
+		<br /><img class="image" id="eod1505953815233__image_clw_mqj_4bb" src="dpr1508189992372.svg" /><br />
+		<p class="p">The distance weight vector parameter is a user-defined set of zones that
+			assigns a weight to a stat depending on the distance from the stat to the custom
+			reference point. Stats near a custom reference point result in a higher weight. Stats
+			far from a custom reference point result in a lower weight since there is less chance
+			that a stat comes from a gray object under a custom illuminant. In the following
+			example, two distance zones are shown as concentric circles around the custom reference
+			point. Zone1 has a distance range of 0.00 to 0.05 and Zone2 has a distance range of 0.09
+			to 1.00. Stats that fall into Zone1 are assigned a weight of 1.00 and stats that fall
+			into Zone2 are assigned a weight of 0.00. Stat distances that fall between two zones get
+			an interpolated weight value.</p>
+
+		<br /><img class="image" id="eod1505953815233__image_dbr_1n3_4bb" src="eiy1508176430767.svg" /><br />
+		<p class="p">Weight adjustment is a factor multiplied with the weight that allows
+			flexible control of enabling and disabling custom reference points based on a given lux
+			index. In the following example, three lux index zones are defined in a way to give more
+			credence to stats with a lux index in Zone2. Zone1 has a range of 0.00 to 280.0 and
+			Zone2 has a range of 310.0 to 360.0. Stats that fall into Zone1 or Zone3 are assigned a
+			weight adjustment of 0.00 and stats that fall into Zone2 are assigned a weight
+			adjustment of 1.00. Lux index values that fall between the zones get an interpolated
+			weight adjustment value.</p>
+
+		<div class="fig fignone nonumber" id="eod1505953815233__fig_q4p_jpm_3bb"><span class="figcap">Figure : Based on the weight adjustment tuning data shown, this custom
+				reference point will be enabled only in the 280 to 390 lux index range. </span>
+			
+			<br /><img class="image" id="eod1505953815233__image_rgj_jx3_4bb" src="nbi1508180936190.svg" /><br />
+		</div>
+
+		<p class="p">When custom reference points exist, the final distance weight is
+			determined by comparing the weight from the distance weight vector module and the weight
+			from the custom reference points module, and taking the one that is greater. Final
+			distance weight is computed as follows: </p>
+
+		<p class="p"><em class="ph i">Weight<sub class="ph sub">CustomRefPt</sub> = weight
+				* factor</em> (in custom reference point module)</p>
+
+		<p class="p"><em class="ph i">Final Weight<sub class="ph sub">DistWV</sub> = MAX
+					(Weight<sub class="ph sub">DistWV,</sub> Weight<sub class="ph sub">CustomRefPt</sub>)</em></p>
+
+		<div class="fig fignone nonumber" id="eod1505953815233__fig_odp_lqm_3bb"><span class="figcap">Figure : Based on the example tuning data, this figure shows the final
+				weight for stats when the lux index is 350.</span>
+			
+			<br /><img class="image" id="eod1505953815233__image_uzp_4dj_4bb" src="gqp1508184102130.svg" /><br />
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="liv1505954047160.html">Custom reference point parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="dya1505954249446.html">Tune custom reference points</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="byt1501884502061.html" title="Reference points concept">Reference points concept</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="bqr1502047245663.html" title="Distance weight vector concept">Distance weight vector concept</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="agt1502740380308.html" title="AWB common trigger data system">AWB common trigger data system</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

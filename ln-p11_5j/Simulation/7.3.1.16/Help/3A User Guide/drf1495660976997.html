@@ -1,0 +1,68 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Verify with the sensor vendor and sensor driver engineer rhat the correct sensor configuration for pixel clock, line_length_pixel , and frame_length_line have been implemented into the sensor driver. ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Remove or reduce banding noise" /><meta name="DC.Relation" scheme="URI" content="arm1495660890214.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qng1474864618916" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Remove or reduce banding noise</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qng1474864618916">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Remove or reduce banding noise</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="qng1474864618916__context_N10011_N1000E_N10001">
+         <br /><img class="image" id="qng1474864618916__image_dtf_pdk_1x" src="pyp1495660892257.png" /><br /></div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="qng1474864618916__step_N1001E_N1001B_N1000E_N10001">
+            <span class="ph cmd">Verify with the sensor vendor and sensor driver engineer rhat the correct sensor
+               configuration for pixel clock, <span class="keyword parmname">line_length_pixel</span>, and
+                  <span class="keyword parmname">frame_length_line</span> have been implemented into the sensor
+               driver. An incorrect configuration of these settings causes banding.</span>
+         </li>
+<li class="li step stepexpand" id="qng1474864618916__step_N1002F_N1001B_N1000E_N10001">
+            <span class="ph cmd">Dump the kernel log and read I2C for these register settings to verify that the
+               sensor driver configuration settings are correct.</span>
+         </li>
+<li class="li step stepexpand" id="qng1474864618916__step_N10038_N1001B_N1000E_N10001">
+            <span class="ph cmd">Capture an image with the test condition to verify the results. If the issue
+               persists, capture a test image with 3A EXIF information and AEC log messages.</span>
+         </li>
+<li class="li step stepexpand" id="qng1474864618916__step_N10041_N1001B_N1000E_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">3A Debug</span> dialog box,
+               click the <span class="ph uicontrol">Data</span> tab and select <span class="ph menucascade"><span class="ph uicontrol">AEC Debug Info</span> &gt; <span class="ph uicontrol">Gain and Line Count Information</span></span> for the test image.<br /><img class="image" src="ypy1495660835192.png" /><br /></span>
+         </li>
+<li class="li step stepexpand" id="qng1474864618916__step_N10062_N1001B_N1000E_N10001">
+            <span class="ph cmd">Check the <span class="keyword parmname">AE Snapshot Exposure Time</span>. If the exposure time is
+               smaller than 1/120 sec in a 60 Hz condition or 1/100 sec in a 50 Hz condition, due to
+               physical limitations, the banding issue occurs and cannot be fixed by ISP.</span>
+         </li>
+<li class="li step stepexpand" id="qng1474864618916__step_N1006F_N1001B_N1000E_N10001">
+            <span class="ph cmd">Set the exposure time longer than 1/100 sec (50 Hz condition) or 1/120 sec (60 Hz
+               condition) by tuning the exposure table.</span>
+         </li>
+<li class="li step stepexpand" id="qng1474864618916__step_N10078_N1001B_N1000E_N10001">
+            <span class="ph cmd">Capture an image with the test condition to verify the results. If the issue
+               persists, check for power-related noise. </span>
+            <div class="itemgroup info">Usually power noise is most obvious when using a large analog gain or during lens
+               movement. Power noise may be due to: <ul class="ul" id="qng1474864618916__ul_mhf_dzk_1x">
+                  <li class="li">A sensor analog power source</li>
+
+                  <li class="li">VCM power (especially if it uses PWM)</li>
+
+                  <li class="li">Bad or insufficient grounding (ground loop)</li>
+
+               </ul>
+Work with your hardware engineers to solve the power noise issue.</div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="arm1495660890214.html" title="Tune the exposure table">Tune the exposure table</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

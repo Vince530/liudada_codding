@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="TF">
+    <param id="1"  name="tfblend" autotune="1" submodule="sub1">32:16:192</param>
+    <mapping dest="pcsim">update_xml_tf</mapping>
+    <mapping dest="chromatix">tf_autotune2chromatix</mapping>
+    <isp_pipeline>IPE</isp_pipeline>
+    <chromatix_tag>tf10_ipe</chromatix_tag>
+    <gen_pop_function>gen_pop_tf</gen_pop_function>
+</module_if>

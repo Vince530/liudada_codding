@@ -1,0 +1,98 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Generate a common set of AEC zone triggers by capturing images under given lux levels in the light booth. If possible, capture a JPEG image of a 100% FOV gray chart taken at 400 lux, D65 illuminant, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune the AEC default triggers (3A v5.x and v6.0)" /><meta name="abstract" content="Generate a common set of AEC zone triggers by capturing images under given lux levels in the light booth." /><meta name="description" content="Generate a common set of AEC zone triggers by capturing images under given lux levels in the light booth." /><meta name="DC.Relation" scheme="URI" content="zgu1495661048992.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jjs1471557527783" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune the AEC default triggers (3A v5.x and v6.0)</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jjs1471557527783">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune the AEC default triggers (3A v5.x and v6.0)</h1>
+
+   
+   <div class="body taskbody"><p class="shortdesc">Generate a common set of AEC zone triggers by capturing images under
+      given lux levels in the light booth.</p>
+
+      <div class="section prereq p" id="jjs1471557527783__prereq_ynx_fsj_kw">If possible, capture a JPEG image of a 100% FOV gray chart
+         taken at 400 lux, D65 illuminant, containing 3A EXIF metadata.</div>
+
+      <div class="section context" id="jjs1471557527783__context_N1001A_N10012_N10001">Although each AEC feature has control of individual zones by setting its own number
+         of zones and triggers, the initial tuning procedure for all AEC features is to generate a
+         common set of triggers by taking pictures under given lux levels in the light booth. The
+         Chromatix tool copies this common set of triggers to all the features that adopt the
+         generic multi-zone-based tuning. Later, the triggers and number of zones can be changed
+         individually for each feature at the fine tuning stage. <p class="p">If you use auto tune for initial
+            tuning of ISP modules, the auto tune process automatically computes the AEC default
+            triggers from an image loaded in the Image Gallery.</p>
+<p class="p">For manual tuning or fine
+            tuning, use the steps below to tune the AEC default triggers. This procedure is
+            generally used during the fine tuning stage of image quality tuning. </p>
+</div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="jjs1471557527783__step_N10028_N10025_N10012_N10001">
+            <span class="ph cmd">On the <span class="ph uicontrol">ISP Tuning</span> tab, in the <span class="ph uicontrol">3A
+                  Tuning</span> group, click <span class="ph uicontrol">AEC.</span><br /><img class="image" src="dur1495660878966.png" /><br /></span>
+         </li>
+<li class="li step stepexpand" id="jjs1471557527783__step_N10040_N10025_N10012_N10001">
+            <span class="ph cmd">Click <span class="ph uicontrol">Tune</span> next to <span class="ph uicontrol">Default
+                  Triggers</span>.<br /><img class="image" src="kqj1495661112078.png" /><br /></span>
+         </li>
+<li class="li step stepexpand" id="jjs1471557527783__step_N10055_N10025_N10012_N10001">
+            <span class="ph cmd">Enter the Lux index value of a JPEG image file taken of a 100% gray card under 400
+               lux lighting conditions using one of these methods:</span>
+            <ul class="ul choices">
+               <li class="li choice">
+                  <p class="p">Upload a JPEG image file taken of a 100% gray card under 400 lux and D65
+                     illuminant  that includes the 3A debug information in the EXIF header. Click
+                        <img class="image" src="wzv1495660881446.png" /> and select the image file. The
+                     lux index is read from the EXIF header. </p>
+
+               </li>
+
+               <li class="li choice">
+                  <p class="p">Manually enter the <span class="ph uicontrol">Lux index</span> value from a photo of a
+                     100% gray card image that was taken under 400 lux light condition. <br /><img class="image" height="257" src="bke1495660980882.png" width="494" /><br /></p>
+
+               </li>
+
+            </ul>
+
+         </li>
+<li class="li step stepexpand" id="jjs1471557527783__step_N10081_N10025_N10012_N10001">
+            <span class="ph cmd">Update the <span class="ph uicontrol">Number of zones</span>,
+               if needed. By default, two triggers are generated resulting in three zones. </span>
+            <div class="itemgroup info">
+               <br /><img class="image" id="jjs1471557527783__image_u4j_bfh_z1b" height="272" src="fli1495661018899.png" width="523" /><br />
+            </div>
+            <div class="itemgroup stepresult">The appropriate number of vertical boundary lines appears on the graph and
+               the trigger <span class="keyword parmname">Start Lux</span> and <span class="keyword parmname">End Lux</span> values
+               are
+               calculated.<pre class="pre codeblock"><code>Set “number of zones” = 3
+“number of triggers” = “number of zones” - 1
+The lux index for 400 lux light condition: “lux_idx_under_400”.
+Trigger[0].start = lux_idx_under_400 - 100
+Trigger[0].end = lux_idx_under_400 - 60
+Trigger[1].start = lux_idx_under_400 + 90
+Trigger[1].end = lux_idx_under_400 + 160</code></pre></div>
+         </li>
+<li class="li step stepexpand" id="jjs1471557527783__step_N100A4_N10025_N10012_N10001">
+            <span class="ph cmd">If the computed <span class="keyword parmname">Start Lux</span> and <span class="keyword parmname">End Lux</span>
+               values need to be adjusted, enter the applicable values in the table or drag the
+               vertical lines on the graph to adjust the <span class="keyword parmname">Start Lux</span> and
+                  <span class="keyword parmname">End Lux</span> values.</span>
+            <div class="itemgroup info">Trigger values must abide by the following
+               restrictions:<pre class="pre codeblock"><code>Trigger[n].start &lt; Trigger[n].end
+Trigger[n].end &lt; Trigger[n+1].start</code></pre></div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="zgu1495661048992.html" title="Lux index">Lux index</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

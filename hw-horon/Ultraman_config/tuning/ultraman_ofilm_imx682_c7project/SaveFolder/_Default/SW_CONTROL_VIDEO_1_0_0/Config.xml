@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<VideoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./VideoConfiguration.xsd">
+  <RegionsConfig RegionIndex="0">
+    <RegionConfig Index="0">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>3</Passes>
+      <PassesManual>3</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>4656</ManualResolution_Width>
+      <ManualResolution_Height>3496</ManualResolution_Height>
+      <EISEnable range="[0, 1]">0</EISEnable>
+    </RegionConfig>
+  </RegionsConfig>
+  <TriggersStartEndIndexes></TriggersStartEndIndexes>
+  <ShowHideDCViewer>true</ShowHideDCViewer>
+  <VSROutResolutionWidth>4656</VSROutResolutionWidth>
+  <VSROutResolutionHeight>3496</VSROutResolutionHeight>
+</VideoConfiguration>

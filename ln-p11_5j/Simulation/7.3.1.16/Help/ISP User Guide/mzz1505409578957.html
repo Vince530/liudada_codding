@@ -1,0 +1,308 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The following table lists the parameters used for tuning the GIC module. The default values for the parameters are suitable for most situations but may require adjustment in some cases to achieve your ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="GIC parameters" /><meta name="DC.Relation" scheme="URI" content="sry1494872273491.html" /><meta name="DC.Relation" scheme="URI" content="dge1505409822775.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="mzz1505409578957" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>GIC parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="mzz1505409578957">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a> / <a class="navheader_parent_path" href="sry1494872273491.html" title="GIC tuning concepts">GIC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="sry1494872273491.html" title="GIC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">GIC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">GIC parameters</h1>
+
+	<div class="body conbody">
+		<div class="p">The following table lists the parameters used for tuning the GIC module. The
+			default values for the parameters are suitable for most situations but may require
+			adjustment in some cases to achieve your specific objectives. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="mzz1505409578957__ID-table-0000000f" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table :   Basic GIC tuning parameters</span></caption><colgroup><col style="width:24.5%" /><col style="width:20.333333333333332%" /><col style="width:19.333333333333332%" /><col style="width:18.166666666666668%" /><col style="width:17.666666666666668%" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d18697e41">Parameter
+								name</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d18697e44">Description</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d18697e47">Tuning</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d18697e50">Factory
+								default</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d18697e53">Tuning
+								required</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Gic Global Enable (Enable
+								section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Enables/disables entire
+								GIC/PNR module</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">Set to 1 to use GIC or PNR<p class="p">(Disable –
+								0)</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">1</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Use default value</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Enable Gic (Gic 30 Rgn
+								Section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Enables/disables GIC
+								submodule</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">
+								<ul class="ul" id="mzz1505409578957__ul_cmq_pv1_hbb">
+									<li class="li">Disable – 0</li>
+
+									<li class="li">Enable – 1</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">1</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Use default value</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Enable Pnr (Gic 30 Rgn
+								section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Enables/disables PNR
+								submodule</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">
+								<ul class="ul" id="mzz1505409578957__ul_ext_wv1_hbb">
+									<li class="li">Disable – 0</li>
+
+									<li class="li">Enable – 1</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">1</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Use default value</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Noise Std Lut</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">
+								<p class="p">Table that plots the local noise intensity (in
+									terms of standard deviation) at 65 points; known as the noise
+									profile</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">
+								<ul class="ul" id="mzz1505409578957__ul_ip2_zwn_gbb">
+									<li class="li">The table is computed by the Chromatix
+										tool. Generally, the noise profile does not need tuning.
+										Compute for each sensor.</li>
+
+									<li class="li">Higher values result in weaker GIC and
+										stronger PNR</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">Range = [0,
+								512.0]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Advanced tuning – Use the computed values; if
+								it is necessary to tune this parameter, request guidance from the CE
+								team  </td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Gic Noise Scale</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Noise scale factor for
+								green imbalance correction used for Gb/Gr channel difference
+								clamping; defines amount of noise</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">Higher value results in
+								weaker correction (higher threshold for what must be
+								corrected)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">
+								<p class="p">1.0</p>
+
+								<p class="p">Range = [0, 15.98]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Gic Correction
+								Strength</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Adjusts green imbalance
+								correction strength; use to increase or decrease noise
+								strength</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">
+								<ul class="ul">
+									<li class="li">Lower value results in stronger
+										correction</li>
+
+									<li class="li">Maximum noise reduction – 0</li>
+
+									<li class="li">No noise reduction –1</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">
+								<p class="p">0.6</p>
+
+								<p class="p">Range = [0, 1]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Thin Line Noise
+								Offset</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Detects thin lines and
+								offsets edge noise to prevent over-correction of Gr/Gb mismatch </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">Higher value results in
+								weaker thin line detection; thin lines may be impacted by
+								GIC</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">
+								<p class="p">400</p>
+
+								<p class="p">Range = [0, 16383]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Pnr Noise Scale</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Noise scale factor of PNR
+								for each channel; use to separate flat region and texture region and
+								reduce peak noise</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">
+								<ul class="ul">
+									<li class="li">Higher value results in more area that can
+										be detected as flat region; amount of correction would be
+										less</li>
+
+									<li class="li">Take care when tuning this parameter as
+										setting can impact textured region</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">
+								<p class="p">{1.0, 1.0, 1.0, 1.0}</p>
+
+								<p class="p">Range = [0, 15.98]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Pnr Correction
+								Strength</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Adjusts peak noise
+								reduction strength; one value adjusts all four channels</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">Lower value results in
+								stronger peak noise reduction</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">
+								<p class="p">0.6</p>
+
+								<p class="p">Range = [0, 1]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Yes</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e41 ">Radial Pnr Str
+								Adj</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e44 ">Adjusts radial (corner)
+								peak noise reduction strength</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e47 ">
+								<ul class="ul">
+									<li class="li">Adjust PNR strength based on radial distance
+										percentage</li>
+
+									<li class="li">Smaller value results in stronger PNR in
+										corners</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e50 ">
+								<p class="p">1.0</p>
+
+								<p class="p">Range = [0, 15.98]</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d18697e53 ">Advanced tuning – Use the computed values; if
+								it is necessary to tune this parameter, request guidance from the CE
+								team </td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+</div>
+
+		
+		
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="dge1505409822775.html" title="These examples illustrate the effects of adjusting specific GIC parameter values for a snapshot project.">Examples of GIC parameter effects</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="sry1494872273491.html" title="GIC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">GIC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

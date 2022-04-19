@@ -1,0 +1,160 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="ADRC includes tuning LTM and gamma and GTM. To achieve saturation prevention, AEC controls the camera sensor to underexpose images and pass the DRC gain to the ISP. The ISP compensates missing ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="ADRC tuning concepts" /><meta name="abstract" content="ADRC includes tuning LTM and gamma and GTM." /><meta name="description" content="ADRC includes tuning LTM and gamma and GTM." /><meta name="DC.Relation" scheme="URI" content="gav1504650254694.html" /><meta name="DC.Relation" scheme="URI" content="dpk1523651427557.html" /><meta name="DC.Relation" scheme="URI" content="mzi1524161565329.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="rgk1523651306437" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ADRC tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="rgk1523651306437">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">ADRC tuning concepts</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">ADRC includes tuning LTM and gamma and GTM.</p>
+
+		<p class="p">To achieve saturation prevention, AEC controls the camera sensor to underexpose
+			images and pass the DRC gain to the ISP. The ISP compensates missing brightness based on
+			the DRC gain via GTM and LTM. Currently, a maximum DRC gain of 16.0x is supported, where
+			the total DRC gain includes DRC gain and dark-boosting gain.</p>
+
+		<div class="p">
+			<div class="fig fignone" id="rgk1523651306437__fig_njd_mj5_ndb"><span class="figcap">Figure : (L) Normal exposure, (C) underexposure, and (R) DRC gain applied</span>
+				
+				<img class="image" id="rgk1523651306437__image_irm_mj5_ndb" src="wpn1524072339893.png" />
+			</div>
+
+		</div>
+
+		<div class="p">Tone tuning uses the following:<ul class="ul" id="rgk1523651306437__ul_lrj_pvb_4db">
+				<li class="li">Gamma – Apply a gamma curve to each pixel based on the pixel value.</li>
+
+				<li class="li">LTM – Apply a tone mapping gain to each pixel depending on the local brightness
+					to enhance local visibility.</li>
+
+				<li class="li">GTM – Apply a global tone curve to each pixel to enhance global visibility. Use
+					HDR and ADRC to compensate the enhanced image dynamic range.</li>
+
+				<li class="li">TMC – Configure ADRC compensation curves for GTM and LTM.<br /><img class="image" id="rgk1523651306437__image_usg_jfq_tdb" src="wnp1525876387594.png" /><br /></li>
+
+			</ul>
+</div>
+
+		<div class="p">
+			<div class="fig fignone" id="rgk1523651306437__fig_nzb_1kv_ndb"><span class="figcap">Figure : LTM processing overview</span>
+				
+				<img class="image" id="rgk1523651306437__image_z5y_mjv_ndb" src="vyt1494872114730.svg" />
+			</div>
+
+		</div>
+
+		<div class="section" id="rgk1523651306437__section_dmg_h5b_4db"><h2 class="title sectiontitle">Image capturing</h2>
+			
+			<div class="p">HDR image content suggestions:<ul class="ul" id="rgk1523651306437__ul_afb_lkv_ndb">
+					<li class="li">Window scene – Half bright outdoor, half dark indoor, containing a person
+						holding an MCC chart by the window with a bright outdoor scene through the
+						window.</li>
+
+					<li class="li">Shade scene – Outdoor scene with half bright sun, half dark shade.</li>
+
+					<li class="li">Outdoor texture – Person standing under direct sunlight, holding a texture
+						text chart with dark shade in the background.</li>
+
+					<li class="li">Backlit scene – Person holding an MCC chart under shade with a bright
+						background (e.g., sky with clouds).</li>
+
+					<li class="li">Garage scene – Inside a parking structure with a bright outside
+						background.</li>
+
+					<li class="li">Building scene – Buildings with dark shadows.</li>
+
+					<li class="li">Night scene – Building with lights at night.</li>
+
+					<li class="li">Indoor scene – Indoor decoration with small indoor areas.</li>
+
+					<li class="li">Nature scene – Natural objects including trees, grass, water, and buildings,
+						which contain highlights and shadows.</li>
+
+					<li class="li">Resolution chart in lab scene – Resolution chart placed half in the bright
+						side and half in the dark side.</li>
+
+					<li class="li">Night scene with faces, shop windows, and lights – Include motion (e.g., a
+						person swinging their hands).</li>
+
+				</ul>
+<div class="fig fignone" id="rgk1523651306437__fig_xq5_jsb_4db"><span class="figcap">Figure : Image examples (from L to R) of a window scene, shade scene, outdoor
+						texture, and backlit scene</span>
+					
+					<br /><img class="image" id="rgk1523651306437__image_ctr_3sb_4db" src="ydh1524159553621.png" /><br />
+				</div>
+</div>
+
+			<div class="p">
+				<div class="fig fignone" id="rgk1523651306437__fig_e45_k5b_4db"><span class="figcap">Figure : More image examples (from L to R) of a garage scene, building scene,
+						night scene, indoor scene, and nature scene</span>
+					
+					<br /><img class="image" id="rgk1523651306437__image_f45_k5b_4db" src="gcw1524160351181.png" /><br />
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="rgk1523651306437__section_a1x_kjt_pdb"><h2 class="title sectiontitle">Impacted scenes</h2>
+			
+			<p class="p">For an outdoor high-dynamic scene, where the gain is 1x, when ADRC is enabled, the
+				DRC gain is 3x to maintain details in highlight areas. The input raw AEC gain is
+				still 1x, but the line count should be divided by 3. Use GTM/LTM DRC gain to
+				compensate 3x DRC gain to match the final luminance. Noise is enhanced by the DRC
+				gain in this scene.</p>
+
+			<p class="p">For an indoor low-light scene, there is not much denoising when the DRC gain value is
+				larger. For example, an indoor scene sensor is 8x and the ISP gain is 2x, so the
+				total gain is 16x. If the DRC gain is 2x, use GTM/LTM DRC gain to compensate gain
+				instead of the ISP gain. Overall noise is not increased.</p>
+
+		</div>
+
+		<div class="section" id="rgk1523651306437__section_qnx_2lt_pdb"><h2 class="title sectiontitle">HNR</h2>
+			
+			<div class="p">For HNR noise-reduction adjustment, use the following parameters:<ul class="ul" id="rgk1523651306437__ul_lft_slt_pdb">
+					<li class="li"><span class="keyword parmname">hnr_nr_enable</span> – Enable noise reduction</li>
+
+					<li class="li"><span class="keyword parmname">hnr_blend_enable</span> – Enable noise blending</li>
+
+				</ul>
+</div>
+
+			<div class="p">For DRC gain and the exposure time trigger, <span class="keyword parmname">control_gain</span> is used
+				as follows:<ul class="ul" id="rgk1523651306437__ul_gtq_hlt_pdb">
+					<li class="li">ABF and GIC use real gain = sensor gain x ISP gain</li>
+
+					<li class="li">HNR uses hybrid gain = sensor gain x ISP gain x power(DRC gain, GTM
+						ratio)</li>
+
+					<li class="li">ASF uses the total gain = sensor gain x ISP gain x DRC gain</li>
+
+				</ul>
+</div>
+
+			<p class="p"><span class="keyword parmname">control_drc_gain</span> is used when there is DRC gain to enable the
+				DRC gain trigger dimension to set different HNR, LNR, and blended LNR arr to control
+				noise.</p>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="dpk1523651427557.html">Tune LTM and Gamma and GTM ADRC</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="mzi1524161565329.html">ADRC parameters</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gav1504650254694.html" title="BPS tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPS tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,124 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="General procedure Prerequisite : Before performing any fine-tuning, run the AWB initial tuning procedure to generate initial parameter values. Use the following steps to make updates to a distance ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Fine-tune distance weight vector" /><meta name="DC.Relation" scheme="URI" content="bqr1502047245663.html" /><meta name="DC.Relation" scheme="URI" content="oos1501884619125.html" /><meta name="DC.Relation" scheme="URI" content="vvj1502822276198.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="oig1502047313305" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Fine-tune distance weight vector</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="oig1502047313305">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="yqt1502923722746.html" title="AWB stats filters">AWB stats filters</a> / <a class="navheader_parent_path" href="bqr1502047245663.html" title="Distance weight vector concept">Distance weight vector concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="bqr1502047245663.html" title="Distance weight vector concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Distance weight vector concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Fine-tune distance weight vector</h1>
+
+	<div class="body conbody">
+		<div class="section" id="oig1502047313305__section_N10011_N1000E_N10001"><h2 class="title sectiontitle">General procedure</h2>
+			
+			<p class="p"><strong class="ph b">Prerequisite</strong>: Before performing any fine-tuning, run
+				the AWB initial tuning procedure to generate initial parameter values.</p>
+
+			<div class="p">Use the following steps to make updates to a distance weight vector. Following
+				the procedure are some fine-tuning scenarios for distance weight vectors.<ol class="ol" id="oig1502047313305__ol_a42_q3m_51b">
+					<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+					<li class="li">In the <span class="ph uicontrol">List View</span> tab,
+						click <span class="ph uicontrol">Distance Weight Vector</span> to show
+						the existing weight vector configuration. <br /><img class="image" id="oig1502047313305__image_ogc_421_x1b" src="ebm1502826171293.png" /><br /></li>
+
+					<li class="li">To add a trigger region, highlight the row above or below
+						where you want to add the new trigger region, then click <span class="ph uicontrol">Add above</span> or <span class="ph uicontrol">Add below</span> to add a new row.<div class="note note" id="oig1502047313305__note_N100BE_N100B0_N10084_N1007A_N10013_N10001"><span class="notetitle">Note:</span> The
+							tool does not allow adding a row above the minimum lux index or adding a
+							row below the maximum lux index.</div>
+</li>
+
+					<li class="li">To update a trigger or weight value, double-click the
+						appropriate entry to open the edit dialog. Update the value and click
+						outside the box to save the change.</li>
+
+					<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save to project</span></span>.</li>
+
+				</ol>
+</div>
+
+		</div>
+
+		<div class="section" id="oig1502047313305__section_N1005A_N10011_N10001"><h2 class="title sectiontitle">Fine-tuning scenarios for distance weight vector</h2>
+			
+			<p class="p">To improve a purplish issue, expand the buffer zone to include more stats, as
+				in the following example. </p>
+
+			<div class="fig fignone nonumber" id="oig1502047313305__fig_nzc_1bv_51b"><span class="figcap">Figure : (L) Stats located outside gray zone boundary; (R) stats located inside
+					expanded boundary.</span>
+				
+				<br /><img class="image" id="oig1502047313305__image_a1t_jbv_51b" src="axe1502147439712.png" /><br />
+			</div>
+
+			<div class="fig fignone nonumber" id="oig1502047313305__fig_xph_tbv_51b"><span class="figcap">Figure : Expand the distance trigger boundary for a specified Lux Index/CCT to
+					include more stats.</span>
+				
+				<br /><img class="image" id="oig1502047313305__image_yfr_bcv_51b" src="ytr1502147476513.svg" /><br />
+			</div>
+
+			<p class="p">To correct a greenish issue caused by the current final decision point, add
+				more distance triggers and update the weights to move the decision point, as in the
+				following example.</p>
+
+			<div class="fig fignone nonumber" id="oig1502047313305__fig_wtf_hfv_51b"><span class="figcap">Figure : Select position of the preferred final decision point and give more
+					weight to distance of the "new" position to push final decision point to the
+					left.</span>
+				
+				<img class="image" id="oig1502047313305__image_bnk_cgv_51b" src="trh1502149646626.svg" />
+			</div>
+
+			<div class="fig fignone nonumber" id="oig1502047313305__fig_ygz_q2v_51b"><span class="figcap">Figure : Estimate the CCT range for the revised decision point
+					location and estimate the distance from the reference line.</span>
+				
+				<br /><img class="image" id="oig1502047313305__image_wfh_vf5_51b" src="vne1502137358154.png" /><br />
+			</div>
+
+			<div class="fig fignone nonumber" id="oig1502047313305__fig_bh3_xgv_51b"><span class="figcap">Figure : (L) Original values; (R) 3rd distance trigger is split into three trigger
+					levels and weights are adjusted to give more weight to the preferred location of
+					the final decision point. </span>
+				
+				<br /><img class="image" id="oig1502047313305__image_mj1_bhv_51b" src="cgu1502150073775.png" /><br />
+			</div>
+
+			<div class="fig fignone nonumber" id="oig1502047313305__fig_w33_xhv_51b"><span class="figcap">Figure : Blue line illustrates how five distance triggers become seven
+					to add granularity to weights in specific distances.</span>
+				
+				<img class="image" id="oig1502047313305__image_ssn_b2c_sbb" src="vqr1509331315663.svg" />
+			</div>
+
+			<p class="p">Alternatively, keep the same number of distance triggers but change the
+				start/end and weight values to move the decision point, as in the following
+				example.</p>
+
+			<div class="fig fignone nonumber" id="oig1502047313305__fig_ghy_ryw_51b"><span class="figcap">Figure : (L) Original values; (R) 2nd and 3rd distance trigger values and weights
+					are adjusted to give more weight to the preferred location of the final decision
+					point. </span>
+				
+				<br /><img class="image" id="oig1502047313305__image_dyz_kzw_51b" src="rvl1502170274704.png" /><br />
+			</div>
+
+			<div class="fig fignone nonumber" id="oig1502047313305__fig_ccl_tvw_51b"><span class="figcap">Figure : Orange line illustrates changes to 3rd distance trigger start/end and weight
+					values.</span>
+				
+				<br /><img class="image" id="oig1502047313305__image_nvv_lzw_51b" src="lip1502170179856.svg" /><br />
+			</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="vvj1502822276198.html" title="Distance weight vector parameters">Distance weight vector parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="oos1501884619125.html" title="AWB initial tuning">AWB initial tuning</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="bqr1502047245663.html" title="Distance weight vector concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Distance weight vector concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,719 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<!--==============================================================
+ FILE: 3A Metadata Definition
+
+ SERVICES: 3A Metadata format definition file
+
+ DESCRIPTION: Defines version 2.0.4 of the 3A metadata specification. 
+
+
+ Copyright (c) 2015 Qualcomm Technologies, Inc.
+ All Rights Reserved.
+ Confidential and Proprietary - Qualcomm Technologies, Inc.
+===============================================================-->
+<Metadata Tag="Qualcomm Camera Debug" TagSize="22" Type="3A"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataSchema.xsd">
+  <Version>
+    <Value Name="Major revision" Size="1" Signed="false" Type="Int" Value="2"/>
+    <Value Name="Minor revision" Size="1" Signed="false" Type="Int" Value="0"/>
+    <Value Name="Patch revision" Size="2" Signed="false" Type="Int" Endian="Big" Value="1"/>
+  </Version>
+<!-- Bitmask definition block -->
+  <Bitmasks>
+    <Bitmask Name="AE Influence Type Mask">
+      <Value Name="None"              Value="0"/>
+      <Value Name="Bright flat field" Value="1"/>
+      <Value Name="Dark flat field"   Value="2"/>
+      <Value Name="Extreme color"     Value="4"/>
+      <Value Name="Entropy"           Value="8"/>
+      <Value Name="Snow scene"        Value="16"/>
+      <Value Name="Backlit scene"     Value="32"/>
+      <Value Name="Dark region"       Value="64"/>
+      <Value Name="Bright region"     Value="128"/>
+      <Value Name="Invalid"           Value="256"/>
+    </Bitmask>
+    <Bitmask Name="AF Stats Type Mask">
+      <Value Name="None"             Value="0"/>
+      <Value Name="First pass"       Value="1"/>
+      <Value Name="Second pass"      Value="2"/>
+      <Value Name="Preview-assisted" Value="4"/>
+    </Bitmask>
+    <Bitmask Name="AF Scene Change Type Mask">
+      <Value Name="None"                       Value="0"/>
+      <Value Name="SAD"                        Value="1"/>
+      <Value Name="Gyro"                       Value="2"/>
+      <Value Name="Focus value"                Value="4"/>
+      <Value Name="Scene change during search" Value="8"/>
+    </Bitmask>
+  </Bitmasks>
+<!-- Enum definition block -->
+  <Enums>
+    <Enum Name="AWB Decision Map">
+      <Value Name="Cloudy"               Value="0"/>
+      <Value Name="D65"                  Value="1"/>
+      <Value Name="Noon"                 Value="2"/>
+      <Value Name="D50"                  Value="3"/>
+      <Value Name="Cold fluorescent"     Value="4"/>
+      <Value Name="Warm fluorescent"     Value="5"/>
+      <Value Name="Incandescent"         Value="6"/>
+      <Value Name="Horizon"              Value="7"/>
+      <Value Name="Custom fluorescent"   Value="8"/>
+      <Value Name="Custom daylight"      Value="9"/>
+      <Value Name="Custom incandescent"  Value="10"/>
+      <Value Name="U30"                  Value="11"/>
+      <Value Name="Custom daylight 1"    Value="12"/>
+      <Value Name="Custom daylight 2"    Value="13"/>
+      <Value Name="Custom fluorescent 1" Value="14"/>
+      <Value Name="Custom fluorescent 2" Value="15"/>
+    </Enum>
+    <Enum Name="AWB White World Cluster Map">
+      <Value Name="Daylight"     Value="1"/>
+      <Value Name="Fluorescent"  Value="2"/>
+      <Value Name="Incandescent" Value="3"/>
+      <Value Name="Horizon"      Value="4"/>
+    </Enum>
+    <Enum Name="AEC Antibanding Map">
+      <Value Name="Off"  Value="0"/>
+      <Value Name="50Hz" Value="1"/>
+      <Value Name="60Hz" Value="2"/>
+      <Value Name="Auto" Value="3"/>
+    </Enum>
+    <Enum Name="AEC LED State Map">
+      <Value Name="Off"  Value="0"/>
+      <Value Name="Low"  Value="1"/>
+      <Value Name="High" Value="2"/>
+    </Enum>
+    <Enum Name="AEC LED Mode Map">
+      <Value Name="Off"   Value="0"/>
+      <Value Name="Auto"  Value="1"/>
+      <Value Name="On"    Value="2"/>
+      <Value Name="Torch" Value="3"/>
+    </Enum>
+    <Enum Name="AF Focus Result Map">
+      <Value Name="Undetermined" Value="0"/>
+      <Value Name="Success"      Value="1"/>
+      <Value Name="Failed"       Value="2"/>
+    </Enum>
+    <Enum Name="AF Focus State Map">
+      <Value Name="Idle"     Value="0"/>
+      <Value Name="Run AEC"  Value="1"/>
+      <Value Name="Run"      Value="2"/>
+      <Value Name="Run cont" Value="3"/>
+      <Value Name="Success"  Value="4"/>
+      <Value Name="Failed"   Value="5"/>
+    </Enum>
+    <Enum Name="AF Continuous State Map">
+      <Value Name="Monitor" Value="0"/>
+      <Value Name="Search"  Value="1"/>
+    </Enum>
+    <Enum Name="AF Focus Mode Map">
+      <Value Name="Auto"     Value="0"/>
+      <Value Name="CAF"      Value="1"/>
+      <Value Name="Infinite" Value="2"/>
+    </Enum>
+    <Enum Name="AF Camera Mode Map">
+      <Value Name="Preview"   Value="0"/>
+      <Value Name="Camcorder" Value="1"/>
+    </Enum>
+    <Enum Name="AF Prescan Result Map">
+      <Value Name="Increasing" Value="0"/>
+      <Value Name="Decreasing" Value="1"/>
+      <Value Name="Find peak"  Value="2"/>
+      <Value Name="Noise"      Value="3"/>
+    </Enum>
+    <Enum Name="AF Focus ROI Map">
+      <Value Name="Face"    Value="0"/>
+      <Value Name="Touch"   Value="1"/>
+      <Value Name="Default" Value="2"/>
+    </Enum>
+  </Enums>
+<!-- Debug data definition block -->
+  <Sections>
+    <Section Name="AEC Debug Info" Tag="QCAEC" TagSize="6" SizeSize="4" SizeOffset="10">
+      <Structure Name="Luma and Luma Target Information">
+        <Value Name="AE Target"                 Size="1" Signed="false" Type="Int"/>
+        <Value Name="Bayer Metered Luma"        Size="1" Signed="false" Type="Int"/>
+        <Value Name="Legacy Metered Frame Luma" Size="1" Signed="false" Type="Int"/>
+        <Value Name="Face luma"                 Size="1" Signed="false" Type="Int"/>
+        <Value Name="Touch luma"                Size="1" Signed="false" Type="Int"/>
+        <Value Name="Average luma"              Size="1" Signed="false" Type="Int"/>
+        <Value Name="Compensated Luma Target"   Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Convergence Information">
+        <Value Name="AEC locked"               Size="1" Signed="false" Type="Int"/>
+        <Value Name="Convergence Speed"        Size="2" Signed="false" Type="Q12"/>
+        <Value Name="AEC converged at startup" Size="1" Signed="false" Type="Int"/>
+        <Value Name="Current frame skip"       Size="1" Signed="false" Type="Int"/>
+        <Value Name="Frame rate"               Size="1" Signed="false" Type="Int"/>
+        <Value Name="Expsoure index"           Size="2" Signed="false" Type="Int"/>
+        <Value Name="Lux index"                Size="2" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="External AEC Settings">
+        <Value Name="ISO Mode"          Size="2" Signed="false" Type="Int"                />
+        <Value Name="Anti-banding Mode" Size="1" Signed="false" Type="AEC Antibanding Map"/>
+        <Value Name="EV Setting"        Size="1" Signed="true"  Type="Int"                />
+      </Structure>
+      <Structure Name="Influence Information">
+        <Value Name="AE Influence Type"            Size="2" Signed="false" Type="AE Influence Type Mask"/>
+        <Value Name="AE Influence Severity"        Size="1" Signed="false" Type="Int"                   />
+        <Value Name="Flat Scene Luma Compensation" Size="1" Signed="true"  Type="Int"                   />
+        <Value Name="Entropy Luma Compensation"    Size="1" Signed="true"  Type="Int"                   />
+      </Structure>
+      <Structure Name="Gain and Line Count Information">
+        <Value Name="AE Preview Gain"                           Size="2" Signed="false" Type="Q8" />
+        <Value Name="AE Line Preview Count"                     Size="2" Signed="false" Type="Int"/>
+        <Value Name="AE preview gain before adjustments"        Size="2" Signed="false" Type="Q8" />
+        <Value Name="AE preview  line count before adjustments" Size="2" Signed="false" Type="Int"/>
+        <Value Name="AE Preview Exposure Time"                  Size="4" Signed="false" Type="Q20"/>
+        <Value Name="AE Snapshot Gain"                          Size="2" Signed="false" Type="Q8" />
+        <Value Name="AE Snapshot Line Count"                    Size="2" Signed="false" Type="Int"/>
+        <Value Name="AE Snapshot Exposure time"                 Size="4" Signed="false" Type="Q20"/>
+      </Structure>
+      <Structure Name="AEC Flash Information">
+        <Value Name="Exposure index flash off value"                       Size="2" Signed="false" Type="Int"              />
+        <Value Name="Exposure index flash on"                              Size="2" Signed="false" Type="Int"              />
+        <Value Name="AE Snapshot Flash Off Luma Value"                     Size="1" Signed="false" Type="Int"              />
+        <Value Name="AE Snapshot Flash On Luma Value"                      Size="1" Signed="false" Type="Int"              />
+        <Value Name="AEC Flash Off Luma Value with ROI"                    Size="1" Signed="false" Type="Int"              />
+        <Value Name="AEC Flash On Luma Value with ROI"                     Size="1" Signed="false" Type="Int"              />
+        <Value Name="Flash sensitivity off"                                Size="4" Signed="false" Type="Int"              />
+        <Value Name="Flash sensitivity low"                                Size="4" Signed="false" Type="Int"              />
+        <Value Name="Flash sensitivity high"                               Size="4" Signed="false" Type="Int"              />
+        <Value Name="Frame skip after flash is turned on during pre-flash" Size="1" Signed="false" Type="Int"              />
+        <Value Name="Snapshot flux used"                                   Size="2" Signed="false" Type="Q10"              />
+        <Value Name="Preview flux"                                         Size="2" Signed="false" Type="Q10"              />
+        <Value Name="Pre-flash flash ON Yavg stats"                        Size="1" Signed="false" Type="Int"               Dim1="256"/>
+        <Value Name="Pre-flash flash OFF Yavg stats"                       Size="1" Signed="false" Type="Int"               Dim1="256"/>
+        <Value Name="LED state"                                            Size="1" Signed="false" Type="AEC LED State Map"/>
+        <Value Name="LED mode"                                             Size="1" Signed="false" Type="AEC LED Mode Map" />
+      </Structure>
+      <Structure Name="Gyro Information">
+        <Value Name="Gyro sum of squares" Size="4" Signed="false" Type="Q20"/>
+      </Structure>
+      <Structure Name="Motion ISO Information">
+        <Value Name="Motion metric" Size="4" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Color Information">
+        <Value Name="Extreme color enable"         Size="1" Signed="false" Type="Int"/>
+        <Value Name="Exterem color blue count"     Size="2" Signed="false" Type="Int"/>
+        <Value Name="Exterem color green count"    Size="2" Signed="false" Type="Int"/>
+        <Value Name="Exterem color red count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Total extreme region count"   Size="2" Signed="false" Type="Int"/>
+        <Value Name="Extreme color decrease ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="R/G ratio high threshold"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="B/G ratio high threshold"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="R/G ratio low threshold"      Size="2" Signed="false" Type="Q10"/>
+        <Value Name="B/G ratio low threshold"      Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Red_severity"                 Size="1" Signed="false" Type="Int"/>
+        <Value Name="Green_severity"               Size="1" Signed="false" Type="Int"/>
+        <Value Name="Blue_severity"                Size="1" Signed="false" Type="Int"/>
+        <Value Name="Color_severity"               Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Bright Region Information">
+        <Value Name="Bright region detection enable"              Size="1" Signed="false" Type="Int"/>
+        <Value Name="Total bright region count"                   Size="2" Signed="false" Type="Int"/>
+        <Value Name="Bright region weight"                        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Bright region threshold after interpolation" Size="1" Signed="false" Type="Int"/>
+        <Value Name="Bright region severity"                      Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Flat Scene Information">
+        <Value Name="Flat scene detection enable" Size="1" Signed="false" Type="Int"/>
+        <Value Name="Flat scene locked"           Size="1" Signed="false" Type="Int"/>
+        <Value Name="Severity factor"             Size="1" Signed="false" Type="Int"/>
+        <Value Name="Bright flat scene detected"  Size="1" Signed="false" Type="Int"/>
+        <Value Name="Dark flat scene detected"    Size="1" Signed="false" Type="Int"/>
+        <Value Name="Severity"                    Size="1" Signed="false" Type="Int"/>
+        <Value Name="Near flat severity"          Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Entropy Information">
+        <Value Name="Entropy enable"                                 Size="1" Signed="false" Type="Int"/>
+        <Value Name="Current frame entropy"                          Size="4" Signed="true"  Type="Q12"/>
+        <Value Name="Final entropy Luma target offset"               Size="1" Signed="true"  Type="Int"/>
+        <Value Name="Internal entropy Luma target offset"            Size="1" Signed="true"  Type="Int"/>
+        <Value Name="Entropy Luma target offset high cap"            Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Entropy Luma target offset negative cap"        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Entropy luma target offset temporally filtered" Size="1" Signed="true"  Type="Int"/>
+        <Value Name="Frame entropy for EV +0.5"                      Size="4" Signed="true"  Type="Q12"/>
+        <Value Name="Frame entropy for EV +0.25"                     Size="4" Signed="true"  Type="Q12"/>
+        <Value Name="Frame entropy for EV +0.125"                    Size="4" Signed="true"  Type="Q12"/>
+        <Value Name="Frame entropy for EV -0.5"                      Size="4" Signed="true"  Type="Q12"/>
+        <Value Name="Frame entropy for EV -0.25"                     Size="4" Signed="true"  Type="Q12"/>
+        <Value Name="Frame entropy for EV -0.125"                    Size="4" Signed="true"  Type="Q12"/>
+        <Value Name="Bi-modal severity factor"                       Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Metering Information">
+        <Value Name="Current bias table"                               Size="4" Signed="false" Type="Q20" Dim1="256"/>
+        <Value Name="Flat scene luma trade-off"                        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Threshold gray vs color gray - dark flat scene"   Size="2" Signed="false" Type="Q12"/>
+        <Value Name="Threshold gray vs color gray - bright flat scene" Size="2" Signed="false" Type="Q12"/>
+      </Structure>
+      <Structure Name="Sensor Information">
+        <Value Name="Frame rate"              Size="1" Signed="false" Type="Int"/>
+        <Value Name="Max preview frame rate"  Size="1" Signed="false" Type="Int"/>
+        <Value Name="Sensor height"           Size="2" Signed="false" Type="Int"/>
+        <Value Name="Sensor width"            Size="2" Signed="false" Type="Int"/>
+        <Value Name="Max sensor gain"         Size="2" Signed="false" Type="Q8" />
+        <Value Name="Pixel clock"             Size="4" Signed="false" Type="Int"/>
+        <Value Name="Pixel clocks per line"   Size="2" Signed="false" Type="Int"/>
+        <Value Name="Preview frame rate"      Size="1" Signed="false" Type="Int"/>
+        <Value Name="Preview line count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Snapshot frame rate"     Size="1" Signed="false" Type="Int"/>
+        <Value Name="Snapshot line count"     Size="2" Signed="false" Type="Int"/>
+        <Value Name="Snapshot max line count" Size="2" Signed="false" Type="Int"/>
+        <Value Name="Video frame rate"        Size="1" Signed="false" Type="Int"/>
+      </Structure>
+    </Section>
+    <Section Name="AWB Debug Info" Tag="QCAWB" TagSize="6" SizeSize="4" SizeOffset="10">
+      <Structure Name="OTP Corrected Reference Points">
+        <Value Name="D75 reference point RG Ratio"                     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D75 reference point BG Ratio"                     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D65 reference point RG Ratio"                     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D65 reference point BG Ratio"                     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Noon reference point RG Ratio"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Noon reference point BG Ratio"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D50 reference point RG Ratio"                     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D50 reference point BG Ratio"                     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Cold fluorescent (CW) reference point RG Ratio"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Cold fluorescent (CW) reference point BG Ratio"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Warm fluorescent (TL84) reference point RG Ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Warm fluorescent (TL84) reference point BG Ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent reference point RG Ratio"            Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent reference point BG Ratio"            Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon reference point RG Ratio"                 Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon reference point BG Ratio"                 Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent reference point RG Ratio"      Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent reference point BG Ratio"      Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight reference point RG Ratio"         Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight reference point BG Ratio"         Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom incandescent reference point RG Ratio"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom incandescent reference point BG Ratio"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="U30 reference point RG Ratio"                     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="U30 reference point BG Ratio"                     Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="AWB Output Information">
+        <Value Name="Decision"           Size="1" Signed="false" Type="AWB Decision Map"/>
+        <Value Name="Red gain"           Size="2" Signed="false" Type="Q10"             />
+        <Value Name="Green gain"         Size="2" Signed="false" Type="Q10"             />
+        <Value Name="Blue gain"          Size="2" Signed="false" Type="Q10"             />
+        <Value Name="Color temperature"  Size="2" Signed="false" Type="Int"             />
+        <Value Name="AWB confident flag" Size="1" Signed="false" Type="Int"             />
+      </Structure>
+      <Structure Name="AWB Input Information">
+        <Value Name="Exposure index" Size="2" Signed="false" Type="Int"/>
+        <Value Name="Lux index"      Size="2" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Outlier Distance Information">
+        <Value Name="Outlier distance squared"                           Size="2" Signed="false" Type="Int"/>
+        <Value Name="Outlier distance squared left of the daylight line" Size="2" Signed="false" Type="Int"/>
+        <Value Name="Outlier distance squared top of the daylight line"  Size="2" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Green Zone Information">
+        <Value Name="Green offset R/G"                   Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green offset B/G"                   Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green offset R/G for top half"      Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green offset R/G for bottom half"   Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green zone top"                     Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green zone bottom top half"         Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green zone bottom lower half"       Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green zone left"                    Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green zone right top half"          Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green zone right bottom half"       Size="2" Signed="true"  Type="Int"/>
+        <Value Name="Green line slope"                   Size="4" Signed="true"  Type="Q10"/>
+        <Value Name="Green line y-intercept top half"    Size="4" Signed="true"  Type="Q10"/>
+        <Value Name="Green line y-intercept bottom half" Size="4" Signed="true"  Type="Q10"/>
+        <Value Name="Slope factor"                       Size="4" Signed="true"  Type="Q10"/>
+        <Value Name="Green count"                        Size="2" Signed="false" Type="Int"/>
+        <Value Name="Green percentage"                   Size="1" Signed="false" Type="Int"/>
+        <Value Name="Green average R/G"                  Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Green average B/G"                  Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Green projected average R/G"        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Green projected average B/G"        Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="Simple Gray World Information">
+        <Value Name="Simple gray world Count"                               Size="2" Signed="false" Type="Int"/>
+        <Value Name="Simple gray world R/G ratio"                           Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Simple gray world B/G ratio"                           Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Outlier count"                                         Size="2" Signed="false" Type="Int"/>
+        <Value Name="Number of yellow samples under fluorescent illuminant" Size="2" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Gray World Information">
+        <Value Name="Decision"              Size="1" Signed="false" Type="AWB Decision Map"/>
+        <Value Name="GW sample count"       Size="2" Signed="false" Type="Int"             />
+        <Value Name="R/G ratio"             Size="2" Signed="false" Type="Q10"             />
+        <Value Name="B/G ratio"             Size="2" Signed="false" Type="Q10"             />
+        <Value Name="Dominant cluster flag" Size="1" Signed="false" Type="Int"             />
+      </Structure>
+      <Structure Name="GW Daylight Cluster Information">
+        <Value Name="Daylight sample count"                       Size="2" Signed="false" Type="Int"/>
+        <Value Name="Daylight group rg ratios"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Daylight group bg ratios"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Daylight cluster weighted average R/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Daylight cluster weighted average B/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Daylight cluster Y average"                  Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="GW Daylight Cluster Weights">
+        <Value Name="Distance based weight"   Size="4" Signed="false" Type="Q10"/>
+        <Value Name="Illuminant based weight" Size="4" Signed="false" Type="Q10"/>
+        <Value Name="Final weight"            Size="4" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="GW Daylight sample distribution">
+        <Value Name="D75 sample count"                     Size="2" Signed="false" Type="Int"/>
+        <Value Name="D75 average rg ratios"                Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D75 average bg ratios"                Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D75 weighted average R/G ratio"       Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D75  weighted average B/G ratio"      Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D65 sample count"                     Size="2" Signed="false" Type="Int"/>
+        <Value Name="D65 average rg ratios"                Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D65 average bg ratios"                Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Noon sample count"                    Size="2" Signed="false" Type="Int"/>
+        <Value Name="Noon average rg ratios"               Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Noon average bg ratios"               Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D50 sample count"                     Size="2" Signed="false" Type="Int"/>
+        <Value Name="D50 average rg ratios"                Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D50 average bg ratios"                Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D50 weighted average R/G ratio"       Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D50  weighted  average B/G ratio"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom day sample count"              Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom daylight average rg ratios"    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight average bg ratios"    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight-1 sample count"       Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom daylight-1 average R/G ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight-1 average B/G ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight-2 sample count"       Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom daylight-2 average R/G ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight-2 average B/G ratios" Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="GW Fluorescent Cluster Information">
+        <Value Name="Total fluorescent sample count"                 Size="2" Signed="false" Type="Int"/>
+        <Value Name="Fluorescent group rg ratios"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Fluorescent group bg ratios"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Fluorescent cluster weighted average R/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Fluorescent cluster weighted average B/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Fluorescent cluster Y average"                  Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="GW Fluorescent Cluster Weights">
+        <Value Name="Distance based weight"   Size="4" Signed="false" Type="Q10"/>
+        <Value Name="Illuminant based weight" Size="4" Signed="false" Type="Q10"/>
+        <Value Name="Final weight"            Size="4" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="GW Fluorescent Sample Distribution">
+        <Value Name="Cold fluorescent sample count"          Size="2" Signed="false" Type="Int"/>
+        <Value Name="Cold fluorescent average rg ratios"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Cold fluorescent average bg ratios"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Warm fluorescent sample count"          Size="2" Signed="false" Type="Int"/>
+        <Value Name="Warm fluorescent average rg ratios"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Warm fluorescent average bg ratios"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent sample count"        Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom fluorescent average rg ratios"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent average bg ratios"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent-1 sample count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom fluorescent-1 average rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent-1 average bg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent-2 sample count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom fluorescent-2 average rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent-2 average bg ratios" Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="GW Incandescent Cluster Information">
+        <Value Name="Incandescent sample count"                       Size="2" Signed="false" Type="Int"/>
+        <Value Name="Incandescent group rg ratios"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent group bg ratios"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent cluster weighted average R/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent cluster weighted average B/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent cluster Y average"                  Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="GW Incandescent Weights">
+        <Value Name="Distance based weight"   Size="4" Signed="false" Type="Q10"/>
+        <Value Name="Illuminant based weight" Size="4" Signed="false" Type="Q10"/>
+        <Value Name="Final weight"            Size="4" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="GW Incandescent Sample Distribution">
+        <Value Name="A sample count"             Size="2" Signed="false" Type="Int"/>
+        <Value Name="A average rg ratios"        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="A average bg ratios"        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom A sample count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom A average rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom A average bg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="U30 sample count"           Size="2" Signed="false" Type="Int"/>
+        <Value Name="U30 average rg ratios"      Size="2" Signed="false" Type="Q10"/>
+        <Value Name="U30 average bg ratios"      Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="Horizon Distribution">
+        <Value Name="Horizon sample count"                       Size="2" Signed="false" Type="Int"/>
+        <Value Name="Horizon group rg ratios"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon group bg ratios"                    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon cluster weighted average R/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon cluster weighted average B/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon cluster Y average"                  Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Horizon Weights">
+        <Value Name="Distance based weight"   Size="4" Signed="true"  Type="Q10"/>
+        <Value Name="Illuminant based weight" Size="4" Signed="true"  Type="Q10"/>
+        <Value Name="Final weight"            Size="4" Signed="true"  Type="Q10"/>
+      </Structure>
+      <Structure Name="Fluorescent, Incandescent and Horizon Cluster">
+        <Value Name="F-A-H sample count"                       Size="2" Signed="false" Type="Int"/>
+        <Value Name="F-A-H cluster average R/G ratio"         Size="2" Signed="false" Type="Q10"/>
+        <Value Name="F-A-H cluster average B/G ratio"        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="F-A-H cluster weighted average R/G ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="F-A-H cluster weighted average B/G ratio" Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="White World Information">
+        <Value Name="Decision"     Size="1" Signed="false" Type="AWB Decision Map"/>
+        <Value Name="Sample count" Size="2" Signed="false" Type="Int"             />
+        <Value Name="R/G ratio"    Size="2" Signed="false" Type="Q10"             />
+        <Value Name="B/G ratio"    Size="2" Signed="false" Type="Q10"             />
+      </Structure>
+      <Structure Name="WW Daylight Cluster">
+        <Value Name="Daylight sample count"    Size="2" Signed="false" Type="Int"/>
+        <Value Name="Daylight group rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Daylight group bg ratios" Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="WW Daylight Sample Distribution">
+        <Value Name="D75 sample count"                    Size="2" Signed="false" Type="Int"/>
+        <Value Name="D75 average rg ratios"               Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D75 average bg ratios"               Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D65 sample count"                    Size="2" Signed="false" Type="Int"/>
+        <Value Name="D65 average rg ratios"               Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D65 average bg ratios"               Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Noon sample count"                   Size="2" Signed="false" Type="Int"/>
+        <Value Name="Noon average rg ratios"              Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Noon average bg ratios"              Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D50 sample count"                    Size="2" Signed="false" Type="Int"/>
+        <Value Name="D50 average rg ratios"               Size="2" Signed="false" Type="Q10"/>
+        <Value Name="D50 average bg ratios"               Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom day sample count"             Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom daylight average rg ratios"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight average bg ratios"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight-1 sample count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom daylight-1 average rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight-1 average bg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight-2 sample count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom daylight-2 average rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom daylight-2 average bg ratios" Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="WW Fluorescent Cluster">
+        <Value Name="Total fluorescent sample count" Size="2" Signed="false" Type="Int"/>
+        <Value Name="Fluorescent group rg ratios"    Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Fluorescent group bg ratios"    Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="WW Fluorescent Sample Distribution 2">
+        <Value Name="Cold fluorescent sample count"          Size="2" Signed="false" Type="Int"/>
+        <Value Name="Cold fluorescent average rg ratios"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Cold fluorescent average bg ratios"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Warm fluorescent sample count"          Size="2" Signed="false" Type="Int"/>
+        <Value Name="Warm fluorescent average rg ratios"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Warm fluorescent average bg ratios"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent sample count"        Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom fluorescent average rg ratios"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent average bg ratios"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent-1 sample count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom fluorescent-1 average rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent-1 average bg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent-2 sample count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom fluorescent-2 average rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom fluorescent-2 average bg ratios" Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="WW Incandescent Cluster">
+        <Value Name="Incandescent sample count"    Size="2" Signed="false" Type="Int"/>
+        <Value Name="Incandescent group rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent group bg ratios" Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="WW Incandescent Sample Distribution 2">
+        <Value Name="A sample count"             Size="2" Signed="false" Type="Int"/>
+        <Value Name="A average rg ratios"        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="A average bg ratios"        Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom A sample count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Custom A average rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Custom A average bg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="U30 sample count"           Size="2" Signed="false" Type="Int"/>
+        <Value Name="U30 average rg ratios"      Size="2" Signed="false" Type="Q10"/>
+        <Value Name="U30 average bg ratios"      Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="Horizon Distribution 2">
+        <Value Name="Horizon sample count"    Size="2" Signed="false" Type="Int"/>
+        <Value Name="Horizon group rg ratios" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon group bg ratios" Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="Unsaturated Y values">
+        <Value Name="Y low threshold"                Size="1" Signed="false" Type="Int"/>
+        <Value Name="Y high threshold"               Size="1" Signed="false" Type="Int"/>
+        <Value Name="Y min value"                    Size="1" Signed="false" Type="Int"/>
+        <Value Name="Y max value"                    Size="1" Signed="false" Type="Int"/>
+        <Value Name="Y mid value"                    Size="1" Signed="false" Type="Int"/>
+        <Value Name="Y max for day cluster"          Size="1" Signed="false" Type="Int"/>
+        <Value Name="Y max for fluorescent cluster"  Size="1" Signed="false" Type="Int"/>
+        <Value Name="Y max for incandescent cluster" Size="1" Signed="false" Type="Int"/>
+        <Value Name="Y max for horizon cluster"      Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Extreme Blue and Compact Cluster Information">
+        <Value Name="Max compact cluster squared distance" Size="4" Signed="false" Type="Int"/>
+        <Value Name="Extreme blue count"                   Size="2" Signed="false" Type="Int"/>
+        <Value Name="Extreme blue average B/G ratio"       Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Non extreme blue count"               Size="2" Signed="false" Type="Int"/>
+        <Value Name="Non extreme blue average B/G ratio"   Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="Heuristics Information">
+        <Value Name="Decision after running the heuristic" Size="1" Signed="false" Type="AWB Decision Map"/>
+        <Value Name="R/G ratio after running heuristic"    Size="2" Signed="false" Type="Q10"             />
+        <Value Name="B/G ratio after running heuristic"    Size="2" Signed="false" Type="Q10"             />
+        <Value Name="Blue sky detected"                    Size="1" Signed="false" Type="Int"             />
+        <Value Name="Compact cluster exists"               Size="1" Signed="false" Type="Int"             />
+        <Value Name="Average of day cluster used"          Size="1" Signed="false" Type="Int"             />
+        <Value Name="Green content detected"               Size="1" Signed="false" Type="Int"             />
+        <Value Name="Extreme blue content detected"        Size="1" Signed="false" Type="Int"             />
+        <Value Name="Heuristic ID list"                    Size="1" Signed="false" Type="Int"              Dim1="4"/>
+      </Structure>
+      <Structure Name="History">
+        <Value Name="Decision after running history"  Size="1" Signed="false" Type="AWB Decision Map"/>
+        <Value Name="R/G ratio after running history" Size="2" Signed="false" Type="Q10"             />
+        <Value Name="B/G ratio after running history" Size="2" Signed="false" Type="Q10"             />
+      </Structure>
+      <Structure Name="History sample classification">
+        <Value Name="Daylight history count"                 Size="2" Signed="false" Type="Int"/>
+        <Value Name="Daylight history R/G average ratio"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Daylight history B/G average ratio"     Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Fluorescent history count"              Size="2" Signed="false" Type="Int"/>
+        <Value Name="Fluorescent history R/G average ratio"  Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Fluorescent history B/G average ratio"  Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent history count"             Size="2" Signed="false" Type="Int"/>
+        <Value Name="Incandescent history R/G average ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Incandescent history B/G average ratio" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon history count"                  Size="2" Signed="false" Type="Int"/>
+        <Value Name="Horizon history R/G average ratio"      Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Horizon history B/G average ratio"      Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="White world history information">
+        <Value Name="Dominant white R/G ratio"                 Size="2" Signed="false" Type="Q10"                        />
+        <Value Name="Dominant white B/G ratio"                 Size="2" Signed="false" Type="Q10"                        />
+        <Value Name="Dominant decision in white world history" Size="1" Signed="false" Type="AWB Decision Map"           />
+        <Value Name="Dominant cluster in white world history"  Size="1" Signed="false" Type="AWB White World Cluster Map"/>
+        <Value Name="Current white world cluster decision"     Size="1" Signed="false" Type="AWB White World Cluster Map"/>
+        <Value Name="Exposure range"                           Size="2" Signed="false" Type="Int"                        />
+        <Value Name="Lock exposure range threshold"            Size="1" Signed="false" Type="Int"                        />
+      </Structure>
+      <Structure Name="History Heuristics">
+        <Value Name="History Replaced"          Size="1" Signed="false" Type="Int"/>
+        <Value Name="History Heuristic ID list" Size="1" Signed="false" Type="Int" Dim1="4"/>
+      </Structure>
+      <Structure Name="Temporal Filter Information">
+        <Value Name="Red gain - Output of temporal filter"   Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Green gain - Output of temporal filter" Size="2" Signed="false" Type="Q10"/>
+        <Value Name="Blue gain - Output of temporal filter"  Size="2" Signed="false" Type="Q10"/>
+      </Structure>
+      <Structure Name="AWB Flash Information">
+        <Value Name="Flash Sensitivity Ratio"     Size="4" Signed="true"  Type="Q10"/>
+        <Value Name="Flash Sensitivity Threshold" Size="4" Signed="true"  Type="Q10"/>
+      </Structure>
+      <Structure Name="Gain Adjust Information">
+        <Value Name="Gain Adjust Rg Offset" Size="2" Signed="false" Type="Q10"             />
+        <Value Name="Gain Adjust Bg Offset" Size="2" Signed="false" Type="Q10"             />
+        <Value Name="EndPoint1 light type"  Size="1" Signed="false" Type="AWB Decision Map"/>
+        <Value Name="EndPoint2 light type"  Size="1" Signed="false" Type="AWB Decision Map"/>
+      </Structure>
+      <Structure Name="History array">
+        <Value Name="History R/G ratio"          Size="2" Signed="false" Type="Q10"              Dim1="30"/>
+        <Value Name="History B/G ratio"          Size="2" Signed="false" Type="Q10"              Dim1="30"/>
+        <Value Name="History decision"           Size="1" Signed="false" Type="AWB Decision Map" Dim1="30"/>
+        <Value Name="History lux/exposure index" Size="2" Signed="false" Type="Int"              Dim1="30"/>
+        <Value Name="History weight"             Size="4" Signed="false" Type="Q10"              Dim1="30"/>
+      </Structure>
+      <Structure Name="Saturation array">
+        <Value Name="Saturation percentage" Size="1" Signed="false" Type="Int" Dim1="3072"/>
+        <Value Name="Unsaturated Y"         Size="1" Signed="false" Type="Int" Dim1="3072"/>
+      </Structure>
+    </Section>
+    <Section Name="AF Debug Info" Tag="QCAF" TagSize="5" SizeSize="4" SizeOffset="9">
+      <Structure Name="Current Focus State Information">
+        <Value Name="Current Best Focus Lens Position"    Size="2" Signed="false" Type="Int"                    />
+        <Value Name="Current Focus Result"                Size="1" Signed="false" Type="AF Focus Result Map"    />
+        <Value Name="Current Focus State"                 Size="1" Signed="false" Type="AF Focus State Map"     />
+        <Value Name="Current Continuous Auto Focus State" Size="1" Signed="false" Type="AF Continuous State Map"/>
+        <Value Name="Current focus mode"                  Size="1" Signed="false" Type="AF Focus Mode Map"      />
+        <Value Name="Stats type"                          Size="1" Signed="false" Type="AF Stats Type Mask"     />
+        <Value Name="Camera mode"                         Size="1" Signed="false" Type="AF Camera Mode Map"     />
+      </Structure>
+      <Structure Name="Focus History Information">
+        <Value Name="Current Focus Value History"         Size="4" Signed="false" Type="Int"                   Dim1="40"/>
+        <Value Name="Current Focus Lens Position History" Size="2" Signed="false" Type="Int"                   Dim1="40"/>
+        <Value Name="Luma history"                        Size="1" Signed="false" Type="Int"                   Dim1="40"/>
+        <Value Name="Pre-scan result history"             Size="1" Signed="false" Type="AF Prescan Result Map" Dim1="40"/>
+        <Value Name="Bv history"                          Size="1" Signed="false" Type="Int"                   Dim1="40"/>
+        <Value Name="AF Gr histogram"                     Size="4" Signed="false" Type="Int"                   Dim1="40"/>
+      </Structure>
+      <Structure Name="Focus ROI Information">
+        <Value Name="Focus ROI type"               Size="1" Signed="false" Type="AF Focus ROI Map"         />
+        <Value Name="Horizontal offset"            Size="2" Signed="false" Type="Int"                      />
+        <Value Name="Vertical offset"              Size="2" Signed="false" Type="Int"                      />
+        <Value Name="ROI width"                    Size="2" Signed="false" Type="Int"                      />
+        <Value Name="ROI height"                   Size="2" Signed="false" Type="Int"                      />
+        <Value Name="CAF First  Scene Change Type" Size="1" Signed="false" Type="AF Scene Change Type Mask"/>
+      </Structure>
+      <Structure Name="HW Coefficient Information">
+        <Value Name="Array Length"                                    Size="1" Signed="false" Type="Int"/>
+        <Value Name="Coefficient list for hardware kernel 1"          Size="1" Signed="true"  Type="Int" Dim1="22"/>
+        <Value Name="Coefficient list for hardware kernel 2"          Size="1" Signed="true"  Type="Int" Dim1="22"/>
+        <Value Name="Coefficient list for SW kernel using IIR filter" Size="4" Signed="true"  Type="Q16" Dim1="12"/>
+        <Value Name="Coefficient list for SW kernel using FIR filter" Size="1" Signed="true"  Type="Int" Dim1="12"/>
+      </Structure>
+    </Section>
+    <Section Name="ASD Debug Info" Tag="QCASD" TagSize="6" SizeSize="4" SizeOffset="10">
+      <Structure Name="Snow Scene Detection Information">
+        <Value Name="Snow scene severity"           Size="1" Signed="false" Type="Int"/>
+        <Value Name="Snow scene region count"       Size="2" Signed="false" Type="Int"/>
+        <Value Name="Extreme snow scene"            Size="1" Signed="false" Type="Int"/>
+        <Value Name="Snow scene luma target offset" Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Backlit Scene Detection Information">
+        <Value Name="Backlit scene severity"            Size="1" Signed="false" Type="Int"/>
+        <Value Name="Histogram backlit detected"        Size="1" Signed="false" Type="Int"/>
+        <Value Name="AWB backlit detected"              Size="1" Signed="false" Type="Int"/>
+        <Value Name="Backlit scene luma target offset"  Size="1" Signed="false" Type="Int"/>
+        <Value Name="Backlit Histogram High Luma Count" Size="4" Signed="false" Type="Int"/>
+        <Value Name="Backlit Histogram Mid Luma Count"  Size="4" Signed="false" Type="Int"/>
+        <Value Name="Backlit Histogram Low Luma Count"  Size="4" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB  Bright Region Count"  Size="2" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Mid Region Count"      Size="2" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Dark Region Count"     Size="2" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Dark Mode 1"           Size="1" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Dark Mode 2"           Size="1" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Mid Mode 1"            Size="1" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Mid Mode 2"            Size="1" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Bright Mode 1"         Size="1" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Bright Mode 2"         Size="1" Signed="false" Type="Int"/>
+        <Value Name="Backlit AWB Mixed light Case 1"    Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Landscape Scene Detection Information">
+        <Value Name="Landscape Scene Severity" Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="Portrait Scene Detection Information">
+        <Value Name="Portrait Scene Severity" Size="1" Signed="false" Type="Int"/>
+      </Structure>
+      <Structure Name="AWB Decision Map Data">
+        <Value Name="Array of AWB decision maps" Size="1" Signed="false" Type="AWB Decision Map" Dim1="64"/>
+      </Structure>
+    </Section>
+    <Section Name="3A Stats Info" Tag="3a stats" TagSize="9" SizeSize="4" SizeOffset="13">
+      <Structure Name="Bayer Grid Stats Data">
+        <Value Name="BG stats horizontal regions" Size="2" Signed="false" Type="Int"/>
+        <Value Name="BG stats vertical regions"   Size="2" Signed="false" Type="Int"/>
+        <Value Name="Red channel sum"             Size="4" Signed="false" Type="Int" Dim1="3072"/>
+        <Value Name="Red channel counts"          Size="2" Signed="false" Type="Int" Dim1="3072"/>
+        <Value Name="Gr channel sum"              Size="4" Signed="false" Type="Int" Dim1="3072"/>
+        <Value Name="Gr channel counts"           Size="2" Signed="false" Type="Int" Dim1="3072"/>
+        <Value Name="Gb channel sum"              Size="4" Signed="false" Type="Int" Dim1="3072"/>
+        <Value Name="Gb channel counts"           Size="2" Signed="false" Type="Int" Dim1="3072"/>
+        <Value Name="Blue channel sum"            Size="4" Signed="false" Type="Int" Dim1="3072"/>
+        <Value Name="Blue channel counts"         Size="2" Signed="false" Type="Int" Dim1="3072"/>
+      </Structure>
+      <Structure Name="Bayer Histogram Stats Data">
+        <Value Name="Green channel histogram" Size="4" Signed="false" Type="Int" Dim1="256"/>
+      </Structure>
+    </Section>
+  </Sections>
+  <Displays>
+    <Display Name="AWB Info"/>
+    <Display Name="AF Info"/>
+    <Display Name="AEC Info"/>
+  </Displays>
+</Metadata>

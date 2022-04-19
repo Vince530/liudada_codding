@@ -1,0 +1,64 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Automatic White Balance (AWB) tuning is required as part of the camera tuning process. AWB processing estimates the illuminant source of an image by analyzing the gray stat locations in the Rg/Bg ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AWB process overview" /><meta name="DC.Relation" scheme="URI" content="agt1502740380308.html" /><meta name="DC.Relation" scheme="URI" content="tuf1502832845939.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xgg1502697302454" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AWB process overview</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xgg1502697302454">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">AWB process overview</h1>
+
+	<div class="body conbody">
+		<p class="p">Automatic White Balance (AWB) tuning is required as part of the camera tuning
+			process. AWB processing estimates the illuminant source of an image by analyzing the
+			gray stat locations in the Rg/Bg space. The diagram below illustrates the information
+			flow and processing done by AWB 7.0. <br /><img class="image" id="xgg1502697302454__image_opv_p3p_w1b" src="ghl1502562805299.svg" /><br /></p>
+
+		<div class="p">
+			<ol class="ol" id="xgg1502697302454__ol_l1k_cks_w1b">
+				<li class="li">The initial phase of AWB processing begins with the user
+					uploading a defined set of images that are analyzed by the AWB initial tuning
+					module. AWB initial tuning collects basic data from the images, such as lux
+					index and Bayer Grid (BG) stats, and generates initial values for all AWB
+					parameters . </li>
+
+				<li class="li">The second phase of AWB processing involves a series of stats
+					filters. Stats filters include functions such as: subsample, stats screen, stat
+					decision, distance weight vector, illuminant weight vector, and misleading color
+					zone. The filters screen AWB stats and generate information for the use of other
+					stats filters and scene analyzers. </li>
+
+				<li class="li">The third phase of AWB processing involves a series of scene
+					analyzers that compute an AWB decision point and confidence level. The tool
+					provides five predefined scene analyzers that are easily customized to user
+					preferences. Users may also configure additional scene analyzers to handle
+					various scenes and corner cases. A special scene analyzer is the Advance Gray
+					World (AGW) scene analyzer which computes a decision point based on information
+					from each stats filter module. </li>
+
+				<li class="li">In the fourth phase of AWB processing, the decision analyzer uses
+					the decision points and confidence levels output from each scene analyzer to
+					compute a final decision point.</li>
+
+				<li class="li">In the final phase of AWB processing, the user has the
+					opportunity to adjust the final AWB gain to reach a user-preferred color tone
+					using the triangle gain adjust module.</li>
+
+			</ol>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="agt1502740380308.html">AWB common trigger data system</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="tuf1502832845939.html">View Bayer grid stats plot</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

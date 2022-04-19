@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="ABF">
+	<param id="1"  name="noise_prsv_lo_0" autotune="1" submodule="SubModule1">0:0.1:1</param>
+	<param id="2"  name="noise_prsv_hi_0" autotune="1" submodule="SubModule1">0:0.1:1</param>
+	<param id="3"  name="noise_prsv_lo_1" autotune="1" submodule="SubModule1">0:0.1:1</param>
+	<param id="4"  name="noise_prsv_hi_1" autotune="1" submodule="SubModule1">0:0.1:1</param>
+	<param id="5"  name="noise_prsv_anchor_lo" autotune="1" submodule="SubModule1">0:10:1023</param>
+	<param id="6"  name="noise_prsv_anchor_hi" autotune="1" submodule="SubModule2">0:10:1023</param>
+	<param id="7" name="edge_softness"  autotune="1" submodule="SubModule3">0:1:15.99</param>
+	<lin_ineq_constraints>
+		<param_id_list>  1, 2, 3, 4, 5, 6</param_id_list>
+		            <A>  1 -1  0  0  0  0;
+					     0  0  1 -1  0  0;
+						 0  0  0  0  1 -1 </A>
+		            
+		<B>  0; 0; 0</B>
+	</lin_ineq_constraints>  
+    <mapping dest="pcsim">update_xml_abf4_1</mapping>
+    <mapping dest="chromatix">abf41_autotune2chromatix</mapping>
+    <isp_pipeline>OPE</isp_pipeline>
+    <chromatix_tag>bpcabf41_ope</chromatix_tag>
+    <gen_pop_function>gen_pop_for_abf4_1</gen_pop_function>
+</module_if>

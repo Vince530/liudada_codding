@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SpectraCamSimConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\XSD\spectracamsim_config.xsd">
+    <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+    <!-- 0: None;  1: Snapshot;  2: Video;  3: MFNR -->
+    <UseCase>1</UseCase>
+    <!-- 0x01: IFE;  0x02:  BPS;   0x04:  PPS;   0x08:  NPS -->
+    <!-- i.e. IFE+PPS+NPS:  0x0D;  BPS+PPS+NPS:  0x0E; -->
+    <!-- 0x10: TFE;  0x20: OPE; 0x30: TFE+OPE-->
+    <RunPipeline>0x10</RunPipeline>
+    <ParamParserExeFile>..\Simulator\Spectra480\ParameterParser.exe</ParamParserExeFile>
+    <!-- None, ABF, LSC, ASF, BLS, GRA, CC, 2DLUT, GIC, LSC, BLS, WB, Demo, CC -->
+    <PerModule>None</PerModule>
+    <!-- 0x01: Bayer processing  0x04: Blending 0x08: Postfiltering 0x05: Bayer + Blend 0x0F: Bayer + Blend + PostFilt Default   0x0C: Blend + Post -->
+    <MFNRStageConfig>0xf</MFNRStageConfig>
+    <InputSetting>
+        <!-- 0: RAW;  1:  PDI;  2: YUV;  3: YUV TF;   4: TFI -->
+        <ImageFormat>0</ImageFormat>
+        <ImageFile>..\Input\MCC_D65.raw</ImageFile>
+        <InputFolder>..\TestData\Input\\</InputFolder>
+        <ManualLoadFile></ManualLoadFile>
+    </InputSetting >
+    <EarlyExit>
+        <Enable>0</Enable>
+        <ModulePipeline>0</ModulePipeline>
+        <Module>ABF</Module>
+    </EarlyExit>
+    <ISPConfig>..\TestData\isp_config.xml</ISPConfig>
+    <MetaConfig>..\TestData\meta_config.xml</MetaConfig>
+    <StreamConfig>..\TestData\stream_config.xml</StreamConfig>
+    <DataStoreFile>..\TestData\Config\dump_config.xml</DataStoreFile>
+    <SchemaDir>..\Schema</SchemaDir>
+    <ChromatixHeaderXMLDir>..\TestData\Chromatix</ChromatixHeaderXMLDir>
+    <TuningModeSelector>
+        <SubModeValue0>0</SubModeValue0>
+        <SubModeValue1>0</SubModeValue1>
+        <ModeUsecaseSubModeType>0</ModeUsecaseSubModeType>
+        <ModeFeature1SubModeType>0</ModeFeature1SubModeType>
+        <ModeFeature2SubModeType>0</ModeFeature2SubModeType>
+        <ModeSceneSubModeType>0</ModeSceneSubModeType>
+        <ModeEffectSubModeType>0</ModeEffectSubModeType>
+    </TuningModeSelector>
+    <OutputSetting>
+        <!-- 1: BMP;  2: YUV;  3: BMP+YUV -->
+        <ImageFormat>7</ImageFormat>
+        <OutputFolder>..\Simulation\Default\2018_5_23_12_34_0\</OutputFolder>
+        <OutputPrefix>out_</OutputPrefix>
+        <RegisterDump>1</RegisterDump>
+        <IntermediateSetting>
+            <Enable>1</Enable>
+            <statsDump>0</statsDump>
+        </IntermediateSetting>
+        <RegisterDumpOnlyModeCfg>
+            <AWBMode>
+                <Enable>1</Enable>
+                <!-- 0: disable 1: enable register dump for AWB ( IPE CC, gamma, 2DLUT only ) -->
+                <BPSCCEnable>0</BPSCCEnable>
+                <!-- additionally enable BPS CC -->
+            </AWBMode>
+        </RegisterDumpOnlyModeCfg>
+    </OutputSetting>
+</SpectraCamSimConfig>

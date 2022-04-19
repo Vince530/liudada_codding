@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="simulationglobalelements.xsd"/>
+    <xs:element name="SpectraCamSimConfig">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="module_version">
+                    <xs:complexType>
+                        <xs:attribute name="major_revision" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="minor_revision" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="incr_revision" type="xs:unsignedByte" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="UseCase">
+                    <!-- 0: None;  1: Snapshot;  2: Video;  3: MFNR -->
+                    <xs:simpleType>
+                        <xs:restriction base="xs:unsignedByte">
+                            <xs:enumeration value="0"/>
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                            <xs:enumeration value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="RunPipeline">
+                    <!-- 0x01: IFE;  0x02:  BPS;   0x04:  PPS;   0x08:  NPS -->
+                    <!-- i.e. IFE+PPS+NPS:  0x0D;  BPS+PPS+NPS:  0x0E; -->
+                    <!-- 0x10: TFE;  0x20: OPE; 0x30: TFE+OPE-->
+                    <xs:simpleType>
+                        <xs:restriction base="Hex8">
+                            <xs:enumeration id="IFE" value="0x01"/>
+                            <xs:enumeration id="BPS" value="0x02"/>
+                            <xs:enumeration id="PPS" value="0x04"/>
+                            <xs:enumeration id="NPS" value="0x08"/>
+                            <xs:enumeration id="IPE" value="0x0c"/>
+                            <xs:enumeration id="Preproc" value="0x0f"/>
+                            <xs:enumeration id="TFE" value="0x10"/>
+                            <xs:enumeration id="OPE" value="0x20"/>
+                            <xs:enumeration id="TFEOPE" value="0x30"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ParamParserExeFile" type="xs:string" />
+                <xs:element name="PerModule" type="xs:string" />
+	        <xs:element name="MFNRStageConfig">
+                    <!-- 0x01: Bayer processing  0x04: Blending 0x08: Postfiltering 0x05: Bayer + Blend 0x0F: Bayer + Blend + PostFilt Default   0x0C: Blend + Post -->
+                    <xs:simpleType>
+                        <xs:restriction base="Hex8">
+                            <xs:enumeration id="BayerProcessing" value="0x1"/>
+                            <xs:enumeration id="Blending" value="0x4"/>
+                            <xs:enumeration id="Bayer_Blend" value="0x5"/>
+                            <xs:enumeration id="Blend_Post" value="0xC"/>
+                            <xs:enumeration id="Postfiltering" value="0x8"/>
+                            <xs:enumeration id="All" value="0xf"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="InputSetting">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ImageFormat">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration value="0"/>
+                                        <xs:enumeration value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ImageFile" type="xs:string" />
+                            <xs:element name="InputFolder" type="xs:string" />
+                            <xs:element name="ManualLoadFile" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ISPConfig" type="xs:string" />
+                <xs:element name="MetaConfig" type="xs:string" />
+                <xs:element name="StreamConfig" type="xs:string" />
+                <xs:element name="DataStoreFile" type="xs:string" />
+                <xs:element name="SchemaDir" type="xs:string" />
+                <xs:element name="ChromatixHeaderXMLDir" type="xs:string" />
+                <xs:element name="TuningModeSelector">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- submode value0 for default modetype-->
+                            <xs:element name="SubModeValue0" type="xs:unsignedByte" />
+                            <!-- submode value1 for sensor -->
+                            <xs:element name="SubModeValue1" type="xs:unsignedByte" minOccurs="0"/>
+                            <xs:element name="ModeUsecaseSubModeType" minOccurs="0">
+                                <!--Preview = 0, Snapshot = 1, Video = 2, ZSL = 3, Liveshot = 4-->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration id="Preview" value="0"/>
+                                        <xs:enumeration id="Snapshot" value="1"/>
+                                        <xs:enumeration id="Video" value="2"/>
+                                        <xs:enumeration id="ZSL" value="3"/>
+                                        <xs:enumeration id="Liveshot" value="4"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ModeFeature1SubModeType" minOccurs="0">
+                                <!--None = 0, ISPHDR = 1, ADRC = 2-->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration id="NoFeature1" value="0"/>
+                                        <xs:enumeration id="ISPHDR" value="1"/>
+                                        <xs:enumeration id="ADRC" value="2"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ModeFeature2SubModeType" minOccurs="0">
+                                <!--None = 0, OISCapture = 1, HLG = 2, HDR10 = 3, MFNRBlend = 4, MFNRPostFilter = 5, MFSRBlend = 6, MFSRPostFilter = 7-->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration id="NoFeature2" value="0"/>
+                                        <xs:enumeration id="OISCapture" value="1"/>
+                                        <xs:enumeration id="HLG" value="2"/>
+                                        <xs:enumeration id="HDR10" value="3"/>
+                                        <xs:enumeration id="MFNRBlend" value="4"/>
+                                        <xs:enumeration id="MFNRPostFilter" value="5"/>
+                                        <xs:enumeration id="MFSRBlend" value="6"/>
+                                        <xs:enumeration id="MFSRPostFilter" value="7"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ModeSceneSubModeType" minOccurs="0">
+                                <!--None = 0, Landscape = 1, Snow = 2, Beach = 3, Sunset = 4, Night = 5, Portrait = 6, BackLight = 7, 
+                                Sports = 8, AntiShake = 9, Flowers = 10, CandleLight = 11, Fireworks = 12, Party = 13, NightPortrait = 14,
+                                Theater = 15, Action = 16, AR = 17, FacePriority = 18, Barcode = 19, BestShot = 20-->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration id="NoScene" value="0"/>
+                                        <xs:enumeration id="Landscape" value="1"/>
+                                        <xs:enumeration id="Snow" value="2"/>
+                                        <xs:enumeration id="Beach" value="3"/>
+                                        <xs:enumeration id="Sunset" value="4"/>
+                                        <xs:enumeration id="Night" value="5"/>
+                                        <xs:enumeration id="Portrait" value="6"/>
+                                        <xs:enumeration id="BackLight" value="7"/>
+                                        <xs:enumeration id="Sports" value="8"/>
+                                        <xs:enumeration id="AntiShake" value="9"/>
+                                        <xs:enumeration id="Flowers" value="10"/>
+                                        <xs:enumeration id="CandleLight" value="11"/>
+                                        <xs:enumeration id="Fireworks" value="12"/>
+                                        <xs:enumeration id="Party" value="13"/>
+                                        <xs:enumeration id="NightPortrait" value="14"/>
+                                        <xs:enumeration id="Theater" value="15"/>
+                                        <xs:enumeration id="Action" value="16"/>
+                                        <xs:enumeration id="AR" value="17"/>
+                                        <xs:enumeration id="FacePriority" value="18"/>
+                                        <xs:enumeration id="Barcode" value="19"/>
+                                        <xs:enumeration id="BestShot" value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ModeEffectSubModeType" minOccurs="0">
+                                <!--None = 0, Mono = 1, Sepia = 2, Negative = 3, Solarize = 4, Posterize = 5, Aqua = 6, Emboss = 7, Sketch = 8,
+                                Neon= 9, Blackboard = 10,Whiteboard = 11-->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration id="NoEffect" value="0"/>
+                                        <xs:enumeration id="Mono" value="1"/>
+                                        <xs:enumeration id="Sepia" value="2"/>
+                                        <xs:enumeration id="Negative" value="3"/>
+                                        <xs:enumeration id="Solarize" value="4"/>
+                                        <xs:enumeration id="Posterize" value="5"/>
+                                        <xs:enumeration id="Aqua" value="6"/>
+                                        <xs:enumeration id="Emboss" value="7"/>
+                                        <xs:enumeration id="Sketch" value="8"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="OutputSetting">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ImageFormat">
+                                <xs:simpleType>
+                                    <!-- 1: BMP;  2: YUV;  3: BMP+YUV -->
+                                    <xs:restriction base="xs:unsignedByte">
+                                        <xs:enumeration value="1"/>
+                                        <xs:enumeration value="2"/>
+                                        <xs:enumeration value="3"/>
+                                        <xs:enumeration value="7"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="OutputFolder" type="xs:string" />
+                            <xs:element name="OutputPrefix" type="xs:string" />
+                            <xs:element name="RegisterDump" type="xs:unsignedByte" />
+                            <xs:element name="IntermediateSetting">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Enable" type="Hex8" />
+                                        <xs:element name="statsDump" type="Hex16" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RegisterDumpOnlyModeCfg">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="AWBMode">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Enable" type="xs:unsignedByte" />
+                                                    <xs:element name="BPSCCEnable" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

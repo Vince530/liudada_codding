@@ -1,0 +1,338 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="As an alternative to using the JPG Simulation tool UI, run a JPEG simulation via the command line. To expedite JPEG simulation from multiple images, create and run a batch file with multiple commands. ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Run a JPEG simulation from the command line" /><meta name="abstract" content="As an alternative to using the JPG Simulation tool UI, run a JPEG simulation via the command line. To expedite JPEG simulation from multiple images, create and run a batch file with multiple commands." /><meta name="description" content="As an alternative to using the JPG Simulation tool UI, run a JPEG simulation via the command line. To expedite JPEG simulation from multiple images, create and run a batch file with multiple commands." /><meta name="DC.Relation" scheme="URI" content="fcl1494872328107.html" /><meta name="DC.Relation" scheme="URI" content="ara1517608118252.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="dbe1520455911959" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Run a JPEG simulation from the command line</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="dbe1520455911959">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="fcl1494872328107.html" title="Simulation Tools">Simulation Tools</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="fcl1494872328107.html" title="Simulation Tools"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Simulation Tools</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Run a JPEG simulation from the command line</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">As an alternative to using the JPG Simulation tool UI, run a JPEG
+		simulation via the command line. To expedite JPEG simulation from multiple images, create
+		and run a batch file with multiple commands.</p>
+
+		<div class="section" id="dbe1520455911959__section_chm_v42_cdb"><h2 class="title sectiontitle">Run a batch file with multiple JPG input files</h2>
+			
+			<p class="p">Use these steps to run a JPEG command line simulation with files
+				from an existing tuned project and JPG files as input. </p>
+
+			<ol class="ol" id="dbe1520455911959__ol_gml_ypl_3y">
+				<li class="li">Open the command prompt. </li>
+
+				<li class="li">Navigate to the Chromatix directory. </li>
+
+				<li class="li">To enable the command line JPG simulation, type something like
+					the following:
+						<pre class="pre codeblock"><code>-JPGSimAll 
+-awbdll C:\JPGSim_CommandLine\input\AWBSim\com.qti.stats.awb.dll 
+-bin C:\JPGSim_CommandLine\input\AWBSim\com.qti.tuned.liteon_imx318.bin 
+-jpg C:\JPGSim_CommandLine\input\2DL_Y=1.jpg 
+-xsd C:\JPGSim_CommandLine\input\XSD 
+-xml C:\JPGSim_CommandLine\input\XML 
+-inputMeta C:\JPGSim_CommandLine\input\meta_config_template.xml 
+-outputFolder C:\JPGSim_CommandLine\output</code></pre>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="dbe1520455911959__table_crj_fql_3y" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : JPGSimAll command structure</span></caption><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d2352e55">Argument</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d2352e58">Description</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e55 ">-JPGSimAll </td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e58 ">Enable JPG
+										simulation mode to use in batch file </td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e55 ">-awbdll
+										&lt;filename&gt; </td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e58 ">Path to the awb
+										dll file in the software build</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e55 ">-bin
+										&lt;filename&gt; </td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e58 ">Path to the
+										tuned project binary file for the target device </td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e55 ">-jpg
+										&lt;filename&gt;</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e58 ">Path to the
+										JPEG image that has the 3A debug data</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e55 ">-xsd &lt;folder name&gt;</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e58 ">Path to the XSD folder for the
+										tuned project</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e55 ">-xml &lt;folder name&gt;</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e58 ">Path to the XML folder for the
+										tuned project</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e55 ">-inputMeta
+										&lt;filename&gt; </td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e58 ">Path to the
+										input metadata file to use as meta template file. Create
+										this the first time by running the JPGCfg command (see
+										below). </td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e55 ">-outputFolder
+										&lt;folder name&gt; </td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e58 ">Path to the
+										output folder for the updated metadata file </td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+</li>
+
+				<li class="li">Add similar set of commands for each JPEG file that you want to
+					use for JPG simulation. Put the sets into a batch file.</li>
+
+				<li class="li">Run the batch file.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="dbe1520455911959__section_N1010C_N10013_N10001"><h2 class="title sectiontitle">Other JPEG commands to generate related meta/config files </h2>
+			
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="dbe1520455911959__table_f51_ft2_cdb" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : JPGCfg command structure</span></caption><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d2352e169">Argument</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d2352e172">Description</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e169 ">-JPGCfg </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e172 ">Generate JPG
+								configuration and meta info files for jpg simulation</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e169 ">-jpg
+								&lt;filename&gt;</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e172 ">Path to the JPEG image
+								that contains both 3A debug info and metadata</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e169 ">-OutputCfg &lt;filename&gt;</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e172 ">Path to the JPEG configuration txt
+								file, used for JPG simulation</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e169 ">-inputMeta
+								&lt;filename&gt; </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e172 ">Path to the input
+								metadata xml file to use as a template for generating output</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e169 ">-outputMeta
+								&lt;filename&gt; </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e172 ">Path to the output
+								metadata xml file for JPG simulation with updated cct and rgb gains
+							</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="dbe1520455911959__table_of1_zv2_cdb" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : JPGCfg command structure</span></caption><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d2352e242">Argument</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d2352e245">Description</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e242 ">-ProjCfg </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e245 ">Generate project
+								configuration file for JPG simulation</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e242 ">-xsd &lt;folder
+								name&gt;</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e245 ">Path to the XSD folder
+								for the tuned project</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e242 ">-xml &lt;folder name&gt;</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e245 ">Path to the XML folder for the tuned
+								project</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e242 ">-inputMeta
+								&lt;filename&gt; </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e245 ">Path to the input
+								metadata xml file, could be output of AWB simulation</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e242 ">-outputCfg
+								&lt;filename&gt; </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e245 ">Path to the output
+								project configuration file for JPG simulation</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="dbe1520455911959__table_b2h_ww2_cdb" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : JPGSim command structure</span></caption><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d2352e315">Argument</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d2352e318">Description</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e315 ">-JPGSim </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e318 ">Generate JPG
+								simulation</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e315 ">-jpg
+								&lt;filename&gt;</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e318 ">Path to the JPEG image
+								that contains both 3A debug info and metadata</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e315 ">-jpgCfg &lt;filename&gt;</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e318 ">Path to the JPEG configuration txt
+								file</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e315 ">-projCfg &lt;filename&gt;</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e318 ">Path to the project configuration txt
+								file</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e315 ">-sourceMeta &lt;filename&gt; </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e318 ">Path to source metadata file that
+								contains r,g,b gains from jpg file</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e315 ">-targetMeta
+								&lt;filename&gt; </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e318 ">Path to the source
+								metadata file for new r,g,b gains</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e315 ">-outputFolder
+								&lt;folder name&gt; </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d2352e318 ">Path to the JPG
+								simulation output folder </td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="ara1517608118252.html" title="The JPG Simulator provides a pipeline simulation result using a JPEG image in less time than running the conventional simulator that uses a raw image.">Run a pipeline simulation with JPEG input</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="fcl1494872328107.html" title="Simulation Tools"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Simulation Tools</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

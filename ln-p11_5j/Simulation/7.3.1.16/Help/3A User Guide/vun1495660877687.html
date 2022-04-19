@@ -1,0 +1,70 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Complete the actuator range test available at Live &gt; Utilities &gt; 3A Scan Test &gt; CAF Scan Test . If the graphs look as expected, then the OTP data provided by vendor is valid. If the graphs do not look ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Collect and verify lens position data on golden modules" /><meta name="DC.Relation" scheme="URI" content="hvw1495660987824.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xds1477085279401" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Collect and verify lens position data on golden modules</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xds1477085279401">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Collect and verify lens position data on golden modules</h1>
+
+   <div class="body conbody">
+      <ol class="ol">
+         <li class="li">Complete the actuator range test available at <span class="ph uicontrol">Live &gt; Utilities &gt; 3A Scan Test &gt; CAF Scan Test</span>.<ul class="ul">
+               <li class="li">If the graphs look as expected, then the OTP data provided by
+                  vendor is valid.</li>
+
+               <li class="li">
+                  <p class="p">If the graphs do not look as expected, then there could be a
+                     problem with the OTP data that is causing the lens not to focus on either macro
+                     or infinity.</p>
+
+                  <ul class="ul">
+                     <li class="li">The best solution is to contact the vendor and verify if the
+                        OTP data they provided are correct or not.</li>
+
+                     <li class="li">The second solution is to add <span class="keyword cmdname">MARGIN</span> over <span class="keyword cmdname">MACRO DAC</span> and
+                           <span class="keyword cmdname">INFINITY DAC </span>to take care of module
+                        and temperature variations. For additional assistance, contact the sensor
+                        driver team or CE engineer.</li>
+
+                  </ul>
+
+               </li>
+
+            </ul>
+</li>
+
+         <li class="li">Compare the lens position for different distances with the value in the lens position
+            tuning values section of the AF Tuning tab.<br /><img class="image" id="xds1477085279401__image_ic5_t4p_rx" src="kaj1495660884816.png" /><br /></li>
+
+         <li class="li">Enable logging, use the ISO 12233 chart, and run the full-sweep search for the following distances: 7 cm, 10 cm, 14 cm, 20 cm, 30 cm, 40 cm, 50 cm, 60 cm, and 120 cm.</li>
+
+         <li class="li">Record the lens position from the logs.</li>
+
+         <li class="li">Compare the value obtained from the full-sweep search with the values in the lens
+            position tuning values section of the AF Tuning tab.<ul class="ul">
+               <li class="li">If the values match or if they are close, then there is no need to modify the
+                  value in header.</li>
+
+               <li class="li">If the values do not match or if there is huge difference, then update the header
+                  with the values obtained from full-sweep test.</li>
+
+            </ul>
+</li>
+
+         <li class="li">In general, the lens position values calculated in Chromatix and the results from the full-sweep test will not match exactly, but they should be close. The values calculated in Chromatix are theoretical values based on input from the lens sensor specifications. There is a possibility to see variations in the modules. If there are some variations, then copy the values obtained from the full-sweep test. To account for module variation, repeat the full-sweep search using different modules and compare those results to the lens position tuning values in the AF Tuning tab.</li>
+
+      </ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="hvw1495660987824.html" title="Actuator range test">Actuator range test</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,1762 @@
+﻿
+Note 
+    ParmterParser will no longer be included in Chromatix installer package, please use one from target build 
+    to generating bin file
+  
+  Tuning ANR/TF: 
+    For video and MFNR tuning (multiple frames), suggest to do in 2 steps for tuning, 
+      1. Generate YUV file form IFE or BPS (from simulation tab), and copy to separate folder.
+      2. Add sequence number at end of file (e.g. xyz_0.yuv, xyz_1.yuv ...)
+      3. Tune ANR and TF using YUV files.
+
+      MFNR, 
+        1. make sure "MF" from "SW Control" is enabled
+        2. make sure both number of MCC and flat files are equal or more than the number of frames defined in MF
+        3. save TFblend output for postfiltering tuning
+    
+      Video
+        Number of frames for simulation is defined under Simulation Tab
+    Number of frames used to tune TF is defined in the module UI (can be modified)
+
+
+Note on Scenario Modes:
+
+    Scenario Modes are now configured using the ParameterTuningTypes.xsd file. 
+
+    The default copy of ParameterTuningTypes.xsd can be found in the Chromatix install folder.  When creating a new,
+    or opening an existing, project, if it does not already contain ParameterTuningTypes.xsd, the default version 
+    will be copied to the project folder, and used from there.
+
+    To modify the Scenario Modes, edit the version of ParameterTuningTypes.xsd in your project folder.  Please 
+    follow the instructions in the ParameterTuningTypes.xsd file.
+        
+    When changing the Scenario Modes, do not edit any Modes that are already used in your project, or your project 
+    will no longer load correctly.  It is best edit the Scenario Modes before adding any modes beyond the Default 
+    and Sensor.  After editing the Scenario Modes, you must re-load the project in Chromatix before adding new Scenarios 
+    using the Scenario Editor.
+
+    Special case modes/sub modes:
+    The following modes/sub modes are treated specially by Chromatix and changing or removing them may cause Chromatix
+    to function improperly:
+    1) Default mode
+    2) Sensor mode
+    3) Usecase mode
+    4) Usecase sub modes: Preview, Snapshot, and Video.
+    5) MFNRBlend and MFNRPostProc sub modes (do not rename, must be deleted together).
+
+    All other modes and sub modes may be changed.
+    Note: You may remove both MFNRBlend and MFNRPostProc sub modes together, but do not rename them, or remove one without 
+    removing the other.
+
+    Please use care when modifying ParameterTuningTypes.xsd file, as proper functionality of Chromatix is dependent upon
+    a correctly configured Scenario Mode configuration file.
+
+
+    Tips & Tricks:
+    ------------
+    1.If you face issue starting Chromatix, please install below :
+      Microsoft Visual C++ 2015 Redistributable (x64) - 14.0.24215, 
+            https://www.microsoft.com/en-us/download/details.aspx?id=53840
+      Microsoft .NET Framework 4.5 Setup, 
+            http://go.microsoft.com/fwlink/?LinkId=225704
+            http://go.microsoft.com/fwlink/?LinkId=225702
+                        
+    2.Each run of Simulation creates a separate folder. This may take a lot of space on your hard disk. 
+      Go To "Edit->Clean Simulation Data" to delta simulation files.
+      
+    3.Please make sure your default project folder path and input image path as short as possible, otherwise
+      your simulation may fail due to windows max path size limitation, suggest to make the project folder under root.
+
+    4.File Path and Name should not contain spaces.      
+    
+    5.For machine with limited memory, it may get slower after tuning some modules, or fail to open image at 
+      end of simulation (popup a white window), you can delete images from image panel to improve performance.
+      
+    6.Default mode tuning:
+       IFE, simulate in video mode
+       BPS, simulate in snapshot mode
+       IPE, simulate in snapshot mode
+    
+    8.You can uncheck "MF" to disable MFNR mode from "SW Control" when tuning none Noise/Sharpness related modules 
+      to improve performance, however those modules are suggested to be tuned on parent (snapshot).
+      
+   
+    Known issue:
+    ----------
+     - Due to file permission issue, we install this release under C root.
+     - 280 ANR/TF may be failed on calibration, this is caused by preset. Please discuss with CE to take update.  
+
+
+Chromatix 7.3.01.16 (02/23/2021)
+    Bug Fixes:
+    ----------
+    580 HDR, 
+     - Fixed a bug where the various plots and data grid were only populated for 'Region 1'
+     
+    AWB
+     - Make sure on initial tuning to use BPP defined in ISP
+     - Fixed an issue in the AWB trigger grid inside the triangle gain adjust module
+     
+    AEC
+     - Fixed convergence error, removed max Predictive parameter.
+  
+    EIS, 
+     - Fixed several issues
+     - fixed where GUI was pointing to top level EIS parameters
+     - iFOVC scale calibration update
+
+    New and Updates:
+    ----------
+     - Added Support for p010 simulation
+     - Added support to automatically load presets when new scenarios are created from the sensor XML
+     - AEC, Added support to ignore updates from child parameters in the tuning tree that are also named 'dataID'   
+    
+    New Targets: 
+     - SM7325 (note, there are known issues on sHDR)
+     - SM8280
+     
+    Simulator Updates:
+     - SpectraCamSim480.WIN.1.0-00006_a_01202021
+     - SpectraCamSim580.WIN.1.0-00005
+     - SpectraCamSim380.WIN.1.0-00008_d_02172021
+     - SpectraCamSim345.WIN_ALPHA_.0.000_12232020
+
+Chromatix 7.3.01.15 (11/23/2020)
+    Bug Fixes:
+    ---------- 
+     - Updated the AWB autotune configuration file
+     - Updated AECX Metering metadata display
+     - Added support for the Gyro-Assisted AEC arbitration module
+     - Added second module in Gyro-Assist for "Checking the output of Gyro AEC arbitration"
+     - Removing Enable Gain Match under "two-exposure SHDR" and the entire "two-exposure MFHDR" mini section
+
+    
+Chromatix 7.3.01.14 (11/02/2020)
+    Bug Fixes:
+    ---------- 
+     - [ANR]Prompt exception when click base function after add POI info, the issue was caused on reading data more the 2GB in size
+     - Tuning paramters changed after saving project
+     - [MFSR_Blend_ANR] Error window pops up when load MCC images
+     - [MFSR_Blend_TF] Error window pops up when load MCC images
+     - [MFNR_Blend_TF]Error window pops up when click the simulate or simulate
+
+    New and Updates:
+    ----------
+     - Increased Image View brightness slider range
+     - Hide invalid enumerator warnings unless validation is enabled
+     - Added Function to return tooltip values of all parameter children
+     - Update SW_MFNR and SW_MCTF UI for new versions
+     - Added the flash estimate strength tuning control to the 'Flash metering table generation' tab
+     - Added support for the SF spectral sensor assist module
+     - Added support the update the meta config file in the output folder with the AWB simulation output values in the batch mode
+     - Added ability to specify the trigger title
+     - Added support to select the first item in the trigger grid by default
+     - Convergence module edits. removed "max predictive" UI, added trigger tuning at Predictive Gain
+     - AEC10 UI Updates for Smart Flash
+
+    Simulator
+     - SpectraCamSim580.WIN.1.0-00003_a_10232020
+     - SpectraCamSim340.WIN_ALPHA_.0.000_10232020
+     - SpectraCamSim345.WIN_ALPHA_.0.000_10232020
+
+Chromatix 7.3.01.13 (10/12/2020)
+    Bug Fixes:
+    ---------- 
+     - Fixed issue with loading YUV to WNR
+     - Fixed, to change MFSR enable value accordingly in MF when in MFNR flow 
+     - Fixed loading MCC error on MFSR_Blend_TF
+     - Fixed EIS ini file parser and update EIS library
+     - Fixed per modules simulation bpp issue on some target
+     - Fixed issue with Flip/Rotate not being handled correctly in the image GetPixel function for Bayer images.
+     - Fixed issue with distance weight vector lines crossing over to the wrong side when the slope of the line 
+       between two reference points is positive
+     - Fixed issue when slope between two reference points gets near zero
+     - Fixed object reference not set to an instance of an object after click simulate
+
+
+    New and Updates:
+    ----------
+     - Added XML Mode to Live Tuning
+     - Added Cut/Copy/Paste support to XML Mode 
+     - Updated XML editor
+     - Added "Stop Process" button to button bar allowing terminating simulation process 
+     - Support comparing different size image.
+     - Enable early exit for Spectra340
+     - Changed the ImageViewer to prevent the matcbeth rectangles from overlapping
+     - Added Windows Mobile support to Live Tuning
+     - Enabled generating gamma curve (Default, HDR10 and HLG) for all modes
+     
+     - Added the preflash and main flash LED influence fields
+     - Added AECX NZSL metadata structures
+     - Added support to use the right mouse click to make the data ID field editable
+     - Added support to make the AECDataListItemEditor more generalized
+     - Added support for an additional radio button in the 'Abstractions' section
+     - AEC10, Added MFHDR & SHDR Ultra Long Exposure module added
+     - AEC10, Added adding ID number for Scene Analyzer and Stats Calculator
+
+    New Targat
+     - Added new target SM4350
+     - Added new target SM7350
+
+    Simulator
+     - Updated 480 simulator
+     - Updated 580 simulator
+     - Updated 340 simulator
+     - Added   345 simulator
+
+
+Chromatix 7.3.01.12 (07/16/2020)
+    Bug Fixes:
+    ---------- 
+    ICA/LDC
+     - Fix ldc grid definition for precision    
+  
+    ANR/TF
+     - Fixed, save, savebackup and restorebackup for MF model 
+     - Fixed DCViewer issues
+     - Fixed sad Files Contains nulls
+     - Fixed ANR fail to get output autotune
+     
+    EIS
+     - Fixed Prompt Error load Config File
+     - Added check if test section exists in EIS init ini file
+     - Fixed LDC GUI deformity, and GUI inconsistencies
+     - Changed GUI to show current scenario's EIS video files
+     - Fixed feeding ICA10 LDC grid to EIS calibration ini file
+     - Fixed simulating ICA10 LDC from EIS
+ 
+    Chromatix Application     
+     - Fixed issues with Gain, Rotate, Flip not being save/restored correctly, and 
+       Frame Length not being displayed correctly in the UI
+     - Fixed LENR dumps
+
+    AEC10
+     - PriorityMap, fixed a bug where the 'Priority' and 'Data ID' column data were interchanged
+
+
+    New and Updates:
+    ----------
+    Chromatix Application    
+     - Enabled On target replay (OSD) simulation for 480 and 580
+     - Added AIDenoiser.dll for 340 project
+     - Modified image dock Add function to show the existing image if it is loaded more than once
+
+    EIS
+     - Adding 24 fps support
+     - Added processed calibration video files caching and saving
+     
+    3A Debug 
+     - Updated 3a metadata config file
+     - Added Concise Debug Data information to the Metadata Config Files.
+     - Added new Metadata menu to ImageView control to overlay metadata information on the image
+     - Changed ROI index text color to the same as the rectangle color, and change to normal line weight
+     - Changed index text color to the same as the rectangle color, and change to normal line weight
+ 
+    AEC10
+     - Changed sensor resolution item names, now consistent with their AEC9 equivalents
+     - Added support to modify the target value of metering scene analyzer ID 41
+
+    Simulator update
+     - SpectraCamSim340.WIN_ALPHA_.0.000_07092020
+     - SpectraCamSim580.WIN.1.0-0000_c_07102020
+ 
+     
+Chromatix 7.3.01.11 (06/09/2020) 
+
+    Bug Fixes and Updates:
+    ---------- 
+     - Autotune update
+     - Added 580 and 355L mono support
+     - Fixed issues for AIDenoiser 
+       *Postfilter OPE is not displayed in pipeline
+       *Tuned parameter are not loaded when reopened project 
+     - Fixed issues on ANR for custom types in ParameterTuningTypes
+     - CAFScan, fixed Issue where Camera ID is always set to zero when running Bi- Directional full sweep
+     - Fixed prompt exception info when click region1 of TMC
+     - ICA/LDC, fixed ldc grid definition for virtual width and height
+     - EIS, Added first Frame to Process to GUI
+     - Fixed IPE ICA to be ICA2 initialization on 250L
+
+  
+Chromatix 7.3.01.10 (06/01/2020) 
+
+Please notes when tuning MFHDR or MFNR/MFHDR "PreFusion" modules for better performance:
+  *When tuning BPS modules, it is better to set snapshot mode or set RunPipeline to BPS (from BPSMFHDRIPE) for config from simulation Tab
+  *Set ISPConfig-Common-TopCfg-Total Frame Number to 1
+  *Config setting for tuning ANR on IPE should also be same as tuning normal MFNR blend,  
+  *Reset it back to original before running simulation from simulation tab for all exposure frames for MFHDR Prefusion
+
+    Bug Fixes and Updates:
+    ---------- 
+     - Fixed, picking correct output for default mode simulation from simulation tab on "ALL" mode. 
+     - Optimized parameter parsing performance.
+     - Minor performance improvement when triggering an array count changed event.
+     - Return Advanced config for NPS modules since they run only NPS. 
+     - Fixed issue on jpg simulation     
+     - Set right BPP for MFNR output
+     - Fixed Advanced config IFE+IPE default mode simulation
+     - Fixed issue on loading presets
+     - Fixed cmd line jpg simulation
+     - Fixed output displaying Issue in MFNR use case 
+     - EIS fixes
+     - Fixed issue with "Parser Command Window" not saving/restoring settings
+     - Fixed Sigma RNR for GIC and ABF 
+     - Added misleading zone V3 tuning GUI
+     - Updated TMC UI
+     
+    New Spectra support 
+     - Spectra340L
+     - Spectra580
+     
+    On target Simulation
+    * Support Snapshot and MFNR on Spectra480 (need recent SW build) and Spectra580
+     - Changed to overwrite batch files for ontarget simulation if file is only readonly
+     - Use width and height from yuv settings window for on target input stream.
+     - Updated ontarget replay batch files
+     - Automatically calculate stride and slice values when changing width and eight
+     - Fixed to use file size from yuv input for ontarget
+     - Added support for YUV to JPG
+
+    Simulator update
+     - SpectraCamSim340.WIN_ALPHA_.0.000_04292020
+     - SpectraCamSim580.WIN.1.0-00000_a_05302020
+
+ 
+Chromatix 7.3.01.09 (05/06/2020) 
+
+    Bug Fixes:
+    ---------- 
+    BPSABF
+     - Fixed chart refresh for different regions
+    
+    EIS
+     - Fixed reserved parameters, added section name before parameter name as search key
+     - Fixed LDC calib domain fall back value and stabilizer updates
+     - Fixed typo in parameter naming
+     - Fixed [340][EIS_LDC] Prompt error info when run simulation
+     
+    ICA/ANR/TF
+     - Fixed load image number issue in ICA for MFNR
+     - Fixed [MFNR][ICA]Prompt error info and the no output when run simulation
+     - Fixed ANR flat image loading issues
+     - Fixed TF region DC4 and DC16 updated in VSR
+     - Fixed ANR UI miss "Strength Final high frequency" max and min for scenario modes other than snapshot
+     
+    LENR
+     - Fixed LENR yuv format type -> Planar
+  
+    Chromatix Application
+     - Fixed 340 MFNR pipeline creating issue
+     - Fixed, to display RGB images for modules input/output
+     - Fixed crash when do adjust on TDL
+     - Fixed stream config to set pipeline after Init so OPE can have pack type as unpacked.
+     - Fixed the restore point order so the most recent restore point is at the top of the list
+     - Fix picking right output for ipepreproc
+     - Fixed UI docking issues
+
+    AWB
+     - Fixed a bug in initial tuning v2 where the outdoor SG chart values from a previous 
+       run are not cleared in the next run
+     - Fixed issues/crashes when modifying Trigger Parameter from a background thread
+
+    AEC
+     - Fixed a bug in the calculation of the extreme red threshold value
+     - Fixed a bug in the normalization of the G value
+
+    New Features and Updates:
+    ----------
+    ICA/ANR/TF/EIS
+     - Added EIS support to 340 
+     - Updated video GUI and isp_config for ANR/TF simulation
+     - EIS UIG improvements
+         
+    Chromatix Application
+     - Added parser warning when the float tool hint is misused
+     - Added support to return multiple input/output files for module simulation(for example video).
+     - Added support CVP dump for 340
+     - Support to run AIDenoiser scenario
+     - Renamed target 540 to 320, renamed Spectra540 to Spectra340
+     - Support for 355L instead of 560 Spectra     
+     - Changed on simulation to add index to output prefix if multiple images were selected for input
+     - Improved loading restore point info performance
+     - Improved performance of loading project and auto calibrate settings
+     - Pipeline simulation, changed to run BPS + IPE as default (with one configuration setup)
+     - Added "Advanced Config" option to allow run simulation as stages
+     
+    AWB
+     - Incremented the number of light sources to account for the addition of the outdoor SG chart
+     - Added support for a new illuminant (outdoor) that is optional
+     - Updated the configuration data file to account for the newly added optional illuminant (outdoor)    
+     - Updated the maximum permissible value for the illuminant number to account for the newly added outdoor SG chart
+     - Disabled the addition\removal of triangle vertices during the triangle overlap validation process
+
+    Simulator update
+     - SpectraCamSim280.WIN.1.0-00020
+     - SpectraCamSim380.WIN.1.0-00008
+     - SpectraCamSim340.WIN_ALPHA_.0.000_04292020
+     
+     
+Chromatix 7.3.01.08 (03/09/2020) 
+    Bug Fixes:
+    ----------        
+    ANR/TF 
+     - Fixed parameter data overwritten on saving project when the changes were made from Parameter editor
+     - Fixes SM6350 Simulation and Calibration Issue for on NPS modules
+     - Fixed LDC initialization issue.
+     - Fixed Settings "Resolution"
+       * Options are Scenario related
+       * PreScale renamed to MFSR
+     - Fixed, pass updates using correct resolution width and height
+     - Fixed, ANR/TF region triggers will match Parameters Editor ANR/TF region triggers, 
+       when modifying from Parameters Editor
+
+     Chromatix Application
+     - Made sure no any metadata changes if meta file is loaded
+     - Check for null ptrs for command line jpg simulation
+     - Fixed project crop
+     - Set ModifiedGain to 0 as default in sp_config
+     - Fixed, styling added for reserved and region parameter viewers
+     - Fixed docking manager crash if both the current and new selection are null
+     - Fixed 540 JPG sim issue
+     
+    New Features and Updates:
+     - Added support SM6350
+     - Added support liveTunig window
+     - Added support for the pure raw image AWB simulation feature
+     - Added support to load ISP config    
+     - Add support to get MFNR num of frames from ProjectSettings    
+     - Added support to generate the AWB SG chart info file during the Initial Tuning V2 process
+     - Added feature to use Pipeline "Enables" on Simulation tab for tuning. 
+
+    Simulator update
+     - Update 540 simulator to Alpha Release SpectraCamSim540.WIN_ALPHA_.0.000_02282020
+
+
+Chromatix 7.3.01.07 (01/17/2020) 
+
+    Simulator update
+     - SpectraCamSim480.WIN.1.0-00004_f_01172020
+       * Fixed BPS image output issue       
+       * Added support for TMC gain adjustment in MFNR postfiltering only mode + TMC use case
+       * transform model fix
+       * VSR simulation with geolib update, supporting VSR simulation at sensor resolution
+       * reg dump fix for CC,Gamma,2DLUT
+       * Tinitless version selectable option from isp config
+       * Added option to use tuning node from metadata config
+       * Enable BPS manual CCM input
+       * support for bypassing BPS if downscaled images are available for MFNR
+
+
+Chromatix 7.3.01.06 (01/16/2020) 
+     - Fixed 6250(250L) jpg simulation issue
+     - Fixed 6250(250L) project creation issue
+     
+Chromatix 7.3.01.05 (01/13/2020) 
+
+     - Update simulator to below versions:
+       * SpectraCamSim380.WIN.1.0-00007
+       * SpectraCamSim480.WIN.1.0-00004_d_01062020
+       * SpectraCamSim540.WIN_ALPHA_.0.000_12312019
+     - OIS centering feature addition to Blur Estimation
+     - Fixed fetching and loading wrong values after calibration of EIS
+     - Fix setting tuning mode (settings for selector tree) in top config 
+     - Added support for 355 mono
+     - Fixed 480 JPG simulation issue
+     - Fixed bug that caused the wrong scenario to be selected when loading a project
+
+Chromatix 7.3.01.04 (12/17/2019) 
+    Bug Fixes:
+    ----------        
+    ANR/TF 
+     - Fixed ANR and TF trigger region matching check issue
+     - Fixes pop-up error on imageviewer if simulation fails and no output on C7 and user uses a mousewheel movement on top.
+     - Calculation of max number of passes according to the resolution and restriction changed to affect only Video.
+     - Fixed issue when using 8bit yuv to do simulation, the result is not correct.
+     
+    Video
+     - changed TZ to by region
+      
+    Chromatix Application   
+     - Fixed issue with MIPI/RAW 14 decoder.
+     - Fixed White Balance selection names for D75 and D50 light types
+     - Fixed default stride for MIPI 12 and 14 images
+     - Added error check for JPG simulation
+     - Fixed uncassary checking that popup warning for on target batch files
+
+  
+    AWB
+     - Fixed a bug in the logic for determining plottable PointData points (editor wasn't displaying 
+       points even if one of the (Rg, Bg) values was 0)
+     - Fixed a null pointer exception associated with the external trigger data information
+
+    New Features and Updates:
+    ---------- 
+     - Load and Update project optimizations
+     - Added Close Project menu option
+     - Added the sensor resolution width and height information to the AEC Configuration section
+     - Support for OIS centering tunning 
+     
+Chromatix 7.3.01.03 (11/25/2019)      
+    Bug Fixes:
+    ----------       
+    ICA
+     - video, prompt error info when creating new region and switch to region2
+    
+    EIS/LDC
+     - Image list is empty after load image
+     - No effect on output image
+     
+    New Features and Updates:
+    ---------- 
+    Chromatix Application    
+     - Added support (Alpha) on device simulation for sanpshot and MFNR use cases
+    
+    Simulator update
+     - SpectraCamSim480.WIN.1.0-00004_a_11202019
+    
+Chromatix 7.3.01.02 (11/06/2019) 
+    Bug Fixes:
+    ----------  
+    ICA
+     - Fixed exception of detect COI if not load any test image
+     - Fixed wrong image size issue if manual change resolution and load jpeg
+     - Enable to cancel EIS simulation when ICA disabled.
+     
+    ANR/TF
+     - MFSR set default size to PreScale for Blending ANR
+     - ExternalProcesses lock bug fix
+     - Preset configuration file selection fix
+     - Fixed prompting an error was detected during calibration.
+    
+    EIS
+     - Supported EIS 1.2 in 380.
+     
+    Chromatix Application      
+    - Fixed display issue for parameter names when they start with "Chroamtix ".
+    - Added null pointer checks for simulation
+    - Fixed issue simulation stop working after per modules simulation enabled 
+    - Fix running IPE when multiple input images selected through simulation tab
+    - Fixed SNR calculation issue on raw
+
+
+    New Features and Updates:
+    ---------- 
+    Chromatix Application  
+     - Added capability to filter message on status panel 
+     - Added support for 480 mono project
+     - Added support for Right/Bottom splitter locations save/restore
+     - Added preset validation when creating a new project
+
+    Simulator update
+     - SpectraCamSim480.WIN.1.0-00003
+    
+
+Chromatix 7.3.01.01 (10/15/2019) 
+    Bug Fixes:
+    ----------  
+    ANR
+     - Fixe ANR postfilter calibration issue
+
+    Chromatix Application  
+     - Fixed sever MFNE and EIS tuning issue
+     - Fixed IPE path issue when generating XML
+     - Fixed crash on commandline jpg sim     
+     - Fixed ROI simulation issues for several modules
+     
+    New Features and Updates:
+    ---------- 
+    LENR
+     - Added UI support
+
+    Chromatix Application  
+     - Added error handling when module does not support per module, when image not selected but Per Module simulation is enabled. 
+     - Added IOTPipeline to top config to distinguish between sHDR2 and sHDR3
+     - Added BPSIPE for MFNR simulation
+     - Added ParameterParser tag to top xsd/xml for Spectra480 so that it doesn't have to run under simulation folder
+     - Added protection on UI during simulation
+     
+    Simulator update
+     - SpectraCamSim480.WIN.1.0-00002_a_10112019
+
+Chromatix 7.3.01.00 (09/11/2019) 
+    Bug Fixes:
+    ----------  
+    EIS
+     - LDC fixed chart preview crash
+
+    Chromatix Application  
+     - Fixed project.txt is in use issue when opening project
+     - Fixed crash when clicking the button to select a new path, and the sensor driver path is invalid
+
+    AEC  
+     - autotune, fixed meta clean up
+     - autotune, fixed multi zone L value vary issue and add meta clean up after jpg simulation 
+     - Fixed initial tune for ISO gain
+    
+    AWB
+     - Fixed a bug where the SG chart markers for images were not persistent and every 
+       image had the markers from the H image
+     - Fixed a bug where the rectangles from the previous image were not stored correctly
+    
+    New Features and Updates:
+    ---------- 
+    Gamma
+     - Added simulate button to gamma
+
+    Chromatix Application  
+     - Added MFNR/MFSR support to SM8250 and SDM865 targets
+     - Added per module simulation support
+      * Run simulation to a module (e.g. BPS->LSC)
+      * Check "Enable Module Simulation" under "Tuning Tools" panel
+      * Expend BPS->LSC and find the latest one by timestamp 
+      * check on one with "input", now this file will be used next simulation
+      
+      ** please note, per module simulation may not be suitable for all simulation cases, 
+      ** it should only be used when needed, for example it cannot be used on CC simulation 
+      ** and it should be turned off or reselect new image file when skip tuning modules
+      
+    AEC autotune 
+     - added L value calculation
+     - added image simulation after L value calculated 
+    
+    Simulator Update
+     - SpectraCamSim480.WIN.1.0-00001_c_08302019
+    
+Chromatix 7.3.0.0 (08/13/2019) 
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Bug fixes on region updates
+     - Bug fixes in ANR calibration at 380.
+     
+    ICA
+     - Fixed output image format changed issue after run simulation
+     - Fixed fisheye model
+     - Added support 5/8 coefficient for normal model
+
+ 
+    EIS
+     - Fixed bug in calibrateConfig.ini file format
+    
+    Chromatix Application         
+     - Fixed crash on project close if any of the starting tab controls are floated as windows
+     - Fixed issue with the delta image toggle button not resetting on imageviewer
+     - Fixed crash when no pdaf data is present in sensor driver file
+     - Fixed generate XML feature on simulation tab for default mode
+     - Fixed crash when updating a project
+     
+    AEC
+     - Histogram: No image path update in edit box, nether in graphic panel
+     
+    AWB
+     - Fixed a few bugs seen when performing auto tune with custom configuration data file
+     - Fixed a bug in the logic for determining plottable PointData points
+     
+    New Features and Updates:
+    ---------- 
+    ANR/TF
+     - Updated tuning UI
+     - Updated DCViewer
+     
+    EIS
+     - GUI Update
+     
+    ASF
+     - Added support for the halo reduction parameters
+     - Added capability to set sharpness kernel
+    
+    TDL
+     - Added capability to pick r,g,b values from image
+     - Added support to set original H/S or target H/S from screen
+     
+    Chromatix Application      
+     - Added support for Spectra480 projects
+     - Improved project loading speed
+     - Added support to ParameterEditor to copy and paste for array type (right click on tree item)
+     - Added the ability to validate XML/XSD files when loading a project
+     - Enabled muti-file selection for TP10 conversion dialog
+ 
+    Binary generation
+     - Supports module filtering mode
+
+    JPGSimulation
+     - improved performance
+     
+    Imageviewer
+     - Added ability to change cropping rectangle using a mouse
+     - Added HSV to the image viewer
+     - Added ability to show/hide image viewer status bar field
+     - Added HSL values to image viewer
+
+    AWB
+     - Added support to selectively add the SA and misleading color zone points configuration data to 
+       the configuration data file based on the status of the 'enable' flag 
+     - Validate binary file for AWB tuning    
+     - Added support for the validation of the configuration data file
+     - Added support on AutoTune V2
+      
+    AEC
+     - Added support for Autotune
+     - AEC flash: Show message code when switch from project to image
+     
+    Simulator Update
+    - SpectraCamSim380.WIN.1.0-00006
+    - SpectraCamSim480.WIN.1.0-00001_a_08082019
+
+
+Chromatix 7.2.5.0 (04/08/2019) 
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Fixed issue in low resolution tuning (2 passes)
+     - Fixed crash when clicking on ANR "Base function" button
+     - Fixed on loading 280 project
+   
+    ICA
+     - Fixed simulation fail when using manual resolution
+
+    EIS
+     - Fixed wrong parsing issue on load init & FFMPEG
+    
+    Linearization 
+     - Table will be recalculated when residue is updated only when image is loaded. 
+       If image is not loaded, residue is only updated in BLS offset. 
+     - Fixed Index value change to 0 after calculate the linearization value for other region
+
+    Chromatix Application   
+     - Fixed pipeline panel sometimes does not reflash when switch between pipeline modes
+     - Fixed crash when loading a project with an invalid settings
+     - Fixed a very rare exception in the docking manager
+     - Fixed issue with ResetCropSettings overwriting the sensor data files when upgrading a project
+     - Fix issues on generate XML from simulation tab
+    
+    Imageviewer
+     - Fixed image average calculation on raw file
+
+    sHDR
+     - fixed simulation issue
+     
+    Pipeline simulation 
+     - Set meta file name is meta_config_0.xml for video or mf pipelines
+
+
+    New Features and Updates:
+    ----------    
+    ICA
+     - GUI update 
+     - Added support for JPG
+    EIS 
+     - GUI Update
+
+    Chromatix Application  
+     - Added support for video mode with BPS + IPE
+     - Added support for ROI simulation.
+     
+    Pipeline simulation
+     - Updated simulation tab UI
+     - Added support for downscalar at the end of IFE (for Spectra380)
+     - Added expender to AWB sim options and moved buttons around
+     - Added option to parsing jpg file
+
+     - Added PLD gating support
+     
+    Imageviewer
+    - Added support for Quad CFA images
+     
+    AWB
+     - Added support to display the actual illuminant name instead of the index
+     - Added only UI support for copy-pasting illuminant and patch numbers
+     - Added support to display the progress while extracting FOV information from the post-simulation output image
+     - Added support for populating the misleading color zone detection zone lux index values
+     - Added support to add only specific elements in an array to the configuration data file
+
+    Simulator updates:
+     - Updated 380 simulator
+
+Chromatix 7.2.4.0 (03/08/2019) 
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Fixed issue on opening project created with older version of Chromatix
+     - Bug fixes
+    
+    ABF
+     - Fixed calculation issue on reopened project
+    
+    CC
+     - Fixed assertion when optimizing without open gamma curve
+  
+    HNR
+     - Fixed calibration issue
+     
+    Chromatix Application
+     - Fixed generate simulation XML issue
+     
+    New Features and Updates:
+    ---------- 
+    ANR/TF    
+     - Added SW_CONTROL\EIS module support
+
+    AEC/AF
+     - Added AE/CAF scan support on windows
+    
+    Updated Help files.
+    
+Chromatix 7.2.3.0 (01/29/2019)           
+    ANR/TF
+     - Fixed reading from raw issue
+     - Fixed performance bug when there are POI in traces
+     - Fixed issue on ANR simulate multi frames in MFNR blend
+     - Fixed assert when calibrating ANR
+     - Fixed region issue in MFNR mode
+     
+    ICA
+     - tuning UI changes for enable feature
+    
+    ABF
+     - Fixed region data got recreate during project load time.
+     
+    LSC
+     - Fixed issue for no change on optimize output curve of fish eye after modifying radius and correction
+     - Updated goldentable not editiable from data grid by the user.
+     - Changed fish eye and roll off parameter to enable/disable instead of collapse.
+
+    CAF scan
+     - CAF Scan PDlib  - added run script for Pdlib and fixed the table UI
+    
+    Chromatix Application         
+     - Fixed bug in calculating num of frames for MFNR RAW    
+     - Fixed issue on AWB simulation that does not update CCT to simulation config
+     - Fixed UI and commandline JPG simulation mismatch issue
+     - Fixed the frame numbers in MFNR for simulation is different than setting from screen
+    
+    AEC 
+     - Fixed AEC initial tuning steps window
+    
+    
+    New Features and Updates:
+    ----------          
+    Chromatix Application        
+     - Adding shortgain to metadata template
+     - Added support for generating the JPEG simulation config file for user while running JPEG simulation from the command line
+     - Added support for sHDR (need to enable from ChromatixConfig.xml)
+    - Updated simulation tab to use attribute settings from options window to generate XML.
+    
+     AEC
+     - Added auto calibration support for extreme color
+
+    AWB
+     - Added support for AWB rich API extension (v1.4 of the AWB simulation wrapper or later)
+     - Added support for AWB rich API extension in the command line assistant
+     - Added support for dumping the AWB output summary and the SF information sections
+
+    Simulator Update
+     - 250L SpectraCamSim230.ALPHA.WIN.1.0-00005
+     - 380 SpectraCamSim380.WIN.1.0-00004
+
+
+Chromatix 7.2.2.0 (11/20/2018)      
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Fixed ICA issue
+     
+    Chromatix Application  
+     - Fixed duplicated target issues in new project screen
+     - Fixed xsd location for Preproc in top config.
+     - Fix crash in SetUsecase for command line jpeg simulation.
+     
+     AWB
+     - Fixed bugs in the legend for a few flash related points (see attached)
+     
+    New Features and Updates:
+    ----------      
+     - Added support for reading sensorinfo in XML format written by C7 (under each scenario folder) which has the tag SensorInformation (note, we still don’t support reading sensor xml from camx which has the tag sensordriverdata).
+     - Added support on for LoadXML to load metadata xml to all pipelines (user doesn’t have to select)
+
+     Simulator
+     - Updated simulator SpectraCamSim230.ALPHA.WIN.1.0-00005 to fix GRA dump issue
+
+Chromatix 7.2.1.0 (11/12/2018)      
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - ANR auto-calibrate bug fix for MCTF
+     - MFNR, Number of frames in DC viewer is always 3 and not correlated to setting in MF
+     - Fixed using raw input
+     - Fixed TF blend bugs
+     - Fixed ANR/TF region update
+     - Updated NR trace
+    
+    ABF
+     - Fixed the bit conversion issue in GIC and ABF
+     - Restore points
+     - Clean up some error message.
+     - Save standard deviation intermediate data for graph display.
+     - Add null checking
+
+    Chromatix Application     
+     - Fixed assertion for splash screen on Chinese windows
+
+    AWB
+     - Fixed initial tuning issue     
+     
+     
+    New Features and Updates:
+    ---------- 
+    ANR/TF
+     - Updated ANR Trace
+     
+    Chromatix Application      
+     - Added support for Praproc->sHDR
+     
+    AEScan
+     - UI Restyling
+     
+    Simulation:
+     - Added support to Spectra250L 
+      (Note please use "File->Update Project" to conver existing 230 to 250L)
+     
+Chromatix 7.2.0.0 (10/26/2018) 
+    New Features and Updates:
+    ---------- 
+    Chromatix Application      
+     - Redesigned pipeline simulation UI
+     - Changed simulated file saving structure
+     - Add save and load restore points
+     - Add "Run Parser Command" from ParameterParser UI screen
+     - Add "Command Line Assistant"
+     - Add Spetra 230 tuning support
+     - Gamma curve on screen editing
+     - Updated user guide
+     - Add jpeg image rotation
+     
+    Simulation:
+     - Improved simulation time
+     - Reenable Chromatix command line support
+       - AWB simulation
+       - JPEG simulation
+       - Pipeline simulation
+     - Redesign pipeline simulation
+     - Update Spectra 280 and 380 simulator
+
+    AEC:
+     - Add extreme color tuning support
+     
+    AWB:
+     - Improved tuning UI
+       
+Chromatix 7.1.9.0 (07/30/2018) 
+    Bug Fixes:
+    ----------
+     ANR/TF
+      - History info bug fix
+      - TF run all images from folder when calibrate
+      - Null reference bug fix
+      - Bug fix in locate ANR results files.
+      - Inter length control is reset to 0 with no ability to change  
+
+    Chromatix Application       
+      - Fixed issue that TF is shown in 380 MFNR postfiltering pipeline
+      - fixed JPG simulator color overflow issue when applying larger WB gains
+      - Fixed splash screen watermark generation. (for installer)
+      - Fixed for LoadXML not updating CustomAEC in Simulation tab
+      - Added support for MFNRStageConfig to SpectraCamSim_Config XML in simulation tab. This allows MFNR stage wise simulation. 
+      - Added back generate XML feature on simulation tab
+     
+Chromatix 7.1.8.0 (07/12/2018) 
+     
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Fixed ANR calibration bug
+     - Fixed TF can't simulate image from history after re-opening project
+     - Fixed no response issue on ANR DVViewer when click on generate traces
+     - DCViewer bug fix
+     - Fix enabling intermediate dumps for ANR and TF
+     - Fixed SAD file is shown incorrect in DC viewer
+     - Fixed AEC/AF/AWB tab refresh issue 
+     
+    ABF
+     - Fixed ABF assert issue when click on region button after adding or removing regions
+
+    CAC
+     - Fixed an exception issue if click on cancel of image format window 
+     
+    CC
+     - Fixed loading Flat image with incorrect image bpp
+     - Fixed slider sets sat and noise weight issue       
+
+    Linearization    
+     - Fix Linearization issue with updating only single value
+     
+    CAF Scan
+     - Fixed several issues
+        
+    AF
+     - Fixed tree view display bug
+        
+    Chromatix Application 
+     - Fixed MFNR and MCTF issues
+     
+    AWB and debug plot
+     - Fixed bugs for AWB tuning
+     - Distance WV-- Can't display WV lines if CCT trigger point is at the range: 3801~4000  
+     - Prevent collapse of the tree view after data is changed in the triggers for distance weight vector  
+     - Fixed issue with expanding metadata tree rows
+     - Fixed metadata enum display issue
+     
+    New Features and Updates:
+    ---------- 
+    ANR/TF
+     - Update ANR trace
+     - Made one viewer for multiple images     
+     - Added History GUI to DC Viewer
+     - Moved simulation button from ANR and TF UI into DCViewer
+     
+    CC
+     - Removed advanced and finetune buttons
+
+    Gamma 
+     - Added support for HDR10 gamma and HLG gamma
+    
+    Chromatix Application      
+     - Changed layout for pipeline simulation tab to display simulator config XMLs
+     - Added support for image and debug data dump of pipeline simulation
+     - Added support for 380 project
+     - Added mono support
+     - Improved simulation performance:
+     
+    AF and CAF Scan 
+     - UI redesign
+
+    AEC
+     - Added 100 gain calculation
+      
+    AWB and debug data plot
+     - Redesigned AWB simulation UI
+     - Updated AWB simulator
+     - Added support to compute the OTP data from EXIF information for AWB off-target simulation  
+     - Plots --Without connection line for CCT zone Type  
+     - Added support for core AWB logs to be dumped in a file during off-target simulation  
+     - Added support for copy-paste across misleading color zones, detection zones and scene analyzers  
+     - Added support to ensure that 'AWB Initial Tuning' can only be performed in a mode where the BPS pipeline is present
+     - Added dual camera sync AWB chart
+     - Triangle gain adjust screen updates
+    
+    Simulator
+     - Upgraded simulator:
+       SpectraCamSim280.WIN.1.0-00017_d_05082018
+       SpectraCamSim380.WIN.1.0-00002
+       
+Chromatix 7.1.6.0 (05/04/2018)
+     
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Bug fix for 8 bit image calibration
+     - CNR initialization bug fix
+     - Fixed incorrect values in CNR total binary
+     - NUll reference bug fix
+     - Removed TF Input in DC Viewer
+     - ANR bug fix in detect_color0_saturation_mode
+     - DC Viewer bug fix in U and V calculation
+     - POI bug fix - starting from 1 on viewer but from 0 on graph
+     
+     Linearization
+     - Fixed issue of only first value changing after modify data on UI
+     
+    GRA
+    CAC
+     - Fixed incorrect input/output type on simulated image
+     
+    Chromatix Application 
+     - Fixed ChromatixImageData memory leak
+     - Fixed alignment issue with ParameterUpDownSlider
+     - Fixed SensorData PDAF properties
+     - Fixed issue with the bottom part of the extensions in the pipeline panel being cut off.
+     - Fixed issue that menuloadfile path for simulation is not generated in config
+     - Fixed multi scenarios output folder setting issue
+     - Fixed dump config bug for MFNR HNR modes
+
+    AWB tuning
+     - Fixed a bug where the scene analyzer index was not set correctly inside the AWBPlots
+       object if the scene analyzer tuning control was opened before the 'AWB Plots' control     
+     - Fixed issue with chart to image mapping between AWB Decision map and Grid Stats
+     - Modified chart control to always show distance value of AWB Grid Stats points.
+     - Fixed issue with selecting AWB Decision rectangles when AWB Decision HorizontalOffset is > 1
+   
+    CAFScan
+     - Fixed Windows Offline log Analysis Issue
+
+    New Features and Updates:
+    ---------- 
+    ANR/TF
+     - Added AnrCnrVM
+     - Add Blend Factor to TF for MFNR
+     - DCViewer improvement
+     - ANR CNR Add limitation for gainFactor Y/C Luma/Chroma Slider
+     
+    2dLut
+     - Added Preview to Lut2D, use saved input yuv file
+     - Added split button support
+     
+    CC
+     - Added Flat Field support
+     - Added CC preview feature, use saved input jpg file
+
+    Chromatix Application    
+     - Improved Scenario creation screen
+        *current focus on left side tree will no longer set to newly created mode
+        *close dialog will not set current mode
+     - Changed mode selection from dropdown to a tree screen to make it easier to select. 
+     - Added support for show/hide customer trigger on setting dialog from UserOptions.XML 
+     - Re-styled module UIs
+     - Fixed runtime crash in Chart control.
+     - Reduced memory leakage when re-loading a project
+     - Modified Chromatix so that the tab control are not loaded until a project is created.
+     - Added support for automatic loading of preset files for modes specified in the presetsconfiguration.xml file
+     - Changed use MFNR as mode name from dropdown mode selection
+     - Improved performance and reduced memory usage, reduced time required to load XML Data.
+     - Added showing full name support when mouse over module on pipeline tree 
+     - Help F1 - Updated help topic in modules. Parsed topic mapping.
+     - Added Stride support for Mipi images when creating project
+     - Added support to automatically sync regions among different modules (e.g. Linearization and BLS, ANR and TF)
+     
+    AEC tuning
+     - Added Histogram and Exposure Table support
+     - Added X Y title for plots.
+     - AESCanTest - Enabled delay frame switch, Fixed plot labels, Added instruction hint for test lighting condition.
+ 
+    AWB simulation 
+     - Added feature to dump AWB debug data after simulation
+     - Added support to plot the reference point values and to update the distance weight vector plot if reference 
+       points are changed
+     - Added support to update the distance weight vector plot inside 'AWB Plots' when different regions are selected 
+       in the 'Distance Weight Vector' module
+     - Added support to ensure that only instance of 'AWB Plots' is opened
+     - Added support to adjust the size of the chart for a few key AWB modules
+     - Added support to adjust the size of the trigger tuning section for a few key AWB modules
+     - Changed result of AWB sim to update r,g,b for pipeline and jpg sim
+     - Added button to load ISP config through simulation tab.
+     
+    Simulator
+     - Upgraded simulator to SpectraCamSim280.WIN.1.0-00017_b_04182018
+      
+Chromatix 7.1.5.0 (02/28/2018)  
+    Note, ParmterParser will no longer be included in Chromatix installer package, 
+    please use one from target build to generating bin file
+    
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Bug fix on fail to read xml data, This bug cause the IPE Autotune to fail.
+     - Bug fix in number of frames calculation
+     - Bug fix on reopening project
+
+    CC
+     - Fixed issue in CC that selected gamma region is not restored when switching region
+     
+    Lut2D
+     - Fixed issue with Delta Hue calculation when set value crosses 0 degrees in Lut2D
+    
+    Chromatix Application      
+     - Fixed Help Display issue
+     - Fixed issue with custom sensor data screen being empty (in scenario creation screen)
+     - Fixed exception log not saved issue
+     - Improved performance on some modules when optimizing (e.g. LSC optimize and Lut2D update)
+     - Fixed issue on open image for RNR
+    
+    JPG simulation
+     - Fixed rounding issue when calculating WB, CCM and gamma in JPG simulation
+     - Fixed simulation issue when module is off
+     - Fixed CCT and WB gain reading issue from JPG file
+    
+    3A debug
+     - Fixed issue with chart auto-sizing code
+    
+    New Features and Updates:
+    ---------- 
+    CC
+     - Added support for custom CC transformation matrix.
+     - Added CC optimization finish status
+    
+    LTM 
+     - UI updates for better alignment
+     - Added inverse gamma UI control, User need to make this enabled if reverse gamma on BPS/IFE 
+     is desired when LTM is disabled
+    
+    ANR/TF
+     - Added use of manual_input.xml for disable registration.
+    - Modified ANR enable/disable on both Lume and Chroma
+    
+    Chromatix Application  
+     - Added YUV states calculation for raw image on status window
+     - Changed tuning state status to indicate if current module is modified (gray for not change, green for change)
+     - Modified "Sensor" Mode to have same pipeline as "Default"
+     - Added recent images and projects menus
+     - Added restrictions for project creation for MFNR
+        *User cannot add child modes
+        *MFNR can only be Added under snapshot
+     - Moved simulator to Chromatix7\Simulator\Spectra280 install folder
+     - Added drag and drop support for image comparison
+     - Pipeline simulation, Added support running NPS, PPS, IPE pipelines separately
+    •    Added video scalar support
+    AWB simulation
+     - Added multi-image AWB simulation
+     - Added support to log the AWB gains and CCT value from the image in the CSV file for AWB simulation
+    
+    3A debug display 
+     - Added chart annotation support on AWB plot
+     - Added feature to allow multiple layers of chart legend groups on plots
+     - Modified Scene Analyzer to be multi-level grouping by Scene description, and moved Target points
+       under Scene Analyzer description groups
+     - Added support to change the trigger data display text based on the AWB zone type
+    
+    AEC/AF
+     - AEC and AF tuning screen enhancements 
+    
+    Dual LED
+     - Dual Led, Added plot for r/g, b/g
+
+    JPG simulation
+     - Added support for commandline JPG simulator, please use “chromatix.exe -h” for more help
+    
+    Simulation
+     - Upgraded simulator to SpectraCamSim280.WIN.1.0-00016
+
+Chromatix 7.1.4.0 (01/31/2018)
+    Bug Fixes:
+    ----------
+    HNR
+     - Fixed dropdown not been shown issue
+    
+    ANR/TF    
+     - Fixed saving data bug in AnrBasicLevelVM    
+     - Fixed Gain Up/Down calculation bug
+     - Fixed prompt error issue after click Run
+     - Fixed prompt error info when click BasicLevel&baseFunction 
+     - ANR POI bug fixes
+     - Bug fix on display image in DCs
+     - Fixed frame number setting issue
+     - Prompt application error when click base function after select rectangle for POI
+      
+    Chromatix Application    
+     - Fixed IFE pipeline raw file reading issue
+     - Fixed bitmap conversion issue with 12BPP Raw images.
+     - Fixed pixel value incorrectly displayed issue in Imageviewer for raw file, changed to read from raw buffer instead of screen
+     - Fixed issue with long project load times
+    -  Fixed SWControl->MF enable state sync issue between blend and postfilter pipeline when reloading project
+     
+    New Features and Updates:
+    ----------    
+    3A debug plot    
+     - Added framework for Distance Weight Vector metadata display.
+     - Added Distance Weight Vector and CCT lines to AWB Metadata chart
+     - Added support for chart legend groups for AWB plot
+     
+    ANR/TF     
+      Add ToolTip to DCImageVM Load Xml button
+    
+    Chromatix Application
+     - Changed default image display scaling mode to nearest neighbor
+     - Added support for AWB only simulation under simulation tab
+     - Updated help files
+
+    JPG simulator
+     - Add JPG simulation support
+       limitation: inverse Lut2D may not be accurate dues to issue in JPG saturation table in config file 
+       caused by possible wrong data format/packing
+       
+     Usage:
+       * Capture jpg file from target with 3A debug and metadata
+       * Open project (for generating bin file on target)
+       * switch to "JPG Simulation" tab
+       * click on "Open" button to load image
+
+       * switch to "Simulation" tab (to run AWB simulation)
+       * Add AWB DLL, .bin file, and JPG image
+       * check "AWB simulation only"
+       * Added a dummy image, and click on "Run Simulation",  watch the status window, now we have new CCT and WB gains generated
+     
+       * switch back to "JPG simulation"
+       * click on simulate
+           note, after simulation, the JPG and project config file text boxes will be filled with link to a file. if you simulate 
+           again, you can check on "use file" to skip regenerate these files for saving time. AWB gains is reading from tuned 
+           pipeline (WB module in IFE or BPS)
+
+      Redo AWB simulation:
+       * switch to "Simulation" tab and run AWB simulation 
+       * switch back to "JPG simulation"
+       * check "Use file" for JPG config since it is same we don’t need to regenerate it to save time
+       * make sure "Use file" for Project config is uncheck, we need to generate new one due to AWB simulation update (CCT and WB gains).
+       * click on "simulate" to run
+     
+    AWB tuning
+     - Added initial support for the AWB stats screening module    
+     - Updated metadata to include some new fields, and fix some typos    
+     - Added initial support for the confidence levels and skin type interpolation weight modules
+
+    Simulator:
+     - Updated to SpectraCamSim280.WIN.1.0-00015
+
+     
+Chromatix 7.1.3.0 (01/12/2018)
+    Bug Fixes:
+    ----------
+    ASF
+     - Fixed slow response issue when moving sliders
+     
+    ANR/TF
+     - Fixed Dialog is out of screen issue
+     - Fixed Y U V value bug in DCImageVM
+     - Fixed MFNE TF blending issue
+     
+    3A debug parser
+     - Fixed crash when outputting metadata text
+     - Fixed metadata configuration issue which led to the crash above.
+     - Fixed failure to correctly chart triangle and CCT zones.
+
+    AWB tuning
+    - Fixed the list view to correctly display the list of tuning modules and scene analyzers
+    
+    Chromatix Application
+     - Fixed output cannot find issue when simulate BPS only under simulation tab
+     - Avoid resetting pipeline selected (BPS vs All) for simulation on MFNR scenario
+     - Fixed Chromatix toolbar icons
+     - Fixed QPanel background color
+     - Fixed issue with chart resizing when showing a long point status
+     - Fixed some fields in Header editor can't be modified
+
+    New Features and Updates:
+    ----------
+    MFNR
+     - Save DCImageViewer last result
+     - Restore ANR/TF settings when reload project
+     - Added POI in TF
+     - Added support to simulate from HNR on postfilter using blending output YUV file
+    
+    3A debug parser and viewer
+     - Modified metadata parser and viewer to report validation failures, instead of just deleting metadata.
+     - Decreased the AWB metadata chart height to better fit on an HD screen.
+     - Display AWB and AF information on tab
+     
+    Chromatix Application
+     - Added log menu to Chromatix
+     - Style updates for AEC, AF and AWB tab controls.
+     - Increased Scenario selector with to accommodate longer scenario paths
+     - Separated rect and multi-rect from feature imageviewer
+
+    AWB simulation
+     - Added support to display some essential AWB information in a text box and also add the information to a log file
+
+    Dual LET calibration support
+     
+Chromatix 7.1.2.0 (12/20/2017)
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - LNR bug fixes
+     - Fixed bug in TF Options Save
+      
+    Chromatix Application
+     - Fixed issue with enum values not displaying in metadata tree
+     - Modified ImageDock to allow closing an image without first showing it.
+    
+    New Features and Updates:
+    ----------
+    ANR/TF
+     - Add option to change the BPP
+     - TF BaseFunctions GUI update
+     - Updated ANR and TF Base Functions UI
+     
+    Chromatix Application 
+     - Added support to set selection in treeview when double clicking on a structure in grid view of 
+       metadata viewer
+     - Copy ParameterTuningTypes.xsd to Project XSD folder
+     - Added support for image statistics.
+     - Added support for displaying AWB debug data information in the MetadataViewer
+     
+    Parameterparser
+     - Updated command line converter to require the path to the ParameterTuningTypes.xsd as input to 
+       the 'u' command
+    
+    AWB Simulation
+      Note, in order to run offline AWB simulation, you need to get both com.qti.stats.awb.dll and
+      com.qti.stats.awbsimulationwrapper.dll from target SW build, the DLLs need to be in 
+      VS2015, 64bit, release build
+    
+     - Added support for command line simulation. please use "Chromatix.exe -h" for online help
+     - Added plot to UI for simulation output, to run AWB simulation, click "Run Simulation" button on
+       AWB tuning tab and provide com.qti.stats.awb.dll, tuned bin file and JPG file.
+     - Integrated AWB simulation to RAW file simulation. To run AWB + RAW simulation, switch to 
+       Simulation tab, provide com.qti.stats.awb.dll, tuned bin file and JPG file to text box. 
+       Note, it you need to run raw simulation only, please clean up the text boxes.
+    
+    AWB Plot
+     - Added AWD Decision Markers for Spectra Metadata
+     - Added Manual White Balance Gains to AWB chart     
+     - Updated AWB chart based upon feedback
+    
+    CAF scan
+     - Updated UI
+     
+    Simulator
+     - Updated to version 13
+
+
+Chromatix 7.1.1.0 (12/08/2017)
+    Bug Fixes:
+    ----------
+    2D Lut
+     - Fixed 2D lut table row and col reversed issue
+     - Fixed the node range was not applied when using manual input on RGB test box to adjust 2DLut table
+
+    CC
+     - Fixed simulation display issue (bad deltatE), CC was disabled on simulation
+     
+    AEScan
+     - Modified delay frame to 4
+    
+    ANR/TF
+     - TF Calibration bug fix
+     - Chaned in basic level sliders, connected to 1 LUT instead of 3.
+     - Fixed UV thresholds to Q0
+     - DCImageVM bug fix on undefine channel
+     - Bug fix on setting num of frames when reading raw files on IPE.
+     - Fixed incorrect angle issue in viewer
+     - DCImageVM bug fix in frame calculation
+
+    AWB
+     -Fixed changed results are saved into incorrect modes issue in AWB tuning tab
+
+    Simulation
+     - Fix for inconsistent simulation results after first run    
+     - Change DRC gain from 0.5 to 1 to avoid disabling ADRC
+     
+    Parameterparser
+     - Added check for unprintable characters
+     - Added new windows command line parameter parser executable
+    
+    Chromatix Application 
+     - Fixed issues with reading a multi mode project
+     - Fixed issues with writing binary files containing link modes.
+     - Fixed crashes when opening an invalid project folder.
+     - Re-enabled unprintable character warning
+     - Fixed issue with loading projects with missing XML folders.
+     - Fixed to set right meta values from trigger regions
+
+
+    New Features:
+    ----------
+    ANR/TF
+     - Added POI to TF Base function view
+     - Added POI modes for Point and Area
+     - Added Lable: "Y" "UV" to GUI
+     - Improved SAD display
+     - Added multiple region tuning support
+
+    Chromatix Application 
+     - Added support to save/restore sessions on WB, CC modules
+     - Added ability to create curved shapes with the MCC marker rectangles (for fish eye tuning), 
+       using CTRL or Shift keys while moving
+     - Added Project name to status bar.  
+     - Moved scenario selector to status bar
+     - Added IPE/BPS in front of module names in the UI
+     
+    AWB tuning and 3A debug
+     - Added AWB plot (note, no stats)    
+
+    CAF scan  
+     - Added CAF scan support
+
+     
+Chromatix 7.1.0.0 (11/17/2017)
+     Bug Fixes:
+    ----------
+    CC:
+     - Changed to use R, G, B to optimize CCM
+     - Fixed bit depth issue when show DeltaE on CC simulated image
+     
+    Chromatix Application 
+     - Fixed issue that after loading project default mode contains all modules.
+     - Add warning message if > 1 MFNR regions found in MF SW control
+     - Fixed run simulation twice issue for input of modules is not raw type
+     - Fixed issue preventing link to "None" sub modes.
+     - Reduced memory usage for project and improved project loading time.
+     - Fixed issue with creating binary file from a project containing scenario links
+     
+    3A debug
+     - Fixed data parsing issues
+
+    ANR/TF
+     - Updated DCImageViewer for multiple results
+     - Fixed TF calibration issue
+     - Regions bug fix
+     - Fixed green image for Y channel in DCViewer
+     - Fixed POI issue when changing DC type (full, DC4 ..) in DCViewer
+     - Fixed to take RAW input image
+     
+    AF
+     - Deprecated AF Algo Tuning presets
+     - Introduced PDAF as the first preset for the family of Algo Tuning
+    
+    New Features:
+    ----------
+    ANR/TF
+     - TF gui update
+     - Improved DC Image viewer
+      * Added sad to DC Viewer
+      * Added additional tf files to DC Viewer
+      * DC Viewer add FS
+      
+    AE Scan
+     - Added batch file
+     - AEScan minor changes 
+ 
+    3A debug
+     - Added support for extracting metadata binary files
+     - Updated metadata extractor to create diagnostic log with .csv extension
+
+    Chromatix Application 
+     - Added support to config dumps on Project setting screen 
+       (please note, not all modules support data dump)
+
+    Simulator
+      - Using SpectraCamSim280.WIN.1.0-00008 
+     
+Chromatix 7.0.7.0 (10/31/2017)
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Fixed various issues.
+    
+    3A debug,    
+     Fixed AWB plot issue when loading JPG file from old target
+    
+    New Features:
+    ----------
+    LTM
+     - Added tuning UI
+     
+    HLG
+     - Added support to tune HLG 
+       Procedures:
+        1, select BT2020 to optimize CCM, 
+        2. load HLG gamma (gamma should be loaded after optimizing CCM).
+       
+    3A debug
+     - Display image
+     - Added support to display 3A debug data
+      
+    AE Scan
+    
+    Chromatix Application  
+     - Optimized simulation
+     - Added options to simulation IFE, BPS or all      
+     - Added capability to create link on mode tree
+      
+    
+Chromatix 7.0.6.0 (10/23/2017)
+    
+    Bug Fixes:
+    ----------
+    ANR/TF
+     - Snapshot and Video mode ANR/TF tuning isuse, (suggest to tuned ANR and TF with YUV files) 
+       please note. Preset XML for these 2 modules need to be loaded
+     
+    Chromatix Application    
+     - Memory usage reduction
+     - Moved simulation output folder to under project to solve long path issue
+     - Fixed Mipi 12 decoding for images that are not 16 pixel aligned
+     
+    ParameterFileConverter
+     - Fixed issues with loading project in external tools
+     - Fixed issues with exporting XML into a mode tree
+     - Fixed issue with loading binary files
+     - Fixed issues with running parameter file converter on Linux
+     - Fixed issue reading optional parameter from binary, when count is zero.
+
+    New Features:
+    -------------    
+    ParameterFileConverter
+     - Added the ability to split the binary file into isp and 3a groups using the ParameterFileConverter
+     - Added validation for ANR and TF regions, they need to be created same
+    
+Chromatix 7.0.4.0 (09/29/2017)
+    
+    Bug Fixes:
+    ----------
+    ANR
+     - Fixed calibration issues        
+    
+    AF
+     - Updated Lens position tuning with default values
+     - Fixed DCViewer issue on resolution image
+     
+    Chromatix Application
+     - Hide ICA module form pipeline that we don't currently support on tuning   
+   
+    New Features:
+    -------------
+    New modules
+      - GRA
+      - 2D Lut
+    
+    LSC
+      - Added support for golden table
+    
+    ANR
+      Added support POI
+      
+      
+    Chromatix Application
+      - Added Project setting screen support
+      - Added support for customer XSD support (need enable form project setting screen)
+      - Added video support for video multiple file simulation     
+      - Added IFE tuning support.
+      - Added best-shot and special-effect tuning modes           
+      - Added Help
+          - Enabled dump XMLs for offline simulation
+          - Added support to use customer metadata for simulation
+             On Simulation screen:
+             a) Click on "Load Image"             
+             b) Click on "Generate XML"
+             c) Uncheck "Overwrite Generated XML"
+             d) Replace dumped metadata with yours
+             e) click on "Run Simulation"
+          
+    AF
+      - Added support for 9 profiles.    
+
+    Simulator
+      - Updated to SpectraCamSim280.WIN.1.0-00006_b_09262017    
+      
+    Parameter mode configuration file
+      - Parameter modes have been switched to a configuration file format.
+      - Modify the mode configuration:
+      - Using an XML or text editor, open the configuration XSD file "ParameterTuningTypes.xsd", from the Chromatix installation folder.
+      - Follow the instruction comments, in the configuration file, to add your new modes and/or sub modes.
+      - Make a back-up copy of your modified "ParameterTuningTypes.xsd" file, as a new installation of Chromatix may overwrite your changes.
+      - Generate new on-target Parameter Utility code, using the following command:
+      - ParameterFileConverter.exe <output_directory> u <project_directory_containing_new_config_file>
+      
+    Parameter binary file format
+      - The parameter binary file format has been modified to support full mode trees, tool and tag strings.
+      - All on-target parser and utility code must be regenerated to support updated binary format, using ParameterFileConverter.exe.
+      - New on-target parser code can decode old binary format files, as long as they contains only the default mode.
+      - Old on-target parser code cannot decode new binary formats, and must be re-generated using ParameterFileConverter.exe.
+      - A Tag string can be Added to the binary file using the -ttagString option of the ParameterFileConverter.exe.  
+        Run ParameterFileConverter.exe with no command line parameters to see usage information.
+
+
+Chromatix 7.0.3.0 (09/08/2017)
+
+Note, MFNR mode includes Blend and PostFilter stages. The enable/disable flag in 
+SW control is only for current selected tuning mode, user needs to make sure the setting 
+is correct after switching modes. On pipeline simulation, mfnr enable is controlled by 
+flag in MFNRPostFilter mode
+
+Tip on tuning MFNR: 
+     1. Select from dropdown on both Scenario.Usecase.MFNRBlend and Scenario.Usecase.MFNRPostFilter, 
+        make sure SW Control->MF is enabled.
+     2. Select Scenario.Usecase.MFNRBlend mode when tuning MFNRBlend modules
+     3. Select Scenario.Usecase.MFNRPostFilter when tuning MFNRPostFilter modules
+
+Known issue: ANR DC image viewer.DC4, DC16 and DC64 have image display issue
+
+    Bug Fixes:
+    ----------
+    ANR
+     - Fixed caliberation issues
+     
+    AWB
+     - Fixed autotune issues, the image file will run though BPS pipeline to LSC       
+    
+    New Features:
+    -------------
+    Chromatix Application
+      - Added tuning support on SW control 
+      - Added MFNR tuning support
+      - Added ability to display images as a list instead of a filmstrip.
+      - Added ability to rename image windows from the filmstrip or image list.
+      - Added the ability to save viewed image to jpeg.
+      
+    3A
+      AWB    
+       - Improved the list view control for displaying the AWB trigger information
+       - Added support to switch to a previously opened scene analyzer module 
+         when it is clicked again in the scene analyzer module list view
+       - Added initial support for the AWB advanced gray world module
+       - Added plot support
+
+     Simulator
+      - Updated to simulator SpectraCamSim280.WIN.1.0-00005 
+     
+Chromatix 7.0.2.0 (08/14/2017)
+    Bug Fixes:
+    ----------
+    LSC
+     - Fixed layout issue
+     
+    Chromatix Application
+     - Fixed issue with GetPixel returning wrong R/B values for YUV images
+     - Fixed metadata XML update issue on simulation panel
+     - Fixed screen update issuse on simulation screen when get current tuning 
+       config or loading from files.
+     - Changed to write config XML files only when do simulation
+     
+    New Features:
+    -------------
+    HNR
+     - Added ability to tune the radial anchor data using the sigma LUT RNR control
+     
+    ASF
+     - Added more layer 1 feature supports ( match to C6 now)
+     
+    ANR
+     - Added ANR Tuning Support
+     
+    Chromatix Application
+     - Added Tuning Mode selector
+     - Added tool bar
+     - Replaced popup status window with dockable status panel
+     - Added support for mode selecting tree to be same name
+     - Add prompt to save project before closing the tool.
+     
+    3A
+     - AWB layout changes
+     - Fixed issue on AWB autotune
+     - Updated the logic for plotting the reference points
+     - Added support to ensure that only RAW images can be opened during the auto tune process
+     
+Chromatix 7.0.1.0 (07/31/2017)
+
+    New Features:
+    -------------
+    Alpha Release. 
+    - Parameter File Converter
+    - Parameter Editors
+    - ISP Basic Tuning
+    - AEC Basic Tuning
+    - AWB Basic Tuning 
+    
+    
+    Features Currently Not Supported:
+    --------------------------------
+    - AF
+    - ANR
+    - TF
+  
+    Known Issues:
+    ------------
+    - ASF is partially supported
+    - No Image Loading and Simulation Support for IFE except Linearization
+
+    Tips & Tricks:
+    ------------
+    - Each run of Simulation creates a separate folder. This may take a lot of space on your hard disk. Go To "Edit->Clean Simulation Data" to delta simulation files.
+    - For machines with limited memory, it may get slower after tuning some modules. You can delete images from image panel to improve performance.
+    - If you face issue starting Chromatix, please install below :
+        -- Microsoft Visual C++ 2015 Redistributable (x64) - 14.0.24215
+        -- Microsoft .NET Framework 4.5 Setup

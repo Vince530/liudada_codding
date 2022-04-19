@@ -1,0 +1,102 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Nongray stats located inside the gray zone can severely affect the final AWB decision precision if they are treated as gray stats. For example, if stats from a yellow object under indoor lights (for ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Misleading color zones concept" /><meta name="DC.Relation" scheme="URI" content="yqt1502923722746.html" /><meta name="DC.Relation" scheme="URI" content="wku1502297982333.html" /><meta name="DC.Relation" scheme="URI" content="odm1502233078094.html" /><meta name="DC.Relation" scheme="URI" content="pcj1502214397333.html" /><meta name="DC.Relation" scheme="URI" content="zif1502214447690.html" /><meta name="DC.Relation" scheme="URI" content="wku1502297982333.html" /><meta name="DC.Relation" scheme="URI" content="odm1502233078094.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="llr1502214354401" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Misleading color zones concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="llr1502214354401">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="yqt1502923722746.html" title="AWB stats filters">AWB stats filters</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Misleading color zones concept</h1>
+
+	<div class="body conbody">
+		<p class="p">Nongray stats located inside the gray zone can severely affect the final AWB
+			decision precision if they are treated as gray stats. For example, if stats from a
+			yellow object under indoor lights (for example, TL84 fluorescent light) are located in
+			the gray zone, the final AWB decision can make the final image bluish as shown in the
+			figure. <img class="image" id="llr1502214354401__image_uzp_bt1_v1b" src="srj1495661086650.png" /></p>
+
+		<p class="p">AWB misleading color (MLC) processing removes MLC stats in the AWB decision estimation.
+			This is accomplished by identifying and removing stats that are inside specific areas of
+			the gray zone. Each of these specific areas defines an <em class="ph i">MLC zone</em>. Stats in an MLC
+			zone are not considered as gray stats even though they are inside the gray zone. </p>
+
+		<p class="p">Misleading color zone tuning requires the definition of detection zones
+			and misleading color zones. The following image shows the Chromatix tool user interface
+			that is used to configure MLC parameters. <br /><img class="image" id="llr1502214354401__image_rkw_5x1_x1b" src="qqx1502834984807.png" /><br /></p>
+
+		<div class="p">Detection zones define the areas of the gray zone where nongray stats are
+			commonly found. Each detection zone is assigned to a <em class="ph i">group</em>. The
+			MLC process counts the number of stats in each detection zone group and the information
+			collected is used with a specified lux index range to trigger MLC zones corresponding to
+			the detection zone/group. <div class="fig fignone nonumber" id="llr1502214354401__fig_x2z_5rz_y1b"><span class="figcap">Figure : Blue boxes are Group 0 detection zones. Yellow boxes are
+					Group 1 detection zones.</span>
+				
+				<br /><img class="image" id="llr1502214354401__image_qyj_sx1_v1b" src="hav1502217103234.png" /><br />
+			</div>
+</div>
+
+		<div class="p">An MLC zone is defined by either rectangles or triangles. The Chromatix tool
+			allows for an unlimited number of MLC zones, but a standard set of 10 MLC zones is
+			defined during AWB initial tuning. The size/center position of an MLC zone is defined by
+			triggers. There are three levels of MLC zone triggers. The options available for the
+			first two triggers are as follows: <ul class="ul" id="llr1502214354401__ul_r2m_vhb_v1b">
+				<li class="li">Lux Index</li>
+
+				<li class="li">CCT</li>
+
+				<li class="li">Valid Stats Cnt Ratio – The ratio of valid gray stats/total number of stats. </li>
+
+				<li class="li">Agw RG – RG point of advanced gray world </li>
+
+				<li class="li">Agw BG – BG point of advanced gray world </li>
+
+				<li class="li">Zone group # Count Ratio – The ratio of number of stats in group # detection
+					zone. For example, in Zone Group 1, the number of stats detected in all group 1
+					zones/total number of stats.</li>
+
+			</ul>
+</div>
+
+		<p class="p">The third level trigger is always Flash Sensitivity. The following figures
+			illustrate sample trigger scenarios for MLC zones.</p>
+
+		<div class="fig fignone nonumber" id="llr1502214354401__fig_fkz_wjc_v1b"><span class="figcap">Figure : Example of MLC zones triggered by stats within lux index
+				start/end values. Green and red data points define the vertices of green and red
+				rectanglular MLC zones.</span>
+			
+			<br /><img class="image" id="llr1502214354401__image_i4l_lkc_v1b" src="epr1502234790949.png" /><br />
+		</div>
+
+		<div class="fig fignone nonumber" id="llr1502214354401__fig_t3z_mkc_v1b"><span class="figcap">Figure : Example of MLC zones triggered by number of stats in specified
+				detection zone (yellow box). Green and red data points define the vertices of green
+				and red rectanglular MLC zones.</span>
+			
+			<img class="image" id="llr1502214354401__image_e22_tjh_v1b" src="gbo1502234789420.png" />
+		</div>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="wku1502297982333.html">Predefined MLC detection zones</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="odm1502233078094.html">Predefined misleading color zones</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="pcj1502214397333.html">Misleading color zone parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="zif1502214447690.html">Fine-tune misleading color zones</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="wku1502297982333.html" title="Predefined MLC detection zones">Predefined MLC detection zones</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="odm1502233078094.html" title="Predefined misleading color zones">Predefined misleading color zones</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

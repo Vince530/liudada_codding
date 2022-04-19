@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--========================================================================-->
+<!-- Copyright (c) 2016-2017 Qualcomm Technologies, Inc.                    -->
+<!-- All Rights Reserved.                                                   -->
+<!-- Confidential and Proprietary - Qualcomm Technologies, Inc.             -->
+<!--========================================================================-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="StreamConfig">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="module_version">
+                    <xs:complexType>
+                        <xs:attribute name="major_revision" type="xs:int" fixed="1"/>
+                        <xs:attribute name="minor_revision" type="xs:int" fixed="0"/>
+                        <xs:attribute name="incr_revision" type="xs:int" fixed="0"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Width" type="xs:unsignedShort" />
+                <xs:element name="Height" type="xs:unsignedShort" />
+                <xs:element name="Stride" type="xs:unsignedShort" />
+                <xs:element name="BayerPattern">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:unsignedByte">
+                            <xs:enumeration id="RGGB" value="0"/>
+                            <xs:enumeration id="GRBG" value="1"/>
+                            <xs:enumeration id="BGGR" value="2"/>
+                            <xs:enumeration id="GBRG" value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="BitsPerPixel" type="xs:unsignedByte" />
+                <xs:element name="PackedType">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:unsignedByte">
+                            <xs:enumeration value="0"/>
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="yuvFormatType" type="xs:unsignedByte">
+                    <!-- 0 : Planar , 1 : CrCb , 2: Cbcr -->
+                </xs:element>
+                <xs:element name="IOT">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="input_bayer_format" type="xs:unsignedByte" />
+                            <xs:element name="output_bayer_format" type="xs:unsignedByte" />
+                            <xs:element name="sensor_layout" type="xs:unsignedByte" />
+                            <xs:element name="frame_count" type="xs:unsignedByte" />
+                            <xs:element name="line_offset" type="xs:unsignedShort" />
+                            <xs:element name="sensor_line_info" type="xs:unsignedByte" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

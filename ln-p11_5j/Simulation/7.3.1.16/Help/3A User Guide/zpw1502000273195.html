@@ -1,0 +1,79 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="AWB processing estimates illuminant sources by an average of gray stat locations in the R/G-B/G space; this estimation is based on gray-world assumption. Therefore, it is very important to select real ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Illuminant weight vector concept" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="yqt1502923722746.html" /><meta name="DC.Relation" scheme="URI" content="lue1502821661316.html" /><meta name="DC.Relation" scheme="URI" content="uey1502000366936.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="zpw1502000273195" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Illuminant weight vector concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="zpw1502000273195">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="yqt1502923722746.html" title="AWB stats filters">AWB stats filters</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Illuminant weight vector concept</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">AWB processing estimates illuminant sources by an average of gray stat locations
+			in the R/G-B/G space; this estimation is based on gray-world assumption. Therefore, it
+			is very important to select real gray stats in the given input stats. In versatile
+			environments, the average of gray stats can be contaminated by nongray stats located
+			inside the gray zone Therefore, the precise estimation relies on how efficiently you
+			select the gray stats as well as remove nongray stats.</p>
+
+		<p class="p">The selection or removal of stats is improved by putting more weight on some
+			stats or less weight on other stats so that the weighted stat average can better
+			estimate the illumination, as shown in the following image comparison. </p>
+
+		<div class="fig fignone nonumber" id="zpw1502000273195__fig_y4g_yrv_x1b"><span class="figcap">Figure : (L) Correct AWB weighted average; (R) Bluish AWB simple
+				average</span>
+			
+			<img class="image" id="zpw1502000273195__image_n1z_gtv_x1b" src="rjz1503082294063.svg" />
+		</div>
+
+		<p class="p">The weight of a given stat is a probability of the stat; it represents how
+			likely this given stat is a gray stat or not. This concept is based on observations that
+			some stats are highly likely the gray stat, whereas, others less likely the gray stat
+			under different illumination conditions. For example, under daylight condition, if stats
+			are located around daylight reference points (D75, D65, and D50), they would likely be
+			real gray stats. However, if stats are located around indoor reference points (A and H),
+			they would likely be nongray stats. <br /><img class="image" id="zpw1502000273195__image_dlh_ltv_x1b" src="kat1503082310771.svg" /><br /></p>
+
+		<p class="p">The illuminant weight vector module computes the average values of weighted
+			stats under different CCTs as well as light condition, which is characterized by the
+			brightness level (lux level). As shown in the above outdoor scene image, it is highly
+			likely that true gray stats are located in high CCT regions, for example, ≥5000K, rather
+			than in low CCT regions, for example, ≤4000K. Therefore, in an outdoor scene, put more
+			weight on stats in the high CCT regions rather than in the low CCT regions. As expected,
+			the weight assignment is opposite for an indoor scene; lower weights for high CCT
+			regions and higher weights for low CCT regions.</p>
+
+		<br /><img class="image" id="zpw1502000273195__image_xzq_c1j_51b" src="kqw1502004316127.svg" /><br />
+		<p class="p">Illuminant weight vectors are configured in a two-level triggering system. As
+			shown in the following image, the Chromatix tool user interface presents the first
+			trigger (lux level) and the second trigger (CCT) in the first two columns. The last
+			column is the core data (weight) for a given lux level and CCT range. <br /><img class="image" id="zpw1502000273195__image_rc2_4tz_w1b" src="weo1502819400176.png" /><br /></p>
+
+		<p class="p">Given a lux index and CCT, the stats filter automatically computes the
+			corresponding 1-D weight vector with respect to CCT. Each stat has its illuminant
+			decision and corresponding CCT. From the 1-D weight vector, the final weight is computed
+			with respect to the CCT of the input stat. The yellow dots on the 3-D image show the
+			computed weight vector for the given lux level. <br /><img class="image" id="zpw1502000273195__image_ivh_f3j_51b" src="ott1502008008710.svg" /><br /></p>
+
+		<p class="p">The illuminant weight vector module follows the common AWB trigger system that provides
+			for interpolation of weight values that fall outside or between the defined trigger
+			ranges.</p>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="lue1502821661316.html">Illuminant weight vector parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="uey1502000366936.html">Fine-tune illuminant weight vector</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="yqt1502923722746.html" title="AWB stats filters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB stats filters</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

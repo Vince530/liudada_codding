@@ -1,0 +1,110 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="DCIAF depends on accurate mapping between the estimated distance and the corresponding AF lens position. This distance to lens position mapping works based on the single AF tuning detailed in this ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Verify distance to lens position mapping" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="aoi1477085280540" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Verify distance to lens position mapping</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="aoi1477085280540">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Verify distance to lens position mapping</h1>
+
+   <div class="body taskbody">
+      <div class="section context"><p class="p">DCIAF depends on accurate mapping between the estimated distance and the corresponding AF lens position. This distance to lens position mapping works based on the single AF tuning detailed in this document. DCIAF performance is very sensitive to this mapping. To verify the lens position mapping in different orientations, follow the verification steps in the following subsections for two nongolden modules.</p>
+<p class="p"><strong class="ph b">Face forward (normal) orientation</strong></p>
+</div>
+
+      <ol class="ol steps"><li class="li step stepexpand">
+            <span class="ph cmd">Collect full-sweep measurements at a distance of 14 cm.</span>
+            <ul class="ul choices">
+               <li class="li choice"><p class="p">Use ISO 12233 resolution chart.</p>
+</li>
+
+               <li class="li choice"><p class="p">Log the final position of the full sweep.</p>
+</li>
+
+               <li class="li choice"><p class="p">Log the distance to lens position mappings for normal orientation.</p>
+<p class="p">ADB logs with <span class="keyword cmdname">af_set_debug_print_algo_info_single: step_index </span>[0] to [10] indices corresponding to the following single AF tuned distances:</p>
+<pre class="pre codeblock"><code>[0]: near_limit; [1]: 7cm; [2]: 10cm; [3]: 14cm; [4]: 20cm; [5]: 30cm; [6]: 40cm; [7]: 50cm; [8]: 60cm; [9]: 120cm; [10]: infinity</code></pre></li>
+
+               <li class="li choice"><p class="p">Verify image sharpness by observation.</p>
+</li>
+
+            </ul>
+
+         </li>
+<li class="li step stepexpand">
+            <span class="ph cmd">Verify that the full-sweep final lens position is <em class="ph i">close</em> to mapping at 14 cm (value at index [3] from above mapping). <em class="ph i">Close</em> is defined as follows:</span>
+            <div class="itemgroup info"><p class="p">If |FS – MP| &lt; ((X2 – X1)/20), then the lens position is <em class="ph i">close.</em></p>
+</div>
+            <ul class="ul choices">
+               <li class="li choice"><p class="p">FS = full-sweep lens position</p>
+</li>
+
+               <li class="li choice"><p class="p">MP = mapping lens position (index[3] for 14 cm)</p>
+</li>
+
+               <li class="li choice"><p class="p">X1 = index[0]; X2 = index[10]</p>
+</li>
+
+            </ul>
+
+         </li>
+<li class="li step stepexpand">
+            <span class="ph cmd">Repeat steps 1 and 2 for other distances (10 cm, 20 cm, 30 cm, 40 cm, 50 cm, 60 cm, and 120 cm).</span>
+            <div class="itemgroup info"><p class="p"><strong class="ph b">Face up and face down orientations</strong></p>
+</div>
+         </li>
+<li class="li step stepexpand">
+            <span class="ph cmd">Collect full-sweep measurements at a distance of 14 cm.</span>
+            <ul class="ul choices">
+               <li class="li choice"><p class="p">Use ISO 12233 resolution chart.</p>
+</li>
+
+               <li class="li choice"><p class="p">Log the final position of full-sweep</p>
+</li>
+
+               <li class="li choice"><p class="p">Log the distance to lens position mappings for normal orientation and lens sag compensation values for both up/down orientations.</p>
+<p class="p">ADB logs with <span class="keyword cmdname">af_set_debug_print_algo_info_single: step_index</span> [0] to [10]</p>
+<p class="p">ADB logs with <span class="keyword cmdname">face_up_sag_in_dac and face_dwn_sag_in_dac</span></p>
+</li>
+
+            </ul>
+
+         </li>
+<li class="li step stepexpand">
+            <span class="ph cmd">Verify that the full-sweep final lens position is <em class="ph i">close</em> to mapping at 14 cm (value at index [3] from above mapping after lens sag compensation at +/-90 degrees). <em class="ph i">Close</em> is defined as follows:</span>
+            <div class="itemgroup info"><p class="p">If |FS – MP_facedown| &lt; ((X2 – X1)/20), then the lens position is <em class="ph i">close</em> for face down.</p>
+<p class="p">If |FS – MP_faceup| &lt; ((X2 – X1)/20), then the lens position is <em class="ph i">close</em> for face up.</p>
+</div>
+            <ul class="ul choices">
+               <li class="li choice"><p class="p">FS = full-sweep lens position</p>
+</li>
+
+               <li class="li choice"><p class="p">MP_faceup = MP - face_up_sag_in_dac;</p>
+</li>
+
+               <li class="li choice"><p class="p">MP facedown = MP + face_down_sag_in_dac</p>
+</li>
+
+               <li class="li choice"><p class="p">X1 = index[0]; X2 = index[10]</p>
+</li>
+
+            </ul>
+
+         </li>
+<li class="li step stepexpand">
+            <span class="ph cmd">Repeat steps 1 and 2 for other distances (10 cm and 60 cm).</span>
+            <div class="itemgroup info"><p class="p"><strong class="ph b">Troubleshooting lens position mapping</strong></p>
+<p class="p">If the lens position mapping does not match the full-sweep position in normal orientation, then revisit contrast AF tuning (AF actuator and single AF) before tuning DCIAF.</p>
+<p class="p">If the lens position mapping does not match the full-sweep position in face-up or face-down orientation, then revisit lens sag compensation before tuning DCIAF.</p>
+</div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

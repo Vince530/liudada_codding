@@ -1,0 +1,646 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The default values for the PDAF parameters are suitable for most situations but may require adjustments in some use cases to achieve your specific objectives. The adjustable PDAF parameters are within ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="PDAF parameters" /><meta name="DC.Relation" scheme="URI" content="wwv1495660879387.html" /><meta name="DC.Relation" scheme="URI" content="qqz1495660878280.html" /><meta name="DC.Relation" scheme="URI" content="hgq1495661050458.html" /><meta name="DC.Relation" scheme="URI" content="wzz1495660795209.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jlh1477085281413" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>PDAF parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jlh1477085281413">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">PDAF parameters</h1>
+
+   <div class="body conbody">
+      <div class="p">The default values for the PDAF parameters are suitable for most situations
+         but may require adjustments in some use cases to achieve your specific objectives. The
+         adjustable PDAF parameters are within several tables (e.g., focus table, noise table) in
+         the PDAF structure of the header file. The following table lists the PDAF parameters that
+         are commonly adjusted and identifies in which table the parameter resides. The table also
+         identifies if the parameter affects AF speed, accuracy, or user experience. The list is not
+         exhaustive. Parameters that are generally not updated are not included in the table. The
+         parameters are listed in the sequence in which they appear in the header.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="jlh1477085281413__ID-table-00000012" class="table landscape" frame="border" border="1" rules="all"><colgroup><col style="width:1.479in" /><col style="width:2.313in" /><col style="width:2in" /><col style="width:1.125in" /><col style="width:0.813in" /><col style="width:1.188in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d54809e37">Parameter Name</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d54809e40">Description</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d54809e43">Tuning</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d54809e46">Default</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d54809e49">Required?</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d54809e53">Affect
+                        (speed/accuracy/&#8232;user experience)</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="6" style="text-align:left;vertical-align:top;" headers="d54809e37 d54809e40 d54809e43 d54809e46 d54809e49 d54809e53 ">Defocus
+                        ROI size and location: See below for description and tuning guidelines. See
+                        also Section <a class="xref" href="wwv1495660879387.html">Tune ROI parameters</a>.</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>roi_loc_y
+roi_loc_y
+roi_num_rows
+roi_num_cols</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">These configuration
+                        parameters set the ROI location and size.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">Use the defaults for
+                           <span class="keyword cmdname">roi_num_rows</span> and <span class="keyword cmdname">roi_num_cols</span> for all cases.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <ul class="ul" id="jlh1477085281413__ul_lhp_xrp_rx">
+                           <li class="li">{2, 3, 2, 2} for PDAF Type 1</li>
+
+                           <li class="li">{0, 0, 1, 1} for 2PD</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Accuracy and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="6" style="text-align:left;vertical-align:top;" headers="d54809e37 d54809e40 d54809e43 d54809e46 d54809e49 d54809e53 ">Focus
+                        table See below for description and tuning guidelines. See also Section
+                           <a class="xref" href="qqz1495660878280.html">PDAF coarse search (focus converge)</a>.</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>defocus</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">Defocus threshold of
+                        the focus percent (%) table.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 "> </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <ul class="ul" id="jlh1477085281413__ul_mhp_xrp_rx">
+                           <li class="li">{10, 20, 30}</li>
+
+                           <li class="li">{30, 100, 200} for 2PD<p class="p">Range: 0 to
+                                 500</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 "> </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>move_pcnt</code></pre>
+                     </td>
+
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">
+                        <ul class="ul" id="jlh1477085281413__ul_nhp_xrp_rx">
+                           <li class="li">Controls the iterative times to execute the final
+                              lens movement when receiving reported PD.</li>
+
+                           <li class="li">Works with <span class="keyword cmdname">defocus</span>
+                              to break down one large lens movement into steps based on the original
+                              defocus distance.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_ohp_xrp_rx">
+                           <li class="li">Tune the focus table with the infinity (1 m) – macro
+                              (15 cm) jumping experiment. Lower the percentage until the jumpy
+                              behavior is gone.</li>
+
+                           <li class="li">A higher percentage means less iterative lens
+                              movement and faster AF speed. However, this can result in overshooting
+                              the target and jumpy lens movements.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <ul class="ul" id="jlh1477085281413__ul_php_xrp_rx">
+                           <li class="li">{0.75f, 0.67f, 0.50f}</li>
+
+                           <li class="li">{1.0f, 0.80f, 0.60f}<p class="p">Range: 0 to
+                                 1</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Accuracy, speed, and
+                        user experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 "> </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 "> </td>
+
+                     <td class="entry cellrowborder" colspan="4" style="text-align:left;vertical-align:top;" headers="d54809e43 d54809e46 d54809e49 d54809e53 ">
+                        <ul class="ul" id="jlh1477085281413__ul_qhp_xrp_rx">
+                           <li class="li">A smaller percentage for a higher reported defocus
+                              value can prevent inaccurate AF jumping and create a smoother user
+                              experience.</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="6" style="text-align:left;vertical-align:top;" headers="d54809e37 d54809e40 d54809e43 d54809e46 d54809e49 d54809e53 ">AF noise
+                        table: See below for description and tuning guidelines. See Section <a class="xref" href="hgq1495661050458.html">How the noise gain table works</a>.</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>multiplier</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">
+                        <ul class="ul" id="jlh1477085281413__ul_rhp_xrp_rx">
+                           <li class="li">Works with <span class="keyword cmdname">gain</span> in
+                              the noise table to increase the fine search range based on gain
+                              thresholds.</li>
+
+                           <li class="li">PDAF may get unreliable defocus value when noise gain
+                              is higher. This can cause PDAF focus failure.</li>
+
+                           <li class="li">2PD gives more reliable search scenario even in low
+                              light, so the setting for 2PD can be smaller than that of sparse
+                              PDAF</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_shp_xrp_rx">
+                           <li class="li">A higher value provides better accuracy but relies on
+                              contrast AF when the fine scan is triggered.</li>
+
+                           <li class="li">If PDAF is failing in high gain use cases, increase
+                              the fine scan range by increasing the multiplier in the appropriate
+                              noise gain thresholds.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <ul class="ul" id="jlh1477085281413__ul_thp_xrp_rx">
+                           <li class="li">{1.0f, 4.0f, 16.0f}</li>
+
+                           <li class="li">{1.0f, 1.12f, 2.0f} for 2PD</li>
+
+                           <li class="li">Range: 1 to 30</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d54809e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="6" style="text-align:left;vertical-align:top;" headers="d54809e37 d54809e40 d54809e43 d54809e46 d54809e49 d54809e53 ">Defocus
+                        (PD) confidence table: See below for description and tuning guidelines. See
+                        also Sections <a class="xref" href="wzz1495660795209.html">PDAF monitor: defocused, confident, and stable</a> and <a class="xref" href="siq1495660842165.html">How the confidence table works</a>.</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>min_conf</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d54809e40 ">
+                        <ul class="ul" id="jlh1477085281413__ul_uhp_xrp_rx">
+                           <li class="li">Works with <span class="keyword cmdname">gain</span> in
+                              the confidence table define a minimum confidence threshold relative to
+                              the sensor gain.</li>
+
+                           <li class="li">If the confidence reported by the PD library exceeds
+                              the <span class="keyword cmdname">min_conf</span> for a given <span class="keyword cmdname">noise ga</span>in, then the PDAF search (focus
+                              converge) is triggered.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_vhp_xrp_rx">
+                           <li class="li">Use the vertical stripes chart.</li>
+
+                           <li class="li">Tune this table in low light (50 lx), normal light
+                              (300 lx), and outdoor conditions (1000 lx) to see which minimum
+                              confidence level can maintain the maximum accurate PD info in the
+                              ROI.</li>
+
+                           <li class="li">A higher minimum confidence threshold allows more
+                              reliable PD into consideration, but may result in fewer or no PD found
+                              in the defined ROI range.</li>
+
+                           <li class="li">Using a higher minimum confidence value in outdoor
+                              conditions results in more reliable PD data for a sky scene.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d54809e46 ">
+                        <p class="p">{300, 200, 150, 150, 150}</p>
+
+                        <p class="p">Range: 0 to 1000</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="4" style="text-align:left;vertical-align:top;" headers="d54809e43 d54809e46 d54809e49 d54809e53 ">
+                        <ul class="ul" id="jlh1477085281413__ul_whp_xrp_rx">
+                           <li class="li">Using a higher minimum confidence value in low-light
+                              conditions results in more reliable PD data to avoid noisy PD.</li>
+
+                           <li class="li">In 2PD, reliable PD results are expected when
+                              confidence is more than 200. If below 80, PD is sometimes
+                              inaccurate.</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="6" style="text-align:left;vertical-align:top;" headers="d54809e37 d54809e40 d54809e43 d54809e46 d54809e49 d54809e53 ">PD stable
+                        table array: See below for description and tuning guidelines. See also
+                        Sections <a class="xref" href="wzz1495660795209.html">PDAF monitor: defocused, confident, and stable</a> and <a class="xref" href="ekk1495660936593.html">How the stable table and scene monitor tables work</a>.</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>min_stable_cnt</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">
+                        <ul class="ul" id="jlh1477085281413__ul_xhp_xrp_rx">
+                           <li class="li">Works with <span class="keyword cmdname">fps</span>
+                              in the table and parameters in the PD monitor configuration table to
+                              determine if a scene is stable.</li>
+
+                           <li class="li">PDAF search (focus converge) is triggered if the
+                              scene is stable, confident, and defocused.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">A larger <span class="keyword cmdname">min_stable_cnt</span> makes PDAF search harder to
+                        trigger.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <p class="p">{0, 1, 2}.</p>
+
+                        <p class="p">Range: 0 to 30</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Accuracy and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="6" style="text-align:left;vertical-align:top;" headers="d54809e37 d54809e40 d54809e43 d54809e46 d54809e49 d54809e53 ">PDAF
+                        focus scan configuration: See below for description and tuning guidelines.
+                        See also Sections <a class="xref" href="qqz1495660878280.html">PDAF coarse search (focus converge)</a>.</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>wait_conf_recover_cnt</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">
+                        <ul class="ul" id="jlh1477085281413__ul_yhp_xrp_rx">
+                           <li class="li">Helps PDAF to distinguish between a sustained
+                              confidence level drop (e.g., no vertical edge) vs. a temporary drop
+                              (e.g., abrupt depth change).</li>
+
+                           <li class="li">Prevents a premature triggering of contrast AF
+                              during each abrupt change in the scene depth.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_zhp_xrp_rx">
+                           <li class="li">Increasing this count allows PDAF to wait longer
+                              before triggering contrast.</li>
+
+                           <li class="li">Decreasing this count causes contrast AF to be
+                              triggered more quickly.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <p class="p">4</p>
+
+                        <p class="p">Range: 0 to 10</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">User
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>focus_conv_frame_&#8232;skip</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">To perform a
+                        smoother AF converged speed, use the <span class="keyword cmdname">focus_conv_frame_skip</span> parameter to extend AF converged speed.
+                        This parameter slows down AF speed but creates a smoother converged user
+                        experience.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_a3p_xrp_rx">
+                           <li class="li">It is recommended to set only one frame skip for AF
+                              convergence.</li>
+
+                           <li class="li">Multiple frame skips cause a jerky experience and
+                              slow down AF speed.</li>
+
+                           <li class="li">2PD requires one frame delay to get the latest PD
+                              result.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <p class="p">1</p>
+
+                        <p class="p">Range: 1 to 5</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>enable_fine_scan</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">
+                        <ul class="ul" id="jlh1477085281413__ul_b3p_xrp_rx">
+                           <li class="li">Enables contrast AF for fine search.</li>
+
+                           <li class="li">If enabled, the PDAF search (focus converge) gets
+                              the lens close to the peak focus value then contrast AF performs the
+                              fine search.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_c3p_xrp_rx">
+                           <li class="li">Using “fine scan” is crucial for the better accuracy
+                              of PDAF. But by enabling fine scan, it reduces speed.</li>
+
+                           <li class="li">Disable for 2PD and rely on PD to lead to final
+                              target.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <p class="p">1</p>
+
+                        <p class="p">Range: 0 [disable], 1 [enable]</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Accuracy and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>focus_done_threshold</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">
+                        <ul class="ul" id="jlh1477085281413__ul_d3p_xrp_rx">
+                           <li class="li">Used to determine if PDAF is converged (i.e.,
+                              focused).</li>
+
+                           <li class="li">If the reported defocus value is bigger than
+                                 <span class="keyword cmdname">focus_done_threshold</span>, PDAF
+                              keeps searching and waiting for entering converge state.</li>
+
+                           <li class="li">If the reported defocus value is smaller than
+                                 <span class="keyword cmdname">focus_done_threshold</span>, then the
+                              PDAF focus converge is ended and it enters fine search mode or, if
+                              fine scan is disabled, reports to <span class="keyword cmdname">AF_
+                                 success</span> directly</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_e3p_xrp_rx">
+                           <li class="li">The larger the number, the quicker to finish the
+                              PDAF focus converge and the easier to enter fine search.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <p class="p">6</p>
+
+                        <p class="p">Range: 0 to 50</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Accuracy and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" colspan="6" style="text-align:left;vertical-align:top;" headers="d54809e37 d54809e40 d54809e43 d54809e46 d54809e49 d54809e53 ">PD scene
+                        monitor configuration: See below for description and tuning guidelines. See
+                        also Sections 16.3.2 and 16.3.2.2 .</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>defocus_threshold</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">If the defocus value
+                        is more than this parameter, PDAF search is triggered.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_f3p_xrp_rx">
+                           <li class="li">Decreasing this threshold increases the sensitivity
+                              of PDAF to react to depth change, but may cause focus convergence to
+                              be triggered too frequently.</li>
+
+                           <li class="li">Increasing this threshold decreases the sensitivity
+                              of PDAF to react to depth change.</li>
+
+                           <li class="li">For 2PD, the recommended value is 24.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <ul class="ul" id="jlh1477085281413__ul_g3p_xrp_rx">
+                           <li class="li">10</li>
+
+                           <li class="li">24 for 2PD<p class="p">Range: 0 to
+                              50</p>
+</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Accuracy and
+                        speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e37 ">
+                        <pre class="pre codeblock"><code>depth_stable_threshold</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e40 ">
+                        <ul class="ul" id="jlh1477085281413__ul_h3p_xrp_rx">
+                           <li class="li">If defocus value is within range of this parameter
+                              as compared with the defocus value of the previous frame, then the
+                              stable count is incremented.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e43 ">
+                        <ul class="ul" id="jlh1477085281413__ul_i3p_xrp_rx">
+                           <li class="li">Decreasing this threshold increases the sensitivity
+                              of PDAF to react to depth change, but may cause focus convergence to
+                              be triggered too frequently.</li>
+
+                           <li class="li">Increasing this threshold decreases the sensitivity
+                              of PDAF to react to depth change, helping prevent too frequent lens
+                              position adjustment.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e46 ">
+                        <p class="p">1.5</p>
+
+                        <p class="p">Range: 0 to 50</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e49 ">Required</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d54809e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+</div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="wwv1495660879387.html" title="Tune ROI parameters">Tune ROI parameters</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="qqz1495660878280.html" title="PDAF coarse search (focus converge)">PDAF coarse search (focus converge)</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="hgq1495661050458.html" title="How the noise gain table works">How the noise gain table works</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="wzz1495660795209.html" title="PDAF monitor: defocused, confident, and stable">PDAF monitor: defocused, confident, and stable</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

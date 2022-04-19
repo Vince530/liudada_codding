@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  See DisplayTest.xml for format documentation
+-->
+<MetadataDisplays
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataDisplaySchema.xsd">
+  <!-- AEC Info Display -->
+  <Display Name="AEC Info" Title="AEC Info" MetadataType="Spectra">
+    <Panel Type="Scroll">
+      <!-- AEC Overview Panel -->
+      <Panel Condition="{exists}AEC FrameHistory" Title="AEC Overview" Type="Open">
+        <Grid>
+          <Row>
+            <Value Text="" Bold="false"/>
+            <Value Text="Short" Bold="true"/>
+            <Value Text="Long" Bold="true"/>
+            <Value Text="Safe" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Exp. Indices:" Bold="true"/>
+            <Value Value="AEC FrameHistory[0].Exposure Indices[0]"/>
+            <Value Value="AEC FrameHistory[0].Exposure Indices[1]"/>
+            <Value Value="AEC FrameHistory[0].Exposure Indices[2]"/>
+          </Row>
+          <Row>
+            <Value Text="Exp. Target Indices:" Bold="true"/>
+            <Value Value="AEC FrameHistory[0].Exposure Target Indices[0]"/>
+            <Value Value="AEC FrameHistory[0].Exposure Target Indices[1]"/>
+            <Value Value="AEC FrameHistory[0].Exposure Target Indices[2]"/>
+          </Row>
+          <Row>
+            <Value Text="Gains:" Bold="true"/>
+            <Value Value="AEC FrameHistory[0].Exposure Gains[0]"/>
+            <Value Value="AEC FrameHistory[0].Exposure Gains[1]"/>
+            <Value Value="AEC FrameHistory[0].Exposure Gains[2]"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Time [ms]:" Bold="true"/>
+            <Value A="AEC FrameHistory[0].Exposure Times[0]" Value="(A/1000000.0)"/>
+            <Value A="AEC FrameHistory[0].Exposure Times[1]" Value="(A/1000000.0)"/>
+            <Value A="AEC FrameHistory[0].Exposure Times[2]" Value="(A/1000000.0)"/>
+          </Row>
+          <Row>
+            <Value Text="Lux Index:" Bold="true"/>
+            <Value Value="AEC FrameHistory[0].Lux Index"/>
+          </Row>
+          <Row>
+            <Value Text="FPS:" Bold="true"/>
+            <Value Value="AEC Convergence.Current FPS"/>
+          </Row>
+          <Row>
+            <Value Text="Final Luma:" Bold="true"/>
+            <Value Value="AEC FrameHistory[0].Final Luma"/>
+          </Row>
+          <Row>
+            <Value Text="Histogram Enabled:" Bold="true"/>
+            <Check Value="AEC Histogram.Histogram Enabled"/>
+          </Row>
+          <Row>
+            <Value Text="ADRC Enabled:" Bold="true"/>
+            <Check Value="AEC Histogram.ADRC Enabled"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AECX Overview Panel -->
+      <Panel Condition="{exists}AECX Metering" Title="AECX Overview" Type="Open">
+        <Grid>
+          <Row>
+            <Value Text="" Bold="false"/>
+            <Value Text="Short" Bold="true"/>
+            <Value Text="Long" Bold="true"/>
+            <Value Text="Safe" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Exposures / 1M:" Bold="true"/>
+            <Value A="AECX Metering.Matched Exposure[0]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Metering.Matched Exposure[1]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Metering.Matched Exposure[2]" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Targets / 1M:" Bold="true"/>
+            <Value A="AECX Metering.Metering Target Exposure[0]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Metering.Metering Target Exposure[1]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Metering.Metering Target Exposure[2]" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Gains:" Bold="true"/>
+            <Value Value="AECX Arbitration.Exposure Short.Gain" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Long.Gain" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Safe.Gain" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Time [ms]:" Bold="true"/>
+            <Value A="AECX Arbitration.Exposure Short.Exp Time" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Long.Exp Time" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Safe.Exp Time" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Lux Index:" Bold="true"/>
+            <Value Value="AECX Metering.Lux Index" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Average Luma:" Bold="true"/>
+            <Value Value="AECX Metering.Average Luma" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Sat Ratio:" Bold="true"/>
+            <Value Value="AECX Metering.Sat Ratio" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Dark Ratio:" Bold="true"/>
+            <Value Value="AECX Metering.Dark Ratio" Places="3"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AEC Metering Panel -->
+      <Panel Condition="{exists}AEC Metering" Title="AEC Metering">
+        <Grid>
+          <Row>
+            <Value Text="" Bold="false"/>
+            <Value Text="Short" Bold="true"/>
+            <Value Text="Long" Bold="true"/>
+            <Value Text="Safe" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Final Luma Target:" Bold="true"/>
+            <Value Value="AEC Metering.Final Targets[0]"/>
+            <Value Value="AEC Metering.Final Targets[1]"/>
+            <Value Value="AEC Metering.Final Targets[2]"/>
+          </Row>
+          <Row>
+            <Value Text="Dark Region:" Bold="true"/>
+            <Check Value="AEC StatsLumaRegion.Dark Region Enabled"/>
+          </Row>
+          <Row>
+            <Value Text="Bright Region:" Bold="true"/>
+            <Check Value="AEC StatsLumaRegion.Bright Region Enabled"/>
+          </Row>
+          <Row>
+            <Value Text="Average Luma:" Bold="true"/>
+            <Value Value="AEC Metering.Average Luma"/>
+          </Row>
+          <Row>
+            <Value Text="Frame Luma:" Bold="true"/>
+            <Value Value="AEC Metering.Frame Luma"/>
+          </Row>
+          <Row>
+            <Value Text="Touch Luma:" Bold="true"/>
+            <Value Value="AEC Metering.Touch ROI Luma"/>
+          </Row>
+          <Row>
+            <Value Text="Face Luma:" Bold="true"/>
+            <Value Value="AEC Metering.Face ROI Luma"/>
+          </Row>
+          <Row>
+            <Value Text="Face Weight:" Bold="true"/>
+            <Value Value="AEC Metering.Face Weight"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AECX Metering Panel -->
+      <Panel Condition="{exists}AECX Metering" Title="AECX Metering">
+        <Grid>
+          <Row>
+            <Value Text="" Bold="false"/>
+            <Value Text="Short" Bold="true"/>
+            <Value Text="Long" Bold="true"/>
+            <Value Text="Safe" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Current Exposure:" Bold="true"/>
+            <Value A="AECX Metering.Matched Exposure[0]" Value="(A/1000000.0)"/>
+            <Value A="AECX Metering.Matched Exposure[1]" Value="(A/1000000.0)"/>
+            <Value A="AECX Metering.Matched Exposure[2]" Value="(A/1000000.0)"/>
+          </Row>
+          <Row>
+            <Value Text="Metering Target Exposure:" Bold="true"/>
+            <Value A="AECX Metering.Metering Target Exposure[0]" Value="(A/1000000.0)"/>
+            <Value A="AECX Metering.Metering Target Exposure[1]" Value="(A/1000000.0)"/>
+            <Value A="AECX Metering.Metering Target Exposure[2]" Value="(A/1000000.0)"/>
+          </Row>
+          <Row>
+            <Value Text="Target Exposure:" Bold="true"/>
+            <Value A="AECX Metering.Final Target Exposure[0]" Value="(A/1000000.0)"/>
+            <Value A="AECX Metering.Final Target Exposure[1]" Value="(A/1000000.0)"/>
+            <Value A="AECX Metering.Final Target Exposure[2]" Value="(A/1000000.0)"/>
+          </Row>
+          <Row>
+            <Value Text="Target / Current Exposure:" Bold="true"/>
+            <Value A="AECX Metering.Metering Target Exposure[0]" B="AECX Metering.Matched Exposure[0]" Value="(A/B)" Places="4"/>
+            <Value A="AECX Metering.Metering Target Exposure[1]" B="AECX Metering.Matched Exposure[1]" Value="(A/B)" Places="4"/>
+            <Value A="AECX Metering.Metering Target Exposure[2]" B="AECX Metering.Matched Exposure[2]" Value="(A/B)" Places="4"/>
+          </Row>
+          <Row>
+            <Value Text=""/>
+          </Row>
+        </Grid>
+        <Chart Title="Safe Aggregation" Height="300" Section="AECX Metering" XAxisLogarithmic="true" YAxisLogarithmic="true"
+                XTitle="Adjustment Ratio [log10 scale]" YTitle="Weight [log10 scale]" XDecimalPlaces="4" YDecimalPlaces="4">
+          <Line Condition="General SAs[0].Out Exposure Type{eq}1{and}General SAs[0].Adjustment Ratio.End{and}General SAs[0].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[0]" Title="{General SAs[0].Analyzer Name}">
+            <Point X="General SAs[0].Adjustment Ratio.Start" Y="General SAs[0].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[0].Adjustment Ratio.End"   Y="General SAs[0].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[1].Out Exposure Type{eq}1{and}General SAs[1].Adjustment Ratio.End{and}General SAs[1].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[1]" Title="{General SAs[1].Analyzer Name}" IgnoreZeros="false">
+            <Point X="General SAs[1].Adjustment Ratio.Start" Y="General SAs[1].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[1].Adjustment Ratio.End"   Y="General SAs[1].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[2].Out Exposure Type{eq}1{and}General SAs[2].Adjustment Ratio.End{and}General SAs[2].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[2]" Title="{General SAs[2].Analyzer Name}">
+            <Point X="General SAs[2].Adjustment Ratio.Start" Y="General SAs[2].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[2].Adjustment Ratio.End"   Y="General SAs[2].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[3].Out Exposure Type{eq}1{and}General SAs[3].Adjustment Ratio.End{and}General SAs[3].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[3]" Title="{General SAs[3].Analyzer Name}">
+            <Point X="General SAs[3].Adjustment Ratio.Start" Y="General SAs[3].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[3].Adjustment Ratio.End"   Y="General SAs[3].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[4].Out Exposure Type{eq}1{and}General SAs[4].Adjustment Ratio.End{and}General SAs[4].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[4]" Title="{General SAs[4].Analyzer Name}">
+            <Point X="General SAs[4].Adjustment Ratio.Start" Y="General SAs[4].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[4].Adjustment Ratio.End"   Y="General SAs[4].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[5].Out Exposure Type{eq}1{and}General SAs[5].Adjustment Ratio.End{and}General SAs[5].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[5]" Title="{General SAs[5].Analyzer Name}">
+            <Point X="General SAs[5].Adjustment Ratio.Start" Y="General SAs[5].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[5].Adjustment Ratio.End"   Y="General SAs[5].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[6].Out Exposure Type{eq}1{and}General SAs[6].Adjustment Ratio.End{and}General SAs[6].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[6]" Title="{General SAs[6].Analyzer Name}">
+            <Point X="General SAs[6].Adjustment Ratio.Start" Y="General SAs[6].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[6].Adjustment Ratio.End"   Y="General SAs[6].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[7].Out Exposure Type{eq}1{and}General SAs[7].Adjustment Ratio.End{and}General SAs[7].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[7]" Title="{General SAs[7].Analyzer Name}">
+            <Point X="General SAs[7].Adjustment Ratio.Start" Y="General SAs[7].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[7].Adjustment Ratio.End"   Y="General SAs[7].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[8].Out Exposure Type{eq}1{and}General SAs[8].Adjustment Ratio.End{and}General SAs[8].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[8]" Title="{General SAs[8].Analyzer Name}">
+            <Point X="General SAs[8].Adjustment Ratio.Start" Y="General SAs[8].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[8].Adjustment Ratio.End"   Y="General SAs[8].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[9].Out Exposure Type{eq}1{and}General SAs[9].Adjustment Ratio.End{and}General SAs[9].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[9]" Title="{General SAs[9].Analyzer Name}">
+            <Point X="General SAs[9].Adjustment Ratio.Start" Y="General SAs[9].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[9].Adjustment Ratio.End"   Y="General SAs[9].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[10].Out Exposure Type{eq}1{and}General SAs[10].Adjustment Ratio.End{and}General SAs[10].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[10]" Title="{General SAs[10].Analyzer Name}">
+            <Point X="General SAs[10].Adjustment Ratio.Start" Y="General SAs[10].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[10].Adjustment Ratio.End"   Y="General SAs[10].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[11].Out Exposure Type{eq}1{and}General SAs[11].Adjustment Ratio.End{and}General SAs[11].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[11]" Title="{General SAs[11].Analyzer Name}">
+            <Point X="General SAs[11].Adjustment Ratio.Start" Y="General SAs[11].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[11].Adjustment Ratio.End"   Y="General SAs[11].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[12].Out Exposure Type{eq}1{and}General SAs[12].Adjustment Ratio.End{and}General SAs[12].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[12]" Title="{General SAs[12].Analyzer Name}">
+            <Point X="General SAs[12].Adjustment Ratio.Start" Y="General SAs[12].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[12].Adjustment Ratio.End"   Y="General SAs[12].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[13].Out Exposure Type{eq}1{and}General SAs[13].Adjustment Ratio.End{and}General SAs[13].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[13]" Title="{General SAs[13].Analyzer Name}">
+            <Point X="General SAs[13].Adjustment Ratio.Start" Y="General SAs[13].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[13].Adjustment Ratio.End"   Y="General SAs[13].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[14].Out Exposure Type{eq}1{and}General SAs[14].Adjustment Ratio.End{and}General SAs[14].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[14]" Title="{General SAs[14].Analyzer Name}">
+            <Point X="General SAs[14].Adjustment Ratio.Start" Y="General SAs[14].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[14].Adjustment Ratio.End"   Y="General SAs[14].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[15].Out Exposure Type{eq}1{and}General SAs[15].Adjustment Ratio.End{and}General SAs[15].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[15]" Title="{General SAs[15].Analyzer Name}">
+            <Point X="General SAs[15].Adjustment Ratio.Start" Y="General SAs[15].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[15].Adjustment Ratio.End"   Y="General SAs[15].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[16].Out Exposure Type{eq}1{and}General SAs[16].Adjustment Ratio.End{and}General SAs[16].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[16]" Title="{General SAs[16].Analyzer Name}">
+            <Point X="General SAs[16].Adjustment Ratio.Start" Y="General SAs[16].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[16].Adjustment Ratio.End"   Y="General SAs[16].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[17].Out Exposure Type{eq}1{and}General SAs[17].Adjustment Ratio.End{and}General SAs[17].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[17]" Title="{General SAs[17].Analyzer Name}">
+            <Point X="General SAs[17].Adjustment Ratio.Start" Y="General SAs[17].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[17].Adjustment Ratio.End"   Y="General SAs[17].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[18].Out Exposure Type{eq}1{and}General SAs[18].Adjustment Ratio.End{and}General SAs[18].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[18]" Title="{General SAs[18].Analyzer Name}">
+            <Point X="General SAs[18].Adjustment Ratio.Start" Y="General SAs[18].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[18].Adjustment Ratio.End"   Y="General SAs[18].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+          <Line Condition="General SAs[19].Out Exposure Type{eq}1{and}General SAs[19].Adjustment Ratio.End{and}General SAs[19].Confidence Component.Aggregated Value.Start"
+                PointLabel="wt:{1:#.####}" Type="Line" Marker="Circle" Color="MonochromePalette[19]" Title="{General SAs[19].Analyzer Name}">
+            <Point X="General SAs[19].Adjustment Ratio.Start" Y="General SAs[19].Confidence Component.Aggregated Value.Start"/>
+            <Point X="General SAs[19].Adjustment Ratio.End"   Y="General SAs[19].Confidence Component.Aggregated Value.Start"/>
+          </Line>
+        </Chart>
+        <Grid Section="AECX Metering">
+          <Row>
+            <Value Text="Active Analyzers:" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Analyzer Name" Bold="true"/>
+            <Value Text="Analyzer"      Bold="true"/>
+            <Value Text="Luma"          Bold="true"/>
+            <Value Text="Target Start"  Bold="true"/>
+            <Value Text="Target End"    Bold="true"/>
+            <Value Text="Confidence"    Bold="true"/>
+            <Value Text="Adj. Start"    Bold="true"/>
+            <Value Text="Adj. End"      Bold="true"/>
+          </Row>
+          <Row ArrayCondition="Analyzer ID" Array="General SAs" ShowIndex="False"
+                Columns="Analyzer Name,Analyzer ID,
+                        Luma Component.Aggregated Value.start,
+                        Target Component.Aggregated Value.start, 
+                        Target Component.Aggregated Value.end,
+                        Confidence Component.Aggregated Value.start,
+                        Adjustment Ratio.start, 
+                        Adjustment Ratio.end" />
+        </Grid>
+      </Panel>
+      <!-- AECX Arbitration Panel -->
+      <Panel Condition="{exists}AECX Arbitration" Title="AECX Arbitration">
+        <Grid>
+          <Row>
+            <Value Text="" Bold="false"/>
+            <Value Text="Short" Bold="true"/>
+            <Value Text="Long" Bold="true"/>
+            <Value Text="Safe" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Input:" Bold="true"/>
+            <Value A="AECX Arbitration.Exposure Short.Exp Input" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Long.Exp Input" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Safe.Exp Input" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Time [ms]:" Bold="true"/>
+            <Value A="AECX Arbitration.Exposure Short.Exp Time" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Long.Exp Time" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Safe.Exp Time" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Gain:" Bold="true" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Short.Gain" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Long.Gain" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Safe.Gain" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Index:" Bold="true" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Short.Index" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Long.Index" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Safe.Index" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Min Gain:" Bold="true" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Short.Min Gain" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Long.Min Gain" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Safe.Min Gain" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Max Gain:" Bold="true" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Short.Max Gain" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Long.Max Gain" Places="3"/>
+            <Value Value="AECX Arbitration.Exposure Safe.Max Gain" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Min Time [ms]:" Bold="true"/>
+            <Value A="AECX Arbitration.Exposure Short.Min Time" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Long.Min Time" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Safe.Min Time" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Max Time [ms]:" Bold="true"/>
+            <Value A="AECX Arbitration.Exposure Short.Max Time" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Long.Max Time" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Arbitration.Exposure Safe.Max Time" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Correction Factor Stream:" Bold="true"/>
+            <Value Value="AECX Arbitration.Correction Factor Stream" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Correction Factor Snapshot:" Bold="true"/>
+            <Value Value="AECX Arbitration.Correction Factor Snapshot" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Table ID Streaming:" Bold="true"/>
+            <Value Value="AECX Arbitration.Exposure Table ID Streaming"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Table ID Snapshot:" Bold="true"/>
+            <Value Value="AECX Arbitration.Exposure Table ID Snapshot"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AEC Flash Panel -->
+      <Panel Title="AEC Flash" Condition="{exists}AEC Flash">
+        <Grid>
+          <Row>
+            <Value Text="" Bold="true"/>
+            <Value Text="Flash Off" Bold="true" Span="3"/>
+            <Value Text="Flash Low" Bold="true" Span="3"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Indices:" Bold="true"/>
+            <Value Value="AEC Flash.Frame History Off.Exposure Indices[0]"/>
+            <Value Value="AEC Flash.Frame History Off.Exposure Indices[1]"/>
+            <Value Value="AEC Flash.Frame History Off.Exposure Indices[2]"/>
+            <Value Value="AEC Flash.Frame History Low.Exposure Indices[0]"/>
+            <Value Value="AEC Flash.Frame History Low.Exposure Indices[1]"/>
+            <Value Value="AEC Flash.Frame History Low.Exposure Indices[2]"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Final Luma Off:" Bold="true"/>
+            <Value Value="AEC Flash.Frame History Off.Final Luma"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+            <Value Text="Aggregate" Span="2" Bold="true"/>
+            <Value Text="Simple" Bold="true"/>
+            <Value Text="Smart" Bold="true"/>
+            <Value Text="FD" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Luma Off:" Bold="true"/>
+            <Value Value="AEC Flash.Aggregate Luma Off" Span="2"/>
+            <Value Value="AEC Flash.Luma Off Simple"/>
+            <Value Value="AEC Flash.Luma Off Smart"/>
+            <Value Value="AEC Flash.FD Luma Off"/>
+          </Row>
+          <Row>
+            <Value Text="Luma Low:" Bold="true"/>
+            <Value Value="AEC Flash.Aggregate Luma Low" Span="2"/>
+            <Value Value="AEC Flash.Luma Low Simple"/>
+            <Value Value="AEC Flash.Luma Low Smart"/>
+            <Value Value="AEC Flash.FD Luma Low"/>
+          </Row>
+          <Row>
+            <Value Text="Luma High:" Bold="true"/>
+            <Value Value="AEC Flash.Aggregate Luma High" Span="2"/>
+            <Value Value="AEC Flash.Luma High Simple"/>
+            <Value Value="AEC Flash.Luma High Smart"/>
+            <Value Value="AEC Flash.FD Luma High"/>
+          </Row>
+          <Row>
+            <Value Text="Influence:" Bold="true"/>
+            <Value Value="AEC Flash.Aggregate Luma Influence" Span="2"/>
+            <Value Value="AEC Flash.Influence Simple"/>
+            <Value Value="AEC Flash.Influence Smart"/>
+            <Value Value="AEC Flash.FD Influence"/>
+          </Row>
+          <Row>
+            <Value Text="Luma Target:" Bold="true"/>
+            <Value Value="AEC Flash.Aggregate Luma Snapshot Target" Span="2"/>
+            <Value Value="AEC Flash.Snapshot Target Simple"/>
+            <Value Value="AEC Flash.Snapshot Target Smart"/>
+            <Value Value="AEC Flash.FD Snapshot Target"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Exp. Tgt. Indeces:" Bold="true"/>
+            <Value Value="AEC Flash.Exposure Target Indices[0]"/>
+            <Value Value="AEC Flash.Exposure Target Indices[1]"/>
+            <Value Value="AEC Flash.Exposure Target Indices[2]"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+            <Value Text="Preflash" Bold="true"/>
+            <Value Text="Main Flash" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Flux:" Bold="true"/>
+            <Value Value="AEC LEDTable.Preflash settings.Flux" Span="3"/>
+            <Value Value="AEC LEDTable.Main Flash settings.Flux" Span="3"/>
+          </Row>
+          <Row>
+            <Value Text="R/G:" Bold="true"/>
+            <Value Value="AEC LEDTable.Preflash settings.R/G Ratio" Span="3"/>
+            <Value Value="AEC LEDTable.Main Flash settings.R/G Ratio" Span="3"/>
+          </Row>
+          <Row>
+            <Value Text="B/G:" Bold="true"/>
+            <Value Value="AEC LEDTable.Preflash settings.B/G Ratio" Span="3"/>
+            <Value Value="AEC LEDTable.Main Flash settings.B/G Ratio" Span="3"/>
+          </Row>
+          <Row>
+            <Value Text="LED1:" Bold="true"/>
+            <Value Value="AEC LEDTable.Preflash settings.LED1 Setting" Span="3"/>
+            <Value Value="AEC LEDTable.Main Flash settings.LED1 Setting" Span="3"/>
+          </Row>
+          <Row>
+            <Value Text="LED2:" Bold="true"/>
+            <Value Value="AEC LEDTable.Preflash settings.LED2 Setting" Span="3"/>
+            <Value Value="AEC LEDTable.Main Flash settings.LED2 Setting" Span="3"/>
+          </Row>
+          <Row>
+            <Value Text="AWB R:" Bold="true"/>
+            <Value Value="AEC LEDTable.Preflash R Gain" Span="3"/>
+            <Value Value="AEC LEDTable.Main Flash R Gain" Span="3"/>
+          </Row>
+          <Row>
+            <Value Text="AWB G:" Bold="true"/>
+            <Value Value="AEC LEDTable.Preflash G Gain" Span="3"/>
+            <Value Value="AEC LEDTable.Main Flash G Gain" Span="3"/>
+          </Row>
+          <Row>
+            <Value Text="AWB B:" Bold="true"/>
+            <Value Value="AEC LEDTable.Preflash B Gain" Span="3"/>
+            <Value Value="AEC LEDTable.Main Flash B Gain" Span="3"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AECX Flash Panel -->
+      <Panel Title="AECX Flash" Condition="{exists}AECX Flash">
+        <Grid>
+          <Row>
+            <Value Text="Frame History" Bold="true"/>
+            <Value Text="Flash Off" Bold="true"/>
+            <Value Text="Pre Flash" Bold="true"/>
+            <Value Text="Main Flash" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Target (Short) / 1M:" Bold="true"/>
+            <Value A="AECX Flash.Frame History Off.Exposure Targets[0]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Flash.Frame History Low.Exposure Targets[0]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Flash.Exposure Targets Snapshot[0]" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Target (Long) / 1M:" Bold="true"/>
+            <Value A="AECX Flash.Frame History Off.Exposure Targets[1]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Flash.Frame History Low.Exposure Targets[1]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Flash.Exposure Targets Snapshot[1]" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Target (Safe) / 1M:" Bold="true"/>
+            <Value A="AECX Flash.Frame History Off.Exposure Targets[2]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Flash.Frame History Low.Exposure Targets[2]" Value="(A/1000000.0)" Places="3"/>
+            <Value A="AECX Flash.Exposure Targets Snapshot[2]" Value="(A/1000000.0)" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Lux Index:" Bold="true"/>
+            <Value Value="AECX Flash.Frame History Off.Lux Index" Places="3"/>
+            <Value Value="AECX Flash.Frame History Low.Lux Index" Places="3"/>
+            <Value Value="AECX Flash.Lux Index" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Average Luma:" Bold="true"/>
+            <Value Value="AECX Flash.Frame History Off.Average Luma" Places="3"/>
+            <Value Value="AECX Flash.Frame History Low.Average Luma" Places="3"/>
+            <Value Text="-"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Flash Information" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Flux Ratio (Pre vs Main):" Bold="true"/>
+            <Value Value="AECX Flash.Flux Ratio" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="Exposure Increase (Off vs Pre):" Bold="true"/>
+            <Value Value="AECX Flash.Exposure Increase" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="LED Table Information" Bold="true"/>
+            <Value Text="Preflash" Bold="true"/>
+            <Value Text="Main Flash" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Flux:" Bold="true"/>
+            <Value Value="AECX LEDTable.Preflash Settings.Flux" Places="3"/>
+            <Value Value="AECX LEDTable.Main Flash Settings.Flux" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="R/G Ratio:" Bold="true"/>
+            <Value Value="AECX LEDTable.Preflash Settings.R/G Ratio" Places="3"/>
+            <Value Value="AECX LEDTable.Main Flash Settings.R/G Ratio" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="B/G Ratio:" Bold="true"/>
+            <Value Value="AECX LEDTable.Preflash Settings.B/G Ratio" Places="3"/>
+            <Value Value="AECX LEDTable.Main Flash Settings.B/G Ratio" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="LED1:" Bold="true"/>
+            <Value Value="AECX LEDTable.Preflash Settings.LED1 Setting" Places="3"/>
+            <Value Value="AECX LEDTable.Main Flash Settings.LED1 Setting" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="LED2:" Bold="true"/>
+            <Value Value="AECX LEDTable.Preflash Settings.LED2 Setting" Places="3"/>
+            <Value Value="AECX LEDTable.Main Flash Settings.LED2 Setting" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="AWB R:" Bold="true"/>
+            <Value Value="AECX LEDTable.Preflash R Gain" Places="3"/>
+            <Value Value="AECX LEDTable.Main Flash R Gain" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="AWB G:" Bold="true"/>
+            <Value Value="AECX LEDTable.Preflash G Gain" Places="3"/>
+            <Value Value="AECX LEDTable.Main Flash G Gain" Places="3"/>
+          </Row>
+          <Row>
+            <Value Text="AWB B:" Bold="true"/>
+            <Value Value="AECX LEDTable.Preflash B Gain" Places="3"/>
+            <Value Value="AECX LEDTable.Main Flash B Gain" Places="3"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AEC Bright Region Panel -->
+      <Panel Title="AEC Bright Region" Condition="{exists}AEC StatsLumaRegion">
+        <Check Title="Bright region detection" Value="Bright Region Information.Bright region detection enable"/>
+        <Grid Section="AEC StatsLumaRegion">
+          <Row>
+            <Value Text="" Bold="true"/>
+            <Value Text="Bright Region" Bold="true"/>
+            <Value Text="Dark Region" Bold="true"/>
+          </Row>
+          <Row>
+            <Value Text="Enabled:" Bold="true"/>
+            <Check Value="Bright Region Enabled"/>
+            <Check Value="Dark Region Enabled"/>
+          </Row>
+          <Row>
+            <Value Text="Count:" Bold="true"/>
+            <Value Value="Bright Region Count"/>
+            <Value Value="Dark Region Count"/>
+          </Row>
+          <Row>
+            <Value Text="Weight:" Bold="true"/>
+            <Value Value="Bright Region Luma Weight"/>
+            <Value Value="Dark Region Luma Weight"/>
+          </Row>
+          <Row>
+            <Value Text="Threshold Start:" Bold="true"/>
+            <Value Value="Bright Region Thresholds[0]"/>
+            <Value Value="Dark Region Thresholds[0]"/>
+          </Row>
+          <Row>
+            <Value Text="Threshold End:" Bold="true"/>
+            <Value Value="Bright Region Thresholds[1]"/>
+            <Value Value="Dark Region Thresholds[1]"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AEC Convergence Panel -->
+      <Panel Condition="{exists}AEC Convergence" Section="AEC Convergence" Title="AEC Convergence">
+        <Grid>
+          <Row>
+            <Value Text="Algo ID:" Bold="true"/>
+            <Value Value="Convergence Algo Identity"/>
+          </Row>
+          <Row>
+            <Value Text="Bright Settled:" Bold="true"/>
+            <Check Value="Brightness Settled"/>
+          </Row>
+          <Row>
+            <Value Text="AEC Settled:" Bold="true"/>
+            <Check Value="AEC Settled"/>
+          </Row>
+          <Row>
+            <Value Text="Bright Ratio:" Bold="true"/>
+            <Value Value="Bright Region Ratio"/>
+          </Row>
+          <Row>
+            <Value Text="Dark Ratio:" Bold="true"/>
+            <Value Value="Dark Region Ratio"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AECX Convergence Panel -->
+      <Panel Condition="{exists}AECX Convergence" Section="AECX Convergence" Title="AECX Convergence">
+        <Chart Title="Convergence History" Height="300" Section="AECX Convergence" YMin="-1" YMax="+1"
+              XTitle="Frame ID" YTitle="Exposure" XDecimalPlaces="0" YDecimalPlaces="2">
+          <Line Title="Short Exposure" Type="Line" Color="Blue" Marker="Circle">
+            <Point Array="Convergence History" X="Frame ID" Y="Conv Out Log Exp.Short Exposure" SettledFlag="Settled" SettledMarker="Square"/>
+          </Line>
+          <Line Title="Safe Exposure" Type="Line" Color="Red" Marker="Circle">
+            <Point Array="Convergence History" X="Frame ID" Y="Conv Out Log Exp.Safe Exposure" SettledFlag="Settled" SettledMarker="Square"/>
+          </Line>
+          <Line Title="Long Exposure" Type="Line" Color="Mustard" Marker="Circle">
+            <Point Array="Convergence History" X="Frame ID" Y="Conv Out Log Exp.Long Exposure" SettledFlag="Settled" SettledMarker="Square"/>
+          </Line>
+        </Chart>
+        <Grid>
+          <Row>
+            <Value Text="AEC Settled:" Bold="true"/>
+            <Check Value="AEC Settled"/>
+          </Row>
+          <Row>
+            <Value Text="Target Exposure (Log-scale):" Bold="true"/>
+            <Value Value="Conv Output Exp.Short Exposure"/>
+            <Value Value="Conv Output Exp.Safe Exposure"/>
+            <Value Value="Conv Output Exp.Long Exposure"/>
+          </Row>
+          <Row>
+            <Value Text="Converged Exposure (Log-scale):" Bold="true"/>
+            <Value Value="Conv Output Exp.Short Exposure"/>
+            <Value Value="Conv Output Exp.Safe Exposure"/>
+            <Value Value="Conv Output Exp.Long Exposure"/>
+          </Row>
+          <Row>
+            <Value Text="Convergence Process Run:):" Bold="true"/>
+            <Check Value="Conv Proc Run"/>
+          </Row>
+        </Grid>
+      </Panel>      
+      <!-- AEC Extension Panel -->
+      <Panel Condition="{exists}AEC Extension" Title="AEC Extension">
+        <Grid Section="AEC Extension">
+          <Row>
+            <Value Text="Touch EV State:" Bold="true"/>
+            <Value Value="Touch EV State"/>
+          </Row>
+          <Row>
+            <Value Text="Y Hist Clamp:" Bold="true"/>
+            <Value Value="Yhistogram Clamp"/>
+          </Row>
+          <Row>
+            <Value Text="Y Hist Scale:" Bold="true"/>
+            <Value Value="Yhistogram Scale"/>
+          </Row>
+          <Row>
+            <Value Text="Flash Needed:" Bold="true"/>
+            <Check Value="Flash Needed"/>
+          </Row>
+          <Row>
+            <Value Text="FD Delay Needed:" Bold="true"/>
+            <Check Value="FD Flash Delay Needed"/>
+          </Row>
+          <Row>
+            <Value Text="LED-AF Needed:" Bold="true"/>
+            <Check Value="LED-AF Needed"/>
+          </Row>
+          <Row>
+            <Value Text="LLS Needed:" Bold="true"/>
+            <Check Value="LLS Needed"/>
+          </Row>
+          <Row>
+            <Value Text="LLS Exposure Time:" Bold="true"/>
+            <Value Value="LLS Exposure Time"/>
+          </Row>
+        </Grid>
+      </Panel>
+      <!-- AECX Extension Panel -->
+      <Panel Condition="{exists}AECX Extension" Title="AECX Extension">
+        <Grid Section="AECX Extension">
+          <Row>
+            <Value Text="Flash Needed:" Bold="true"/>
+            <Check Value="Flash Needed"/>
+          </Row>
+          <Row>
+            <Value Text="FD Flash Needed:" Bold="true"/>
+            <Check Value="FD Flash Needed"/>
+          </Row>
+          <Row>
+            <Value Text="LED-AF Needed:" Bold="true"/>
+            <Check Value="LED-AF Needed"/>
+          </Row>
+          <Row>
+            <Value Text="LLS Needed:" Bold="true"/>
+            <Check Value="LLS Needed"/>
+          </Row>
+          <Row>
+            <Value Text="Y Hist Stretch Clamp:" Bold="true"/>
+            <Value Value="Y Hist Stretch Clamp"/>
+          </Row>
+          <Row>
+            <Value Text="Y Hist Stretch Scale:" Bold="true"/>
+            <Value Value="Y Hist Stretch Scale"/>
+          </Row>
+          <Row>
+            <Value Text="3HDR Snapshot Status:" Bold="true"/>
+            <Check Value="3HDR Snapshot.3HDR Snapshot Status"/>
+          </Row>
+        </Grid>
+      </Panel>
+    </Panel>
+  </Display>
+</MetadataDisplays>

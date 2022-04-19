@@ -1,0 +1,150 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Figure : Video flow guideline Figure : MFNR flow guideline Video – ANR Calibrate ANR. Tune ANR. Filter Final Strength ( Luma Strength HF ) is not available; it is adjusted automatically. Increase luma ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tuning video and MFNR" /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="mzu1527888105628" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tuning video and MFNR</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="mzu1527888105628">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tuning video and MFNR</h1>
+
+	<div class="body taskbody">
+		<div class="section context" id="mzu1527888105628__context_N10011_N1000E_N10001">
+			<div class="fig fignone" id="mzu1527888105628__fig_brl_spd_12b"><span class="figcap">Figure : Video flow guideline</span>
+				
+				<br /><img class="image" id="mzu1527888105628__image_b35_ppd_12b" src="yrw1527888967925.svg" /><br />
+			</div>
+
+			<div class="fig fignone" id="mzu1527888105628__fig_wyp_tpd_12b"><span class="figcap">Figure : MFNR flow guideline</span>
+				
+				<br /><img class="image" id="mzu1527888105628__image_lng_qpd_12b" src="ard1527888964899.svg" /><br />
+			</div>
+
+		</div>
+
+		<p class="li stepsection"><strong class="ph b">Video – ANR</strong></p><ol><li class="li step stepexpand" id="mzu1527888105628__step_N1003D_N10034_N1000E_N10001">
+				<span class="ph cmd">Calibrate ANR.</span>
+			</li>
+<li class="li step stepexpand" id="mzu1527888105628__step_N10046_N10034_N1000E_N10001">
+				<span class="ph cmd">Tune ANR.</span>
+				<div class="itemgroup info"><span class="ph uicontrol">Filter Final Strength</span> (<span class="ph uicontrol">Luma Strength HF</span>) is not available; it is
+					adjusted automatically.</div>
+			</li>
+<li class="li step stepexpand" id="mzu1527888105628__step_N1005A_N10034_N1000E_N10001">
+				<span class="ph cmd">Increase luma <span class="ph uicontrol">Noise Detection</span> (<span class="ph uicontrol">Base
+						Function</span>).</span>
+				<div class="itemgroup info">To have an almost noise-free image in luma (even with details and textures),
+					smooth flat areas and clean the edges. If ANR is tuned correctly, only luma
+					noise detection in Full pass should be increased.</div>
+			</li>
+<li class="li step stepexpand" id="mzu1527888105628__step_N1006F_N10034_N1000E_N10001">
+				<span class="ph cmd">Ensure the chroma channel has clean and correct ANR tuning to
+					avoid chroma overfiltration.</span>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Video – TF</strong></p><ol start="5"><li class="li step stepexpand" id="mzu1527888105628__step_N1007E_N10034_N1000E_N10001">
+				<span class="ph cmd">Calibrate TF.</span>
+			</li>
+<li class="li step stepexpand" id="mzu1527888105628__step_N10087_N10034_N1000E_N10001">
+				<span class="ph cmd">Tune TF.</span>
+			</li>
+<li class="li step stepexpand" id="mzu1527888105628__step_N10090_N10034_N1000E_N10001">
+				<span class="ph cmd">Choose frame 5 or later.</span>
+				<ol type="a" class="ol substeps" id="mzu1527888105628__substeps_oht_rtd_12b">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Examine the local motion area, where the filter strength (FS) is 0.
+							There should be almost no noise, even with details and textures.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Examine the stationary area (FS is 63). There should be similar noise
+							levels to local motion area (FS is 0).</span>
+						<div class="itemgroup info">
+							<ul class="ul" id="mzu1527888105628__ul_fjk_ztd_12b">
+								<li class="li">If the stationary area has higher noise than the local motion
+									area, decrease the a2 slope to have stationary areas cleaner, or
+									decrease a2 max to make local motion more granular.</li>
+
+								<li class="li">If overfiltered, increase the a2 slope or decrease ANR noise
+									detection.</li>
+
+								<li class="li">If there is noise, decrease the a2 slope or increase ANR noise
+									detection.</li>
+
+								<li class="li">Verify the impact on the local motion area.</li>
+
+							</ul>
+
+							<p class="p">Avoid ghost detection even on account of false-positive local motion
+								detection.</p>
+
+						</div>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection">MFNR – Pre Stage</p><ol start="8"><li class="li step stepexpand" id="mzu1527888105628__step_N100CF_N10034_N1000E_N10001">
+				<span class="ph cmd">Create a "blend-all" image (created automatically).</span>
+				<ol type="a" class="ol substeps" id="mzu1527888105628__substeps_evj_s5d_12b">
+					<li class="li substep">
+						<span class="ph cmd">Tune and process NPS input images with HNR
+							bypassed.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Use an image set of n+1 images. For MFNR of 3 images, use 4; for MFNR
+							of 10 images, use 11.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Perform registration on the image set.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Blend the images without local motion awareness.</span>
+					</li>
+
+				</ol>
+
+				<div class="itemgroup info">On anchor images if no single frame still tuning is available, calibrate
+					and tune ANR to reach the same noise level as stationary areas in the blend-all
+					image. <span class="ph uicontrol">Filter Final Strength</span> (<span class="ph uicontrol">Luma Strength HF</span>) is not available; it is
+					adjusted automatically.<p class="p">On anchor images if single frame still
+						tuning is available, adjust <span class="ph uicontrol">pre stage
+							strength</span> for luma and chroma to reach the same noise level
+						as stationary areas in the blend-all image.</p>
+</div>
+			</li>
+</ol><p class="li stepsection">MFNR – TF</p><ol start="9"><li class="li step stepexpand" id="mzu1527888105628__step_N10114_N10034_N1000E_N10001">
+				<span class="ph cmd">Calibrate TF.</span>
+			</li>
+<li class="li step stepexpand" id="mzu1527888105628__step_N1011D_N10034_N1000E_N10001">
+				<span class="ph cmd">Tune TF.</span>
+				<div class="itemgroup info">High-quality mode can be enabled for advanced tuning. If enabled, Base
+					Functions for the Full pass must be tuned. The quality improvement from enabling
+					high-quality mode is generally minor.<p class="p">Verify the FS accuracy
+						of frame 2.</p>
+</div>
+			</li>
+<li class="li step stepexpand" id="mzu1527888105628__step_N1012D_N10034_N1000E_N10001">
+				<span class="ph cmd">Examine the local motion area, where FS is 0, in the last frame. It should have
+					similar noise to the stationary area (FS is 63). If the stationary area has
+					higher noise than the local area, filter less in the pre stage, or increase the
+					a2 min value.</span>
+			</li>
+</ol><p class="li stepsection">MFNR – Post Stage</p><ol start="12"><li class="li step stepexpand" id="mzu1527888105628__step_N1013A_N10034_N1000E_N10001">
+				<span class="ph cmd">Calibrate and tune HNR and ANR to achieve a final filtered image.</span>
+			</li>
+<li class="li step stepexpand" id="mzu1527888105628__step_N10143_N10034_N1000E_N10001">
+				<span class="ph cmd">If pre stage or TF tuning is adjusted, retune the post stage.</span>
+			</li>
+</ol>
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="As an alternative to using the Chromatix Simulation tool UI, run a raw simulation via the command line. To expedite a simulation of multiple images. If you have an existing Chromatix project, use ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Run a pipeline simulation with raw input from the command line" /><meta name="abstract" content="As an alternative to using the Chromatix Simulation tool UI, run a raw simulation via the command line. To expedite a simulation of multiple images." /><meta name="description" content="As an alternative to using the Chromatix Simulation tool UI, run a raw simulation via the command line. To expedite a simulation of multiple images." /><meta name="DC.Relation" scheme="URI" content="fcl1494872328107.html" /><meta name="DC.Relation" scheme="URI" content="tpm1494872218298.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nfc1482264078311" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Run a pipeline simulation with raw input from the command line</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nfc1482264078311">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="fcl1494872328107.html" title="Simulation Tools">Simulation Tools</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="fcl1494872328107.html" title="Simulation Tools"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Simulation Tools</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Run a pipeline simulation with raw input from the command line </h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">As an alternative to using the Chromatix Simulation tool UI, run a raw
+		simulation via the command line. To expedite a simulation of multiple images.</p>
+
+		<div class="section" id="nfc1482264078311__section_N1002A_N10012_N10001">
+			<p class="p">If you have an existing Chromatix project, use these steps to run a
+				command line simulation that uses the files from that project. </p>
+
+			<ol class="ol" id="nfc1482264078311__ol_gml_ypl_3y">
+				<li class="li">Navigate to the applicable simulation folder within the project folder and
+					view the <span class="ph filepath">spectracamsim_config.xml</span> file. </li>
+
+				<li class="li">Check the default values for the <span class="keyword parmname">Input Folder</span> and
+						<span class="keyword parmname">Output Folder</span> parameters; edit if needed. </li>
+
+				<li class="li">Upload the raw images you want to simulate into the Input Folder defined in the
+						<span class="ph filepath">spectracamsim_config.xml</span> file.</li>
+
+				<li class="li">Verify the <span class="ph filepath">meta_config.xml</span> file
+					values are set the way you want them; edit if needed. <div class="note note" id="nfc1482264078311__note_N10050_N10049_N10021_N10017_N10014_N10001"><span class="notetitle">Note:</span> When
+						simulating a video, there is a metadata file for each frame, such as
+						meta_config_0.xml and meta_config_1.</div>
+</li>
+
+				<li class="li">Open the command prompt. </li>
+
+				<li class="li">Navigate to the Chromatix directory.</li>
+
+				<li class="li">To enable the command line simulation, type the following:
+					<pre class="pre codeblock"><code>QualcommSpectraSim280.exe C:\Dropbox\myproj\Simulation\Default\spectracamsim_config.xml</code></pre></li>
+
+				<li class="li">Run the command. <div class="note note" id="nfc1482264078311__note_N10079_N10075_N10021_N10017_N10014_N10001"><span class="notetitle">Note:</span> The resulting images will appear in the Output
+						Folder defined in the <span class="ph filepath">spectracamsim_config.xml</span> file.</div>
+</li>
+
+			</ol>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="tpm1494872218298.html" title="Use this procedure to run an AWB simulation or a pipeline simulation, or both. The pipeline simulation generated by this tool requires the use of a raw image.">Run AWB and pipeline simulations from the simulation tab</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="fcl1494872328107.html" title="Simulation Tools"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Simulation Tools</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

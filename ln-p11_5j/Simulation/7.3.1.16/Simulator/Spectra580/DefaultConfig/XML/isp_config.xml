@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ISPConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\XSD\isp_config.xsd">
+    <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+    <Common>
+        <hnrpostprocessenable>0</hnrpostprocessenable>
+        <TopCfg>
+            <StartFrameIdx>0</StartFrameIdx>
+            <TotalFrameNumber>1</TotalFrameNumber>
+            <DigitalZoomEnable>0</DigitalZoomEnable>
+            <DZStartX>0</DZStartX>
+            <DZStartY>0</DZStartY>
+        </TopCfg>
+        <Tintless>
+            <MajorVersion>2</MajorVersion>
+            <MinorVersion>2</MinorVersion>
+        </Tintless>
+        <InputCropConfig>
+            <Enable>0</Enable>
+            <InputCropOpt>1</InputCropOpt>
+            <FirstPixel>0</FirstPixel>
+            <LastPixel>3999</LastPixel>
+            <FirstLine>0</FirstLine>
+            <LastLine>3023</LastLine>
+        </InputCropConfig>
+        <ifeStatsOnlyModeEnable>0</ifeStatsOnlyModeEnable>
+    </Common>
+    <CVP>
+        <Dump_Enable>0</Dump_Enable>
+    </CVP>
+    <Total_DZ>1</Total_DZ>
+    <!-- IFE Configurations -->
+    <IFE>
+        <IFEPreCropFullPath>
+            <CropEnable>0</CropEnable>
+            <FirstPixel>0</FirstPixel>
+            <LastPixel>1999</LastPixel>
+            <FirstLine>0</FirstLine>
+            <LastLine>1499</LastLine>
+        </IFEPreCropFullPath>
+        <IFEMNDownScalerFullPath>
+            <lumaImgSizeChange>0</lumaImgSizeChange>
+            <OutLumaWidth>1920</OutLumaWidth>
+            <OutLumaHeight>1080</OutLumaHeight>
+            <v_cnt_init>0</v_cnt_init>
+            <h_cnt_init>0</h_cnt_init>
+            <rounding_option_h>0</rounding_option_h>
+            <rounding_option_v>0</rounding_option_v>
+        </IFEMNDownScalerFullPath>
+        <IFEMNDownScalerFDPath>
+            <lumaImgSizeChange>0</lumaImgSizeChange>
+            <OutLumaWidth>1920</OutLumaWidth>
+            <OutLumaHeight>1080</OutLumaHeight>
+            <EnableChromaHorizSample>1</EnableChromaHorizSample>
+            <EnableChromaVertiSample>1</EnableChromaVertiSample>
+            <v_cnt_init>0</v_cnt_init>
+            <h_cnt_init>0</h_cnt_init>
+            <rounding_option_h>0</rounding_option_h>
+            <rounding_option_v>0</rounding_option_v>
+        </IFEMNDownScalerFDPath>
+        <IFECropFDPath>
+            <CropEnable>0</CropEnable>
+            <FirstPixel>0</FirstPixel>
+            <LastPixel>1919</LastPixel>
+            <FirstLine>0</FirstLine>
+            <LastLine>1079</LastLine>
+        </IFECropFDPath>
+        <IFERnDClampFDPath>
+            <RnDClampEn>1</RnDClampEn>
+            <nBitsOut>10</nBitsOut>
+            <roundingPatternY>0</roundingPatternY>
+            <interleavedY>0</interleavedY>
+            <roundingPatternC>0</roundingPatternC>
+            <interleavedC>0</interleavedC>
+        </IFERnDClampFDPath>
+    </IFE>
+    <!-- BPS Configurations -->
+    <BPS>
+    </BPS>
+    <!-- IPE Configurations -->
+    <IPE>
+        <!-- NPS Specific Configurations -->
+        <NPSCfg>
+        </NPSCfg>
+        <IPEUpscalerCfg>
+            <Enable>0</Enable>
+            <OutputWidth>8064</OutputWidth>
+            <OutputHeight>6048</OutputHeight>
+        </IPEUpscalerCfg>
+        <IPEMNDownScalerVideoPath>
+            <lumaImgSizeChange>0</lumaImgSizeChange>
+            <OutLumaWidth>4400</OutLumaWidth>
+            <OutLumaHeight>3300</OutLumaHeight>
+            <v_cnt_init>0</v_cnt_init>
+            <h_cnt_init>0</h_cnt_init>
+            <rounding_option_h>0</rounding_option_h>
+            <rounding_option_v>0</rounding_option_v>
+        </IPEMNDownScalerVideoPath>
+        <IPECropVideo2Path>
+            <CropEnable>0</CropEnable>
+            <FirstPixel>8</FirstPixel>
+            <LastPixel>4391</LastPixel>
+            <FirstLine>6</FirstLine>
+            <LastLine>3293</LastLine>
+        </IPECropVideo2Path>
+        <IPEMNDownScalerDisplayPath>
+            <lumaImgSizeChange>0</lumaImgSizeChange>
+            <OutLumaWidth>3840</OutLumaWidth>
+            <OutLumaHeight>2880</OutLumaHeight>
+            <v_cnt_init>0</v_cnt_init>
+            <h_cnt_init>0</h_cnt_init>
+            <rounding_option_h>0</rounding_option_h>
+            <rounding_option_v>0</rounding_option_v>
+        </IPEMNDownScalerDisplayPath>
+        <IPECropDisplay2Path>
+            <CropEnable>0</CropEnable>
+            <FirstPixel>4</FirstPixel>
+            <LastPixel>3835</LastPixel>
+            <FirstLine>3</FirstLine>
+            <LastLine>2876</LastLine>
+        </IPECropDisplay2Path>
+        <IPERnDClampVideoPath>
+            <RnDClampEn>1</RnDClampEn>
+            <nBitsOut>10</nBitsOut>
+            <roundingPatternY>0</roundingPatternY>
+            <interleavedY>0</interleavedY>
+            <roundingPatternC>0</roundingPatternC>
+            <interleavedC>0</interleavedC>
+        </IPERnDClampVideoPath>
+    </IPE>
+    <LRME>
+        <ModuleEnable>
+            <Lrme>0</Lrme>
+        </ModuleEnable>
+        <RANSAC_method>0</RANSAC_method>
+    </LRME>
+    <PDPC_CFGV1>
+        <PD_OFFSET>
+            <Horizontal>24</Horizontal>
+            <Vertical>24</Vertical>
+        </PD_OFFSET>
+        <PIX_COUNT>32</PIX_COUNT>
+        <BLOCK_DIM>
+            <Width>64</Width>
+            <Height>64</Height>
+        </BLOCK_DIM>
+        <PIX_COORDS>
+            28 31
+            28 35
+            44 35
+            44 39
+            64 35
+            64 39
+            80 31
+            80 35
+            32 51
+            32 47
+            48 55
+            48 51
+            60 55
+            60 51
+            76 51
+            76 47
+            32 67
+            32 71
+            48 63
+            48 67
+            60 63
+            60 67
+            76 67
+            76 71
+            28 87
+            28 83
+            44 83
+            44 79
+            64 83
+            64 79
+            80 87
+            80 83
+        </PIX_COORDS>
+    </PDPC_CFGV1>
+    <MFNR>
+        <QLL>
+            <Enable>0</Enable>
+        </QLL>
+        <AnchorPick>
+            <enable>1</enable>
+            <desiredAnchorIndex>0</desiredAnchorIndex>
+        </AnchorPick>
+        <Registration>
+            <Scale_X>1</Scale_X>
+            <Scale_Y>1</Scale_Y>
+        </Registration>
+        <!-- 0: Don't Use Modified Gain for PostFiltering (Use Anchor Frame Gain), 1: Use Modified gain in PostFiltering -->
+        <UseModifiedGain>0</UseModifiedGain>
+    </MFNR>
+    <StatsAdditionalCfg>
+        <hdr_be_field_sel>0</hdr_be_field_sel>
+        <hdr_bhist_field_sel>0</hdr_bhist_field_sel>
+    </StatsAdditionalCfg>
+    <StatsFromConfig>
+        <HDR_Bhist>
+            <enable>0</enable>
+            <hdr_bhist_chan_sel>0</hdr_bhist_chan_sel>
+            <hdr_bhist_roi_h_offset>0</hdr_bhist_roi_h_offset>
+            <hdr_bhist_roi_v_offset>0</hdr_bhist_roi_v_offset>
+            <hdr_bhist_rgn_h_num>2671</hdr_bhist_rgn_h_num>
+            <hdr_bhist_rgn_v_num>2003</hdr_bhist_rgn_v_num>
+        </HDR_Bhist>
+        <HDR_BayerExposure>
+            <enable>0</enable>
+            <hdr_stats_site_sel description="na">1</hdr_stats_site_sel>
+            <hdr_be_site_sel>0</hdr_be_site_sel>
+            <hdr_be_field_sel description="na">0</hdr_be_field_sel>
+            <hdr_bhist_field_sel description="na">0</hdr_bhist_field_sel>
+            <be_roi_h_offset>32</be_roi_h_offset>
+            <be_roi_v_offset>24</be_roi_v_offset>
+            <be_rgn_width>61</be_rgn_width>
+            <be_rgn_height>61</be_rgn_height>
+            <be_rgn_h_num>63</be_rgn_h_num>
+            <be_rgn_v_num>47</be_rgn_v_num>
+            <be_sat_Hthr_r>16000</be_sat_Hthr_r>
+            <be_sat_Hthr_gr>16000</be_sat_Hthr_gr>
+            <be_sat_Hthr_gb>16000</be_sat_Hthr_gb>
+            <be_sat_Hthr_b>16000</be_sat_Hthr_b>
+            <be_sat_Lthr_r>0</be_sat_Lthr_r>
+            <be_sat_Lthr_gr>0</be_sat_Lthr_gr>
+            <be_sat_Lthr_gb>0</be_sat_Lthr_gb>
+            <be_sat_Lthr_b>0</be_sat_Lthr_b>
+            <be_pix_exp_sel>0</be_pix_exp_sel>
+            <be_HDR_selection>0</be_HDR_selection>
+            <be_zHDR_first_rb_exp>0</be_zHDR_first_rb_exp>
+            <be_sat_output_enable>0</be_sat_output_enable>
+            <be_first_hor_rgn_width>63</be_first_hor_rgn_width>
+            <be_last_hor_rgn_width>63</be_last_hor_rgn_width>
+            <be_shift_bits>0</be_shift_bits>
+            <be_region_sampling>65535</be_region_sampling>
+            <be_Y_output_enable>1</be_Y_output_enable>
+            <be_Y_coeffs>32 64 32</be_Y_coeffs>
+            <be_g_sel>0</be_g_sel>
+        </HDR_BayerExposure>
+        <Tintless_BG>
+            <enable>0</enable>
+            <bgrid_aec_roi_h_offset>32</bgrid_aec_roi_h_offset>
+            <bgrid_aec_roi_v_offset>24</bgrid_aec_roi_v_offset>
+            <bgrid_aec_rgn_width>61</bgrid_aec_rgn_width>
+            <bgrid_aec_rgn_height>61</bgrid_aec_rgn_height>
+            <bgrid_aec_rgn_h_num>63</bgrid_aec_rgn_h_num>
+            <bgrid_aec_rgn_v_num>47</bgrid_aec_rgn_v_num>
+            <bgrid_aec_sat_Hthr_r>16000</bgrid_aec_sat_Hthr_r>
+            <bgrid_aec_sat_Hthr_gr>16000</bgrid_aec_sat_Hthr_gr>
+            <bgrid_aec_sat_Hthr_gb>16000</bgrid_aec_sat_Hthr_gb>
+            <bgrid_aec_sat_Hthr_b>16000</bgrid_aec_sat_Hthr_b>
+            <bgrid_aec_sat_Lthr_r>0</bgrid_aec_sat_Lthr_r>
+            <bgrid_aec_sat_Lthr_gr>0</bgrid_aec_sat_Lthr_gr>
+            <bgrid_aec_sat_Lthr_gb>0</bgrid_aec_sat_Lthr_gb>
+            <bgrid_aec_sat_Lthr_b>0</bgrid_aec_sat_Lthr_b>
+            <bgrid_aec_en_quad_sync description="should be 0 for BG_TINTLESS">0</bgrid_aec_en_quad_sync>
+            <bgrid_aec_sat_output_enable>0</bgrid_aec_sat_output_enable>
+            <bgrid_aec_first_hor_rgn_width>63</bgrid_aec_first_hor_rgn_width>
+            <bgrid_aec_last_hor_rgn_width>63</bgrid_aec_last_hor_rgn_width>
+            <bgrid_aec_shift_bits>0</bgrid_aec_shift_bits>
+            <bgrid_aec_region_sampling>65535</bgrid_aec_region_sampling>
+            <bgrid_aec_Y_output_enable>1</bgrid_aec_Y_output_enable>
+            <bgrid_aec_Y_coeffs>32 64 32</bgrid_aec_Y_coeffs>
+            <bgrid_aec_g_sel>0</bgrid_aec_g_sel>
+        </Tintless_BG>
+        <AWB_BG>
+            <enable>0</enable>
+            <bgrid_awb_roi_h_offset>32</bgrid_awb_roi_h_offset>
+            <bgrid_awb_roi_v_offset>24</bgrid_awb_roi_v_offset>
+            <bgrid_awb_rgn_width>61</bgrid_awb_rgn_width>
+            <bgrid_awb_rgn_height>61</bgrid_awb_rgn_height>
+            <bgrid_awb_rgn_h_num>63</bgrid_awb_rgn_h_num>
+            <bgrid_awb_rgn_v_num>47</bgrid_awb_rgn_v_num>
+            <bgrid_awb_sat_Hthr_r>16000</bgrid_awb_sat_Hthr_r>
+            <bgrid_awb_sat_Hthr_gr>16000</bgrid_awb_sat_Hthr_gr>
+            <bgrid_awb_sat_Hthr_gb>16000</bgrid_awb_sat_Hthr_gb>
+            <bgrid_awb_sat_Hthr_b>16000</bgrid_awb_sat_Hthr_b>
+            <bgrid_awb_sat_Lthr_r>0</bgrid_awb_sat_Lthr_r>
+            <bgrid_awb_sat_Lthr_gr>0</bgrid_awb_sat_Lthr_gr>
+            <bgrid_awb_sat_Lthr_gb>0</bgrid_awb_sat_Lthr_gb>
+            <bgrid_awb_sat_Lthr_b>0</bgrid_awb_sat_Lthr_b>
+            <bgrid_awb_en_quad_sync description="should be 0 for BG_TINTLESS">0</bgrid_awb_en_quad_sync>
+            <bgrid_awb_sat_output_enable>0</bgrid_awb_sat_output_enable>
+            <bgrid_awb_first_hor_rgn_width>0</bgrid_awb_first_hor_rgn_width>
+            <bgrid_awb_last_hor_rgn_width>0</bgrid_awb_last_hor_rgn_width>
+            <bgrid_awb_shift_bits>0</bgrid_awb_shift_bits>
+            <bgrid_awb_region_sampling>65535</bgrid_awb_region_sampling>
+            <bgrid_awb_Y_output_enable>1</bgrid_awb_Y_output_enable>
+            <bgrid_awb_Y_coeffs>32 64 32</bgrid_awb_Y_coeffs>
+            <bgrid_awb_g_sel>0</bgrid_awb_g_sel>
+        </AWB_BG>
+        <BF>
+            <enable>0</enable>
+            <baf_gamma_lut_sel>1</baf_gamma_lut_sel>
+            <baf_roiindex_lut_sel>0</baf_roiindex_lut_sel>
+            <baf_site_sel>0</baf_site_sel>
+            <baf_g_sel>1</baf_g_sel>
+            <baf_LUT_enable>1</baf_LUT_enable>
+            <baf_ch_sel>0</baf_ch_sel>
+            <baf_h1_scaler_sel description="na">0</baf_h1_scaler_sel>
+            <baf_h2_scaler_sel description="na">0</baf_h2_scaler_sel>
+            <baf_mn_input_width>1</baf_mn_input_width>
+            <baf_mn_input_height>1</baf_mn_input_height>
+            <baf_h_scaler_en>0</baf_h_scaler_en>
+            <baf_h_in>1</baf_h_in>
+            <baf_h_out>1</baf_h_out>
+            <baf_h_phase_mult>0</baf_h_phase_mult>
+            <baf_h_interp_reso>0</baf_h_interp_reso>
+            <baf_h_mn_init>0</baf_h_mn_init>
+            <baf_h_phase_init>0</baf_h_phase_init>
+            <baf_h_skip_cnt>0</baf_h_skip_cnt>
+            <baf_v_scaler_en>0</baf_v_scaler_en>
+            <baf_v_in>0</baf_v_in>
+            <baf_v_out>0</baf_v_out>
+            <baf_v_phase_mult>0</baf_v_phase_mult>
+            <baf_v_interp_reso>0</baf_v_interp_reso>
+            <baf_v_mn_init>0</baf_v_mn_init>
+            <baf_v_phase_init>0</baf_v_phase_init>
+            <baf_v_skip_cnt>0</baf_v_skip_cnt>
+            <baf_gammaLUT>0 3390 4646 5586 6367 7047 7655 8211 8725 9205 9656 10084 10491 10879 11252 11610 11956 12290 12614 12927 13232 13529 13818 14100 14376 14645 14908 15166 15419 15667 15910 16149</baf_gammaLUT>
+            <baf_roi_indexLUT>2 0 0 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</baf_roi_indexLUT>
+            <baf_Y_coeffs>306 1024 102</baf_Y_coeffs>
+            <baf_fir_h1_en>0</baf_fir_h1_en>
+            <baf_fir_h2_en description="na">0</baf_fir_h2_en>
+            <baf_iir_h1_en>1</baf_iir_h1_en>
+            <baf_iir_h2_en description="na">0</baf_iir_h2_en>
+            <baf_fir_h>0 -4 -4 1 2 3 4 3 2 1 -4 -4 0</baf_fir_h>
+            <baf_h1_shift_bits>-3</baf_h1_shift_bits>
+            <baf_h2_shift_bits description="na">0</baf_h2_shift_bits>
+            <baf_iir_h>1513 0 -1513 28052 -13358 1851 0 -1851 30633 -14725</baf_iir_h>
+            <baf_coring_h1_indx>0 0 0 0 0 0 1 1 2 3 4 5 7 9 11 13 16</baf_coring_h1_indx>
+            <baf_coring_h2_indx description="na">0 0 0 0 0 0 1 1 2 3 4 5 7 9 11 13 16</baf_coring_h2_indx>
+            <baf_coring_h1_Th>200</baf_coring_h1_Th>
+            <baf_coring_h2_Th description="na">200</baf_coring_h2_Th>
+            <baf_coring_h1_gain>16</baf_coring_h1_gain>
+            <baf_coring_h2_gain description="na">16</baf_coring_h2_gain>
+            <baf_fir_v_en description="na">0</baf_fir_v_en>
+            <baf_iir_v_en>1</baf_iir_v_en>
+            <baf_fir_v description="na">1513 0 -1513 28052 -13358</baf_fir_v>
+            <baf_v_shift_bits>-3</baf_v_shift_bits>
+            <baf_iir_v>1513 0 -1513 28052 -13358 1851 0 -1851 30633 -14725</baf_iir_v>
+            <baf_coring_v_indx>0 0 0 0 0 0 1 1 2 3 4 5 7 9 11 13 16</baf_coring_v_indx>
+            <baf_coring_v_Th>400</baf_coring_v_Th>
+            <baf_coring_v_gain>16</baf_coring_v_gain>
+            <baf_h1_sum_shift_bits>0</baf_h1_sum_shift_bits>
+            <baf_v_sum_shift_bits>0</baf_v_sum_shift_bits>
+            <baf_ROIs_Ymin>0</baf_ROIs_Ymin>
+            <baf_ROIs_Xmin>0</baf_ROIs_Xmin>
+            <baf_ROIs_Ymax>16383</baf_ROIs_Ymax>
+            <baf_ROIs_Xmax>8191</baf_ROIs_Xmax>
+        </BF>
+        <BHist>
+            <enable>0</enable>
+            <bihist_roi_h_offset>0</bihist_roi_h_offset>
+            <bihist_roi_v_offset>0</bihist_roi_v_offset>
+            <bihist_rgn_h_num>0</bihist_rgn_h_num>
+            <bihist_rgn_v_num>0</bihist_rgn_v_num>
+            <bihist_ch_sel>0</bihist_ch_sel>
+            <bihist_bin_uniformity>0</bihist_bin_uniformity>
+        </BHist>
+        <RowSumColSum>
+            <rs_enable>0</rs_enable>
+            <cs_enable>0</cs_enable>
+            <rs_rgn_h_offset>0</rs_rgn_h_offset>
+            <rs_rgn_v_offset>0</rs_rgn_v_offset>
+            <rs_rgn_width>4031</rs_rgn_width>
+            <rs_rgn_height>2</rs_rgn_height>
+            <rs_rgn_h_num>0</rs_rgn_h_num>
+            <rs_rgn_v_num>1007</rs_rgn_v_num>
+            <rs_shift_bits>8</rs_shift_bits>
+            <cs_rgn_h_offset>456</cs_rgn_h_offset>
+            <cs_rgn_v_offset>0</cs_rgn_v_offset>
+            <cs_rgn_width>1</cs_rgn_width>
+            <cs_rgn_height>3023</cs_rgn_height>
+            <cs_rgn_h_num>1559</cs_rgn_h_num>
+            <cs_rgn_v_num>0</cs_rgn_v_num>
+            <cs_shift_bits>8</cs_shift_bits>
+        </RowSumColSum>
+        <IHist>
+            <enable>0</enable>
+            <histogram_site>0</histogram_site>
+            <channel_select>0</channel_select>
+            <hist_rgn_h_offset>0</hist_rgn_h_offset>
+            <hist_rgn_v_offset>0</hist_rgn_v_offset>
+            <hist_rgn_h_num>0</hist_rgn_h_num>
+            <hist_rgn_v_num>0</hist_rgn_v_num>
+            <hist_shift_bits>0</hist_shift_bits>
+        </IHist>
+    </StatsFromConfig>
+
+</ISPConfig>

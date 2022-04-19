@@ -1,0 +1,193 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes. ANR detects edges, preserves edges, and combines the image with a low pass image ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="ANR tuning concepts" /><meta name="abstract" content="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes." /><meta name="description" content="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes." /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="DC.Relation" scheme="URI" content="wzh1500920163335.html" /><meta name="DC.Relation" scheme="URI" content="xbg1499463478394.html" /><meta name="DC.Relation" scheme="URI" content="wzh1500920163335.html" /><meta name="DC.Relation" scheme="URI" content="xbg1499463478394.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="agg1499463565286" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ANR tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="agg1499463565286">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">ANR tuning concepts</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">Advanced noise reduction (ANR) is a multipass spatial noise filtering process available
+		for snapshot and video modes.</p>
+
+		<p class="p">ANR detects edges, preserves edges, and combines the image with a low pass image
+			to create a new image with lower noise levels. ANR has four passes for snapshot mode
+			(1:64, 1:16, 1:4, 1:1) and three passes for preview and video modes (1:16, 1:4,
+			1:1).</p>
+
+		<div class="p">If the image is calibrated correctly by ANR, it should have a good result
+			as shown in the below example.<div class="fig fignone nonumber" id="agg1499463565286__fig_q4f_mpb_ccb"><span class="figcap">Figure : (L) No ANR; (R) Good calibration</span>
+				
+				<br /><img class="image" id="agg1499463565286__image_yd5_glg_n1b" src="xtr1499810459647.png" /><br />
+			</div>
+</div>
+
+		<p class="p">Incorrect calibration can cause over-filtering. This could be caused by
+			damaged MCC images (miscolored areas on the color patches), or if the color patches are
+			not selected correctly (too small or positioned incorrectly).</p>
+
+		<div class="p">Inaccurate flat field images may result in radial noise patches and
+			heavily effect calibration noise detection, especially in low frequencies.<div class="fig fignone nonumber" id="agg1499463565286__fig_a5s_4qb_ccb"><span class="figcap">Figure : (L) Calibration with accurate flat field image; (R)
+					Calibration with defective flat field image</span>
+				
+				<br /><img class="image" id="agg1499463565286__image_fwz_tsb_ccb" src="lhf1512420914005.png" /><br />
+			</div>
+<div class="fig fignone nonumber" id="agg1499463565286__fig_a1v_xrb_ccb"><span class="figcap">Figure : (L) Less noise in corners; (R) More noise in corners</span>
+				
+				<br /><img class="image" id="agg1499463565286__image_kkz_5sb_ccb" src="zgk1512420915612.png" /><br />
+			</div>
+</div>
+
+		<p class="p">ANR for noise level low frequency with a DC16 image:<br /><img class="image" id="agg1499463565286__image_brt_xyd_r1b" src="tva1501017608814.svg" /><br /></p>
+
+		<p class="p">ANR for noise level mid frequency with a DC4 image:<br /><img class="image" id="agg1499463565286__image_wnz_xpg_n1b" src="mya1499810454297.svg" /><br /></p>
+
+		<p class="p">ANR for noise level high frequency with a full image:<br /><img class="image" id="agg1499463565286__image_hws_zpg_n1b" src="pck1499810450693.svg" /><br /></p>
+
+		<p class="p">ANR for strength (DCBlend2) mid/low frequency:<br /><img class="image" id="agg1499463565286__image_xt4_2qg_n1b" src="cbf1499810461941.svg" /><br /></p>
+
+		<p class="p">Lens-dependent noise reduction (LNR) is used for aggressive or subtle
+			radial filter behavior. Typically, running a calibration generates good results. LNR can
+			also be used to tune when flat-field images are not available.</p>
+
+		<p class="p">There are four LUTs to adjust, but it is recommended to tune one LUT and
+			apply to the other three. Once an acceptable LUT has been created, adjust the LUTs
+			separately as needed (e.g., more radial filtration on luma only).</p>
+
+		<p class="p">Points of interest (POIs) can be used at the image corners and flat areas
+			to understand the amount of scale that should be applied via thresholds.</p>
+
+		<p class="p">Inter length control is used when flat images contain noise leftovers due to
+			high derivatives that do not pass the thresholds. Each pass uses inter length control to
+			check if the filtered pass beneath it is flat for a pixel. Inter length control can
+			allow lower thresholds and preserve finer details while maintaining clean flat
+			areas.</p>
+
+		<p class="p">Inter length control may cause damage to low contrast details on flat areas,
+			which means the pass below it has been overfiltered. This can be fixed using the
+				<span class="ph uicontrol">Base Functions</span> menu. Inter length control may
+			also cause noisy edges, which are caused by a high strength.</p>
+
+		<p class="p">Sometimes noise is detected correctly, but a more subtle reduction is
+			preferred to preserve details. Just blending with the unfiltered image may reveal many
+			unwanted peaks. <em class="ph i">Filter Final Strength</em> enables a smart blend of
+			filtered and unfiltered images.</p>
+
+		<p class="p">Some areas with defined colors (i.e., faces or sky) require more filtering to
+			make the image more flattering. CNR allows the base functions to be raised up to five
+			areas in the YUV space. For skin color, CNR uses face detection indicators to avoid
+			overfiltering areas with similar colors (i.e., wood).</p>
+
+		<div class="p">Chroma noise is harder to clean on edges due to high luma derivatives.
+			False colors have two ways to correct this issue that affect only chroma channels:<ul class="ul" id="agg1499463565286__ul_ghk_tvt_n1b">
+				<li class="li">Gray edge treatment – Detects strong edges that should have low
+					chromaticity (gray edges) and adjusts the chroma filter to filter it</li>
+
+				<li class="li">Chroma edge treatment – Performs median filter on gray edges and
+					on areas without details that have color noise</li>
+
+			</ul>
+<div class="fig fignone nonumber" id="agg1499463565286__fig_hrw_cv3_ccb"><span class="figcap">Figure : (L) Before tuning false color; (R) After tuning false
+					color</span>
+				
+				<br /><img class="image" id="agg1499463565286__image_d2l_gqg_n1b" src="bnk1499810460911.png" /><br />
+			</div>
+</div>
+
+		<div class="section" id="agg1499463565286__section_nkl_qvd_ydb"><h2 class="title sectiontitle">DC Blend1</h2>
+			
+			<p class="p">
+				<br /><img class="image" id="agg1499463565286__image_fzl_5wd_ydb" src="kjs1527274500986.png" /><br />
+			</p>
+
+			<p class="p">DC Blend1 subtracts coarser scale input YUV chroma channel from the current scale
+				YUV. It then adds the coarser scale output YUV chroma channel to the current scale.
+				There are no tunable parameters for this feature, except to enable or disable
+					it.<br /><img class="image" id="agg1499463565286__image_vsv_cy2_ydb" src="lvq1527286990456.png" /><br /></p>
+
+		</div>
+
+		<div class="section" id="agg1499463565286__section_tt3_rvd_ydb"><h2 class="title sectiontitle">Sigma Filter</h2>
+			
+			<p class="p">
+				<br /><img class="image" id="agg1499463565286__image_as1_vwd_ydb" src="gwy1527274501829.png" /><br />
+			</p>
+
+			<div class="p">The sigma-like filter includes 9x9 luma symmetric filters and 7x7 chroma
+				asymmetric filters with predefined configurable kernels. Due to 420 subsampling, the
+				chroma filter is equivalent to a 14x14 filter in 444 sampling. Pixels processed in
+				the filtration have a central pixel and are chosen according to derivative
+				thresholds, after which the kernel is normalized. Base thresholds are set according
+				to luma values and are dynamically updated according to the following:<ul class="ul" id="agg1499463565286__ul_v3d_xxd_ydb">
+					<li class="li">Area flatness</li>
+
+					<li class="li">Radial distance</li>
+
+					<li class="li">Color</li>
+
+					<li class="li">False color detection</li>
+
+					<li class="li">Distance from the kernel center</li>
+
+				</ul>
+</div>
+
+		</div>
+
+		<div class="section" id="agg1499463565286__section_ylx_rvd_ydb"><h2 class="title sectiontitle">Median</h2>
+			
+			<p class="p">
+				<br /><img class="image" id="agg1499463565286__image_f4q_vwd_ydb" src="oqw1527274498475.png" /><br />
+			</p>
+
+			<div class="p">The median filter includes a 5x5 median or 5x5 bilateral filter on a chroma channel,
+				which is chosen according to the sigma filter indications. It is designed to filter
+				in areas with very few neighborhood details (low activity).<div class="fig fignone" id="agg1499463565286__fig_rhq_szd_ydb"><span class="figcap">Figure : (L) Median off, (R) median on</span>
+					
+					<br /><img class="image" id="agg1499463565286__image_qqd_rzd_ydb" src="and1527275419323.png" /><br />
+				</div>
+</div>
+
+		</div>
+
+		<div class="section" id="agg1499463565286__section_oyp_svd_ydb"><h2 class="title sectiontitle">DC Blend2</h2>
+			
+			<p class="p">
+				<br /><img class="image" id="agg1499463565286__image_p3m_wwd_ydb" src="dqi1527274502546.png" /><br />
+			</p>
+
+			<div class="p">DC Blend2 blends the coarser scale pixel with the current scale pixel. The strength
+				is chosen according to the flatness indication from the sigma filter.<div class="fig fignone" id="agg1499463565286__fig_p1w_ww2_ydb"><span class="figcap">Figure : (L) Lite DCBlend2, (R) strong DCBlend2</span>
+					
+					<br /><img class="image" id="agg1499463565286__image_us4_vw2_ydb" src="ice1527286407650.png" /><br />
+				</div>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="wzh1500920163335.html">ANR parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="xbg1499463478394.html">Tune ANR</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="wzh1500920163335.html" title="The following table lists the gray edge parameters used for tuning the ANR module.">ANR parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="xbg1499463478394.html" title="Advanced noise reduction (ANR) is a multipass spatial noise filtering for snapshot and video modes.">Tune ANR</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

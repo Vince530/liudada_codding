@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  See DisplayTest.xml for format documentation
+-->
+<MetadataDisplays
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataDisplaySchema.xsd">
+  <!-- AWB Info Display -->
+  <Display Name="AWB Info" Title="AWB Info" Section="AWB Debug Info">
+    <Variable Name="AGW number grid point" Value="241"/>
+    <Variable Name="Reference point RG min" Structure="OTP Corrected Reference Points"
+              A="D75 reference point RG Ratio"
+              B="D65 reference point RG Ratio"
+              C="Noon reference point RG Ratio"
+              D="D50 reference point RG Ratio"
+              E="Cold fluorescent (CW) reference point RG Ratio"
+              F="Warm fluorescent (TL84) reference point RG Ratio"
+              G="Incandescent reference point RG Ratio"
+              H="Horizon reference point RG Ratio"
+              I="Custom fluorescent reference point RG Ratio"
+              J="Custom daylight reference point RG Ratio"
+              K="Custom incandescent reference point RG Ratio"
+              L="U30 reference point RG Ratio"
+              Value="({min}(A,B,C,D,E,F,G,H,I,J,K,L)*0.5)"/>
+    <Variable Name="Reference point RG max" Structure="OTP Corrected Reference Points"
+              A="D75 reference point RG Ratio"
+              B="D65 reference point RG Ratio"
+              C="Noon reference point RG Ratio"
+              D="D50 reference point RG Ratio"
+              E="Cold fluorescent (CW) reference point RG Ratio"
+              F="Warm fluorescent (TL84) reference point RG Ratio"
+              G="Incandescent reference point RG Ratio"
+              H="Horizon reference point RG Ratio"
+              I="Custom fluorescent reference point RG Ratio"
+              J="Custom daylight reference point RG Ratio"
+              K="Custom incandescent reference point RG Ratio"
+              L="U30 reference point RG Ratio"
+              Value="({max}(A,B,C,D,E,F,G,H,I,J,K,L)*1.5)"/>
+    <Variable Name="Reference point BG min" Structure="OTP Corrected Reference Points"
+              A="D75 reference point BG Ratio"
+              B="D65 reference point BG Ratio"
+              C="Noon reference point BG Ratio"
+              D="D50 reference point BG Ratio"
+              E="Cold fluorescent (CW) reference point BG Ratio"
+              F="Warm fluorescent (TL84) reference point BG Ratio"
+              G="Incandescent reference point BG Ratio"
+              H="Horizon reference point BG Ratio"
+              I="Custom fluorescent reference point BG Ratio"
+              J="Custom daylight reference point BG Ratio"
+              K="Custom incandescent reference point BG Ratio"
+              L="U30 reference point BG Ratio"
+              Value="({min}(A,B,C,D,E,F,G,H,I,J,K,L)*0.5)"/>
+    <Variable Name="Reference point BG max" Structure="OTP Corrected Reference Points"
+              A="D75 reference point BG Ratio"
+              B="D65 reference point BG Ratio"
+              C="Noon reference point BG Ratio"
+              D="D50 reference point BG Ratio"
+              E="Cold fluorescent (CW) reference point BG Ratio"
+              F="Warm fluorescent (TL84) reference point BG Ratio"
+              G="Incandescent reference point BG Ratio"
+              H="Horizon reference point BG Ratio"
+              I="Custom fluorescent reference point BG Ratio"
+              J="Custom daylight reference point BG Ratio"
+              K="Custom incandescent reference point BG Ratio"
+              L="U30 reference point BG Ratio"
+              Value="({max}(A,B,C,D,E,F,G,H,I,J,K,L)*1.5)"/>
+    <Variable Name="Reference point min"
+              A="Reference point RG min" B="Reference point BG min"
+              Value="({min}(A,B))"/>
+    <Variable Name="Reference point max"
+              A="Reference point RG max" B="Reference point BG max"
+              Value="({max}(A,B))"/>
+    <Variable Name="Green zone delta"  Structure="OTP Corrected Reference Points"
+              A="Reference point max" B="Reference point min" C="AGW number grid point" D="0.5"
+              Value="((A)-(B))/(C+D)"/>
+    <Variable Name="Gray Zone Outlier distance" Structure="Outlier Distance Information"
+              Condition="{vl}3.0.0"
+              Value="Outlier distance squared"/>
+    <Variable Name="Gray Zone Outlier distance" Structure="Outlier Distance Information"
+              Condition="{vg}5.0.0"
+              Value="Outlier distance squared for the daylight zone"/>
+    <Panel Type="Splitter">
+      <Panel Height="500">
+        <!-- Bayer Grid Stats Chart -->
+        <!--Chart Title="Bayer Grid Stats" XTitle="R/G Stats" YTitle="B/G Stats"-->
+        <Chart Title="Bayer Grid Stats" XTitle="R/G Stats" YTitle="B/G Stats" XDecimalPlaces="4" YDecimalPlaces="4" 
+               FixedDimensions="true" XMin="Reference point RG min" XMax="Reference point RG max" YMin="Reference point BG min" YMax="Reference point BG max">
+          <!-- OTP reference points -->
+          <Line Title="OTP ref points" Type="Point" Marker="Circle" Color="Red" Structure="OTP Corrected Reference Points">
+            <Point Title="D75"   X="D75 reference point RG Ratio"                      XTitle="R/G"
+                                 Y="D75 reference point BG Ratio"                      YTitle="B/G"/>
+            <Point Title="D65"   X="D65 reference point RG Ratio"                      XTitle="R/G"
+                                 Y="D65 reference point BG Ratio"                      YTitle="B/G"/>
+            <Point Title="Noon"  X="Noon reference point RG Ratio"                     XTitle="R/G"
+                                 Y="Noon reference point BG Ratio"                     YTitle="B/G"/>
+            <Point Title="D50"   X="D50 reference point RG Ratio"                      XTitle="R/G"
+                                 Y="D50 reference point BG Ratio"                      YTitle="B/G"/>
+            <Point Title="CW"    X="Cold fluorescent (CW) reference point RG Ratio"    XTitle="R/G"
+                                 Y="Cold fluorescent (CW) reference point BG Ratio"    YTitle="B/G"/>
+            <Point Title="TL84"  X="Warm fluorescent (TL84) reference point RG Ratio"  XTitle="R/G"
+                                 Y="Warm fluorescent (TL84) reference point BG Ratio"  YTitle="B/G"/>
+            <Point Title="I"     X="Incandescent reference point RG Ratio"             XTitle="R/G"
+                                 Y="Incandescent reference point BG Ratio"             YTitle="B/G"/>
+            <Point Title="Horz"  X="Horizon reference point RG Ratio"                  XTitle="R/G"
+                                 Y="Horizon reference point BG Ratio"                  YTitle="B/G"/>
+            <Point Title="CustF" X="Custom fluorescent reference point RG Ratio"       XTitle="R/G"
+                                 Y="Custom fluorescent reference point BG Ratio"       YTitle="B/G"/>
+            <Point Title="CustD" X="Custom daylight reference point RG Ratio"          XTitle="R/G"
+                                 Y="Custom daylight reference point BG Ratio"          YTitle="B/G"/>
+            <Point Title="CustI" X="Custom incandescent reference point RG Ratio"      XTitle="R/G"
+                                 Y="Custom incandescent reference point BG Ratio"      YTitle="B/G"/>
+            <Point Title="U30"   X="U30 reference point RG Ratio"                      XTitle="R/G"
+                                 Y="U30 reference point BG Ratio"                      YTitle="B/G"/>
+          </Line>
+          <!-- Grid stats points -->
+          <Line Title="Grid Stats" Type="Point" Condition="{vl}3.0.0" Color="MediumBlue" Marker="None" MarkerSize="3" Section="3A Stats Info"
+                Structure="Bayer Grid Stats Data">
+            <Point Title="Point" A="Red channel sum"   B="Red channel counts"
+                                 C="Blue channel sum"  D="Blue channel counts"
+                                 E="Gr channel sum"    F="Gr channel counts"
+                                 G="Gb channel sum"    H="Gb channel counts"
+                                 X="((A/B)/((E+G)/(F+H)))" XTitle="RAvg/GAvg"
+                                 Y="((C/D)/((E+G)/(F+H)))" YTitle="BAvg/GAvg"/>
+          </Line>
+          <Line Title="Grid Stats" Type="GridStats" Condition="{vg}5.0.0" Marker="None" MarkerSize="3" Section="3A Stats Info" Structure="Bayer Grid Stats Data"
+                DecisionColors="Blue,Blue,Blue,Blue,Yellow,Yellow,Red,Red,Yellow,Blue,Red,Red,Blue,Blue,Yellow,Yellow"
+                OutlierColors=",,Aqua,,Lime," DecisionMap="AWB Debug Info.Stats Arrays.Decision map array"
+                OutlierMap="AWB Debug Info.Stats Arrays.Outlier and green zone map array">
+            <Point Title="Point" A="Red channel sum"   B="Red channel counts"
+                                 C="Blue channel sum"  D="Blue channel counts"
+                                 E="Gr channel sum"    F="Gr channel counts"
+                                 G="Gb channel sum"    H="Gb channel counts"
+                                 X="((A/B)/((E+G)/(F+H)))" XTitle="RAvg/GAvg"
+                                 Y="((C/D)/((E+G)/(F+H)))" YTitle="BAvg/GAvg"/>
+          </Line>
+          <!-- Gray zone area
+             Gray zone is a special line, that must contain the following reference points, in this exact order:
+             D75, D65, Noon D50, Cold F, Warm F, A, H, Cust F, Cust Day, Cust I, U30 
+             Points, must contain the following Attributes:
+                Versions less than 5.0.0:
+                  Point D75:
+                    Distance="Gray Zone Outlier distance" (see Variable definition above)
+                Version greater than or equal to 5.0.0:
+                  Points D75:
+                    Distance="Gray Zone Outlier distance" (see Variable definition above)
+                  Points Cold F, A, H, Cust Day, Cust F:
+                    Distance= Distance squared value for the point
+                  Points D75, A:
+                    DistanceLeft= Distance left value for the point
+                  Point D75:
+                    DistanceTop = Distance top value for the point
+             -->
+          <Line Color="LightGray" Title="Gray zone" Type="GrayZone" Structure="OTP Corrected Reference Points" Size="241"
+                Min="Reference point min" Max="Reference point max">
+            <Point X="Noon reference point RG Ratio"
+                   Y="Noon reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the daylight zone"
+                   DistanceLeft="Outlier Distance Information.Outlier distance squared left of the daylight line"/>
+            <Point X="D75 reference point RG Ratio"
+                   Y="D75 reference point BG Ratio"
+                   Distance="Gray Zone Outlier distance"
+                   DistanceLeft="Outlier Distance Information.Outlier distance squared left of the daylight line"
+                   DistanceTop="Outlier Distance Information.Outlier distance squared top of the daylight line"/>
+            <Point X="D65 reference point RG Ratio"
+                   Y="D65 reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the daylight zone"
+                   DistanceLeft="Outlier Distance Information.Outlier distance squared left of the daylight line"/>
+            <Point X="D50 reference point RG Ratio"
+                   Y="D50 reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the daylight zone"
+                   DistanceLeft="Outlier Distance Information.Outlier distance squared left of the daylight line"/>
+            <Point X="Cold fluorescent (CW) reference point RG Ratio"
+                   Y="Cold fluorescent (CW) reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the fluorescent zone"/>
+            <Point X="Custom fluorescent reference point RG Ratio"
+                   Y="Custom fluorescent reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the custom fluorescent zone"/>
+            <Point X="Warm fluorescent (TL84) reference point RG Ratio"
+                   Y="Warm fluorescent (TL84) reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier Distance Information.Outlier distance squared for the fluorescent zone"/>
+            <Point X="Incandescent reference point RG Ratio"
+                   Y="Incandescent reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the incandescent zone"
+                   DistanceLeft="Outlier Distance Information.Outlier distance squared for the left of A/H zone"/>
+            <Point X="Horizon reference point RG Ratio"
+                   Y="Horizon reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the horizon zone"
+                   DistanceLeft="Outlier Distance Information.Outlier distance squared for the left of A/H zone"/>
+            <Point X="Horizon reference point RG Ratio"
+                   Y="Horizon reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the horizon zone"
+                   DistanceLeft="Outlier Distance Information.Outlier distance squared for the left of A/H zone"/>
+            <Point X="Custom daylight reference point RG Ratio"
+                   Y="Custom daylight reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the custom daylight zone"/>
+            <Point X="Custom incandescent reference point RG Ratio"
+                   Y="Custom incandescent reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the incandescent zone"/>
+            <Point X="U30 reference point RG Ratio"
+                   Y="U30 reference point BG Ratio"
+                   Distance="Outlier Distance Information.Outlier distance squared for the fluorescent zone"/>
+          </Line>
+          <!-- Misleading color zone line
+             Misleading color zone line is a special line that draws the misleading color rectangle.  
+             The misleading color rectangle is calculated internally from values providied by the AWB simulattor.
+             The Min and Max values are the Min/Max OTP Corrected Reference Points
+        -->
+          <Line Condition="{vl}5.1.0" Color="Red" Title="Misleading color zone" Type="MisleadingColor"
+                Size="241" Min="Reference point min" Max="Reference point max"/>
+          <Line Condition="{vg}5.2.2" Color="Red" Title="Misleading color zone" Type="MisleadingColor" Structure="Misleading Zone Information"
+                Size="241" Min="Reference point min" Max="Reference point max" Delta="Green zone delta"
+                RGCenter="R/G Center Array" BGCenter="B/G Center Array" WidthArray="Width Array" HeightArray="Height Array"/>
+          <!-- Green zone line-->
+          <Line Color="Green" Title="Green zone" Type="GreenZone" Structure="Green Zone Information"
+                Condition="Green line slope{and}(Green zone left{lt}Green zone right top half){and}(Green zone right top half{lt}Green zone right bottom half)"
+                Min="Reference point min" Max="Reference point max" 
+                Delta="Green zone delta"  Slope="Green line slope"
+                Left="Green zone left"    Top="Green zone top"
+                RightUpper="Green zone right top half" 
+                RightLower="Green zone right bottom half" 
+                BottomUpper="Green zone bottom top half"
+                BottomLower="Green zone bottom lower half"
+                YInterceptUpper="Green line y-intercept top half" 
+                YInterceptLower="Green line y-intercept bottom half"
+                />
+          <!-- Gray world point -->
+          <Line Title="Gray world" Type="Point" Marker="Diamond" Color="Gray" Structure="Gray World Information">
+            <Point Title="Decision" X="R/G ratio" XTitle="R/G"
+                                    Y="B/G ratio" YTitle="B/G"/>
+          </Line>
+          <!-- White world point -->
+          <Line Title="White world" Type="Point" Marker="Diamond" Color="White" Structure="White World Information">
+            <Point Title="Decision" X="R/G ratio" XTitle="R/G"
+                                    Y="B/G ratio" YTitle="B/G"/>
+          </Line>
+          <!-- Heuristic point -->
+          <Line Title="Heuristic" Type="Point" Marker="Diamond" Color="Purple" Structure="Heuristics Information">
+            <Point Title="Decision" X="R/G ratio after running heuristic" XTitle="R/G"
+                                    Y="B/G ratio after running heuristic" YTitle="B/G"/>
+          </Line>
+          <!-- History point -->
+          <Line Title="History" Type="Point" Marker="Diamond" Color="Cyan" Structure="History">
+            <Point Title="Decision" X="R/G ratio after running history" XTitle="R/G"
+                                    Y="B/G ratio after running history" YTitle="B/G"/>
+          </Line>
+          <!-- Temporal filter point 
+              Note: These are gain values, invert to get ratios (divide green/red and green/blue)
+        -->
+          <Line Title="Temporal filter" Type="Point" Marker="Diamond" Color="Orange" Structure="Temporal Filter Information"
+                Condition="Red gain - Output of temporal filter{and}Blue gain - Output of temporal filter">
+            <Point Title="Output" A="Red gain - Output of temporal filter"
+                                  B="Blue gain - Output of temporal filter"
+                                  C="Green gain - Output of temporal filter"
+                                  X="(C/A)" XTitle="R/G" Y="(C/B)" YTitle="B/G"/>
+          </Line>
+          <!-- Final decision point 
+              Note: These are gain values, invert to get ratios (divide green/red and green/blue)
+        -->
+          <Line Title="Final decision" Type="Point" Marker="Star" MarkerSize="5" Color="Yellow" Structure="AWB Output Information"
+                Condition="Red gain{and}Blue gain">
+            <Point Title="" A="Red gain" B="Blue gain" C="Green gain"
+                            X="(C/A)" XTitle="R/G" Y="(C/B)" YTitle="B/G"/>
+          </Line>
+        </Chart>
+      </Panel>
+      <Panel>
+        <Panel Type="Scroll">
+          <!-- AWB Final Decision Panel -->
+          <Panel Title="AWB Final Decision">
+            <Grid>
+              <Row>
+                <Value Text="Decision:" Bold="true"/>
+                <Value Value="AWB Output Information.Decision"/>
+              </Row>
+              <Row>
+                <Value Text="CCT:" Bold="true"/>
+                <Value Value="AWB Output Information.Color temperature"/>
+              </Row>
+              <Row>
+                <Value Text="Red Gain:" Bold="true"/>
+                <Value Value="AWB Output Information.Red gain"/>
+              </Row>
+              <Row>
+                <Value Text="Green Gain:" Bold="true"/>
+                <Value Value="AWB Output Information.Green gain"/>
+              </Row>
+              <Row>
+                <Value Text="Blue Gain:" Bold="true"/>
+                <Value Value="AWB Output Information.Blue gain"/>
+              </Row>
+              <Row>
+                <Value Text="Exposure index:" Bold="true"/>
+                <Value Value="AWB Input Information.Exposure index"/>
+              </Row>
+              <Row>
+                <Value Text="Lux index:" Bold="true"/>
+                <Value Value="AWB Input Information.Lux index"/>
+              </Row>
+            </Grid>
+          </Panel>
+          <!-- Decision Information Panel -->
+          <Panel Title="Decision Information">
+            <Grid>
+              <Row>
+                <Value Text="Cluster"  Bold="true"/>
+                <Value Text="R/G"      Bold="true" Alignment="Right"/>
+                <Value Text="B/G"      Bold="true" Alignment="Right"/>
+                <Value Text="Decision" Bold="true"/>
+              </Row>
+              <Row>
+                <Value Text ="Gray World [D]" Bold="true" Condition="Gray World Information.Dominant cluster flag" />
+                <Value Text ="Gray World"     Bold="true" Condition="{not}Gray World Information.Dominant cluster flag" />
+                <Value Value="Gray World Information.R/G ratio" Alignment="Right"/>
+                <Value Value="Gray World Information.B/G ratio" Alignment="Right"/>
+                <Value Value="Gray World Information.Decision"/>
+              </Row>
+              <Row>
+                <Value Text ="White World" Bold="true" />
+                <Value Value="White World Information.R/G ratio" Alignment="Right"/>
+                <Value Value="White World Information.B/G ratio" Alignment="Right"/>
+                <Value Value="White World Information.Decision"/>
+              </Row>
+              <Row>
+                <Value Text ="Heuristic" Bold="true" />
+                <Value Value="Heuristics Information.R/G ratio after running heuristic" Alignment="Right"/>
+                <Value Value="Heuristics Information.B/G ratio after running heuristic" Alignment="Right"/>
+                <Value Value="Heuristics Information.Decision after running the heuristic"/>
+              </Row>
+              <Row>
+                <Value Text ="History" Bold="true" />
+                <Value Value="History.R/G ratio after running history" Alignment="Right"/>
+                <Value Value="History.B/G ratio after running history" Alignment="Right"/>
+                <Value Value="History.Decision after running history"/>
+              </Row>
+              <Row>
+                <Value Text ="Adjust gain" Bold="true" />
+                <Value Value="Gain Adjust Information.Gain Adjust Rg Offset"    Alignment="Right" Condition="{vl}3.0.0"/>
+                <Value Value="Gain Adjust Information.Gain adjust red channel"  Alignment="Right" Condition="{vg}5.0.0"/>
+                <Value Value="Gain Adjust Information.Gain Adjust Bg Offset"    Alignment="Right" Condition="{vl}3.0.0"/>
+                <Value Value="Gain Adjust Information.Gain adjust blue channel" Alignment="Right" Condition="{vg}5.0.0"/>
+                <Value Text="-"/>
+              </Row>
+            </Grid>
+          </Panel>
+          <!-- Gray World Statistics Panel -->
+          <Panel Title="Gray World Statistics">
+            <Grid>
+              <Row>
+                <Value Text=""/>
+                <Value Text="Count"   Bold="true" Alignment="Right"/>
+                <Value Text="Weight"  Bold="true" Alignment="Right"/>
+                <Value Text="Avg R/G" Bold="true" Alignment="Right"/>
+                <Value Text="Avg B/G" Bold="true" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Daylight" Bold="true" />
+                <Value Value="GW Daylight Cluster Information.Daylight sample count"    Alignment="Right"/>
+                <Value Value="GW Daylight Cluster Weights.Final weight"                 Alignment="Right"/>
+                <Value Value="GW Daylight Cluster Information.Daylight group rg ratios" Alignment="Right"/>
+                <Value Value="GW Daylight Cluster Information.Daylight group bg ratios" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Fluorescent" Bold="true" />
+                <Value Value="GW Fluorescent Cluster Information.Total fluorescent sample count"  Alignment="Right"/>
+                <Value Value="GW Fluorescent Cluster Weights.Final weight"                        Alignment="Right"/>
+                <Value Value="GW Fluorescent Cluster Information.Fluorescent group rg ratios"     Alignment="Right"/>
+                <Value Value="GW Fluorescent Cluster Information.Fluorescent group bg ratios"     Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Incandescent" Bold="true" />
+                <Value Value="GW Incandescent Cluster Information.Incandescent sample count"    Alignment="Right"/>
+                <Value Value="GW Incandescent Weights.Final weight"                             Alignment="Right"/>
+                <Value Value="GW Incandescent Cluster Information.Incandescent group rg ratios" Alignment="Right"/>
+                <Value Value="GW Incandescent Cluster Information.Incandescent group bg ratios" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="F-A-H" Bold="true" />
+                <Value Value="Fluorescent, Incandescent and Horizon Cluster.F-A-H sample count"                       Alignment="Right"/>
+                <Value Text="-"                                                                                       Alignment="Right"/>
+                <Value Value="Fluorescent, Incandescent and Horizon Cluster.F-A-H cluster weighted average R/G ratio" Alignment="Right"/>
+                <Value Value="Fluorescent, Incandescent and Horizon Cluster.F-A-H cluster weighted average B/G ratio" Alignment="Right"/>
+              </Row>
+            </Grid>
+          </Panel>
+          <!-- White World Statistics Panel -->
+          <Panel Title="White World Statistics">
+            <Grid>
+              <Row>
+                <Value Text=""/>
+                <Value Text="Count"   Bold="true" Alignment="Right"/>
+                <Value Text="Y max"   Bold="true" Alignment="Right"/>
+                <Value Text="Avg R/G" Bold="true" Alignment="Right"/>
+                <Value Text="Avg B/G" Bold="true" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Daylight" Bold="true" />
+                <Value Value="WW Daylight Cluster.Daylight sample count"    Alignment="Right"/>
+                <Value Value="Unsaturated Y values.Y max for day cluster"   Alignment="Right"/>
+                <Value Value="WW Daylight Cluster.Daylight group rg ratios" Alignment="Right"/>
+                <Value Value="WW Daylight Cluster.Daylight group bg ratios" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Fluorescent" Bold="true" />
+                <Value Value="WW Fluorescent Cluster.Total fluorescent sample count" Alignment="Right"/>
+                <Value Value="Unsaturated Y values.Y max for fluorescent cluster"    Alignment="Right"/>
+                <Value Value="WW Fluorescent Cluster.Fluorescent group rg ratios"    Alignment="Right"/>
+                <Value Value="WW Fluorescent Cluster.Fluorescent group bg ratios"    Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Incandescent" Bold="true" />
+                <Value Value="WW Incandescent Cluster.Incandescent sample count"    Alignment="Right"/>
+                <Value Value="Unsaturated Y values.Y max for incandescent cluster"  Alignment="Right"/>
+                <Value Value="WW Incandescent Cluster.Incandescent group rg ratios" Alignment="Right"/>
+                <Value Value="WW Incandescent Cluster.Incandescent group bg ratios" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Horizon" Bold="true" />
+                <Value Value="Horizon Distribution 2.Horizon sample count"    Alignment="Right"/>
+                <Value Value="Unsaturated Y values.Y max for horizon cluster" Alignment="Right"/>
+                <Value Value="Horizon Distribution 2.Horizon group rg ratios" Alignment="Right"/>
+                <Value Value="Horizon Distribution 2.Horizon group bg ratios" Alignment="Right"/>
+              </Row>
+            </Grid>
+            <Panel Type="Fixed" Background="White" Border="true">
+              <Grid>
+                <Row>
+                  <Value Text="Y min:" Bold="true"/>
+                  <Value Value="Unsaturated Y values.Y min value"/>
+                  <Value Text="Y mid:" Bold="true"/>
+                  <Value Value="Unsaturated Y values.Y mid value"/>
+                  <Value Text="Y max:" Bold="true"/>
+                  <Value Value="Unsaturated Y values.Y max value"/>
+                </Row>
+              </Grid>
+            </Panel>
+          </Panel>
+          <!-- Extreme Green Statistics Panel -->
+          <Panel Title="Extreme Green Statistics">
+            <Check Title="Extreme green detected" Value="Heuristics Information.Green content detected"/>
+            <Grid>
+              <Row>
+                <Value Text=""/>
+                <Value Text="Count"   Bold="true" Alignment="Right"/>
+                <Value Text="Avg B/G" Bold="true" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text="Extreme green" Bold="true"/>
+                <Value Value="Green Zone Information.Green count"       Alignment="Right"/>
+                <Value Value="Green Zone Information.Green average B/G" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text="Non-extreme green" Bold="true"/>
+                <Value Text="-" Alignment="Right"/>
+                <Value Text="-" Alignment="Right"/>
+              </Row>
+            </Grid>
+          </Panel>
+          <!-- Extreme Blue Statistics Panel -->
+          <Panel Title="Extreme Blue Statistics">
+            <Check Title="Extreme blue detected" Value="Heuristics Information.Extreme blue content detected"/>
+            <Grid>
+              <Row>
+                <Value Text=""/>
+                <Value Text="Count"   Bold="true" Alignment="Right"/>
+                <Value Text="Avg B/G" Bold="true" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text="Extreme blue" Bold="true"/>
+                <Value Value="Extreme Blue and Compact Cluster Information.Extreme blue count"              Alignment="Right"/>
+                <Value Value="Extreme Blue and Compact Cluster Information.Extreme blue average B/G ratio"  Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text="Non-extreme green" Bold="true"/>
+                <Value Value="Extreme Blue and Compact Cluster Information.Non extreme blue count"              Alignment="Right"/>
+                <Value Value="Extreme Blue and Compact Cluster Information.Non extreme blue average B/G ratio"  Alignment="Right"/>
+              </Row>
+            </Grid>
+          </Panel>
+          <!-- Weight Information Panel -->
+          <Panel Title="Weight Information">
+            <Check Title="Weight vector used" Value="{not}Gray World Information.Dominant cluster flag"/>
+            <Grid>
+              <Row>
+                <Value Text=""/>
+                <Value Text="Distance-based"   Bold="true" Alignment="Right"/>
+                <Value Text="Illuminant-based" Bold="true" Alignment="Right"/>
+                <Value Text="Final weight"     Bold="true" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text="Daylight" Bold="true"/>
+                <Value Value="GW Daylight Cluster Weights.Distance based weight"    Alignment="Right"/>
+                <Value Value="GW Daylight Cluster Weights.Illuminant based weight"  Alignment="Right"/>
+                <Value Value="GW Daylight Cluster Weights.Final weight"             Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text="Fluorescent" Bold="true"/>
+                <Value Value="GW Fluorescent Cluster Weights.Distance based weight"   Alignment="Right"/>
+                <Value Value="GW Fluorescent Cluster Weights.Illuminant based weight" Alignment="Right"/>
+                <Value Value="GW Fluorescent Cluster Weights.Final weight"            Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text="Incandescent" Bold="true"/>
+                <Value Value="GW Incandescent Weights.Distance based weight"    Alignment="Right"/>
+                <Value Value="GW Incandescent Weights.Illuminant based weight"  Alignment="Right"/>
+                <Value Value="GW Incandescent Weights.Final weight"             Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text="Horizon" Bold="true"/>
+                <Value Value="Horizon Weights.Distance based weight"    Alignment="Right"/>
+                <Value Value="Horizon Weights.Illuminant based weight"  Alignment="Right"/>
+                <Value Value="Horizon Weights.Final weight"             Alignment="Right"/>
+              </Row>
+            </Grid>
+          </Panel>
+          <!-- History Heuristics Panel -->
+          <Panel Title="History Heuristics">
+            <Grid>
+              <Row>
+                <Grid Title="Gray/White Average History" Bold="true" Underline="true">
+                  <Row>
+                    <Value Text=""/>
+                    <Value Text="Count"   Bold="true" Alignment="Right"/>
+                    <Value Text="Avg R/G" Bold="true" Alignment="Right"/>
+                    <Value Text="Avg B/G" Bold="true" Alignment="Right"/>
+                  </Row>
+                  <Row>
+                    <Value Text ="Daylight" Bold="true" />
+                    <Value Value="History sample classification.Daylight history count"             Alignment="Right"/>
+                    <Value Value="History sample classification.Daylight history R/G average ratio" Alignment="Right"/>
+                    <Value Value="History sample classification.Daylight history B/G average ratio" Alignment="Right"/>
+                  </Row>
+                  <Row>
+                    <Value Text ="Fluorescent" Bold="true" />
+                    <Value Value="History sample classification.Fluorescent history count"              Alignment="Right"/>
+                    <Value Value="History sample classification.Fluorescent history R/G average ratio"  Alignment="Right"/>
+                    <Value Value="History sample classification.Fluorescent history B/G average ratio"  Alignment="Right"/>
+                  </Row>
+                  <Row>
+                    <Value Text ="Incandescent" Bold="true" />
+                    <Value Value="History sample classification.Incandescent history count"             Alignment="Right"/>
+                    <Value Value="History sample classification.Incandescent history R/G average ratio" Alignment="Right"/>
+                    <Value Value="History sample classification.Incandescent history B/G average ratio" Alignment="Right"/>
+                  </Row>
+                  <Row>
+                    <Value Text ="Horizon" Bold="true" />
+                    <Value Value="History sample classification.Horizon history count"              Alignment="Right"/>
+                    <Value Value="History sample classification.Horizon history R/G average ratio"  Alignment="Right"/>
+                    <Value Value="History sample classification.Horizon history B/G average ratio"  Alignment="Right"/>
+                  </Row>
+                  <Row>
+                    <Check Title="History replaced" Value="History Heuristics.History Replaced"/>
+                  </Row>
+                </Grid>
+                <Grid Title="After History is Run" Bold="true" Underline="true">
+                  <Row>
+                    <Value Text="Decision:" Bold="true"/>
+                    <Value Value="History.Decision after running history"/>
+                  </Row>
+                  <Row>
+                    <Value Text="R/G ratio:" Bold="true"/>
+                    <Value Value="History.R/G ratio after running history"/>
+                  </Row>
+                  <Row>
+                    <Value Text="B/G ratio:" Bold="true"/>
+                    <Value Value="History.B/G ratio after running history"/>
+                  </Row>
+                </Grid>
+              </Row>
+            </Grid>
+          </Panel>
+          <!-- R/G-B/G History Panel -->
+          <Panel Title="R/G-B/G History">
+            <Chart Title="R/G-B/G History" YTitle="R/G - B/G" XTitle="Frames" XMin="+0" XMax="+0" YDecimalPlaces="4" Height="260">
+              <Line Title="R/G History" Type="Line" Marker="Triangle" Color="Red">
+                <Point Y="History array.History R/G ratio"/>
+              </Line>
+              <Line Title="B/G History" Type="Line" Marker="Triangle" Color="Blue">
+                <Point Y="History array.History B/G ratio"/>
+              </Line>
+            </Chart>
+          </Panel>
+          <!-- Reference Point Information Panel -->
+          <Panel Title="OTP Corrected Reference Points" Structure="OTP Corrected Reference Points">
+            <Grid>
+              <Row>
+                <Value Text="Name"   Bold="true"/>
+                <Value Text="R/G"    Bold="true" Alignment="Right"/>
+                <Value Text="B/G"    Bold="true" Alignment="Right"/>
+                <Value Text="Grid X" Bold="true" Alignment="Right"/>
+                <Value Text="Grid Y" Bold="true" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="D65" Bold="true"/>
+                <Value Value="D65 reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="D65 reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="D65 reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="D65 reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Noon" Bold="true"/>
+                <Value Value="Noon reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="Noon reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Noon reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Noon reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="D50" Bold="true"/>
+                <Value Value="D50 reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="D50 reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="D50 reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="D50 reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Cold fluorescent (CW)" Bold="true"/>
+                <Value Value="Cold fluorescent (CW) reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="Cold fluorescent (CW) reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Cold fluorescent (CW) reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Cold fluorescent (CW) reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Warm fluorescent (TL84)" Bold="true"/>
+                <Value Value="Warm fluorescent (TL84) reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="Warm fluorescent (TL84) reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Warm fluorescent (TL84) reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Warm fluorescent (TL84) reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Incandescent (A)" Bold="true"/>
+                <Value Value="Incandescent reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="Incandescent reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Incandescent reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Incandescent reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Horizon (H)" Bold="true"/>
+                <Value Value="Horizon reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="Horizon reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Horizon reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Horizon reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Custom fluorescent" Bold="true"/>
+                <Value Value="Custom fluorescent reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="Custom fluorescent reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Custom fluorescent reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Custom fluorescent reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Custom daylight" Bold="true"/>
+                <Value Value="Custom daylight reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="Custom daylight reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Custom daylight reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Custom daylight reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Custom incandescent" Bold="true"/>
+                <Value Value="Custom incandescent reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="Custom incandescent reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Custom incandescent reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Custom incandescent reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="U30" Bold="true"/>
+                <Value Value="U30 reference point RG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="U30 reference point BG Ratio" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="U30 reference point RG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="U30 reference point BG Ratio" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Min (min * 0.5)" Bold="true"/>
+                <Value Value="Reference point RG min" Places="7" Alignment="Right"/>
+                <Value Value="Reference point BG min" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Reference point RG min" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Reference point BG min" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Max (max * 1.5)" Bold="true"/>
+                <Value Value="Reference point RG max" Places="7" Alignment="Right"/>
+                <Value Value="Reference point BG max" Places="7" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Reference point RG max" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+                <Value Value="((A-B)/C)" Places="2" A="Reference point BG max" B="Reference point min" C="Green zone delta" Alignment="Right"/>
+              </Row>
+            </Grid>
+            <Panel Type="Fixed" Background="White" Border="true">
+              <Grid>
+                <Row>
+                  <Value Text="Min (min * 0.5):" Bold="true"/>
+                  <Value Value="Reference point min" Places="7"/>
+                  <Value Text="Max (max * 1.5):" Bold="true"/>
+                  <Value Value="Reference point max" Places="7"/>
+                  <Value Text="Delta ((Max-Min)/241.5):" Bold="true"/>
+                  <Value Value="Green zone delta" Places="7"/>
+                </Row>
+              </Grid>
+            </Panel>
+          </Panel>
+          <!-- Green Zone Information Panel -->
+          <Panel Title="Green Zone Information" Structure="Green Zone Information">
+            <Grid>
+              <Row>
+                <Value Text="Name" Bold="true"/>
+                <Value Text="Value"  Bold="true" Alignment="Right"/>
+                <Value Text="(Value * Delta) + Min"  Bold="true" Alignment="Right"/>
+              </Row>
+              <Row>
+                <Value Text ="Left" Bold="true"/>
+                <Value Value="Green zone left" Alignment="Right"/>
+                <Value Value="((A*B)+C)" Places="7" Alignment="Right" A="Green zone left" B="Green zone delta" C="Reference point min"/>
+                <Value Text="R/G" Alignment="Left"/>
+              </Row>
+              <Row>
+                <Value Text ="Top" Bold="true"/>
+                <Value Value="Green zone top" Alignment="Right"/>
+                <Value Value="((A*B)+C)" Places="7" Alignment="Right" A="Green zone top" B="Green zone delta" C="Reference point min"/>
+                <Value Text="B/G" Alignment="Left"/>
+              </Row>
+              <Row>
+                <Value Text ="Right Upper" Bold="true"/>
+                <Value Value="Green zone right top half" Alignment="Right"/>
+                <Value Value="((A*B)+C)" Places="7" Alignment="Right" A="Green zone right top half" B="Green zone delta" C="Reference point min"/>
+                <Value Text="R/G" Alignment="Left"/>
+              </Row>
+              <Row>
+                <Value Text ="Right Lower" Bold="true"/>
+                <Value Value="Green zone right bottom half" Alignment="Right"/>
+                <Value Value="((A*B)+C)" Places="7" Alignment="Right" A="Green zone right bottom half" B="Green zone delta" C="Reference point min"/>
+                <Value Text="R/G" Alignment="Left"/>
+              </Row>
+              <Row>
+                <Value Text ="Bottom Upper" Bold="true"/>
+                <Value Value="Green zone bottom top half" Alignment="Right"/>
+                <Value Value="((A*B)+C)" Places="7" Alignment="Right" A="Green zone bottom top half" B="Green zone delta" C="Reference point min"/>
+                <Value Text="B/G" Alignment="Left"/>
+              </Row>
+              <Row>
+                <Value Text ="Bottom Lower" Bold="true"/>
+                <Value Value="Green zone bottom lower half" Alignment="Right"/>
+                <Value Value="((A*B)+C)" Places="7" Alignment="Right" A="Green zone bottom lower half" B="Green zone delta" C="Reference point min"/>
+                <Value Text="B/G" Alignment="Left"/>
+              </Row>
+              <Row>
+                <Value Text ="Y-Intercept Upper" Bold="true"/>
+                <Value Value="Green line y-intercept top half" Alignment="Right"/>
+                <Value Value="((A*B)+C)" Places="7" Alignment="Right" A="Green line y-intercept top half" B="Green zone delta" C="Reference point min"/>
+                <Value Text="B/G" Alignment="Left"/>
+              </Row>
+              <Row>
+                <Value Text ="Y-Intercept Lower" Bold="true"/>
+                <Value Value="Green line y-intercept bottom half" Alignment="Right"/>
+                <Value Value="((A*B)+C)" Places="7" Alignment="Right" A="Green line y-intercept bottom half" B="Green zone delta" C="Reference point min"/>
+                <Value Text="B/G" Alignment="Left"/>
+              </Row>
+            </Grid>
+          </Panel>
+        </Panel>
+      </Panel>
+    </Panel>
+  </Display>
+</MetadataDisplays>

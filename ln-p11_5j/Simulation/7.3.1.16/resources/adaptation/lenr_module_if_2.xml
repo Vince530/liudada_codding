@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="LENR">
+    <param id="1"  name="lenr_dn4_bltr_th" autotune="1" submodule="SubModule1">0:1:16</param>
+	<param id="2"  name="lenr_dn8_bltr_th" autotune="1" submodule="SubModule1">0:1:16</param>
+	<param id="3"  name="lenr_dn16_bltr_th" autotune="1" submodule="SubModule1">0:1:16</param>
+	<param id="4"  name="lenr_dn4_bltr_gap" autotune="1" submodule="SubModule1">0:1:5</param>
+	<param id="5"  name="lenr_dn8_bltr_gap" autotune="1" submodule="SubModule1">0:1:5</param>
+	<param id="6"  name="lenr_dn16_bltr_gap" autotune="1" submodule="SubModule1">0:1:5</param>
+	<param id="7"  name="lenr_dn4_bltr_ctrl_th" autotune="1" submodule="SubModule2">50:1:256</param>
+	<param id="8"  name="lenr_dn8_bltr_ctrl_th" autotune="1" submodule="SubModule2">50:1:256</param>
+	<param id="9"  name="lenr_dn16_bltr_ctrl_th" autotune="1" submodule="SubModule2">50:1:256</param>
+	<param id="10"  name="lenr_dn4_bltr_ctrl_w" autotune="1" submodule="SubModule2">0:1:256</param>
+	<param id="11"  name="lenr_dn8_bltr_ctrl_w" autotune="1" submodule="SubModule2">0:1:256</param>
+	<param id="12"  name="lenr_dn16_bltr_ctrl_w" autotune="1" submodule="SubModule2">0:1:256</param>
+	<param id="13"  name="lenr_dn4_bltr_fnr_gain_arr_x1" autotune="0" submodule="SubModule3">0:1:15</param> 
+	<param id="14"  name="lenr_dn4_bltr_fnr_gain_arr_y1" autotune="0" submodule="SubModule3">10:1:32</param> 
+	<param id="15"  name="lenr_dn4_bltr_fnr_gain_arr_x2" autotune="0" submodule="SubModule3">1:1:16</param>
+	<param id="16"  name="lenr_dn4_bltr_fnr_gain_arr_y2" autotune="0" submodule="SubModule3">11:1:32</param>
+	<param id="17"  name="lenr_dn8_bltr_fnr_gain_arr_x1" autotune="0" submodule="SubModule4">0:1:15</param>
+	<param id="18"  name="lenr_dn8_bltr_fnr_gain_arr_y1" autotune="0" submodule="SubModule4">10:1:32</param>
+	<param id="19"  name="lenr_dn8_bltr_fnr_gain_arr_x2" autotune="0" submodule="SubModule4">1:1:16</param>
+	<param id="20"  name="lenr_dn8_bltr_fnr_gain_arr_y2" autotune="0" submodule="SubModule4">11:1:32</param>
+	<param id="21"  name="lenr_dn16_bltr_fnr_gain_arr_x1" autotune="0" submodule="SubModule5">0:1:15</param>
+	<param id="22"  name="lenr_dn16_bltr_fnr_gain_arr_y1" autotune="0" submodule="SubModule5">10:1:32</param>
+	<param id="23"  name="lenr_dn16_bltr_fnr_gain_arr_x2" autotune="0" submodule="SubModule5">1:1:16</param>
+	<param id="24"  name="lenr_dn16_bltr_fnr_gain_arr_y2" autotune="0" submodule="SubModule5">11:1:32</param>
+	<param id="25"  name="lenr_dn4_lce_core_p" autotune="1" submodule="SubModule6">0:1:8</param>
+	<param id="26"  name="lenr_dn8_lce_core_p" autotune="1" submodule="SubModule6">0:1:8</param>
+	<param id="27"  name="lenr_dn16_lce_core_p" autotune="1" submodule="SubModule6">0:1:8</param>
+	<param id="28"  name="lenr_dn4_lce_core_n" autotune="1" submodule="SubModule6">0:1:8</param>
+	<param id="29"  name="lenr_dn8_lce_core_n" autotune="1" submodule="SubModule6">0:1:8</param>
+	<param id="30"  name="lenr_dn16_lce_core_n" autotune="1" submodule="SubModule6">0:1:8</param>
+	<param id="31"  name="lenr_dn4_lce_scaling_p" autotune="1" submodule="SubModule7">0:1:128</param>
+	<param id="32"  name="lenr_dn8_lce_scaling_p" autotune="1" submodule="SubModule7">0:1:128</param>
+	<param id="33"  name="lenr_dn16_lce_scaling_p" autotune="1" submodule="SubModule7">0:1:128</param>
+	<param id="34"  name="lenr_dn4_lce_scaling_n" autotune="1" submodule="SubModule7">0:1:128</param>
+	<param id="35"  name="lenr_dn8_lce_scaling_n" autotune="1" submodule="SubModule7">0:1:128</param>
+	<param id="36"  name="lenr_dn16_lce_scaling_n" autotune="1" submodule="SubModule7">0:1:128</param>
+	<param id="37"  name="lenr_dn4_lce_clamp_p" autotune="1" submodule="SubModule8">0:1:10</param>
+	<param id="38"  name="lenr_dn8_lce_clamp_p" autotune="1" submodule="SubModule8">0:1:10</param>
+	<param id="39"  name="lenr_dn16_lce_clamp_p" autotune="1" submodule="SubModule8">0:1:10</param>
+	<param id="40"  name="lenr_dn4_lce_clamp_n" autotune="1" submodule="SubModule8">-10:1:0</param>
+	<param id="41"  name="lenr_dn8_lce_clamp_n" autotune="1" submodule="SubModule8">-10:1:0</param>
+	<param id="42"  name="lenr_dn16_lce_clamp_n" autotune="1" submodule="SubModule8">-10:1:0</param>
+	<param id="43"  name="lenr_dn4_lce_fnr_gain_arr_x1" autotune="0" submodule="SubModule9">0:1:15</param> 
+	<param id="44"  name="lenr_dn4_lce_fnr_gain_arr_y1" autotune="0" submodule="SubModule9">10:1:32</param> 
+	<param id="45"  name="lenr_dn4_lce_fnr_gain_arr_x2" autotune="0" submodule="SubModule9">1:1:16</param>
+	<param id="46"  name="lenr_dn4_lce_fnr_gain_arr_y2" autotune="0" submodule="SubModule9">11:1:32</param>
+	<param id="47"  name="lenr_dn8_lce_fnr_gain_arr_x1" autotune="0" submodule="SubModule10">0:1:15</param>
+	<param id="48"  name="lenr_dn8_lce_fnr_gain_arr_y1" autotune="0" submodule="SubModule10">10:1:32</param>
+	<param id="49"  name="lenr_dn8_lce_fnr_gain_arr_x2" autotune="0" submodule="SubModule10">1:1:16</param>
+	<param id="50"  name="lenr_dn8_lce_fnr_gain_arr_y2" autotune="0" submodule="SubModule10">11:1:32</param>
+	<param id="51"  name="lenr_dn16_lce_fnr_gain_arr_x1" autotune="0" submodule="SubModule11">0:1:15</param>
+	<param id="52"  name="lenr_dn16_lce_fnr_gain_arr_y1" autotune="0" submodule="SubModule11">10:1:32</param>
+	<param id="53"  name="lenr_dn16_lce_fnr_gain_arr_x2" autotune="0" submodule="SubModule11">1:1:16</param>
+	<param id="54"  name="lenr_dn16_lce_fnr_gain_arr_y2" autotune="0" submodule="SubModule11">11:1:32</param>
+   
+    <lin_ineq_constraints>
+	<param_id_list>9, 12</param_id_list>
+	            <A>1  -1
+	           </A>
+		<B>0</B>                                                                            
+	</lin_ineq_constraints>
+	<lin_ineq_constraints>
+	<param_id_list>7, 10</param_id_list>
+	            <A>1  -1
+	           </A>
+		<B>0</B>                                                                            
+	</lin_ineq_constraints>
+	<lin_ineq_constraints>
+	<param_id_list>8, 11</param_id_list>
+	            <A>1  -1
+	           </A>
+		<B>0</B>                                                                            
+	</lin_ineq_constraints>
+   	<lin_ineq_constraints>
+		<param_id_list>13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24</param_id_list>
+		            <A> 1   0  -1   0   0   0   0   0   0   0   0   0; 
+                        0   1   0  -1   0   0   0   0   0   0   0   0; 
+                        0   0   0   0   1   0  -1   0   0   0   0   0; 
+                        0   0   0   0   0   1   0  -1   0   0   0   0;  
+                        0   0   0   0   0   0   0   0   1   0  -1   0;
+						0   0   0   0   0   0   0   0   0   1   0  -1
+					</A>
+		<B>0;0;0;0;0;0</B>                                                                            
+	</lin_ineq_constraints>  
+    <lin_ineq_constraints>
+		<param_id_list> 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54</param_id_list>
+		            <A>  1   0  -1   0   0   0   0   0   0   0   0   0; 
+                         0   1   0  -1   0   0   0   0   0   0   0   0; 
+                         0   0   0   0   1   0  -1   0   0   0   0   0; 
+                         0   0   0   0   0   1   0  -1   0   0   0   0;  
+                         0   0   0   0   0   0   0   0   1   0  -1   0;
+						 0   0   0   0   0   0   0   0   0   1   0  -1
+					</A>
+		<B>0;0;0;0;0;0</B>                                
+	</lin_ineq_constraints> 
+	
+    <mapping dest="pcsim">update_xml_lenr</mapping>
+    <mapping dest="chromatix">lenr_autotune2chromatix</mapping>
+    <isp_pipeline>IPE</isp_pipeline>
+    <chromatix_tag>lenr10_ipe</chromatix_tag>
+    <gen_pop_function>gen_pop_for_lenr</gen_pop_function>
+</module_if>
+

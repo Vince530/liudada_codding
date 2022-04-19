@@ -1,0 +1,95 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Traditional video display systems, such as those based on Cathode Ray Tubes (CRTs), have a non-linear, power-law response (roughly a 2.5 power function) to the pixel values. Gamma correction refers to ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Gamma tuning concepts" /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="DC.Relation" scheme="URI" content="vhs1494872181295.html" /><meta name="DC.Relation" scheme="URI" content="vhs1494872181295.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qoj1465341643260" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Gamma tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qoj1465341643260">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Gamma tuning concepts </h1>
+
+	<div class="body conbody">
+		<div class="p">Traditional video display systems, such as those based on Cathode Ray Tubes
+			(CRTs), have a non-linear, power-law response (roughly a 2.5 power function) to the
+			pixel values. Gamma correction refers to the techniques of pre-adjusting the brightness
+			of the image captured by an image sensor to boost darker signals for better display on
+			video monitors. For example, gamma correction could be roughly a 1/2.5 power function of
+			the pixel value. The figure below shows how gamma curve improves dark area’s
+				brightness.<div class="fig fignone nonumber" id="qoj1465341643260__fig_ull_q3f_dcb"><span class="figcap">Figure : (L) Before; (R) After</span>
+				
+				<br /><img class="image" id="qoj1465341643260__image_swl_zpw_fw" src="gro1494872244990.png" height="423" width="537" /><br />
+			</div>
+</div>
+
+		<div class="section" id="qoj1465341643260__section_N10039_N1000E_N10001"><h2 class="title sectiontitle">Concept and algorithm</h2>
+			<p class="p">The proposed method provides a high quality gamma correction that can
+				approximate practical gamma curves with virtually no loss in visual quality. From
+				various experiments, it has been shown that there is no need to have 4096 entries of
+				LUT for 12-bit data. Limited by the display resolution (8 bit per color per pixel)
+				and human perception resolution, it is sufficient to use a few points to approximate
+				the gamma curve and interconnect these points with straight lines. The linearly
+				interpolated curve has almost the same visual performance as the original curve as
+				long as the number of points that approximates the gamma curve is not too small. Per
+				every frame, this single-pixel, single-color gamma transformation can be performed
+				using a 64-value LUT for each of the colors: red, green, and blue.</p>
+
+		</div>
+
+		<div class="section" id="qoj1465341643260__section_N10080_N1000F_N10001"><h2 class="title sectiontitle">Gamma table</h2>
+			
+			<p class="p">Even though the input data to the Gamma Correction block is 12 bits, it is not
+				necessary to prepare a 4096 entry LUT. 64 entry-LUT is enough and these entries are
+				expanded by linear interpolation. <br /><img class="image" id="qoj1465341643260__image_ppv_qrw_fw" src="rmb1494872314348.png" /><br /></p>
+
+		</div>
+
+		<div class="section" id="qoj1465341643260__section_N100AA_N1000F_N10001x"><h2 class="title sectiontitle">Gamma tuning effects</h2>
+			
+			<p class="p">Gamma tuning adjusts the pixel sensitivity of the camera sensor to
+				increase the contrast between various shades of a particular color. When a digital
+				image is captured, each level of gray is encoded to a certain pixel brightness
+				value. This pixel encoding can either be linear-encoded or gamma-encoded. </p>
+
+			<div class="p">With linear pixel encoding, there is a 1-to-1 relationship between the amount
+				of signal a pixel produces to the amount of photons hitting the pixel. However,
+				gamma encoding is nonlinear, and the pixel signal level for certain tones are
+				boosted or reduced to improve contrast. Reducing the far left (low-light) end and
+				boosting the middle (brighter light) of the exposure curve increases perceived image
+				contrast. <div class="fig fignone nonumber" id="qoj1465341643260__fig_pkj_gjf_dcb"><span class="figcap">Figure : (L) Linear pixel encoding; (R) Gamma pixel
+						encoding</span>
+					
+					<br /><img class="image" id="qoj1465341643260__image_ngk_cvh_cw" src="jnp1494872294068.png" /><br />
+				</div>
+</div>
+
+			<p class="p">For example, in the image that follows, the original grayscale is
+				shown captured with linear encoding and gamma encoding. With linear encoding, large
+				increments of the dark end of the scale are shown at the same shade, which results
+				in low contrast of darker images. But with gamma encoding, the darker end of the
+				scale breaks the scale into smaller increments at different brightness levels, which
+				increases image contrast. <br /><img class="image" id="qoj1465341643260__image_ogk_cvh_cw" src="enf1494872428727.svg" /><br /></p>
+
+			<p class="p">To tune the gamma of the tuning device to have the same contrast as a
+				reference device, adjust the gamma curve of the tuning device to be the same as the
+				reference device. </p>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="vhs1494872181295.html">Edit gamma curve</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="vhs1494872181295.html" title="Prepare a gamma curve for each color correction region.">Edit gamma curve</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,154 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The following are required to create a tuning project: Project folder – The root folder where project files are stored from Chromatix. XSD folder – A local copy of the default XSD files. The default ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Create a new tuning project" /><meta name="DC.Relation" scheme="URI" content="ufk1494872219078.html" /><meta name="DC.Relation" scheme="URI" content="dzv1494872391692.html" /><meta name="DC.Relation" scheme="URI" content="dzv1494872391692.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ynu1458948384751" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Create a new tuning project</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ynu1458948384751">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="ufk1494872219078.html" title="Prerequisites">Prerequisites</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="ufk1494872219078.html" title="Prerequisites"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Prerequisites</span></a></span>  </div></td></tr></tbody></table> 
+  <h1 class="title topictitle1" id="ariaid-title1">Create a new tuning project</h1>
+ 
+  <div class="body taskbody">
+		<div class="section prereq p" id="ynu1458948384751__prereq_N10012_N1000F_N10001">The following are required to create a
+			tuning project: <ul class="ul" id="ynu1458948384751__ul_gjn_g3h_lbb">
+				<li class="li">Project folder – The root folder where project files are stored from
+					Chromatix.</li>
+
+				<li class="li">XSD folder – A local copy of the default XSD files. The default
+					files are located here:<em class="ph i">
+						$BUILD_ROOT\LINUX\android\vendor\qcom\proprietary\chi-cdk\cdk\chromatix\XSD</em></li>
+
+				<li class="li">XML folder – A local copy of the default XML files. The default
+					files are located here:<em class="ph i">
+						$BUILD_ROOT\LINUX\android\vendor\qcom\proprietary\chi-cdk\cdk\chromatix\XML</em></li>
+
+				<li class="li">Presets folder – A local copy of presets. The default files are located here:
+						<em class="ph i">$BUILD_ROOT\LINUX\android\vendor\qcom\proprietary\chi-cdk\cdk\chromatix\presets</em></li>
+
+				<li class="li">Driver info – The sensor driver information file is provided by
+					the sensor manufacturer in a text or xml file. If this file is not available,
+					specify the sensor information when you create the project. </li>
+
+			</ul>
+<p class="p"><strong class="ph b">Note</strong>: It is recommended that you use a
+				similar directory structure as the build when creating your local XSD and XML
+				folders (e.g.,<em class="ph i"> &lt;someplace&gt;\cdk\chromatix\XSD and
+					&lt;someplace&gt;\chi-cdk\chromatix\XML</em>).</p>
+</div>
+
+		<div class="section context" id="ynu1458948384751__context_N10011_N1000E_N10001">A Chromatix tuning project captures the
+			parameter values set during the tuning process and the camera sensor module information.
+			A tuning project is specific to one ISP version. A single project is used to save the
+			parameters for all use cases (i.e., preview, video, snapshot, etc.) for a single sensor.
+			If your device has multiple sensors (e.g., front camera, rear camera, etc.), then you
+			need a separate project for each sensor and each project must use the same XSD
+			set.</div>
+
+	 <ol class="ol steps" id="ynu1458948384751__steps_0BAA6D67A2884649A8AF7CB95184ACC4"><li class="li step stepexpand" id="ynu1458948384751__step_N10055_N10044_N1000E_N10001">
+				<span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">New Project</span></span> to display the <span class="ph uicontrol">Project
+						Configuration</span> window. <img class="image" id="ynu1458948384751__image_irj_ysn_pdb" src="guq1524611101692.png" /></span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N1007C_N10053_N1000F_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Project Name</span> field, type the name of the current
+					project. The project name cannot contain spaces.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N1005E_N10037_N1000F_N10001">
+				<span class="ph cmd">Click <img class="image" id="ynu1458948384751__image_uy4_pdb_l2b" src="jbw1531257886288.png" /> next to <span class="ph uicontrol">Project Location</span> and navigate
+					to the root folder created for the project. The file path and folder name should
+					not contain spaces. Make the file path as short as possible to avoid the Windows
+					max path size limitation.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N10073_N10037_N1000F_N10001">
+				<span class="ph cmd">Select the appropriate ISP version (e.g., Spectra280) from the
+						<span class="ph uicontrol">ISP</span> list.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_221C5F1FDD464D9AA4827E3254B4EDE7">
+				<span class="ph cmd">Click <img class="image" id="ynu1458948384751__image_nqc_xjb_l2b" src="jbw1531257886288.png" /> next to the <span class="ph uicontrol">XSD Folder</span> field and
+					navigate to the local folder containing the XSD files (ISP, 3A, and common)
+					copied from the default location.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N10093_N10037_N1000F_N10001">
+				<span class="ph cmd">Select <span class="ph uicontrol">Link</span> next to
+					the <span class="ph uicontrol">XSD Folder</span> field. By linking the
+					project to the folder, the tuning project is automatically updated if you update
+					the XSD. Note that the relative path between the root folder and the XSD folder
+					is critical. If it is changed, then the link is broken.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N100A4_N10037_N1000F_N10001">
+				<span class="ph cmd">Click <img class="image" id="ynu1458948384751__image_ykj_xjb_l2b" src="jbw1531257886288.png" /> next to the <span class="ph uicontrol">XML Folder</span> field and
+					navigate to the local folder containing the default XML files copied from the
+					default location.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N100B9_N10037_N1000F_N10001">
+				<span class="ph cmd">(Optional) Select <span class="ph uicontrol">Link</span>
+					next to the <span class="ph uicontrol">XML Folder</span> field. Unlike the
+					XSD, if you update the XML in the XML folder, then you need to update the XML in
+					the tuning project manually.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N100EF_N1004D_N1000F_N10001">
+				<span class="ph cmd">Click <img class="image" id="ynu1458948384751__image_ir4_yjb_l2b" src="jbw1531257886288.png" /> next to the <span class="ph uicontrol">Presets Folder</span> field and
+					navigate to the local folder containing the Preset files copied from the default
+					location.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N10104_N1004D_N1000F_N10001">
+				<span class="ph cmd">(Optional) Select <span class="ph uicontrol">Link</span>
+					next to the <span class="ph uicontrol">XML Folder</span> field. Unlike the
+					XSD, if you update a preset in the presets folder, then you need to update the
+					presets in the tuning project manually.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N100CA_N10037_N1000F_N10001">
+				<span class="ph cmd">Do one of the following:</span>
+				<div class="itemgroup info">
+					<ul class="ul" id="ynu1458948384751__ul_wtd_xjf_gcb">
+						<li class="li">If you have an XML file with the sensor information (e.g., max line
+							count, bayer pattern, bits per pixel, etc.), then click <img class="image" id="ynu1458948384751__image_j2g_1kb_l2b" src="jbw1531257886288.png" /> next to the
+								<span class="ph uicontrol">Driver Info</span> field, navigate
+							to the applicable sensor driver XML file, and click <span class="ph uicontrol">Open</span>. </li>
+
+						<li class="li">If you have a text file with the sensor information, then click <img class="image" id="ynu1458948384751__image_jck_1kb_l2b" src="jbw1531257886288.png" /> next to the
+								<span class="ph uicontrol">Driver Info</span> field, navigate
+							to the applicable sensor driver text file, and click <span class="ph uicontrol">Open</span>.</li>
+
+						<li class="li">If you do not have a text file with the sensor information, click
+								<span class="ph uicontrol">Custom</span> to display the Sensor
+							Information window. Enter the appropriate sensor values then click
+								<span class="ph uicontrol">OK</span>.<img class="image" id="ynu1458948384751__image_hbn_lvn_pdb" src="clz1524612416805.png" /></li>
+
+					</ul>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N10183_N10053_N1000F_N10001">
+				<span class="ph cmd">Select the appropriate sensor type version (e.g., Bayer) from
+					the <span class="ph uicontrol">Sensor Type</span> list.</span>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_N100EF_N10051_N1000F_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">OK</span> to create the
+					project.</span>
+				<div class="itemgroup info">If the project root folder is not empty, a prompt appears. If you click
+						<span class="ph uicontrol">OK</span> at the prompt, Chromatix
+					overwrites any current files within the root folder.</div>
+			</li>
+<li class="li step stepexpand" id="ynu1458948384751__step_FB3D77A8052C4B21BCD03CB941642EF7">
+				<span class="ph cmd">To save the project, select <span class="ph menucascade"><span class="ph uicontrol"> File</span> &gt; <span class="ph uicontrol">Save to Project</span></span>.</span>
+			</li>
+</ol>
+ 
+  </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="dzv1494872391692.html">Create a sensor driver information file</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="dzv1494872391692.html" title="If the sensor driver information file is not available, create a text file based on the sensor setting information provided by the sensor vendor or enter the sensor information directly into the Sensor Information dialog box. A separate file is needed for each mode in the project.">Create a sensor driver information file</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="ufk1494872219078.html" title="Prerequisites"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Prerequisites</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

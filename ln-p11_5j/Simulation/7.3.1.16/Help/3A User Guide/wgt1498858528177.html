@@ -1,0 +1,59 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="EV settings specify the standard brightness adjustment of an image. A setting of EV+1 means the image is two times as bright. Due to complex and nonlinear calculations for luma and luma target, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune EV compensation" /><meta name="abstract" content="EV settings specify the standard brightness adjustment of an image." /><meta name="description" content="EV settings specify the standard brightness adjustment of an image." /><meta name="DC.Relation" scheme="URI" content="lqj1495660918778.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="wgt1498858528177" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune EV compensation</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="wgt1498858528177">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune EV compensation</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">EV settings specify the standard brightness adjustment of an
+		image.</p>
+
+		<div class="section context" id="wgt1498858528177__context_N1001A_N10017_N10001">A setting of EV+1 means the image is two times as bright. Due to complex and nonlinear
+			calculations for luma and luma target, sometimes applying strict standard adjustments
+			causes general images to be too dark or too bright. Adjust the standard EV compensation
+			table for different projects.<p class="p">By default, the entries increase monotonically and
+				linearly.</p>
+</div>
+
+		<p class="li stepsection">Negative EV</p><ol><li class="li step stepexpand" id="wgt1498858528177__step_N10029_N10022_N10017_N10001">
+				<span class="ph cmd">If an image is too dark under negative EV settings using the
+					standard EV compensation:</span>
+				<ul class="ul choices" id="wgt1498858528177__choices_zjt_vyy_k1b">
+					<li class="li choice">Scale all entry values that are less than 1, or</li>
+
+					<li class="li choice">Increase a single value with the EV setting of concern
+						and ensure the array still increases monotonically.</li>
+
+				</ul>
+
+				<div class="itemgroup info"> If an image is too bright, decrease the entries the same
+					way.</div>
+			</li>
+</ol><p class="li stepsection">Positive EV</p><ol start="2"><li class="li step stepexpand" id="wgt1498858528177__step_N10047_N10022_N10017_N10001">
+				<span class="ph cmd">If an image is too bright under positive EV settings using the
+					standard EV compensation:</span>
+				<ul class="ul choices" id="wgt1498858528177__choices_jzp_j1z_k1b">
+					<li class="li choice">Scale all entry values that are greater than 1,
+						or</li>
+
+					<li class="li choice">Decrease a single value with the EV setting of concern
+						and ensure the array still increases monotonically.</li>
+
+				</ul>
+
+				<div class="itemgroup info">Do not modify entries that have a value of 1.</div>
+			</li>
+</ol>
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

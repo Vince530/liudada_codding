@@ -1,0 +1,397 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The following table lists the gray edge parameters used for tuning the ANR module. Parameter name Description Tuning Default Must tune? Chromaticity threshold Defines the chroma threshold conditions ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="ANR parameters" /><meta name="abstract" content="The following table lists the gray edge parameters used for tuning the ANR module." /><meta name="description" content="The following table lists the gray edge parameters used for tuning the ANR module." /><meta name="DC.Relation" scheme="URI" content="agg1499463565286.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="wzh1500920163335" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ANR parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="wzh1500920163335">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="agg1499463565286.html" title="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes.">ANR tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="agg1499463565286.html" title="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ANR tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">ANR parameters</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">The following table lists the gray edge parameters used for tuning the ANR
+		module.</p>
+
+		<div class="p">
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="wzh1500920163335__table_qhq_stv_q1b" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20.080321285140563%" /><col style="width:20.080321285140563%" /><col style="width:13.386880856760374%" /><col style="width:19.009370816599734%" /><col style="width:27.443105756358765%" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d39292e41">Parameter name</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d39292e44">Description</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d39292e47">Tuning</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d39292e50">Default</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d39292e53">Must tune?</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">Chromaticity threshold</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Defines the chroma threshold conditions for
+								identifying gray areas. Gray edge treatment will not apply to any
+								pixel with greater chromaticity than the End value.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Defines start/end points</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Low default: 2; low range: [0, 182]<p class="p">High
+									default: 3; high range: [0, 182]</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">Y max derivative threshold</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Defines the derivative threshold conditions for
+								identifying gray areas. Gray edge treatment will not apply to any
+								pixel with a lower Y derivitive than the Start value.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Defines start/end points</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Low default: 255; low range: [0, 255]<p class="p">High
+									default: 255; high range: [0, 255]</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">enable_grey_treatment_thr_modification</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Enables increasing chroma filter thresholds in
+								base functions. Y, U, and V will be increased to these values
+								correspondingly (according to confidence).</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Enable/disable feature</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 1; range: [0, 1]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">enable_grey_treatment_isotropic_filter_blend</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">For full images only. Blends pixel chroma with
+								chroma isotropic filtered pixel according to confidence of gray edge
+								detection.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Enable/disable feature</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 1; range: [0, 1]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">enable_grey_treatment_dcblend2_chroma_modification</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Blends pixel chroma with chroma filtered lowpass
+								image pixel according to confidence of gray edge detection.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Enable/disable feature</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 0; range: [0, 1]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">Detail corner sensitivity Y/UV<ul class="ul" id="wzh1500920163335__ul_rhq_stv_q1b">
+									<li class="li">median_detect_corner_detail_sensitivity_y</li>
+
+									<li class="li">median_detect_corner_detail_sensitivity_uv</li>
+
+								</ul>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Defines the level of local identified
+								details.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Higher value = less filtering</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">
+								<ul class="ul" id="wzh1500920163335__ul_shq_stv_q1b">
+									<li class="li">Default: 16; range: [0, 65]</li>
+
+									<li class="li">Default: 16; range: [0, 64]</li>
+
+								</ul>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">median_detect_triple_chromaticities_detail_thr_up_down</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">If a pixel is located on a strip between two
+								other colors, performing median may smear the pixel. If the
+								chromaticity difference in both directions is higher or equal than
+								this value the median is not applied.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Anything higher than this value is defined as a
+								detail</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 8; range: [0, 1023]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">median_detect_isotropic_neighbors_detail_sensitivity</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Local details identification according to
+								neighbors detail detection.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Higher value = less filtering</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 64; range: [0, 128]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">median_detect_directional_neighbors_detail_sensitivity</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Similar to neighbors isotropic detail
+								sensitivity but median still may be performed on directions that are
+								not detected as detail.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 ">Set this value as lower than neighbors isotropic
+								detail sensitivity</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 32; range: [0, 128]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">bilateral_decision_minimalsize</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">If flat length on any direction is higher or
+								equal to this value, a bilateral filter will be performed instead of
+								a median. The bilateral filter is generally preferable to the median
+								filter as it uses averaging.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 6; range: [0, 6]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">luma_input_indication_thr_modification_scale</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">The strength is the maximal thresh gain factor
+								on current PASS assuming fully flat pixel detected by input
+								indication from the lower pass.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 48; range: [16, 80]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">chroma_input_indication_thr_modification_scale</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">The strength is the maximal thresh gain factor
+								on current PASS assuming fully flat pixel detected by input
+								indication from the lower pass.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 48; range: [16, 80]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">luma_center_binarization_minflatval</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">If the center pixel is flatter than
+								center_binarization_minflatval, it will indicate the pixel as flat
+								without any regard to neighbors. If not, the decision will be done
+								according to neighboring decision.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 2; range: [1, 5]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">chroma_center_binarization_minflatval</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">If the center pixel is flatter than
+								center_binarization_minflatval, it will indicate the pixel as flat
+								without any regard to neighbors. If not, the decision will be done
+								according to neighboring decision.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 2; range: [1, 6]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">luma_neighbours_binarization_minflatval</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Neighbors are counted as flat if they are
+								flatter than neighbours_binarization_minflatval.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 1; range: [1, 4]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">chroma_neighbours_binarization_minflatval</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Neighbors are counted as flat if they are
+								flatter than neighbours_binarization_minflatval.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 1; range: [1, 5]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">luma_neighbours_agreement_sensitivity</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">If percentage of neighbores are determind as
+								flat (according to comparison with
+								neighbours_binarization_minflatval) is greater than
+								neighbours_agreement_sensitivity, center pixel will be indicated as
+								flat for higher pass.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 80; range: [0, 128]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">chroma_neighbours_agreement_sensitivity</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">If percentage of neighbores are determind as
+								flat (according to comparison with
+								neighbours_binarization_minflatval) is greater than
+								neighbours_agreement_sensitivity, center pixel will be indicated as
+								flat for higher pass.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 80; range: [0, 128]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">flat_kernel_blend_weight</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Defines the amount of blend of the Flat kernel
+								on flat area.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 128; range: [0, 128]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">Luma DCBlend2 Strength</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Defines the blend amount of lower passes, i.e.,
+								noise reduction in low frequency.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 80; range: [0, 128]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">Chroma DCBlend2 Strength</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Defines the blend amount of lower passes, i.e.,
+								noise reduction in low frequency.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 128; range: [0, 128]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e41 ">Luma Strength HF</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e44 ">Enables a smart blend of filtered and unfiltered
+								image. Does not blend back peak noise. In that case, the unfiltered
+								pixel may be blended up to <em class="ph i">1 – parameter value</em>.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e47 "> </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e50 ">Default: 256; range: [0, 256]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d39292e53 ">Use defaults</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="agg1499463565286.html" title="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ANR tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

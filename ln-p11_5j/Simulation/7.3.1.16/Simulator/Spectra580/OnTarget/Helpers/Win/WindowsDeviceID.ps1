@@ -1,0 +1,1 @@
+$Global:deviceId = "10.62.36.91"

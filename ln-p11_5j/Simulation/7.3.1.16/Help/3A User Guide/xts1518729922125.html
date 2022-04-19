@@ -1,0 +1,89 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Tuning the compensation factor, Dual Cam Exp Comp Multiplier, helps align the exposures of multiple cameras. Capture Dual Cam Exp Comp test images Set up a light box for D50 and capture one image per ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune Dual Cam Exp Comp Multiplier" /><meta name="abstract" content="Tuning the compensation factor, Dual Cam Exp Comp Multiplier, helps align the exposures of multiple cameras." /><meta name="description" content="Tuning the compensation factor, Dual Cam Exp Comp Multiplier, helps align the exposures of multiple cameras." /><meta name="DC.Relation" scheme="URI" content="jrj1517428982623.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xts1518729922125" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune Dual Cam Exp Comp Multiplier</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xts1518729922125">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a> / <a class="navheader_parent_path" href="jrj1517428982623.html" title="Tune dual camera AEC">Tune dual camera AEC</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jrj1517428982623.html" title="Tune dual camera AEC"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune dual camera AEC</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune Dual Cam Exp Comp Multiplier</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Tuning the compensation factor, Dual Cam Exp Comp Multiplier, helps align the
+		exposures of multiple cameras.</p>
+
+		<p class="li stepsection"><strong class="ph b">Capture Dual Cam Exp Comp test images</strong></p><ol><li class="li step stepexpand" id="xts1518729922125__step_N1001F_N10015_N10012_N10001">
+				<span class="ph cmd">Set up a light box for D50 and capture one image per camera.</span>
+			</li>
+<li class="li step stepexpand" id="xts1518729922125__step_N10028_N10015_N10012_N10001">
+				<span class="ph cmd">Use a flat, uniform gray chart and set the camera optical axis perpendicular to
+					it. Ensure the gray chart occupies 100% FOV for both cameras.</span>
+			</li>
+<li class="li step stepexpand" id="xts1518729922125__step_N10031_N10015_N10012_N10001">
+				<span class="ph cmd">Open the images in Chromatix 7 and verify <span class="ph uicontrol">Average Luma </span>
+					in the AEC debug information.</span>
+				<div class="itemgroup info">Each image should have an average luma value between 45 and 55.<br /><img class="image" id="xts1518729922125__image_wpb_rml_wcb" src="mgc1518715285362.png" /><br /><p class="p">If
+						the value does not fall within the recommended range, verify the metering
+						tuning settings and verify that no user interface settings (e.g., manual
+						exposure, EV, etc.) are interfering with the image.</p>
+</div>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Tune Dual Cam Exp Comp Multiplier</strong></p><ol start="4"><li class="li step stepexpand" id="xts1518729922125__step_N10050_N10015_N10012_N10001">
+				<span class="ph cmd">Open one D50 image from each module and view the following exif debug
+					information:</span>
+				<div class="itemgroup info">
+					
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="xts1518729922125__table_xnd_g4m_wcb" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d70506e77">Camera 1</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d70506e80">Camera 2</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d70506e77 ">Exposure index – <em class="ph i">E</em><sub class="ph sub">1</sub></td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d70506e80 ">Exposure index – <em class="ph i">E</em><sub class="ph sub">2</sub></td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d70506e77 ">Average Luma – <em class="ph i">L</em><sub class="ph sub">1</sub></td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d70506e80 ">Average Luma – <em class="ph i">L</em><sub class="ph sub">2</sub></td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="xts1518729922125__step_N100BC_N10015_N10012_N10001">
+				<span class="ph cmd">Calculate the Camera 1 Dual Cam Exp Comp multiplier.</span>
+				<div class="itemgroup info">
+					<br /><img class="image" id="xts1518729922125__image_olp_1sm_wcb" src="btv1518729588141.png" height="67" width="258" /><br />
+				</div>
+			</li>
+<li class="li step stepexpand" id="xts1518729922125__step_N100D0_N10015_N10012_N10001">
+				<span class="ph cmd">Calculate the Camera 2 Dual Cam Exp Comp multiplier.</span>
+				<div class="itemgroup info">
+					<br /><img class="image" id="xts1518729922125__image_tkw_1sm_wcb" src="skw1518729585910.png" height="67" width="108" /><br />
+				</div>
+			</li>
+</ol>
+		<div class="section postreq" id="xts1518729922125__postreq_dkg_pf3_cdb">Tune CCT Based Exp Comp.</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jrj1517428982623.html" title="Tune dual camera AEC"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune dual camera AEC</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2019-2020 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<SnapshotControl
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\aec\aecSnapshotCtrl.xsd">
+  <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+  <parameter_version>
+    <revision>A</revision>
+  </parameter_version>
+  <snapCtrlArb>
+    <expTableIDSnapshot>0</expTableIDSnapshot>
+    <bracketingAdjForEVPos2>1</bracketingAdjForEVPos2>
+    <bracketingAdjForEVNeg2>1</bracketingAdjForEVNeg2>
+    <maxLLSExtendedGain>256</maxLLSExtendedGain>
+  </snapCtrlArb>
+  <snapCtrlExt>
+    <enableLLS>false</enableLLS>
+    <!--
+
+Base Type Tuning Definition
+
+ -->
+    <LLSLuxHysteresis>
+      <start>1000</start>
+      <end>1000</end>
+    </LLSLuxHysteresis>
+    <LLSExpTimeLUT>
+      <thresLuxIndex>399</thresLuxIndex>
+      <requiredExpTime>76923000</requiredExpTime>
+    </LLSExpTimeLUT>
+  </snapCtrlExt>
+</SnapshotControl>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2019 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<Extension
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\aec\aecExtension.xsd">
+  <module_version major_revision="8" minor_revision="0" incr_revision="0"/>
+  <parameter_version>
+    <revision>A</revision>
+  </parameter_version>
+  <YHistStretch>
+    <enableYHistStretch>false</enableYHistStretch>
+    <tempFilter>0.3</tempFilter>
+    <yHistStretchZone>
+      <zoneTrigger>
+        <start>0</start>
+        <end>190</end>
+      </zoneTrigger>
+      <zoneData>
+        <darkBinThres>0.02</darkBinThres>
+        <darkBinThresLow>0</darkBinThresLow>
+        <satBinThres>0.97</satBinThres>
+        <satBinThresLow>0.92</satBinThresLow>
+        <darkTargetLvL>5</darkTargetLvL>
+        <satTargetLvL>230</satTargetLvL>
+        <satScalingMax>1.05</satScalingMax>
+        <darkClampingMax>10</darkClampingMax>
+      </zoneData>
+    </yHistStretchZone>
+    <yHistStretchZone>
+      <zoneTrigger>
+        <start>230</start>
+        <end>360</end>
+      </zoneTrigger>
+      <zoneData>
+        <darkBinThres>0.02</darkBinThres>
+        <darkBinThresLow>0</darkBinThresLow>
+        <satBinThres>0.97</satBinThres>
+        <satBinThresLow>0.92</satBinThresLow>
+        <darkTargetLvL>5</darkTargetLvL>
+        <satTargetLvL>230</satTargetLvL>
+        <satScalingMax>1.05</satScalingMax>
+        <darkClampingMax>10</darkClampingMax>
+      </zoneData>
+    </yHistStretchZone>
+    <yHistStretchZone>
+      <zoneTrigger>
+        <start>420</start>
+        <end>1000</end>
+      </zoneTrigger>
+      <zoneData>
+        <darkBinThres>0.02</darkBinThres>
+        <darkBinThresLow>0</darkBinThresLow>
+        <satBinThres>0.97</satBinThres>
+        <satBinThresLow>0.92</satBinThresLow>
+        <darkTargetLvL>5</darkTargetLvL>
+        <satTargetLvL>230</satTargetLvL>
+        <satScalingMax>1.05</satScalingMax>
+        <darkClampingMax>10</darkClampingMax>
+      </zoneData>
+    </yHistStretchZone>
+  </YHistStretch>
+  <touchEVScnMonitor>
+    <enableTouchEVScnDet>false</enableTouchEVScnDet>
+    <thresLumaDelta>16</thresLumaDelta>
+    <thresLumaAvgPct>0.05</thresLumaAvgPct>
+    <minLumaAvg>10</minLumaAvg>
+    <frameDelayBeforeStable>5</frameDelayBeforeStable>
+    <temporalLumaAverageCount>8</temporalLumaAverageCount>
+  </touchEVScnMonitor>
+  <!-- deprecated  -->
+  <dualCam>
+    <enableDualCamExpComp>false</enableDualCamExpComp>
+    <dualCamExpCompMultiplier>1</dualCamExpCompMultiplier>
+    <!-- deprecated  -->
+    <CCTBasedExpComp>
+      <CCT>6500</CCT>
+      <compensationRatio>1.02</compensationRatio>
+    </CCTBasedExpComp>
+    <!-- deprecated  -->
+    <CCTBasedExpComp>
+      <CCT>5000</CCT>
+      <compensationRatio>1</compensationRatio>
+    </CCTBasedExpComp>
+    <!-- deprecated  -->
+    <CCTBasedExpComp>
+      <CCT>4500</CCT>
+      <compensationRatio>0.97</compensationRatio>
+    </CCTBasedExpComp>
+    <!-- deprecated  -->
+    <CCTBasedExpComp>
+      <CCT>4200</CCT>
+      <compensationRatio>1.03</compensationRatio>
+    </CCTBasedExpComp>
+    <!-- deprecated  -->
+    <CCTBasedExpComp>
+      <CCT>3200</CCT>
+      <compensationRatio>1.04</compensationRatio>
+    </CCTBasedExpComp>
+    <!-- deprecated  -->
+    <CCTBasedExpComp>
+      <CCT>2600</CCT>
+      <compensationRatio>1.12</compensationRatio>
+    </CCTBasedExpComp>
+  </dualCam>
+  <enableLVTest>false</enableLVTest>
+  <ApertureControl>
+    <enableApertureControl>false</enableApertureControl>
+    <enSettleCntThdforlaunch>false</enSettleCntThdforlaunch>
+    <enSensitivityComp>false</enSensitivityComp>
+    <defaultApertureFNumber>1.5</defaultApertureFNumber>
+    <setCntThdforlaunch>6</setCntThdforlaunch>
+    <SettleCountThd>45</SettleCountThd>
+    <NumofSkipFrame>5</NumofSkipFrame>
+    <NumofSkipFrameforSystemlatency>5</NumofSkipFrameforSystemlatency>
+    <ApertureControlZone>
+      <zoneTrigger>
+        <start>270</start>
+        <end>0</end>
+      </zoneTrigger>
+      <zoneData>
+        <FNumber>2.4</FNumber>
+        <SensitivityFactor>1</SensitivityFactor>
+      </zoneData>
+    </ApertureControlZone>
+    <ApertureControlZone>
+      <zoneTrigger>
+        <start>320</start>
+        <end>0</end>
+      </zoneTrigger>
+      <zoneData>
+        <FNumber>1.5</FNumber>
+        <SensitivityFactor>1</SensitivityFactor>
+      </zoneData>
+    </ApertureControlZone>
+  </ApertureControl>
+</Extension>

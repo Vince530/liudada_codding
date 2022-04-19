@@ -1,0 +1,91 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Root access is required to run these adb commands. ADB commands Purpose Command Gain root access adb root adb wait-for-devices adb remount adb devices Enable full sweep/disable algorithm To perform ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="ADB commands" /><meta name="DC.Relation" scheme="URI" content="zfl1495661038571.html" /><meta name="DC.Relation" scheme="URI" content="uum1495661065465.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="vra1477085288652" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ADB commands</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="vra1477085288652">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">ADB commands</h1>
+
+   <div class="body conbody">
+      <p class="p">Root access is required to run these adb commands.</p>
+
+      <div class="section" id="vra1477085288652__section_N10017_N1000F_N10001"><h2 class="title sectiontitle">ADB commands</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="vra1477085288652__ID-table-00000026" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.688in" /><col style="width:4.5in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d66952e34">Purpose</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d66952e37">Command</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d66952e34 ">Gain root access</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d66952e37 ">
+                        <pre class="pre codeblock"><code>adb root
+adb wait-for-devices
+adb remount
+adb devices</code></pre>
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d66952e34 ">Enable full sweep/disable algorithm</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d66952e37 ">
+                        <p class="p">To perform full sweep from far to near end:</p>
+
+                        <pre class="pre codeblock"><code>adb shell setprop debug.camera.af_fullsweep 1</code></pre>
+                        <p class="p">To perform full sweep from far to near then back to the far end:</p>
+
+                        <pre class="pre codeblock"><code>adb shell setprop debug.camera.af_fullsweep 3</code></pre>
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d66952e34 ">Automation/control events</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d66952e37 ">
+                        <p class="p">To wake up the camera:</p>
+
+                        <pre class="pre codeblock"><code>adb shell input keyevent 26
+adb shell input keyevent 82</code></pre>
+                        <p class="p">To close the camera:</p>
+
+                        <pre class="pre codeblock"><code>adb shell input keyevent 4</code></pre>
+                        <p class="p">To issue a tap on screen with coord. (X, Y):</p>
+
+                        <pre class="pre codeblock"><code>adb shell input tap X Y</code></pre>
+                        <p class="p">To take a picture:</p>
+
+                        <pre class="pre codeblock"><code>adb shell input keyevent 27</code></pre>
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="zfl1495661038571.html" title="Enable 3A debug log messages (3A v5.x and v6.0)">Enable 3A debug log messages (3A v5.x and v6.0)</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="uum1495661065465.html" title="Enable EXIF debug information (3A v5.x and v6.0)">Enable EXIF debug information (3A v5.x and v6.0)</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,451 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Use the procedures in this section to fine-tune the AWB face-assist scene analyzer parameters. Review the FA SA concepts to determine which submodule to tune. Tune basic face-assist AWB parameters ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Fine-tune face-assist scene analyzer" /><meta name="abstract" content="Use the procedures in this section to fine-tune the AWB face-assist scene analyzer parameters. Review the FA SA concepts to determine which submodule to tune." /><meta name="description" content="Use the procedures in this section to fine-tune the AWB face-assist scene analyzer parameters. Review the FA SA concepts to determine which submodule to tune." /><meta name="DC.Relation" scheme="URI" content="jdc1509824323481.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="yyz1509839246064" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Fine-tune face-assist scene analyzer</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="yyz1509839246064">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="jdc1509824323481.html" title="Face-assist scene analyzer concept">Face-assist scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Fine-tune face-assist scene analyzer</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">Use the procedures in this section to fine-tune the AWB face-assist
+		scene analyzer parameters. Review the FA SA concepts to determine which submodule to tune. </p>
+
+		<div class="section" id="yyz1509839246064__section_N10089_N1000F_N10001"><h2 class="title sectiontitle">Tune basic face-assist AWB parameters</h2>
+			
+			<ol class="ol" id="yyz1509839246064__ol_t1x_s23_v1b">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">In the <span class="ph uicontrol">List View</span>
+					section, select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Modules</span> section, select
+						<span class="ph uicontrol">Basic Tuning</span>. <br /><img class="image" id="yyz1509839246064__image_kp3_lh1_2db" src="vfu1521053516513.png" /><br /></li>
+
+				<li class="li">In the <span class="ph uicontrol">Basic Tuning</span>
+					section, adjust the following parameters as needed:. <ul class="ul" id="yyz1509839246064__ul_rkp_m14_bdb">
+						<li class="li">ROI X scale</li>
+
+						<li class="li">ROI Y scale</li>
+
+						<li class="li">Face select threshold</li>
+
+						<li class="li">Face detection count threshold</li>
+
+						<li class="li">No face detection count threshold</li>
+
+						<li class="li">Convergence speed for face AWB</li>
+
+					</ul>
+</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_glp_5yn_bdb"><h2 class="title sectiontitle">Tune or add dark pixel threshold triggers</h2>
+			
+			<p class="p">Adjust the dark pixel threshold triggers to exclude more or fewer dark stats
+				in the BG decision for a face-dominated scene. If stats brightness is lower than
+				this threshold, the stats are not considered for face stats.</p>
+
+			<ol class="ol" id="yyz1509839246064__ol_fsf_q1t_ddb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Modules</span> box,
+					select <span class="ph uicontrol">Dark/Saturation Pixel
+					Threshold</span>.</li>
+
+				<li class="li">Find the <span class="ph uicontrol">Dark Pixel
+						Threshold</span> section. <br /><img class="image" id="yyz1509839246064__image_vnd_pft_ddb" src="iwd1520969447723.png" /><br /></li>
+
+				<li class="li">To edit the lux index trigger range, in the first column,
+					double-click the entry in brackets. Update the lux index start and end values
+					and click outside the box to save the change. </li>
+
+				<li class="li">To edit the red/green/blue dark pixel threshold data, in the
+					second column, double-click the entry in brackets. Update the red/green/blue
+					data values for this trigger and click outside the box to save the change.</li>
+
+				<li class="li">To add more trigger levels, use the <span class="ph uicontrol">Add above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_bch_yxs_ddb"><h2 class="title sectiontitle">Tune or add saturation pixel threshold triggers</h2>
+			
+			<p class="p">Adjust the saturation pixel threshold triggers to exclude more or
+				fewer saturated stats in the BG decision for a face-dominated scene. If stats
+				brightness is higher than this threshold, the stats are not considered for face
+				stats.</p>
+
+			<ol class="ol" id="yyz1509839246064__ol_rch_yxs_ddb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Modules</span> box,
+					select <span class="ph uicontrol">Dark/Saturation Pixel
+					Threshold</span>.</li>
+
+				<li class="li">Find the <span class="ph uicontrol">Saturation Pixel
+						Threshold</span> section. <br /><img class="image" id="yyz1509839246064__image_kdd_rft_ddb" src="rkx1520969445274.png" /><br /></li>
+
+				<li class="li">To edit the lux index trigger range, in the first column,
+					double-click the entry in brackets. Update the lux index start and end values
+					and click outside the box to save the change. </li>
+
+				<li class="li">To edit the red/green/blue saturation threshold data, in the
+					second column, double-click the entry in brackets. Update the red/green/blue
+					data values for this trigger and click outside the box to save the change.</li>
+
+				<li class="li">To add more trigger levels, use the <span class="ph uicontrol">Add above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_ly1_y3q_cdb"><h2 class="title sectiontitle">Tune or add light skin WB target triggers</h2>
+			
+			<p class="p">If the AWB face assist computation of light skin WB target points is not
+				adequate, use this procedure to fine tune the target. Refer to the example in <cite class="cite">FA SA estimation of skin CCT</cite>. For example, if the
+				overall light skin is reddish, reduce the WB red target.</p>
+
+			<ol class="ol" id="yyz1509839246064__ol_my1_y3q_cdb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Modules</span> box, select <span class="ph uicontrol">Light Skin WB
+						Target</span>.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger Tuning</span>
+					section, notice that the first trigger is Lux Idx and the second trigger is CCT. </li>
+
+				<li class="li">Click the arrow next to the first trigger range to open the full set of
+					values, as shown in the image. <br /><img class="image" id="yyz1509839246064__image_pcv_tft_ddb" src="rab1520969442451.png" /><br /></li>
+
+				<li class="li">To edit the lux index range, in the first column, double-click the entry in
+					brackets. Update the lux index start and end values and click outside the box to
+					save the change. </li>
+
+				<li class="li">To edit the CCT range, in the second column, double-click the entry in
+					brackets. Update the CCT start and end values and click outside the box to save
+					the change.</li>
+
+				<li class="li">To edit the red/blue WB core data, in the third column, double-click the
+					entry in brackets. Update the red/blue data values for this trigger and click
+					outside the box to save the change.<div class="note note" id="yyz1509839246064__note_N101EC_N101E8_N1019D_N10189_N10014_N10001"><span class="notetitle">Note:</span> Fine tune the WB target for preference.
+						For example, if the overall light skin color is reddish, try reducing the WB
+						r gain target.</div>
+</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add
+						above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_wqz_bnm_ddb"><h2 class="title sectiontitle">Tune or add dark skin WB target triggers</h2>
+			
+			<p class="p">If the AWB face assist computation of dark skin WB target points is not
+				adequate, use this procedure to fine tune the target. Refer to the example in <cite class="cite">FA SA estimation of skin CCT</cite>. For example, if the
+				overall dark skin is reddish, reduce the WB red target.</p>
+
+			<ol class="ol" id="yyz1509839246064__ol_xqz_bnm_ddb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Modules</span> box,
+					select <span class="ph uicontrol">Dark Skin WB Target</span>.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger Tuning</span>
+					section, notice that the first trigger is Lux Idx and the second trigger is CCT. </li>
+
+				<li class="li">Click the arrow next to the first trigger range to open the full set of
+					values, as shown in the image. <br /><img class="image" id="yyz1509839246064__image_v4k_vft_ddb" src="zmm1520969445867.png" /><br /></li>
+
+				<li class="li">To edit the lux index range, in the first column, double-click
+					the entry in brackets. Update the lux index start and end values and click
+					outside the box to save the change. </li>
+
+				<li class="li">To edit the CCT range, in the second column, double-click the
+					entry in brackets. Update the CCT start and end values and click outside the box
+					to save the change.</li>
+
+				<li class="li">To edit the red/blue WB core data, in the third column, double-click the
+					entry in brackets. Update the red/blue data values for this trigger and click
+					outside the box to save the change.<div class="note note" id="yyz1509839246064__note_N10279_N10275_N1022A_N10216_N10014_N10001"><span class="notetitle">Note:</span> Fine tune the WB target for preference.
+						For example, if the overall dark skin color is reddish, try reducing the WB
+						r gain target.</div>
+</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add
+						above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_v3y_dgt_ddb"><h2 class="title sectiontitle">Tune or add Confidence Level 1 triggers</h2>
+			
+			<p class="p">Use this procedure to fine tune the triggers that determine the
+				face-assist Confidence Level 1 value. </p>
+
+			<ol class="ol" id="yyz1509839246064__ol_w3y_dgt_ddb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Confidence
+						Levels</span> box, select <span class="ph uicontrol">Level
+						1</span>.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger Tuning</span>
+					section, notice that the first trigger is Lux Idx and the second trigger is Face
+					Stats Count Ratio. </li>
+
+				<li class="li">Click the arrow next to the first trigger range to open the
+					full set of values, as shown in the image. <br /><img class="image" id="yyz1509839246064__image_pqv_bht_ddb" src="ukt1520969447099.png" /><br /></li>
+
+				<li class="li">To edit the lux index range, in the first column, double-click
+					the entry in brackets. Update the lux index start and end values and click
+					outside the box to save the change. </li>
+
+				<li class="li">To edit the stats count ratio range, in the second column,
+					double-click the entry in brackets. Update the ratio start and end values and
+					click outside the box to save the change.</li>
+
+				<li class="li">To edit the confidence level, in the third column, double-click
+					the entry in brackets. Update the confidence value for this trigger and click
+					outside the box to save the change.</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add
+						above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_pgs_4ht_ddb"><h2 class="title sectiontitle">Tune or add Confidence Level 2 triggers</h2>
+			
+			<p class="p">Use this procedure to fine tune the triggers that determine the
+				face-assist Confidence Level 2 value. </p>
+
+			<ol class="ol" id="yyz1509839246064__ol_qgs_4ht_ddb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Confidence
+						Levels</span> box, select <span class="ph uicontrol">Level
+						2</span>.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger Tuning</span>
+					section, notice that the first trigger is CCT and the second trigger is Face
+					Stats Count Ratio. </li>
+
+				<li class="li">Click the arrow next to the first trigger range to open the
+					full set of values, as shown in the image. <br /><img class="image" id="yyz1509839246064__image_ptn_rht_ddb" src="qeq1520969446475.png" /><br /></li>
+
+				<li class="li">To edit the CCT range, in the first column, double-click the
+					entry in brackets. Update the CCT start and end values and click outside the box
+					to save the change. </li>
+
+				<li class="li">To edit the stats count ratio range, in the second column,
+					double-click the entry in brackets. Update the ratio start and end values and
+					click outside the box to save the change.</li>
+
+				<li class="li">To edit the confidence level, in the third column, double-click
+					the entry in brackets. Update the confidence value for this trigger and click
+					outside the box to save the change.</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add
+						above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_khk_yyt_ddb"><h2 class="title sectiontitle">Tune or add Interpolation Weight 1 triggers</h2>
+			
+			<p class="p">Use this procedure to fine tune the triggers that determine the Skin
+				Type Interpolation Weight 1 value. </p>
+
+			<ol class="ol" id="yyz1509839246064__ol_lhk_yyt_ddb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Skin Type Interpolation
+						Weights</span> box, select <span class="ph uicontrol">Interpolation
+						Weight 1</span>.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger Tuning</span>
+					section, notice that the first trigger is Lux Index and the second trigger is
+					Skin Type Distance Ratio. </li>
+
+				<li class="li">Click the arrow next to the first trigger range to open the
+					full set of values, as shown in the image. <br /><img class="image" id="yyz1509839246064__image_qys_415_ddb" src="hbh1520978275669.png" /><br /></li>
+
+				<li class="li">To edit the lux index range, in the first column, double-click the entry in
+					brackets. Update the lux index start and end values and click outside the box to
+					save the change. </li>
+
+				<li class="li">To edit the skin type distance ratio range, in the second column,
+					double-click the entry in brackets. Update the ratio start and end values and
+					click outside the box to save the change.</li>
+
+				<li class="li">To edit the interpolation weight, in the third column, double-click the
+					entry in brackets. Update the weight value for this trigger and click outside
+					the box to save the change.</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add
+						above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_c1d_1b5_ddb"><h2 class="title sectiontitle">Tune or add Interpolation Weight 2 triggers</h2>
+			
+			<p class="p">Use this procedure to fine tune the triggers that determine the Skin
+				Type Interpolation Weight 2 value. </p>
+
+			<ol class="ol" id="yyz1509839246064__ol_d1d_1b5_ddb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Skin Type Interpolation
+						Weights</span> box, select <span class="ph uicontrol">Interpolation
+						Weight 2</span>.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger Tuning</span>
+					section, notice that the first trigger is Lux Index and the second trigger is
+					CCT. </li>
+
+				<li class="li">Click the arrow next to the first trigger range to open the
+					full set of values, as shown in the image. <br /><img class="image" id="yyz1509839246064__image_xm2_cb5_ddb" src="hxj1520978275092.png" /><br /></li>
+
+				<li class="li">To edit the lux index range, in the first column, double-click
+					the entry in brackets. Update the lux index start and end values and click
+					outside the box to save the change. </li>
+
+				<li class="li">To edit the CCT range, in the second column, double-click the
+					entry in brackets. Update the CCT start and end values and click outside the box
+					to save the change.</li>
+
+				<li class="li">To edit the interpolation weight, in the third column,
+					double-click the entry in brackets. Update the weight value for this trigger and
+					click outside the box to save the change.</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add
+						above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyz1509839246064__section_d5v_kb5_ddb"><h2 class="title sectiontitle">Tune or add Interpolation Weight 3 triggers</h2>
+			
+			<p class="p">Use this procedure to fine tune the triggers that determine the Skin Type
+				Interpolation Weight 3 value. </p>
+
+			<ol class="ol" id="yyz1509839246064__ol_e5v_kb5_ddb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">On the <span class="ph uicontrol">List View</span> tab,
+					select <span class="ph uicontrol">Face Assist AWB</span>. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Skin Type Interpolation
+						Weights</span> box, select <span class="ph uicontrol">Interpolation
+						Weight 3</span>.</li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger Tuning</span>
+					section, notice that the first trigger is Lux Index and the second trigger is
+					CCT. </li>
+
+				<li class="li">Click the arrow next to the first trigger range to open the
+					full set of values, as shown in the image. <br /><img class="image" id="yyz1509839246064__image_t3r_mb5_ddb" src="rao1520978272893.png" /><br /></li>
+
+				<li class="li">To edit the lux index range, in the first column, double-click
+					the entry in brackets. Update the lux index start and end values and click
+					outside the box to save the change. </li>
+
+				<li class="li">To edit the CCT range, in the second column, double-click the
+					entry in brackets. Update the CCT start and end values and click outside the box
+					to save the change.</li>
+
+				<li class="li">To edit the interpolation weight, in the third column,
+					double-click the entry in brackets. Update the weight value for this trigger and
+					click outside the box to save the change.</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add
+						above</span> or <span class="ph uicontrol">Add below</span>
+					buttons to add a new blank trigger row. Repeat the previous three steps to set
+					the trigger range and associated core data.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

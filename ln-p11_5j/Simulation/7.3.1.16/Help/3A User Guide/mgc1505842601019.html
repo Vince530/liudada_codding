@@ -1,0 +1,56 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Obtain the current sensor calibration R/B and B/G values for each illuminant from the EEPROM/OTP data that are outputs of a sensor driver. Note that the order of the EEPROM/OTP data from the sensor ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune sensor calibration data" /><meta name="DC.Relation" scheme="URI" content="oqy1505840201772.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="mgc1505842601019" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune sensor calibration data</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="mgc1505842601019">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="oqy1505840201772.html" title="AWB sensor calibration data">AWB sensor calibration data</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="oqy1505840201772.html" title="AWB sensor calibration data"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB sensor calibration data</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune sensor calibration data </h1>
+
+	<div class="body taskbody">
+		<div class="section prereq p" id="mgc1505842601019__prereq_N10014_N10011_N10001"> Obtain the current sensor calibration R/B
+			and B/G values for each illuminant from the EEPROM/OTP data that are outputs of a sensor
+			driver. Note that the order of the EEPROM/OTP data from the sensor driver may be
+			different from that of EEPROM/OTP data in the sensor specification document provided by
+			manufacturers. </div>
+
+		<div class="section context" id="mgc1505842601019__context_N10019_N10011_N10001">After doing this initial tuning, the
+			calibration factor should not require further tuning unless the golden module is
+			updated. </div>
+
+		<ol class="ol steps" id="mgc1505842601019__steps_dgg_s1x_qbb"><li class="li step stepexpand" id="mgc1505842601019__step_N10020_N1001D_N10011_N10001">
+				<span class="ph cmd">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</span>
+			</li>
+<li class="li step stepexpand" id="mgc1505842601019__step_N10037_N10023_N10014_N10001">
+				<span class="ph cmd">Click the <span class="ph uicontrol">Tree View</span> tab
+					and locate Sensor Calibration (V1).</span>
+			</li>
+<li class="li step stepexpand" id="mgc1505842601019__step_N10034_N10021_N10013_N10001">
+				<span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">Sensor Calibration</span> &gt; <span class="ph uicontrol">Num of Cal Factors</span></span>. Enter the number of calibration factors (light sources) you need
+					to enter. </span>
+				<div class="itemgroup info">For example, if EEPROM data has two different calibration factors for A
+					(2850K) and D65 (6500K) light sources, enter "2". <br /><img class="image" id="mgc1505842601019__image_aqh_pkv_pdb" src="zxn1524702425885.png" /><br /></div>
+			</li>
+<li class="li step stepexpand" id="mgc1505842601019__step_N1002D_N1001D_N10011_N10001">
+				<span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">Sensor Calibration</span> &gt; <span class="ph uicontrol">CCT of Cal Factors</span></span>. Enter the color temperature of each light source as illustrated
+					by the two entries in the example. <br /><img class="image" id="mgc1505842601019__image_cnk_ykv_pdb" src="eum1524702429286.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="mgc1505842601019__step_N10080_N1001E_N1000F_N10001">
+				<span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">Sensor Calibration</span> &gt; <span class="ph uicontrol">Golden Module Cal</span> &gt; <span class="ph uicontrol">[n]</span></span>. Enter the color R/G and B/G calibration factors for each light
+					source index as illustrated by the entries illustrated in the example. <br /><img class="image" id="mgc1505842601019__image_azz_jlv_pdb" src="ozm1524702428100.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="mgc1505842601019__step_N1005D_N10021_N10013_N10001">
+				<span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save Project</span></span>. </span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="oqy1505840201772.html" title="AWB sensor calibration data"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB sensor calibration data</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

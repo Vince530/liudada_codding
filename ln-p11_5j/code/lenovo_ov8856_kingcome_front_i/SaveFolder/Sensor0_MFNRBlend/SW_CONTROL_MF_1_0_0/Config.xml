@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<MFConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./MFConfiguration.xsd">
+  <RegionsConfig RegionIndex="0">
+    <RegionConfig Index="0">
+      <InputType>Semi_Planar</InputType>
+      <YuvType>YCbCr420</YuvType>
+      <Bpp>10</Bpp>
+      <Passes>4</Passes>
+      <PassesManual>4</PassesManual>
+      <Resolution>Sensor</Resolution>
+      <ManualResolution_Width>3264</ManualResolution_Width>
+      <ManualResolution_Height>2448</ManualResolution_Height>
+    </RegionConfig>
+  </RegionsConfig>
+  <TriggersStartEndIndexes></TriggersStartEndIndexes>
+  <ShowHideDCViewer>true</ShowHideDCViewer>
+  <ConfigurationFile></ConfigurationFile>
+  <FFMpegFile></FFMpegFile>
+  <AnalyseGyroLog></AnalyseGyroLog>
+  <CalibrateVideo></CalibrateVideo>
+  <CalibrateGyroLog></CalibrateGyroLog>
+  <FrameOffset>0</FrameOffset>
+  <FrameOffsetAutoDetect>true</FrameOffsetAutoDetect>
+  <NumOfFrames>800</NumOfFrames>
+  <ErrorThreshold>4</ErrorThreshold>
+  <BlurGyroLog></BlurGyroLog>
+</MFConfiguration>

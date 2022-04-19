@@ -1,0 +1,49 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Enable and capture log. Run the following adb commands: adb root adb remount adb shell setprop persist.camera.stats.debug.mask 48 Put the device on a tripod and focus on a far object. Bring in a chart ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="PDAF: Test AF speed" /><meta name="DC.Relation" scheme="URI" content="tni1495660796707.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="swu1477085282053" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>PDAF: Test AF speed</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="swu1477085282053">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">PDAF: Test AF speed</h1>
+
+   <div class="body taskbody">
+      <ol class="ol steps"><li class="li step stepexpand" id="swu1477085282053__step_N10014_N10011_N1000E_N10001">
+            <span class="ph cmd">Enable and capture log.</span>
+         </li>
+<li class="li step stepexpand" id="swu1477085282053__step_N1001D_N10011_N1000E_N10001">
+            <span class="ph cmd">Run the following adb commands:</span>
+            <div class="itemgroup info"><pre class="pre codeblock"><code><span class="keyword cmdname">adb root</span>
+<span class="keyword cmdname">adb remount</span>
+<span class="keyword cmdname">adb shell setprop persist.camera.stats.debug.mask 48</span></code></pre></div>
+         </li>
+<li class="li step stepexpand" id="swu1477085282053__step_N10037_N10011_N1000E_N10001">
+            <span class="ph cmd">Put the device on a tripod and focus on a far object.</span>
+         </li>
+<li class="li step stepexpand" id="swu1477085282053__step_N10040_N10011_N1000E_N10001">
+            <span class="ph cmd">Bring in a chart and wait for focus, then remove the chart and wait for focus on the far object again.</span>
+         </li>
+<li class="li step stepexpand" id="swu1477085282053__step_N10049_N10011_N1000E_N10001">
+            <span class="ph cmd">Search for <span class="keyword cmdname">ALGO Complete</span> in the logs. You should see something like this example:</span>
+            <div class="itemgroup info"><pre class="pre codeblock"><code>ALGO Complete finalpos 92 totaltime: 330 fine_search_time 265 focus_converge_time 65</code></pre><p class="p">In the log sample above, the total latency time is 330 ms (total latency = focus converge + fine search).</p>
+</div>
+         </li>
+<li class="li step stepexpand" id="swu1477085282053__step_N10060_N10011_N1000E_N10001">
+            <span class="ph cmd">Verify that the AF speed varies when the object distance changes
+               between each focus and that they are within the expected range. If speed does not
+               meet expectations, adjust the applicable PDAF parameters.</span>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="tni1495660796707.html" title="PDAF parameters">PDAF parameters</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

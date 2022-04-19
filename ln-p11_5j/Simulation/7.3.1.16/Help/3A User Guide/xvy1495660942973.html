@@ -1,0 +1,80 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Adjust the AF filter To prevent the false peak, use a high frequency band pass filter [0.2, 0.35] in a low light condition to flatten the FV curve for a spotlight scene. To prevent a false peak, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Tune low-light conditions for spotlight scenes" /><meta name="DC.Relation" scheme="URI" content="ynf1495660950352.html" /><meta name="DC.Relation" scheme="URI" content="onf1495660873880.html" /><meta name="DC.Relation" scheme="URI" content="muy1495661069412.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="lvv1477085285781" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune low-light conditions for spotlight scenes</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="lvv1477085285781">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune low-light conditions for spotlight scenes</h1>
+
+   <div class="body conbody">
+      <div class="section" id="lvv1477085285781__section_N10011_N1000E_N10001"><h2 class="title sectiontitle">Adjust the AF filter</h2><p class="p">To prevent the false peak, use a high frequency
+            band pass filter [0.2, 0.35] in a low light condition to flatten the FV curve for a
+            spotlight scene.</p>
+<br /><img class="image" id="lvv1477085285781__image_hqd_snq_rx" src="tlh1495660973518.png" /><br /><p class="p">To prevent a false peak, change the AF filter in a low light condition to a high
+            frequency BPF [0.2, 0.35] using these steps:</p>
+<ol class="ol">
+            <li class="li">In the Chromatix tool, on the <span class="ph uicontrol">AF Tuning</span> tab, click
+                  <span class="ph uicontrol">Edit Header </span><img class="image" src="kix1495660881758.png" /> .</li>
+
+            <li class="li">Select <span class="ph uicontrol">Header type </span>3A and navigate to <span class="ph uicontrol">AutoFocus &gt;
+                  Tuning Algorithm &gt; Lowlight Gain Threshold</span>.</li>
+
+            <li class="li">Verify the current setting of the
+                  <span class="keyword cmdname">low_light_gain_</span><span class="keyword cmdname">th</span> and adjust if needed.</li>
+
+            <li class="li">In the header editor, navigate to <span class="ph uicontrol">AutoFocus &gt; BAF &gt; Filter &gt; Lowlight</span>.<br /><img class="image" id="lvv1477085285781__image_pgg_c4q_rx" src="epe1495660847298.png" height="364" width="590" /><br /></li>
+
+            <li class="li">Set the <span class="ph uicontrol">FIR enable</span> and <span class="ph uicontrol">IIR enable</span>
+               parameters as applicable.</li>
+
+            <li class="li">Set the <span class="ph uicontrol">FIR Filter </span>and<span class="ph uicontrol"> IIR Filter</span>
+               settings using the following guidelines:<ul class="ul">
+                  <li class="li">FIR only<pre class="pre codeblock"><code> [0,-4,-4,1,2,3,4,3,2,1,-4,-4,0]</code></pre></li>
+
+               </ul>
+</li>
+
+         </ol>
+<ul class="ul">
+            <li class="li">IIR only BPF IIR [0.2,
+                              0.35]<pre class="pre codeblock"><code>[0.1226000, 0, -0.1226000, 1.3642469, -0.75484900,
+0.33660000, 0, -0.33660000, 0.8725360, -0.68906000]</code></pre></li>
+
+         </ul>
+</div>
+
+      <div class="section" id="lvv1477085285781__section_N10088_N1000E_N10001"><h2 class="title sectiontitle">Adjust flat ratio tuning</h2><p class="p">If changing the AF filter tuning does not result in a true peak, use these steps to adjust flat ratio tuning to make a spotlight scene considered a flat scene. This adjustment results in a more accurate and consistent AF result.</p>
+<ol class="ol">
+            <li class="li">In the Chromatix tool, on the <span class="ph uicontrol">AF Tuning</span> tab, click
+                  <span class="ph uicontrol">Edit Header </span><img class="image" src="kix1495660881758.png" /> .</li>
+
+            <li class="li">Select <span class="ph uicontrol">Header type </span>3A and navigate to <span class="ph uicontrol">AutoFocus &gt; Tuning Algorithm &gt; Single &gt; SW Thresholds &gt; BV Threshold &gt; Flat Threshold</span>.</li>
+
+            <li class="li">Reduce the flat threshold for the low BV entry (low light
+                  condition).<img class="image" id="lvv1477085285781__image_xbh_h4q_rx" src="jvk1495660906828.png" height="222" width="617" /></li>
+
+            <li class="li">Check to see if the flat scene stays in a hyper focus position.</li>
+
+         </ol>
+<p class="p">If these adjustments do not resolve the spotlight issue, turn on the spotlight detection assisted
+            AF feature.</p>
+</div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="muy1495661069412.html" title="Guidelines for spotlight parameters">Guidelines for spotlight parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="ynf1495660950352.html" title="Set up spotlight detection">Set up spotlight detection</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="onf1495660873880.html" title="Tune spotlight process parameters">Tune spotlight process parameters</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

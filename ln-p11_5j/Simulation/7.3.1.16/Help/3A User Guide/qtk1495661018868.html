@@ -1,0 +1,135 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The scope of AEC for HDR is to determine two exposures: Long exposure, comprising long exposure time and long gains, and short exposure, comprising short exposure time and short gain. The ratio of ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="High dynamic range" /><meta name="DC.Relation" scheme="URI" content="pxo1495660918715.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ojf1476892528074" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>High dynamic range</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ojf1476892528074">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">High dynamic range</h1>
+
+	<div class="body conbody">
+		<p class="p">The scope of AEC for HDR is to determine two exposures: Long exposure, comprising long exposure
+			time and long gains, and short exposure, comprising short exposure time and short gain.
+			The ratio of long and short exposure is known as the sensitivity ratio. The valid range
+			for the sensitivity ratio is [1.0 max_drc_gain].</p>
+
+		<p class="p">AEC HDR tuning is limited to ensuring that AEC properly calculates the long and
+			short exposures. Low contrast scenes (e.g., wall, white board) should result in a
+			sensitivity ratio as low as 1 (i.e., long and short exposures are identical). High
+			dynamic range scenes (e.g., backlight, outdoors and indoors scene) will yield a maximal
+			sensitivity ratio.</p>
+
+		<p class="p">AEC is not responsible for fusing the long and short pixel values into the final image.
+			Also, tone mapping should be carefully tuned together with AEC to achieve the optimal
+			balance of exposure and contrast.</p>
+
+		<div class="p">AEC leverages the ADRC feature to implement HDR. The goal of ADRC is twofold and aligns
+			with HDR:<ul class="ul" id="ojf1476892528074__ul_fj3_fhd_rx">
+				<li class="li">Prevent clipping by underexposing</li>
+
+				<li class="li">Restore correct exposure by applying ADRC gain</li>
+
+			</ul>
+</div>
+
+		<div class="p">
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="ojf1476892528074__table_fgc_lhd_rx" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : ADRC and HDR exposures</span></caption><colgroup><col style="width:50%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d51003e53">ADRC calculations</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d51003e56">HDR exposures</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d51003e53 ">Exposure</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d51003e56 ">Short exposure</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d51003e53 ">Exposure * ADRC gain</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d51003e56 ">Long exposure</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+		<p class="p">Preliminary knowledge and tuning of Histogram AEC and ADRC is required. Please refer to
+			the appropriate section of this document for tuning Histogram AEC and ADRC.</p>
+
+		<p class="p">A difference between HDR and ADRC is the way the data is aligned in the image pipe. In
+			HDR, the short and long exposure data is either LSB-aligned or MSB-aligned (HDR LSB
+			alignment was implemented first and HDR MSB alignment is currently being proposed). ADRC
+			always uses MSB alignment.</p>
+
+		<p class="p">LSB alignment example:</p>
+
+		<p class="p">Assuming a 10-bit sensor data and a sensitivity ratio of 2, short exposure data will be
+			aligned with long exposure data by multiplying short exposure pixel values by 2. This
+			results in data alignment on 11 bits.</p>
+
+		<p class="p">MSB alignment requires further aligning data to the full bit depth of the image data
+			pipe, i.e., 14 bits.</p>
+
+		<p class="p">Careful consideration of the histograms under LSB alignment and MSB alignment strategies
+			reveals that those two methods can be made strictly identical from the AEC standpoint.
+			This is apparent when looking at histogram data using a log2 scale.</p>
+
+		<p class="p"><img class="image" id="ojf1476892528074__image_qjw_4y5_sx" src="sss1495660952801.svg" /></p>
+
+		<p class="p"><img class="image" id="ojf1476892528074__image_wfj_py5_sx" src="pdn1495661082532.svg" /></p>
+
+		<p class="p">Histogram AEC can easily scale statistics data and ensure the outcome of ADRC
+			calculations transfers correctly to the HDR case, resulting in HDR and ADRC calculations
+			being identical.</p>
+
+		<div class="p">Histogram metering and ADRC must be enabled. Enable the following parameters in the
+			tuning header:<ul class="ul" id="ojf1476892528074__ul_zjh_2jd_rx">
+				<li class="li">hist_metering_enable</li>
+
+				<li class="li">adrc_enable</li>
+
+			</ul>
+</div>
+
+		<p class="p">The HDR long/short sensitivity ratio is the same quantity as ADRC gain. The maximum
+			sensitivity ratio is controlled by max_drc_gain. This value must be within the [1 16]
+			range.</p>
+
+		<p class="p">All histogram AEC parameters will impact HDR tuning. Start tuning using the default
+			values and proceed carefully, following histogram tuning instructions.</p>
+
+		<p class="p">If possible, it is preferable to have the HDR long exposure be a little bit larger than
+			to non-HDR, non-ADRC exposure. This is because the HDR short exposure can compensate for
+			clipped highlights. To achieve a brighter image, it is recommended to tune the bright
+			region parameter bright_weight for HDR, where slightly decreasing that parameter will
+			slightly increase brightness.</p>
+
+		<p class="p">The bright_weight parameter controls the weight applied to bright regions of the image.
+			When it is larger than 1.0, it acts as a saturation prevention mechanism by making the
+			bright highlights (values larger than bright_region_thres) count more. A value smaller
+			than 1.0 acts as a saturation discard mechanism. It is recommended to proceed carefully
+			when tuning the bright_weight parameter, and extensively test scenes with HDR. </p>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="pxo1495660918715.html" title="High dynamic range (HDR) AEC will not be effective in a low contrast scenes. The first step toward testing HDR AEC is to build a simple HDR scene.">Tune high dynamic range</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

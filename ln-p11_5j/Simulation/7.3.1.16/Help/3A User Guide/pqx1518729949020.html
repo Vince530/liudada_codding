@@ -1,0 +1,156 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="CCT Based Exp Comp tuning improves exposure matching across multiple illuminants. CCT Based Exp Comp is an array that comprises threshold-value pairs. CCT – Threshold to apply corresponding ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune CCT Based Exp Comp" /><meta name="abstract" content="CCT Based Exp Comp tuning improves exposure matching across multiple illuminants." /><meta name="description" content="CCT Based Exp Comp tuning improves exposure matching across multiple illuminants." /><meta name="DC.Relation" scheme="URI" content="jrj1517428982623.html" /><meta name="DC.Relation" scheme="URI" content="rrn1517428925261.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="pqx1518729949020" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune CCT Based Exp Comp</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="pqx1518729949020">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a> / <a class="navheader_parent_path" href="jrj1517428982623.html" title="Tune dual camera AEC">Tune dual camera AEC</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jrj1517428982623.html" title="Tune dual camera AEC"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune dual camera AEC</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune CCT Based Exp Comp</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">CCT Based Exp Comp tuning improves exposure matching across multiple
+		illuminants.</p>
+
+		<div class="section context" id="pqx1518729949020__context_N10015_N10012_N10001">CCT Based Exp Comp is an array that comprises threshold-value pairs.<ul class="ul" id="pqx1518729949020__ul_uzt_l3c_1db">
+				<li class="li">CCT – Threshold to apply corresponding compensation ratio.</li>
+
+				<li class="li">Compensation Ratio – Adjustment factor applied on top of Dual Cam Exp Comp
+					Multiplier to fine-adjust Dual Cam Exp Comp Multiplier based on CCT.</li>
+
+			</ul>
+<p class="p">The array allows tuning for multiple illuminants, where D50 is the reference
+				illuminant. The default tuning array size is 6, but the array size is unbound and
+				new pairs can be added, if needed.</p>
+</div>
+
+		<p class="li stepsection"><strong class="ph b">Capture Dual Cam Exp Comp test images</strong></p><ol><li class="li step stepexpand" id="pqx1518729949020__step_N10033_N10029_N10012_N10001">
+				<span class="ph cmd">Set up a light box with six illuminants (D65, D50, CWF, TL84, A, and Horizon)
+					and capture one image per camera per illuminant.</span>
+			</li>
+<li class="li step stepexpand" id="pqx1518729949020__step_N1003C_N10029_N10012_N10001">
+				<span class="ph cmd">Use a flat, uniform gray chart and set the camera optical axis perpendicular to
+					it. Ensure the gray chart occupies 100% FOV for both cameras.</span>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Tune CCTBased Exp Comp</strong></p><ol start="3"><li class="li step stepexpand" id="pqx1518729949020__step_N1004B_N10029_N10012_N10001">
+				<span class="ph cmd">Open the captured images in Chromatix 7 and verify the CCT value of
+						<span class="ph uicontrol">AWB CurFrameDecision</span> for each image in the 3A debug
+					information.</span>
+			</li>
+<li class="li step stepexpand" id="pqx1518729949020__step_N10058_N10029_N10012_N10001">
+				<span class="ph cmd">Calculate the multiplier (M) per camera and per CCT, where the illuminant
+					is distinguished in M<sub class="ph sub">1,D50</sub>, M<sub class="ph sub">1,D65</sub>, etc.</span>
+			</li>
+<li class="li step stepexpand" id="pqx1518729949020__step_N1006F_N10029_N10012_N10001">
+				<span class="ph cmd">Calculate the compensation ratio (CR) for all illuminants as follows:</span>
+				<div class="itemgroup info">
+					
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="pqx1518729949020__table_b33_q3r_1db" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:22.371364653243848%" /><col style="width:37.360178970917225%" /><col style="width:40.26845637583893%" /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d47150e98">Illuminant</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d47150e101">Camera 1 M</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d47150e104">Camera 2 M</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e98 ">D65</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e101 ">CR<sub class="ph sub">1,D65</sub> =
+										M<sub class="ph sub">1,D65</sub>/M<sub class="ph sub">1</sub></td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e104 ">CR<sub class="ph sub">2,D65</sub> =
+										M<sub class="ph sub">2,D65</sub>/M<sub class="ph sub">2</sub></td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e98 ">D50</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e101 ">CR<sub class="ph sub">1,D50</sub> = 1.0</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e104 ">CR<sub class="ph sub">2,D50</sub> = 1.0</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e98 ">CWF</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e101 ">CR<sub class="ph sub">1,CWF</sub> =
+										M<sub class="ph sub">1,CWF</sub>/M<sub class="ph sub">1</sub></td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e104 ">CR<sub class="ph sub">2,CWF</sub> =
+										M<sub class="ph sub">2,CWF</sub>/M<sub class="ph sub">2</sub></td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e98 ">TL84</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e101 ">CR<sub class="ph sub">1,TL84</sub> =
+										M<sub class="ph sub">1,TL84</sub>/M<sub class="ph sub">1</sub></td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e104 ">CR<sub class="ph sub">2,TL84</sub> =
+										M<sub class="ph sub">2,TL84</sub>/M<sub class="ph sub">2</sub></td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e98 ">A</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e101 ">CR<sub class="ph sub">1,A</sub> = M<sub class="ph sub">1,A</sub>/M<sub class="ph sub">1</sub></td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e104 ">CR<sub class="ph sub">2,A</sub> = M<sub class="ph sub">2,A</sub>/M<sub class="ph sub">2</sub></td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e98 ">Horizon</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e101 ">CR<sub class="ph sub">1,HZ</sub> =
+										M<sub class="ph sub">1,TL84</sub>/M<sub class="ph sub">1</sub></td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d47150e104 ">CR<sub class="ph sub">2,HZ</sub> =
+										M<sub class="ph sub">2,TL84</sub>/M<sub class="ph sub">2</sub></td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+
+					<p class="p">The reasonable value range is roughly [0.5, 1.5]. If values are outside this
+						range, there may be an error in calculations.</p>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="pqx1518729949020__step_N10190_N10029_N10012_N10001">
+				<span class="ph cmd">Note the camera 1 tuning data, where the CCT value is from camera 2 and the
+						CR<sub class="ph sub">1,illuminant</sub> value is from camera 1.</span>
+			</li>
+<li class="li step stepexpand" id="pqx1518729949020__step_N1019D_N10029_N10012_N10001">
+				<span class="ph cmd">Note the camera 2 tuning data, where the CCT value is from camera 1 and the
+						CR<sub class="ph sub">2,illuminant</sub> value is from camera 2.</span>
+			</li>
+<li class="li step stepexpand" id="pqx1518729949020__step_N101AA_N10029_N10012_N10001">
+				<span class="ph cmd">Sort CCT values in ascending order (i.e., CCT[N] &lt; CCT[N+1]). The compensation ratio
+					should not change dramatically.<br /><img class="image" id="pqx1518729949020__image_evq_slr_1db" src="kmn1520021795794.png" /><br /></span>
+			</li>
+</ol>
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="rrn1517428925261.html" title="Dual camera AEC">Dual camera AEC</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jrj1517428982623.html" title="Tune dual camera AEC"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune dual camera AEC</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

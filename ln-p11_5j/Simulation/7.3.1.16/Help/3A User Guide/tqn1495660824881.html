@@ -1,0 +1,73 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="ISO is a measurement of the sensitivity of traditional photographic film. For digital cameras, the term is also used as a measurement of the sensitivity camera sensor. ISO 100 gain is optimum for ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune ISO value" /><meta name="DC.Relation" scheme="URI" content="cpr1495660858748.html" /><meta name="DC.Relation" scheme="URI" content="qws1495660827330.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="suf1474864613206" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune ISO value</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="suf1474864613206">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cpr1495660858748.html" title="Required AEC tuning procedures">Required AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune ISO value</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="suf1474864613206__context_N10016_N10013_N10001">ISO is a measurement of the
+         sensitivity of traditional photographic film. For digital cameras, the term is also used as
+         a measurement of the sensitivity camera sensor. ISO 100 gain is optimum for digital
+         cameras. <div class="p">The goal of this procedure is to calibrate the QTI ISO Value so
+            that it equals 100 (same as optimum sensitivity = ISO 100). The calibration tool
+            computes an ISO 100 Gain, which is then used to update the QTI ISO Value.<ul class="ul" id="suf1474864613206__ul_cp1_nrb_rx">
+               <li class="li">QTI <span class="ph uicontrol">ISO Value</span> begins as
+                  real gain (from the Exposure Table) </li>
+
+               <li class="li">Using a RAW image captured with the tuning device, use the
+                     <span class="ph uicontrol">AEC</span> dialog to compute the gain
+                  associated with ISO 100. This is referred to as the <span class="ph uicontrol">Preview ISO 100 gain</span>. </li>
+
+               <li class="li">If real gain is &gt; ISO 100 Gain, the QTI <span class="ph uicontrol">ISO Value</span> is recalibrated with (Real Gain * 100/ISO
+                  100 Gain). </li>
+
+            </ul>
+</div>
+<p class="p">In <cite class="cite">ISO 2721:2013</cite>
+            (https://www.iso.org/obp/ui/#iso:std:iso:2721:ed-2:v1:en), a lookup table determines the
+            relationship between ISO value and "standard" ISO value. Starting with 3A v5.1, standard
+            ISO value is available by enabling the ISO quantization function to convert the ISO
+            value to standard ISO value.</p>
+</div>
+
+      <ol class="ol steps"><li class="li step" id="suf1474864613206__step_N10018_N10015_N10012_N10001">
+            <span class="ph cmd">In a light box, capture raw image of the MCC chart using brightness
+               conditions between 700 and 1000 lux with D65 color temperature.</span>
+         </li>
+<li class="li step" id="suf1474864613206__step_N10021_N10015_N10012_N10001">
+            <span class="ph cmd">Verify that the brightest patch is not saturated. If the patch is
+               saturated, capture a wider field image or repeat luma target and tolerance tuning
+               using a decreased luma target value. </span>
+         </li>
+<li class="li step" id="suf1474864613206__step_N1002A_N10015_N10012_N10001">
+            <span class="ph cmd">Using a light meter, measure the luminance (lux) shining onto the surface of the white patch (#19) of the MCC chart. </span>
+         </li>
+<li class="li step" id="suf1474864613206__step_N10033_N10015_N10012_N10001">
+            <span class="ph cmd">Navigate to the <span class="ph uicontrol">AEC</span> tab and
+               enter values as needed.</span>
+         </li>
+<li class="li step" id="suf1474864613206__step_N10084_N10015_N10012_N10001">
+            <span class="ph cmd">Verify that the ISO 100 Gain value is correctly set by capturing
+               the analog gain value in a light source box. The ISO value in the EXIF can be
+               verified using the following formula: <code class="ph codeph">ISO value =
+                  (analog_gain*100)/ISO_100_gain</code></span>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="qws1495660827330.html" title="Preview ISO 100 gain">Preview ISO 100 gain</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

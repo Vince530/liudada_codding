@@ -1,0 +1,332 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Advanced noise reduction (ANR) is a multipass spatial noise filtering for snapshot and video modes. On the Pipeline tab, click ANR and then click a region in the Regions group. Click Load MCC Images ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune ANR" /><meta name="abstract" content="Advanced noise reduction (ANR) is a multipass spatial noise filtering for snapshot and video modes." /><meta name="description" content="Advanced noise reduction (ANR) is a multipass spatial noise filtering for snapshot and video modes." /><meta name="DC.Relation" scheme="URI" content="agg1499463565286.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="xbg1499463478394" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune ANR</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="xbg1499463478394">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="agg1499463565286.html" title="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes.">ANR tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="agg1499463565286.html" title="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ANR tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune ANR</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Advanced noise reduction (ANR) is a multipass spatial noise filtering for snapshot and
+		video modes.</p>
+
+		<ol><li class="li step stepexpand" id="xbg1499463478394__step_N10021_N1001A_N10017_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab, click
+						<span class="ph uicontrol">ANR</span> and then click a region in the
+					Regions group.</span>
+			</li>
+<li class="li step stepexpand" id="xbg1499463478394__step_N10032_N1001A_N10017_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load MCC Images</span>
+					and load at least one YUV MCC image.</span>
+				<ol type="a" class="ol substeps" id="xbg1499463478394__substeps_nh3_b5v_q1b">
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Submit</span>.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Drag the top-left MCC grid marker to the center of the
+							top-left color patch. Drag the bottom-right MCC grid marker to the
+							center of the bottom-right color patch. All the grid markers should
+							align within the color patches of the MCC chart image. Ensure ~80% of
+							the patches are selected for best results.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Close the image.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Repeat process for each MCC image.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="xbg1499463478394__step_N1006C_N1001A_N10017_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load Flat Image</span>
+					and load a flat field image.</span>
+				<div class="itemgroup info">Inaccurate flat field image may result in radial noise patches and heavily
+					effect calibration noise detection, especially in low frequencies.</div>
+			</li>
+<li class="li step stepexpand" id="xbg1499463478394__step_N1007D_N1001A_N10017_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Calibrate</span>.</span>
+			</li>
+<li class="li step stepexpand" id="xbg1499463478394__step_N10097_N1001D_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Calibrate LNR</span> to run lens-dependent noise
+					reduction (LNR). To manually adjust the LNR, see <cite class="cite">(Advanced) Lens-dependent
+						Nosie Reduction (LNR)</cite>.</span>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">(Advanced) Reserved Parameters</strong></p><ol start="6"><li class="li step stepexpand" id="xbg1499463478394__step_N100AE_N1001D_N1001A_N10001">
+				<span class="ph cmd">For high and low power modes, click <span class="ph uicontrol">Reserved Parameters</span> and in the Power Control group, enable or
+					disable the following features:</span>
+				<div class="itemgroup info">
+					<ul class="ul" id="xbg1499463478394__ul_fkz_brp_qbb">
+						<li class="li">Enable Chroma Filter Extension</li>
+
+						<li class="li">Enable Luma Smoothing Treatment and Peak Treatment</li>
+
+						<li class="li">Enable Chroma Smoothing Treatment and Peak
+							Treatment</li>
+
+					</ul>
+
+					<p class="p">These features are used for 4K60 or 1080p videos.</p>
+
+				</div>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Basic Level</strong></p><ol start="7"><li class="li step stepexpand" id="xbg1499463478394__step_N1008A_N1001A_N10017_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span>
+					group, click <span class="ph uicontrol">Basic Level</span>.</span>
+				<ol type="a" class="ol substeps" id="xbg1499463478394__substeps_f2h_wvx_m1b">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Adjust the <span class="ph uicontrol">Noise
+								Detection</span> luma and chroma values as needed.</span>
+						<div class="itemgroup info">Noise detection separates details from noise at each
+							frequency range. A higher value applies more filtering, but may have
+							inconsistent edges.<p class="p"><span class="ph uicontrol">Noise
+									Level Low Frequency</span> affects noise levels for DC16
+								images. <span class="ph uicontrol">Noise Level Mid
+									Frequency</span> affects noise levels for DC4 images.
+									<span class="ph uicontrol">Noise Level High
+									Frequency</span> affects noise levels for full
+							images.</p>
+</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Adjust the <span class="ph uicontrol">Noise
+								Reduction</span> luma and chroma values as needed.</span>
+						<div class="itemgroup info">The noise reduction amount defines the amount of blend between the
+							original image and the filtered one. A higher value creates a softer
+							image with less noise. It is recommended to keep the <span class="ph uicontrol">Chroma </span> sliders at the max values.<p class="p">Adjust <span class="ph uicontrol">Strength Final
+									High Frequency</span> for cleaner images with high
+								frequency granularity, retain textures and continuity, and reduce
+								harsh transitions between flat and non-flat areas.</p>
+<p class="p">Adjust <span class="ph uicontrol">Strength
+									(DCBlend2) Mid/Low Frequency</span> for cleaner flat areas,
+								to retain low contrast textures for flat areas, and mid frequency
+								granularity.</p>
+</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Click <span class="ph uicontrol">Save</span> to
+							retain all changes.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Click <span class="ph uicontrol">Close</span> to
+							return to the main ANR tuning screen.</span>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">(Advanced) Base Functions</strong></p><ol start="8"><li class="li step stepexpand" id="xbg1499463478394__step_N10169_N1001D_N1001A_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span> group, click
+						<span class="ph uicontrol">Base Functions</span>.</span>
+				<ol type="a" class="ol substeps" id="xbg1499463478394__substeps_o2r_tql_pbb">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Tune <span class="ph uicontrol">Luma Filter</span> and <span class="ph uicontrol">Chroma
+								Filter</span> from lowest pass to highest (i.e., DC64 &gt; DC16 &gt;
+							DC4 &gt; Full).</span>
+						<div class="itemgroup info">If an issue arises, find the lowest pass where the issue occurs, place
+							a point of interest (POI), and try to resolve the issue.</div>
+						<div class="itemgroup info">DC64s typically do not require tuning.</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Add POI markers where noise occurs in an image. Review the markers on
+							the threshold graph and if more pixels are distributed above than the
+							function, the pixels were not filtered enough. If overfiltering occurs
+							and more pixels are distributed below the function, adjust the function
+							to lower the filtering level. In the graph, the X-axis represents the
+							luma value and the Y-axis represents the derivative.<br /><img class="image" id="xbg1499463478394__image_xjn_twl_pbb" src="rbh1508525039477.png" /><br /></span>
+						<div class="itemgroup info">The I marker shows the highest and lowest derivatives around the POI.
+							If the POI line goes above the threshold, the pixels above the threshold
+							will be filtered. If the POI line is entirely under the threshold, all
+							pixels will be filtered.<br /><img class="image" id="xbg1499463478394__image_thz_gxl_pbb" src="opr1508525923990.png" /><br /></div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Adjust the <span class="ph uicontrol">UV Thresholds</span> for <span class="ph uicontrol">Luma
+								Filter</span> and <span class="ph uicontrol">Chroma Filter</span> as
+							necessary to offset the threshold according to chroma values. For
+							example, set a higher value for blues to increase filtering for sky-like
+							colors.</span>
+						<div class="itemgroup info">The UV limit is the distance of the black squares (see following
+							image) from the center. Larger values have less impact on low color
+							saturation; smaller values have more impact. The luma and chroma UV
+							limits are 64.<br /><img class="image" id="xbg1499463478394__image_lxk_vhh_qbb" src="tpp1508780239473.png" /><br /></div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Set the scale for the functions set by the threshold
+							for a derivative length.</span>
+						<div class="itemgroup info">3(2nd derivative) sets the second order derivative
+							scale. It is recommended to use this value for contours (gradients) and
+							local peaks detection.</div>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">(Advanced) Lens-dependent Noise Reduction
+					(LNR)</strong></p><ol start="9"><li class="li step stepexpand" id="xbg1499463478394__step_N101DE_N1001D_N1001A_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span> group, click
+						<span class="ph uicontrol">Lnr</span>.</span>
+				<ol type="a" class="ol substeps" id="xbg1499463478394__substeps_ml3_mkh_qbb">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Tune the <span class="ph uicontrol">Center</span> and <span class="ph uicontrol">Ellipse
+								parameters A</span> values, if needed.</span>
+						<div class="itemgroup info">The <span class="ph uicontrol">Center</span> value defines the ellipse center
+							position in the image. For the <span class="ph uicontrol">Ellipse parameters
+								A</span> value, 0.5 is a circle. Anything greater than 0.5 is
+							an ellipse, and anything smaller than 0.5 is a wide ellipse.</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Evaluate the noise in the image center. If the image is overfiltered or
+							too noisy, adjust the <span class="ph uicontrol">Base Functions</span>.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Adjust the four LUTs (LumaFilter, ChromaFilter, Y_Factor, and
+							UV_Factor). It is recommended to tune one LUT and use <span class="ph uicontrol">Copy
+								Lut</span> and <span class="ph uicontrol">Paste Lut</span> to copy and
+							paste the results to the other three LUTs. Further adjustments can be
+							made after.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd"> To manually reset the LUT to be linear, set the reset to linear values
+							and click <span class="ph uicontrol">Reset to linear</span>.</span>
+						<div class="itemgroup info">The left value must be 1. The second value should be the maximum LNR
+							correction, where the thresholds increase at the end of the
+							image.</div>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">(Advanced) Inter Length Control</strong></p><ol start="10"><li class="li step stepexpand" id="xbg1499463478394__step_N10244_N1001D_N1001A_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span> group, click
+						<span class="ph uicontrol">Inter Length Control</span> and adjust values as
+					needed.</span>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">False Colors</strong></p><ol start="11"><li class="li step stepexpand" id="xbg1499463478394__step_N100F8_N1001A_N10017_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span>
+					group, click <span class="ph uicontrol">False Colors</span></span>
+				<ol type="a" class="ol substeps" id="xbg1499463478394__substeps_jsy_xxy_m1b">
+					<li class="li substep">
+						<span class="ph cmd">Deselect the <span class="ph uicontrol">Enable</span> check box in the <span class="ph uicontrol">Chroma Edge Treatment</span> group for all passes (full, DC4,
+							DC16, and DC64).</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Enable and enter values for <span class="ph uicontrol">enable_greytreatment_thr_modification</span> for DC4 and full
+							passes only.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Enter values for <span class="ph uicontrol">Detection -
+								Chromaticity Theshold</span> and <span class="ph uicontrol">Detection - Y Max Derivative Theshold</span> for full pass.
+							Only tune for DC4 if it is highly necessary. Do not tune other
+							passes.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Save</span> to
+							retain all changes.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click<span class="ph uicontrol">Close</span>.</span>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Filter Settings</strong></p><ol start="12"><li class="li step stepexpand" id="xbg1499463478394__step_N102D0_N1001D_N1001A_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span> group, click
+						<span class="ph uicontrol">Filter Settings</span> and adjust the values as
+					needed.</span>
+				<div class="itemgroup info">The Full Luma Filter Kernel feature allows tuning for flat and edge areas.
+					This is for Full pass only. It is recommended to set the edge kernel flatter
+					than the flat kernel.</div>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">CNR</strong></p><ol start="13"><li class="li step stepexpand" id="xbg1499463478394__step_N102EC_N1001D_N1001A_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Configuration</span>
+					group, click <span class="ph uicontrol">CNR</span> and tune from the
+					lowest pass.</span>
+				<div class="itemgroup info">For example, if enabling CNR for Full and DC4, begin with DC4
+					and continue with Full. For Full, DC4, and DC16, begin with DC16, then DC4, then
+					Full.</div>
+				<ol type="a" class="ol substeps" id="xbg1499463478394__substeps_pmc_y2d_12b">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">For each color, measure several points including the UV angle, UV
+							radius, and Y value.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Enable <span class="ph uicontrol">Colors count</span>.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Enter values for <span class="ph uicontrol">Angle Range</span>, <span class="ph uicontrol">Y
+								Range</span>, and saturation ranges.</span>
+						<div class="itemgroup info">
+							<ul class="ul" id="xbg1499463478394__ul_a2y_vfd_12b">
+								<li class="li">Angle range – Extreme values of UV angle measurements for the
+									chosen color.</li>
+
+								<li class="li">Y range – Extreme values of Y value measurements for the chosen
+									color.</li>
+
+								<li class="li">Saturation range – Extreme values of UV radius measurements for
+									the chosen color.</li>
+
+							</ul>
+
+						</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">In <span class="ph uicontrol">Base Functions</span>, find the gain to obtain the
+							function above derivative distribution. Enter this value in
+								<span class="ph uicontrol">GainFactor</span> for luma and chroma.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">(Optional) If using face detection, enable <span class="ph uicontrol">Face detection
+								dependency</span>.</span>
+					</li>
+
+				</ol>
+
+				<div class="itemgroup info">Examine color identification and check the impact of tuning
+					on additional images to assess and understand the tradeoffs. In the following
+					example, CNR is tuned to scale luma filter full pass base functions by 2 when
+					colors like skin tone patches in the MCC are detected.<br /><img class="image" id="xbg1499463478394__image_drk_kgd_12b" src="fpr1527883945159.png" /><br /></div>
+			</li>
+<li class="li step stepexpand" id="xbg1499463478394__step_N10306_N1001D_N1001A_N10001">
+				<span class="ph cmd">Repeat process for each region.</span>
+			</li>
+<li class="li step stepexpand" id="xbg1499463478394__step_N1019D_N1001D_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save to Project</span></span> to save any changes made.</span>
+			</li>
+</ol>
+		<div class="section postreq" id="xbg1499463478394__postreq_N1014C_N10017_N10001">Tune the temporal filter (TF) module
+			(video mode only).</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="agg1499463565286.html" title="Advanced noise reduction (ANR) is a multipass spatial noise filtering process available for snapshot and video modes."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ANR tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

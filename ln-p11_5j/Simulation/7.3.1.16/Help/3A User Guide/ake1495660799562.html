@@ -1,0 +1,56 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Banding (or flicker) normally appears when scenes are illuminated with incandescent or fluorescent bulbs. Anti-banding can be enabled automatically via the user interface. Auto-enable requires the ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Anti-banding" /><meta name="DC.Relation" scheme="URI" content="gpc1495660795131.html" /><meta name="DC.Relation" scheme="URI" content="bms1495660861634.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nxa1474864613643" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Anti-banding</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nxa1474864613643">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gpc1495660795131.html" title="AEC tuning concepts">AEC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gpc1495660795131.html" title="AEC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AEC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Anti-banding</h1>
+
+   <div class="body conbody">
+      <p class="p">Banding (or flicker) normally appears when scenes are illuminated with
+         incandescent or fluorescent bulbs. Anti-banding can be enabled automatically via the user
+         interface. Auto-enable requires the camera application to detect the light source
+         illuminant type; if fluorescent or incandescent is detected, anti-banding is enabled.
+         Banding frequency is difficult to detect, so it is assumed to be either 60 Hz or 50 Hz.
+         Licensees may decide which one to use in their application. </p>
+
+      <p class="p">The anti-banding algorithm uses the original auto exposure table to generate a new table that uses a line gap as a condition to adjust the exposure time. Inputs required to generate the new exposure table are line time, for example, clocks-per-line and clock speed. Flow for anti-banding table generation calculates the number of lines required to fill the gap to meet anti-banding criteria. Exposure times from default exposure tables are substituted with exposure times that meet the criteria for banding removal. To achieve smooth exposure control, sensor gain is used to compensate for gaps in exposure time.  </p>
+
+      <p class="p">Anti-banding tables are automatically generated. Banding artifacts originating from a light source running from 60 Hz or 50 Hz AC are removed. The method used to eliminate banding artifacts allows each pixel to capture light in bursts that are proportional to the illuminant AC supply frequency. This allows each pixel to capture the same amount of light, assuming the target is a flat image. As illustrated below, light emitted from the source is not constant. The human eye cannot see this flicker but the camera sensor using a rolling shutter does.</p>
+
+      <div class="fig fignone" id="nxa1474864613643__ID-fig-00000021">
+         <img class="image" src="wjl1495661090628.png" />
+      </div>
+
+      <p class="p">A 60 Hz signal has a period of 16.66 ms. A light bulb uses a power level, not a current or voltage alone, to generate light. A 60 Hz signal flickers at a 120 Hz rate; this becomes our integration time gap. </p>
+
+      <p class="p">Under bright illumination conditions, the exposure time of each pixel cell is very short
+         and may not allow exposure for one time gap. As a result, bands may be visible for very
+         bright scenes observed under incandescent or fluorescent light. </p>
+
+      <div class="fig fignone nonumber" id="nxa1474864613643__fig_p5z_hml_kcb"><span class="figcap">Figure : (L) Image with banding noise; (R) Image without banding
+            noise</span>
+         
+         <br /><img class="image" id="nxa1474864613643__image_trm_fnl_1x" src="pyp1495660892257.png" /><br />
+      </div>
+
+      <div class="section" id="nxa1474864613643__section_N10035_N1000E_N10001"><h2 class="title sectiontitle">Anti-banding vs manual ISO priority</h2><p class="p">The anti-banding feature has a conflict of interest with a manual ISO set from the camera application in the device. In the default QTI solution, anti-banding is always the top priority so that no flickering compromises the image quality. The result is that ISO values cannot remain exact as set by the camera application. For example, if you set the ISO speed in the camera app to 800, the actual ISO values in a captured image might be anywhere around 800, such as 720 or 850.</p>
+<p class="p">If your requirements make it necessary to prioritize a manual ISO over anti-banding, reset the
+            priority using the <span class="keyword parmname">antibanding_vs_ISO_priority</span> parameter.</p>
+</div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="bms1495660861634.html" title="Tune anti-banding vs ISO priority">Tune anti-banding vs ISO priority</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gpc1495660795131.html" title="AEC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AEC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

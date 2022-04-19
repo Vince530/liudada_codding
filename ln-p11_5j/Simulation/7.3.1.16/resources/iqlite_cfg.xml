@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<iqlite_cfg>	
+	<te42_raw>T:\Ray\0905_Raw\A_20lux\camera\t014320-704_p[0x88700000]_req[1]_batch[0]_BPS[1]_port[0]_w[4032]_h[3024].RAWMIPI</te42_raw>
+	<meta_xml>T:\Ray\0905_Raw\A_20lux\IMG_19700629_014321\IMG_19700629_014321_meta.xml</meta_xml>
+	<stream_xml>T:\Ray\0905_Raw\A_20lux\IMG_19700629_014321\IMG_19700629_014321_cfg.xml</stream_xml>
+	<manual_xml>T:\Ray\0905_Raw\A_20lux\IMG_19700629_014321\IMG_19700629_014321_manual_input.xml</manual_xml>
+	<patch_xml>T:\Ray\0905_Raw\A_20lux\patch_prop_mod_0.xml</patch_xml>
+	<c7_proj>C:\Users\ygupta\Documents\autotune\dipper_imx363_semco_c7_new</c7_proj>
+	<c7_sim_dir>C:\Users\ygupta\Documents\autotune\dipper_imx363_semco_c7_new\Simulation\Default</c7_sim_dir>
+	<ssim_bin_dir>C:\Users\ygupta\Documents\autotune\SpectraCamSim280.WIN.1.0-00020\Bin</ssim_bin_dir>
+	<ssim_exe>QualcommSpectraSim280.exe</ssim_exe>
+	<ref_hc_dl>C:\Users\ygupta\Documents\autotune\Autotune_u1\Autotune_u1\bin\resources\adaptation\dl_crop_big.bmp</ref_hc_dl>
+	<ref_lc_dl>C:\Users\ygupta\Documents\autotune\Autotune_u1\Autotune_u1\bin\resources\adaptation\dl_crop_low_cn.bmp</ref_lc_dl>
+	<work_dir>C:\Users\ygupta\Documents\autotune\tmp3</work_dir>
+</iqlite_cfg>

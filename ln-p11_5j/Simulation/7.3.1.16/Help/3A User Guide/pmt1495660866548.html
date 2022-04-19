@@ -1,0 +1,152 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The AF Tuning tab calculates the CAF/TAF step tables based on values you specify in the Lens Position Tuning Input group. You can adjust the tables by selecting one of the Search Preference presets or ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune AF step size manually" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="gsq1477085284393" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune AF step size manually</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="gsq1477085284393">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune AF step size manually </h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="gsq1477085284393__context_N10011_N1000E_N10001"><p class="p">The <span class="ph uicontrol">AF Tuning</span> tab calculates the CAF/TAF step tables based on values you
+            specify in the <span class="ph uicontrol">Lens Position Tuning Input</span> group. You can adjust
+            the tables by selecting one of the<span class="ph uicontrol"> Search Preference</span> presets or
+            by entering new values.</p>
+<p class="p">Use the following guidelines when determining custom step size values:</p>
+</div>
+
+      <ul class="ul steps-unordered"><li class="li step stepexpand" id="gsq1477085284393__step_N1002A_N10027_N1000E_N10001">
+            <span class="ph cmd">The algorithm step unit is the same as DAC. This means that one step is equal to one DAC.</span>
+         </li>
+<li class="li step stepexpand" id="gsq1477085284393__step_N10033_N10027_N1000E_N10001">
+            <span class="ph cmd">The lens shift for macro and far objects is different. In the macro range, the step size can be increased while maintaining overlapping DOF. If steps are set too large, the DOF may miss some object distance and the actuator may not be able to handle the move.</span>
+         </li>
+<li class="li step stepexpand" id="gsq1477085284393__step_N1003C_N10027_N1000E_N10001">
+            <span class="ph cmd">The step size table has five regions, separated by four boundaries. The first boundary is set as a hyperfocal position and the remaining boundaries are configurable. By default, the boundaries are set to 50 cm, 20 cm, and 14 cm due to the nonlinear characteristics. If needed, adjust the boundaries in the Chromatix header editor using the <span class="ph uicontrol">3A &gt; AutoFocus &gt; Tuning Algorithm &gt; Single &gt; Optics</span> parameters.</span>
+            <div class="itemgroup info">
+               <br /><img class="image" id="gsq1477085284393__image_zs2_51q_rx" src="zpz1495660967746.png" /><br />
+            </div>
+         </li>
+<li class="li step stepexpand" id="gsq1477085284393__step_N10053_N10027_N1000E_N10001">
+            <span class="ph cmd">There are five regions defined in the lens movable range:</span>
+            <ul class="ul choices">
+               <li class="li choice"><p class="p">Region 0: From far_end_position to normal_hyperfocal _position</p>
+</li>
+
+               <li class="li choice"><p class="p">Region 1: From normal_hyperfocal _position to srch_rgn_1 (default = 50 cm)</p>
+</li>
+
+               <li class="li choice"><p class="p">Region 2: From srch_rgn_1 to srch_rgn_2 (default = 20 cm)</p>
+</li>
+
+               <li class="li choice"><p class="p">Region 3: From srch_rgn_2 to srch_rgn_3 (default = 14 cm)</p>
+</li>
+
+               <li class="li choice"><p class="p">Region 4: From srch_rgn_3 to near_end position</p>
+</li>
+
+            </ul>
+
+         </li>
+<li class="li step stepexpand" id="gsq1477085284393__step_N1007E_N10027_N1000E_N10001">
+            <span class="ph cmd">A large step size can improve the AF speed, but can cause the FV curve to miss the peak for that DOF. Generally, the macro region has a larger step size and the infinity region has a smaller step size.</span>
+         </li>
+<li class="li step stepexpand" id="gsq1477085284393__step_N10087_N10027_N1000E_N10001">
+            <span class="ph cmd">In general, the normal light region has a smaller step size and the low light region has a larger step size. In low light, the frame rate is dropped and, in order to maintain AF speed, the step size is increased slightly compared to normal light.</span>
+            <div class="itemgroup info"><p class="p"><span class="ph uicontrol">Prerequisite:</span> Before tuning AF step size, ensure that the actuator damping is well-tuned. Also ensure that the actuator can focus to infinity (typically ~3 m) and to macro (typically 10 cm) distance, as specified by the vendor.</p>
+</div>
+            <ol class="ol substeps">
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">In the Chromatix tool, select <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Open Project</span></span> to open the project file you want to tune.</span>
+               </li>
+
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Click the <span class="ph uicontrol">AF Tuning</span> tab.</span>
+                  <div class="itemgroup info"><img class="image" id="gsq1477085284393__image_phv_gbq_rx" src="tav1495660999180.png" /></div>
+               </li>
+
+               <li class="li substep substepexpand">
+                  <span class="ph cmd">Use one of the options described in the following table to adjust the fields in the <span class="ph uicontrol">TAF Step Table</span> and the <span class="ph uicontrol">CAF Step Table</span> groups.</span>
+                  <div class="itemgroup info">
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="gsq1477085284393__ID-table-00000018" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:2.75in" /><col style="width:3in" /></colgroup><thead class="thead" style="text-align:left;">
+                              <tr class="row">
+                                 <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d46532e157">Adjustment options:</th>
+
+                                 <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d46532e160">Search Preference indicator:</th>
+
+                              </tr>
+
+                           </thead>
+<tbody class="tbody">
+                              <tr class="row">
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e157 "><p class="p">Use preset values optimized for accuracy over focus speed:</p>
+<ul class="ul">
+                                       <li class="li">Step sizes are smaller</li>
+
+                                       <li class="li">Longer focus time</li>
+
+                                       <li class="li">Lens lands at the optimum position</li>
+
+                                    </ul>
+</td>
+
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e160 ">From Search Preference list, select <em class="ph i">Robustness</em></td>
+
+                              </tr>
+
+                              <tr class="row">
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e157 "><p class="p">Use preset values optimized for focus speed over accuracy:</p>
+<ul class="ul">
+                                       <li class="li">Step sizes are larger</li>
+
+                                       <li class="li">Shorter focus time</li>
+
+                                       <li class="li">Lens position may not be optimal</li>
+
+                                    </ul>
+</td>
+
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e160 ">From Search Preference list, select<em class="ph i"> Speed</em></td>
+
+                              </tr>
+
+                              <tr class="row">
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e157 ">Manually type a new value in the appropriate field</td>
+
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e160 ">The Search Preference changes to <em class="ph i">Custom values</em></td>
+
+                              </tr>
+
+                              <tr class="row">
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e157 ">Return to the most recent calculated values</td>
+
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e160 ">From Search Preference list, select<em class="ph i"> Calculated values</em></td>
+
+                              </tr>
+
+                              <tr class="row">
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e157 ">Return to the values that were in the project when you opened it</td>
+
+                                 <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d46532e160 ">From Search Preference list, select<em class="ph i"> Original values</em></td>
+
+                              </tr>
+
+                           </tbody>
+</table>
+</div>
+</div>
+               </li>
+
+            </ol>
+
+         </li>
+</ul>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

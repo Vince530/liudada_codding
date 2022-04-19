@@ -1,0 +1,51 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="This test checks if the lens settles once the lens movement command is issued by checking the focus value consistency at the same lens position for multiple frames. Setup Place the ISO 12233 ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Actuator settle time" /><meta name="DC.Relation" scheme="URI" content="doh1495660841869.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ydr1477085279260" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Actuator settle time</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ydr1477085279260">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="mdk1495660907421.html" title="Test actuator driver">Test actuator driver</a> / <a class="navheader_parent_path" href="doh1495660841869.html" title="Run CAF Scan tests">Run CAF Scan tests</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="doh1495660841869.html" title="Run CAF Scan tests"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Run CAF Scan tests</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Actuator settle time</h1>
+
+   <div class="body conbody">
+      <p class="p">This test checks if the lens settles once the lens movement command is issued by checking the focus value consistency at the same lens position for multiple frames.</p>
+
+      <div class="section" id="ydr1477085279260__section_N10015_N1000E_N10001"><h2 class="title sectiontitle">Setup</h2><p class="p">Place the ISO 12233 resolution chart 30 cm from the device on a tripod with a 500+ lux light condition.</p>
+</div>
+
+      <div class="section" id="ydr1477085279260__section_N1001F_N1000E_N10001"><h2 class="title sectiontitle">Analysis and corrective action</h2>
+         
+         <img class="image" id="ydr1477085279260__image_khh_znp_rx" src="kjf1495660873912.svg" height="NaN" width="NaN" />
+         <p class="p">If the graph looks like Graph A, then the damping/ringing settings are
+            configured correctly. If the graph looks like Graph B, then either of the following
+            conditions exist:</p>
+
+         <ul class="ul">
+            <li class="li">The damping/ringing settings are wrong</li>
+
+            <li class="li">There is a timing issue between the stats parsing in ISP and sending
+               it to the AF core</li>
+
+         </ul>
+
+         <p class="p">Repeat the test two more times to confirm the problem. If you confirm
+            the problem, then adjust the damping settings and rerun the test. If the problem still
+            exists, then check the damping by using a laser in the lab.</p>
+
+         <p class="p">If it is not a damping issue, then it could be a timing issue with the
+            ISP. For example, if the fps is 30 fps, then AF expects the stats to arrive every 33 ms.
+            A delay in the stats could cause the issue. Debug the issue with the engineer
+            responsible for your ISP tuning.</p>
+
+      </div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="doh1495660841869.html" title="Run CAF Scan tests"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Run CAF Scan tests</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

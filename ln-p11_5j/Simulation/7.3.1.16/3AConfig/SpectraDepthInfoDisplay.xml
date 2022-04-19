@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  See DisplayTest.xml for format documentation
+-->
+<MetadataDisplays
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataDisplaySchema.xsd">
+  <!-- Depth Map Info Display -->
+  <Display Name="Depth Map Info" Title="Depth Map Info" MetadataType="Spectra"
+           Section="AWB StatsInfo" Condition="Stats Data[0].Depth{or}Stats Data[0].Confidence{or}Stats Data[0].AFSelection">
+    <Variable Name="AGW number grid point" Value="241"/>
+    <Variable Name="Reference point RG min" Section="AWB ReferencePoints"
+              A="[0].R/G Ratio"
+              B="[1].R/G Ratio"
+              C="[2].R/G Ratio"
+              D="[3].R/G Ratio"
+              E="[4].R/G Ratio"
+              F="[5].R/G Ratio"
+              G="[6].R/G Ratio"
+              H="[7].R/G Ratio"
+              I="[8].R/G Ratio"
+              J="[9].R/G Ratio"
+              Value="({min}(A,B,C,D,E,F,G,H,I,J)*0.5)"/>
+    <Variable Name="Reference point RG max" Section="AWB ReferencePoints"
+              A="[0].R/G Ratio"
+              B="[1].R/G Ratio"
+              C="[2].R/G Ratio"
+              D="[3].R/G Ratio"
+              E="[4].R/G Ratio"
+              F="[5].R/G Ratio"
+              G="[6].R/G Ratio"
+              H="[7].R/G Ratio"
+              I="[8].R/G Ratio"
+              J="[9].R/G Ratio"
+              Value="({max}(A,B,C,D,E,F,G,H,I,J)*1.5)"/>
+    <Variable Name="Reference point BG min" Section="AWB ReferencePoints"
+              A="[0].B/G Ratio"
+              B="[1].B/G Ratio"
+              C="[2].B/G Ratio"
+              D="[3].B/G Ratio"
+              E="[4].B/G Ratio"
+              F="[5].B/G Ratio"
+              G="[6].B/G Ratio"
+              H="[7].B/G Ratio"
+              I="[8].B/G Ratio"
+              J="[9].B/G Ratio"
+              Value="({min}(A,B,C,D,E,F,G,H,I,J)*0.5)"/>
+    <Variable Name="Reference point BG max" Section="AWB ReferencePoints"
+              A="[0].B/G Ratio"
+              B="[1].B/G Ratio"
+              C="[2].B/G Ratio"
+              D="[3].B/G Ratio"
+              E="[4].B/G Ratio"
+              F="[5].B/G Ratio"
+              G="[6].B/G Ratio"
+              H="[7].B/G Ratio"
+              I="[8].B/G Ratio"
+              J="[9].B/G Ratio"
+              Value="({max}(A,B,C,D,E,F,G,H,I,J)*1.5)"/>
+    <Variable Name="Reference point min"
+              A="Reference point RG min" B="Reference point BG min"
+              Value="({[min}(A,B))"/>
+    <Variable Name="Reference point max"
+              A="Reference point RG max" B="Reference point BG max"
+              Value="({max}(A,B))"/>
+    <Variable Name="Green zone delta"
+              A="Reference point max" B="Reference point min" C="AGW number grid point" D="0.5"
+              Value="((A)-(B))/(C+D)"/>
+    <Variable Name="AWB Summary Max" Section="AWB CurFrameDecision[2]"
+              A="Point.R/G Ratio"
+              B="Point.B/G Ratio"
+              C="1"
+              Value="({max}(A,B,C))"/>
+    <Variable Name="AWB Summary Gain Red" Section="AWB CurFrameDecision[2]"
+              A="AWB Summary Max"
+              B="Point.R/G Ratio"
+              Value="(A/B)"/>
+    <Variable Name="AWB Summary Gain Blue" Section="AWB CurFrameDecision[2]"
+              A="AWB Summary Max"
+              B="Point.B/G Ratio"
+              Value="(A/B)"/>
+    <Panel Type="Splitter">
+      <Panel>
+        <Panel Type="Resize">
+          <!-- AWB Stats -->
+          <!--Chart Title="AWB Stats" XTitle="R/G Stats" YTitle="B/G Stats"-->
+          <Chart Title="AWB Stats" XTitle="R/G Stats" YTitle="B/G Stats" XDecimalPlaces="4" YDecimalPlaces="4"
+                  FixedDimensions="true" XMin="Reference point RG min" XMax="Reference point RG max" YMin="Reference point BG min" YMax="Reference point BG max">
+            <!-- Grid Stats Depth Map -->
+            <Line LegendGroup="Grid Stats" Type="SpectraGridStatsDepthMap" Section="AWB StatsInfo" StatsCount="Stats Count" StatsData="Stats Data"/>
+            <!-- OTP reference points -->
+            <Line Title="OTP ref points" Type="Point" Marker="Circle" Color="Red">
+              <Point Array="AWB ReferencePoints" X="R/G Ratio" XTitle="R/G" Y="B/G Ratio" YTitle="B/G"/>
+            </Line>
+            <!-- Distance Weight Vector -->
+            <Line Title="Distance Weight Vector" Type="DistWeightVect" ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+            <!-- MLC V2 Information Group -->
+            <!-- Misleading color zone -->
+            <Line Condition="AWB MLCZV2.MLC Zone Count" LegendGroup="MLC V2 Information" Color="Red" Title="Misleading color zones" Type="SpectraZone"
+                  ZoneCount="AWB MLCZV2.MLC Zone Count" ZoneArray="AWB MLCZV2.MLC Zone Data"
+                  ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+            <!-- Misleading detection zone -->
+            <Line Condition="AWB MLCZV2.Detection Zone Count" LegendGroup="MLC V2 Information" Color="Blue" Title="Misleading detection zones" Type="SpectraZone"
+                  ZoneCount="AWB MLCZV2.Detection Zone Count" ZoneArray="AWB MLCZV2.Detection Zones"
+                  ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+            <!-- Scene Analyzer V2 Information Group -->
+            <Line Color="Mediterranean" Title="SA description" LegendGroup="Scene Analyzer V2 Information"  Type="SAInfo" Array="AWB SAGen2Data"  ZoneCount="Detection Zone Count" ZoneArray="Detection Zones"
+                   ReferencePoints="AWB ReferencePoints" DistWeightVect="AWB DistWeightVector" LuxIndex="AWB LuxIndex"/>
+          </Chart>
+        </Panel>
+      </Panel>
+      <Panel>
+        <Panel Type="Scroll">
+          <Panel Title="Input Depth Map Info">
+            <Grid>
+              <Row>
+                <Separator Line="false" Size="50"/>
+                <CCTColorMap Title="Depth Map" Section="AWB StatsInfo" StatsCount="Stats Count" StatsData="Stats Data" Value="Depth"/>
+                <Separator Line="false" Size="50"/>
+                <CCTColorMap Title="Confidence Map" Section="AWB StatsInfo" StatsCount="Stats Count" StatsData="Stats Data" Value="Confidence"/>
+                <Separator Line="false" Size="50"/>
+                <CCTColorMap Title="AF Selection Map" Section="AWB StatsInfo" StatsCount="Stats Count" StatsData="Stats Data" Value="AFSelection"/>
+                <Separator Line="false" Size="50"/>
+              </Row>
+            </Grid>
+          </Panel>
+        </Panel>
+      </Panel>
+    </Panel>
+  </Display>
+</MetadataDisplays>

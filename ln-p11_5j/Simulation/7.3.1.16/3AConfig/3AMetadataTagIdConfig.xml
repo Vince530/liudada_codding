@@ -1,0 +1,1258 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<!--
+ FILE:        3A Metadata Tag ID Configuration
+ SERVICES:    3A Metadata Tag ID Configuration file
+ DESCRIPTION: Defines the Tag ID configuration 
+
+Copyright (c) 2017 Qualcomm Technologies, Inc.
+ All Rights Reserved.
+ Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<MetadataTagIDConfig Tag="Qualcomm 3A Metadata" TagSize="21" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="./ MetadataTagIDConfigSchema.xsd">
+  <TypeID ID="0x41" Name="AEC ROI Dim" Description="ROI Dimensions">
+    <FieldID ID="0x01" Name="Left"   Description="Unity-Normalized ROI coordinate of left of ROI"/>
+    <FieldID ID="0x02" Name="Top"    Description="Unity-Normalized ROI coordinate of top of ROI"/>
+    <FieldID ID="0x03" Name="Width"  Description="Unity-Normalized ROI width of ROI"/>
+    <FieldID ID="0x04" Name="Height" Description="Unity-Normalized ROI width of ROI"/>
+    <FieldID ID="0x05" Name="Weight" Description="ROI weight"/>
+  </TypeID>
+  <TypeID ID="0x42" Name="AEC Configuration"                    Description="AEC algorithm configurations and settings">
+    <FieldID ID="0x01" Name="Operation Mode"                    Description="Current AEC operation mode">
+      <Enumeration Value="0" Name="Init"/>
+      <Enumeration Value="1" Name="Streaming"/>
+      <Enumeration Value="2" Name="Preflash"/>
+      <Enumeration Value="3" Name="Fast AEC"/>
+      <Enumeration Value="4" Name="Aggressive AEC"/>
+      <Enumeration Value="5" Name="Flash Measurement"/>
+    </FieldID>
+    <FieldID ID="0x02" Name="Manual AEC Mode"                   Description="Specifies the manual AEC mode">
+      <Enumeration Value="0"  Name="Auto"/>
+      <Enumeration Value="1"  Name="Manual ISO"/>
+      <Enumeration Value="2"  Name="Manual Exp Time"/>
+      <Enumeration Value="3"  Name="Manual Full"/>
+    </FieldID>
+    <FieldID ID="0x03" Name="Manual ISO Value"                  Description="Specifies the ISO Value under Manual ISO"/>
+    <FieldID ID="0x04" Name="Manual Exposure Time"              Description="Specifies the ISO Value under Manual Exposure Time"/>
+    <FieldID ID="0x05" Name="Antibanding Mode"                  Description="Specifies the Antibanding configuration">
+      <Enumeration Value="0"  Name="Off"/>
+      <Enumeration Value="1"  Name="50 Hz"/>
+      <Enumeration Value="2"  Name="60 Hz"/>
+      <Enumeration Value="3"  Name="Auto"/>
+    </FieldID>
+    <FieldID ID="0x06" Name="Exposure Value"                    Description="Specifies the actual EV value (converted from UI)"/>
+    <FieldID ID="0x07" Name="Min FPS"                           Description="Specifies the Min FPS contraint from APP"/>
+    <FieldID ID="0x08" Name="Max FPS"                           Description="Specifies the Max FPS contraint from APP"/>
+    <FieldID ID="0x09" Name="Metering Mode"                     Description="Specifies the Metering Mode in use">
+      <Enumeration Value="0"  Name="Center Weighted"/>
+      <Enumeration Value="1"  Name="Frame Average"/>
+      <Enumeration Value="2"  Name="Spot"/>
+    </FieldID>
+    <FieldID ID="0x0A" Name="LED Mode"                          Description="Specifies the LED mode in use">
+      <Enumeration Value="0"  Name="Off"/>
+      <Enumeration Value="1"  Name="Auto"/>
+      <Enumeration Value="2"  Name="On"/>
+    </FieldID>
+    <FieldID ID="0x0B" Name="AEC Locked"                        Description="Indicates if AEC is locked"/>
+    <FieldID ID="0x0C" Name="ADRC Disable Override"             Description="Indicates if ADRC Disable is Overrided"/>
+    <FieldID ID="0x0D" Name="Auto White Balance Active"         Description="Indicates if Auto WhiteBalance is active"/>
+    <FieldID ID="0x0E" Name="White Balance Gains"               Description="Specifies the White Balance Gains used"/>
+    <FieldID ID="0x0F" Name="Gyro X"                            Description="Specifies the Gyro value in X direction"/>
+    <FieldID ID="0x10" Name="Gyro Y"                            Description="Specifies the Gyro value in Y direction"/>
+    <FieldID ID="0x11" Name="Gyro Z"                            Description="Specifies the Gyro value in Z direction"/>
+    <FieldID ID="0x12" Name="Aperture"                          Description="Camera Module F-number"/>
+    <FieldID ID="0x13" Name="Sensor Aspect Ratio"               Description="Configured stats window Aspect Ratio (W / H)"/>
+    <FieldID ID="0x14" Name="Min Sensor Preview Gain"           Description="Min sensor total Gain for preview mode"/>
+    <FieldID ID="0x15" Name="Max Sensor Preview Gain"           Description="Max sensor total Gain for preview mode"/>
+    <FieldID ID="0x16" Name="Min Sensor Preview Exposure Time"  Description="Min sensor ExposureTime(ms) for preview mode"/>
+    <FieldID ID="0x17" Name="Max Sensor Preview Exposure Time"  Description="Max sensor ExposureTime(ms) for preview mode"/>
+    <FieldID ID="0x18" Name="Min Sensor Snapshot Gain"          Description="Min sensor total Gain for snapshot mode"/>
+    <FieldID ID="0x19" Name="Max Sensor Snapshot Gain"          Description="Max sensor total Gain for snapshot mode"/>
+    <FieldID ID="0x1A" Name="Min Sensor Snapshot Exposure Time" Description="Min sensor ExposureTime(ms) for snapshot mode"/>
+    <FieldID ID="0x1B" Name="Max Sensor Snapshot Exposure Time" Description="Max sensor ExposureTime(ms) for snapshot mode"/>
+    <FieldID ID="0x1C" Name="Min Total Preview Gain"            Description="Min core total Gain for preview mode"/>
+    <FieldID ID="0x1D" Name="Max Total Preview Gain"            Description="Max core total Gain for preview mode"/>
+    <FieldID ID="0x1E" Name="Min Total Preview Exposure Time"   Description="Min core ExposureTime(ms) for preview mode"/>
+    <FieldID ID="0x1F" Name="Max Total Preview Exposure Time"   Description="Max core ExposureTime(ms) for preview mode"/>
+    <FieldID ID="0x20" Name="Touch ROI Active"                  Description="Indicates if Touch ROI is active"/>
+    <FieldID ID="0x21" Name="Touch ROIs"                        Description="Touch ROI information"/>
+    <FieldID ID="0x22" Name="Face ROI Active"                   Description="Indicates if Touch ROI is active"/>
+    <FieldID ID="0x23" Name="Face Hint Duration"                Description="Indicates face hint duration prior to status change"/>
+    <FieldID ID="0x24" Name="Face Status Duration"              Description="Indicates the face status duration for the current status"/>
+    <FieldID ID="0x25" Name="Valid Face ROI Count"              Description="Number of valid Face ROIs"/>
+    <FieldID ID="0x26" Name="Face ROIs"                         Description="Face ROIs information"/>
+  </TypeID>
+  <TypeID ID="0x43" Name="AECFrameHistory" Description="AEC history of past frames">
+    <FieldID ID="0x01" Name="Frame ID"                    Description="Frame ID of history entry"/>
+    <FieldID ID="0x02" Name="Initial Configuration"       Description="Indicates if this entry is for the initial startup configuration"/>
+    <FieldID ID="0x03" Name="Exposure Indices"            Description="Exposure indices of entry"/>
+    <FieldID ID="0x04" Name="Exposure Adjustment Indices" Description="Exposure Adjustments indices of entry"/>
+    <FieldID ID="0x05" Name="Exposure Target Indices"     Description="Target Exposure indices of entry"/>
+    <FieldID ID="0x06" Name="Exposure Gains"              Description="Exposure Gain of entry"/>
+    <FieldID ID="0x07" Name="Exposure Times"              Description="Exposure Time of entry"/>
+    <FieldID ID="0x08" Name="Final Luma"                  Description="Final Metered Luma"/>
+    <FieldID ID="0x09" Name="Lux Index"                   Description="Metered Lux Index"/>
+    <FieldID ID="0x0A" Name="AEC Settled"                 Description="Indicates if AEC is settled in entry frame"/>
+  </TypeID>
+  <TypeID ID="0x44" Name="AECModeHistory" Description="AEC last operation mode information">
+    <FieldID ID="0x01" Name="Valid"                 Description="Indicates validity of last mode"/>
+    <FieldID ID="0x02" Name="Initial Configuration" Description="Initial frame configuration"/>
+    <FieldID ID="0x03" Name="Last Frame"            Description="Last frame configuration"/>
+  </TypeID>
+  <TypeID ID="0x45" Name="AECMetering" Description="AEC Metering related information">
+    <FieldID ID="0x01" Name="Lux Index"                      Description="Lux Index"/>
+    <FieldID ID="0x02" Name="Average Luma"                   Description="Average Luma"/>
+    <FieldID ID="0x03" Name="Frame Luma"                     Description="Frame Luma (with Bias)"/>
+    <FieldID ID="0x04" Name="Touch ROI Luma"                 Description="Touch ROI Luma"/>
+    <FieldID ID="0x05" Name="Face ROI Luma"                  Description="Face ROI Luma"/>
+    <FieldID ID="0x06" Name="Min Face Luma"                  Description="Minimum Face Luma"/>
+    <FieldID ID="0x07" Name="Max Face Luma"                  Description="Maximum Face Luma"/>
+    <FieldID ID="0x08" Name="Face Weight"                    Description="Face Weight"/>
+    <FieldID ID="0x09" Name="Final Luma"                     Description="Final Luma of Metering"/>
+    <FieldID ID="0x0A" Name="Lux-based Safe Target"          Description="Reference Luma Target(Default) from Lux"/>
+    <FieldID ID="0x0B" Name="Color-based Safe Target"        Description="Luma Target from Extreme Color"/>
+    <FieldID ID="0x0C" Name="History-based Targets"          Description="Luma Targets from Histogram Target"/>
+    <FieldID ID="0x0D" Name="Final Targets"                  Description="Final Short Luma Target"/>
+    <FieldID ID="0x0E" Name="BG Stats Saturation Thresholds" Description="Saturation threshold in input BG stats"/>
+  </TypeID>
+  <TypeID ID="0x46" Name="AECConvergence" Description="AEC Convergence related information">
+    <FieldID ID="0x01" Name="Current FPS"                 Description="FPS as provided to convergence"/>
+    <FieldID ID="0x02" Name="Min Exposure Index"          Description="Min exposure index as provided to convergence"/>
+    <FieldID ID="0x03" Name="Max Exposure Index"          Description="Max exposure index as provided to convergence"/>
+    <FieldID ID="0x04" Name="Exposure Targets"            Description="Exposure targets as provided to convergence"/>
+    <FieldID ID="0x05" Name="Bright Region Ratio"         Description="Ratio of bright vs. total regions"/>
+    <FieldID ID="0x06" Name="Dark Region Ratio"           Description="Ratio of dark vs. total regions"/>
+    <FieldID ID="0x07" Name="Touch ROI Active"            Description="Indicates if touch ROI active"/>
+    <FieldID ID="0x08" Name="Convergence Algo Identity"   Description="Identity of current convergence algo">
+      <Enumeration Value="0"  Name="Slow"/>
+      <Enumeration Value="1"  Name="Fast"/>
+      <Enumeration Value="2"  Name="Preflash"/>
+      <Enumeration Value="3"  Name="FastAEC"/>
+      <Enumeration Value="4"  Name="Aggressive AEC"/>
+      <Enumeration Value="5"  Name="Flash Meas"/>
+      <Enumeration Value="6"  Name="Torch"/>
+    </FieldID>
+    <FieldID ID="0x09" Name="Frame Skip Pattern"          Description="Frame skip pattern"/>
+    <FieldID ID="0x0A" Name="Final Speed"                 Description="Speed as applied by convergence after adjustments"/>
+    <FieldID ID="0x0B" Name="Is Camera Launch"            Description="Are we still converging for 1st time"/>
+    <FieldID ID="0x0C" Name="AEC Settled"                 Description="Output of convergence:  is AEC settled"/>
+    <FieldID ID="0x0D" Name="Brightness Settled"          Description="Output of convergence:  has brightness settled"/>
+    <FieldID ID="0x0E" Name="Exposures Settled"           Description="Have exposures settled?"/>
+    <FieldID ID="0x0F" Name="Exposure Indices"            Description="Output exposure indices"/>
+    <FieldID ID="0x10" Name="Exposure Adjustment Indices" Description="Adjustment with respect to previous frame"/>
+  </TypeID>
+  <TypeID ID="0x47" Name="AECArbitration"       Description="AEC Arbitration related information">
+    <FieldID ID="0x01" Name="Frame ID"          Description="Current Frame ID"/>
+    <FieldID ID="0x02" Name="Brightness Value"  Description="Scene Brightness Value (BV)"/>
+    <FieldID ID="0x03" Name="Aperture Value"    Description="Scene Aperture Value (BV)"/>
+    <FieldID ID="0x04" Name="Speed Value"       Description="Scene Speed Value (BV)"/>
+    <FieldID ID="0x05" Name="Exposure Value"    Description="Scene Exposure Value (BV)"/>
+    <FieldID ID="0x06" Name="Exposure Instance" Description="Exposure Instance: 0-Stream, 1-snapshot, 2-Flash">
+      <Enumeration Name="Stream"   Value="0" Description="Stream Exposure Instance"/>
+      <Enumeration Name="Snapshot" Value="1" Description="Snapshot Exposure Instance"/>
+      <Enumeration Name="Flash"    Value="2" Description="Flash Exposure Instance"/>
+    </FieldID>
+    <FieldID ID="0x07" Name="Exposure Table ID" Description="Exposure Table ID for snapshot instance"/>
+    <FieldID ID="0x08" Name="Exposure Gains"    Description="Exposure Gain for snapshot Instance"/>
+    <FieldID ID="0x09" Name="Exposure Times"    Description="Exposure Time for snapshot Instance (Nano-Seconds)"/>
+    <FieldID ID="0x0A" Name="ISO Value"         Description="ISO value for snapshot Instance"/>
+  </TypeID>
+
+  <TypeID ID="0x48" Name="AECExtension"                      Description="AEC Extension module related information">
+    <FieldID ID="0x01" Name="Touch EV State"                 Description="State of touch EV monitor">
+      <Enumeration Value="0"  Name="Inactive"/>
+      <Enumeration Value="1"  Name="Converging"/>
+      <Enumeration Value="2"  Name="Settled"/>
+      <Enumeration Value="3"  Name="Scene Change"/>
+    </FieldID>
+    <FieldID ID="0x02" Name="Touch EV Luma"                  Description="Luma used by touch EV monitor"/>
+    <FieldID ID="0x03" Name="Touch EV Previous Luma"         Description="Pevious luma used by touch EV monitor"/>
+    <FieldID ID="0x04" Name="Touch EV Temporal-Average Luma" Description="Temporally-averaged luma used by touch EV monitor"/>
+    <FieldID ID="0x05" Name="Lux Zone"                       Description="Current lux zone used"/>
+    <FieldID ID="0x06" Name="Yhistogram Clamp"               Description="Y histogram stretch: offset"/>
+    <FieldID ID="0x07" Name="Yhistogram Scale"               Description="Y histogram stretch: scaling"/>
+    <FieldID ID="0x08" Name="Ratio"                          Description="Ratio within the lux zone"/>
+    <FieldID ID="0x09" Name="Dark Bin Threshold"             Description="Interpolated parameter: dark bin threshold"/>
+    <FieldID ID="0x0A" Name="Saturation Bin Threshold"       Description="Interpolated parameter: sat bin threshold"/>
+    <FieldID ID="0x0B" Name="Dark Target"                    Description="Interpolated parameter: dark target"/>
+    <FieldID ID="0x0C" Name="Saturation Target"              Description="Interpolated parameter: sat target"/>
+    <FieldID ID="0x0D" Name="Max Scale"                      Description="Interpolated parameter: max scaling allowed"/>
+    <FieldID ID="0x0E" Name="Max Clamp"                      Description="Interpolated parameter: max clamping allowed"/>
+    <FieldID ID="0x0F" Name="Dark Bin Count"                 Description="Count of dark bins to reach dark target"/>
+    <FieldID ID="0x10" Name="Saturation Bin Count"           Description="Count of sat bins to reach sat target"/>
+    <FieldID ID="0x11" Name="Flash Needed"                   Description="Triggered flag: flash needed for snapshot"/>
+    <FieldID ID="0x12" Name="FD Flash Delay Needed"          Description="Triggered flag: delay required for FD + flash"/>
+    <FieldID ID="0x13" Name="LED-AF Needed"                  Description="Triggered flag: run AF during preflash sequence"/>
+    <FieldID ID="0x14" Name="LLS Needed"                     Description="Triggered flag: LLS needed"/>
+    <FieldID ID="0x15" Name="LLS Exposure Time"              Description="Triggered flag: low light shot exposure time"/>
+  </TypeID>
+  <TypeID ID="0x49" Name="AECStatsLumaRegion"           Description="AEC Bright and Dark Region information">
+    <FieldID ID="0x01" Name="Bright Region Enabled"     Description="Bright Region Enable Flag"/>
+    <FieldID ID="0x02" Name="Bright Region Count"       Description="Bright Region stats count"/>
+    <FieldID ID="0x03" Name="Bright Region Luma Weight" Description="Bright Region luma weight"/>
+    <FieldID ID="0x04" Name="Bright Region Thresholds"  Description="Bright Region Thresholds used"/>
+    <FieldID ID="0x05" Name="Dark Region Enabled"       Description="Dark Region Enable Flag"/>
+    <FieldID ID="0x06" Name="Dark Region Count"         Description="Dark Region stats count"/>
+    <FieldID ID="0x07" Name="Dark Region Luma Weight"   Description="Dark Region luma weight"/>
+    <FieldID ID="0x08" Name="Dark Region Thresholds"    Description="Dark Region Thresholds used"/>
+  </TypeID>
+  <TypeID ID="0x4A" Name="AECExtremeColor" Description="AEC Extreme Color related information">
+    <FieldID ID="0x01" Name="Enabled"                  Description="Feature Enable Flag"/>
+    <FieldID ID="0x02" Name="Extreme Percentages"      Description="Percentage of extreme stats point of channels"/>
+    <FieldID ID="0x03" Name="Target Adjustments"       Description="Target Adjusmtent of channels"/>
+    <FieldID ID="0x04" Name="Final Target Adjustments" Description="Final Target Adjustments"/>
+  </TypeID>
+  <TypeID ID="0x4B" Name="AECHistogram" Description="AEC Histogram luma target information">
+    <FieldID ID="0x01" Name="Histogram Enabled"     Description="Whether histogram AEC feature is enabled"/>
+    <FieldID ID="0x02" Name="ADRC Enabled"          Description="Whether ADRC is active"/>
+    <FieldID ID="0x03" Name="Reference Luma"        Description="Reference luma value used in the algo"/>
+    <FieldID ID="0x04" Name="Reference Target Luma" Description="Reference luma target used in the algo"/>
+    <FieldID ID="0x05" Name="Number of Channels"    Description="Number of channels processed"/>
+    <FieldID ID="0x06" Name="Pushup Means"          Description="Push up mean saturation values calculated"/>
+    <FieldID ID="0x07" Name="Pushdown Means"        Description="Push down mean saturation values calculated"/>
+    <FieldID ID="0x08" Name="Dark Means"            Description="Mean dark values"/>
+    <FieldID ID="0x09" Name="Saturation References" Description="Current saturation ref high and low"/>
+    <FieldID ID="0x0A" Name="Dark References"       Description="Current dark ref high and low"/>
+    <FieldID ID="0x0B" Name="Safe Ratios"           Description="Current safe target adjust ratios (min and max)"/>
+    <FieldID ID="0x0C" Name="Max DRC Gain"          Description="Maximum ADRC gain"/>
+    <FieldID ID="0x0D" Name="Adjusted Luma Targets" Description="Adjusted luma targets"/>
+  </TypeID>
+  <TypeID ID="0x4C" Name="AECLEDSetting" Description="AEC LED Settings information">
+    <FieldID ID="0x01" Name="Flux"         Description="Flux Value of the LED Setting"/>
+    <FieldID ID="0x02" Name="R/G Ratio"    Description="Red/Green Ratio of LED Setting"/>
+    <FieldID ID="0x03" Name="B/G Ratio"    Description="Blue/Green Ratio of LED Setting"/>
+    <FieldID ID="0x04" Name="LED1 Setting" Description="LED1 Setting"/>
+    <FieldID ID="0x05" Name="LED2 Setting" Description="LED2 Setting"/>
+  </TypeID>
+
+  <TypeID ID="0x4D" Name="AECLEDTable" Description="AEC LED Table related information">
+    <FieldID ID="0x01" Name="Preflash settings"           Description="LED settings calculated for preflash"/>
+    <FieldID ID="0x02" Name="Main flash settings"         Description="LED settings calculated for main flash"/>
+    <FieldID ID="0x03" Name="Calibration Data"            Description="LED calibration data"/>
+    <FieldID ID="0x04" Name="Max Current"                 Description="Max supported current @ main flash time"/>
+    <FieldID ID="0x05" Name="Preflash R Gain"             Description="R gain @ preflash time"/>
+    <FieldID ID="0x06" Name="Preflash G Gain"             Description="G gain @ preflash time"/>
+    <FieldID ID="0x07" Name="Preflash B Gain"             Description="B gain @ preflash time"/>
+    <FieldID ID="0x08" Name="Main Flash R Gain"           Description="R gain @ main flash time"/>
+    <FieldID ID="0x09" Name="Main Flash G Gain"           Description="G gain @ main flash time"/>
+    <FieldID ID="0x0A" Name="Main Flash B Gain"           Description="B gain @ main flash time"/>
+    <FieldID ID="0x0B" Name="Preflash Slope"              Description="Slope calculated @ preflash time"/>
+    <FieldID ID="0x0C" Name="Main Flash Slope"            Description="Slope calculated @ main flash time"/>
+    <FieldID ID="0x0D" Name="Preflash First Entry Ratio"  Description="First entry ratio preflash"/>
+    <FieldID ID="0x0E" Name="Min Flash First Entry Ratio" Description="First entry ratio main flash"/>
+    <FieldID ID="0x0F" Name="Flux Low"                    Description="Flux: low power"/>
+    <FieldID ID="0x10" Name="Flux High"                   Description="Flux: high power"/>
+  </TypeID>
+  <TypeID ID="0x4E" Name="AECFlash" Description="AEC Flash related information">
+    <FieldID ID="0x01" Name="Frame History Off"              Description="Saved frame data; OFF"/>
+    <FieldID ID="0x02" Name="Frame History Low"              Description="Saved frame data; LOW"/>
+    <FieldID ID="0x03" Name="Average Luma Off"               Description="Average luma; OFF"/>
+    <FieldID ID="0x04" Name="Average Luma Low"               Description="Average luma; LOW"/>
+    <FieldID ID="0x05" Name="Y States Off"                   Description="Y stats OFF"/>
+    <FieldID ID="0x06" Name="Y Stats Low"                    Description="Y stats LOW"/>
+    <FieldID ID="0x07" Name="Preflash to Streaming Offset"   Description="Offset to convert preflash idx to streaming idx"/>
+    <FieldID ID="0x08" Name="Main to Preflash Flux Ratio"    Description="Flux ratio from main to preflash"/>
+    <FieldID ID="0x09" Name="Luma Off Simple"                Description="Calculated luma off; simple"/>
+    <FieldID ID="0x0A" Name="Luma Low Simple"                Description="Calculated luma low; simple"/>
+    <FieldID ID="0x0B" Name="Luma High Simple"               Description="Calculated luma high; simple"/>
+    <FieldID ID="0x0C" Name="Influence Simple"               Description="Calculated flash influence; simple"/>
+    <FieldID ID="0x0D" Name="Snapshot Target Simple"         Description="Calculated flash snapshot target; simple"/>
+    <FieldID ID="0x0E" Name="Luma Off Smart"                 Description="Calculated luma off; smart"/>
+    <FieldID ID="0x0F" Name="Luma Low Smart"                 Description="Calculated luma low; smart"/>
+    <FieldID ID="0x10" Name="Luma High Smart"                Description="Calculated luma high; smart"/>
+    <FieldID ID="0x11" Name="Influence Smart"                Description="Calculated flash influence; smart"/>
+    <FieldID ID="0x12" Name="Snapshot Target Smart"          Description="Calculated flash snapshot target; smart"/>
+    <FieldID ID="0x13" Name="Snart Bias Table"               Description="Smart bias table"/>
+    <FieldID ID="0x14" Name="FD Luma Off"                    Description="Calculated luma off; FD"/>
+    <FieldID ID="0x15" Name="FD Luma Low"                    Description="Calculated luma low; FD"/>
+    <FieldID ID="0x16" Name="FD Luma High"                   Description="Calculated luma high; FD"/>
+    <FieldID ID="0x17" Name="FD Influence"                   Description="Calculated flash influence; FD"/>
+    <FieldID ID="0x18" Name="FD Snapshot Target"             Description="Calculated flash snapshot target; FD"/>
+    <FieldID ID="0x19" Name="Face Count"                     Description="Face count"/>
+    <FieldID ID="0x1A" Name="Max Face Size"                  Description="Max face size"/>
+    <FieldID ID="0x1B" Name="Aggregate Luma Off"             Description="Calculated luma off; aggregated"/>
+    <FieldID ID="0x1C" Name="Aggregate Luma Low"             Description="Calculated luma low; aggregated"/>
+    <FieldID ID="0x1D" Name="Aggregate Luma High"            Description="Calculated luma high; aggregated"/>
+    <FieldID ID="0x1E" Name="Aggregate Luma Influence"       Description="Calculated flash influence; aggregated"/>
+    <FieldID ID="0x1F" Name="Aggregate Luma Snapshot Target" Description="Calculated flash snapshot target; aggregated"/>
+    <FieldID ID="0x20" Name="Highlight Discrepancy Ratio"    Description="Discrepancy aggregated luma off v. final luma"/>
+    <FieldID ID="0x21" Name="Final Luma"                     Description="Final luma as computed before preflash"/>
+    <FieldID ID="0x22" Name="Exposure Target Indices"        Description="Exposure targets computed before preflash"/>
+    <FieldID ID="0x23" Name="Luma Targets"                   Description="Flash output: luma targets"/>
+    <FieldID ID="0x24" Name="Lux Index"                      Description="Flash output: snapshot lux index"/>
+  </TypeID>
+  <TypeID ID="0x141" Name="AWB Point" Description="AWB Point">
+    <FieldID ID="0x01" Name="R/G Ratio" Description="Red over Green ratio"/>
+    <FieldID ID="0x02" Name="B/G Ratio" Description="Blue over Green ratio"/>
+  </TypeID>
+  <TypeID ID="0x142" Name="AWB Zone" Description="AWB Zone">
+    <FieldID ID="0x01" Name="Vertices" Description="Array of vertices information"/>
+  </TypeID>
+  <TypeID ID="0x143" Name="AWB Zone Data" Description="AWB Zone Data">
+    <FieldID ID="0x01" Name="Group ID"  Description="Group ID of zone"/>
+    <FieldID ID="0x02" Name="Zone Type" Description="Zone Type">
+      <Enumeration Value="0"  Name="Rectangle"/>
+      <Enumeration Value="1"  Name="Triangle"/>
+      <Enumeration Value="2"  Name="CCT"/>
+    </FieldID>
+    <FieldID ID="0x03" Name="Trigger Type" Description="Fixed 1 trigger level">
+      <Enumeration Value="0"  Name="Lux Idx"/>
+      <Enumeration Value="1"  Name="CCT"/>
+      <Enumeration Value="2"  Name="Valid Stats Cnt Ratio"/>
+      <Enumeration Value="3"  Name="AGW RG"/>
+      <Enumeration Value="4"  Name="AGW BG"/>
+      <Enumeration Value="5"  Name="Zone Group 0 Cnt Ratio"/>
+      <Enumeration Value="6"  Name="Zone Group 1 Cnt Ratio"/>
+      <Enumeration Value="7"  Name="Zone Group 2 Cnt Ratio"/>
+      <Enumeration Value="8"  Name="Zone Group 3 Cnt Ratio"/>
+      <Enumeration Value="9"  Name="Zone Group 4 Cnt Ratio"/>
+      <Enumeration Value="10" Name="Zone Group 5 Cnt Ratio"/>
+      <Enumeration Value="11" Name="Zone Group 6 Cnt Ratio"/>
+      <Enumeration Value="12" Name="Zone Group 7 Cnt Ratio"/>
+      <Enumeration Value="13" Name="Zone Group 8 Cnt Ratio"/>
+      <Enumeration Value="14" Name="Zone Group 9 Cnt Ratio"/>
+      <Enumeration Value="15" Name="Flash Sensitivity"/>
+    </FieldID>
+    <FieldID ID="0x04" Name="Trigger Values" Description="Trigger value"/>
+    <FieldID ID="0x05" Name="Zone Data"      Description="Zone setting with 3 vertices in current frame"/>
+    <FieldID ID="0x06" Name="Description"    Description="Zone data description"/>
+  </TypeID>
+  <TypeID ID="0x144" Name="AWB Decision Data" Description="AWB Decision Data">
+    <FieldID ID="0x01" Name="Point" Description="RG,BG point"/>
+    <FieldID ID="0x02" Name="CCT" Description="Estimated CCT of decision point"/>
+  </TypeID>
+  <TypeID ID="0x145" Name="AWB Module Data"       Description="AWB Module Data">
+    <FieldID ID="0x01" Name="Module ID"           Description="Category of module and concept. Refer to module ID assignment"/>
+    <FieldID ID="0x02" Name="Submodule ID"        Description="Instance ID in same module.  ex) ID for each SA instance that use same Class"/>
+    <FieldID ID="0x03" Name="Major Version"       Description="Module version"/>
+    <FieldID ID="0x04" Name="Minor Version"       Description="Module version"/>
+    <FieldID ID="0x05" Name="Incremental Version" Description="Module version"/>
+    <FieldID ID="0x06" Name="Enabled"             Description="Module enable flag">
+      <Enumeration Value="0" Name="Disabled"/>
+      <Enumeration Value="1" Name="Enabled" />
+    </FieldID>
+  </TypeID>
+  <TypeID ID="0x146" Name="AWB Gains" Description="AWB Gains">
+    <FieldID ID="0x01" Name="Red"   Description="Red gain"/>
+    <FieldID ID="0x02" Name="Green" Description="Green gain"/>
+    <FieldID ID="0x03" Name="Blue"  Description="Blue gain"/>
+  </TypeID>
+  <TypeID ID="0x147" Name="AWB Trigger Point" Description="AWB Trigger Point">
+    <FieldID ID="0x01" Name="Start" Description="Start trigger point"/>
+    <FieldID ID="0x02" Name="End"   Description="End trigger point"/>
+  </TypeID>
+  <TypeID ID="0x148" Name="AWB Trigger Float Data" Description="AWB Trigger Float Data">
+    <FieldID ID="0x01" Name="Trigger Point" Description="Trigger point"/>
+    <FieldID ID="0x02" Name="Data"          Description="Float data for trigger point"/>
+  </TypeID>
+  <TypeID ID="0x149" Name="AWB Stats Rectangle" Description="AWB Stats Rectangle">
+    <FieldID ID="0x01" Name="Left"   Description="The x coordinate of the StatsRectangle"/>
+    <FieldID ID="0x02" Name="Top"    Description="The y coordinate of the StatsRectangle"/>
+    <FieldID ID="0x03" Name="Width"  Description="The width of the StatsRectangle"/>
+    <FieldID ID="0x04" Name="Height" Description="The height of the StatsRectangle"/>
+  </TypeID>
+  <TypeID ID="0x14A" Name="AWB Trigger Non Last Level Data" Description="AWB Trigger Non Last Level Data">
+    <FieldID ID="0x01" Name="Trigger Point"      Description="Trigger point start-end"/>
+    <FieldID ID="0x02" Name="Trigger Data Count" Description="Sublevel trigger zone count"/>
+  </TypeID>
+  <TypeID ID="0x14B" Name="AWB Custom Reference Point" Description="AWB Custom Reference Point">
+    <FieldID ID="0x01" Name="Enabled"             Description="Enable flag of this custom reference point">
+      <Enumeration Value="0" Name="Disabled"/>
+      <Enumeration Value="1" Name="Enabled" />
+    </FieldID>
+    <FieldID ID="0x02" Name="Reference Point"     Description="Reference point"/>
+    <FieldID ID="0x03" Name="Distance WV Count"   Description="Trigger zone count of distance WV"/>
+    <FieldID ID="0x04" Name="Distance WV"         Description="Distance WV"/>
+    <FieldID ID="0x05" Name="Interp Ratio Count"  Description="Trigger zone count of weight adjustment"/>
+    <FieldID ID="0x06" Name="Inter Ptrigger Data" Description="Weight adjustment factor"/>
+  </TypeID>
+  <TypeID ID="0x14C" Name="AWB SA Target Data" Description="AWB SA Target Data">
+    <FieldID ID="0x01" Name="Point Type"    Description="Target point type">
+      <Enumeration Value="0"  Name="Fixed Point"/>
+      <Enumeration Value="1"  Name="GA AGW Point"/>
+      <Enumeration Value="2"  Name="GA Zone 0"/>
+      <Enumeration Value="3"  Name="GA Zone 1"/>
+      <Enumeration Value="4"  Name="GA Zone 2"/>
+    </FieldID>
+    <FieldID ID="0x02" Name="Control Type"  Description="Trigger control type for each trigger level">
+      <Enumeration Value="0"  Name="LuxIdx"/>
+      <Enumeration Value="1"  Name="CCT"/>
+      <Enumeration Value="2"  Name="Valid Stats Cnt Ratio"/>
+      <Enumeration Value="3"  Name="AGW RG"/>
+      <Enumeration Value="4"  Name="AGW BG"/>
+      <Enumeration Value="5"  Name="Zone Group 0 RG"/>
+      <Enumeration Value="6"  Name="Zone Group 0 BG"/>
+      <Enumeration Value="7"  Name="Zone Group 0 Cnt Ratio"/>
+      <Enumeration Value="8"  Name="Zone Group 1 Cnt Ratio"/>
+      <Enumeration Value="9"  Name="Zone Group 2 Cnt Ratio"/>
+      <Enumeration Value="10" Name="Zone Group 3 Cnt Ratio"/>
+      <Enumeration Value="11" Name="Zone Cnt Ratio Valid 0"/>
+      <Enumeration Value="12" Name="Zone Cnt Ratio 0 1"/>
+      <Enumeration Value="13" Name="Zone Cnt Ratio 0 2"/>
+      <Enumeration Value="14" Name="Zone Cnt Ratio 0 3"/>
+      <Enumeration Value="15" Name="Zone Cnt Ratio 1 2"/>
+      <Enumeration Value="16" Name="Zone Cnt Ratio 1 3"/>
+      <Enumeration Value="17" Name="Zone Cnt Ratio 2 3"/>
+      <Enumeration Value="18" Name="Flash Sensitivity"/>
+    </FieldID>
+    <FieldID ID="0x03" Name="Control Value" Description="Trigger value for each trigger control type"/>
+    <FieldID ID="0x04" Name="Point"         Description="Target point computed based on trigger system"/>
+  </TypeID>
+  <TypeID ID="0x14D" Name="AWB SA Confidence Data" Description="AWB SA Confidence Data">
+    <FieldID ID="0x01" Name="Control Type"     Description="Trigger control type for each trigger level">
+      <Enumeration Value="0"  Name="LuxIdx"/>
+      <Enumeration Value="1"  Name="CCT"/>
+      <Enumeration Value="2"  Name="Valid Stats Cnt Ratio"/>
+      <Enumeration Value="3"  Name="AGW RG"/>
+      <Enumeration Value="4"  Name="AGW BG"/>
+      <Enumeration Value="5"  Name="Zone Group 0 RG"/>
+      <Enumeration Value="6"  Name="Zone Group 0 BG"/>
+      <Enumeration Value="7"  Name="Zone Group 0 Cnt Ratio"/>
+      <Enumeration Value="8"  Name="Zone Group 1 Cnt Ratio"/>
+      <Enumeration Value="9"  Name="Zone Group 2 Cnt Ratio"/>
+      <Enumeration Value="10" Name="Zone Group 3 Cnt Ratio"/>
+      <Enumeration Value="11" Name="Zone Cnt Ratio Valid 0"/>
+      <Enumeration Value="12" Name="Zone Cnt Ratio 0 1"/>
+      <Enumeration Value="13" Name="Zone Cnt Ratio 0 2"/>
+      <Enumeration Value="14" Name="Zone Cnt Ratio 0 3"/>
+      <Enumeration Value="15" Name="Zone Cnt Ratio 1 2"/>
+      <Enumeration Value="16" Name="Zone Cnt Ratio 1 3"/>
+      <Enumeration Value="17" Name="Zone Cnt Ratio 2 3"/>
+      <Enumeration Value="18" Name="Flash Sensitivity"/>
+    </FieldID>
+    <FieldID ID="0x02" Name="Control Value"    Description="Trigger value for each trigger control type"/>
+    <FieldID ID="0x03" Name="Confidence Value" Description="Confidence level computed based on trigger system"/>
+    <FieldID ID="0x04" Name="Weight"           Description="Confidence level computed based on trigger system"/>
+  </TypeID>
+  <TypeID ID="0x14E" Name="AWB SF Subsample Data" Description="AWB SF Subsample Data">
+    <FieldID ID="0x01" Name="Module Info"            Description=""/>
+    <FieldID ID="0x02" Name="Mode"                   Description="Subsampling mode">
+      <Enumeration Value="0" Name="Skip"   />
+      <Enumeration Value="1" Name="Binning"/>
+    </FieldID>
+    <FieldID ID="0x03" Name="Pattern"                Description="Skip or binning pattern"/>
+    <FieldID ID="0x04" Name="Subsampled Stats Count" Description="BG stats count after subsampling"/>
+  </TypeID>
+  <TypeID ID="0x14F" Name="AWB SF Stats Screening" Description="AWB SF Stats screening module data">
+    <FieldID ID="0x01" Name="Module Info"          Description="Module information"/>
+    <FieldID ID="0x02" Name="Trigger Values"       Description="Trigger control type: lux index"/>
+    <FieldID ID="0x03" Name="Dark Threshold"       Description="Dark threshold"/>
+    <FieldID ID="0x04" Name="Saturation Threshold" Description="Saturation threshold"/>
+  </TypeID>
+  <TypeID ID="0x150" Name="AWB SF Illuminant WV" Description="AWB SF illuminant weight vector module data">
+    <FieldID ID="0x01" Name="Module Info"        Description="Module information"/>
+    <FieldID ID="0x02" Name="Trigger Count"      Description="Number of trigger zone in 1st lux index trigger level"/>
+    <FieldID ID="0x03" Name="Lux Trigger Data"   Description="Trigger data of 1st level with lux index"/>
+    <FieldID ID="0x04" Name="CCT Trigger Data"   Description="Trigger data of 2nd level with CCT"/>
+  </TypeID>
+  <TypeID ID="0x151" Name="AWB SF Distance WV"      Description="AWB SF distance weight vector">
+    <FieldID ID="0x01" Name="Module Info"           Description="Module information"/>
+    <FieldID ID="0x02" Name="Trigger Count"         Description="Number of trigger zone in 1st lux index trigger level"/>
+    <FieldID ID="0x03" Name="Lux Trigger Data"      Description="Trigger data of 1st level with lux index"/>
+    <FieldID ID="0x04" Name="CCT Trigger Data"      Description="Trigger data of 2nd level with CCT"/>
+    <FieldID ID="0x05" Name="Distance Trigger Data" Description="Trigger data of 3rd level with distance"/>
+  </TypeID>
+  <TypeID ID="0x152" Name="AWB Cust Ref Point"      Description="AWB Custom reference point module data">
+    <FieldID ID="0x01" Name="Module Info"           Description="Module information"/>
+    <FieldID ID="0x02" Name="Reference Point Count" Description="Number of custom reference point"/>
+    <FieldID ID="0x03" Name="Custom Reference"      Description="Information of each custom reference point"/>
+  </TypeID>
+  <TypeID ID="0x153" Name="AWB SF Misleading Color Zone" Description="AWB SF Misleading Color Zone module data">
+    <FieldID ID="0x01" Name="Module Info"                Description="Module information"/>
+    <FieldID ID="0x02" Name="Detection Zone Count"       Description="Count of detection zones"/>
+    <FieldID ID="0x03" Name="Detection Zones"            Description="Zone configuration and zone setting in current frame"/>
+    <FieldID ID="0x04" Name="Detection Saturation Count" Description="Stats count detected in each detection zone"/>
+    <FieldID ID="0x05" Name="MLC Zone Count"             Description="MLC Zone count"/>
+    <FieldID ID="0x06" Name="MLC Zone Data"              Description="Zone configuration and zone setting in current frame"/>
+  </TypeID>
+  <TypeID ID="0x154" Name="AWB SA AGW Data"             Description="AWB SA advanced gray world module data">
+    <FieldID ID="0x01" Name="Module Info"               Description="Module information"/>
+    <FieldID ID="0x02" Name="Target Point"              Description="AGW target point"/>
+    <FieldID ID="0x03" Name="Confidence Value"          Description="AWB confidence level"/>
+    <FieldID ID="0x04" Name="Weighted Average Point"    Description="AGW weighted stats average"/>
+    <FieldID ID="0x05" Name="Weighted Average CCT"      Description="Estimated CCT of weighted stats average point"/>
+    <FieldID ID="0x06" Name="Weighted Average Distance" Description="Distance of weighted stats average point"/>
+    <FieldID ID="0x07" Name="Simple Average Point"      Description="Simple stats average"/>
+    <FieldID ID="0x08" Name="Simple Average CCT"        Description="Estimated CCT of simple stats average point"/>
+    <FieldID ID="0x09" Name="Simple Average Distance"   Description="Distance of simple stats average point"/>
+    <FieldID ID="0x0A" Name="Valid Stauration Count"    Description="Valid stats count"/>
+  </TypeID>
+  <TypeID ID="0x155" Name="AWB DA SA Data" Description="AWB SA output data for decision aggregation">
+    <FieldID ID="0x01" Name="Submodule ID"           Description="SA instance ID"/>
+    <FieldID ID="0x02" Name="SA Weight"              Description="SA weight"/>
+    <FieldID ID="0x03" Name="Target Point"           Description="Target point from SA"/>
+    <FieldID ID="0x04" Name="Target Confidence"      Description="Confidence level from SA"/>
+    <FieldID ID="0x05" Name="Adjusted Target Point"  Description="Interpolated target point with AGW target point"/>
+    <FieldID ID="0x06" Name="Adjusted Confidence"    Description="Adjusted confidence level based on DA tuning parameters"/>
+    <FieldID ID="0x07" Name="Trigger Control Values" Description="trigger control type = 0:Confidence level, 1:ranking, 2:AGW confidence level">
+      <Enumeration Value="0" Name="Confidence Level"    />
+      <Enumeration Value="1" Name="Ranking"             />
+      <Enumeration Value="2" Name="AGW Confidence Level"/>
+    </FieldID>
+    <FieldID ID="0x08" Name="Adjustment Factor"      Description="Adjust factor based on trigger system for each trigger control type"/>
+  </TypeID>
+  <TypeID ID="0x156" Name="AWB Face Assist SA Data" Description="AWB Face assist SA module data">
+    <FieldID ID="0x01" Name="Module Info"                 Description="Module information"/>
+    <FieldID ID="0x02" Name="Face ROI X Start"            Description="Face ROI X start"/>
+    <FieldID ID="0x03" Name="Face ROI X End"              Description="Face ROI X end"/>
+    <FieldID ID="0x04" Name="Face ROI Y Start"            Description="Face ROI Y start"/>
+    <FieldID ID="0x05" Name="Face ROI Y End"              Description="Face ROI Y end"/>
+    <FieldID ID="0x06" Name="Face Detect Frame Count"     Description="Frame count that face was detected consecutively"/>
+    <FieldID ID="0x07" Name="Face Nondetect Frame Count"  Description="Frame count that face was not detected consecutively"/>
+    <FieldID ID="0x08" Name="Convergence Speed Added"     Description="Flag of convergence speed change request"/>
+    <FieldID ID="0x09" Name="Convergence Speed"           Description="Requested convergence speed"/>
+    <FieldID ID="0x0A" Name="Face Stats Detection Flag"   Description="Flag, if there is detected face or not"/>
+    <FieldID ID="0x0B" Name="Face Stats Average"          Description="Stats average from face ROI"/>
+    <FieldID ID="0x0C" Name="Face Stats Count"            Description="Stats count from face ROI"/>
+    <FieldID ID="0x0D" Name="Dark Threshold"              Description="Face stats dark threshold"/>
+    <FieldID ID="0x0E" Name="Saturation Threshold"        Description="Face stats saturation threshold"/>
+    <FieldID ID="0x0F" Name="Light Skin Target Point"     Description="Light skin target point"/>
+    <FieldID ID="0x10" Name="Dark Skin Target Point"      Description="Dark skin target point"/>
+    <FieldID ID="0x11" Name="Light Skin GW"               Description="Light skin decision point in gray world"/>
+    <FieldID ID="0x12" Name="Dark Skin GW"                Description="Dark skin decision point in gray world"/>
+    <FieldID ID="0x13" Name="Light Skin Gain"             Description="AWB gain based on light skin decision point"/>
+    <FieldID ID="0x14" Name="Dark Skin Gain"              Description="AWB gain based on dark skin decision point"/>
+    <FieldID ID="0x15" Name="Light Skin Average CCT"      Description="CCT based on light skin decision point"/>
+    <FieldID ID="0x16" Name="Dark Skin Average CCT"       Description="CCT based on dark skin decision point"/>
+    <FieldID ID="0x17" Name="Skin Type Weight"            Description="Final skin type weight for interpolation between light and dark skin decision"/>
+    <FieldID ID="0x18" Name="Skin Target Dist Ratio"      Description="Ratio = dark skin distance / light skin distance"/>
+    <FieldID ID="0x19" Name="Face Assist Target Point"    Description="Final Face AWB target point"/>
+    <FieldID ID="0x1A" Name="Face Assist Confidence"      Description="Confidence of face assist SA"/>
+    <FieldID ID="0x1B" Name="Face Assist CCT"             Description="CCT of face AWB target point"/>
+  </TypeID>
+  <TypeID ID="0x157" Name="AWB DA Data" Description="AWB Decision Aggregator Module Data">
+    <FieldID ID="0x01" Name="Module Info"       Description="Module information"/>
+    <FieldID ID="0x02" Name="SA Count"          Description="Total SA count including AGW SA"/>
+    <FieldID ID="0x03" Name="SA Data"           Description="SA output and intermediate decision/confidence level data"/>
+    <FieldID ID="0x04" Name="AWB Decision Data" Description="Final DA decision point and CCT"/>
+    <FieldID ID="0x05" Name="Confidence"        Description="DA confidence level"/>
+  </TypeID>
+  <TypeID ID="0x158" Name="AWB Triangle Gain Adjust"      Description="AWB Triangle gain adjust module data">
+    <FieldID ID="0x01" Name="Module Info"                 Description="Module information"/>
+    <FieldID ID="0x02" Name="Decision Point"              Description="Original decision point, input point to triangle gain adjust module"/>
+    <FieldID ID="0x03" Name="Adjusted Gain"               Description="Computed gain adjust from triangle gain adjust module"/>
+    <FieldID ID="0x04" Name="Final Decision Point"        Description="Final decision point applied with gain adjust"/>
+    <FieldID ID="0x05" Name="Triangle Index"              Description="Index of triangle that surrounds original decision point"/>
+    <FieldID ID="0x06" Name="Triangle Confidence Vertex"  Description="Triangle vertex corresponding to the Triangle Index"/>
+    <FieldID ID="0x07" Name="Triangle Adjustment"         Description="Neighboring corresponding to the Triangle Index"/>
+    <FieldID ID="0x08" Name="Vertices"                    Description="3 vertices of its triangle"/>
+    <FieldID ID="0x09" Name="Vertex Gas"                  Description="Computed gain adjust in each vertex in current frame"/>
+    <FieldID ID="0x0A" Name="Area Ratios"                 Description="Interpolation ratio for each vertex"/>
+    <FieldID ID="0x0B" Name="Triangle Count"              Description="Number of triangle"/>
+    <FieldID ID="0x0C" Name="Vertex Count"                Description="Number of vertex"/>
+    <FieldID ID="0x0D" Name="Triangle Infos"              Description="Information of each triangle"/>
+    <FieldID ID="0x0E" Name="Vertex Infos"                Description="Information of each vertex"/>
+    <FieldID ID="0x0F" Name="Gain Infos"                  Description="Gain information of each vertex"/>
+    <FieldID ID="0x10" Name="Gain Trigger Infos"          Description="Gain adjust trigger zone count of each vertex"/>
+  </TypeID>
+  <TypeID ID="0x159" Name="AWB Temporal Convergence" Description="AWB Temporal convergence module data">
+    <FieldID ID="0x01" Name="Module Info"           Description="Module information"/>
+    <FieldID ID="0x02" Name="Convergence Speed"     Description="Current convergence speed"/>
+    <FieldID ID="0x03" Name="Module ID"             Description="Current convergence speed module ID"/>
+    <FieldID ID="0x04" Name="Decision Point"        Description="AWB decision of current frame"/>
+    <FieldID ID="0x05" Name="Decision Confidence"   Description="Confidence level of current frame"/>
+    <FieldID ID="0x06" Name="Previous Decision"     Description="AWB decision of previous frame"/>
+    <FieldID ID="0x07" Name="Final Decision Point"  Description="Final decision after temporal filtering"/>
+    <FieldID ID="0x08" Name="Module IDs"            Description="Module ID that requested convergence speed change"/>
+    <FieldID ID="0x09" Name="Priorities"            Description="Priority of module that requested convergence speed change"/>
+    <FieldID ID="0x0A" Name="Convergence Speeds"    Description="Convergence speed that was requested from each module"/>
+  </TypeID>
+  <TypeID ID="0x15A" Name="AWB SF Data"               Description="AWB Dynamic Skip Frame module data">
+    <FieldID ID="0x01" Name="Module Info"             Description="Module information"/>
+    <FieldID ID="0x02" Name="Skip Frame Count"        Description="Skip frame count"/>
+    <FieldID ID="0x03" Name="Is Current Frame Skip"   Description="Check current frame skip">
+      <Enumeration Value="0" Name="False"/>
+      <Enumeration Value="1" Name="True" />
+    </FieldID>
+    <FieldID ID="0x04" Name="Decision Point"          Description="AWB decision point of current frame after DA"/>
+    <FieldID ID="0x05" Name="Previous Decision Point" Description="AWB decision point of previous frame after DA"/>
+    <FieldID ID="0x06" Name="Change Ratio"            Description="Max ratio change ratio between previous and current frame"/>
+  </TypeID>
+  <TypeID ID="0x15B" Name="AWB Sensor Calibration"          Description="AWB Sensor Calibration Data">
+    <FieldID ID="0x01" Name="Module Info"                   Description="Module information"/>
+    <FieldID ID="0x02" Name="Num Calibration Factors"       Description="Number of calibrated illuminant"/>
+    <FieldID ID="0x03" Name="Calibration Factor CCTs"       Description="CCT of each calibrated illuminant"/>
+    <FieldID ID="0x04" Name="Module Calibration Factors"    Description="Calibration factor for each illuminant"/>
+    <FieldID ID="0x05" Name="Single LED Calibration Point"  Description="Single LED calibration factor"/>
+  </TypeID>
+  <TypeID ID="0x15C" Name="AWB SA Gen"                Description="AWB  SA generalized SA module data">
+    <FieldID ID="0x01" Name="Module Info"             Description="Module information"/>
+    <FieldID ID="0x02" Name="SA Description"          Description="SA description"/>
+    <FieldID ID="0x03" Name="Detection Zone Count"    Description="Detection zone count"/>
+    <FieldID ID="0x04" Name="Detection Zones"         Description="Zone configuration and zone setting in current frame"/>
+    <FieldID ID="0x05" Name="SA Weight"               Description="Weight of SA itself, DA use this during aggregating final target point"/>
+    <FieldID ID="0x06" Name="Confidence Compute Type" Description="Final confidence level compute type">
+      <Enumeration Value="0"  Name="Multiply"/>
+      <Enumeration Value="1"  Name="Weighted Avg"/>
+      <Enumeration Value="2"  Name="Minimum"/>
+      <Enumeration Value="3"  Name="Maximum"/>
+    </FieldID>
+    <FieldID ID="0x07" Name="Confidence Count"        Description="Confidence level count"/>
+    <FieldID ID="0x08" Name="Confidences"             Description="Confidence configuration and level in current frame"/>
+    <FieldID ID="0x09" Name="Final Confidence"        Description="Computed final confidence level"/>
+    <FieldID ID="0x0A" Name="Target Point"            Description="Target point configuration and target point"/>
+    <FieldID ID="0x0B" Name="Final Target Point"      Description="Final SA target point"/>
+  </TypeID>
+  <TypeID ID="0x15D" Name="AWB History data"   Description="AWB History control module data">
+    <FieldID ID="0x01" Name="Module Info"      Description="Module information"/>
+    <FieldID ID="0x02" Name="History Size"     Description="History size"/>
+    <FieldID ID="0x03" Name="Position"         Description="Position of current frame in circular queue"/>
+    <FieldID ID="0x04" Name="Lux Indices"      Description="Lux index"/>
+    <FieldID ID="0x05" Name="Decision History" Description="AWB decision history"/>
+  </TypeID>
+  <TypeID ID="0x15E" Name="AWB Flash Data"                   Description="AWB Flash Data">
+    <FieldID ID="0x01" Name="Module Info"                    Description="Module information"/>
+    <FieldID ID="0x02" Name="Flash On"                       Description="Flash on/off flag"/>
+    <FieldID ID="0x03" Name="LED Type"                       Description="Single/Dual LED type"/>
+    <FieldID ID="0x04" Name="Preflash Trigger"               Description="Pre-flash on/off flag"/>
+    <FieldID ID="0x05" Name="K2"                             Description="Sensor sensitivity ratio between pre-flash and main-flash"/>
+    <FieldID ID="0x06" Name="Lux Index"                      Description="Lux index"/>
+    <FieldID ID="0x07" Name="Valid Saturation Count Ratio"   Description="Ratio (valid stats/total stats)"/>
+    <FieldID ID="0x08" Name="Preflash Process Done"          Description="AWB flash estimation state, AWBAlgoFlashEstimationProgress"/>
+    <FieldID ID="0x09" Name="Zone Shift Ratio"               Description="Point shift ratio triggered by K2"/>
+    <FieldID ID="0x0A" Name="Zone Shift Value"               Description="Point shift value for rg and bg"/>
+    <FieldID ID="0x0B" Name="Flash WV Init Distance"         Description="Distance that will have unity weight in the case of flashWVIntpRatio = 0.0"/>
+    <FieldID ID="0x0C" Name="Flash WV Init CCT"              Description="CCT range that will have unity DistWV in the case of flashWVIntpRatio = 0.0"/>
+    <FieldID ID="0x0D" Name="Flash WV Initp Ratio"           Description="Interpolation ratio between normal WV (flashWVIntpRatio) and LED WV(1.0-flashWVIntpRatio)"/>
+    <FieldID ID="0x0E" Name="Flash WV CCT"                   Description="CCT range that can have non-zero illuminant weight in a given scene"/>
+    <FieldID ID="0x0F" Name="Flash MWB Point"                Description="Main flash MWB point (single: tuning data, dual: AEC output)"/>
+    <FieldID ID="0x10" Name="Flash Manual Ratio"             Description="Interpolation ratio between ambient AWB decision and LED MWB decision"/>
+    <FieldID ID="0x11" Name="Preflash Mix Ratio"             Description="Interpolation ratio between pre-flash AWB decision and mixed AWB decision"/>
+    <FieldID ID="0x12" Name="Preflash MWB Point"             Description="Preflash point (single: tuning data, dual: AEC output)"/>
+    <FieldID ID="0x13" Name="Flash Adjust Ratio"             Description="Gain adjust ratio triggered by lux index, CCT and K2"/>
+    <FieldID ID="0x14" Name="Preflash Preview Point"         Description="Information of pre-flash AWB decision point"/>
+    <FieldID ID="0x15" Name="LED Off Point"                  Description="Information of ambient light AWB decision point"/>
+    <FieldID ID="0x16" Name="Preflash Point"                 Description="AWB decision point from pre-flash"/>
+    <FieldID ID="0x17" Name="Main Flash Point"               Description="AWB decision estimation for main-flash"/>
+    <FieldID ID="0x18" Name="Preflash State"                 Description="Previous flash state">
+      <Enumeration Value="0"  Name="Flash Inactive"/>
+      <Enumeration Value="1"  Name="Preflash Start"/>
+      <Enumeration Value="2"  Name="Preflash Trigger FD"/>
+      <Enumeration Value="3"  Name="Preflash Trigger AF"/>
+      <Enumeration Value="4"  Name="Preflash Trigger AWB"/>
+      <Enumeration Value="5"  Name="Preflash Complete LED"/>
+      <Enumeration Value="6"  Name="Preflash Complete No LED"/>
+      <Enumeration Value="7"  Name="Main Flash"/>
+      <Enumeration Value="8"  Name="Torch Flash"/>
+    </FieldID>
+    <FieldID ID="0x19" Name="Flash State"                    Description="Current flash state">
+      <Enumeration Value="0"  Name="Flash Inactive"/>
+      <Enumeration Value="1"  Name="Preflash Start"/>
+      <Enumeration Value="2"  Name="Preflash Trigger FD"/>
+      <Enumeration Value="3"  Name="Preflash Trigger AF"/>
+      <Enumeration Value="4"  Name="Preflash Trigger AWB"/>
+      <Enumeration Value="5"  Name="Preflash Complete LED"/>
+      <Enumeration Value="6"  Name="Preflash Complete No LED"/>
+      <Enumeration Value="7"  Name="Main Flash"/>
+      <Enumeration Value="8"  Name="Torch Flash"/>
+    </FieldID>
+    <FieldID ID="0x1A" Name="Skip AWB Process Main"          Description="Flag to skip frames in Main flash"/>
+    <FieldID ID="0x1B" Name="Skip AWB Process Preflash"      Description="Flag to skip frames after preflash"/>
+    <FieldID ID="0x1C" Name="Num Frame Preflash AWB Process" Description="The number of frames to be skipped in preflash AWB"/>
+    <FieldID ID="0x1D" Name="Num Frame After Preflash"       Description="The number of frames to be skipped after preflash"/>
+  </TypeID>
+  <TypeID ID="0x15F" Name="AWB Stats Info"    Description="AWB BG Stats Info">
+    <FieldID ID="0x01" Name="Index"           Description="Stat index"/>
+    <FieldID ID="0x02" Name="Stats Point"     Description="stat point"/>
+    <FieldID ID="0x03" Name="Valid Stat Flag" Description="flag of valid stat"/>
+    <FieldID ID="0x04" Name="Subsample Flag"  Description="non-valid due to sub sampling"/>
+    <FieldID ID="0x05" Name="Dark Flag"       Description="flag of dark stat"/>
+    <FieldID ID="0x06" Name="Saturation Flag" Description="flag of saturation stat"/>
+    <FieldID ID="0x07" Name="MLC Flag"        Description="flag of MLC stat"/>
+    <FieldID ID="0x08" Name="Distance"        Description="Distance from reference line"/>
+    <FieldID ID="0x09" Name="CCT"             Description="estimated CCT of stat point"/>
+    <FieldID ID="0x0A" Name="Illuminant WV"   Description="Illuminant weight vector"/>
+    <FieldID ID="0x0B" Name="Distance WV"     Description="Distance weight vector"/>
+    <FieldID ID="0x0C" Name="Total WV"        Description="IlluWV * DistWV"/>
+    <FieldID ID="0x0D" Name="Decision"        Description="stats illuminant decision"/>
+  </TypeID>
+  <TypeID ID="0x160" Name="AWB Stats Data" Description="AWB BG Stats Data">
+    <FieldID ID="0x01" Name="Stats Count" Description="Count of total stats"/>
+    <FieldID ID="0x02" Name="Stats Data"  Description="Information for each stat"/>
+  </TypeID>
+  <TypeID ID="0x161" Name="AWB BestShot" Description="AWB Best-shot mode data">
+    <FieldID ID="0x01" Name="Module Info"          Description="Module information"/>
+    <FieldID ID="0x02" Name="Bestshot Mode"        Description="Current best shot mode"/>
+    <FieldID ID="0x03" Name="Operation"            Description="Current operation type"/>
+    <FieldID ID="0x04" Name="Convergence Speed"    Description="Current convergence speed"/>
+    <FieldID ID="0x05" Name="BestShot Mode Data"   Description="AWB point tuning data relevant to current operation"/>
+    <FieldID ID="0x06" Name="CCT Range Start"      Description="CCT start for 'CCTRange' operation type"/>
+    <FieldID ID="0x07" Name="CCT Range End"        Description="CCT end for 'CCTRange' operation type"/>
+    <FieldID ID="0x08" Name="Decision Point"       Description="Decision point before best-shot mode change decision"/>
+    <FieldID ID="0x09" Name="Target Point"         Description="Target point of best-shot mode operation"/>
+    <FieldID ID="0x0A" Name="Target CCT"           Description="CCT of best-shot mode operation"/>
+    <FieldID ID="0x0B" Name="Final Decision Point" Description="Final AWB target point after best-shot mode operation"/>
+    <FieldID ID="0x0C" Name="Final Decision CCT"   Description="Final CCT after best-shot mode operation"/>
+  </TypeID>
+  <TypeID ID="0x162" Name="AWB Special Illuminant" Description="AWB Special Illuminant Data">
+    <FieldID ID="0x01" Name="Reference Point"   Description="Reference point of illuminant"/>
+    <FieldID ID="0x02" Name="Convergence Speed" Description="AWB convergence speed"/>
+  </TypeID>
+  <TypeID ID="0x163" Name="AWB LCD Flash" Description="AWB LCD Flash">
+    <FieldID ID="0x01" Name="Module Info" Description="module information"/>
+    <FieldID ID="0x02" Name="LCD On"      Description="LCD flash on/off flag"/>
+    <FieldID ID="0x03" Name="Data"        Description="Special illuminant data"/>
+  </TypeID>
+  <TypeID ID="0x164" Name="AWB Torch Data" Description="AWB Torch Data">
+    <FieldID ID="0x01" Name="Module Info" Description="module information"/>
+    <FieldID ID="0x02" Name="Torch On"    Description="Torch on/off flag"/>
+    <FieldID ID="0x03" Name="Camera Type" Description="Camera type - Front/Rear"/>
+    <FieldID ID="0x04" Name="Data"        Description="Special illuminant data"/>
+  </TypeID>
+  <TypeID ID="0x165" Name="AWB Sensor Information" Description="AWB Sensor Information">
+    <FieldID ID="0x01" Name="FPS"                       Description="Current frame rate"/>
+    <FieldID ID="0x02" Name="Max FPS"                   Description="Maximum frame rate"/>
+    <FieldID ID="0x03" Name="Lines Per Frame"           Description="Current lines per frame"/>
+    <FieldID ID="0x04" Name="Max Line Count"            Description="Current maximum line count"/>
+    <FieldID ID="0x05" Name="Max Gain"                  Description="Maximum gain"/>
+    <FieldID ID="0x06" Name="Pixel Clock"               Description="Pixel clock value"/>
+    <FieldID ID="0x07" Name="Pixel Clock Per Line"      Description="Pixel clock per line"/>
+    <FieldID ID="0x08" Name="Sensor Capabilities"       Description="Sensor capabilities supported">
+      <!-- Bitmask Name="Unknown"/ -->
+    </FieldID>
+    <FieldID ID="0x09" Name="Resolution Width"          Description="Sensor resolution width"/>
+    <FieldID ID="0x0A" Name="Resolution Height"         Description="Sensor resolution height"/>
+    <FieldID ID="0x0B" Name="Pixel Sum Factor"          Description="Pixel sum factor"/>
+    <FieldID ID="0x0C" Name="Aperture"                  Description="Focal ratio"/>
+    <FieldID ID="0x0D" Name="Active Resolution Width"   Description="Sensor resolution width"/>
+    <FieldID ID="0x0E" Name="Active Resolution Height"  Description="Sensor resolution height"/>
+  </TypeID>
+  <TypeID ID="0x166" Name="AWB Stats Window" Description="AWB Stats Window">
+    <FieldID ID="0x01" Name="Active Pixel Window" Description="Dimensions of the active pixel window, where the statistics collection is based on"/>
+    <FieldID ID="0x02" Name="Crop Window"         Description="Dimensions of the crop window with respect to the active pixel window"/>
+  </TypeID>
+  <TypeID ID="0x167" Name="AWB Illuminant Factor" Description="AWB Illuminant Factor">
+    <FieldID ID="0x01" Name="Is Available" Description="Indicates whether WB calibration data is avialabe or not"/>
+    <FieldID ID="0x02" Name="Correlated Color Temp" Description="Correlated Color Temperature: degrees Kelvin (K)"/>
+    <FieldID ID="0x03" Name="R/G Ratio" Description="Red Green ratio"/>
+    <FieldID ID="0x04" Name="B/G Ratio" Description="Blue Green ratio"/>
+  </TypeID>
+  <TypeID ID="0x168" Name="AWB Illuminant Calibration Factor" Description="AWB Illuminant Calibration Factor">
+    <FieldID ID="0x01" Name="Number of Illuminants" Description="Number of illuminants calibrated"/>
+    <FieldID ID="0x02" Name="Illuminants"           Description="Illuminants calibration factors"/>
+  </TypeID>
+  <TypeID ID="0x169" Name="AWB Geometrical Display Calib" Description="AWB Geometrical Display Calibration">
+    <FieldID ID="0x01" Name="Version Format"                     Description="Calibration data format version"/>
+    <FieldID ID="0x02" Name="Focal Length Master"                Description="Master camera focal length"/>
+    <FieldID ID="0x03" Name="Focal Length Ratio Master"          Description="Master camera focal length ratio"/>
+    <FieldID ID="0x04" Name="Focal Length Auxiliary"             Description="Auxiliary camera focal length"/>
+    <FieldID ID="0x05" Name="Focal Length  Ratio Auziliary"      Description="Auxiliar camera focal length ratio"/>
+    <FieldID ID="0x06" Name="Sensor Mirror Flip Setting Master"  Description="Master sensor mirror and flip setting"/>
+    <FieldID ID="0x07" Name="Sensor Mirror Flip Setting Aux"     Description="Auxiliary sensor mirror and flip setting"/>
+    <FieldID ID="0x08" Name="Module Orientation Flag"            Description="Sensor Module orientation"/>
+    <FieldID ID="0x09" Name="Rotation Flag"                      Description="Sensor Module rotation"/>
+    <FieldID ID="0x0A" Name="Relative Principle Point Offset X"  Description="Relative principle point offsetX"/>
+    <FieldID ID="0x0B" Name="Relative Principle Point Offset Y"  Description="Relative principle point offset Y"/>
+    <FieldID ID="0x0C" Name="Relative Position Flag"             Description="Relative position flag"/>
+    <FieldID ID="0x0D" Name="Relative Baseline Distance"         Description="Relative baseline distance"/>
+    <FieldID ID="0x0E" Name="Number of Relative Rotation Matrix" Description="Number of entries in relativeRotationMatrix"/>
+    <FieldID ID="0x0F" Name="Relative Rotation Matrix"           Description="Relative rotation Matix"/>
+  </TypeID>
+  <TypeID ID="0x16A" Name="AWB Stats LED Calibration" Description="AWB Stats LED Calibration">
+    <FieldID ID="0x01" Name="Calibrated Point Count" Description="Number of combinations calibrated"/>
+    <FieldID ID="0x02" Name="R/G Ratio"              Description="RG ratio from calibration"/>
+    <FieldID ID="0x03" Name="B/G Ratio"              Description="BG ratio from calibration"/>
+  </TypeID>
+  <TypeID ID="0x16B" Name="AWB Manual Configuration" Description="AWB Manual Configuration">
+    <FieldID ID="0x01" Name="AWB Gains"             Description="AWB gains"/>
+    <FieldID ID="0x02" Name="Correlated Color Temp" Description="CCT: Correlated Color Temperature"/>
+  </TypeID>
+  <TypeID ID="0x16C" Name="AWB Stats Face Data" Description="AWB Stats Face Data">
+    <FieldID ID="0x01" Name="ROI"        Description="Face boundary with respect to active pixel window."/>
+    <FieldID ID="0x02" Name="Confidence" Description="Confidence for determining the prominence. Value ranges from 0 to 100"/>
+    <FieldID ID="0x03" Name="Face ID"    Description="Detected face unique ID"/>
+  </TypeID>
+  <TypeID ID="0x16D" Name="AWB Stats Face Histogram" Description="AWB Stats Face Histogram">
+    <FieldID ID="0x01" Name="Sample Count"   Description="Number of sample"/>
+    <FieldID ID="0x02" Name="Histogram Bins" Description="Histogram bin"/>
+  </TypeID>
+  <TypeID ID="0x16E" Name="AWB Stats Face Information" Description="AWB Stats Face Information">
+    <FieldID ID="0x01" Name="Face Count"              Description="Number of faces detected"/>
+    <FieldID ID="0x02" Name="Faces"                   Description="Data for each face detected"/>
+    <FieldID ID="0x03" Name="Original Faces"          Description="Origin face position before translate"/>
+    <FieldID ID="0x04" Name="Histogram Points"        Description="Deprecated - ignore"/>
+    <FieldID ID="0x05" Name="Request ID"              Description="Sequence of the frame were the faces were detected"/>
+    <FieldID ID="0x06" Name="Region Priority Enabled" Description="Indicate if region priority is enable for 3A face info"/>
+  </TypeID>
+  <TypeID ID="0x16F" Name="AWB Process Trigger Gain" Description="AWB Process Trigger Gain">
+    <FieldID ID="0x01" Name="Trigger" Description="Trigger point"/>
+    <FieldID ID="0x02" Name="Data"    Description="AWB gain data for trigger point"/>
+  </TypeID>
+  <TypeID ID="0x170" Name="AWB Flash Information" Description="AWB Flash Information">
+    <FieldID ID="0x01" Name="Flash State"         Description="Flash sequence state">
+      <Enumeration Value="0"  Name="Flash Inactive"/>
+      <Enumeration Value="1"  Name="Preflash Start"/>
+      <Enumeration Value="2"  Name="Preflash Trigger FD"/>
+      <Enumeration Value="3"  Name="Preflash Trigger AF"/>
+      <Enumeration Value="4"  Name="Preflash Trigger AWB"/>
+      <Enumeration Value="5"  Name="Preflash Complete LED"/>
+      <Enumeration Value="6"  Name="Preflash Complete No LED"/>
+      <Enumeration Value="7"  Name="Main Flash"/>
+      <Enumeration Value="8"  Name="Torch Flash"/>
+    </FieldID>
+    <FieldID ID="0x02" Name="LED Influence Ratio" Description="The sensitivity ratio which is calculated from sensitivity with no flash / sensitivity with pre-flash, main-flash"/>
+    <FieldID ID="0x03" Name="R/G Ratio"           Description="The RG ratio when flash is on"/>
+    <FieldID ID="0x04" Name="B/G Ratio"           Description="The BG ratio when flash is on"/>
+  </TypeID>
+  <TypeID ID="0x171" Name="AWB Set-Param Info" Description="AWB Set-Param Info">
+    <FieldID ID="0x01" Name="DebugData Mode"                  Description="Debug Data mode"/>
+    <FieldID ID="0x02" Name="Sensor Info"                     Description="Sensor info"/>
+    <FieldID ID="0x03" Name="Stats Window"                    Description="Stats ROI info"/>
+    <FieldID ID="0x04" Name="Illuminant's Calibration Factor" Description="Sensor calibration factor info"/>
+    <FieldID ID="0x05" Name="Geometric Display Calibration"   Description="Camera geometric information for dual camera"/>
+    <FieldID ID="0x06" Name="LED Calibration"                 Description="LED calibration data"/>
+    <FieldID ID="0x07" Name="Manual AWB Configuration"        Description="Configuration for manual AWB"/>
+    <FieldID ID="0x08" Name="AWB Mode"                        Description="AWB algo mode">
+      <Enumeration Value="0"  Name="Off"/>
+      <Enumeration Value="1"  Name="Auto"/>
+      <Enumeration Value="2"  Name="Incandescent"/>
+      <Enumeration Value="3"  Name="Fluorescent"/>
+      <Enumeration Value="4"  Name="Warm Fluorescent"/>
+      <Enumeration Value="5"  Name="Daylight"/>
+      <Enumeration Value="6"  Name="Cloudy Daylight"/>
+      <Enumeration Value="7"  Name="Twilight"/>
+      <Enumeration Value="8"  Name="Shade"/>
+    </FieldID>
+    <FieldID ID="0x09" Name="AWB Locked"                      Description="Flag for AWB lock"/>
+    <FieldID ID="0x0A" Name="Scene Mode"                      Description="AWB scene mode"/>
+    <FieldID ID="0x0B" Name="Face ROI"                        Description="Face ROI info"/>
+    <FieldID ID="0x0C" Name="Touch ROI"                       Description="Touch ROI Info"/>
+    <FieldID ID="0x0D" Name="Flash Type"                      Description="Flash type (LED/LCD)">
+      <Enumeration Value="0"  Name="LED"/>
+      <Enumeration Value="1"  Name="LCD"/>
+    </FieldID>
+    <FieldID ID="0x0E" Name="Flash Data"                      Description="Flash data info"/>
+  </TypeID>
+  <TypeID ID ="0x173" Name="AWB Channel Info"      Description="Bayer grid stats channel info">
+    <FieldID ID="0x01" Name="R Sum"                Description="Red sum of the pixel"/>
+    <FieldID ID="0x02" Name="B Sum"                Description="Red sum of the pixel"/>
+    <FieldID ID="0x03" Name="G/GR Sum"             Description="Green or Green/Red sum of the pixel"/>
+    <FieldID ID="0x04" Name="Y/GB Sum"             Description="Y or Green/Blue sum of the pixel"/>
+    <FieldID ID="0x05" Name="R Count"              Description="Red count of the pixel"/>
+    <FieldID ID="0x06" Name="B Count"              Description="Blue count of the pixel"/>
+    <FieldID ID="0x07" Name="G/GR Count"           Description="Green or Green/Red count of the pixel"/>
+    <FieldID ID="0x08" Name="Y/GB Count"           Description="Y or Green/Blue count of the pixel"/>
+    <FieldID ID="0x09" Name="Saturated R Sum"      Description="Red saturated sum of the pixel"/>
+    <FieldID ID="0x0a" Name="Saturated B Sum"      Description="Red saturated sum of the pixel"/>
+    <FieldID ID="0x0b" Name="Saturated G/GR Sum"   Description="Green or Green/Red saturated sum of the pixel"/>
+    <FieldID ID="0x0c" Name="Saturated Y/GB Sum"   Description="Y or Green/Blue saturated sum of the pixel"/>
+    <FieldID ID="0x0d" Name="Saturated R Count"    Description="Red saturated count of the pixel"/>
+    <FieldID ID="0x0e" Name="Saturated B Count"    Description="Blue saturated count of the pixel"/>
+    <FieldID ID="0x0f" Name="Saturated G/GR Count" Description="Green or Green/Red saturated count of the pixel"/>
+    <FieldID ID="0x10" Name="Saturated Y/GB Count" Description="Y or Green/Blue saturated count of the pixel"/>
+  </TypeID>
+  <TypeID ID="0x174" Name="AWB Bayer Grid Stats" Description="Bayer Grid Stats">
+    <FieldID ID="0x01" Name="Horizontal Region Count" Description="The number of regions in horizontal"/>
+    <FieldID ID="0x02" Name="Vertical Region Count"   Description="The number of regions in vertial"/>
+    <FieldID ID="0x03" Name="Total Region Count"      Description="The total number of regions"/>
+    <FieldID ID="0x04" Name="Region Width"            Description="The width of the region"/>
+    <FieldID ID="0x05" Name="Region Height"           Description="The height of the region"/>
+    <FieldID ID="0x06" Name="Bit Depth"               Description="The bit depth for each value in the region"/>
+    <FieldID ID="0x07" Name="Flags"                   Description="Bit 1: Uses Y, Bit 2: Has Sat Info">
+      <Bitmask Value="0x00000001"  Name="Uses Y"/>
+      <Bitmask Value="0x00000002"  Name="Has Saturation Info"/>
+    </FieldID>
+    <FieldID ID="0x08" Name="Saturation Threshold"    Description="The threshold for saturation"/>
+    <FieldID ID="0x09" Name="Valid Region Count"      Description="The valid region count"/>
+    <FieldID ID="0x0A" Name="Channel Data"            Description="Bayer grid stats channel data"/>
+    <FieldID ID="0x0B" Name="ROI"                     Description="Bayer grid stats region of interest"/>
+  </TypeID>
+  <TypeID ID="0x241" Name="AF ROI" Description="AF ROI">
+    <FieldID ID="0x01" Name="X"  Description="X coordinate of the ROI"/>
+    <FieldID ID="0x02" Name="Y"  Description="Y coordinate of the ROI"/>
+    <FieldID ID="0x03" Name="Dx" Description="Width of the ROI"/>
+    <FieldID ID="0x04" Name="Dy" Description="Height of the ROI"/>
+  </TypeID>
+  <TypeID ID="0x242" Name="AF Common History" Description="AF History common data">
+    <FieldID ID="0x01" Name="Frame ID"                  Description="Frame id"/>
+    <FieldID ID="0x02" Name="Current Lend Position"     Description="Current Frame lens position"/>
+    <FieldID ID="0x03" Name="HAF Progress"              Description="Indicates the progress of the HAF algorithm"/>
+    <FieldID ID="0x04" Name="Next Lens Position"        Description="Indicates next lens position the algorithm should move the lens to"/>
+    <FieldID ID="0x05" Name="Target Lens Position"      Description="Estimated target lens position"/>
+    <FieldID ID="0x06" Name="Brightness Value"          Description="Indicates the BV or brightness value"/>
+    <FieldID ID="0x07" Name="Current Luma"              Description="Indicates the luma value of the current frame"/>
+    <FieldID ID="0x08" Name="AEC Settled"               Description="Flag to Indicates if AEC is settled or not"/>
+    <FieldID ID="0x09" Name="Exposure Index"            Description="Indicates the value of exposure index"/>
+    <FieldID ID="0x0A" Name="Lux Index"                 Description="Indicates the value of lux index"/>
+    <FieldID ID="0x0B" Name="SADR Value"                Description="Value of the SADR"/>
+    <FieldID ID="0x0C" Name="SAD Value"                 Description="Value of the SAD"/>
+    <FieldID ID="0x0D" Name="Gyro Value"                Description="Value of the gyro"/>
+    <FieldID ID="0x0E" Name="Current Focus Value"       Description="Value of the current frame's focus value"/>
+    <FieldID ID="0x0F" Name="Focus Value HV"            Description="Focus value of Horizontal+Vertical filter"/>
+    <FieldID ID="0x10" Name="Normalized Focus Value HV" Description="Normalized Focus value of Horizontal+Vertical filter"/>
+    <FieldID ID="0x11" Name="Focus Value H"             Description="Focus value of Horizontal filter"/>
+    <FieldID ID="0x12" Name="Normalized Focus Value H"  Description="Normalized Focus value of Horizontal filter"/>
+    <FieldID ID="0x13" Name="Focus Value Vertical"      Description="Focus value of Vertical filter"/>
+    <FieldID ID="0x14" Name="Normalized Focus Value V"  Description="Normalized Focus value of Vertical filter"/>
+    <FieldID ID="0x15" Name="Luma Value"                Description="Luma Value"/>
+  </TypeID>
+  <TypeID ID="0x243" Name="AF Convergence" Description="AF Convergence information">
+    <FieldID ID="0x01" Name="Final Lens Position"     Description="Final lens position given by HAF"/>
+    <FieldID ID="0x02" Name="Focus Result"            Description="Focus result">
+      <Enumeration Value="0"  Name="None"/>
+      <Enumeration Value="1"  Name="Focused,"/>
+      <Enumeration Value="2"  Name="Failed"/>
+      <Enumeration Value="3"  Name="Focusing"/>
+    </FieldID>
+    <FieldID ID="0x03" Name="Camera Mode"             Description="Camera mode running">
+      <Enumeration Value="0"  Name="Preview"/>
+      <Enumeration Value="1"  Name="Video,"/>
+    </FieldID>
+    <FieldID ID="0x04" Name="AF Mode"                 Description="AF mode">
+      <Enumeration Value="0"  Name="Macro"/>
+      <Enumeration Value="1"  Name="Infinity"/>
+      <Enumeration Value="2"  Name="Auto"/>
+      <Enumeration Value="3"  Name="CAF"/>
+    </FieldID>
+    <FieldID ID="0x05" Name="ROI"                     Description="ROI of the algorithm"/>
+    <FieldID ID="0x06" Name="ROI Type"                Description="Focus ROI type">
+      <Enumeration Value="0"  Name="General"/>
+      <Enumeration Value="1"  Name="Face"/>
+      <Enumeration Value="2"  Name="Touch"/>
+    </FieldID>
+    <FieldID ID="0x07" Name="Spotlight Detected"      Description="Flag to detect spot light"/>
+    <FieldID ID="0x08" Name="Need Fine Search"        Description="Flag to Indicates if fine search was required"/>
+    <FieldID ID="0x09" Name="Fine Search Near Range"  Description="Indicates the value of fine search near range"/>
+    <FieldID ID="0x0A" Name="Fine Search Far Range"   Description="Indicates the value of fine search far range"/>
+    <FieldID ID="0x0B" Name="Fine Search Step Size"   Description="Indicates the value of fine search step size"/>
+    <FieldID ID="0x0C" Name="Peview FPS"              Description="Indicates the current preview frames per second"/>
+    <FieldID ID="0x0D" Name="History Data"            Description="History of Common data"/>
+  </TypeID>
+  <TypeID ID="0x244" Name="AF Single-AF History" Description="AF Single-AF algorithm history data">
+    <FieldID ID="0x01" Name="PrescanH"              Description="Flag to indicate Horizontal stats was used in PreScan"/>
+    <FieldID ID="0x02" Name="PrescanV"              Description="Flag to indicate Vertical stats was used in PreScan"/>
+    <FieldID ID="0x03" Name="Prescan Software Used" Description="Flag to indicate Software stats was used in PreScan"/>
+    <FieldID ID="0x04" Name="Green Histogram"       Description="Histogram value of the Green channel"/>
+    <FieldID ID="0x05" Name="Brightness Value"      Description="Brightness value"/>
+  </TypeID>
+  <TypeID ID="0x245" Name="AF Single-AF Data" Description="AF Single-AF data">
+    <FieldID ID="0x01" Name="Prescan Curve"              Description="Curve selected by the PreScan or coarse search"/>
+    <FieldID ID="0x02" Name="Fine Search Curve"          Description="Curve selected by the fine scan"/>
+    <FieldID ID="0x03" Name="Fine Search Start Lens Pos" Description="Start position of fine search"/>
+    <FieldID ID="0x04" Name="Fine Search End Lens Pos"   Description="End position of fine search"/>
+    <FieldID ID="0x05" Name="Prescan Frame ID"           Description="Frame id of the coarse or PreScan"/>
+    <FieldID ID="0x06" Name="Fine-scan Frame ID"         Description="Frame id of the fine scan"/>
+    <FieldID ID="0x07" Name="History Data"               Description="Single-AF algorithm history data"/>
+  </TypeID>
+  <TypeID ID="0x246" Name="AF CAF Fine Scan History" Description="AF CAF fine scan history">
+    <FieldID ID="0x01" Name="Gyro Sum Square"          Description="Value of the Gyro sum square"/>
+    <FieldID ID="0x02" Name="Gyro Average"             Description="Value of the Gyro average"/>
+    <FieldID ID="0x03" Name="Gyro Difference Ratio"    Description="Value of the Gyro Difference ratio"/>
+    <FieldID ID="0x04" Name="Focus Value Change Ratio" Description="Value of the Focus Value change ratio"/>
+    <FieldID ID="0x05" Name="Hand-jitter Stats"        Description="Flag to indicate if the Handjitter stats are valid"/>
+  </TypeID>
+  <TypeID ID="0x247" Name="AF CAF Fine Scan Data" Description="AF CAF fine scan data">
+    <FieldID ID="0x01" Name="LSP Sample Count"   Description="Sample count of LSP algorithm"/>
+    <FieldID ID="0x02" Name="LSP First Index"    Description="Start Index of LSP algorithm"/>
+    <FieldID ID="0x03" Name="LSP Last Index"     Description="End Index of LSP algorithm"/>
+    <FieldID ID="0x04" Name="LSP Start Position" Description="Start lens position of LSP algorithm"/>
+    <FieldID ID="0x05" Name="LSP End Position"   Description="End lens position of LSP algorithm"/>
+    <FieldID ID="0x06" Name="LSP Coefficient A"  Description="Value of the LSP coefficient A"/>
+    <FieldID ID="0x07" Name="LSP Coefficient B"  Description="Value of the LSP coefficient B"/>
+    <FieldID ID="0x08" Name="LSP Coefficient C"  Description="Value of the LSP coefficient C"/>
+    <FieldID ID="0x09" Name="LFP Fitting Peak"   Description="Value of the LSP fitting peak"/>
+    <FieldID ID="0x0A" Name="LSP Fitting Found"  Description="Flag to indicate if LSP fitting found or not"/>
+    <FieldID ID="0x0B" Name="CAF History Data"   Description="Contrast AF algorithm history data"/>
+  </TypeID>
+  <TypeID ID="0x248" Name="AF TOF History" Description="AF TOF history">
+    <FieldID ID="0x01" Name="Distance"   Description="Distance given by the TOF sensor"/>
+    <FieldID ID="0x02" Name="Confidence" Description="Confidence of the TOF algorithm"/>
+  </TypeID>
+  <TypeID ID="0x249" Name="AF Time of Flight" Description="AF Time of flight">
+    <FieldID ID="0x01" Name="Range"                  Description="Range calculated by the TOF algorithm"/>
+    <FieldID ID="0x02" Name="Lens Pos to Range"      Description="Curve selected by the fine scan"/>
+    <FieldID ID="0x03" Name="Near Range Lens Pos"    Description="Range near of the fine search"/>
+    <FieldID ID="0x04" Name="End Range Lens Pos"     Description="Range far of the fine search"/>
+    <FieldID ID="0x05" Name="Confidence"             Description="Confidence level of the TOF algorithm"/>
+    <FieldID ID="0x06" Name="Error Status"           Description="Error code given by the TOF algorithm"/>
+    <FieldID ID="0x07" Name="Max Distance"           Description="Max distance given by the TOF algorithm"/>
+    <FieldID ID="0x08" Name="Actuator Lens Shift"    Description="Lens shift caused by the open loop actuator"/>
+    <FieldID ID="0x09" Name="TOS Usecase"            Description="Use case of the TOF either indoor or outdoor"/>
+    <FieldID ID="0x0A" Name="Start Frame Index"      Description="Start frame index"/>
+    <FieldID ID="0x0B" Name="Valid"                  Description="Flag to indicate if the stats are valid or not"/>
+    <FieldID ID="0x0C" Name="Scene Change"           Description="Flag to indicate if there is scene change or not"/>
+    <FieldID ID="0x0D" Name="Coarse Search Lens Pos" Description="Lens position to indicate the start of coarse search"/>
+    <FieldID ID="0x0E" Name="TOF History Data"       Description="History of TOF data"/>
+  </TypeID>
+  <TypeID ID="0x24A" Name="AF PD Data" Description="AF PD data">
+    <FieldID ID="0x01" Name="Phase Difference" Description="Phase difference given by the PDAF"/>
+    <FieldID ID="0x02" Name="Confidence"       Description="Confidence level of the PDAF"/>
+    <FieldID ID="0x03" Name="Defocus Value"    Description="Defocus level of the PDAF"/>
+    <FieldID ID="0x04" Name="Range Near"       Description="Range near of the fine search"/>
+    <FieldID ID="0x05" Name="Range Far"        Description="Range far of the fine search"/>
+  </TypeID>
+  <TypeID ID="0x24B" Name="AF PD History" Description="AF PD history">
+    <FieldID ID="0x01" Name="Sensor Gain"                  Description="Value of the sensor gain"/>
+    <FieldID ID="0x02" Name="Selected Window Index"        Description="Index of the selected window in a multiwindow algorithm"/>
+    <FieldID ID="0x03" Name="ROI Type"                     Description="ROI type in a multi-window algorithm">
+      <Enumeration Value="0"  Name="Central"/>
+      <Enumeration Value="1"  Name="Peripheral"/>
+    </FieldID>
+    <FieldID ID="0x04" Name="Center Window PD"             Description="History Value of the center window PD"/>
+    <FieldID ID="0x05" Name="Center Window Confidence"     Description="History Value of the center window confidence"/>
+    <FieldID ID="0x06" Name="Center Window Defocus"        Description="History Value of the center window defocus"/>
+    <FieldID ID="0x07" Name="Center Window Range Near"     Description="History Value of the center window range near"/>
+    <FieldID ID="0x08" Name="Center Window Range Far"      Description="History Value of the center window range far"/>
+    <FieldID ID="0x09" Name="Peripheral Window PD"         Description="History Value of the peripheral window PD"/>
+    <FieldID ID="0x0A" Name="Peripheral Window Confidence" Description="History Value of the peripheral window confidence"/>
+    <FieldID ID="0x0B" Name="Peripheral Window Defocus"    Description="History Value of the peripheral window defocus"/>
+    <FieldID ID="0x0C" Name="Peripheral Window Range Near" Description="History Value of the peripheral window range near"/>
+    <FieldID ID="0x0D" Name="Peripheral Window Range Far"  Description="History Value of the peripheral window range far"/>
+  </TypeID>
+  <TypeID ID="0x24C" Name="AF Phase Difference" Description="AF Phase Difference">
+    <FieldID ID="0x01" Name="Early Interrupt Enabled" Description="Flag to check if early interrupt is enabled or not"/>
+    <FieldID ID="0x02" Name="Multi Window Enabled"    Description="Flag to check if multiwindow is enabled or not"/>
+    <FieldID ID="0x03" Name="X Multi Window Number"   Description="Number of windows on x-axis"/>
+    <FieldID ID="0x04" Name="Y Multi Window Number"   Description="Number of windows on y-axis"/>
+    <FieldID ID="0x05" Name="PD History Data"         Description="History of PDAF algorithm"/>
+  </TypeID>
+  <TypeID ID="0x24D" Name="AF Follower" Description="AF Follower algorithm data">
+    <FieldID ID="0x01" Name="Peer Distance"                            Description="Peer Distance"/>
+    <FieldID ID="0x02" Name="Peer Lens Position"                       Description="Peer Lens Position"/>
+    <FieldID ID="0x03" Name="Estimated Lens Position"                  Description="Estimated Lens Position"/>
+    <FieldID ID="0x04" Name="Fine Search Start Lens Pos"               Description="Fine Search Start Lens Pos"/>
+    <FieldID ID="0x05" Name="Fine Search End Lens Pos"                 Description="Fine Search End Lens Pos"/>
+    <FieldID ID="0x06" Name="Confidence"                               Description="Confidence"/>
+    <FieldID ID="0x07" Name="Fallback To Convergence On Scene Change" Description="Fallback To Convergence On Scene Change"/>
+    <FieldID ID="0x08" Name="Scene BV"                                 Description="Scene BV"/>
+    <FieldID ID="0x09" Name="Usecase"                                  Description="Usecase"/>
+  </TypeID>
+  <TypeID ID="0x24E" Name="AF Monitor" Description="AF Monitor common data">
+    <FieldID ID="0x01" Name="Frame ID" Description="Specifies the corresponding frame ID"/>
+    <FieldID ID="0x02" Name="Primary Trigger Refocus"   Description="Indicate the trigger refocus decision output from primary "/>
+    <FieldID ID="0x03" Name="Primary Focus Level"       Description="Indicate the focus level output from primary algo"/>
+    <FieldID ID="0x04" Name="Primary Stability"         Description="Indicate the stability output from primary algo"/>
+    <FieldID ID="0x05" Name="Primary Confidence"        Description="Indicate the confidence output from primary algo"/>
+    <FieldID ID="0x06" Name="Secondary Trigger Refocus" Description="Indicate the trigger refocus decision output from secondar"/>
+    <FieldID ID="0x07" Name="Secondary Focus Level"     Description="Indicate the focus level output from secondary algo"/>
+    <FieldID ID="0x08" Name="Secondary Stability"       Description="Indicate the stability output from secondary algo"/>
+    <FieldID ID="0x09" Name="Secondary Confidence"      Description="Indicate the confidence output from secondary algo"/>
+  </TypeID>
+  <TypeID ID="0x24F" Name="AF Value Monitor Data" Description="AF Value monitor data">
+    <FieldID ID="0x01" Name="Input"       Description="Specifies input data to the value monitor"/>
+    <FieldID ID="0x02" Name="Sensitivity" Description="Specifies current value monitor sensitivity"/>
+    <FieldID ID="0x03" Name="Rebase"      Description="Specifies rebasing status of the value monitor"/>
+    <FieldID ID="0x04" Name="Output"      Description="Specifies output decision of the value monitor"/>
+  </TypeID>
+  <TypeID ID="0x250" Name="AF Monitor CAF" Description="AF Monitor CAF">
+    <FieldID ID="0x01" Name="SADR"              Description="Specifies the (SADR) value monitor I/O and status information"/>
+    <FieldID ID="0x02" Name="Gyro"              Description="Specifies the (GYRO) value monitor I/O and status information"/>
+    <FieldID ID="0x03" Name="SAD Panning"       Description="Specifies the (SADPanning) value monitor I/O and status information"/>
+    <FieldID ID="0x04" Name="Gyro Panning"      Description="Specifies the (GYROPanning) value monitor I/O and status information"/>
+    <FieldID ID="0x05" Name="Face Scene Change" Description="Specifies the (faceSceneChange) value monitor I/O and status information"/>
+    <FieldID ID="0x06" Name="Scene Change Hold" Description="Specifies the (scenechangeHold) value monitor I/O and status information"/>
+  </TypeID>
+  <TypeID ID="0x251" Name="AF Monitor PDAF" Description="AF Monitor PDAF">
+    <FieldID ID="0x01" Name="Defocus Low" Description="Specifies the (defocusLow) value monitor I/O and status information"/>
+    <FieldID ID="0x02" Name="Defocus High" Description="Specifies the (defocusHigh) value monitor I/O and status information"/>
+  </TypeID>
+  <TypeID ID="0x252" Name="AF Monitor TOF" Description="AF Monitor TOF">
+    <FieldID ID="0x01" Name="Distance"          Description="Specifies the (Distance) value monitor I/O and status information"/>
+    <FieldID ID="0x02" Name="Confidence Medium" Description="Specifies the (confidenceMedium) value monitor I/O and status information"/>
+    <FieldID ID="0x03" Name="Confidence High"   Description="Specifies the (confidenceHigh) value monitor I/O and status information"/>
+  </TypeID>
+  <TypeID ID="0x253" Name="AF Gamma Table" Description="AF Gamma Table">
+    <FieldID ID="0x01" Name="Enabled"      Description="Flag to enable Gamma table for BAF"/>
+    <FieldID ID="0x02" Name="Table Length" Description="Gamma table length"/>
+    <FieldID ID="0x03" Name="Gamma Table"  Description="Coefficients for Gamma table"/>
+  </TypeID>
+  <TypeID ID="0x254" Name="AF Focus ROI" Description="AF Focus ROI">
+    <FieldID ID="0x01" Name="ROI Info"    Description="ROI information with respect to the coordinates"/>
+    <FieldID ID="0x02" Name="Pattern"     Description="Type of preset ROI pattern">
+      <Enumeration Value="0"  Name="Custom"/>
+      <Enumeration Value="1"  Name="Rect"/>
+      <Enumeration Value="2"  Name="Cross"/>
+      <Enumeration Value="3"  Name="Diamond"/>
+      <Enumeration Value="4"  Name="Sparse"/>
+    </FieldID>
+    <FieldID ID="0x03" Name="Grid Size H" Description="ROI grid width ratio with respect to ROI width"/>
+    <FieldID ID="0x04" Name="Grid Size V" Description="ROI grid height ratio with respect to ROI height"/>
+    <FieldID ID="0x05" Name="Grid Gap H"  Description="ROI grid gap width ratio with respect to ROI width"/>
+    <FieldID ID="0x06" Name="Grid Gap V"  Description="ROI grid gap width ratio with respect to ROI height"/>
+  </TypeID>
+  <TypeID ID="0x255" Name="AF FIR Filter" Description="AF FIR Filter">
+    <FieldID ID="0x01" Name="Enabled"          Description="Flag to Enable FIR filter"/>
+    <FieldID ID="0x02" Name="Coefficient A"    Description="Kernel Coefficients of FIR filter"/>
+    <FieldID ID="0x03" Name="Coefficient Size" Description="Coefficient size of th FIR filter"/>
+  </TypeID>
+  <TypeID ID="0x256" Name="AF IIR Filter" Description="AF IIR Filter">
+    <FieldID ID="0x01" Name="Enabled"            Description="Flag to Enable IIR filter"/>
+    <FieldID ID="0x02" Name="Coefficient A"      Description="Kernel Coefficients of a(denominator)"/>
+    <FieldID ID="0x03" Name="Coefficient B"      Description="Kernel Coefficients of b(numerator)"/>
+    <FieldID ID="0x04" Name="Coefficient A Size" Description="Coefficient size of a(denominator)"/>
+    <FieldID ID="0x05" Name="Coefficient B Size" Description="Coefficient size of b(numerator)"/>
+  </TypeID>
+  <TypeID ID="0x257" Name="AF Coring Info" Description="AF Coring Info">
+    <FieldID ID="0x01" Name="Threshold" Description="Coring threshold value"/>
+    <FieldID ID="0x02" Name="Gain"      Description="Coring gain value"/>
+    <FieldID ID="0x03" Name="Indices"   Description="Coring table indices"/>
+  </TypeID>
+  <TypeID ID="0x258" Name="AF Filter Kernel" Description="AF Filter Kernel">
+    <FieldID ID="0x01" Name="Valid"                    Description="Flag to check enable of the BAF stats"/>
+    <FieldID ID="0x02" Name="Bit Shift"                Description="Shifted bits between FIR and IIR"/>
+    <FieldID ID="0x03" Name="FIR Filter Configuration" Description="FIR filter configuration"/>
+    <FieldID ID="0x04" Name="IIR Filter Configuration" Description="IIR filter configuration"/>
+    <FieldID ID="0x05" Name="Coring Configuration"     Description="Coring configuration"/>
+    <FieldID ID="0x06" Name="Scaler Enabled"           Description="Flag to enable scalar"/>
+    <FieldID ID="0x07" Name="Scaler Factor"            Description="Scalar factor"/>
+  </TypeID>
+  <TypeID ID="0x259" Name="AF SW Kernel" Description="AF Software Kernel">
+    <FieldID ID="0x01" Name="Valid"      Description="Flag to check enable of the SW stats"/>
+    <FieldID ID="0x02" Name="FIR Filter" Description="FIR filter configuration"/>
+    <FieldID ID="0x03" Name="IIR Filter" Description="IIR filter configuration"/>
+  </TypeID>
+  <TypeID ID="0x541" Name="Tuning AEC Exposure Data" Description="Tuning AEC Exposure Data">
+    <FieldID ID="0x01" Name="Exposure Time"        Description="The exposure time in nanoseconds used by sensor"/>
+    <FieldID ID="0x02" Name="Linear Gain"          Description="The total gain consumed by sensor only"/>
+    <FieldID ID="0x03" Name="Sensitivity"          Description="The total exposure including exposure time and gain"/>
+    <FieldID ID="0x04" Name="Delta EV From Target" Description="The current exposure delta compared with the desired target"/>
+  </TypeID>
+  <TypeID ID="0x542" Name="Tuning AEC Frame Control" Description="Tuning AEC Frame Control">
+    <FieldID ID="0x01" Name="Exposure Info"  Description="Exposure info including gain and exposure time"/>
+    <FieldID ID="0x02" Name="Lux Index"      Description="Future frame lux index,  consumed by ISP"/>
+    <FieldID ID="0x03" Name="Flash Info"     Description="Flash information if it is main or preflash">
+      <Enumeration Value="0"  Name="Off"/>
+      <Enumeration Value="1"  Name="Pre"/>
+      <Enumeration Value="2"  Name="Main"/>
+    </FieldID>
+    <FieldID ID="0x04" Name="Preflash State" Description="Preflash state from AEC, consumed by Sensor">
+      <Enumeration Value="0"  Name="Inactive"/>
+      <Enumeration Value="1"  Name="Start"/>
+      <Enumeration Value="2"  Name="Trigger FD"/>
+      <Enumeration Value="3"  Name="Trigger AF"/>
+      <Enumeration Value="4"  Name="Trigger AWB"/>
+      <Enumeration Value="5"  Name="Complete LED"/>
+      <Enumeration Value="6"  Name="Complete No LED"/>
+    </FieldID>
+    <FieldID ID="0x05" Name="LED Currents"   Description="The LED currents value for the use case of LED snapshot"/>
+  </TypeID>
+  <TypeID ID="0x543" Name="Tuning AWB Frame Control" Description="Tuning AWB Frame Control">
+    <FieldID ID="0x01" Name="AWB Gains"            Description="R/G/B gains"/>
+    <FieldID ID="0x02" Name="Color Temperature"    Description="Color temperature"/>
+    <FieldID ID="0x03" Name="CCM Override Enabled" Description="Flag indicates if CCM override is enabled"/>
+    <FieldID ID="0x04" Name="CCM Offsets"          Description="The offsets for color correction matrix"/>
+    <FieldID ID="0x05" Name="CCM"                  Description="The color correction matrix"/>
+  </TypeID>
+  <TypeID ID="0x544" Name="Tuning Sensor Resolution" Description="Tuning Sensor Resolution">
+    <FieldID ID="0x01" Name="Output Width" Description="Output width"/>
+    <FieldID ID="0x02" Name="Output Height" Description="Output height"/>
+  </TypeID>
+  <TypeID ID="0x545" Name="Tuning Sensor Crop" Description="Tuning Sensor Crop">
+    <FieldID ID="0x01" Name="First Pixel" Description="Left Crop"/>
+    <FieldID ID="0x02" Name="First Line"  Description="Top Crop"/>
+    <FieldID ID="0x03" Name="Last Pixel"  Description="Output width - right crop - 1"/>
+    <FieldID ID="0x04" Name="Last Line"   Description="Output height - bottom crop - 1"/>
+  </TypeID>
+  <TypeID ID="0x546" Name="Tuning LSC Mesh LUT" Description="Tuning LSC Mesh LUT">
+    <FieldID ID="0x01" Name="GRR LUT" Description="GRR LUT"/>
+    <FieldID ID="0x02" Name="GBB LUT" Description="GBB LUT"/>
+  </TypeID>
+  <TypeID ID="0x547" Name="Tuning Gamma Curve" Description="Tuning Gamma Curve">
+    <FieldID ID="0x01" Name="Curve" Description="Gamma curve"/>
+  </TypeID>
+  <TypeID ID="0x548" Name="Tuning GTM LUT" Description="Tuning GTM LUT">
+    <FieldID ID="0x01" Name="LUT" Description="GTM LUT"/>
+  </TypeID>
+  <TagID ID="0x041" Name="AEC Configuration"/>
+  <TagID ID="0x042" Name="AEC FrameHistory"/>
+  <TagID ID="0x043" Name="AEC ModeHistory"/>
+  <TagID ID="0x044" Name="AEC Metering"/>
+  <TagID ID="0x045" Name="AEC Convergence"/>
+  <TagID ID="0x046" Name="AEC Arbitration"/>
+  <TagID ID="0x047" Name="AEC Extension"/>
+  <TagID ID="0x048" Name="AEC StatsLumaRegion"/>
+  <TagID ID="0x049" Name="AEC ExtremeColor"/>
+  <TagID ID="0x04A" Name="AEC Histogram"/>
+  <TagID ID="0x04B" Name="AEC LEDTable"/>
+  <TagID ID="0x04C" Name="AEC Flash"/>
+  <TagID ID="0x241" Name="AWB SetParam"/>
+  <TagID ID="0x242" Name="AWB ReferencePoints"/>
+  <TagID ID="0x243" Name="AWB MWBGains"/>
+  <TagID ID="0x244" Name="AWB CurFrameDecision"/>
+  <TagID ID="0x245" Name="AWB PreFrameDecision"/>
+  <TagID ID="0x246" Name="AWB PreValidDAPoint"/>
+  <TagID ID="0x247" Name="AWB PreValidGA"/>
+  <TagID ID="0x248" Name="AWB FrameIndex"/>
+  <TagID ID="0x249" Name="AWB LuxIndex"/>
+  <TagID ID="0x24A" Name="AWB SubSampleData"/>
+  <TagID ID="0x24B" Name="AWB StatsScreenData"/>
+  <TagID ID="0x24C" Name="AWB IlluWeightVector"/>
+  <TagID ID="0x24D" Name="AWB DistWeightVector"/>
+  <TagID ID="0x24E" Name="AWB CustRefPoint"/>
+  <TagID ID="0x24F" Name="AWB MLCZData"/>
+  <TagID ID="0x250" Name="AWB AGWData"/>
+  <TagID ID="0x251" Name="AWB SAGen1InstanceCnt"/>
+  <TagID ID="0x252" Name="AWB SAGen1Data"/>
+  <TagID ID="0x253" Name="AWB SA Face Assist"/>
+  <TagID ID="0x254" Name="AWB DecisionAggregator"/>
+  <TagID ID="0x255" Name="AWB TriangleGainAdjust"/>
+  <TagID ID="0x256" Name="AWB TemporalConverg"/>
+  <TagID ID="0x257" Name="AWB DSFData"/>
+  <TagID ID="0x258" Name="AWB SensorCallibration"/>
+  <TagID ID="0x259" Name="AWB HistoryInfo"/>
+  <TagID ID="0x25A" Name="AWB FlashData"/>
+  <TagID ID="0x25B" Name="AWB StatsInfo"/>
+  <TagID ID="0x25C" Name="AWB BestShotData"/>
+  <TagID ID="0x25D" Name="AWB LockAWB Point"/>
+  <TagID ID="0x25E" Name="AWB LCDFlashData"/>
+  <TagID ID="0x25F" Name="AWB LEDTorchData"/>
+  <TagID ID="0x441" Name="AF FarEnd"/>
+  <TagID ID="0x442" Name="AF NearEnd"/>
+  <TagID ID="0x443" Name="AF FocalLength"/>
+  <TagID ID="0x444" Name="AF FocalNumber"/>
+  <TagID ID="0x445" Name="AF PixelSize"/>
+  <TagID ID="0x446" Name="AF FocusDistance"/>
+  <TagID ID="0x447" Name="AF ActuatorSensitivity"/>
+  <TagID ID="0x448" Name="AF CamifWidth"/>
+  <TagID ID="0x449" Name="AF CamifHeight"/>
+  <TagID ID="0x44A" Name="AF Actuator"/>
+  <TagID ID="0x44B" Name="AF ConfigFrameId"/>
+  <TagID ID="0x44C" Name="AF GammaTableEnable"/>
+  <TagID ID="0x44D" Name="AF GammaTableLength"/>
+  <TagID ID="0x44E" Name="AF GammaTableContent"/>
+  <TagID ID="0x44F" Name="AF HorizontalKernel"/>
+  <TagID ID="0x450" Name="AF VerticalKernel"/>
+  <TagID ID="0x451" Name="AF SoftwareKernel"/>
+  <TagID ID="0x452" Name="AF RoiInfo"/>
+  <TagID ID="0x453" Name="AF RoiPattern"/>
+  <TagID ID="0x454" Name="AF RoiGridSizeH"/>
+  <TagID ID="0x455" Name="AF RoiGridSizeV"/>
+  <TagID ID="0x456" Name="AF RoiGridGapH"/>
+  <TagID ID="0x457" Name="AF RoiGridGapV"/>
+  <TagID ID="0x458" Name="AF InputSel"/>
+  <TagID ID="0x459" Name="AF GreenChannelSel"/>
+  <TagID ID="0x45A" Name="AF YChannelWeight"/>
+  <TagID ID="0x45B" Name="AF ScaleEnable"/>
+  <TagID ID="0x45C" Name="AF ScaleM"/>
+  <TagID ID="0x45D" Name="AF ScaleN"/>
+  <TagID ID="0x45E" Name="AF CurrentMonitorIndex"/>
+  <TagID ID="0x45F" Name="AF MonitorHistorySize"/>
+  <TagID ID="0x460" Name="AF ActiveMonMask"/>
+  <TagID ID="0x461" Name="AF MonitorCommonData"/>
+  <TagID ID="0x462" Name="AF MonitorCAF"/>
+  <TagID ID="0x463" Name="AF MonitorPDAF"/>
+  <TagID ID="0x464" Name="AF MonitorTOF"/>
+  <TagID ID="0x465" Name="AF CurrentConvergeIndex"/>
+  <TagID ID="0x466" Name="AF ConvergeHistorySize"/>
+  <TagID ID="0x467" Name="AF ActiveAlgoMask"/>
+  <TagID ID="0x468" Name="AF ConvergeCommonData"/>
+  <TagID ID="0x469" Name="AF ConvergeSingleAF Data"/>
+  <TagID ID="0x46A" Name="AF ConvergeCAF FineScanData"/>
+  <TagID ID="0x46B" Name="AF ConvergeTofData"/>
+  <TagID ID="0x46C" Name="AF ConvergePDData"/>
+  <TagID ID="0x46D" Name="AF ConvergeFollowerData"/>
+  <TagID ID="0xA41" Name="Tuning AEC Data"/>
+  <TagID ID="0xA42" Name="Tuning AWB Data"/>
+  <TagID ID="0xA43" Name="Tuning SensorPixelFormat"/>
+  <TagID ID="0xA44" Name="Tuning SensorNumPixelsPerLine"/>
+  <TagID ID="0xA45" Name="Tuning SensorNumLinesPerFrame"/>
+  <TagID ID="0xA46" Name="Tuning SensorMaxLineCount"/>
+  <TagID ID="0xA47" Name="Tuning SensorResoultion"/>
+  <TagID ID="0xA48" Name="Tuning SensorCropInfo"/>
+  <TagID ID="0xA49" Name="Tuning BinningTypeH"/>
+  <TagID ID="0xA4A" Name="Tuning BinningTypeV"/>
+  <TagID ID="0xA4B" Name="Tuning IFEGammaPackedLUT"/>
+  <TagID ID="0xA4C" Name="Tuning IFEGTMPackedLUT"/>
+  <TagID ID="0xA4D" Name="Tuning IFELSCPackedMesh"/>
+</MetadataTagIDConfig>

@@ -1,0 +1,129 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Low resolution motion estimation (LRME) finds the motion vector (MV) field between two low resolution (downscaled) images. Tune LRME after IFE tuning. When TF is configured to use LRME, LRME should be ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="LRME tuning concept" /><meta name="abstract" content="Low resolution motion estimation (LRME) finds the motion vector (MV) field between two low resolution (downscaled) images." /><meta name="description" content="Low resolution motion estimation (LRME) finds the motion vector (MV) field between two low resolution (downscaled) images." /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="itf1526663938359" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>LRME tuning concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="itf1526663938359">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">LRME tuning concept</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">Low resolution motion estimation (LRME) finds the motion vector (MV) field between two
+		low resolution (downscaled) images.</p>
+
+		<p class="p">Tune LRME after IFE tuning. When TF is configured to use LRME, LRME should be tuned
+			first.</p>
+
+		<div class="p">Motion compensated TF (MCTF) requires alignment transformation between frames
+			(image-based alignment, also known as <em class="ph i">registration</em>). Registration is performed in
+			the following stages:<ul class="ul" id="itf1526663938359__ul_khw_yr2_wdb">
+				<li class="li">Coarse global transformation estimation (CGTE) provides an approximate
+					transformation. This is performed in software.</li>
+
+				<li class="li">Refinement improves upon global transformation accuracy. This is implemented in
+					TF.</li>
+
+			</ul>
+</div>
+
+		<div class="p">LRME finds the MV field for CGTE with the following:<ul class="ul" id="itf1526663938359__ul_xxk_xs2_wdb">
+				<li class="li">Works on low-resolution images (1:8 for 1080p; 1:16 for 4K)</li>
+
+				<li class="li">Performs subpixel motion estimation (ME) to improve the accuracy of MVs</li>
+
+				<li class="li">Provides robustness measurement for each block</li>
+
+			</ul>
+<br /><img class="image" id="itf1526663938359__image_znw_xmf_wdb" src="gey1526675924908.png" /><br /></div>
+
+		<p class="p">For block matching ME, the preferred input image resolution is 240x136. The maximum input
+			image resolution is 360x540.</p>
+
+		<p class="p">The block-based search has a block size of 12x8 pixels, where the search size is either
+			±12x±8 or ±8x±6 pixels.</p>
+
+		<p class="p">
+			<br /><img class="image" id="itf1526663938359__image_bpx_nsf_wdb" src="xqy1526678504278.png" /><br />
+		</p>
+
+		<div class="p">For each search location, calculate the similarity metric (SAD). The final
+			result will be the most similar location. Be sure to keep track of several best
+			locations. The mean absolute deviation (MAD) per block measures the variability in the
+			block. Blocks with low MAD are noninformative. The robustness measurement is based on
+			analyzing the best SAD locations. Similar SADs in different locations cause ambiguous
+			results. The continuous robustness metric is based on SADs and locations. High values
+			indicate reliable MV, whereas low values indicate unreliable MV. The subpixel ME is used
+			to improve the accuracy of MVs. The effective accuracy is ~1/4 pixel.<div class="fig fignone" id="itf1526663938359__fig_act_clq_xdb"><span class="figcap">Figure : Bad tuning: (L) tar frame with MVs marked as robust, (R)
+					difference between tar frame and aligned reference</span>
+				
+				<br /><img class="image" id="itf1526663938359__image_kdz_1lq_xdb" src="jvw1527114641822.png" /><br />
+			</div>
+<div class="fig fignone" id="itf1526663938359__fig_bp1_dlq_xdb"><span class="figcap">Figure : Default tuning</span>
+				
+				<br /><img class="image" id="itf1526663938359__image_q3m_blq_xdb" src="bpe1527114640012.png" /><br />
+			</div>
+</div>
+
+		<p class="p">Blocks where the SAD is greater than the <span class="keyword parmname">max_allowed_sad</span> value, or where the tarMAD is less than the <span class="keyword parmname">min_allowed_tar_mad</span> are marked as invalid. If the SAD is
+			too large, it means no good matches could be found (occlusions, small search area,
+			etc.). If the tarMAD is too small, it means the block is noninformative (i.e.,
+			flat).</p>
+
+		<p class="p">With the continuous robustness measure, far locations should have significant
+			SAD differences. Differences should be calculated between SADs at the best and
+			next-to-best locations. Continuous robustness measure requires a minimal SAD difference
+			at every distance from the best location.<br /><img class="image" id="itf1526663938359__image_brq_dkx_xdb" src="rsf1527197433816.png" /><br /></p>
+
+		<div class="p">Robustness parameters include:<ul class="ul" id="itf1526663938359__ul_rsd_bvf_wdb">
+				<li class="li"><span class="keyword parmname">min_allowed_tar_mad</span> – A value that is too large results in the
+					rejection of good (i.e., informative) blocks. A value that is too small results
+					in pure noise blocks being considered as informative blocks.</li>
+
+				<li class="li"><span class="keyword parmname">max_allowed_sad</span> – A value that is too large results in local motion
+					that is considered global. A value that is too small results in the rejection of
+					informative blocks.</li>
+
+				<li class="li"><span class="keyword parmname">robustness_measure_dist_map</span> – Set the
+					first entry to 0. Any set values that are too large result in the rejection of
+					informative blocks (e.g., blocks with medium or high information content. Any
+					set values that are too small result in the acceptance of ambiguous blocks
+					(e.g., aperture issues).</li>
+
+			</ul>
+</div>
+
+		<div class="p">Transform confidence calculation parameters include:<ul class="ul" id="itf1526663938359__ul_sjs_pjq_xdb">
+				<li class="li"><span class="keyword parmname">enable_transform_confidence</span> – Enables or disables the use
+					of transform confidence.</li>
+
+				<li class="li"><span class="keyword parmname">transform_confidence_mapping_base</span>,
+						<span class="keyword parmname">transform_confidence_mapping_c1</span>, and
+						<span class="keyword parmname">transform_confidence_mapping_c2</span> – Mapping function
+					(linear with saturation) from automatically calculated transform confidence to
+					actually use the transform confidence. The final transform confidence directly
+					affects temporal blending, where zero confidence results in no temporal
+					blending.</li>
+
+				<li class="li"><span class="keyword parmname">transform_confidence_thr_to_force_identity_transform</span> – When
+					transform confidence (before mapping) is below the set threshold, the transform
+					is replaced with identity transform. Hysteresis is applied on this parameter to
+					avoid excessive switching.</li>
+
+			</ul>
+</div>
+
+		<p class="p">
+			<br /><img class="image" id="itf1526663938359__image_rxb_lnw_xdb" src="zuc1527187025741.png" /><br />
+		</p>
+
+		
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qwz1504650571172.html" title="IPE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IPE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

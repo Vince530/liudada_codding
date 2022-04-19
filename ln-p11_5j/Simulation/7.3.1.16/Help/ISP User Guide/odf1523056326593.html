@@ -1,0 +1,95 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="These examples illustrate the effects of adjusting specific CS parameter values. Example 1: Y weight parameters Figure : When y_weight is 0.0 at all knee points, chroma suppression is fully affected ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Examples of CS parameter effects" /><meta name="abstract" content="These examples illustrate the effects of adjusting specific CS parameter values." /><meta name="description" content="These examples illustrate the effects of adjusting specific CS parameter values." /><meta name="DC.Relation" scheme="URI" content="mfj1523048362360.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="odf1523056326593" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Examples of CS parameter effects</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="odf1523056326593">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="mfj1523048362360.html" title="CS tuning concepts">CS tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="mfj1523048362360.html" title="CS tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">CS tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Examples of CS parameter effects</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">These examples illustrate the effects of adjusting specific CS parameter
+		values.</p>
+
+		<div class="section" id="odf1523056326593__section_tsr_2nh_ldb"><h2 class="title sectiontitle">Example 1: Y weight parameters</h2>
+			
+			<div class="fig fignone nonumber" id="odf1523056326593__fig_pkb_hnh_ldb"><span class="figcap">Figure : When y_weight is 0.0 at all knee points, chroma suppression is fully affected
+					by the chroma thresholds</span>
+				
+				<img class="image" id="odf1523056326593__image_dry_rnh_ldb" src="lcw1523049157270.png" />
+			</div>
+
+		</div>
+
+		<div class="section" id="odf1523056326593__section_tq1_hrh_ldb"><h2 class="title sectiontitle">Example 2: Y weight parameters</h2>
+			
+			<p class="p">A lower value of Y weight can increase chroma suppression</p>
+
+			<div class="fig fignone nonumber" id="odf1523056326593__fig_uq1_hrh_ldb"><span class="figcap">Figure : (L) y_weight = all 1.0f, suppression off; (C) y_weight = all 0.5f,
+					suppression affected by chroma thresholds; (R) y_weight = all 0.0f, suppression
+					totally dependent on chroma thresholds</span>
+				
+				<img class="image" id="odf1523056326593__image_ugr_bsh_ldb" src="wgj1523049154259.png" />
+			</div>
+
+		</div>
+
+		<div class="section" id="odf1523056326593__section_ln3_2sh_ldb"><h2 class="title sectiontitle">Example 3: Y weight parameters</h2>
+			
+			<p class="p">Suppression strength can be controlled by intensity (dark/highlight).</p>
+
+			<div class="fig fignone nonumber" id="odf1523056326593__fig_mn3_2sh_ldb"><span class="figcap">Figure : (L) y_weight = all 0.0f; (C) y_weight = 0.0f for dark area
+					only, brighter regions not suppressed; (R) y_weight = all 0.0f for highlight
+					area only, brighter regions more suppressed</span>
+				
+				<img class="image" id="odf1523056326593__image_zll_fth_ldb" src="fem1523049161076.png" />
+			</div>
+
+		</div>
+
+		<div class="section" id="odf1523056326593__section_N1001A_N10017_N10001"><h2 class="title sectiontitle">Example 4: Chroma threshold parameters</h2>
+			
+			<div class="fig fignone nonumber" id="odf1523056326593__fig_szk_lg4_p1b"><span class="figcap">Figure : (L oval) Weak suppression on the dark side; (R oval)Strong
+					suppression on the highlight side</span>
+				
+				<img class="image" id="odf1523056326593__image_arz_vmh_ldb" src="com1523049160047.png" />
+			</div>
+
+		</div>
+
+		<div class="section" id="odf1523056326593__section_ygy_34h_ldb"><h2 class="title sectiontitle">Example 5: Chroma threshold parameters</h2>
+			
+			<p class="p">Chroma is suppressed when threshold 1 increases. In this series, threshold 1 has
+				major increases while the difference between thresholds 1 and 2 remain the same.</p>
+
+			<div class="fig fignone nonumber" id="odf1523056326593__fig_zgy_34h_ldb"><span class="figcap">Figure : (L) thr1 = 0 and thr2 = 2; (C) thr1 = 64 and thr2 = 66; (R)
+					thr1 = 126 and thr2 = 128</span>
+				
+				<img class="image" id="odf1523056326593__image_akb_p4h_ldb" src="nto1523049165179.png" />
+			</div>
+
+		</div>
+
+		<div class="section" id="odf1523056326593__section_bjs_lqh_ldb"><h2 class="title sectiontitle">Example 6: Chroma threshold parameters</h2>
+			
+			<p class="p">When the difference between thresholds 1 and 2 is larger, chroma is suppressed more
+				smoothly.</p>
+
+			<div class="fig fignone nonumber" id="odf1523056326593__fig_cjs_lqh_ldb"><span class="figcap">Figure : (L) thr1 = 64 and thr2 = 66; (C) thr1 = 64 and thr2 = 128;
+					(R) thr1 = 0 and thr2 = 128</span>
+				
+				<img class="image" id="odf1523056326593__image_djs_lqh_ldb" src="nto1523049165179.png" />
+			</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="mfj1523048362360.html" title="CS tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">CS tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

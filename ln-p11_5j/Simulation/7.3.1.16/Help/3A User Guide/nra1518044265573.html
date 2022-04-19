@@ -1,0 +1,142 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="In a dual cam device there are two cameras, a master camera and a slave camera. For the preview mode, when the zoom ratio reaches a certain predefined value, e.g., 2X zoom ratio, the camera process on ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AWB dual camera sync concept" /><meta name="DC.Relation" scheme="URI" content="jxy1518115164603.html" /><meta name="DC.Relation" scheme="URI" content="xgl1518421767995.html" /><meta name="DC.Relation" scheme="URI" content="mxm1518291074869.html" /><meta name="DC.Relation" scheme="URI" content="nbo1518458057642.html" /><meta name="DC.Relation" scheme="URI" content="dnc1518458282941.html" /><meta name="DC.Relation" scheme="URI" content="tjo1518458749964.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nra1518044265573" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AWB dual camera sync concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nra1518044265573">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">AWB dual camera sync concept</h1>
+
+	<div class="body conbody">
+		<p class="p">In a dual cam device there are two cameras, a master camera and a slave camera.
+			For the preview mode, when the zoom ratio reaches a certain predefined value, e.g., 2X
+			zoom ratio, the camera process on the master camera turns off and the camera process on
+			the slave camera turns on</p>
+
+		<p class="p">When the slave camera turns on, it takes some time to obtain precise AWB gains.
+			Therefore, in the first several frames, the dual camera sync process estimates the AWB
+			gains of the slave camera based on the AWB gains of the master camer. Then the camera
+			process can seamlessly transit from the master camera to the slave camera without
+			artifacts.</p>
+
+		<br /><img class="image" id="nra1518044265573__image_nmd_4ph_5cb" src="icm1518050234379.svg" /><br />
+		<p class="p">To estimate the first frame AWB gains and CCT of the slave camera when the
+			camera process transits from the master camera, dual camera sync supports the hybrid
+			sync mode for wide + tele cameras.</p>
+
+		<div class="section" id="nra1518044265573__section_zkh_wph_5cb"><h2 class="title sectiontitle">Fixed color matching (FCM)</h2>
+			
+			<p class="p">FCM utilizes the geometrical linearity between the master camera and the slave
+				camera on the R/G-B/G color space. FCM assumes that the AWB decision point can be
+				represented by a geometrical relationship with respect to reference points.</p>
+
+			<br /><img class="image" id="nra1518044265573__image_mvw_gqh_5cb" src="lby1518050416460.svg" /><br />
+			<div class="p">FCM processing follows three steps: <ol class="ol" id="nra1518044265573__ol_s1w_qpq_vcb">
+					<li class="li">Given a master decision point of the master camera, find the two closest
+						reference points to the master decision point</li>
+
+					<li class="li">Compute a transformation by using the two closest reference points of the
+						master camera and corresponding reference points of the slave camera</li>
+
+					<li class="li">Transform the master decision point of the master camera with the computed
+						transformation</li>
+
+				</ol>
+</div>
+
+			<br /><img class="image" id="nra1518044265573__image_ltv_brh_5cb" src="cah1518050457409.svg" /><br />
+			<p class="p">The initial AWB gains of the slave camera by FCM can be computed by following
+				equations:</p>
+
+			<br /><img class="image" id="nra1518044265573__image_xzm_grh_5cb" src="iwb1518047384162.png" /><br />
+			<div class="fig fignone" id="nra1518044265573__fig_vk2_yqh_5cb"><span class="figcap">Figure : (L) Master AWB result; (R) Transition AWB result by
+					FCM</span>
+				
+				<br /><img class="image" id="nra1518044265573__image_wgv_hqh_5cb" src="pqf1518047243916.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="nra1518044265573__section_of1_prh_5cb"><h2 class="title sectiontitle">Gray Color Matching (GCM)</h2>
+			
+			<p class="p">GCM processing uses the GCM R/G, B/G ratio from the master camera and
+				the slave camera. GCM assumes that both the master camera and the slave camera have
+				similar stat distributions around the GCM center point, i.e., the weighted sample
+				average. The initial AWB gains of the slave camera by GCM can be computed by
+				following equations:</p>
+
+			<br /><img class="image" id="nra1518044265573__image_ahm_wrh_5cb" src="jdm1518047325209.png" /><br />
+			<div class="p">GCM processing follows three steps: <ol class="ol" id="nra1518044265573__ol_qby_fqq_vcb">
+					<li class="li">Transform the GCM center point of the master camera with the
+						estimated transformation</li>
+
+					<li class="li">Collect stats in the GCM region, defined by the GCM outlier
+						distance parameter. The GCM outlier distance is defined by the master camera
+						and delivered to the slave camera.<br /><img class="image" id="nra1518044265573__image_ukb_j5h_5cb" src="khy1518050369255.svg" /><br /></li>
+
+					<li class="li">From GCM region, compute each of three values of both the master camera and
+						the slave camera as follows:<br /><img class="image" id="nra1518044265573__image_l22_q5h_5cb" src="scb1518047291606.png" /><br /></li>
+
+				</ol>
+</div>
+
+			<p class="p">GCM only considers gray stats in the GCM region as shown in the
+				following images.</p>
+
+			<div class="fig fignone" id="nra1518044265573__fig_cqq_x5h_5cb"><span class="figcap">Figure : (L) Master AWB result; (R) Transition AWB result by
+					GCM</span>
+				
+				<img class="image" id="nra1518044265573__image_ujz_qsh_5cb" src="str1518050142484.svg" />
+			</div>
+
+		</div>
+
+		<div class="section" id="nra1518044265573__section_ajq_5xm_5cb"><h2 class="title sectiontitle">Hybrid color matching (HCM)</h2>
+			
+			<div class="p">HCM uses outputs from both FCM and GCM to compensate for the limitations of
+				FCM and GCM.<ul class="ul" id="nra1518044265573__ul_x1y_dym_5cb">
+					<li class="li">If the spectral response of the two cameras are similar, FCM
+						is the best option to map physically with less computational power. On the
+						other hand, if the spectral response of the two cameras are very different,
+						an incorrect transform can result. A certain light condition can have
+						different characteristics from reference points because only a small number
+						of reference points are used to transform the master decision point and the
+						master GCM center point to the slave decision point and slave GCM center
+						point.</li>
+
+					<li class="li">For many scenes, GCM is more likely to produce a better
+						result than FCM, but if there are not enough stats in the GCM region, the
+						result can be unreliable.</li>
+
+				</ul>
+</div>
+
+			<p class="p">HCM operates by interpolating the FCM and GCM outputs. The interpolation ratio is
+				determined by luxIdx, CCT and gcmNumRatio.</p>
+
+			<img class="image" id="nra1518044265573__image_cqw_qym_5cb" src="npw1518050451949.svg" />
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="jxy1518115164603.html">AWB dual camera sync parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="xgl1518421767995.html">Fine tune AWB dual camera sync custom reference points</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="mxm1518291074869.html">Fine tune AWB dual camera sync outlier distance</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="nbo1518458057642.html">Fine tune AWB dual camera sync convergence speed</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="dnc1518458282941.html">Fine tune AWB dual camera sync weight FCM</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="tjo1518458749964.html">AWB dual camera sync debug message</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

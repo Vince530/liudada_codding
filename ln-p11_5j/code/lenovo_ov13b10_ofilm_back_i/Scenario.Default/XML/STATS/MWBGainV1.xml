@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2019-2020 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<MWBGainV1
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\awb\modmwbv1.xsd">
+  <moduleID>
+    <moduleID>8</moduleID>
+    <subModuleID>1</subModuleID>
+  </moduleID>
+  <module_version>
+    <major_revision>1</major_revision>
+    <minor_revision>0</minor_revision>
+    <incr_revision>0</incr_revision>
+  </module_version>
+  <enableFlag>1</enableFlag>
+  <MWBData>
+    <red>6.03808641</red>
+    <green>1</green>
+    <blue>0.8658191</blue>
+  </MWBData>
+  <MWBData>
+    <red>2.316466</red>
+    <green>1</green>
+    <blue>1.235503</blue>
+  </MWBData>
+  <MWBData>
+    <red>2.1885</red>
+    <green>1</green>
+    <blue>1.297763</blue>
+  </MWBData>
+  <MWBData>
+    <red>1.825364</red>
+    <green>1</green>
+    <blue>1.519923</blue>
+  </MWBData>
+  <MWBData>
+    <red>1.765418</red>
+    <green>1</green>
+    <blue>1.92498</blue>
+  </MWBData>
+  <MWBData>
+    <red>1.669641</red>
+    <green>1</green>
+    <blue>1.902278</blue>
+  </MWBData>
+  <MWBData>
+    <red>1.583722</red>
+    <green>1</green>
+    <blue>1.880106</blue>
+  </MWBData>
+  <MWBData>
+    <red>1.109573</red>
+    <green>1</green>
+    <blue>2.116523</blue>
+  </MWBData>
+  <MWBData>
+    <red>0.898501</red>
+    <green>1</green>
+    <blue>2.419374</blue>
+  </MWBData>
+  <MWBData>
+    <red>0.704457</red>
+    <green>1</green>
+    <blue>3.359205</blue>
+  </MWBData>
+</MWBGainV1>

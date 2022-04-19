@@ -1,0 +1,49 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="AWB utilizes information from each frame to estimate the illuminant and make an accurate decision. To adapt to scene changes and fast convergence, it may be good practice to run AWB on each frame; ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Dynamic skip frames concept" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="aub1508957447801.html" /><meta name="DC.Relation" scheme="URI" content="epv1506636767169.html" /><meta name="DC.Relation" scheme="URI" content="yfk1506720823556.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qot1506636259841" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Dynamic skip frames concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qot1506636259841">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="aub1508957447801.html" title="AWB frame control">AWB frame control</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="aub1508957447801.html" title="AWB frame control"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB frame control</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Dynamic skip frames concept</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">AWB utilizes information from each frame to estimate the illuminant and make an
+			accurate decision. To adapt to scene changes and fast convergence, it may be good
+			practice to run AWB on each frame; however, camera power consumption is a consideration.
+			The dynamic skip frames module is designed to skip running AWB on a set number of frames
+			if a scene is stable, thus reducing power consumption without effecting the user
+			experience.</p>
+
+		<p class="p">For example, if the current AWB decision is similar to the previous decision, it is
+			assumed that there is no significant change to the scene. In this case, AWB can be
+			configured to skip running for several frames.</p>
+
+		<p class="p">The number of skipped frames is adjusted dynamically by computing the difference
+			ratio between the current AWB decision and the previous AWB decision: (current gain -
+			previous gain) * 100.0/previous gain. The module determines the number of frames to skip
+			from the tuning data triggers.</p>
+
+		<div class="note note" id="qot1506636259841__note_N10025_N10013_N10001"><span class="notetitle">Note:</span> AWB gain convergence itself runs at every frame even when AWB is skipping
+			frames.</div>
+
+		
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="epv1506636767169.html">Dynamic skip frames parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="yfk1506720823556.html">Fine-tune dynamic skip frames</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="aub1508957447801.html" title="AWB frame control"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB frame control</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2019 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<Convergence
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\aec\aecConvergence.xsd">
+  <module_version major_revision="8" minor_revision="0" incr_revision="1"/>
+  <parameter_version>
+    <revision>0</revision>
+  </parameter_version>
+  <algoSelect>AECConvFastConv</algoSelect>
+  <fastConv>
+    <tolMultUnitStepSize>2</tolMultUnitStepSize>
+    <frameSkipMethod>SmoothNoSkip</frameSkipMethod>
+    <aggressiveness>0.8</aggressiveness>
+    <enableBrightDarkSpeedAdj>false</enableBrightDarkSpeedAdj>
+    <darkRatioAdjStrength>1.5</darkRatioAdjStrength>
+    <brightRatioAdjStrength>0.4</brightRatioAdjStrength>
+    <thresDarkExpIndexDelta>50</thresDarkExpIndexDelta>
+    <thresBrightExpIndexDelta>50</thresBrightExpIndexDelta>
+    <ADRCConvSpeed>0.15</ADRCConvSpeed>
+    <predictiveConvergence>
+      <enablePredictiveConvergence>true</enablePredictiveConvergence>
+      <FPSThreshold>12</FPSThreshold>
+      <disableWhenDRC>false</disableWhenDRC>
+      <maxGain>6</maxGain>
+      <predictiveTrigger>
+        <zoneTrigger>
+          <start>0</start>
+          <end>0</end>
+        </zoneTrigger>
+        <zoneData>
+          <zoneTrigger>
+            <start>0</start>
+            <end>0</end>
+          </zoneTrigger>
+          <zoneData>
+            <!--Base Type Tuning Definition -->
+            <stepSize>
+              <start>0</start>
+              <end>0</end>
+            </stepSize>
+            <predictiveFactor>0.9</predictiveFactor>
+            <decay>0.5</decay>
+          </zoneData>
+        </zoneData>
+      </predictiveTrigger>
+    </predictiveConvergence>
+    <brightDarkConvAdj>
+      <enableBrightDarkConvergence>false</enableBrightDarkConvergence>
+      <darkAdjustment>
+        <zoneTrigger>
+          <start>0</start>
+          <end>0</end>
+        </zoneTrigger>
+        <zoneData>
+          <darkRatioAdjStrength>0</darkRatioAdjStrength>
+        </zoneData>
+      </darkAdjustment>
+      <brightAdjustment>
+        <zoneTrigger>
+          <start>0</start>
+          <end>0</end>
+        </zoneTrigger>
+        <zoneData>
+          <brightRatioAdjStrength>0</brightRatioAdjStrength>
+        </zoneData>
+      </brightAdjustment>
+    </brightDarkConvAdj>
+  </fastConv>
+  <slowConv>
+    <tolMultUnitStepSize>2</tolMultUnitStepSize>
+    <frameSkipMethod>SmoothNoSkip</frameSkipMethod>
+    <stepFactorWhenFrameSkipEnabled>2</stepFactorWhenFrameSkipEnabled>
+    <convSpeed>0.8</convSpeed>
+    <refFrameRate>30</refFrameRate>
+    <!--Base Type Tuning Definition -->
+    <stepRegular>
+      <start>3</start>
+      <end>5</end>
+    </stepRegular>
+    <!--Base Type Tuning Definition -->
+    <stepDark>
+      <start>10</start>
+      <end>22</end>
+    </stepDark>
+    <!--Base Type Tuning Definition -->
+    <stepBright>
+      <start>8</start>
+      <end>16</end>
+    </stepBright>
+    <!--Base Type Tuning Definition -->
+    <thresSlowDownAbsExpIndexDeltaDark>
+      <start>17.3</start>
+      <end>7.55</end>
+    </thresSlowDownAbsExpIndexDeltaDark>
+    <!--Base Type Tuning Definition -->
+    <thresSlowDownAbsExpIndexDeltaBright>
+      <start>7.55</start>
+      <end>4.73</end>
+    </thresSlowDownAbsExpIndexDeltaBright>
+    <maxRawStepAdj>2</maxRawStepAdj>
+    <tolExpIndexDeltaForceAdj>4</tolExpIndexDeltaForceAdj>
+    <thresNumBrightRgn>0.05</thresNumBrightRgn>
+    <thresNumDarkRgn>0.05</thresNumDarkRgn>
+    <holdTimeTuning>
+      <enableHoldTime>false</enableHoldTime>
+      <!--Base Type Tuning Definition -->
+      <thresAbsExpDelta>
+        <start>13.7</start>
+        <end>18</end>
+      </thresAbsExpDelta>
+      <!--Base Type Tuning Definition -->
+      <expDeltaBasedHTAdjFactor>
+        <start>1</start>
+        <end>0.7</end>
+      </expDeltaBasedHTAdjFactor>
+      <tolAdjFactor>2</tolAdjFactor>
+      <holdTimeEnterDelay>3</holdTimeEnterDelay>
+      <maxHoldTime>1</maxHoldTime>
+      <enableGyroBasedHT>false</enableGyroBasedHT>
+      <!--Base Type Tuning Definition -->
+      <thresGyroMagnitude>
+        <start>0.5</start>
+        <end>4</end>
+      </thresGyroMagnitude>
+      <!--Base Type Tuning Definition -->
+      <gyroBasedHTAdjFactor>
+        <start>1</start>
+        <end>0.4</end>
+      </gyroBasedHTAdjFactor>
+    </holdTimeTuning>
+    <ADRCConvSpeed>0.15</ADRCConvSpeed>
+    <predictiveConvergence>
+      <enablePredictiveConvergence>true</enablePredictiveConvergence>
+      <FPSThreshold>12</FPSThreshold>
+      <disableWhenDRC>false</disableWhenDRC>
+      <maxGain>6</maxGain>
+      <predictiveTrigger>
+        <zoneTrigger>
+          <start>0</start>
+          <end>0</end>
+        </zoneTrigger>
+        <zoneData>
+          <zoneTrigger>
+            <start>0</start>
+            <end>0</end>
+          </zoneTrigger>
+          <zoneData>
+            <!--Base Type Tuning Definition -->
+            <stepSize>
+              <start>0</start>
+              <end>0</end>
+            </stepSize>
+            <predictiveFactor>0.9</predictiveFactor>
+            <decay>0.5</decay>
+          </zoneData>
+        </zoneData>
+      </predictiveTrigger>
+    </predictiveConvergence>
+  </slowConv>
+  <unitStepSize>0.5</unitStepSize>
+  <enableConvergeGainFirst>true</enableConvergeGainFirst>
+  <settledMultiplier>0</settledMultiplier>
+  <torchConv>
+    <enableTorchOffOn>false</enableTorchOffOn>
+    <enableTorchOnOff>false</enableTorchOnOff>
+    <minFrameCount>4</minFrameCount>
+    <conv>
+      <tolMultUnitStepSize>0</tolMultUnitStepSize>
+      <frameSkipMethod>SmoothNoSkip</frameSkipMethod>
+      <aggressiveness>0</aggressiveness>
+      <enableBrightDarkSpeedAdj>false</enableBrightDarkSpeedAdj>
+      <darkRatioAdjStrength>0</darkRatioAdjStrength>
+      <brightRatioAdjStrength>0</brightRatioAdjStrength>
+      <thresDarkExpIndexDelta>0</thresDarkExpIndexDelta>
+      <thresBrightExpIndexDelta>0</thresBrightExpIndexDelta>
+      <ADRCConvSpeed>0</ADRCConvSpeed>
+      <predictiveConvergence>
+        <enablePredictiveConvergence>true</enablePredictiveConvergence>
+        <FPSThreshold>12</FPSThreshold>
+        <disableWhenDRC>false</disableWhenDRC>
+        <maxGain>6</maxGain>
+        <predictiveTrigger>
+          <zoneTrigger>
+            <start>0</start>
+            <end>0</end>
+          </zoneTrigger>
+          <zoneData>
+            <zoneTrigger>
+              <start>0</start>
+              <end>0</end>
+            </zoneTrigger>
+            <zoneData>
+              <!--Base Type Tuning Definition -->
+              <stepSize>
+                <start>0</start>
+                <end>0</end>
+              </stepSize>
+              <predictiveFactor>0.9</predictiveFactor>
+              <decay>0.5</decay>
+            </zoneData>
+          </zoneData>
+        </predictiveTrigger>
+      </predictiveConvergence>
+      <brightDarkConvAdj>
+        <enableBrightDarkConvergence>false</enableBrightDarkConvergence>
+        <darkAdjustment>
+          <zoneTrigger>
+            <start>0</start>
+            <end>0</end>
+          </zoneTrigger>
+          <zoneData>
+            <darkRatioAdjStrength>0</darkRatioAdjStrength>
+          </zoneData>
+        </darkAdjustment>
+        <brightAdjustment>
+          <zoneTrigger>
+            <start>0</start>
+            <end>0</end>
+          </zoneTrigger>
+          <zoneData>
+            <brightRatioAdjStrength>0</brightRatioAdjStrength>
+          </zoneData>
+        </brightAdjustment>
+      </brightDarkConvAdj>
+    </conv>
+  </torchConv>
+</Convergence>

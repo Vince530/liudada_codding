@@ -1,0 +1,73 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The advanced gray world scene analyzer (SA AGW) uses information from each stats filter module to compute an AWB decision point and confidence level. This SA AGW data becomes one more SA decision ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Advanced gray world scene analyzer concept" /><meta name="DC.Relation" scheme="URI" content="eha1508957872352.html" /><meta name="DC.Relation" scheme="URI" content="hkf1502497099531.html" /><meta name="DC.Relation" scheme="URI" content="cqu1502497151885.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="rel1502497036725" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Advanced gray world scene analyzer concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="rel1502497036725">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="eha1508957872352.html" title="AWB scene analyzers"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB scene analyzers</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Advanced gray world scene analyzer concept</h1>
+
+	<div class="body conbody">
+		<p class="p">The advanced gray world scene analyzer (SA AGW) uses information from each
+			stats filter module to compute an AWB decision point and confidence level. This SA AGW
+			data becomes one more SA decision point that the Decision Aggregator merges, along with
+			all the generalized SA data, to make the final AWB decision.</p>
+
+		<div class="p">When AWB screens BG stats, it uses the advanced concepts in each of the
+			following stats filters: <ul class="ul" id="rel1502497036725__ul_wkj_5sy_v1b">
+				<li class="li">Subsample</li>
+
+				<li class="li">Stats screening</li>
+
+				<li class="li">Illuminant weight vector</li>
+
+				<li class="li">Distance weight vector </li>
+
+				<li class="li">Misleading color zone</li>
+
+			</ul>
+ AGW SA computes an AWB decision point by computing a weighted average with valid
+			gray stats based on information from each stats filter. Also, AGW SA computes a
+			confidence level based on the lux level and number of possible gray stats. A large
+			number of possible gray stats increases the confidence level and a small number of
+			possible gray stats decreases the confidence level. <br /><img class="image" id="rel1502497036725__image_e2k_vty_v1b" src="wrq1502500459715.svg" /><br /></div>
+
+		<p class="p">The confidence level indicates how much AGW SA has confidence in its
+			decision. A high confidence level, such as 1.0, means that there are enough valid stats
+			for AGW SA to accurately estimate the target point. AGW SA uses the AWB common trigger
+			system to tune the confidence level. It has a fixed 2-level trigger Trigger control
+			type: 1st level= lux index, 2nd level = number of valid stats ratio. The core data is
+			the assigned confidence level for the applicable trigger set.</p>
+
+		<div class="fig fignone nonumber" id="rel1502497036725__fig_ohn_gvy_v1b"><span class="figcap">Figure : (L) Sample 2-level trigger data: two trigger ranges for lux
+				index, three trigger ranges for valid stats count ratio; (R) Sample confidence level
+				assignments for valid stats count ratio in a given lux index </span>
+			
+			<img class="image" id="rel1502497036725__image_gdj_cwy_v1b" src="ppn1502501517480.svg" />
+		</div>
+
+		<p class="p">If you decrease the AGW SA confidence level, the decision aggregator
+			reduces the weight of the AGW SA decision point in the process of interpolating the
+			decision point with each SA’s decision point. If you see an AWB inconsistency issue
+			caused by a fluctuation of AGW SAa decision point with very small valid stats count,
+			decrease AGW SA confidence level the image below, to reduce the influence of AGW SA
+			decision point while DA computes final decision point. </p>
+
+		<img class="image" id="rel1502497036725__image_jf2_3z1_w1b" src="fez1502525774462.svg" />
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="hkf1502497099531.html">AGW SA parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="cqu1502497151885.html">Fine-tune advanced gray world scene analyzer</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="eha1508957872352.html" title="AWB scene analyzers"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB scene analyzers</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

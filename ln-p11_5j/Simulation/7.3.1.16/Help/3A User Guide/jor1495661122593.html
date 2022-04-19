@@ -1,0 +1,130 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Image brightness is determined by measuring the average brightness of the overall frame. Bright region tuning reduces the bright region metering weight for very bright areas of the scene to prevent ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune dynamic metering for bright and dark regions" /><meta name="abstract" content="Image brightness is determined by measuring the average brightness of the overall frame. Bright region tuning reduces the bright region metering weight for very bright areas of the scene to prevent under exposure of the image. Dark region discrimination determines the best exposure to use when capturing images that have dark regions. It adds another method for saturation prevention by decreasing the influence of darker regions from the overall luma metering." /><meta name="description" content="Image brightness is determined by measuring the average brightness of the overall frame. Bright region tuning reduces the bright region metering weight for very bright areas of the scene to prevent under exposure of the image. Dark region discrimination determines the best exposure to use when capturing images that have dark regions. It adds another method for saturation prevention by decreasing the influence of darker regions from the overall luma metering." /><meta name="DC.Relation" scheme="URI" content="cyt1495661060161.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ixo1474864614282" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune dynamic metering for bright and dark regions</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ixo1474864614282">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune dynamic metering for bright and dark regions</h1>
+
+   
+   <div class="body taskbody"><p class="shortdesc">Image brightness is determined by measuring the average brightness of
+      the overall frame. Bright region tuning reduces the bright region metering weight for very
+      bright areas of the scene to prevent under exposure of the image. Dark region discrimination
+      determines the best exposure to use when capturing images that have dark regions. It adds
+      another method for saturation prevention by decreasing the influence of darker regions from
+      the overall luma metering.</p>
+
+      <div class="section context" id="ixo1474864614282__context_N10015_N10012_N10001"><p class="p">The bright and dark region feature is tuned using the generic multi-zone tuning
+            guidelines. Default AEC triggers are initially tuned in a common step and then copied
+            over to the bright and dark regions. </p>
+
+         <div class="p">Use the dynamic metering for the dark region feature to improve the following
+               conditions:<ul class="ul" id="ixo1474864614282__ul_upw_3bf_lw">
+               <li class="li">In bright outdoor scenes with both shadows and bright areas, where
+                  bright areas do not have enough detail because of overexposure.</li>
+
+               <li class="li">In night scenes with street lights, where the lights and nearby
+                  areas are overexposed.</li>
+
+            </ul>
+</div>
+
+         <div class="fig fignone nonumber" id="ixo1474864614282__fig_clg_4dl_kcb"><span class="figcap">Figure : (L) Dark region tuning disabled; (R) Dark region tuning
+               enabled</span>
+            
+            <br /><img class="image" id="ixo1474864614282__image_dtm_g2d_k1b" src="kjr1495660880651.png" /><br />
+         </div>
+
+         <div class="fig fignone nonumber" id="ixo1474864614282__fig_tqk_qdl_kcb"><span class="figcap">Figure : (L) Dark region tuning disabled; (R) Dark region tuning
+               enabled</span>
+            
+            <br /><img class="image" id="ixo1474864614282__image_etm_g2d_k1b" src="xtl1495661032471.png" /><br />
+         </div>
+
+         <p class="p">Dark region tuning should only be enabled to correct these two scenarios
+            and should only be done at the fine-tuning stage.</p>
+</div>
+
+      <p class="li stepsection">Adjust bright regions</p><ol><li class="li step stepexpand" id="ixo1474864614282__step_N1002C_N1001C_N10012_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+               navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Metering</span> &gt; <span class="ph uicontrol">Mtr Luma Calc</span> &gt; <span class="ph uicontrol">Luma Rgn Adj</span></span>.</span>
+         </li>
+<li class="li step stepexpand" id="ixo1474864614282__step_N1008A_N1005B_N10019_N10001">
+            <span class="ph cmd">To enable bright region adjustments, click <span class="ph uicontrol">Enable Bright Rgn
+                  Adj</span> and select the <span class="ph uicontrol">Value</span> check box.</span>
+         </li>
+<li class="li step stepexpand" id="ixo1474864614282__step_N10047_N1001C_N10012_N10001">
+            <span class="ph cmd">Adjust the bright region parameters. </span>
+            <div class="itemgroup info">
+               <ul class="ul" id="ixo1474864614282__ul_gsp_gy2_lw">
+                  <li class="li"><span class="ph uicontrol">Minimum bias table weight
+                        (minTableWeightForBright)</span>: Minimum weight in the metering table
+                     for each stat to be considered a bright region.</li>
+
+                  <li class="li"><span class="ph uicontrol">Max Bright Region Percentage
+                        (maxStatsPctForBright)</span>: Maximum percentage of stats to be
+                     considered bright.</li>
+
+                  <li class="li"><span class="ph uicontrol">Bright/Dark Region Threshold
+                        (thresBrightRgn/thresDarkRgn)</span>: Threshold for determining bright
+                     (anything greater than this value) or dark (anything less than this value)
+                     region. Each threshold is a pair of start and end values, in between which
+                     interpolation is used on corresponding adjustment weight.</li>
+
+                  <li class="li"><span class="ph uicontrol">Bright/Dark Region Weight
+                        (weightBrightRgnAdj/weightDarkRgnAdj)</span>: Corresponding adjustment
+                     weights for bright and for dark regions. If the brightness value of a region is
+                     in between the start and end of the threshold pair, then the adjustment weight
+                     is reduced with interpolation.</li>
+
+               </ul>
+
+            </div>
+         </li>
+</ol><p class="li stepsection">Adjust dark region</p><ol start="4"><li class="li step stepexpand" id="ixo1474864614282__step_N100D8_N1005B_N10019_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">Parameter Editor</span>,
+               navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Metering</span> &gt; <span class="ph uicontrol">Mtr Luma Calc</span> &gt; <span class="ph uicontrol">Luma Rgn Adj</span></span>.</span>
+         </li>
+<li class="li step stepexpand" id="ixo1474864614282__step_N10100_N1005B_N10019_N10001">
+            <span class="ph cmd">To enable bright region adjustments, click <span class="ph uicontrol">Enable Dark Rgn Adj</span> and select the <span class="ph uicontrol">Value</span> check box.</span>
+         </li>
+<li class="li step stepexpand" id="ixo1474864614282__step_N1006B_N10037_N10012_N10001">
+            <span class="ph cmd">Adjust the dark region parameters.</span>
+            <div class="itemgroup info">
+               <ul class="ul" id="ixo1474864614282__ul_swl_fff_lw">
+                  <li class="li"><span class="ph uicontrol">Minimum bias table weight
+                        (minTableWeightForDark)</span>: Minimum weight in the metering table
+                     for each stat to be considered a dark region.</li>
+
+                  <li class="li"><span class="ph uicontrol">Max Dark Region Percentage
+                        (maxStatsPctForDark)</span>: Maximum percentage of stats to be
+                     considered dark.</li>
+
+                  <li class="li"><span class="ph uicontrol">Bright/Dark Region Threshold
+                        (thresBrightRgn/thresDarkRgn)</span>: Threshold for determining bright
+                     (anything greater than this value) or dark (anything less than this value)
+                     region. Each threshold is a pair of start and end values, in between which
+                     interpolation is used on corresponding adjustment weight.</li>
+
+                  <li class="li"><span class="ph uicontrol">Bright/Dark Region Weight
+                        (weightBrightRgnAdj/weightDarkRgnAdj)</span>: Corresponding adjustment
+                     weights for bright and for dark regions. If the brightness value of a region is
+                     in between the start and end of the threshold pair, then the adjustment weight
+                     is reduced with interpolation.</li>
+
+               </ul>
+
+            </div>
+         </li>
+</ol>
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

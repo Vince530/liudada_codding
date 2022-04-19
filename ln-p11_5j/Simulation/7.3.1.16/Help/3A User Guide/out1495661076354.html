@@ -1,0 +1,303 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Flash is sometimes needed for low-light settings or as a flash-fill to remove harsh shadows. When using flash, a color temperature (CT) mismatch between the flash and ambient light can cause the ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune flux and color ratios" /><meta name="abstract" content="Flash is sometimes needed for low-light settings or as a flash-fill to remove harsh shadows." /><meta name="description" content="Flash is sometimes needed for low-light settings or as a flash-fill to remove harsh shadows." /><meta name="DC.Relation" scheme="URI" content="cpr1495660858748.html" /><meta name="DC.Relation" scheme="URI" content="gos1495660928418.html" /><meta name="DC.Relation" scheme="URI" content="pdw1495660811277.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ase1476992660624" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune flux and color ratios</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ase1476992660624">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cpr1495660858748.html" title="Required AEC tuning procedures">Required AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune flux and color ratios</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Flash is sometimes needed for low-light settings or as a flash-fill to
+		remove harsh shadows.</p>
+
+		<div class="section context" id="ase1476992660624__context_N10015_N10012_N10001">
+			<div class="p">When using flash, a color temperature (CT) mismatch between the flash and
+				ambient light can cause the following problems:<ul class="ul" id="ase1476992660624__ul_qcg_ynk_kw">
+					<li class="li">Mixing scene and LED CT compromises image quality</li>
+
+					<li class="li">With a single LED, the CT of the flash is fixed at a single
+						value</li>
+
+					<li class="li">The LED is often a cool light which is a poor choice for
+						portraits</li>
+
+					<li class="li">Images with mismatched CT illuminants will appear to have a
+						color cast</li>
+
+				</ul>
+</div>
+
+			<p class="p">These problems can be addressed with the use of a dual LED that allows
+				for variations in the flash CT. Select an appropriate pair of LEDs and then tune
+				them to achieve good results.</p>
+
+			<p class="p">Prerequisite: Ensure that the battery is fully charged before performing this
+				procedure. As described in <cite class="cite">PM8952/PM8956 + PMI8952 Power
+					Management IC Design Guidelines/Training Slides</cite> (80-NT390-5), flash
+				current is derated beyond a certain threshold at lower battery levels, resulting in
+				lower intensity flash and thus degraded image quality. Work with the QTI PMIC team
+				to understand the device behavior, assess the image quality impact, and determine
+				whether to allow flash below a certain battery level.</p>
+
+		</div>
+
+		<p class="li stepsection">Part 1 − Select the LED pair (dual LED only)</p><ol><li class="li step stepexpand" id="ase1476992660624__step_N1003B_N10034_N10012_N10001">
+				<span class="ph cmd">Complete basic tuning procedures described in the <cite class="cite">Camera ISP Tuning Guide</cite> and select the golden camera
+					module.</span>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N10048_N10034_N10012_N10001">
+				<span class="ph cmd">Pick a cool and a warm CT LED to use for tuning. </span>
+				<div class="itemgroup info">
+					<ul class="ul" id="ase1476992660624__ul_kp4_z5k_kw">
+						<li class="li">Ensure you have the ability to control the two LEDs
+							separately with independent current levels. </li>
+
+						<li class="li">Determine the desired preflash and snapshot LED current
+							levels. Be sure to stay within the limitations of the hardware.</li>
+
+					</ul>
+
+				</div>
+			</li>
+</ol><p class="li stepsection">Part 2 − Measure and graph the LED pair (dual LED
+				only)</p><ol start="3"><li class="li step stepexpand" id="ase1476992660624__step_N10066_N10034_N10012_N10001">
+				<span class="ph cmd">Individually measure the cool and warm LEDs in a dark
+					lab:</span>
+				<ol type="a" class="ol substeps" id="ase1476992660624__substeps_xcv_gpk_kw">
+					<li class="li substep">
+						<span class="ph cmd">Using the golden camera module, capture an image of a
+							gray card, illuminated by the test LED. Use the actual snapshot current,
+							i.e., full flash current. </span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Point the LED in the same direction as the camera to
+							minimize non-uniformity and shading.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Record the Simple Gray World (SGW) R/G and B/G ratios
+							from the AWB log file.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Measure the second LED in the same manner to determine
+							the R/G and B/G ratios.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N10094_N10034_N10012_N10001">
+				<span class="ph cmd">Graph these two (R/G, B/G) value pairs as the endpoints of a
+					line segment over the AWB reference points (yellow line). Connect the endpoints
+					with a straight line. </span>
+				<div class="itemgroup info">In the following graphs, the red/gray lines contain more than
+					two measured points of the LED pairs by firing them at different combinations of
+					driving currents. For the LED selection process, fire the two individual LEDs
+					once each, and connect the two endpoints. <br /><img class="image" id="ase1476992660624__image_ovc_zrk_kw" src="osa1495660869793.svg" /><br />
+					<br /><img class="image" id="ase1476992660624__image_pvc_zrk_kw" src="ssl1495661109754.svg" /><br /></div>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N100AC_N10034_N10012_N10001">
+				<span class="ph cmd">Review the graph and determine if the LED CT matches well with
+					the AWB reference points. The line should approximate the AWB reference points
+					as closely as practical. The priority is to have overlap at TL84, A, and H. The
+					D65 reference point can deviate slightly. If the LED line does not closely match
+					the AWB reference points line:</span>
+				<ol type="a" class="ol substeps" id="ase1476992660624__substeps_u3r_csk_kw">
+					<li class="li substep">
+						<span class="ph cmd">Ask the LED vendor to adjust the phosphor design or
+							pick a new set of LEDs.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Re-measure and graph the LED pair.</span>
+					</li>
+
+				</ol>
+
+			</li>
+</ol><p class="li stepsection">Part 3 − Calibrate the LED
+				parameters</p><ol start="6"><li class="li step stepexpand" id="ase1476992660624__step_N10103_N10048_N10014_N10001">
+				<span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Open Project</span></span> to load the project file. The dual LED tuning parameters in the
+					project are the values from a prior tuning session or the default values.</span>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N10118_N10048_N10014_N10001">
+				<span class="ph cmd">Tune LSC for dual LED flash (refer to <cite class="cite">Tune LSC for LED
+						flash</cite>).</span>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N100E3_N10034_N10012_N10001">
+				<span class="ph cmd">Connect the device to Chromatix. </span>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N100EC_N10034_N10012_N10001">
+				<span class="ph cmd">Set up the test environment to capture snapshots of an 18% gray
+					chart in complete darkness.</span>
+				<div class="itemgroup info">This is to measure the LED flash level without interference
+					from any other light source.</div>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N10134_N10034_N10012_N10001">
+				<span class="ph cmd">Determine the main flash (snapshot) and preflash current levels
+					for the LEDs from the flash driver code.</span>
+				<div class="itemgroup info">Typically, the preflash value is 20% of the main flash value.
+					For instance, if the main flash is 900 mA, the preflash is 180 mA.</div>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N100F5_N10034_N10012_N10001">
+				<span class="ph cmd">Select <span class="ph menucascade"><span class="ph uicontrol">Utilities</span> &gt; <span class="ph uicontrol">LED Tuning</span></span> to open the <span class="ph uicontrol">Led Tuning</span>
+					dialog box. For a dual LED project, ensure that the <span class="ph uicontrol">Dual LED Mode</span> check box is marked.<br /><img class="image" id="ase1476992660624__image_plr_mcs_mcb" src="ibj1515704624777.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N1018A_N1003F_N10014_N10001">
+				<span class="ph cmd">Determine how many power levels are required and add or delete
+					tabs as needed.</span>
+				<ol type="a" class="ol substeps" id="ase1476992660624__substeps_ok3_gsr_rx">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Click <img class="image" id="ase1476992660624__image_ttt_msr_rx" src="bkg1495661098756.png" /> to add a tab.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Click <img class="image" id="ase1476992660624__image_dxt_jtr_rx" src="zby1495660993284.png" /> to remove a tab.</span>
+						<div class="itemgroup info">Use one power level tab for single LED. A maximum of
+							six tabs and a minimum of two tabs is allowed for dual LED. </div>
+						<div class="itemgroup info">Tuning additional power levels improves the accuracy
+							of the flux calculation when the derating feature is enabled for the
+							project. It is recommended to equally space power levels and use a
+							minimum of two tabs when the derating feature is enabled.</div>
+						<div class="itemgroup info">The power level numbering starts at zero, which is
+							always reserved for preflash (the minimum driving current). The last
+							power level is always reserved for full power flash (the main flash with
+							no derating with a maximum drive current).</div>
+						<div class="itemgroup info">Intermediary power levels must be between the preflash
+							and main flash power levels. For example, if the preflash is 180 mA and
+							the main flash is 900 mA, then the intermediary power level must be
+							between 180 mA and 900 mA. It is expected that the power (i.e., the sum
+							of LED1 + LED2) will increase monotonically with the following power
+							level tab index:</div>
+						<div class="itemgroup info">(LED1 + LED2)N-1 &lt; (LED1 + LED2) N &lt; (LED1 +
+							LED2) N+1, where N is the tab index. </div>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N101C8_N1003F_N10014_N10001">
+				<span class="ph cmd">Determine how many LED mix combinations are required.</span>
+				<div class="itemgroup info">
+					<ul class="ul" id="ase1476992660624__ul_ngr_g5r_rx">
+						<li class="li">For single LED flash, only one mix is allowed and no additional lines can
+							be added to the LED table.</li>
+
+						<li class="li">For dual LED flash, a minimum of 2 mix settings and a maximum of 16 mix
+							settings is allowed. It is recommended to use a minimum of 11 mix
+							settings because measurements of the LED mix in the r/g b/g space do not
+							follow a straight line.</li>
+
+					</ul>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N101E2_N1003F_N10014_N10001">
+				<span class="ph cmd">For each power level tab, do the following: <img class="image" id="ase1476992660624__image_zgp_cfs_mcb" src="ibj1515704624777.png" /></span>
+				<ol type="a" class="ol substeps" id="ase1476992660624__substeps_aqg_hks_mcb">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">Enter the appropriate value in the <span class="ph uicontrol">LED Start</span> field. For Power L0, enter
+							the preflash driving current for dual LED or enter the main driving
+							current for single LED, as noted in step 10. For subsequent power level
+							tabs, use the intermediary driving current value.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">In the <span class="ph uicontrol">LED End</span>
+							field, enter 0 or the minimum preferred driving current.</span>
+						<div class="itemgroup info">It is recommended to use a value of 0 so only one LED
+							is enabled. The total power level is the sum of the LED1 and LED2
+							currents.</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">In the <span class="ph uicontrol">Table Size</span> field, enter
+							the value determined in step 13.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N10223_N1003F_N10014_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Populate</span> to
+					generate the mix rows.Table
+								Size</span>
+				<div class="itemgroup info">TableMix rows are added to the table. Ratios r/g and b/g and the
+					flux should be marked as 1.</div>
+				<div class="itemgroup info">Due to rounding issues, ensure the values of LED1 and LED2
+					are switched for the first and last mix rows. For example, if LED1 is 1000 and
+					LED2 is 0 in the first row, in the last row, LED1 must be 0 and LED2 must be
+					1000. The rounding issue occurs when the power value is not a round multiple of
+					the table size minus 1. For example, there are no issues if the power is 1000
+					and the table size is 11, as 1000/(11-1) = 100.</div>
+				<div class="itemgroup info">The sum of LED1 and LED2 values must remain constant within
+					one table. LED1 values increase down the table rows, while LED2 values increase
+					proportionally.</div>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N1025D_N1003F_N10014_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Calibrate</span>. The
+					tool parses the project data and prompts the user to launch the Camera Preview.
+					The prompt window closes automatically once LEDTuningData.csv is ready, please
+					do not click OK.</span>
+				<div class="itemgroup info">
+					<ul class="ul" id="ase1476992660624__ul_alx_qns_mcb">
+						<li class="li">If a "Csv file does not exist" message appears, the calibration failed.
+							Navigate to <span class="ph filepath">/data/misc/camera/</span> on
+							the device to verify that the .csv file is not there. If it is missing,
+							ensure the device works in flash mode, then repeat this step.</li>
+
+						<li class="li">The tool launches the tuning sequence on the target.</li>
+
+						<li class="li">The target iterates through entries inside the LED tuning table and
+							measures r/g ratio, b/g ratio, and flux for each entry (for example,
+							each mix in each power level). </li>
+
+						<li class="li">Upon successful tuning the target creates an LEDTuningData.csv in
+							/data/misc/camera.</li>
+
+						<li class="li">The tool creates the flash.xml file and a binary file,
+							and updates the <span class="ph uicontrol">LED Tuning</span> dialog
+							box.</li>
+
+					</ul>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N10297_N1004F_N1001A_N10001">
+				<span class="ph cmd">Respond to the prompt that asks if the binary file should be pushed to the
+					device. </span>
+			</li>
+<li class="li step stepexpand" id="ase1476992660624__step_N102A8_N1004F_N1001A_N10001">
+				<span class="ph cmd">To generate a graph that visualizes the r/g b/g data in the
+					LedTuning tabs, click the <span class="ph uicontrol">Graph Plot</span>
+					button. Each power level is plotted as a separate line. The x axis is b/g ratio
+					and the vertical axis is r/g ratio. <br /><img class="image" id="ase1476992660624__image_iym_txf_wdb" src="orm1526680790261.png" /><br /></span>
+				<div class="itemgroup info">The r/g and b/g value should either increase monotonically or decrease
+					monotonically. Looking at the graph plot is a quick way to verify this. If, for
+					a given point, there is a plateau or even a reversion in trend, it is important
+					to adjust the value manually in the table. It is also recommended to follow up
+					with an investigation into why the values are not monotonic. It has been
+					observed that the LED driver may cause the LED power to not increase/decrease
+					monotonically. See that phenomenon in the example plot where, for power level 0,
+					the LED mix indices 1 and 9 were not powered properly, causing the r/g and b/g
+					measurements to jump abruptly.</div>
+			</li>
+</ol>
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="gos1495660928418.html" title="Tune lens rolloff for LED and LED 2 before tuning LED flash.">Tune LSC for LED flash</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="pdw1495660811277.html" title="Before tuning the LED flash for lens rolloff, capture raw images using two devices. In this example, the devices are referred to as device A and device B, where device A captures images lit by device B.">Capture images for LED flash tuning</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

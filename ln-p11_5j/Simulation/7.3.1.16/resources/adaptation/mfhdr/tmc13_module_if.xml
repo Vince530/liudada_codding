@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="TMC">
+	<param id="1"  name="gtm_percentage" autotune="1" submodule="LTM_GTM">0.2:0.25:0.5</param>
+	<param id="2"  name="contrast_he_bright" autotune="0" submodule="LTM_GTM">0:0.25:1</param>
+	<param id="3"  name="contrast_he_dark" autotune="0" submodule="LTM_GTM">0:0.25:1</param>
+	
+	<param id="4"  name="dark_boost_ratio" autotune="1" submodule="KneePoints_ToneAnchor_Calculation">0:0.25:1</param>
+	<param id="5"  name="dark_boost_offset" autotune="1" submodule="KneePoints_ToneAnchor_Calculation">0:0.25:1</param>
+	<param id="6"  name="tone_anchor_min" autotune="1" submodule="KneePoints_ToneAnchor_Calculation">0:0.25:1</param>
+	<param id="7"  name="tone_anchor_avg" autotune="1" submodule="KneePoints_ToneAnchor_Calculation">0:0.25:1</param>
+	<param id="8"  name="tone_anchor_max" autotune="1" submodule="KneePoints_ToneAnchor_Calculation">0:0.25:1</param>
+	
+	<param id="9"  name="hist_curve_smoothing_str" autotune="0" submodule="HistPreProcess">0:0.25:1</param>
+	<param id="10"  name="scene_change_curve_smoothing_str" autotune="0" submodule="HistPreProcess">0:0.25:1</param>
+	
+	<lin_ineq_constraints>
+		<param_id_list> 6, 7, 8</param_id_list>
+		            <A> 1,-1, 0;
+						0, 1,-1</A>
+		            
+		<B>  0; 0</B>
+	</lin_ineq_constraints>  
+    <mapping dest="pcsim">update_xml_tmc1_3</mapping>
+    <mapping dest="chromatix">tmc_autotune2chromatix</mapping>
+    <isp_pipeline>SW_CONTROL</isp_pipeline>
+    <chromatix_tag>tmc13_sw</chromatix_tag>
+    <gen_pop_function>gen_pop_for_abf4_0</gen_pop_function>
+</module_if>

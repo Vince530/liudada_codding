@@ -1,0 +1,144 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Prerequisite : Before performing any fine tuning, be sure to run the AWB initial tuning procedure to generate initial parameter values. Recommend fine-tune for other AWB modules (such as SA and Gain ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Fine-tune decision aggregator" /><meta name="DC.Relation" scheme="URI" content="nta1502560008185.html" /><meta name="DC.Relation" scheme="URI" content="oos1501884619125.html" /><meta name="DC.Relation" scheme="URI" content="ygi1502560061663.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="yyl1502560114656" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Fine-tune decision aggregator</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="yyl1502560114656">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="nta1502560008185.html" title="Decision aggregator concept">Decision aggregator concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="nta1502560008185.html" title="Decision aggregator concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Decision aggregator concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Fine-tune decision aggregator</h1>
+
+	<div class="body conbody">
+		<div class="p"><strong class="ph b">Prerequisite</strong>: <ul class="ul" id="yyl1502560114656__ul_tv5_g23_w1b">
+				<li class="li">Before performing any fine tuning, be sure to run the AWB initial tuning
+					procedure to generate initial parameter values.</li>
+
+				<li class="li">Recommend fine-tune for other AWB modules (such as SA and Gain adjust) first,
+					before tuning DA so that DA does not have more than three SAs that have non-zero
+					confidence level in a given scene. </li>
+
+				<li class="li">Consider various scenes when you tune DA, because tuning DA usually affects
+					every scene. </li>
+
+			</ul>
+</div>
+
+		<div class="section" id="yyl1502560114656__section_N10089_N1000F_N10001"><h2 class="title sectiontitle">Tune the confidence level adjustment factor</h2>
+			
+			<ol class="ol" id="yyl1502560114656__ol_t1x_s23_v1b">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">In the <span class="ph uicontrol">List View</span>
+					section, select <span class="ph uicontrol">Decision Aggregator</span>. </li>
+
+				<li class="li">In the right panel find the <span class="ph uicontrol">Confidence adjustment based on confidence value</span> section. <br /><img class="image" id="yyl1502560114656__image_smx_2kc_vbb" src="hcg1510266446123.png" /><br /></li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger</span> column, double-click the
+					{0,0} entry to open the edit dialog. Update the trigger start and end values and
+					click outside the box to save the change. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Data</span> column, double-click the
+					{0,0} entry to open the edit dialog. Update the adjustment factor and click
+					outside the box to save the change.</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add above</span>
+					or <span class="ph uicontrol">Add below</span> buttons to add a new blank trigger row.
+					Repeat the two previous steps to set the trigger range and associated adjustment
+					factor.</li>
+
+				<li class="li">To adjust a trigger range or data value, double-click the
+					appropriate entry to open the edit dialog. Update the values and click outside
+					the box to save the change.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyl1502560114656__section_N100D9_N1000E_N10001"><h2 class="title sectiontitle">Tune the confidence level ranking adjustment factor</h2>
+			
+			<ol class="ol" id="yyl1502560114656__ol_bsh_hkc_vbb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">In the <span class="ph uicontrol">List View</span>
+					section, select <span class="ph uicontrol">Decision Aggregator</span>. </li>
+
+				<li class="li">In the right panel find the <span class="ph uicontrol">Confidence adjustment based on confidence ranking</span> section.
+						<br /><img class="image" id="yyl1502560114656__image_by3_3kc_vbb" src="cap1510266448256.png" /><br /></li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger</span> column, double-click the
+					{0,0} entry to open the edit dialog. Update the trigger start and end values and
+					click outside the box to save the change. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Data</span> column, double-click the
+					{0,0} entry to open the edit dialog. Update the adjustment factor and click
+					outside the box to save the change.</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add above</span>
+					or <span class="ph uicontrol">Add below</span> buttons to add a new blank trigger row.
+					Repeat the two previous steps to set the trigger range and associated adjustment
+					factor.</li>
+
+				<li class="li">To adjust a trigger range or data value, double-click the
+					appropriate entry to open the edit dialog. Update the values and click outside
+					the box to save the change.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="yyl1502560114656__section_N1018D_N1000E_N10001"><h2 class="title sectiontitle">Tune the AGW SA confidence level adjustment factor</h2>
+			
+			<ol class="ol" id="yyl1502560114656__ol_zbg_rkc_vbb">
+				<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+				<li class="li">In the <span class="ph uicontrol">List View</span>
+					section, select <span class="ph uicontrol">Decision Aggregator</span>. </li>
+
+				<li class="li">In the right panel, use the scroll bar to find the <span class="ph uicontrol">Weight adjustment based on AGW confidence level</span>
+					section. <br /><img class="image" id="yyl1502560114656__image_acg_rkc_vbb" src="cap1510266448256.png" /><br /></li>
+
+				<li class="li">In the <span class="ph uicontrol">Trigger</span> column, double-click the
+					{0,0} entry to open the edit dialog. Update the trigger start and end values and
+					click outside the box to save the change. </li>
+
+				<li class="li">In the <span class="ph uicontrol">Data</span> column, double-click the
+					{0,0} entry to open the edit dialog. Update the adjustment factor and click
+					outside the box to save the change.</li>
+
+				<li class="li">To add more triggers, use the <span class="ph uicontrol">Add above</span>
+					or <span class="ph uicontrol">Add below</span> buttons to add a new blank trigger row.
+					Repeat the two previous steps to set the trigger range and associated adjustment
+					factor.</li>
+
+				<li class="li">To adjust a trigger range or data value, double-click the
+					appropriate entry to open the edit dialog. Update the values and click outside
+					the box to save the change.</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="ygi1502560061663.html" title="Decision aggregator parameters">Decision aggregator parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="oos1501884619125.html" title="AWB initial tuning">AWB initial tuning</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="nta1502560008185.html" title="Decision aggregator concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Decision aggregator concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

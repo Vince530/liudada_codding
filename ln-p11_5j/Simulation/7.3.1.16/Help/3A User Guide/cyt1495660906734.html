@@ -1,0 +1,118 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Preview convergence tuning modifies the image speed and stability when preview AE is changing. Fast convergence is recommended for preview mode. To tune for fast convergence: In the Parameter Editor ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Fast convergence" /><meta name="abstract" content="Preview convergence tuning modifies the image speed and stability when preview AE is changing. Fast convergence is recommended for preview mode." /><meta name="description" content="Preview convergence tuning modifies the image speed and stability when preview AE is changing. Fast convergence is recommended for preview mode." /><meta name="DC.Relation" scheme="URI" content="lqj1495660918778.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="fob1474864619742" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Fast convergence</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="fob1474864619742">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures">Optional basic AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Fast convergence</h1>
+
+   
+   <div class="body conbody"><p class="shortdesc">Preview convergence tuning modifies the image speed and stability when
+      preview AE is changing. Fast convergence is recommended for preview mode.</p>
+
+      <p class="p">To tune for fast convergence:</p>
+
+      <ol class="ol" id="fob1474864619742__ol_xbq_z5n_x1b">
+         <li class="li">In the <span class="ph uicontrol">Parameter Editor</span> tab, navigate to
+               <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Convergence</span> &gt; <span class="ph uicontrol">Fast Conv</span></span>.</li>
+
+         <li class="li">Enter the appropriate values for <span class="ph uicontrol">Tol Mult
+               Unit Step Size</span>, <span class="ph uicontrol">Frame Skip Method</span>,
+            and <span class="ph uicontrol">Aggressiveness</span>
+            .</li>
+
+      </ol>
+
+      <div class="p">
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="fob1474864619742__table_cc3_2vz_k1b" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d8540e82">Parameter name</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d8540e85">Description</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d8540e88">Tuning</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d8540e91">Default</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e82 ">tolMultUnitStepSize</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e85 ">Exposure index tolerance is tolMultUnitStepSize * unitStepSize; exposure
+                        index range within which AEC will not adjust</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e88 ">Lower value = more precise convergence</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e91 ">2</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e82 ">frameSkipMethod</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e85 ">Specifies which type of frame skip is preferred: <ul class="ul" id="fob1474864619742__ul_rs1_xwz_k1b">
+                           <li class="li"><span class="keyword parmname">SmoothNoSkip</span> for smooth convergence</li>
+
+                           <li class="li"><span class="keyword parmname">SkipOne</span> if there are synchronization
+                              concerns</li>
+
+                           <li class="li"><span class="keyword parmname">SkipSystemLatency</span> if speed is preferred to
+                              smoothness</li>
+
+                        </ul>
+</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e88 ">
+                        <ul class="ul" id="fob1474864619742__ul_tsb_wxz_k1b">
+                           <li class="li"><span class="keyword parmname">SmoothNoSkip</span> for continuous smooth
+                              frame-to-frame adjustments</li>
+
+                           <li class="li"><span class="keyword parmname">SkipOne</span> for in case of synchronization issues
+                              between sensor and stats only</li>
+
+                           <li class="li"><span class="keyword parmname">SkipSystemLatency</span> so next exposure adjustment
+                              will take place only once stats are updated to reflect previous
+                              exposure adjustment. Use this option if convergence speed is critical
+                           </li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e91 ">Smooth No Skip</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e82 ">aggressiveness</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e85 ">Controls convergence speed.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e88 ">Higher value = faster convergence</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d8540e91 ">0.8</td>
+
+                  </tr>
+
+                  
+               </tbody>
+</table>
+</div>
+
+      </div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="lqj1495660918778.html" title="Optional basic AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Optional basic AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

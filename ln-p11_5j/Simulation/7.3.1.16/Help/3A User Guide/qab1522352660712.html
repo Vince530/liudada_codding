@@ -1,0 +1,236 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Use the procedures in this section to perform initial tuning for the AWB face-assist scene analyzer parameters. Compute and record initial values for light skin WB target Enable 3A EXIF debug data, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Initial-tune face-assist scene analyzer" /><meta name="abstract" content="Use the procedures in this section to perform initial tuning for the AWB face-assist scene analyzer parameters." /><meta name="description" content="Use the procedures in this section to perform initial tuning for the AWB face-assist scene analyzer parameters." /><meta name="DC.Relation" scheme="URI" content="jdc1509824323481.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qab1522352660712" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Initial-tune face-assist scene analyzer</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qab1522352660712">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="jdc1509824323481.html" title="Face-assist scene analyzer concept">Face-assist scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Initial-tune face-assist scene analyzer</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">Use the procedures in this section to perform initial tuning for the
+		AWB face-assist scene analyzer parameters. </p>
+
+		<div class="section" id="qab1522352660712__section_dcr_5qf_3db"><h2 class="title sectiontitle">Compute and record initial values for light skin WB target </h2>
+			
+			<ol class="ol" id="qab1522352660712__ol_ent_xqf_3db">
+				<li class="li">Enable 3A EXIF debug data, then use the golden sample to capture a JPEG image of
+					an MCC chart in D50 illuminant.</li>
+
+				<li class="li">In the Chromatix tool, select <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Open Image</span></span> and open the MCC D50 image.</li>
+
+				<li class="li">In the toolbar, select <span class="ph menucascade"><span class="ph uicontrol">Mark</span> &gt; <span class="ph uicontrol">AWB Decision Map</span></span>.</li>
+
+				<li class="li">Compute the AWB r and b gains as follows:<ol class="ol" type="a" id="qab1522352660712__ol_lcd_hsf_3db">
+						<li class="li">Use the cursor to select a square ROI inside Patch 22.</li>
+
+						<li class="li">In the toolbar, select <span class="ph menucascade"><span class="ph uicontrol"><img class="image" id="qab1522352660712__image_gx4_d1z_hdb" src="xwj1522273895090.png" /></span> &gt; <span class="ph uicontrol">Statistics</span></span>. In the statistics panel, under the label <span class="ph uicontrol">AWB Stats,</span> find the values of <span class="ph uicontrol">R/G</span> and <span class="ph uicontrol">B/G</span>. <br /><img class="image" id="qab1522352660712__image_hwj_w1z_hdb" src="qwg1522273896556.png" /><br /></li>
+
+						<li class="li">Calculate the AWB R gain and B gain using the following formulas: <br /><img class="image" id="qab1522352660712__image_tyc_pbz_hdb" src="ecd1509836317690.png" /><br /></li>
+
+					</ol>
+</li>
+
+				<li class="li">Compute the light skin WB target as follows:<ol class="ol" type="a" id="qab1522352660712__ol_ecz_psf_3db">
+						<li class="li">Use the cursor to select a square ROI inside Patch 2 (light skin).</li>
+
+						<li class="li">In the toolbar, select <span class="ph menucascade"><span class="ph uicontrol"><img class="image" id="qab1522352660712__image_gjv_wbz_hdb" src="xwj1522273895090.png" /></span> &gt; <span class="ph uicontrol">Statistics</span></span>. In the statistics panel, under the label <span class="ph uicontrol">AWB Stats,</span> find the values of
+								<span class="ph uicontrol">R/G</span> and <span class="ph uicontrol">B/G</span>.</li>
+
+						<li class="li">Calculate the light skin WB target point using the following formulas:
+								<br /><img class="image" id="qab1522352660712__image_hdm_ccz_hdb" src="xcq1509836316646.png" /><br /><div class="note note" id="qab1522352660712__note_N10105_N10102_N100F4_N1001D_N10014_N10001"><span class="notetitle">Note:</span> Fine tuning parameters are available to add flexibility for the
+								user to adjust the target points computed in this step. If fine
+								tuning parameters are set, the module adjusts the light skin WB
+								target point based on the Lux Index and CCT triggers. </div>
+</li>
+
+					</ol>
+</li>
+
+				<li class="li">Calculate the light skin gray world decision using the following formulas
+					to estimate the CCT: <br /><img class="image" id="qab1522352660712__image_pjv_t2z_hdb" src="bgo1509836313779.png" /><br /><div class="note note" id="qab1522352660712__note_N100DA_N100D1_N1001E_N10016_N10013_N10001"><span class="notetitle">Note:</span> If you
+						need to fine tune the light skin WB target, use this estimated CCT value as
+						a guide for adjusting/adding the trigger ranges in the <span class="ph uicontrol">Light Skin WB Target</span> submodule. Refer to
+							<cite class="cite">Fine-tune face-assist scene
+						analyzer</cite>.</div>
+</li>
+
+				<li class="li">Replace the factory default for light skin WB target point (r, b) in the
+					Light Skin WB Target submodule with the computed values from Step 6.<ol class="ol" type="a" id="qab1522352660712__ol_e34_lrf_3db">
+						<li class="li">On the <span class="ph uicontrol">AWB</span> tab
+							in the List View, select <span class="ph uicontrol">Face Assist
+								AWB</span>.</li>
+
+						<li class="li">In the <span class="ph uicontrol">Modules</span>
+							box, select <span class="ph uicontrol">Light Skin WB
+							Target</span>.</li>
+
+						<li class="li">Click the arrow next to the first trigger range to open
+							the full set of values, as shown in the image. <br /><img class="image" id="qab1522352660712__image_np5_4jf_3db" src="rab1520969442451.png" /><br /></li>
+
+						<li class="li">In the third column (core data), double-click the entry in brackets.
+							Update the red/blue gain values (r, b) and click outside the box to save
+							the change.<div class="note note" id="qab1522352660712__note_N1012E_N1012A_N100FD_N100F9_N10021_N10017_N10014_N10001"><span class="notetitle">Note:</span> The WB target can also be tuned for preference. For
+								example, if the overall light skin color is reddish, try reducing
+								the WB r gain target.</div>
+</li>
+
+					</ol>
+</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="qab1522352660712__section_jbz_ftf_3db"><h2 class="title sectiontitle">Compute and record initial values for dark skin WB target </h2>
+			
+			<ol class="ol" id="qab1522352660712__ol_kbz_ftf_3db">
+				<li class="li">Enable 3A EXIF debug data, then use the golden sample to
+					capture a JPEG image of an MCC chart in D50 illuminant.</li>
+
+				<li class="li">In the Chromatix tool, select <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Open Image</span></span> and open the MCC D50 image.</li>
+
+				<li class="li">In the toolbar, select <span class="ph menucascade"><span class="ph uicontrol">Mark</span> &gt; <span class="ph uicontrol">AWB Decision Map</span></span>.</li>
+
+				<li class="li">Compute the AWB r and b gains as follows:<ol class="ol" type="a" id="qab1522352660712__ol_lbz_ftf_3db">
+						<li class="li">Use the cursor to select a square ROI inside Patch
+							22.</li>
+
+						<li class="li">In the toolbar, select <span class="ph menucascade"><span class="ph uicontrol"><img class="image" id="qab1522352660712__image_mbz_ftf_3db" src="xwj1522273895090.png" /></span> &gt; <span class="ph uicontrol">Statistics</span></span>. In the statistics panel, under the label <span class="ph uicontrol">AWB Stats,</span> find the values of
+								<span class="ph uicontrol">R/G</span> and <span class="ph uicontrol">B/G</span>. </li>
+
+						<li class="li">Calculate the AWB R gain and B gain using the following
+							formulas: <br /><img class="image" id="qab1522352660712__image_obz_ftf_3db" src="ecd1509836317690.png" /><br /></li>
+
+					</ol>
+</li>
+
+				<li class="li">Compute the dark skin WB target as follows:<ol class="ol" type="a" id="qab1522352660712__ol_pbz_ftf_3db">
+						<li class="li">Use the cursor to select a square ROI inside Patch 1
+							(dark skin).</li>
+
+						<li class="li">In the toolbar, select <span class="ph menucascade"><span class="ph uicontrol"><img class="image" id="qab1522352660712__image_qbz_ftf_3db" src="xwj1522273895090.png" /></span> &gt; <span class="ph uicontrol">Statistics</span></span>. In the statistics panel, under the label <span class="ph uicontrol">AWB Stats,</span> find the values of
+								<span class="ph uicontrol">R/G</span> and <span class="ph uicontrol">B/G</span>.</li>
+
+						<li class="li">Calculate the dark skin WB target point using the
+							following formulas: <br /><img class="image" id="qab1522352660712__image_ofx_5tf_3db" src="gib1522351946296.png" /><br /><div class="note note" id="qab1522352660712__note_N101F2_N101E9_N101B8_N101B4_N1013C_N10132_N10014_N10001"><span class="notetitle">Note:</span> Fine tuning
+								parameters are available to add flexibility for the user to adjust
+								the target points computed in this step. If fine tuning parameters
+								are set, the module adjusts the dark skin WB target point based on
+								the Lux Index and CCT triggers. </div>
+</li>
+
+					</ol>
+</li>
+
+				<li class="li">Calculate the dark skin gray world decision using the following
+					formulas to estimate the CCT: <br /><img class="image" id="qab1522352660712__image_ap2_ytf_3db" src="ypx1522351949073.png" /><br /><div class="note note" id="qab1522352660712__note_N10202_N101F9_N1013C_N10132_N10014_N10001"><span class="notetitle">Note:</span> If you need to fine-tune the
+						dark skin WB target, use this estimated CCT value as a guide for
+						adjusting/adding the trigger ranges in the <span class="ph uicontrol">Dark
+							Skin WB Target</span> submodule. Refer to <cite class="cite">Fine-tune face-assist scene analyzer</cite>.</div>
+</li>
+
+				<li class="li">Replace the factory default for dark skin WB target point (r,
+					b) in the Dark Skin WB Target submodule with the computed values from Step 6.<ol class="ol" type="a" id="qab1522352660712__ol_tbz_ftf_3db">
+						<li class="li">On the <span class="ph uicontrol">AWB</span> tab
+							in the List View, select <span class="ph uicontrol">Face Assist
+								AWB</span>.</li>
+
+						<li class="li">In the <span class="ph uicontrol">Modules</span>
+							box, select <span class="ph uicontrol">Dark Skin WB
+							Target</span>.</li>
+
+						<li class="li">Click the arrow next to the first trigger range to open
+							the full set of values, as shown in the image. <br /><img class="image" id="qab1522352660712__image_sjd_g5f_3db" src="zmm1520969445867.png" /><br /></li>
+
+						<li class="li">In the third column (core data), double-click the entry in brackets.
+							Update the red/blue gain values (r, b) and click outside the box to save
+							the change.<div class="note note" id="qab1522352660712__note_N1025B_N10257_N1022A_N10226_N10154_N1014A_N10014_N10001"><span class="notetitle">Note:</span> The WB target can also be tuned for preference. For
+								example, if the overall dark skin color is reddish, try reducing the
+								WB r gain target.</div>
+</li>
+
+					</ol>
+</li>
+
+				<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="qab1522352660712__section_dsx_nvf_3db"><h2 class="title sectiontitle">Adjust face AWB weight</h2>
+			
+			<ol class="ol" id="qab1522352660712__ol_us4_qvf_3db">
+				<li class="li">If the project is for the main camera, use a lower weight for face-assist scene
+					analyzer than for other scene analyzers.<ol class="ol" type="a" id="qab1522352660712__ol_dxq_bwf_3db">
+						<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+						<li class="li">In the <span class="ph uicontrol">List
+								View</span> tab, select <span class="ph uicontrol">Face Assist
+								AWB</span>. </li>
+
+						<li class="li">In the <span class="ph uicontrol">Tuning
+								Modules</span> area, adjust the <span class="ph uicontrol">SA Weight
+							</span>parameter as needed. </li>
+
+						<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+					</ol>
+</li>
+
+				<li class="li">If the project is for the front camera, use a higher weight for face-assist
+					scene analyzer than for other scene analyzers.<ol class="ol" type="a" id="qab1522352660712__ol_uw4_5wf_3db">
+						<li class="li">Open the project and click the <span class="ph uicontrol">AWB</span> tab.</li>
+
+						<li class="li">In the <span class="ph uicontrol">List
+								View</span> tab, select <span class="ph uicontrol">Face Assist
+								AWB</span>. </li>
+
+						<li class="li">In the <span class="ph uicontrol">Tuning
+								Modules</span> area, adjust the <span class="ph uicontrol">SA Weight
+							</span>parameter as needed. </li>
+
+						<li class="li">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span> to save the changes.</li>
+
+					</ol>
+</li>
+
+			</ol>
+
+		</div>
+
+		<div class="section" id="qab1522352660712__section_lvz_dyf_3db"><h2 class="title sectiontitle">Tune for preference</h2>
+			
+			<div class="p">The factory defaults for the following parameters should be adequate, but they can be
+				fine-tuned to meet your preference. Refer to <cite class="cite">Fine-tune face-assist scene
+					analyzer</cite>.<ul class="ul" id="qab1522352660712__ul_j1b_4yf_3db">
+					<li class="li">Face Select Threshold</li>
+
+					<li class="li">Convergence Speed for Face AWB</li>
+
+					<li class="li">Dark Pixel Threshold</li>
+
+					<li class="li">Saturation Pixel Threshold</li>
+
+					<li class="li">Light Skin WB Target</li>
+
+					<li class="li">Dark Skin WB Target</li>
+
+				</ul>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The confidence table is used to define a minimum confidence threshold relative to the sensor gain. A high confidence means that the PD in the ROI has a small variance and a higher edge intensity. The ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="How the confidence table works" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="zhw1477085276125" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>How the confidence table works</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="zhw1477085276125">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">How the confidence table works</h1>
+
+   <div class="body conbody">
+      <p class="p">The confidence table is used to define a minimum confidence threshold relative to the
+         sensor gain. A high confidence means that the PD in the ROI has a small variance and a
+         higher edge intensity.</p>
+
+      <p class="p">The defaults for the table are as follows:</p>
+
+      <img class="image" id="zhw1477085276125__image_wrh_jbl_rx" src="nlx1495660970757.png" />
+      <div class="fig fignone" id="zhw1477085276125__ID-fig-0000000f">
+         <ul class="ul">
+            <li class="li">The first <span class="keyword cmdname">min_conf</span> is fully applied when noise gain is ≤
+               first noise gain.</li>
+
+            <li class="li">The last <span class="keyword cmdname">min_conf</span> is fully applied when noise gain is ≥
+               last noise gain.</li>
+
+            <li class="li">The <span class="keyword cmdname">min_conf</span> between the first and last entries is linearly
+               interpolated according to where the noise gain lies between the gain of the first and
+               last entries.</li>
+
+            <li class="li">The ROI PD confidence value is only considered if it is over the minimum confidence
+               threshold.</li>
+
+         </ul>
+
+      </div>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

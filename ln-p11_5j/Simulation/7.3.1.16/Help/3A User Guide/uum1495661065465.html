@@ -1,0 +1,136 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Use adb commands to enable EXIF debug information in captured JPEG images for the specified chipset. MSM8952/MSM8976/MSM8956/MSM8953/MSM8940/MSM8937/MSM8917/MSM8996/MSM8998/SDM660/SDM630 adb root adb ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Enable EXIF debug information (3A v5.x and v6.0)" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="fec1493666285379" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Enable EXIF debug information (3A v5.x and v6.0)</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="fec1493666285379">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Enable EXIF debug information (3A v5.x and v6.0)</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">Use adb commands to enable EXIF debug information in captured JPEG images for
+			the specified chipset.</p>
+
+		<div class="section" id="fec1493666285379__section_N10077_N10013_N10001x"><h2 class="title sectiontitle">MSM8952/MSM8976/MSM8956/MSM8953/MSM8940/MSM8937/MSM8917/MSM8996/MSM8998/SDM660/SDM630</h2>
+			
+			<div class="p">
+				<pre class="pre codeblock"><code>adb root
+adb remount
+adb shell setprop persist.camera.mobicat 2
+adb shell setprop persist.camera.stats.debugexif &lt;3A EXIF Debug Mask&gt;</code></pre>
+			</div>
+
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="fec1493666285379__table_e2f_w2k_tz" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:33.003300330033%" /><col style="width:66.996699669967%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d59337e44">Component</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d59337e47">3A EXIF Debug Mask</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">AEC</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x10000 (65536 in decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">AWB</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x10000 &lt;&lt; 1 (131072 in
+									decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">AF</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x10000 &lt;&lt; 2 (262144 in
+									decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">ASD</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x10000 &lt;&lt; 3 (524288 in
+									decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">AFD</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x10000 &lt;&lt; 4 (1048576 in
+									decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">Stats</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x10000 &lt;&lt; 5 (2097152 in
+									decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">BHist</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x10000 &lt;&lt; 6 (4194304 in
+									decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">BE Stats</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x10000 &lt;&lt; 7 (8388608 in
+									decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">AEC|AWB|AF|Stats</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0x270000 (2555904 in decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">BE Stats | BG Stats</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0xA00000 (10485760 in decimal)</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e44 ">All of the above</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d59337e47 ">0xFF0000 (16711680 in decimal)</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

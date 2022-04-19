@@ -1,0 +1,169 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Chromatix aberration causes fringes of color to occur along boundaries when different bandwidths of incoming light are refracted slightly by the lens and do not land in the same visual plane on the ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune CAC" /><meta name="abstract" content="Chromatix aberration causes fringes of color to occur along boundaries when different bandwidths of incoming light are refracted slightly by the lens and do not land in the same visual plane on the camera sensor. The CAC module is used to correct these visual artifacts in an image." /><meta name="description" content="Chromatix aberration causes fringes of color to occur along boundaries when different bandwidths of incoming light are refracted slightly by the lens and do not land in the same visual plane on the camera sensor. The CAC module is used to correct these visual artifacts in an image." /><meta name="DC.Relation" scheme="URI" content="vou1505237109990.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="fbm1505237067293" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune CAC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="fbm1505237067293">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="vou1505237109990.html" title="CAC tuning concept">CAC tuning concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="vou1505237109990.html" title="CAC tuning concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">CAC tuning concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune CAC</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">Chromatix aberration causes fringes of color to occur along boundaries
+		when different bandwidths of incoming light are refracted slightly by the lens and do not
+		land in the same visual plane on the camera sensor. The CAC module is used to correct these
+		visual artifacts in an image.</p>
+
+		<div class="section prereq p" id="fbm1505237067293__prereq_N10015_N10012_N10001">
+			<p class="p">Before tuning the CAC module, determine the number of lighting regions required
+				for this module and create them in the Parameter Editor. </p>
+
+		</div>
+
+		<div class="section context" id="fbm1505237067293__context_N10027_N10013_N10001">Do the following to tune
+			CAC:</div>
+
+		<ol class="ol steps" id="fbm1505237067293__steps_xlm_hx4_2bb"><li class="li step stepexpand" id="fbm1505237067293__step_N100F2_N1002F_N10015_N10001">
+				<span class="ph cmd">In the <span class="ph uicontrol">Pipeline</span> tab, expand
+						the<span class="ph uicontrol">IPE</span> pipeline.</span>
+			</li>
+<li class="li step stepexpand" id="fbm1505237067293__step_N10041_N1002D_N10013_N10001">
+				<span class="ph cmd">Select <span class="ph uicontrol">CAC</span> to show the
+					default region and Region Data.</span>
+			</li>
+<li class="li step stepexpand" id="fbm1505237067293__step_N10068_N1002D_N10013_N10001">
+				<span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">Region Data</span> &gt; <span class="ph uicontrol"> CAC 22 Rgn</span></span> to show the values of various parameters.</span>
+			</li>
+<li class="li step stepexpand" id="fbm1505237067293__step_N1007D_N1002D_N10013_N10001">
+				<span class="ph cmd">As needed, tune the following CACv2 regional parameters:</span>
+				<div class="itemgroup info">
+					
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="fbm1505237067293__table_yqq_v2q_hbb" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+								<tr class="row">
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d7122e89">Parameter
+										name</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d7122e92">Range of
+										values</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d7122e95">Default
+										value</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d7122e98">Description</th>
+
+									<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d7122e101">Tuning</th>
+
+								</tr>
+
+							</thead>
+<tbody class="tbody">
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e89 ">Cac En</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e92 ">0 or 1</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e95 ">1</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e98 ">Enables or
+										disables CAC2. Values by default for each region:<ul class="ul" id="fbm1505237067293__ul_fpk_b3q_hbb">
+											<li class="li">Enabled: 1 and 2.</li>
+
+											<li class="li">Disabled: 3,4,5, and 6.</li>
+
+										</ul>
+</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e101 ">Use the mutually
+										exclusive Software CAC2 and chroma downsampling for low
+										light.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e89 ">Y Spot Thr</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e92 ">0 to 63</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e95 ">10</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e98 ">Smaller values
+										increase the amount of bright spot correction.</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e101 ">Use
+										default.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e89 ">Y Saturation
+										Thr</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e92 ">0 to 1023</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e95 ">960</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e98 ">Smaller values
+										increase the amount of correction.</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e101 ">Keep the default
+										value. If an increased correction is needed for the dim
+										areas, set to 230.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e89 ">C spot Thr</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e92 ">0 to 1023</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e95 ">40</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e98 ">Detects color
+										differences between a pixel and its surrounding
+										pixels.</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e101 ">Use
+											default.</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e89 ">C Saturation
+										Thr</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e92 ">0 to 511</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e95 ">20</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e98 ">Smaller values
+										increase color artifact correction.</td>
+
+									<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7122e101 ">Keep the default
+										value. </td>
+
+								</tr>
+
+							</tbody>
+</table>
+</div>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="fbm1505237067293__step_N10134_N1002D_N10013_N10001">
+				<span class="ph cmd">Repeat the previous step for each region.</span>
+			</li>
+<li class="li step stepexpand" id="fbm1505237067293__step_N1013D_N1002D_N10013_N10001">
+				<span class="ph cmd">To save the adjustments made to the parameters, click
+						<span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span>.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="vou1505237109990.html" title="CAC tuning concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">CAC tuning concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

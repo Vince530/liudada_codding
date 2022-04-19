@@ -1,0 +1,76 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="A region is a set of triggers that are indicative of light conditions, lens positions or other conditions as applicable to a given module. A project which is created with the build XSD and XML files ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Add and edit region triggers" /><meta name="abstract" content="A region is a set of triggers that are indicative of light conditions, lens positions or other conditions as applicable to a given module. A project which is created with the build XSD and XML files has only one region for each module. Chromatix 7 gives the flexibility to create multiple regions for an ISP module. Adding regions to the module enables to optimize camera performance based on the established triggers for each region. Add regions to the pipeline before tuning the ISP and before adding modes to the project." /><meta name="description" content="A region is a set of triggers that are indicative of light conditions, lens positions or other conditions as applicable to a given module. A project which is created with the build XSD and XML files has only one region for each module. Chromatix 7 gives the flexibility to create multiple regions for an ISP module. Adding regions to the module enables to optimize camera performance based on the established triggers for each region. Add regions to the pipeline before tuning the ISP and before adding modes to the project." /><meta name="DC.Relation" scheme="URI" content="ufk1494872219078.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="qnq1499365175979" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Add and edit region triggers</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="qnq1499365175979">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="ufk1494872219078.html" title="Prerequisites">Prerequisites</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="ufk1494872219078.html" title="Prerequisites"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Prerequisites</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Add and edit region triggers </h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc"> A region is a set of triggers that are indicative of light conditions,
+		lens positions or other conditions as applicable to a given module. A project which is
+		created with the build XSD and XML files has only one region for each module. Chromatix 7
+		gives the flexibility to create multiple regions for an ISP module. Adding regions to the
+		module enables to optimize camera performance based on the established triggers for each
+		region. Add regions to the pipeline before tuning the ISP and before adding modes to the
+		project. </p>
+
+		<div class="section context" id="qnq1499365175979__context_N10017_N10014_N10001">To add regions:</div>
+
+		<ol class="ol steps"><li class="li step" id="qnq1499365175979__step_N10018_N10015_N10012_N10001">
+				<span class="ph cmd">Open the <span class="ph uicontrol">Parameter Editor</span>. In the left
+					frame, expand the applicable pipelines (BPS, IFE, or IPE).</span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N10025_N10015_N10012_N10001">
+				<span class="ph cmd">Expand the applicable module (for example, Linearization 34
+					BPS). </span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N10035_N10017_N10014_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Chromatix [module name]
+						Core</span> to show the list of editable triggers. The number of
+					editable triggers vary between modules. For example, linearization has five
+					triggers but ABF has only three.</span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N10045_N10017_N10014_N10001">
+				<span class="ph cmd">Hover the cursor over a trigger value and use the up and down arrows onscreen
+					to add triggers above or below the current trigger.</span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N1004E_N10017_N10014_N10001">
+				<span class="ph cmd">Repeat the previous step until all the desired triggers are
+					added to the module. If a trigger is added from the left-most column, an entire
+					row of new triggers is added to create a new region. If a trigger is added from
+					any other column, new triggers are only added to that column and the right of
+					that column.</span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N10057_N10017_N10014_N10001">
+				<span class="ph cmd">To view the range of values in a trigger, click the trigger in the main
+					frame.</span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N10060_N10017_N10014_N10001">
+				<span class="ph cmd">Edit the values in the bottom frame as needed to specify the appropriate range
+					for a trigger.</span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N10069_N10017_N10014_N10001">
+				<span class="ph cmd">Repeat the previous step until the range values have been specified for all the
+					triggers of all the regions.</span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N10072_N10017_N10014_N10001">
+				<span class="ph cmd">Delete triggers by hovering the cursor over a trigger value
+					and clicking the X onscreen. </span>
+			</li>
+<li class="li step" id="qnq1499365175979__step_N1007B_N10017_N10014_N10001">
+				<span class="ph cmd">Save the project before closing Chromatix 7.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="ufk1494872219078.html" title="Prerequisites"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Prerequisites</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

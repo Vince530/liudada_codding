@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+========================================================================
+   Copyright(c) 2018 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<MetaConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\XSD\meta_config.xsd">
+  <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+  <CCT>5000</CCT>
+  <LuxIdx>130</LuxIdx>
+  <Gain>1</Gain>
+  <digitalGain>1</digitalGain>
+  <ExpSensitivityRatio>1</ExpSensitivityRatio>
+  <ExpTimeRatio>1</ExpTimeRatio>
+  <ExpGainRatio>1</ExpGainRatio>
+  <DrcGain>1</DrcGain>
+  <DrcGainDark>1</DrcGainDark>
+  <LensPosition>0</LensPosition>
+  <HDRMode>0</HDRMode>
+  <gain_r>1</gain_r>
+  <gain_g>1</gain_g>
+  <gain_b>1</gain_b>
+  <HDRZrecSel>0</HDRZrecSel>
+  <HDRZrecPattern>0</HDRZrecPattern>
+  <HDRZrecFirstRBExp>0</HDRZrecFirstRBExp>
+  <LEDSensitivity>0</LEDSensitivity>
+  <NumOfLed>1</NumOfLed>
+  <Led1IdxRatio>0.1</Led1IdxRatio>
+  <Led2IdxRatio>0.9</Led2IdxRatio>
+  <SensorType>1</SensorType>
+  <CustomAec>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</CustomAec>
+  <CustomAwb>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</CustomAwb>
+  <CustomAf>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</CustomAf>
+  <CCM>
+    <IFE>
+      <Flag>0</Flag>
+      <Matrix>1 0 0 0 1 0 0 0 1</Matrix>
+      <Offset>0 0 0</Offset>
+    </IFE>
+    <BPS>
+      <Flag>0</Flag>
+      <Matrix>1 0 0 0 1 0 0 0 1</Matrix>
+      <Offset>0 0 0</Offset>
+    </BPS>
+    <IPE>
+      <Flag>0</Flag>
+      <Matrix>1 0 0 0 1 0 0 0 1</Matrix>
+      <Offset>0 0 0</Offset>
+    </IPE>
+  </CCM>
+    <IOT>
+        <exposure_ratio>29.16 32.0 32.0 32.0</exposure_ratio>
+    </IOT>
+</MetaConfig>

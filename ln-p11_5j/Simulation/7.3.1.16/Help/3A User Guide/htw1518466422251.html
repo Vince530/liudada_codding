@@ -1,0 +1,222 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Reference points tuning is very important for transforming the master decision point and the master GCM center point to that of the slave camera. If the transformation using regular reference points ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Custom reference point parameters for AWB dual camera sync" /><meta name="DC.Relation" scheme="URI" content="jxy1518115164603.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="htw1518466422251" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Custom reference point parameters for AWB dual camera sync</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="htw1518466422251">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="nra1518044265573.html" title="AWB dual camera sync concept">AWB dual camera sync concept</a> / <a class="navheader_parent_path" href="jxy1518115164603.html" title="AWB dual camera sync parameters">AWB dual camera sync parameters</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jxy1518115164603.html" title="AWB dual camera sync parameters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync parameters</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Custom reference point parameters for AWB dual camera sync</h1>
+
+	<div class="body conbody">
+		<p class="p">Reference points tuning is very important for transforming the master decision
+			point and the master GCM center point to that of the slave camera. If the transformation
+			using regular reference points needs tuning, you can add custom reference points to
+			correctly transform the master decision point and the master GCM center point to the
+			slave decision point and the slave GCM center point, respectively.</p>
+
+		<div class="p">Custom reference point processing behaves as follows: <ul class="ul" id="htw1518466422251__ul_rc3_3rb_vcb">
+				<li class="li">If the <span class="keyword parmname">condition</span> of a
+					custom reference point is AllCondition, the custom reference point is enabled at
+					all brightness conditions </li>
+
+				<li class="li">If the <span class="keyword parmname">condition</span> of a
+					custom reference point is Outdoor, the custom reference point is only enabled
+					when the current luxIdx is less than <span class="keyword parmname">Lux
+						threshold</span>
+				</li>
+
+				<li class="li">If the <span class="keyword parmname">condition</span> of a
+					custom reference point is Indoor, the custom reference point is only enabled
+					when the current Lux Index is same or bigger than <span class="keyword parmname">Lux
+						threshold</span>
+				</li>
+
+				<li class="li">If current Lux Index is in the allowed <span class="keyword parmname">LuxRange</span>, the process assumes that the scene has
+					not changed. So the custom reference points set by the previous master are used
+					to transform the master decision point and the master GCM center point to the
+					slave decision point and the slave GCM center point.<br /><img class="image" id="htw1518466422251__image_cxf_1tb_vcb" src="tcn1518047234775.png" /><br /></li>
+
+			</ul>
+</div>
+
+		<br /><img class="image" id="htw1518466422251__image_c5y_vsb_vcb" src="ryp1518050459453.svg" /><br />
+		<p class="p">The regular AWB reference points are usually measured using standard
+			light sources of a standard light booth, such as SpectraLight III. If the outdoor GCM or
+			FCM results with regular reference points are not accurate, it may be because the
+			spectral response of the master camera or the slave camera for sunlight and standard
+			light source (such as D75, D65, and D50) is not linear. In this case, set the <span class="keyword parmname">Ref Pt Selection</span> to UseCustRefPtOnly and create custom
+			reference points as indicated in the following table.</p>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="htw1518466422251__table_N10027_N10011_N1000E_N10001" class="table" frame="border" border="1" rules="all"><colgroup><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24664e78">Reference point</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24664e81">Condition</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d24664e84">Point source</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Indoor high</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">Indoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Indoor D75</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">Indoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Indoor D65</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">Indoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Indoor D50</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">Indoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Outdoor high</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">Outdoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">Calculate the pointt based on outdoor D65 and
+							outdoor D50</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Outdoor D75</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">Outdoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">Measure the point with the gray patch under outdoor
+							D75 environment</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Outdoor D65</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">Outdoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">Measure the point with the gray patch under outdoor
+							D65 environment</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Outdoor D50</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">Outdoor</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">Measure the point with the gray patch under outdoor
+							D50 environment</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">CW</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">All conditions</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">F</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">All conditions</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">TL84</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">All conditions</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">A</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">All conditions</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">H</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">All conditions</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e78 ">Low</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e81 ">All conditions</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d24664e84 ">The point comes from a custom reference
+							point.</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		<p class="p">The following image is an example of using different reference points
+			set for indoor and outdoor. The circled dot shows how an additional custom reference
+			point is added for a light source if the transit AWB result is not good under that light
+			source.</p>
+
+		<br /><img class="image" id="htw1518466422251__image_msr_lzm_vcb" src="iiu1518050349240.svg" /><br />
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jxy1518115164603.html" title="AWB dual camera sync parameters"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB dual camera sync parameters</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module_if name="SWMFNR">
+	<param id="1"  name="deghosting_strength" autotune="0" submodule="ySubModule1">0:0.1:1</param>
+	<param id="2"  name="local_motion_smoothing_strength" autotune="1" submodule="ySubModule1">0:0.1:1</param>
+	<param id="3"  name="dtf_luma_strength" autotune="1" submodule="ySubModule1">0:0.05:0.5</param>
+	<param id="4"  name="dtf_chroma_strength" autotune="1" submodule="cSubModule1">0:0.05:0.5</param>
+ 
+    <mapping dest="pcsim">update_xml_swmfnr2_0</mapping>
+    <mapping dest="chromatix">swmfnr2_0_autotune2chromatix</mapping>
+    <isp_pipeline>ARM</isp_pipeline>
+    <chromatix_tag>swmfnr20_sw</chromatix_tag>
+    <gen_pop_function>gen_pop_for_swmfnr2_0</gen_pop_function>
+</module_if>

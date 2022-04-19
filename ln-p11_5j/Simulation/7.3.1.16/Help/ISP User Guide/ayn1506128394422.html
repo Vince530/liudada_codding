@@ -1,0 +1,162 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Defective pixels may show up on an image as bright points (hot pixels) or as dark points (cold pixels). Figure : (L) Original image, BPC/BCC off; (R) BPC/BCC on, defective pixels corrected Defective ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="BPC/BCC tuning concepts" /><meta name="DC.Relation" scheme="URI" content="adl1504650516665.html" /><meta name="DC.Relation" scheme="URI" content="rxh1505158882108.html" /><meta name="DC.Relation" scheme="URI" content="wav1506099183001.html" /><meta name="DC.Relation" scheme="URI" content="vyq1505162751314.html" /><meta name="DC.Relation" scheme="URI" content="rxh1505158882108.html" /><meta name="DC.Relation" scheme="URI" content="vyq1505162751314.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ayn1506128394422" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>BPC/BCC tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="ayn1506128394422">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="adl1504650516665.html" title="IFE tuning">IFE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="adl1504650516665.html" title="IFE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IFE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">BPC/BCC tuning concepts </h1>
+
+	<div class="body conbody">
+		<div class="section" id="ayn1506128394422__section_N10012_N1000F_N10001">
+			<div class="p">Defective pixels may show up on an image as bright points (hot
+				pixels) or as dark points (cold pixels). <div class="fig fignone nonumber" id="ayn1506128394422__fig_mhm_1gp_hbb"><span class="figcap">Figure : (L) Original image, BPC/BCC off; (R) BPC/BCC on,
+						defective pixels corrected</span>
+					
+					<br /><img class="image" id="ayn1506128394422__image_m23_ghp_hbb" src="ryf1506094423012.png" /><br />
+				</div>
+</div>
+
+			<p class="p">Defective pixels can be caused by the following: </p>
+
+			<ul class="ul" id="ayn1506128394422__ul_2A63ED6975B541AE978FECDF58CEA348">
+				<li class="li" id="ayn1506128394422__li_6A7165F7A3204708A2D3BD10538CDC91">Imperfections in the
+					semiconductor processing of the sensor module (CMOS or CCD) – During
+					manufacturing, bad pixels or clusters can be caused by leakage to or from the
+					well, abnormal pixel sensitivity, or resistance losses. </li>
+
+				<li class="li" id="ayn1506128394422__li_6FF0F7DD54AD4ED393CCA87215C6852F">Dust introduced when
+					lens is mounted – A dust particle can fall on top of the sensor when the lens is
+					mounted. </li>
+
+				<li class="li" id="ayn1506128394422__li_47E5A0E671D948E9B0929F60BCDC2F82">Age of the sensor
+					module – Over time, a sensor module accumulates more bad pixels. </li>
+
+			</ul>
+
+			<p class="p">For a sensor that uses the Bayer pattern, if the value of a hot pixel
+				value is significantly higher than its neighbors or if the value of a cold pixel
+				value is significantly lower than its neighbors, the bad pixel correction (BPC) and
+				bad couplet correction (BCC) module evaluates it for correction. The following
+				figure shows a single bad pixel in the center (black square) with its eight
+				neighboring pixels (outlined) on the same channel.</p>
+
+			<div class="fig fignone nonumber" id="ayn1506128394422__fig_e2w_vhk_hbb"><span class="figcap">Figure : (Top L) Red channel neighbors; (Top R) Gr channel neighbors;
+					(Bottom L) Gb channel neighbors; (Bottom R) B channel neighbors</span>
+				
+				<br /><img class="image" id="ayn1506128394422__image_tyx_dtl_hbb" src="okw1506048230232.png" /><br />
+			</div>
+
+			<p class="p">Two neighboring defective pixels are called couplets. The BCC module
+				can correct couplets that are in the same channel or cross-channel as shown in the
+				image.</p>
+
+			<div class="fig fignone nonumber" id="ayn1506128394422__fig_wzr_53k_hbb"><span class="figcap">Figure : (L) Cross-channel couplet, Gb and Gr channels; (R) Same
+					channel couplet, Gb channel</span>
+				
+				<br /><img class="image" id="ayn1506128394422__image_jbz_zyl_hbb" src="xez1506055345929.png" /><br />
+			</div>
+
+			<p class="p">BPC/BCC does not correct clusters of three or more bad pixels, such
+				as those shown in the figure.</p>
+
+			<div class="fig fignone nonumber" id="ayn1506128394422__fig_vj2_zzl_hbb"><span class="figcap">Figure : Example of clusters of 3+ bad pixels not corrected with
+					BPC/BCC</span>
+				
+				<br /><img class="image" id="ayn1506128394422__image_t25_21m_hbb" src="ung1506055349557.png" /><br />
+			</div>
+
+			<div class="p">To correct hot pixels, the module evaluates the value of the center
+				pixel with the formula: (Fmax * MP) + BPC Offset 
+				<ul class="ul" id="ayn1506128394422__ul_mwv_glj_hbb">
+					<li class="li">MP is the maximum pixel value from among the eight
+						neighboring pixels of the same channel</li>
+
+					<li class="li">Fmax is a user-defined threshold factor that specifies which
+						pixels to correct</li>
+
+					<li class="li">BPC offset is a user-defined adjustment value that further
+						refines the threshold for a bad pixel</li>
+
+					<li class="li">If the value of the center pixel is greater than the result,
+						replace the center pixel with the value of MP. If the center pixel value is
+						less than or equal to the result, do not change the center pixel value.</li>
+
+				</ul>
+</div>
+
+			<p class="p">The following figure is a sample plot of the hot pixel equation. <br /><img class="image" id="ayn1506128394422__image_txz_wq4_ndb" src="ftn1524003930205.svg" /><br /></p>
+
+			<div class="p">Similarly, to correct cold pixels, the module evaluates the value of
+				the center pixel with the formula: (Fmax * mP) + BPC Offset 
+				<ul class="ul" id="ayn1506128394422__ul_jrf_24j_hbb">
+					<li class="li">mP is the minimum pixel value from among the eight
+						neighboring pixels of the same channel</li>
+
+					<li class="li">Fmin is a user-defined threshold factor that specifies which
+						pixels to correct</li>
+
+					<li class="li">BPC offset is a user-defined adjustment value that further
+						refines the threshold for a bad pixel</li>
+
+					<li class="li">If the value of the center pixel is less than the result,
+						replace the center pixel with the value of mP. If the center pixel value is
+						greater than or equal to the result, do not change the center pixel
+						value.</li>
+
+				</ul>
+</div>
+
+			<p class="p">The following figure is a sample plot of the cold pixel equation. <br /><img class="image" id="ayn1506128394422__image_unj_zq4_ndb" src="uga1524003933341.svg" /><br /></p>
+
+			<p class="p">For similar single pixel correction on an zzHDR pattern, see the
+				DSBPC submodule in the PDPC module.</p>
+
+		</div>
+
+		<div class="section" id="ayn1506128394422__section_N100F6_N10015_N10001"><h2 class="title sectiontitle">Coordinating BPC/BCC with other IFE modules</h2>
+			
+			<div class="p">Keep the following considerations in mind when tuning IFE modules:
+					<ul class="ul" id="ayn1506128394422__ul_td3_wsr_hbb">
+					<li class="li">BPC/BCC does not rely on other modules to be tuned, but if
+						the BPC/BCC module is not properly tuned, all modules that follow it in the
+						pipeline are impacted </li>
+
+					<li class="li">For BPC/BCC tuning, only enable the basic modules that are
+						needed to result in final YUV images </li>
+
+					<li class="li">Consider disabling BPC/BCC while tuning other modules to
+						avoid any negative impact of untuned pixel correction parameters.</li>
+
+				</ul>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="rxh1505158882108.html">BPC/BCC parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="wav1506099183001.html">Examples of BPC/BCC parameter effects</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="vyq1505162751314.html">Tune BPC/BCC</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="rxh1505158882108.html" title="BPC/BCC parameters">BPC/BCC parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="vyq1505162751314.html" title="Tune BPC/BCC">Tune BPC/BCC</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="adl1504650516665.html" title="IFE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IFE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

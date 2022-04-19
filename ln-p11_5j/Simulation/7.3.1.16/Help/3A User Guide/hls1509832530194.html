@@ -1,0 +1,644 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="To view the face-assist parameters, open a project, click the AWB tab, and click Face Assist AWB in the List View tab. Table :   Face-assist SA basic tuning parameters Parameter name Description ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="FA SA parameters" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="jdc1509824323481.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="hls1509832530194" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>FA SA parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="hls1509832530194">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eha1508957872352.html" title="AWB scene analyzers">AWB scene analyzers</a> / <a class="navheader_parent_path" href="jdc1509824323481.html" title="Face-assist scene analyzer concept">Face-assist scene analyzer concept</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">FA SA parameters</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc"></p>
+
+		<p class="p">To view the face-assist parameters, open a project, click the
+				<span class="ph uicontrol">AWB</span> tab, and click <span class="ph uicontrol">Face Assist
+				AWB </span> in the <span class="ph uicontrol">List View</span> tab.</p>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="hls1509832530194__table_lvz_ld4_bdb" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table :   Face-assist SA basic tuning parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d22773e50">Parameter
+							name</th>
+
+						<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d22773e53">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d22773e56">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d22773e59">Factory
+							default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e50 ">Face Assist SA Weight</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e53 ">A numerical value used to weight this SA when
+							the Decision Aggregator computes a weighted average among all SA
+							decision points</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e56 "><p class="p"> In general, the main camera project uses
+								a lower weight for face AWB, while the front camera project uses a
+								higher weight for face AWB.</p>
+Range = [0, 1]</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e59 ">1</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e50 ">ROI X scale</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e53 ">Reduces the regular face ROI
+							width (x) to create the AWB face ROI width. A smaller ROI avoids
+							collecting misleading background BG stats.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e56 ">Reduce if AWB collects too many misleading
+							stats in face images<p class="p">Range: 0.2 - 0.5</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e59 ">0.33</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e50 ">ROI Y scale </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e53 ">Reduces the regular face ROI
+							height (y) to create the AWB face ROI height. A smaller ROI avoids
+							collecting misleading background BG stats.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e56 ">Reduce if AWB collects too many misleading
+							stats in face images<p class="p">Range: 0.2 - 0.5</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e59 ">0.375</td>
+
+					</tr>
+
+					<tr class="row"><td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e50 ">Face Select
+							Threshold</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e53 ">Threshold to determine if another face is
+							larger than the last face. If new face ROI is larger than current face
+							ROI * threshold, use the new face ROI.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e56 ">Default values should be adequate. <p class="p">Adjust
+								to determine which face to analyze in a multiple face
+								condition.</p>
+<p class="p">Range: 1.3 - 2.5</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e59 ">1.50</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e50 ">Face Detection Count Threshold</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e53 ">The stable count starts when a face is
+							detected. The face awb convergence speed is used if stable count is
+							larger than this threshold.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e56 ">Suggest use default value. <p class="p">Range: 10 - 40</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e59 ">10</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e50 ">No Face Detection Count Threshold</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e53 ">The off count starts when face ROI is off. The
+							regular convergence3 speed is used if off count is higher than this
+							threshold.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e56 ">Suggest use default value. <p class="p">Range: 30 - 150</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e59 ">30</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e50 ">Convergence Speed for Face
+							AWB</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e53 ">Convergence speed used to evaluate face input
+							image. For ROI stability concerns, the default setting is much lower for
+							face AWB than regular AWB.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e56 ">Use a slower convergence speed to avoid
+							unstable ROI input. The smaller this value, the slower the convergence
+							speed. <p class="p">Range: 0.01 - 0.10</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e59 ">0.03</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="hls1509832530194__table_dxk_k2t_v1b" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Face-assist SA dark pixel/saturation pixel threshold tuning
+				parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e210">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e213">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e216">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e219">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e210 ">Dark pixel threshold: Trigger data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e213 "> Start and end lux index values for the trigger
+							range. If lux index is in this range, face-assist uses the R/G/B core
+							data as the dark threshold.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e216 ">Default values should be adequate. <p class="p">Add multiple trigger ranges if
+								needed.</p>
+<p class="p">Range: 0 - 999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e219 ">{0, 999}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e210 ">Dark pixel threshold: Core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e213 ">The R/G/B dark threshold for face stats. Represents lowest acceptable
+							brightness value.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e216 ">Default values should be adequate.<p class="p">Suggest to set a
+								higher value for face stats than what is set for the Dark Pixel
+								Threshold in the stats screening module. </p>
+<p class="p">If
+								stats brightness value is lower than this threshold, stats are
+								ignored.</p>
+<p class="p">Range: 0.0 - 15.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e219 ">(5,5,5)</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e210 ">Saturation pixel threshold: Trigger data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e213 "> Start and end lux index values for the trigger range. If lux index
+							is in this range, face-assist uses the R/G/B core data as the saturation
+							threshold.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e216 ">Default values should be adequate. <p class="p">Add multiple trigger ranges if
+								needed.</p>
+<p class="p">Range: 0 - 999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e219 ">{0, 999}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e210 ">Saturation pixel threshold: Core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e213 ">The R/G/B saturation threshold for face stats. Represents highest
+							acceptable brightness value.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e216 ">Default values should be adequate. <p class="p">Suggest use the
+								same value as regular Saturation Pixel Threshold in the stats
+								screening module. </p>
+<p class="p">If stats brightness value
+								is higher than this threshold, stats are ignored.</p>
+<p class="p">Range: 200.0 - 255.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e219 ">(240,240,240)</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="hls1509832530194__table_mh3_djd_2db" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Face-assist SA light/dark skin WB target tuning
+				parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e329">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e332">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e335">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e338">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e329 ">Light skin WB target: 1st trigger: Lux Index </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e332 "> Start and end lux index values for the trigger
+							range.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e335 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 - 999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e338 ">{0, 999}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e329 ">Light skin WB target: 2nd trigger: CCT </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e332 "> Start and end CCT values for the trigger
+							range.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e335 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 - 15000</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e338 ">{0, 15000}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e329 ">Light skin WB target: Core Data </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e332 ">The (R, B) target value assigned to each trigger
+							row.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e335 ">Specify applicable R/B target for each trigger row.
+								<p class="p">Range: 0.0 - 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e338 ">(1.4, 0.856)</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e329 ">Dark skin WB target: 1st trigger: Lux Index </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e332 "> Start and end lux index values for the trigger range.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e335 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 -
+								999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e338 ">{0, 999}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e329 ">Dark skin WB target: 2nd trigger: CCT </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e332 "> Start and end CCT values for the trigger range.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e335 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 -
+								15000</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e338 ">{0, 15000}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e329 ">Dark skin WB target: Core Data </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e332 ">The (R, B) target value assigned to each trigger
+							row.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e335 ">Specify applicable R/B target for each trigger row.
+								<p class="p">Range: 0.0 - 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e338 ">(1.32, 0.8)</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="hls1509832530194__table_k5g_sp1_2db" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Face-assist SA skin type interpolation weight tuning parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e471">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e474">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e477">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e480">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 1: 1st trigger: Lux Index </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">Start and end lux index values for the trigger
+							range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 - 999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 ">{0, 999}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 1: 2nd trigger: Skin Type
+							Distance Ratio </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">Start and end distance ratio values for the trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 -
+								999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 ">
+							<p class="p">{0, 0.3}</p>
+
+							<p class="p">{3.5, 999}</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 1: Core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">The interpolation weight assigned to each trigger row.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Specify applicable interpolation weight for each trigger row. <p class="p">Range: 0.0 - 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 ">
+							<p class="p">(0)</p>
+
+							<p class="p">(1)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 2: 1st trigger: Lux Index </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">Start and end lux index values for the trigger
+							range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 - 999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 ">
+							<p class="p">{0, 190}</p>
+
+							<p class="p">{290, 999}</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 2: 2nd trigger: CCT </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">Start and end CCT values for the trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 -
+								9999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 ">
+							<p class="p">{0, 2800}</p>
+
+							<p class="p">{4500, 9999}</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 2: Core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">The interpolation weight assigned to each trigger row.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Specify applicable interpolation weight for each trigger row. <p class="p">Range: 0.0 - 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 ">
+							<p class="p">(0.5)</p>
+
+							<p class="p">(0.95)</p>
+
+							<p class="p">(0.95)</p>
+
+							<p class="p">(0.8)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 3: 1st trigger: Lux
+							Index</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">Start and end lux index values for the trigger
+							range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 - 15000</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 ">
+							<p class="p">{0, 190}</p>
+
+							<p class="p">{290, 999}</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 3: 2nd trigger: CCT </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">Start and CCT values for the trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Add multiple trigger ranges if needed. <p class="p">Range: 0.0 - 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 ">
+							<p class="p">{0, 2800}</p>
+
+							<p class="p">{4500, 9999}</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e471 ">Interpolation Weight 3: Core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e474 ">The interpolation weight assigned to each trigger row.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e477 ">Specify applicable interpolation weight for each trigger row. <p class="p">Range: 0.0 - 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e480 "><p class="p">(0.3)</p>
+
+							<p class="p">(0.95)</p>
+
+							<p class="p">(0.95)</p>
+
+							<p class="p">(0.3)</p>
+
+						</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="hls1509832530194__table_p2n_kn1_2db" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Face-assist SA confidence level tuning parameters</span></caption><colgroup><col /><col /><col /><col /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e724">Parameter Name</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e727">Description</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e730">Tuning</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d22773e733">Factory Default</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e724 ">Confidence Level 1: 1st trigger: Lux Index </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e727 ">Start and end lux index values for the trigger
+							range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e730 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 - 999</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e733 ">{0, 999}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e724 ">Confidence Level 1: 2nd trigger: Face Stats Count Ratio </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e727 ">Start and end face stats count ratio values for the trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e730 ">Add multiple trigger ranges if needed. <p class="p">Range: 0.0
+								- 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e733 ">
+							<p class="p">{0.0, 0.003}</p>
+
+							<p class="p">{0.008, 0.025}</p>
+
+							<p class="p">{0.035, 0.05}</p>
+
+							<p class="p">{0.18, 1.0}</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e724 ">Confidence Level 1: Core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e727 ">The confidence level assigned to each trigger
+							row.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e730 ">Specify applicable confidence level for each trigger
+							row. <p class="p">Range: 0.0 - 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e733 ">
+							<p class="p">(0.0)</p>
+
+							<p class="p">(0.3)</p>
+
+							<p class="p">(0.4)</p>
+
+							<p class="p">(0.7)</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e724 ">Confidence Level 2: 1st trigger: CCT </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e727 ">Start and end CCT values for the trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e730 ">Add multiple trigger ranges if needed. <p class="p">Range: 0 - 15000</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e733 ">{0, 15000}</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e724 ">Confidence Level 2: 2nd trigger: Face Stats Count Ratio </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e727 ">Start and end face stats count ratio values for the trigger range. </td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e730 ">Add multiple trigger ranges if needed. <p class="p">Range: 0.0
+								- 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e733 ">
+							<p class="p">{0.0, 1.0}</p>
+
+						</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e724 ">Confidence Level 2: Core data</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e727 ">The confidence level assigned to each trigger
+							row.</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e730 ">Specify applicable confidence level for each trigger
+							row. <p class="p">Range: 0.0 - 1.0</p>
+</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d22773e733 ">(1.0)</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="jdc1509824323481.html" title="Face-assist scene analyzer concept"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Face-assist scene analyzer concept</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

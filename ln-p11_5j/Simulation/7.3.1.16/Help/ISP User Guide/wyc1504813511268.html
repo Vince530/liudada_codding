@@ -1,0 +1,197 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The PDPC module includes processing for both phase detection pixel correction (PDPC) and dynamic single bad pixel correction (DSBPC). PD pixel correction and DSBPC may be enabled separately in the ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="PDPC/DSBPC tuning concepts" /><meta name="DC.Relation" scheme="URI" content="adl1504650516665.html" /><meta name="DC.Relation" scheme="URI" content="eep1505158466711.html" /><meta name="DC.Relation" scheme="URI" content="bmn1506096442244.html" /><meta name="DC.Relation" scheme="URI" content="tbl1505162071544.html" /><meta name="DC.Relation" scheme="URI" content="eep1505158466711.html" /><meta name="DC.Relation" scheme="URI" content="tbl1505162071544.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="wyc1504813511268" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>PDPC/DSBPC tuning concepts</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="wyc1504813511268">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="pxo1494872380913.html" title="Spectra 2xx ISP Tuning">Spectra 2xx ISP Tuning</a> / <a class="navheader_parent_path" href="adl1504650516665.html" title="IFE tuning">IFE tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="adl1504650516665.html" title="IFE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IFE tuning</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">PDPC/DSBPC tuning concepts </h1>
+
+	<div class="body conbody">
+		<p class="p">The PDPC module includes processing for both phase detection pixel correction
+			(PDPC) and dynamic single bad pixel correction (DSBPC). PD pixel correction and DSBPC
+			may be enabled separately in the PDPC module, if appropriate. Use the table below to
+			determine the pixel correction processes to tune for your project.</p>
+
+		
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="wyc1504813511268__table_fs1_k3c_hbb" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : IFE pixel correction processes matrix</span></caption><colgroup><col style="width:25%" /><col style="width:25%" /><col style="width:25%" /><col style="width:25%" /></colgroup><thead class="thead" style="text-align:left;">
+					<tr class="row">
+						<th class="entry cellrowborder" colspan="2" style="text-align:left;vertical-align:top;" id="d38836e41"> </th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d38836e43">PD pixel sensor</th>
+
+						<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d38836e46">Non-PD pixel sensor</th>
+
+					</tr>
+
+				</thead>
+<tbody class="tbody">
+					<tr class="row">
+						<td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d38836e41 "><strong class="ph b">No
+							zzHDR</strong></td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e41 ">Non PD pixel</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e43 ">Not applicable</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e46 ">Not applicable</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e41 ">PD pixel</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e43 ">PDPC</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e46 ">Not applicable</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" rowspan="2" style="text-align:left;vertical-align:top;" headers="d38836e41 "><strong class="ph b">zzHDR</strong></td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e41 ">zzHDR T1 (long exposure)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e43 ">PDPC/DSBPC</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e46 ">DSBPC</td>
+
+					</tr>
+
+					<tr class="row">
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e41 ">zzHDR T2 (short exposure)</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e43 ">DSBPC</td>
+
+						<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d38836e46 ">DSBPC</td>
+
+					</tr>
+
+				</tbody>
+</table>
+</div>
+
+		<div class="section" id="wyc1504813511268__section_N10098_N10015_N10001"><h2 class="title sectiontitle">PD pixel correction concepts</h2>
+			
+			<p class="p">A CMOS sensor can have phase pixels to speed up autofocus. One
+				difference between phase pixels and the normal pixels in a sensor is that the
+				location of the phase pixels is known. The PDPC module takes advantage of this
+				location information to correct defective PD pixels that occur in those locations.
+				Camera software detects phase pixel information in the sensor or driver information
+				file and passes it to the simulator. Currently, the PDPC module only corrects bad PD
+				pixels if they are on a red or blue pixel. Green pixels are not corrected at this
+				time.</p>
+
+			<p class="p">Because the PDPC module knows the location of a defective phase pixel, it has
+				all the information it needs to make a correction based on the neighboring pixels.
+				Thus, there is no parameter tuning required for PD pixel correction. The PD pixel
+				correction supports sensors that use the non-zzHDR and zzHDR patterns. </p>
+
+			<div class="fig fignone nonumber" id="wyc1504813511268__fig_qj3_w5l_dbb"><span class="figcap">Figure : (L) Original image, PDPC off, defective PD pixels on blue
+					locations; (R) PDPC on, defective PD pixels corrected</span>
+				
+				<br /><img class="image" id="wyc1504813511268__image_bzt_45l_dbb" src="wci1504817582509.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="wyc1504813511268__section_N100BE_N10015_N10001"><h2 class="title sectiontitle">DSBPC concepts</h2>
+			
+			<p class="p">Use DSBPC processing to correct bad pixels for a non-PD pixel sensor project that
+				uses the zzHDR pattern.</p>
+
+			<div class="fig fignone nonumber" id="wyc1504813511268__fig_mhm_1gp_hbb"><span class="figcap">Figure : (L) Original image, DSBPC off; (R) DSBPC on, defective
+					pixels corrected</span>
+				
+				<br /><img class="image" id="wyc1504813511268__image_m23_ghp_hbb" src="ryf1506094423012.png" /><br />
+			</div>
+
+			<div class="p">To correct hot pixels, the module evaluates the value of the center
+				pixel with the formula: (Fmax * MP) + BPC Offset <ul class="ul" id="wyc1504813511268__ul_mwv_glj_hbb">
+					<li class="li">MP is the maximum pixel value from among the neighboring
+						pixels of the same channel</li>
+
+					<li class="li">Fmax is a user-defined threshold factor that specifies which
+						pixels to correct</li>
+
+					<li class="li">BPC offset is a user-defined adjustment value that further
+						refines the threshold for a bad pixel</li>
+
+					<li class="li">If the value of the center pixel is greater than the result,
+						replace the center pixel with the value of MP. If the center pixel value is
+						less than or equal to the result, do not change the center pixel value.</li>
+
+				</ul>
+</div>
+
+			<p class="p">The following figure is a sample plot of the hot pixel equation. <br /><img class="image" id="wyc1504813511268__image_cwn_4q4_ndb" src="ftn1524003930205.svg" /><br /></p>
+
+			<div class="p">Similarly, to correct cold pixels, the module evaluates the value of
+				the center pixel with the formula: (Fmax * mP) + BPC Offset <ul class="ul" id="wyc1504813511268__ul_jrf_24j_hbb">
+					<li class="li">mP is the minimum pixel value from among the neighboring
+						pixels of the same channel</li>
+
+					<li class="li">Fmin is a user-defined threshold factor that specifies which
+						pixels to correct</li>
+
+					<li class="li">BPC offset is a user-defined adjustment value that further
+						refines the threshold for a bad pixel</li>
+
+					<li class="li">If the value of the center pixel is less than the result,
+						replace the center pixel with the value of mP. If the center pixel value is
+						greater than or equal to the result, do not change the center pixel
+						value.</li>
+
+				</ul>
+</div>
+
+			<p class="p">The following figure is a sample plot of the cold pixel equation. <br /><img class="image" id="wyc1504813511268__image_ws1_mq4_ndb" src="uga1524003933341.svg" /><br /></p>
+
+		</div>
+
+		<div class="section" id="wyc1504813511268__section_N10038_N10015_N10001"><h2 class="title sectiontitle">Coordinating PDPC with other IFE modules</h2>
+			
+			<div class="p">Keep the following considerations in mind when tuning IFE modules:
+					<ul class="ul" id="wyc1504813511268__ul_g2z_fwl_dbb">
+					<li class="li">If the sensor used for the project is a PD sensor, PDPC must be
+						enabled.</li>
+
+					<li class="li">PDPC does not rely on other modules to be tuned, but if the PDPC module is
+						not properly tuned, all modules that follow it in the pipeline are impacted
+							</li>
+
+					<li class="li">For PDPC tuning, only enable the basic modules that are needed to result
+						in final YUV images </li>
+
+				</ul>
+</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="eep1505158466711.html">PDPC/DSBPC parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="bmn1506096442244.html">Examples of DSBPC parameter effects</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="tbl1505162071544.html">Tune PDPC/DSBPC</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="eep1505158466711.html" title="PDPC/DSBPC parameters">PDPC/DSBPC parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="tbl1505162071544.html" title="Tune PDPC/DSBPC">Tune PDPC/DSBPC</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="adl1504650516665.html" title="IFE tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">IFE tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

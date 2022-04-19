@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2019 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<Flash
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\aec\aecFlash.xsd">
+  <module_version major_revision="8" minor_revision="0" incr_revision="2"/>
+  <parameter_version>
+    <revision>A</revision>
+  </parameter_version>
+  <flashMtr>
+    <flashLumaTarget>
+      <enableFlashTarget>false</enableFlashTarget>
+      <flashTarget>
+        <luxLumaTargetZone>
+          <zoneTrigger>
+            <start>0</start>
+            <end>190</end>
+          </zoneTrigger>
+          <!--
+
+	AEC Tuning: Key metering structures
+
+	 -->
+          <zoneData>
+            <lumaTarget>45</lumaTarget>
+          </zoneData>
+        </luxLumaTargetZone>
+        <luxLumaTargetZone>
+          <zoneTrigger>
+            <start>230</start>
+            <end>360</end>
+          </zoneTrigger>
+          <!--
+
+	AEC Tuning: Key metering structures
+
+	 -->
+          <zoneData>
+            <lumaTarget>45</lumaTarget>
+          </zoneData>
+        </luxLumaTargetZone>
+        <luxLumaTargetZone>
+          <zoneTrigger>
+            <start>420</start>
+            <end>1000</end>
+          </zoneTrigger>
+          <!--
+
+	AEC Tuning: Key metering structures
+
+	 -->
+          <zoneData>
+            <lumaTarget>25</lumaTarget>
+          </zoneData>
+        </luxLumaTargetZone>
+      </flashTarget>
+      <!--
+
+Base Type Tuning Definition
+
+ -->
+      <flashInfluenceTargetInterpolation>
+        <start>2</start>
+        <end>5</end>
+      </flashInfluenceTargetInterpolation>
+    </flashLumaTarget>
+    <smartFlash>
+      <enableSmartFlashEst>true</enableSmartFlashEst>
+      <smartFlashEstStrength>1</smartFlashEstStrength>
+      <minOffStats>3</minOffStats>
+      <kFloorPct>0.8</kFloorPct>
+      <satPreventStrength>0</satPreventStrength>
+      <enableSpeckleHandling>true</enableSpeckleHandling>
+      <!--
+
+Base Type Tuning Definition
+
+ -->
+      <speckleSatPctRange>
+        <start>0.05</start>
+        <end>0.35</end>
+      </speckleSatPctRange>
+    </smartFlash>
+    <statsPreprocessing>
+      <thresBrightLevelDiff>30</thresBrightLevelDiff>
+      <thresBrightLevel>190</thresBrightLevel>
+      <thresBrightSatDiff>0.1</thresBrightSatDiff>
+      <thresBrightSat>0</thresBrightSat>
+      <minLuma>15</minLuma>
+      <minLumaAdj>0.55</minLumaAdj>
+      <minLumaAdjDynamic>
+        <enableDynamicMinAdj>false</enableDynamicMinAdj>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <percThresh>
+          <start>0.1</start>
+          <end>0.7</end>
+        </percThresh>
+        <minLumaAdjEnd>0.1</minLumaAdjEnd>
+      </minLumaAdjDynamic>
+    </statsPreprocessing>
+    <FDFlash>
+      <enableFDFlash>true</enableFDFlash>
+      <!--
+
+Base Type Tuning Definition
+
+ -->
+      <ledFaceWeight>
+        <start>0.6</start>
+        <end>0.9</end>
+      </ledFaceWeight>
+      <!--
+
+Base Type Tuning Definition
+
+ -->
+      <ledFaceSize>
+        <start>0.1</start>
+        <end>0.3</end>
+      </ledFaceSize>
+      <FDFlashFrameCount>5</FDFlashFrameCount>
+      <FDFlashLumaTarget>65</FDFlashLumaTarget>
+      <!--
+
+Base Type Tuning Definition
+
+ -->
+      <faceSizeExpEffect>
+        <start>0.1</start>
+        <end>0.2</end>
+      </faceSizeExpEffect>
+      <statsUpdateDelayTimeEnter>0</statsUpdateDelayTimeEnter>
+      <statsUpdateDelayTimeExit>3</statsUpdateDelayTimeExit>
+      <dynamicDelay>
+        <enableFDDynamicDelay>false</enableFDDynamicDelay>
+        <minLumaToSkipPreFD>25</minLumaToSkipPreFD>
+      </dynamicDelay>
+    </FDFlash>
+    <TrackerFlash>
+      <enableTrackerFlash>true</enableTrackerFlash>
+      <!--
+
+Base Type Tuning Definition
+
+ -->
+      <ledTrackerWeight>
+        <start>0.6</start>
+        <end>0.9</end>
+      </ledTrackerWeight>
+      <!--
+
+Base Type Tuning Definition
+
+ -->
+      <ledTrackerSize>
+        <start>0.1</start>
+        <end>0.3</end>
+      </ledTrackerSize>
+      <TrackerFlashFrameCount>5</TrackerFlashFrameCount>
+      <TrackerFlashLumaTarget>65</TrackerFlashLumaTarget>
+      <!--
+
+Base Type Tuning Definition
+
+ -->
+      <trackerSizeExpEffect>
+        <start>0.1</start>
+        <end>0.2</end>
+      </trackerSizeExpEffect>
+      <statsUpdateDelayTimeEnter>0</statsUpdateDelayTimeEnter>
+      <statsUpdateDelayTimeExit>3</statsUpdateDelayTimeExit>
+      <dynamicTrackerDelay>
+        <enableTrackerDynamicDelay>false</enableTrackerDynamicDelay>
+        <minLumaToSkipPreTracker>25</minLumaToSkipPreTracker>
+      </dynamicTrackerDelay>
+    </TrackerFlash>
+  </flashMtr>
+  <flashConv>
+    <flashTuningBreak>4</flashTuningBreak>
+    <preflashConv>
+      <frameSkipMethod>SmoothNoSkip</frameSkipMethod>
+      <aggressiveness>1</aggressiveness>
+      <settledFrameCountThres>2</settledFrameCountThres>
+      <preflashFrameCounterEnter>
+        <type>SwitchCounterSystemDelay</type>
+        <customInteger>0</customInteger>
+      </preflashFrameCounterEnter>
+      <preflashFrameCounterExit>
+        <type>SwitchCounterSystemDelay</type>
+        <customInteger>0</customInteger>
+      </preflashFrameCounterExit>
+      <dynamicEnterSkip>
+        <enableDynamicEnterSkip>false</enableDynamicEnterSkip>
+        <preflashMinFrameSkip>2</preflashMinFrameSkip>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <FPSRange>
+          <start>10</start>
+          <end>30</end>
+        </FPSRange>
+      </dynamicEnterSkip>
+    </preflashConv>
+    <flashMeasurementConv>
+      <!--
+
+Rapid Startup is used by both Startup and Flash algorithms
+
+ -->
+      <firstFrameBias>
+        <enableStartUpBias>true</enableStartUpBias>
+        <firstFrameStepSizeDarkMax>100</firstFrameStepSizeDarkMax>
+        <!--
+
+Base Type Tuning Definition
+
+ -->
+        <stepSizeBrightAdjRange>
+          <start>30</start>
+          <end>50</end>
+        </stepSizeBrightAdjRange>
+        <maxAdjFactor>2.3</maxAdjFactor>
+      </firstFrameBias>
+      <startExpIndex>220</startExpIndex>
+      <tolMultUnitStepSize>3</tolMultUnitStepSize>
+      <frameSkipInit>2</frameSkipInit>
+      <frameSkip>2</frameSkip>
+      <minSettledCount>4</minSettledCount>
+      <maxFrameConvTimeOut>12</maxFrameConvTimeOut>
+    </flashMeasurementConv>
+    <torchConv>
+      <enableTorchConvergence>false</enableTorchConvergence>
+      <tolMultUnitStepSize>2</tolMultUnitStepSize>
+      <frameSkipMethod>SmoothNoSkip</frameSkipMethod>
+      <aggressiveness>0.9</aggressiveness>
+      <startupAggressiveness>4</startupAggressiveness>
+      <ADRCConvSpeed>0.15</ADRCConvSpeed>
+    </torchConv>
+  </flashConv>
+  <flashArb>
+    <expTableIDPreFlash>0</expTableIDPreFlash>
+    <expTableIDMainFlash>0</expTableIDMainFlash>
+    <expTableIDFlashMeasurement>0</expTableIDFlashMeasurement>
+  </flashArb>
+  <flashExt>
+    <!--
+
+Base Type Tuning Definition
+
+ -->
+    <flashLuxTrigger>
+      <start>410</start>
+      <end>420</end>
+    </flashLuxTrigger>
+    <!--
+
+Base Type Tuning Definition
+
+ -->
+    <flashFDRequestDelayLuxTrigger>
+      <start>500</start>
+      <end>510</end>
+    </flashFDRequestDelayLuxTrigger>
+    <LEDTable>
+      <enableDualLED>true</enableDualLED>
+      <dualLEDIntersectSlope>1</dualLEDIntersectSlope>
+      <LEDPowerSize>5</LEDPowerSize>
+      <LEDMixSize>11</LEDMixSize>
+      <CCTTables>
+        <LED1Setting>120</LED1Setting>
+        <LED2Setting>0</LED2Setting>
+        <RGRatio>1.070232</RGRatio>
+        <BGRatio>0.452965</BGRatio>
+        <flux>1</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>108</LED1Setting>
+        <LED2Setting>12</LED2Setting>
+        <RGRatio>0.9998625</RGRatio>
+        <BGRatio>0.464287</BGRatio>
+        <flux>0.9779375</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>96</LED1Setting>
+        <LED2Setting>24</LED2Setting>
+        <RGRatio>0.929493</RGRatio>
+        <BGRatio>0.475609</BGRatio>
+        <flux>0.955875</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>84</LED1Setting>
+        <LED2Setting>36</LED2Setting>
+        <RGRatio>0.955311</RGRatio>
+        <BGRatio>0.502927</BGRatio>
+        <flux>0.974902</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>72</LED1Setting>
+        <LED2Setting>48</LED2Setting>
+        <RGRatio>0.940169</RGRatio>
+        <BGRatio>0.528</BGRatio>
+        <flux>1.000619</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>60</LED1Setting>
+        <LED2Setting>60</LED2Setting>
+        <RGRatio>0.897103</RGRatio>
+        <BGRatio>0.548496</BGRatio>
+        <flux>1.011832</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>48</LED1Setting>
+        <LED2Setting>72</LED2Setting>
+        <RGRatio>0.859733</RGRatio>
+        <BGRatio>0.569223</BGRatio>
+        <flux>1.024865</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>36</LED1Setting>
+        <LED2Setting>84</LED2Setting>
+        <RGRatio>0.812529</RGRatio>
+        <BGRatio>0.585662</BGRatio>
+        <flux>1.03313</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>24</LED1Setting>
+        <LED2Setting>96</LED2Setting>
+        <RGRatio>0.771955</RGRatio>
+        <BGRatio>0.606049</BGRatio>
+        <flux>1.041085</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>12</LED1Setting>
+        <LED2Setting>108</LED2Setting>
+        <RGRatio>0.7187735</RGRatio>
+        <BGRatio>0.6122115</BGRatio>
+        <flux>1.063665</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>0</LED1Setting>
+        <LED2Setting>120</LED2Setting>
+        <RGRatio>0.665592</RGRatio>
+        <BGRatio>0.618374</BGRatio>
+        <flux>1.086245</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>350</LED1Setting>
+        <LED2Setting>0</LED2Setting>
+        <RGRatio>1.211611</RGRatio>
+        <BGRatio>0.402372</BGRatio>
+        <flux>1.88395</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>315</LED1Setting>
+        <LED2Setting>35</LED2Setting>
+        <RGRatio>1.197851</RGRatio>
+        <BGRatio>0.441891</BGRatio>
+        <flux>1.931577</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>280</LED1Setting>
+        <LED2Setting>70</LED2Setting>
+        <RGRatio>1.130056</RGRatio>
+        <BGRatio>0.480637</BGRatio>
+        <flux>2.026488</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>245</LED1Setting>
+        <LED2Setting>105</LED2Setting>
+        <RGRatio>1.062622</RGRatio>
+        <BGRatio>0.514954</BGRatio>
+        <flux>2.09855</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>210</LED1Setting>
+        <LED2Setting>140</LED2Setting>
+        <RGRatio>1.00274</RGRatio>
+        <BGRatio>0.544981</BGRatio>
+        <flux>2.147599</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>175</LED1Setting>
+        <LED2Setting>175</LED2Setting>
+        <RGRatio>0.948559</RGRatio>
+        <BGRatio>0.572611</BGRatio>
+        <flux>2.196384</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>140</LED1Setting>
+        <LED2Setting>210</LED2Setting>
+        <RGRatio>0.908942</RGRatio>
+        <BGRatio>0.599718</BGRatio>
+        <flux>2.228765</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>105</LED1Setting>
+        <LED2Setting>245</LED2Setting>
+        <RGRatio>0.846653</RGRatio>
+        <BGRatio>0.62404</BGRatio>
+        <flux>2.243745</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>70</LED1Setting>
+        <LED2Setting>280</LED2Setting>
+        <RGRatio>0.79571</RGRatio>
+        <BGRatio>0.656859</BGRatio>
+        <flux>2.251943</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>35</LED1Setting>
+        <LED2Setting>315</LED2Setting>
+        <RGRatio>0.736265</RGRatio>
+        <BGRatio>0.687219</BGRatio>
+        <flux>2.234414</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>0</LED1Setting>
+        <LED2Setting>350</LED2Setting>
+        <RGRatio>0.626674</RGRatio>
+        <BGRatio>0.662201</BGRatio>
+        <flux>2.21362</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>500</LED1Setting>
+        <LED2Setting>0</LED2Setting>
+        <RGRatio>1.238391</RGRatio>
+        <BGRatio>0.389844</BGRatio>
+        <flux>2.26677</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>450</LED1Setting>
+        <LED2Setting>50</LED2Setting>
+        <RGRatio>1.190526</RGRatio>
+        <BGRatio>0.451369</BGRatio>
+        <flux>2.416805</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>400</LED1Setting>
+        <LED2Setting>100</LED2Setting>
+        <RGRatio>1.125235</RGRatio>
+        <BGRatio>0.487928</BGRatio>
+        <flux>2.550965</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>350</LED1Setting>
+        <LED2Setting>150</LED2Setting>
+        <RGRatio>1.065839</RGRatio>
+        <BGRatio>0.517192</BGRatio>
+        <flux>2.71451</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>300</LED1Setting>
+        <LED2Setting>200</LED2Setting>
+        <RGRatio>1.007575</RGRatio>
+        <BGRatio>0.550519</BGRatio>
+        <flux>2.840213</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>250</LED1Setting>
+        <LED2Setting>250</LED2Setting>
+        <RGRatio>0.962564</RGRatio>
+        <BGRatio>0.580889</BGRatio>
+        <flux>2.910586</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>200</LED1Setting>
+        <LED2Setting>300</LED2Setting>
+        <RGRatio>0.90468</RGRatio>
+        <BGRatio>0.608549</BGRatio>
+        <flux>2.942922</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>150</LED1Setting>
+        <LED2Setting>350</LED2Setting>
+        <RGRatio>0.849016</RGRatio>
+        <BGRatio>0.639438</BGRatio>
+        <flux>2.901054</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>100</LED1Setting>
+        <LED2Setting>400</LED2Setting>
+        <RGRatio>0.804856</RGRatio>
+        <BGRatio>0.663475</BGRatio>
+        <flux>2.809662</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>50</LED1Setting>
+        <LED2Setting>450</LED2Setting>
+        <RGRatio>0.747997</RGRatio>
+        <BGRatio>0.70295</BGRatio>
+        <flux>2.75543</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>0</LED1Setting>
+        <LED2Setting>500</LED2Setting>
+        <RGRatio>0.616124</RGRatio>
+        <BGRatio>0.697101</BGRatio>
+        <flux>2.565957</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>650</LED1Setting>
+        <LED2Setting>0</LED2Setting>
+        <RGRatio>1.246958</RGRatio>
+        <BGRatio>0.387832</BGRatio>
+        <flux>2.551102</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>585</LED1Setting>
+        <LED2Setting>65</LED2Setting>
+        <RGRatio>1.190389</RGRatio>
+        <BGRatio>0.455558</BGRatio>
+        <flux>2.716846</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>520</LED1Setting>
+        <LED2Setting>130</LED2Setting>
+        <RGRatio>1.118514</RGRatio>
+        <BGRatio>0.494778</BGRatio>
+        <flux>2.898816</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>455</LED1Setting>
+        <LED2Setting>195</LED2Setting>
+        <RGRatio>1.062445</RGRatio>
+        <BGRatio>0.52912</BGRatio>
+        <flux>3.043396</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>390</LED1Setting>
+        <LED2Setting>260</LED2Setting>
+        <RGRatio>1.002926</RGRatio>
+        <BGRatio>0.560501</BGRatio>
+        <flux>3.262931</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>325</LED1Setting>
+        <LED2Setting>325</LED2Setting>
+        <RGRatio>0.952438</RGRatio>
+        <BGRatio>0.593223</BGRatio>
+        <flux>3.399736</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>260</LED1Setting>
+        <LED2Setting>390</LED2Setting>
+        <RGRatio>0.900211</RGRatio>
+        <BGRatio>0.627041</BGRatio>
+        <flux>3.379346</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>195</LED1Setting>
+        <LED2Setting>455</LED2Setting>
+        <RGRatio>0.852253</RGRatio>
+        <BGRatio>0.654138</BGRatio>
+        <flux>3.250071</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>130</LED1Setting>
+        <LED2Setting>520</LED2Setting>
+        <RGRatio>0.803883</RGRatio>
+        <BGRatio>0.692371</BGRatio>
+        <flux>3.198697</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>65</LED1Setting>
+        <LED2Setting>585</LED2Setting>
+        <RGRatio>0.74348</RGRatio>
+        <BGRatio>0.718134</BGRatio>
+        <flux>3.103869</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>0</LED1Setting>
+        <LED2Setting>650</LED2Setting>
+        <RGRatio>0.606385</RGRatio>
+        <BGRatio>0.729255</BGRatio>
+        <flux>2.938612</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>900</LED1Setting>
+        <LED2Setting>0</LED2Setting>
+        <RGRatio>1.270399</RGRatio>
+        <BGRatio>0.415066</BGRatio>
+        <flux>2.715184</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>810</LED1Setting>
+        <LED2Setting>90</LED2Setting>
+        <RGRatio>1.168196</RGRatio>
+        <BGRatio>0.474628</BGRatio>
+        <flux>3.00342</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>720</LED1Setting>
+        <LED2Setting>180</LED2Setting>
+        <RGRatio>1.091919</RGRatio>
+        <BGRatio>0.516591</BGRatio>
+        <flux>3.298717</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>630</LED1Setting>
+        <LED2Setting>270</LED2Setting>
+        <RGRatio>1.022874</RGRatio>
+        <BGRatio>0.554743</BGRatio>
+        <flux>3.600573</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>540</LED1Setting>
+        <LED2Setting>360</LED2Setting>
+        <RGRatio>0.976177</RGRatio>
+        <BGRatio>0.586163</BGRatio>
+        <flux>3.778332</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>450</LED1Setting>
+        <LED2Setting>450</LED2Setting>
+        <RGRatio>0.941522</RGRatio>
+        <BGRatio>0.614113</BGRatio>
+        <flux>3.853186</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>360</LED1Setting>
+        <LED2Setting>540</LED2Setting>
+        <RGRatio>0.900042</RGRatio>
+        <BGRatio>0.641998</BGRatio>
+        <flux>3.884424</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>270</LED1Setting>
+        <LED2Setting>630</LED2Setting>
+        <RGRatio>0.858837</RGRatio>
+        <BGRatio>0.676725</BGRatio>
+        <flux>3.841863</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>180</LED1Setting>
+        <LED2Setting>720</LED2Setting>
+        <RGRatio>0.806483</RGRatio>
+        <BGRatio>0.729432</BGRatio>
+        <flux>3.656655</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>90</LED1Setting>
+        <LED2Setting>810</LED2Setting>
+        <RGRatio>0.738352</RGRatio>
+        <BGRatio>0.776745</BGRatio>
+        <flux>3.369466</flux>
+      </CCTTables>
+      <CCTTables>
+        <LED1Setting>0</LED1Setting>
+        <LED2Setting>900</LED2Setting>
+        <RGRatio>0.591441</RGRatio>
+        <BGRatio>0.823829</BGRatio>
+        <flux>2.914064</flux>
+      </CCTTables>
+      <CCTTableCalibration>
+        <numOfCalibration>4</numOfCalibration>
+        <enableCornerSampleScreen>true</enableCornerSampleScreen>
+        <calibEntries>
+          <LEDPowerIndex>0</LEDPowerIndex>
+          <LEDMixIndex>0</LEDMixIndex>
+        </calibEntries>
+        <calibEntries>
+          <LEDPowerIndex>0</LEDPowerIndex>
+          <LEDMixIndex>10</LEDMixIndex>
+        </calibEntries>
+        <calibEntries>
+          <LEDPowerIndex>4</LEDPowerIndex>
+          <LEDMixIndex>0</LEDMixIndex>
+        </calibEntries>
+        <calibEntries>
+          <LEDPowerIndex>4</LEDPowerIndex>
+          <LEDMixIndex>10</LEDMixIndex>
+        </calibEntries>
+        <statsRatioOKRange>
+          <!--
+
+Base Type Tuning Definition
+
+ -->
+          <RGRatioOKRange>
+            <start>0.8</start>
+            <end>1.2</end>
+          </RGRatioOKRange>
+          <!--
+
+Base Type Tuning Definition
+
+ -->
+          <BGRatioOKRange>
+            <start>0.8</start>
+            <end>1.2</end>
+          </BGRatioOKRange>
+        </statsRatioOKRange>
+        <statsRatioOKRange>
+          <!--
+
+Base Type Tuning Definition
+
+ -->
+          <RGRatioOKRange>
+            <start>0.8</start>
+            <end>1.2</end>
+          </RGRatioOKRange>
+          <!--
+
+Base Type Tuning Definition
+
+ -->
+          <BGRatioOKRange>
+            <start>0.8</start>
+            <end>1.2</end>
+          </BGRatioOKRange>
+        </statsRatioOKRange>
+        <statsRatioOKRange>
+          <!--
+
+Base Type Tuning Definition
+
+ -->
+          <RGRatioOKRange>
+            <start>0.8</start>
+            <end>1.2</end>
+          </RGRatioOKRange>
+          <!--
+
+Base Type Tuning Definition
+
+ -->
+          <BGRatioOKRange>
+            <start>0.8</start>
+            <end>1.2</end>
+          </BGRatioOKRange>
+        </statsRatioOKRange>
+        <statsRatioOKRange>
+          <!--
+
+Base Type Tuning Definition
+
+ -->
+          <RGRatioOKRange>
+            <start>0.8</start>
+            <end>1.2</end>
+          </RGRatioOKRange>
+          <!--
+
+Base Type Tuning Definition
+
+ -->
+          <BGRatioOKRange>
+            <start>0.8</start>
+            <end>1.2</end>
+          </BGRatioOKRange>
+        </statsRatioOKRange>
+        <fixedExpIndex>375</fixedExpIndex>
+        <fixedExpIndex>375</fixedExpIndex>
+        <fixedExpIndex>325</fixedExpIndex>
+        <fixedExpIndex>325</fixedExpIndex>
+      </CCTTableCalibration>
+      <LEDMeasConfig>
+        <frameErrAllowance>0.015</frameErrAllowance>
+        <numOfFrames>3</numOfFrames>
+        <maxNumOfFrames>15</maxNumOfFrames>
+        <maxNumOfExtraAttempts>3</maxNumOfExtraAttempts>
+      </LEDMeasConfig>
+      <enableDerating>true</enableDerating>
+    </LEDTable>
+    <enableForceAFInLEDOnMode>true</enableForceAFInLEDOnMode>
+    <LEDInlineCalib>
+      <triggerIndex>380</triggerIndex>
+      <refRange>0.01</refRange>
+      <refRegionPCT>0.8</refRegionPCT>
+      <validRefCount>10</validRefCount>
+      <distanceRatioMin>0.7</distanceRatioMin>
+      <distanceRatioMax>1.2</distanceRatioMax>
+      <angleShiftMax>0.05</angleShiftMax>
+      <minKneeCnt>30</minKneeCnt>
+      <maxZoneCnt>50</maxZoneCnt>
+      <confidencePctThr>0.85</confidencePctThr>
+      <numOfFactoringRegions>10</numOfFactoringRegions>
+      <LEDInlineCalibTarget>
+        <LEDInlineCalibTargetZone>
+          <zoneTrigger>
+            <start>0</start>
+            <end>1</end>
+          </zoneTrigger>
+          <zoneData>
+            <distancePCT>1</distancePCT>
+            <angleShiftPCT>0</angleShiftPCT>
+          </zoneData>
+        </LEDInlineCalibTargetZone>
+        <LEDInlineCalibTargetZone>
+          <zoneTrigger>
+            <start>4</start>
+            <end>6</end>
+          </zoneTrigger>
+          <zoneData>
+            <distancePCT>1</distancePCT>
+            <angleShiftPCT>1</angleShiftPCT>
+          </zoneData>
+        </LEDInlineCalibTargetZone>
+        <LEDInlineCalibTargetZone>
+          <zoneTrigger>
+            <start>9</start>
+            <end>10</end>
+          </zoneTrigger>
+          <zoneData>
+            <distancePCT>1</distancePCT>
+            <angleShiftPCT>0</angleShiftPCT>
+          </zoneData>
+        </LEDInlineCalibTargetZone>
+      </LEDInlineCalibTarget>
+    </LEDInlineCalib>
+  </flashExt>
+</Flash>

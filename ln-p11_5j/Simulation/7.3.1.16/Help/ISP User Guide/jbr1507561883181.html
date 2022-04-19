@@ -1,0 +1,125 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="These examples illustrate the effects of adjusting specific HDR parameter values. Effects of the recon_motion_th1 parameter The recon_motion_th1 parameter controls the threshold 1 motion switching ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Examples of HDR parameter effects" /><meta name="abstract" content="These examples illustrate the effects of adjusting specific HDR parameter values." /><meta name="description" content="These examples illustrate the effects of adjusting specific HDR parameter values." /><meta name="DC.Relation" scheme="URI" content="suq1507561528154.html" /><meta name="DC.Relation" scheme="URI" content="suq1507561528154.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jbr1507561883181" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Examples of HDR parameter effects</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jbr1507561883181">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="suq1507561528154.html" title="HDR tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">HDR tuning concepts</span></a></span>  
+<span class="navparent"><a class="link" href="suq1507561528154.html" title="HDR tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">HDR tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Examples of HDR parameter effects</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">These examples illustrate the effects of adjusting specific HDR
+		parameter values.</p>
+
+		<div class="section" id="jbr1507561883181__section_N10016_N10013_N10001"><h2 class="title sectiontitle">Effects of the recon_motion_th1 parameter </h2>
+			
+			<p class="p">The recon_motion_th1 parameter controls the threshold 1 motion switching function. In the
+				image at right in the following example, the parameter is set at 1023 which results
+				in less interpolated T1 and more scaled T2, thereby  producing more resolution and
+				more zigzag artifacts. In the image at left, the parameter is set at 184 which
+				results in more interpolated T1 and less scaled T2, thereby producing less zigzag
+				artifcats and less resolution. </p>
+
+			<div class="fig fignone nonumber" id="jbr1507561883181__fig_edb_jmj_mbb"><span class="figcap">Figure : (L) recon_motion_th1 = 184, (R) recon_motion_th1 = 1023  </span>
+				
+				<br /><img class="image" id="jbr1507561883181__image_esm_fmj_mbb" src="zuu1507570120689.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="jbr1507561883181__section_N10033_N10013_N10001"><h2 class="title sectiontitle nonumber">Effects of the recon_dark_th1 parameter</h2>
+			
+			<p class="p">The recon_dark_th1 parameter represents threshold 1 for the dark noise switching
+				function and controls the detail/noise level trade-off in dark regions. In the
+				example below, increasing the parameter value reduces the zig-zag artifacts in the
+				dark regions.</p>
+
+			<div class="fig fignone nonumber" id="jbr1507561883181__fig_tmw_mvk_mbb"><span class="figcap">Figure : (L) recon_dark_th1 = 0, (R) recon_dark_th1 =
+					10</span>
+				
+				<br /><img class="image" id="jbr1507561883181__image_ujd_pxk_mbb" src="lcu1507587137964.png" /><br />
+			</div>
+
+		</div>
+
+		<div class="section" id="jbr1507561883181__section_N1005E_N10014_N10001"><h2 class="title sectiontitle">Effect of mac_motion parameters</h2>
+			
+			<div class="p">The mac_motion parameters work together to control the motion switch in HDR
+				MAC to use longer or shorter pixels and to control the motion adaption strength
+				value. <div class="fig fignone nonumber" id="jbr1507561883181__fig_qjv_xrh_4bb"><span class="figcap">Figure : (L) Shorter exposure pixels, sharper but noiser (R)
+						longer eposure pixels, more motion blur</span>
+					
+					<br /><img class="image" id="jbr1507561883181__image_atp_4rh_4bb" src="fgo1508165888804.png" /><br />
+				</div>
+In the examples above, the image at left has lower values for the mac_motion
+				threshold parameters and the image at right has higer values. The range for the
+				mac_motion threshold paraemeters is 0 to 1023, the lower the value the shorter the
+				pixels. The following table shows the parameter values for each example. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="jbr1507561883181__table_lf5_qth_4bb" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:40%" /><col style="width:30%" /><col style="width:30%" /></colgroup><thead class="thead" style="text-align:left;">
+							<tr class="row">
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d11946e84">Parameter</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d11946e87">Example (L)</th>
+
+								<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d11946e90">Example (R)</th>
+
+							</tr>
+
+						</thead>
+<tbody class="tbody">
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e84 ">mac_motion0_th1 </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e87 ">16</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e90 ">60</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e84 ">mac_motion0_th2 </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e87 ">10</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e90 ">24</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e84 ">mac_motion0_strength </td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e87 ">16</td>
+
+								<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11946e90 ">8</td>
+
+							</tr>
+
+						</tbody>
+</table>
+</div>
+ If mac_motion0_th1 and mac_motion0_th2 are set too small, it will
+				over-detect dark regions as motion regions and, as a result, blend more noisy T2 in
+				the MAC output. Compare the two images in the following example where the image on
+				the right has smaller values for the parameters and shows more noise in the dark
+				regions.</div>
+
+			<div class="fig fignone nonumber" id="jbr1507561883181__fig_bc1_mvh_4bb"><span class="figcap">Figure : (L) mac_motion_th1 = 16, mac_motion_th2 = 10
+					(R) mac_motion_th1 = 8, mac_motion_th2 = 5</span>
+				
+				<br /><img class="image" id="jbr1507561883181__image_hd1_trh_4bb" src="yde1508166095927.png" /><br />
+			</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="suq1507561528154.html" title="HDR tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">HDR tuning concepts</span></a></span>  
+<span class="navparent"><a class="link" href="suq1507561528154.html" title="HDR tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">HDR tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

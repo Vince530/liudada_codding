@@ -1,0 +1,445 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The default values for the DCIAF parameters are suitable for most situations but may require adjustments in some use cases to achieve your specific objectives. The following table lists the DCIAF ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="DCIAF parameters" /><meta name="DC.Relation" scheme="URI" content="ymo1495660966732.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="bbk1477085284065" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>DCIAF parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="bbk1477085284065">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">DCIAF parameters</h1>
+
+   <div class="body conbody">
+      <div class="p">The default values for the DCIAF parameters are suitable for most situations
+         but may require adjustments in some use cases to achieve your specific objectives. The
+         following table  lists the DCIAF parameters in the sequence in which they appear in the
+         header. The table also identifies if the parameter affects AF accuracy, speed, or user
+            experience.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="bbk1477085284065__ID-table-00000016" class="table landscape" frame="border" border="1" rules="all"><colgroup><col style="width:1.792in" /><col style="width:1.75in" /><col style="width:2.125in" /><col style="width:0.813in" /><col style="width:0.813in" /><col style="width:1.563in" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d57662e37">Parameter name</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d57662e40">Description</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d57662e43">Tuning</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d57662e46">Default</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d57662e49">Required?</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d57662e53">Affect (accuracy/speed/&#8232;user
+                        experience))</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">
+                        <pre class="pre codeblock"><code>monitor_enable</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Enable flag for scene monitor
+                        for DCIAF.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">
+                        <ul class="ul" id="bbk1477085284065__ul_shl_bvp_rx">
+                           <li class="li">Runs distance estimation library in continuous mode
+                              for scene monitor.</li>
+
+                           <li class="li">When enabled, improves trigger speed</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">0</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">
+                        <pre class="pre codeblock"><code>monitor_freq</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Max rate of distance estimation
+                        in monitor mode.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Larger value triggers AF
+                        faster.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">30</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">
+                        <pre class="pre codeblock"><code>search_freq</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Max rate of distance estimation
+                        in AF search mode after monitor detects a scene change.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Larger value improves AF speed
+                        in CAF and TAF modes. Improves scene stable detection speed in CAF.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">30</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">
+                        <pre class="pre codeblock"><code>baseline_mm</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Physical distance (in mm)
+                        between the optical centers of dual cameras.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Set this value based on the
+                        physical distance in units of mm between the optical centers of the dual
+                        cameras. Typically this value is provided by the dual camera module
+                        vendor.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">20</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">
+                        <pre class="pre codeblock"><code>aux_direction</code></pre>
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">
+                        <ul class="ul" id="bbk1477085284065__ul_thl_bvp_rx">
+                           <li class="li">Physical location of the auxiliary camera in relation
+                              to the main camera.</li>
+
+                           <li class="li">Specifies direction (i.e., left, right, up,
+                              down).</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Set this value based on the
+                        relative direction of the auxiliary camera in relation to the main camera.
+                        Get this value from the specs of the dual camera module.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">AF_CAM_ORIENT_LEFT</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">macro_est_limit_cm</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">
+                        <ul class="ul" id="bbk1477085284065__ul_uhl_bvp_rx">
+                           <li class="li">Closest distance in cm estimated by dual camera depth
+                              service.</li>
+
+                           <li class="li">Objects closer than this value might not be able to
+                              have their distances estimated.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Smaller value improves AF speed
+                        for macro distances. May decrease distance estimation rate due to increased
+                        computation.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">10</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Accuracy and speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">alignment_check_enable</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Enables alignment check for dual
+                        camera depth service.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Enabling alignment check for
+                        distance accuracy after mechanical impact.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">0</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Accuracy</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">jump_to_start_limit</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">
+                        <ul class="ul" id="bbk1477085284065__ul_vhl_bvp_rx">
+                           <li class="li">Largest lens position jump from existing position to
+                              starting position of fine search.</li>
+
+                           <li class="li">This parameter is used to make movement smooth. The
+                              default value (400) is set for faster AF.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Smaller steps result in smooth
+                        lens movement. Larger steps move the lens to the destination in one
+                        step.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">400</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">num_near_steps</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">
+                        <ul class="ul" id="bbk1477085284065__ul_whl_bvp_rx">
+                           <li class="li">Affects near range of fine search.</li>
+
+                           <li class="li">dciaf_step_size * num_near_steps is the fine search
+                              range of the near to center.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">The larger, the more accurate in
+                        fine search (less likely that the real lens position is outside the range)
+                        however, speed is affected.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Accuracy and speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">num_far_steps</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">
+                        <ul class="ul" id="bbk1477085284065__ul_xhl_bvp_rx">
+                           <li class="li">Affects far range of fine search.</li>
+
+                           <li class="li">dciaf_step_size * num_far_steps is the tolerance lens
+                              position from center to far in fine search</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">The larger, the more accurate in
+                        fine search (less likely that the real lens position is outside the range)
+                        however, speed is affected.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Accuracy and speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">dciaf_step_size</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Used to determine the fine
+                        search range</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">
+                        <ul class="ul" id="bbk1477085284065__ul_yhl_bvp_rx">
+                           <li class="li">The larger the more accurate.</li>
+
+                           <li class="li">Recommend keeping this parameter the same as the
+                              single AF result.</li>
+
+                           <li class="li">Test the DCIAF performance for close object at
+                              different orientations (normal, face up, face down). If the accuracy
+                              is not good enough, increase the <span class="keyword cmdname">dciaf_step_size</span> until reasonable accuracy is achieved in
+                              a trial-and-error approach.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">10</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">Y</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Accuracy and speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">motion_data_use_enable</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Flag for using gyro data for
+                        trigger.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Enable to use gyro info along
+                        with distance stats for scene change and panning stable.</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">0</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">scene_change_lens_pos_th</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">
+                        <ul class="ul" id="bbk1477085284065__ul_zhl_bvp_rx">
+                           <li class="li">Used for scene change detection criteria</li>
+
+                           <li class="li">If the lens position difference between the
+                              distance-based position and the reference lens position (last focused
+                              frame lens position) is more than this parameter, then a scene change
+                              is detected</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">The larger the number, the less
+                        sensitive the DCIAF response to the scene change</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">20</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">Y</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">panning_stable_lens_pos_th</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">
+                        <ul class="ul" id="bbk1477085284065__ul_a3l_bvp_rx">
+                           <li class="li">This parameter is used for the scene stable
+                              criteria</li>
+
+                           <li class="li">If the lens position difference between the current
+                              frame distance-based position and the previous frame distance-based
+                              position is less than this parameter, the frame is counted as 1 frame
+                              scene stable.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">
+                        <ul class="ul" id="bbk1477085284065__ul_b3l_bvp_rx">
+                           <li class="li">Larger values treat large lens position differences
+                              as tolerable</li>
+
+                           <li class="li">The larger the number, the quicker DCIAF triggers a
+                              search and does not wait for the scene to be completely stable</li>
+
+                           <li class="li">The value of this parameter must be smaller than
+                                 <span class="keyword cmdname">scene_change_lens_pos_th</span>.</li>
+
+                        </ul>
+
+                     </td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">15</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">Y</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">panning_stable_duration_ms_bright</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Time duration (in ms)
+                        considered for scene stable in bright light. Use AE to judge low light or
+                        bright light</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Larger values ensure that
+                        panning stable criterion is met for longer time in bright light. Smaller
+                        values provide more responsive AF trigger</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">132</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e37 ">panning_stable_duration_ms_low</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e40 ">Time duration (ms) considered
+                        for scene stable in low light. Use AE to judge low light or bright
+                        light</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e43 ">Larger values ensure that
+                        panning stable criterion is met for longer time in low light. Smaller values
+                        provide more responsive AF trigger</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e46 ">200</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e49 ">N</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d57662e53 ">Speed and user
+                        experience</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+</div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="ymo1495660966732.html" title="Follower logic for dual camera">Follower logic for dual camera</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

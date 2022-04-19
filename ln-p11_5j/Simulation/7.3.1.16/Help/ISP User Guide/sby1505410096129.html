@@ -1,0 +1,119 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Before tuning the GIC module, determine how many lighting regions you need and create them in the Parameter Editor. On the Pipeline tab, click BPS &gt; GIC . Calibrate the noise profile as follows: Click ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune GIC" /><meta name="DC.Relation" scheme="URI" content="sry1494872273491.html" /><meta name="DC.Relation" scheme="URI" content="qnq1499365175979.html" /><meta name="DC.Relation" scheme="URI" content="mzz1505409578957.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="sby1505410096129" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune GIC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="sby1505410096129">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gav1504650254694.html" title="BPS tuning">BPS tuning</a> / <a class="navheader_parent_path" href="sry1494872273491.html" title="GIC tuning concepts">GIC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="sry1494872273491.html" title="GIC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">GIC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune GIC</h1>
+
+	<div class="body taskbody">
+		<div class="section prereq p" id="sby1505410096129__prereq_N10015_N10012_N10001">
+			<p class="p">Before tuning the GIC module, determine how many lighting regions you need and
+				create them in the Parameter Editor. </p>
+
+		</div>
+
+		<ol class="ol steps" id="sby1505410096129__steps_7FE4967F02BA4A5B82EBF4D09B7CE136"><li class="li step stepexpand" id="sby1505410096129__step_C314EB42C91C463F9EE0E1DD448C5821">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab,
+					click <span class="ph menucascade"><span class="ph uicontrol">BPS</span> &gt; <span class="ph uicontrol">GIC</span></span>. </span>
+			</li>
+<li class="li step stepexpand" id="sby1505410096129__step_N10048_N1002F_N10015_N10001">
+				<span class="ph cmd">Calibrate the noise profile as follows: </span>
+				<ol type="a" class="ol substeps" id="sby1505410096129__substeps_cpn_csl_p1b">
+					<li class="li substep">
+						<span class="ph cmd" id="sby1505410096129__ID-64-00000652">Click a region and click the
+								<span class="ph uicontrol">Load Image</span> button. </span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Select a raw image of an MCC chart taken in the
+							appropriate lighting condition for that region.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Set the MCC markers. Drag the top-left MCC grid marker
+							to the center of the top-left color patch and drag the bottom-right MCC
+							grid marker to the center of the bottom right color patch, so that all
+							of the grid markers align within the color patches. </span>
+					</li>
+
+				</ol>
+
+				<div class="itemgroup info">If the image is taken with a fisheye lens, to set the MCC markers for tuning,
+					hold the Ctrl Key (or Shift Key) while moving the markers</div>
+				<ol type="a" class="ol substeps" id="sby1505410096129__substeps_svr_hky_ccb">
+					<li class="li substep">
+						<span class="ph cmd">Click <span class="ph uicontrol">Calculate</span>
+							to compute the noise profile. View the resulting noise profile graph on
+							the <span class="ph uicontrol">Noise Profile</span> tab.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="sby1505410096129__step_N101E9_N100EC_N10014_N10001">
+				<span class="ph cmd">To calibrate the radial noise reduction, click <span class="ph uicontrol">Sigma LUT RNR</span> and do the following steps: </span>
+				<ol type="a" class="ol substeps" id="sby1505410096129__substeps_nvs_pfb_41b">
+					<li class="li substep">
+						<span class="ph cmd">Click the <span class="ph uicontrol">Sigma
+								LUT</span> tab and open a gray chart raw image for the
+							appropriate lighting region. Click <span class="ph uicontrol">Calculate</span> to generate the Sigma LUT plot. <br /><img class="image" id="sby1505410096129__image_tjy_md2_p1b" src="epi1500401874056.png" /><br /></span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Click the <span class="ph uicontrol">RNR Control
+								Points</span> tab, and adjust the <span class="ph uicontrol">Radial Percentage</span> slider to set the second control
+							point. The tool computes the other points automatically. <br /><img class="image" id="sby1505410096129__image_pnb_d22_p1b" src="vpm1500402152533.png" /><br /></span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="sby1505410096129__step_N10098_N1002F_N10015_N10001">
+				<span class="ph cmd">Click the <span class="ph uicontrol">Region Data</span>
+					tab and tune the following GIC parameters as needed: </span>
+				<ul class="ul choices" id="sby1505410096129__choices_ddc_pcr_hbb">
+					<li class="li choice">Gic Noise Scale</li>
+
+					<li class="li choice">Gic Correction Strength</li>
+
+					<li class="li choice">Thin Line Noise Offset</li>
+
+					<li class="li choice">Pnr Noise Scale</li>
+
+					<li class="li choice">Pnr Correction Strength</li>
+
+					<li class="li choice">Noise Std Lut (advanced tuning)</li>
+
+					<li class="li choice">Radial Pnr Str Adj (advanced tuning)</li>
+
+				</ul>
+
+			</li>
+<li class="li step stepexpand" id="sby1505410096129__step_N101B8_N1002F_N10015_N10001">
+				<span class="ph cmd">Repeat all steps for each lighting region you set up.</span>
+			</li>
+<li class="li step stepexpand" id="sby1505410096129__step_N101DD_N1002F_N10015_N10001">
+				<span class="ph cmd">To save the adjustments made to GIC parameters, click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save To Project</span></span>. </span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="mzz1505409578957.html" title="GIC parameters">GIC parameters</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="qnq1499365175979.html" title="A region is a set of triggers that are indicative of light conditions, lens positions or other conditions as applicable to a given module. A project which is created with the build XSD and XML files has only one region for each module. Chromatix 7 gives the flexibility to create multiple regions for an ISP module. Adding regions to the module enables to optimize camera performance based on the established triggers for each region. Add regions to the pipeline before tuning the ISP and before adding modes to the project.">Add and edit region triggers</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="sry1494872273491.html" title="GIC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">GIC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

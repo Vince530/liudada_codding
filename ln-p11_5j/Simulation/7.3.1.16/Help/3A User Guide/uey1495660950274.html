@@ -1,0 +1,125 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The camera image sensor amplifies pixel information using an analog amplifier to create sensor gain. The image sensor can also be exposed to light for a longer time, so each pixel is allowed to ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Exposure table" /><meta name="DC.Relation" scheme="URI" content="gpc1495660795131.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jxr1474864607746" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Exposure table</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jxr1474864607746">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="gpc1495660795131.html" title="AEC tuning concepts">AEC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="gpc1495660795131.html" title="AEC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AEC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Exposure table</h1>
+
+   <div class="body conbody">
+      <p class="p">The camera image sensor amplifies pixel information using an analog
+         amplifier to create sensor gain. The image sensor can also be exposed to light for a longer
+         time, so each pixel is allowed to collect more light. Sensor gain and pixel exposure are
+         then controlled by an exposure algorithm to achieve constant brightness of a frame, object,
+         or scene with respect to a target value.</p>
+
+      <p class="p">Using a longer exposure time (a lower gain) gives better SNR to the image, but causes a
+         lower frame rate and blurriness due to motiona and handshake. Using a higher gain causes a
+         higher frame rate, but the image has more noise.</p>
+
+      <p class="p">If the image is under-exposed, it is too dark. If it is overexposed, the
+         image is too bright, and colors can become saturated and washed out.</p>
+
+      <div class="fig fignone nonumber" id="jxr1474864607746__fig_hbb_hkl_kcb"><span class="figcap">Figure : (1) Original image; (2) Under exposed; (3) Over exposed; (4) Target
+            exposure</span>
+         
+         <br /><img class="image" id="jxr1474864607746__image_yll_phl_1x" src="zqs1495661070176.png" /><br />
+      </div>
+
+      <div class="p">An exposure table is constructed to define the best choices for the trade off of exposure.
+         An exposure table comprises exposure knee points, where each knee point has the following
+            values:<ul class="ul" id="jxr1474864607746__ul_oys_3fq_t1b">
+            <li class="li">Exposure Index – Specifies the exposure sensitivity for a given knee point</li>
+
+            <li class="li">Gain – Specifies the amplification used for a given exposure</li>
+
+            <li class="li">Exposure Time – Specifies the sensor integration time for a given exposure
+               sensitivity</li>
+
+            <li class="li">Increment Priority – Specifies the interpolation of exposure settings between two
+               exposure knee points; can be incremented by either gain or exposure time first</li>
+
+         </ul>
+<br /><img class="image" id="jxr1474864607746__image_yfw_vhq_t1b" src="ctw1501782127575.png" /><br /></div>
+
+      <p class="p">A general practice is to maintain a higher frame rate whenever possible to keep the image
+         sharp with less noise. The increment method usually favors exposure time by incrementing
+         the gain first. However, under darker conditions, where noise becomes an image quality
+         issue, gain is favored by increasing the exposure sensitivity using a longer exposure
+         time.</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="jxr1474864607746__ID-table-00000013" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table : Exposure table parameters</span></caption><colgroup><col style="width:1.854in" /><col style="width:4.146in" /></colgroup><thead class="thead" style="text-align:left;">
+               <tr class="row">
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d56997e73">Parameter</th>
+
+                  <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d56997e76">Description</th>
+
+               </tr>
+
+            </thead>
+<tbody class="tbody">
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e73 ">expIndex</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e76 ">Defines the exposure index for the
+                     exposure knee point; autogenerated from gain and exposure time count</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e73 ">gain</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e76 ">Defines exposure linear gain for
+                     exposure knee points</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e73 ">expTime</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e76 ">Defines exposure time in
+                     nanoseconds for exposure knee points</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e73 ">incrementPriority</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e76 ">Defines exposure increment priority
+                     from the knee point (e.g., gain, exp time); default value is <span class="ph uicontrol">Exp
+                        Time</span></td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e73 ">sensitivityCorrectionFactor</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e76 ">Define the binning factor for the
+                     normalization of exposure sensitivity between exposure tables</td>
+
+               </tr>
+
+               <tr class="row">
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e73 ">minPreviewVertBlankTime</td>
+
+                  <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d56997e76 ">Defines minimum sensor veritical
+                     blanking time for preview mode</td>
+
+               </tr>
+
+            </tbody>
+</table>
+</div>
+
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="gpc1495660795131.html" title="AEC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AEC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

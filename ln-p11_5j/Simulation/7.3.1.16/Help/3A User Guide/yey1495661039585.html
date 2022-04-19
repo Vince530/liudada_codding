@@ -1,0 +1,32 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="To detect and differentiate between scene changes and panning, a value monitor analyzes multiple input signals and then outputs binary decisions. A designated decision logic is applied to decide ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Value monitor decision logic" /><meta name="DC.Relation" scheme="URI" content="ppb1495661036667.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="mrx1477085275189" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Value monitor decision logic</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="mrx1477085275189">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="eqh1495660907483.html" title="Autofocus concepts">Autofocus concepts</a> / <a class="navheader_parent_path" href="ppb1495661036667.html" title="AF monitor">AF monitor</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="ppb1495661036667.html" title="AF monitor"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AF monitor</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Value monitor decision logic</h1>
+
+   <div class="body conbody">
+      <p class="p">To detect and differentiate between scene changes and panning, a value
+         monitor analyzes multiple input signals and then outputs binary decisions. A designated
+         decision logic is applied to decide whether the current scene is panning or not. Therefore,
+         a specific <em class="ph i">topology</em> (decision logic) is used in the AF monitor. To
+         simplify the design, the topology only takes binary inputs (0 or 1). Only decision logic is
+         specified in topology.</p>
+
+      <p class="p">An example of CAF monitor topology is shown in the following figure. It
+         illustrates how the binary outputs from the value monitors enable scene change/panning
+         detection with simple logic combinations.</p>
+
+      <br /><img class="image" id="mrx1477085275189__image_rqb_kt4_v1b" src="tdi1502380713634.svg" /><br />
+   </div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="ppb1495661036667.html" title="AF monitor"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AF monitor</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

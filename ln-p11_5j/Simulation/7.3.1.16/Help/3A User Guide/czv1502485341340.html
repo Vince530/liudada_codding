@@ -1,0 +1,168 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Flash and FD leverages the face detection feature and the dominant face AEC feature and extends them to the flash snapshot. Tune the flash and face detection parameters to make various adjustments. ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Flash and face detection parameters" /><meta name="abstract" content="Flash and FD leverages the face detection feature and the dominant face AEC feature and extends them to the flash snapshot. Tune the flash and face detection parameters to make various adjustments." /><meta name="description" content="Flash and FD leverages the face detection feature and the dominant face AEC feature and extends them to the flash snapshot. Tune the flash and face detection parameters to make various adjustments." /><meta name="DC.Relation" scheme="URI" content="rbg1502485321138.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="czv1502485341340" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Flash and face detection parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="czv1502485341340">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a> / <a class="navheader_parent_path" href="rbg1502485321138.html" title="Flash and face detection (FD) leverages the face detection feature and the dominant face AEC feature and extends them to the flash snapshot.">Tune flash and face detection</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="rbg1502485321138.html" title="Flash and face detection (FD) leverages the face detection feature and the dominant face AEC feature and extends them to the flash snapshot."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune flash and face detection</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Flash and face detection parameters</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">Flash and FD leverages the face detection feature and the dominant face AEC feature and
+		extends them to the flash snapshot. Tune the flash and face detection parameters to make
+		various adjustments.</p>
+
+		<div class="p">
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="czv1502485341340__ID-table-0000001d" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:1.853in" /><col style="width:2.96in" /><col style="width:0.743in" /><col style="width:0.882in" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d9001e40">Parameter</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d9001e43">Description</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d9001e46">Tuning</th>
+
+							<th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d9001e49">Default</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">flashFDRequestDelayLuxTrigger </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">The lux level hysteresis below which extra
+								delay is provided for the FD process to run. Consider the
+								performance of FD for the given platform as well as sensor
+								artifacts, such as noise, that impact FD negatively in low
+								light.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">Range: [300, 500]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">[500, 510]</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">enableFDFlash </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">Use this flag to enable or disable the FD and
+								flash feature.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">
+								<p class="p">0 (disable)</p>
+
+								<p class="p">1 (enable)</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">1</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">ledFaceWeight </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">Similar to dominant face AEC in that it
+								controls the weighting of the face ROI w.r.t. the rest of the scene.
+								Increase the values to make the face count more, but the background
+								may become over/underexposed.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">Range: [0.1, 0.5]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">[0.6, 0.9]</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">ledFaceSize </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">The face size expressed as a ratio of the
+								image size. Decrease the values so that smaller face sizes have more
+								influence on final metering.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">Range: [0.05, 0.5]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">[0.1, 0.3]</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">FDFlashFrameCount </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">If additional delay is provided for FD to run
+								during preflash, adjust this parameter to control the amount of
+								frame delta. Consider the performance of the FD process on the
+								current platform and how much user experience is impacted by
+								extending the preflash sequence.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">Range: [0, 100]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">5</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">FDFlashLumaTarget </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">Increase or decrease the luma target to make faces brighter/darker,
+								respectively </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">Range: [40, 70]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">65</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">faceSizeExpEffect </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">Increase weights so that the final exposure does not differ much from
+								when the FD and flash feature is disabled, unless the face size is
+								large w.r.t the image size.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">Range: [0.005, 0.4]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">0.1, 0.2]</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">statsUpdateDelayTimeEnter </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">The time delay for face ROI to be stable and be used.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">Range: [0, 10]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">0</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e40 ">statsUpdateDelayTimeExit </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e43 ">The time delay for face ROI to be discarded.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e46 ">Range: [0, 10]</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d9001e49 ">3</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+
+		</div>
+
+		
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="rbg1502485321138.html" title="Flash and face detection (FD) leverages the face detection feature and the dominant face AEC feature and extends them to the flash snapshot."><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Tune flash and face detection</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

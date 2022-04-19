@@ -1,0 +1,38 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="PD information from the sensor may become noisy when a higher gain is applied. When the noise gain is higher, PDAF may get an unreliable defocus value, which can cause focus failure. To adapt for a ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="How the noise gain table works" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="yaz1477085276499" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>How the noise gain table works</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="yaz1477085276499">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">How the noise gain table works</h1>
+
+   <div class="body conbody">
+      <p class="p">PD information from the sensor may become noisy when a higher gain is applied. When the
+         noise gain is higher, PDAF may get an unreliable defocus value, which can cause focus
+         failure. To adapt for a higher gain and to maintain accuracy, you can increase the fine
+         scan range by tuning the noise table.</p>
+
+      <p class="p">The fine scan range is calculated by applying the appropriate multiplier from the noise
+         gain table to the fine scan step size.<span class="keyword cmdname"> </span></p>
+
+      <pre class="pre codeblock"><code><span class="keyword cmdname">Fine-step focus scan range = </span>&#8232;<span class="keyword cmdname">Fine scan step size x Range multiplier(noise gain [dB])</span></code></pre>
+      <p class="p">The multiplier between two gain entries is linearly interpolated. The defaults for the
+         table are as follows:</p>
+
+      <img class="image" id="yaz1477085276499__image_iht_ybl_rx" src="gqk1495660900167.png" />
+      <div class="fig fignone" id="yaz1477085276499__ID-fig-00000013">
+         <div class="note note"><span class="notetitle">Note:</span> 2PD provides more reliable search scenarios even in low light, so you can
+            set a smaller <span class="keyword cmdname">multiplier</span> for each noise table entry (e.g., {1.0f,
+            1.2f, 2.0f}).</div>
+
+      </div>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

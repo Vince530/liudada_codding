@@ -1,0 +1,509 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="On the AF Tuning tab, click Edit Header . Select Header type: 3A and navigate to AutoFocus &gt; Tuning Algorithm &gt; Continuous &gt; AF Spotlight . Use the guidelines in the following table to set up ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Set up spotlight detection" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="iom1477085285922" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Set up spotlight detection</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="iom1477085285922">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Set up spotlight detection</h1>
+
+   <div class="body taskbody">
+      <ol class="ol steps"><li class="li step stepexpand" id="iom1477085285922__step_N10014_N10011_N1000E_N10001">
+            <span class="ph cmd">On the <span class="ph uicontrol">AF Tuning</span> tab, click <span class="ph uicontrol">Edit Header
+                  </span><img class="image" src="kix1495660881758.png" /> .</span>
+         </li>
+<li class="li step stepexpand" id="iom1477085285922__step_N10029_N10011_N1000E_N10001">
+            <span class="ph cmd">Select <span class="ph uicontrol">Header type:</span> 3A and navigate to <span class="ph uicontrol">AutoFocus &gt; Tuning Algorithm &gt; Continuous &gt; AF Spotlight</span>.</span>
+         </li>
+<li class="li step stepexpand" id="iom1477085285922__step_N1003A_N10011_N1000E_N10001">
+            <span class="ph cmd">Use the guidelines in the following table to set up spotlight detection. See the images below the table to visualize what the parameters control.</span>
+            <div class="itemgroup info">The following table lists and describes the spotlight
+                  parameters.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="iom1477085285922__ID-table-00000021" class="table landscape" width="90%" frame="border" border="1" rules="all"><colgroup><col style="width:1.813in" /><col style="width:2.25in" /><col style="width:0.625in" /><col style="width:0.813in" /><col style="width:1.979in" /><col style="width:1.583in" /></colgroup><thead class="thead" style="text-align:left;">
+                        <tr class="row">
+                           <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d72461e69">Parameter</th>
+
+                           <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d72461e72">Definition</th>
+
+                           <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d72461e75">Default</th>
+
+                           <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d72461e78">Range</th>
+
+                           <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d72461e81">Constraints</th>
+
+                           <th class="entry cellrowborder" style="text-align:center;vertical-align:top;" id="d72461e85">Effect</th>
+
+                        </tr>
+
+                     </thead>
+<tbody class="tbody">
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">enable</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">Enable flag for spotlight
+                              AF process.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">0</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">0 to 1</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 "> </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 "> </td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">
+                              <p class="p">far_flat_th</p>
+
+                              <p class="p">marco_flat_th</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">Thresholds for far scene
+                              and macro scene when detecting spotlight conditions.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">
+                              <p class="p">0.55</p>
+
+                              <p class="p">0.85</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">0 to 1</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 "> </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">Lower values make it
+                              easier to be recognized as a flat scene.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">inc_flat_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 "> </td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">1.035</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">0 to 1</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 "> </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The larger the harder to
+                              be recognized as FV increment.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">dec_flat_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 "> </td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">0.978</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">0 to 3</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 "> </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The lower the harder to be
+                              recognized as FV decrement.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">
+                              <p class="p">spotlight_zone_start_h</p>
+
+                              <p class="p">spotlight _zone_end_h</p>
+
+                              <p class="p">spotlight _zone_start_v</p>
+
+                              <p class="p">spotlight _zone_end_v</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">Table that defines the
+                              spotlight zone size</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">
+                              <p class="p">4</p>
+
+                              <p class="p">12</p>
+
+                              <p class="p">4</p>
+
+                              <p class="p">12</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">uint32_t</p>
+
+                              <p class="p">0 to 15</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">The resulting grid should
+                              be equal to or smaller than the background zone size</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">Defines an area similar to
+                              the example figure below.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">
+                              <p class="p">background_zone_start_h</p>
+
+                              <p class="p">background_zone_end_h</p>
+
+                              <p class="p">background_zone_start_v</p>
+
+                              <p class="p">background_zone_end_v</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">Table that defines the
+                              background zone size</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">
+                              <p class="p">2</p>
+
+                              <p class="p">14</p>
+
+                              <p class="p">2</p>
+
+                              <p class="p">14</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">uint32_t</p>
+
+                              <p class="p">0 to 15</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">The resulting grid should
+                              be equal to or larger than the spotlight detection zone size</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">Defines a grid similar to
+                              the figure below.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">exposure_index_trigger_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">Exposure index threshold,
+                              if exposure index is smaller than this threshold, the spotlight is not
+                              detected</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">300</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">Int</p>
+
+                              <p class="p">0 to 500</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">data value needs to be
+                              bigger than aec_indoor_index</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The smaller the threshold,
+                              the fewer chances that spotlight is detected</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">background_luma_avg_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">The threshold for average
+                              luma of the background zone, if for average luma of the background
+                              zone is bigger than this threshold, the spotlight is not
+                              detected</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">30</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">uint32_t</p>
+
+                              <p class="p">0 to 255</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 "> </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The larger the threshold,
+                              the more chances that spotlight can be detected</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">region_low_grey_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">The threshold of the low
+                              gray region. If the region’s luma of the background zone is smaller
+                              than this threshold, this region is recognized as a low gray
+                              region.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">30</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">uint32</p>
+
+                              <p class="p">0 to 255</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">Should be larger than
+                              region_dark _grey_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The smaller the
+                              threshold, the less likely that the region is recognized as a low gray
+                              region.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">region_dark_grey_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">The threshold of the dark
+                              gray region, if the region’s luma of the background zone is smaller
+                              than this threshold, this region is recognized as a dark gray
+                              region.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">7</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">uint32</p>
+
+                              <p class="p">0 to 255</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">Should be smaller than
+                              region_low _grey_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The smaller the
+                              threshold, the less likely that region is as a dark gray
+                              region.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">background_low_grey_pct_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">The threshold percentage
+                              of low in the background zone. If low gray percentage of the
+                              background zone is larger than this threshold, the system considers
+                              the background is dark enough.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">0.85</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">uint32_t</p>
+
+                              <p class="p">0.6 to 1.0</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">Should be bigger than
+                              BACKGROUND_DARK_GREY_PCT_TH. Good to keep default. A lower value is
+                              not recommended.</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The bigger the threshold,
+                              the less likely the system considers the background is dark
+                              enough</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">background_dark_grey_pct_th</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">The threshold percentage
+                              of dark gray in the background zone. If dark gray percentage of the
+                              background zone is larger than this threshold, the system considers
+                              the background is dark enough.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">0.3</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">0.2 to 1.0</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">Should be smaller than
+                              BACKGROUND_LOW_GREY_PCT_TH. Adjust by user preference.</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The bigger the threshold,
+                              the less likely the system considers the background is dark
+                              enough.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">bright_region_luma_delta_background_zone</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">If a region’s luma is
+                              higher than the average luma of background zone, multiply it by this
+                              parameter. The region is recognized as a bright region.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">2.0</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">0.0 to 8.0</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 "> </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 "> </td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">bright_region_luma_delta_spotlight_zone_low_grey</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">If region’s luma of
+                              cluster zone is higher than the average luma of background zone,
+                              multiply it by this parameter. The region is recognized as a bright
+                              region.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">2.5</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">float</p>
+
+                              <p class="p">0.0 to 15.0</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">Good to keep
+                              default</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The bigger the threshold,
+                              the less likely that region is detected as a bright region.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">bright_region_luma_delta_spotlight_zone_dark_grey</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">if region’s luma of
+                              cluster zone is higher than average luma of background zone, multiply
+                              it by this parameter. The region is recognized as a bright
+                              region</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">3.0</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">float</p>
+
+                              <p class="p">0.0 to 15.0</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">Adjust to
+                              preference.</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">The bigger the threshold,
+                              the less likely that region is detected as a bright region.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">
+                              <p class="p">square_cluster_inc_size</p>
+
+                              <p class="p">vertical_cluster_inc_size</p>
+
+                              <p class="p">horizontal_cluster_inc_size</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">The extended size of the
+                              bright region cluster.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">
+                              <p class="p">1</p>
+
+                              <p class="p">2</p>
+
+                              <p class="p">2</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">uint32_t</p>
+
+                              <p class="p">0 to 3</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">The extended size should
+                              not be over the background zone size. Good to keep default.</td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e85 ">Set to 0 to disable a
+                              cluster shape (square, vertical, horizontal). Just one bright region
+                              can be recognized as spotlight.</td>
+
+                        </tr>
+
+                        <tr class="row">
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e69 ">
+                              <p class="p">square_cluster_pct_th</p>
+
+                              <p class="p">vertical_cluster_pct_th</p>
+
+                              <p class="p">horizontal_cluster_pct_th</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e72 ">The threshold percentage
+                              of bright region in the cluster zone. If bright region percentage of
+                              the cluster zone is larger than this threshold and background is dark
+                              enough, the flag of bright region cluster is raised.</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e75 ">
+                              <p class="p">0.8</p>
+
+                              <p class="p">0.2</p>
+
+                              <p class="p">0.2</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e78 ">
+                              <p class="p">float</p>
+
+                              <p class="p">0.0 to 1.0</p>
+
+                           </td>
+
+                           <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d72461e81 ">If set to 1.0, the
+                              cluster is disabled. Good to keep default</td>
+
+                           <td class="entry cellrowborder" style="text-align:center;vertical-align:top;" headers="d72461e85 ">The bigger
+                              the threshold, the less likely that cluster is detected.</td>
+
+                        </tr>
+
+                     </tbody>
+</table>
+</div>
+ </div>
+            <div class="itemgroup info">
+               <br /><img class="image" id="iom1477085285922__image_fjr_fh5_gz" src="gvn1495661005374.png" /><br />
+               <br /><img class="image" id="iom1477085285922__image_kgq_3h5_gz" src="cvu1495661050489.png" /><br />
+               <p class="p"><strong class="ph b">Examples of bright region clusters</strong></p>
+
+            </div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

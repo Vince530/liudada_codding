@@ -1,0 +1,268 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Qualcomm Spectra 2xx adopts a flexible tuning interface. For example, users can use 6 or 10 regions to cover scene brightness. For spatial processing modules (denoising, sharpening, etc.) by default, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Capture images and videos to use for tuning with Chromatix" /><meta name="DC.Relation" scheme="URI" content="qgd1494872421910.html" /><meta name="DC.Relation" scheme="URI" content="ooh1494872237798.html" /><meta name="DC.Relation" scheme="URI" content="gee1494872107211.html" /><meta name="DC.Relation" scheme="URI" content="pkj1494872175320.html" /><meta name="DC.Relation" scheme="URI" content="tlq1494872292944.html" /><meta name="DC.Relation" scheme="URI" content="jev1494872351538.html" /><meta name="DC.Relation" scheme="URI" content="ysz1494872412940.html" /><meta name="DC.Relation" scheme="URI" content="bit1494872313677.html" /><meta name="DC.Relation" scheme="URI" content="pwn1508357511796.html" /><meta name="DC.Relation" scheme="URI" content="ett1508357545877.html" /><meta name="DC.Relation" scheme="URI" content="yyk1508357584882.html" /><meta name="DC.Relation" scheme="URI" content="zmt1508357617976.html" /><meta name="DC.Relation" scheme="URI" content="mcw1508363654723.html" /><meta name="DC.Relation" scheme="URI" content="ykp1508357739904.html" /><meta name="DC.Relation" scheme="URI" content="wwm1508435198728.html" /><meta name="DC.Relation" scheme="URI" content="ypd1508435239369.html" /><meta name="DC.Relation" scheme="URI" content="kel1508435264932.html" /><meta name="DC.Relation" scheme="URI" content="ooh1494872237798.html" /><meta name="DC.Relation" scheme="URI" content="gee1494872107211.html" /><meta name="DC.Relation" scheme="URI" content="pkj1494872175320.html" /><meta name="DC.Relation" scheme="URI" content="tlq1494872292944.html" /><meta name="DC.Relation" scheme="URI" content="jev1494872351538.html" /><meta name="DC.Relation" scheme="URI" content="ysz1494872412940.html" /><meta name="DC.Relation" scheme="URI" content="bit1494872313677.html" /><meta name="DC.Relation" scheme="URI" content="pwn1508357511796.html" /><meta name="DC.Relation" scheme="URI" content="ett1508357545877.html" /><meta name="DC.Relation" scheme="URI" content="yyk1508357584882.html" /><meta name="DC.Relation" scheme="URI" content="zmt1508357617976.html" /><meta name="DC.Relation" scheme="URI" content="mcw1508363654723.html" /><meta name="DC.Relation" scheme="URI" content="ykp1508357739904.html" /><meta name="DC.Relation" scheme="URI" content="wwm1508435198728.html" /><meta name="DC.Relation" scheme="URI" content="ypd1508435239369.html" /><meta name="DC.Relation" scheme="URI" content="kel1508435264932.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="bae1466545245521" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Capture images and videos to use for tuning with Chromatix</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="bae1466545245521">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qgd1494872421910.html" title="Capturing Images for Camera Tuning">Capturing Images for Camera Tuning</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="qgd1494872421910.html" title="Capturing Images for Camera Tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Capturing Images for Camera Tuning</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Capture images and videos to use for tuning with Chromatix</h1>
+
+   <div class="body conbody">
+      <p class="p">Qualcomm Spectra 2xx adopts a flexible tuning interface. For example, users can use 6 or 10
+         regions to cover scene brightness. For spatial processing modules (denoising, sharpening,
+         etc.) by default, 6 regions are used to cover the gain range. Images are captured at
+         1000/500/200/100/50/10 lux levels for regions 1 through 6. If you require more regions,
+         capture more images at other lux levels.</p>
+
+      <p class="p">As a prerequisite, ensure AEC is working correctly before capturing raw images.</p>
+
+      <div class="note note" id="bae1466545245521__note_N1001C_N1000F_N10001"><span class="notetitle">Note:</span> Images imported into Chromatix must not have spaces in their titles, or an error message
+         appears.</div>
+
+      <div class="p">
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="bae1466545245521__table_y4v_q2p_4bb" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:16.025641025641026%" /><col style="width:40.865384615384606%" /><col style="width:43.10897435897436%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr class="row">
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d7745e42">Set</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d7745e45">Test scenes</th>
+
+                     <th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d7745e48">Tuning blocks</th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">1</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Black</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">Linearization</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">2</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Diffuser</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">
+                        <ul class="ul" id="bae1466545245521__ul_ibs_dpp_4bb">
+                           <li class="li">LSC</li>
+
+                           <li class="li">HNR radial processing</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">3</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">MCC images</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">
+                        <ul class="ul" id="bae1466545245521__ul_vff_fpp_4bb">
+                           <li class="li">Color correction</li>
+
+                           <li class="li">ABF noise profiling</li>
+
+                           <li class="li">HNR and ASF skin color detection</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">4</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Flat field images</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">Color correction</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">5</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">ISO 12233 resolution chart</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">ASF</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">6</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">MCC image/video sequences</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">
+                        <ul class="ul" id="bae1466545245521__ul_khh_cpp_4bb">
+                           <li class="li">ANR</li>
+
+                           <li class="li">TF</li>
+
+                           <li class="li">MF</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">7</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Flat field image/video sequences</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">
+                        <ul class="ul" id="bae1466545245521__ul_xjj_cpp_4bb">
+                           <li class="li">ANR</li>
+
+                           <li class="li">TF</li>
+
+                           <li class="li">MF</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">8</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Natural scene image/video sequences</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">
+                        <ul class="ul" id="bae1466545245521__ul_q1m_cpp_4bb">
+                           <li class="li">ANR</li>
+
+                           <li class="li">TF</li>
+
+                           <li class="li">MF</li>
+
+                        </ul>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">9</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Outdoor landscape sequence</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">MF</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">10</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Outdoor portrait sequences</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">MF</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">11</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Natural scene video with sufficient details</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">LRME</td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e42 ">12</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e45 ">Natural scene video with insufficient details</td>
+
+                     <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d7745e48 ">LRME</td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </div>
+
+      <p class="p">Refer to the Suggested Images spreadsheet attachment for the appropriate chart and lighting
+         conditions with which to capture the raw images for tuning a specific ISP block. Follow the
+         image capture procedure specific to the ISP block or the chart type.</p>
+
+   </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="ooh1494872237798.html">Capture black level images</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="gee1494872107211.html">Capture lens rolloff images</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="pkj1494872175320.html">Capture MCC images</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="tlq1494872292944.html">Capture flat field images</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="jev1494872351538.html">Capture gray chart images in the light booth</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="ysz1494872412940.html">Capture ISO12233 resolution chart images</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="bit1494872313677.html">Capture gray chart images outdoors on a sunny day</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="pwn1508357511796.html">Capture MCC image and video sequences</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="ett1508357545877.html">Capture flat field image and video sequences</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="yyk1508357584882.html">Capture natural scene image and video sequences</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="zmt1508357617976.html">Capture outdoor landscape and portrait sequences</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="mcw1508363654723.html">Capture dot chart images</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="ykp1508357739904.html">Capture natural scene LRME video</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="wwm1508435198728.html">Capture ANR images</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="ypd1508435239369.html">Capture TF image and video sequences</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="kel1508435264932.html">Capture MF image and video sequences</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="pwn1508357511796.html" title="Related tuning blocks: ANR, TF, and MF">Capture MCC image and video sequences</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="ett1508357545877.html" title="Related tuning blocks: ANR, TF, and MF">Capture flat field image and video sequences</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="yyk1508357584882.html" title="Related tuning blocks: ANR, TF, and MF">Capture natural scene image and video sequences</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="zmt1508357617976.html" title="Capture outdoor landscape and portrait sequences">Capture outdoor landscape and portrait sequences</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="ykp1508357739904.html" title="Low resolution motion estimation (LRME) finds the motion vector (MV) field between two low-resolution (downscaled) images. LRME should be tuned after IFE tuning. When TF is configured to use LRME, LRME should be tuned first.">Capture natural scene LRME video</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="ooh1494872237798.html" title="Capture black level images">Capture black level images</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="gee1494872107211.html" title="Capture lens rolloff images">Capture lens rolloff images</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="pkj1494872175320.html" title="Capture MCC images">Capture MCC images</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="tlq1494872292944.html" title="Capture flat field images">Capture flat field images</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="jev1494872351538.html" title="Capture gray chart images in the light booth">Capture gray chart images in the light booth</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="ysz1494872412940.html" title="Capture ISO12233 resolution chart images">Capture ISO12233 resolution chart images</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="bit1494872313677.html" title="Capture gray chart images outdoors on a sunny day">Capture gray chart images outdoors on a sunny day</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="mcw1508363654723.html" title="Capture dot chart images">Capture dot chart images</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="wwm1508435198728.html" title="ANR is a multipass spatial noise filtering process available for snapshot and video modes.">Capture ANR images</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="ypd1508435239369.html" title="TF is applied to each video frame and blends the current frame with the previous frame.">Capture TF image and video sequences</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="kel1508435264932.html" title="Capture MF image and video sequences">Capture MF image and video sequences</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="qgd1494872421910.html" title="Capturing Images for Camera Tuning"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Capturing Images for Camera Tuning</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

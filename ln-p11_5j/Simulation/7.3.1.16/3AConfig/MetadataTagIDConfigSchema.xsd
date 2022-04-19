@@ -1,0 +1,123 @@
+﻿<!--
+ FILE:        Metadata Tag ID Configuration Schema
+ SERVICES:    Metadata Tag ID Configuration Schema
+ DESCRIPTION: Defines the format for the Metadata  Tag ID Configuration XML files
+
+Copyright (c) 2017-2020 Qualcomm Technologies, Inc.
+ All Rights Reserved.
+ Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="HexInt">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="0x[0-9A-Fa-f]+|-?[0-9]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MetadataTagIDConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TypeID" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:choice>
+              <xs:element name="FieldID" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:choice>
+                    <xs:element name="Enumeration" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute type="xs:string" name="Name"        use="required"/>
+                        <xs:attribute type="HexInt"    name="Value"       use="required"/>
+                        <xs:attribute type="xs:string" name="Description" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Bitmask" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute type="xs:string" name="Name"        use="required"/>
+                        <xs:attribute type="HexInt"    name="Value"       use="required"/>
+                        <xs:attribute type="xs:string" name="Description" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                  <xs:attribute type="xs:string" name="Name"        use="required"/>
+                  <xs:attribute type="HexInt"    name="ID"          use="required"/>
+                  <xs:attribute type="xs:string" name="Description" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Enumeration" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute type="xs:string" name="Name"        use="required"/>
+                  <xs:attribute type="HexInt"    name="Value"       use="required"/>
+                  <xs:attribute type="xs:string" name="Description" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Bitmask" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute type="xs:string" name="Name"        use="required"/>
+                  <xs:attribute type="HexInt"    name="Value"       use="required"/>
+                  <xs:attribute type="xs:string" name="Description" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+            <xs:attribute type="xs:string" name="Name"        use="required"/>
+            <xs:attribute type="HexInt"    name="ID"          use="required"/>
+            <xs:attribute type="xs:string" name="Description" use="optional"/>
+          </xs:complexType>
+          <xs:unique name="UniqueTypeFieldID">
+            <xs:selector xpath="FieldID"/>
+            <xs:field xpath="@ID"/>
+          </xs:unique>
+          <xs:unique name="UniqueTypeValue">
+            <xs:selector xpath="Enumeration" />
+            <xs:field xpath="@Value" />
+          </xs:unique>
+          <xs:unique name="UniqueTypeBitmask">
+            <xs:selector xpath="Bitmask" />
+            <xs:field xpath="@Value" />
+          </xs:unique>
+        </xs:element>
+        <xs:element name="TagID" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:choice>
+              <xs:element name="Enumeration" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute type="xs:string" name="Name"        use="required"/>
+                  <xs:attribute type="HexInt"    name="Value"       use="required"/>
+                  <xs:attribute type="xs:string" name="Description" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Bitmask" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute type="xs:string" name="Name"        use="required"/>
+                  <xs:attribute type="HexInt"    name="Value"       use="required"/>
+                  <xs:attribute type="xs:string" name="Description" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+            <xs:attribute type="xs:string" name="Name"        use="required"/>
+            <xs:attribute type="HexInt"    name="ID"          use="required"/>
+            <xs:attribute type="xs:string" name="Description" use="optional"/>
+          </xs:complexType>
+          <xs:unique name="UniqueTagEnum">
+            <xs:selector xpath="Enumeration" />
+            <xs:field xpath="@Value" />
+          </xs:unique>
+          <xs:unique name="UniqueTagBitmask">
+            <xs:selector xpath="Bitmask" />
+            <xs:field xpath="@Value" />
+          </xs:unique>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="Tag" use="required"/>
+      <xs:attribute type="xs:int" name="TagSize" use="required"/>
+    </xs:complexType>
+    <xs:unique name="UniqueTagID">
+      <xs:selector xpath="TagID" />
+      <xs:field xpath="@ID" />
+    </xs:unique>
+    <xs:unique name="UniqueTypeID">
+      <xs:selector xpath="TypeID" />
+      <xs:field xpath="@ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
+

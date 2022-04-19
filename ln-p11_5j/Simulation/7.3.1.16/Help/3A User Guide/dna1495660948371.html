@@ -1,0 +1,109 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Multiple options exist for improving brightness consistency. First adjust luma tolerance, then try to adjust exposure, gain, and exposure time. If brightness consistency does not improve, check for ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Improve brightness consistency for image captures of the same scene" /><meta name="DC.Relation" scheme="URI" content="wor1495661116524.html" /><meta name="DC.Relation" scheme="URI" content="tbv1495660804257.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="iur1474864618026" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Improve brightness consistency for image captures of the same scene</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="iur1474864618026">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Improve brightness consistency for image captures of the same scene</h1>
+
+   <div class="body taskbody">
+      <div class="section context" id="iur1474864618026__context_N10011_N1000E_N10001"><p class="p">Multiple options exist for improving brightness consistency. First adjust luma tolerance, then
+            try to adjust exposure, gain, and exposure time. If brightness consistency does not
+            improve, check for system latency. </p>
+</div>
+
+      <p class="li stepsection">Option 1: Adjust luma tolerance</p><ol><li class="li step" id="iur1474864618026__step_N1001F_N10018_N1000E_N10001">
+            <span class="ph cmd">Capture multiple test images with 3A EXIF information and AEC log messages. Open
+               the images in the Image Viewer.</span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N10028_N10018_N1000E_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">3A Debug</span> dialog box, click the
+                  <span class="ph uicontrol">Data</span> tab and select <span class="ph menucascade"><span class="ph uicontrol">AEC Debug Info</span> &gt; <span class="ph uicontrol">Luma and Luma Target Information</span></span>.</span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N10045_N10018_N1000E_N10001">
+            <span class="ph cmd">Compare the <span class="ph uicontrol">Bayer Metered Luma</span> (frame luma) among the test
+               images. <br /><img class="image" id="iur1474864618026__image_avx_xvh_1x" src="rgz1495660790061.png" /><br /></span>
+            <ul class="ul choices" id="iur1474864618026__choices_kyn_2xh_1x">
+               <li class="li choice">If there is no significant difference in frame luma, adjust exposure index,
+                  gain, and line count.</li>
+
+               <li class="li choice">If there is a significant difference in frame luma between test images taken
+                  under the same test conditions:<ol class="ol" type="a" id="iur1474864618026__ol_pvc_jxh_1x">
+                     <li class="li">Tune AE luma target and tolerance. </li>
+
+                     <li class="li">After luma tuning, on the <span class="ph uicontrol">ISP Tuning</span> tab, click
+                           <span class="ph uicontrol">Edit Chromatix Data</span>. Select <span class="ph uicontrol">Header
+                           type:</span> 3A and navigate to<span class="ph uicontrol"> AEC</span> &gt;
+                           <span class="ph uicontrol">Generic Tuning</span> &gt; <span class="ph uicontrol">Luma
+                           Tolerance</span>.<br /><img class="image" id="iur1474864618026__image_jqf_qvh_1x" src="gja1495661091237.png" /><br /></li>
+
+                     <li class="li">Reduce the luma tolerance value. Be aware of the possible trade offs: Too
+                        small of a luma tolerance may cause more oscillation. A higher luma
+                        tolerance value may make the variation in image brightness more
+                        obvious.</li>
+
+                     <li class="li">Capture multiple images with the revised test conditions to determine if
+                        the brightness consistency has improved without side effects. </li>
+
+                  </ol>
+</li>
+
+            </ul>
+
+         </li>
+</ol><p class="li stepsection">Option 2: Adjust exposure index, gain, and line count</p><ol start="4"><li class="li step" id="iur1474864618026__step_N10099_N10018_N1000E_N10001">
+            <span class="ph cmd">Capture multiple test images with 3A EXIF information and AEC log messages. Open
+               the images in the Image Viewer.</span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N100A2_N10018_N1000E_N10001">
+            <span class="ph cmd">Compare the images to determine whether <span class="keyword parmname">Exposure index</span>,
+                  <span class="keyword parmname">Gain</span>, and <span class="keyword parmname">Line count</span> (Exposure time) are
+               the same between the test images.</span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N100B7_N10018_N1000E_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">3A Debug</span> dialog box, click the
+                  <span class="ph uicontrol">Data</span> tab and select <span class="ph menucascade"><span class="ph uicontrol">AEC Debug Info</span> &gt; <span class="ph uicontrol">Gain and Line Count Information</span></span>.<br /><img class="image" id="iur1474864618026__image_g1y_fb3_1x" src="ojq1495660848624.png" /><br /></span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N100D9_N10018_N1000E_N10001">
+            <span class="ph cmd">In the <span class="ph uicontrol">3A Debug</span> dialog box, click the
+                  <span class="ph uicontrol">Data</span> tab and select <span class="ph menucascade"><span class="ph uicontrol">AEC Debug Info</span> &gt; <span class="ph uicontrol">Convergence Information</span></span> to view the <span class="ph uicontrol">Exposure index</span>. <br /><img class="image" id="iur1474864618026__image_o15_2b3_1x" src="caq1495660915236.png" /><br /></span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N100FF_N10018_N1000E_N10001">
+            <span class="ph cmd">If the <span class="keyword parmname">Exposure index</span>, <span class="keyword parmname">Gain,</span> and
+                  <span class="keyword parmname">Line Count</span> (exposure time) for all the images are the same,
+               the brightness inconsistency might be an ISP issue with lens rolloff or gamma. Tune
+               the ISP lens rolloff or ISP gamma. Try to disable or just use a single table for
+               Gamma and Rolloff functions.</span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N10114_N10018_N1000E_N10001">
+            <span class="ph cmd">If the <span class="ph uicontrol">Exposure index</span> is different and <span class="ph uicontrol">Luma
+                  Target</span> is the same for the test images, the issue may be due to luma
+               tolerance.</span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N10125_N10018_N1000E_N10001">
+            <span class="ph cmd">If the <span class="ph uicontrol">Exposure index</span> is different and <span class="ph uicontrol">Luma Target</span> is also different, add logs to help diagnose the problem.</span>
+         </li>
+</ol><p class="li stepsection">Option 3: Check for latency issues</p><ol start="11"><li class="li step" id="iur1474864618026__step_N1013A_N10018_N1000E_N10001">
+            <span class="ph cmd">Capture multiple test images with 3A EXIF information and AEC log messages.</span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N10143_N10018_N1000E_N10001">
+            <span class="ph cmd">Work with the sensor driver engineer and sensor vendor to verify that the sensor gain and exposure are synchronized with every frame. </span>
+         </li>
+<li class="li step" id="iur1474864618026__step_N1014C_N10018_N1000E_N10001">
+            <span class="ph cmd">Capture consecutive images with the new test conditions to verify that the brightness issue is resolved.</span>
+         </li>
+</ol>
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="wor1495661116524.html" title="The luma target of AEC determines the target brightness that AEC is aiming at (based on fixed gamma curves and tone mapping). Different luma targets can be assigned for different brightness conditions. For example, in low light, a smaller luma target is generally preferred to decrease the image brightness for a more natural appearance of the images as well as for better noise performance.">Tune AE luma target</a></div>
+<div class="related_link"><a class="navheader_parent_path" href="tbv1495660804257.html" title="Generate a common set of AEC zone triggers by capturing images under given lux levels in the light booth.">Tune the AEC default triggers (3A v5.x and v6.0)</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

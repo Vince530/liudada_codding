@@ -1,0 +1,78 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Before tuning the GRA module, determine how many lighting regions you need and create them in the Parameter Editor. On the Pipeline tab, click IPE &gt; GRA . Select the Region you want to tune. Click ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune GRA" /><meta name="abstract" content="" /><meta name="description" content="" /><meta name="DC.Relation" scheme="URI" content="yfm1510604615899.html" /><meta name="DC.Relation" scheme="URI" content="yfm1510604615899.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="pek1510604703257" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune GRA</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="pek1510604703257">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="yfm1510604615899.html" title="GRA tuning concepts">GRA tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="yfm1510604615899.html" title="GRA tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">GRA tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune GRA</h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc"></p>
+
+		<div class="section prereq p" id="pek1510604703257__prereq_N1001B_N10018_N10001">
+			<p class="p">Before tuning the GRA module, determine how many lighting regions you
+				need and create them in the Parameter Editor. </p>
+
+		</div>
+
+		<div class="section context" id="pek1510604703257__context_N1001F_N10018_N10001"></div>
+
+		<ol class="ol steps"><li class="li step stepexpand" id="pek1510604703257__step_N10029_N10026_N10013_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab,
+					click <span class="ph menucascade"><span class="ph uicontrol">IPE</span> &gt; <span class="ph uicontrol">GRA</span></span>. </span>
+			</li>
+<li class="li step stepexpand" id="pek1510604703257__step_N10032_N10023_N10018_N10001">
+				<span class="ph cmd">Select the <span class="ph uicontrol">Region</span> you want to tune. </span>
+				<div class="itemgroup info"></div>
+			</li>
+<li class="li step stepexpand" id="pek1510604703257__step_N1005A_N10026_N10013_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load Image</span> and upload a raw image of a scene to
+					evaluate the grain.</span>
+			</li>
+<li class="li step stepexpand" id="pek1510604703257__step_N1006C_N10026_N10013_N10001">
+				<span class="ph cmd">Evaluate the image and the three GRA lookup tables to determine if any
+					adjustments are necessary. Use the <span class="ph uicontrol">Parameter</span> list to
+					select the appropriate LUT and select Plot or Grid as the <span class="ph uicontrol">Display
+						type</span>. <br /><img class="image" id="pek1510604703257__image_hwd_hdg_wbb" src="dox1510618555868.png" /><br /></span>
+			</li>
+<li class="li step stepexpand" id="pek1510604703257__step_N10082_N10026_N10013_N10001">
+				<span class="ph cmd">To adjust the strength, enter a new value in the <span class="ph uicontrol">Grain
+						Strength</span> field.</span>
+			</li>
+<li class="li step stepexpand" id="pek1510604703257__step_N1008F_N10026_N10013_N10001">
+				<span class="ph cmd">To adjust LUT values, select the appropriate LUT, and do one of the following: </span>
+				<div class="itemgroup info">
+					<ul class="ul" id="pek1510604703257__ul_xh4_wfg_wbb">
+						<li class="li">If using <span class="ph uicontrol">Display type</span> = Plot, drag the
+							appropriate point to the adjusted value.</li>
+
+						<li class="li">If using <span class="ph uicontrol">Display type</span> = Grid, enter a new value
+							in the appropriate field.</li>
+
+					</ul>
+
+				</div>
+			</li>
+<li class="li step stepexpand" id="pek1510604703257__step_N100B1_N10026_N10013_N10001">
+				<span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save to project</span></span> to save the changes.</span>
+			</li>
+<li class="li step stepexpand" id="pek1510604703257__step_N100C6_N10026_N10013_N10001">
+				<span class="ph cmd">Upload the image again to evaluate the effect of the changes.</span>
+			</li>
+</ol>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="yfm1510604615899.html" title="GRA tuning concepts">GRA tuning concepts</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="yfm1510604615899.html" title="GRA tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">GRA tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,256 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The following table lists the parameters used for tuning the BPC/BCC module for preview/video mode. The default values for the parameters are suitable for most situations but may require adjustment in ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="BPC/BCC parameters" /><meta name="DC.Relation" scheme="URI" content="ayn1506128394422.html" /><meta name="DC.Relation" scheme="URI" content="wav1506099183001.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="rxh1505158882108" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>BPC/BCC parameters</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="rxh1505158882108">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="adl1504650516665.html" title="IFE tuning">IFE tuning</a> / <a class="navheader_parent_path" href="ayn1506128394422.html" title="BPC/BCC tuning concepts">BPC/BCC tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="ayn1506128394422.html" title="BPC/BCC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPC/BCC tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">BPC/BCC parameters </h1>
+
+	<div class="body conbody">
+		<div class="p">The following table lists the parameters used for tuning the BPC/BCC
+			module for preview/video mode. The default values for the parameters are suitable for
+			most situations but may require adjustment in some use cases to achieve your specific
+			objectives. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="rxh1505158882108__ID-table-0000000f" class="table landscape" width="100%" frame="border" border="1" rules="all"><caption><span class="tablecap">Table :   BPC/BCC parameters
+					(preview/video)</span></caption><colgroup><col style="width:1.875in" /><col style="width:2in" /><col style="width:2in" /><col style="width:1.25in" /><col style="width:1.313in" /></colgroup><thead class="thead" style="text-align:left;">
+						<tr class="row">
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30562e43">Parameter Name</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30562e46">Description</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30562e49">Tuning</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30562e52">Factory Default</th>
+
+							<th class="entry cellrowborder" style="text-align:left;vertical-align:top;" id="d30562e55">Must Tune?</th>
+
+						</tr>
+
+					</thead>
+<tbody class="tbody">
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">Bpcbcc Enable (Enable
+								Section)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Enables or disables bad
+								pixel correction for a Bayer pattern  </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">Set to 1 to correct bad
+								pixels for a Bayer pattern</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">1<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Yes, if
+								applicable</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">Hot Pixel Correction
+								Disable (Bpcbcc 50 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Enables or disables
+								correction of hot pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">Set to 0 to correct hot
+								pixels</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">0<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Yes, if
+								applicable</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">Cold Pixel Correction
+								Disable (Bpcbcc 50 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Enables or disables
+								correction of cold pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">Set to 0 to correct cold
+								pixels</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">0<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Yes, if
+								applicable</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">Same Channel Recovery
+								(Bpcbcc 50 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Enables or disables
+								correction using cross-channel pixels</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">Set to 0 to use both
+								same channel and cross-channel</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">0<p class="p">Enable = 1</p>
+<p class="p">Disable = 0</p>
+</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Yes, if
+								applicable</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">Fmax (Bpcbcc 50
+								Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Specifies the threshold
+								for a hot pixel value to be selected for correction. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">
+								<p class="p">If the project uses a non-PD sensor with a Bayer pattern, set
+									this value to control how many hot pixels are corrected. </p>
+
+								<p class="p">A higher value results in fewer pixels detected as bad hot
+									pixels.</p>
+
+								<p class="p">For a high light region, lowering Fmax has more impact on missed
+									pixels than lowering the offset. </p>
+
+								<p class="p">For a low light region, lowering the offset has more impact on
+									missed pixels than lowering Fmax.</p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">
+								<p class="p">64</p>
+
+								<p class="p">Range: [0, 127] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">Fmin (Bpcbcc 50
+								Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Specifies the threshold
+								for a cold pixel value to be selected for correction. </td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">If the project uses a
+								non-PD sensor with a Bayer pattern, set this value to control how
+								many cold pixels are corrected. A higher value results in fewer
+								pixels detected as bad cold pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">
+								<p class="p">32</p>
+
+								<p class="p">Range: [0, 127] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">BPC Offset  (Bpcbcc 50
+								Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Specifies the offset
+								adjustment to further refine the threshold for a single bad
+								pixel.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">Set this value to adjust
+								how many bad pixels are corrected. A higher value results in fewer
+								pixels detected as bad pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">
+								<p class="p">128</p>
+
+								<p class="p">Range: [0, 16383] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">BCC Offset (Bpcbcc 50
+								Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Specifies the offset
+								adjustment to further refine the threshold for a couplet bad
+								pixel.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">Set this value to adjust
+								how many bad pixels are corrected. A higher value results in fewer
+								pixels detected as bad pixels.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">
+								<p class="p">128</p>
+
+								<p class="p">Range: [0, 16383] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Use default value, or
+								tune as needed</td>
+
+						</tr>
+
+						<tr class="row">
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e43 ">Correction Threshold
+								(Bpcbcc 50 Rgn)</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e46 ">Specifies the minimum
+								value change allowed to the bad pixel. If the value change is less
+								than this threshold, the change is not made.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e49 ">Set this value to adjust
+								how many bad pixels are corrected. A larger value results in fewer
+								pixels corrected.</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e52 ">
+								<p class="p">128</p>
+
+								<p class="p">Range: [0, 819] </p>
+
+							</td>
+
+							<td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d30562e55 ">Use default
+								value</td>
+
+						</tr>
+
+					</tbody>
+</table>
+</div>
+</div>
+
+	</div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="wav1506099183001.html" title="The following examples illustrate the effects of adjusting specific DSBPC parameter values for a preview/video project.">Examples of BPC/BCC parameter effects</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="ayn1506128394422.html" title="BPC/BCC tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">BPC/BCC tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

@@ -1,0 +1,101 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Ensure the following: Dual camera synchronization is working. Via override settings – Enable dual camera sync by enabling the dual camera framework and the Qualcomm 3A sync. In W/T mode, cover the ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune dual camera AEC" /><meta name="DC.Relation" scheme="URI" content="cyt1495661060161.html" /><meta name="DC.Relation" scheme="URI" content="xts1518729922125.html" /><meta name="DC.Relation" scheme="URI" content="pqx1518729949020.html" /><meta name="DC.Relation" scheme="URI" content="aqg1521048673478.html" /><meta name="DC.Relation" scheme="URI" content="rrn1517428925261.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jrj1517428982623" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune dual camera AEC</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jrj1517428982623">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cyt1495661060161.html" title="Advanced AEC tuning procedures">Advanced AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune dual camera AEC</h1>
+
+	<div class="body taskbody">
+		<div class="section prereq p" id="jrj1517428982623__prereq_N10011_N1000E_N10001">Ensure the following:<ul class="ul" id="jrj1517428982623__ul_azd_3nl_wcb">
+				<li class="li">Dual camera synchronization is working.<ul class="ul" id="jrj1517428982623__ul_lnz_fh3_2db">
+						<li class="li">Via override settings – Enable dual camera sync by enabling the dual
+							camera framework and the Qualcomm 3A sync. In W/T mode, cover the other
+							sensor. If the preview goes dark, dual camera sync is working
+							correctly.</li>
+
+						<li class="li">Via tuning – Enable dual camera AEC sync by enabling <span class="ph uicontrol">enableDualCamExpComp</span>. This is required
+							to capture images with default exposure compensation settings.</li>
+
+					</ul>
+</li>
+
+				<li class="li">AEC and AWB basic tuning has been performed.</li>
+
+				<li class="li">3A debug data in JPEG exif is enabled.</li>
+
+				<li class="li">AEC metering features are disabled:<ul class="ul" id="jrj1517428982623__ul_wb2_nnl_wcb">
+						<li class="li">enableExtrmClr – False</li>
+
+						<li class="li">enableHistMetering – False</li>
+
+						<li class="li">enableBrightRgnAdj – False</li>
+
+						<li class="li">enableDarkRgnAdj – False</li>
+
+					</ul>
+</li>
+
+				<li class="li">luxLumaTarget is set to 50.</li>
+
+				<li class="li">Dual Cam Exp Comp Multiplier is set to 1.0.</li>
+
+				<li class="li">All Compensation Ratio values are set to 1.0 under CCT Based Exp Comp.</li>
+
+			</ul>
+</div>
+
+		<div class="li step p" id="jrj1517428982623__step_N10053_N1004A_N1000E_N10001">
+				<span class="ph cmd">Before tuning, compare the differences between camera 1 and camera 2:</span>
+				<ol type="a" class="ol substeps" id="jrj1517428982623__substeps_edx_j3s_1db">
+					<li class="li substep">
+						<span class="ph cmd">Capture one raw image per camera.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Use a flat, uniform gray chart and set the camera optical axis
+							perpendicular to it. Ensure the gray chart occupies 100% FOV for both
+							cameras.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Open the images in Chromatix 7 and measure the average luma in a
+							ROI.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Compare the differences objectively by measuring the
+							average luma of each image. It is expected that without any AEC sync
+							tuning, the exposures should not match and should yield different lumas.
+							The goal of this tuning procedure is to reduce the luma difference
+							between the two cameras that is caused by exposure differences.</span>
+					</li>
+
+				</ol>
+
+			</div>
+
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="xts1518729922125.html">Tune Dual Cam Exp Comp Multiplier</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="pqx1518729949020.html">Tune CCT Based Exp Comp</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="aqg1521048673478.html">Verify dual camera AEC</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="rrn1517428925261.html" title="Dual camera AEC">Dual camera AEC</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cyt1495661060161.html" title="Advanced AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Advanced AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

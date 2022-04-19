@@ -1,0 +1,116 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="This section provides step-by-step procedures for tuning the ISP modules. Note: Motion compensated temporal filter (MCTF), multi-frame noise reduction (MFNR), and multi-frame super resolution (MFSR) ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="Spectra 2xx ISP Tuning" /><meta name="DC.Relation" scheme="URI" content="gav1504650254694.html" /><meta name="DC.Relation" scheme="URI" content="adl1504650516665.html" /><meta name="DC.Relation" scheme="URI" content="qwz1504650571172.html" /><meta name="DC.Relation" scheme="URI" content="fcl1494872328107.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="rbf1458948385546" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Spectra 2xx ISP Tuning</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="rbf1458948385546">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table> 
+  <h1 class="title topictitle1" id="ariaid-title1">Spectra 2xx ISP Tuning</h1>
+ 
+  <div class="body conbody"> 
+	 <p class="p">This section provides step-by-step procedures for tuning the ISP modules.</p>
+
+    <p class="p">
+      <br /><img class="image" id="rbf1458948385546__image_wxz_tmv_q1b" src="bxj1500917020675.svg" /><br />
+    </p>
+
+    <div class="p">
+      <div class="note note" id="rbf1458948385546__note_N10045_N10042_N1002A_N10015_N10012_N10001"><span class="notetitle">Note:</span>  Motion
+        compensated temporal filter (MCTF), multi-frame noise reduction (MFNR), and multi-frame
+        super resolution (MFSR) are not supported for Windows on Snapdragon (WoS). </div>
+
+    </div>
+
+    <div class="p">For initial tuning, use the numbers in the pipeline figure below as a guide.
+      The numbers indicate the tasks required for manual initial tuning for the ISP 2xx and the
+      order in which the tasks must be performed. Refer to procedures named for each ISP module for
+      detailed instructions.<ol class="ol" id="rbf1458948385546__ol_ebg_k35_zw">
+        <li class="li">Tune AEC trigger points for ISP modules</li>
+
+        <li class="li">Tune linearization</li>
+
+        <li class="li">Tune LSC</li>
+
+        <li class="li">Tune ABF</li>
+
+        <li class="li">Tune HNR (snapshot mode only)</li>
+
+        <li class="li">Tune ANR</li>
+
+        <li class="li">Tune Color Correction/Gamma</li>
+
+        <li class="li">Tune ASF</li>
+
+        <li class="li">Tune AWB reference points</li>
+
+      </ol>
+</div>
+
+    <p class="p"><img class="image" id="rbf1458948385546__image_n5w_frm_p1b" src="wef1500503225557.svg" /></p>
+
+    <p class="p">The non-numbered modules are optional and can be tuned after initial tuning.
+      In the pipeline drawing, the tuning status of each module is indicated by the box on the left
+      (gray = untuned, or default values are used, blue = module has been modified).</p>
+
+    <p class="p">Use the simulation feature at any time during the tuning process to evaluate
+      the progress of the tuning. After each tuning session, capture new test images with the tuned
+      device and objectively measure image quality.</p>
+
+    <div class="section" id="rbf1458948385546__section_mkg_3rw_l2b"><h2 class="title sectiontitle">Create a restore point</h2>
+      
+      <p class="p">Use the <span class="ph uicontrol">Restore</span> menu to create
+        global- and module-based restore points for a project. Restore points allow parameter
+        changes and settings to be restored to a previously saved point. Global-based restore points
+        cover the span of an entire project, whereas module-based restore points cover specific
+        modules selected at the time.</p>
+
+      <div class="p">The <span class="ph uicontrol">Restore Points</span> menu docks beneath the pipeline
+        when Chromatix opens.<ol class="ol" id="rbf1458948385546__ol_rxj_tvw_l2b">
+          <li class="li">To create a global restore point, click <img class="image" id="rbf1458948385546__image_b1z_q4g_z2b" src="uvx1535647158086.png" /> next to
+              <span class="ph uicontrol">Global</span>.</li>
+
+          <li class="li"> Type a name for the global restore point and click <span class="ph uicontrol">OK</span>.</li>
+
+          <li class="li"> To create a module restore point, in the pipeline, select the module for which the
+            restore point will be created.</li>
+
+          <li class="li">In the <span class="ph uicontrol">Restore Points</span> menu, click <img class="image" id="rbf1458948385546__image_cw3_w4g_z2b" src="uvx1535647158086.png" /> next to the name of the selected
+            module.</li>
+
+          <li class="li"> To load a restore point, click <img class="image" id="rbf1458948385546__image_ddx_dpg_z2b" src="phl1535647160317.png" /> next to the preferred restore point.</li>
+
+          <li class="li"> To delete a restore point, select <span class="ph uicontrol">Enable
+              Delete</span> and click <img class="image" id="rbf1458948385546__image_o1k_hpg_z2b" src="dkc1535647160926.png" />
+            next to the preferred restore point. To delete multiple restore points, select the
+            restore points to be deleted and press the delete key.</li>
+
+          <li class="li"> To view all previously established restore points, click
+              <span class="ph uicontrol">Manage</span>. Restore points can also be deleted via this menu.</li>
+
+        </ol>
+</div>
+
+    </div>
+
+     
+  </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="gav1504650254694.html">BPS tuning</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="adl1504650516665.html">IFE tuning</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="qwz1504650571172.html">IPE tuning</a></strong><br />
+</li>
+</ul>
+
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="fcl1494872328107.html" title="Simulation Tools">Simulation Tools</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

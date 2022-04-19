@@ -1,0 +1,86 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="The luma target of AEC determines the target brightness that AEC is aiming at (based on fixed gamma curves and tone mapping). Different luma targets can be assigned for different brightness ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune AE luma target" /><meta name="abstract" content="The luma target of AEC determines the target brightness that AEC is aiming at (based on fixed gamma curves and tone mapping). Different luma targets can be assigned for different brightness conditions. For example, in low light, a smaller luma target is generally preferred to decrease the image brightness for a more natural appearance of the images as well as for better noise performance." /><meta name="description" content="The luma target of AEC determines the target brightness that AEC is aiming at (based on fixed gamma curves and tone mapping). Different luma targets can be assigned for different brightness conditions. For example, in low light, a smaller luma target is generally preferred to decrease the image brightness for a more natural appearance of the images as well as for better noise performance." /><meta name="DC.Relation" scheme="URI" content="cpr1495660858748.html" /><meta name="DC.Relation" scheme="URI" content="enu1495660880089.html" /><meta name="DC.Relation" scheme="URI" content="fic1495661072017.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nhy1474864608464" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune AE luma target</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nhy1474864608464">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="cpr1495660858748.html" title="Required AEC tuning procedures">Required AEC tuning procedures</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">Tune AE luma target</h1>
+
+   
+   <div class="body taskbody"><p class="shortdesc">The luma target of AEC determines the target brightness that AEC is aiming at (based
+      on fixed gamma curves and tone mapping). Different luma targets can be assigned for different
+      brightness conditions. For example, in low light, a smaller luma target is generally preferred
+      to decrease the image brightness for a more natural appearance of the images as well as for
+      better noise performance.</p>
+
+      <div class="section prereq p" id="nhy1474864608464__prereq_krs_bgk_kw">Tune the AEC default triggers and determine the
+         ISP gamma table. </div>
+
+      <div class="section context" id="nhy1474864608464__context_N1001E_N10012_N10001">
+         <p class="p">The luma target is tuned using the generic multi-zone guidelines.</p>
+
+      </div>
+
+      <ol class="ol steps"><li class="li step stepexpand" id="nhy1474864608464__step_N10030_N1002D_N10019_N10001">
+            <span class="ph cmd">Adjust the default triggers, as needed.</span>
+         </li>
+<li class="li step stepexpand" id="nhy1474864608464__step_N10039_N1002D_N10019_N10001">
+            <span class="ph cmd">For each zone, start with the default values for the luma target.</span>
+         </li>
+<li class="li step stepexpand" id="nhy1474864608464__step_N10042_N1002D_N10019_N10001">
+            <span class="ph cmd">Capture pictures for luma target zones and compare them to the reference
+               device.</span>
+            <div class="itemgroup info">Select scenes that includes complex objects, rather than flat, gray scenes.</div>
+         </li>
+<li class="li step stepexpand" id="nhy1474864608464__step_N1004F_N1002D_N10019_N10001">
+            <span class="ph cmd">Set the value for the outdoor (Zone 0) target luma based on the brightness of the
+               outdoor test images.</span>
+         </li>
+<li class="li step stepexpand" id="nhy1474864608464__step_N10058_N1002D_N10019_N10001">
+            <span class="ph cmd">Review the brightness of the test image. Adjust the luma target value to change
+               brightness: lower for brighter images and higher for darker images.</span>
+         </li>
+<li class="li step stepexpand" id="nhy1474864608464__step_N10061_N1002D_N10019_N10001">
+            <span class="ph cmd">Repeat this process for the indoor (Zone 1) target luma based on the brightness of
+               indoor test images by adding an additional zone.</span>
+            <ol type="a" class="ol substeps" id="nhy1474864608464__substeps_m43_wbw_j1b">
+               <li class="li substep">
+                  <span class="ph cmd">In the <span class="ph uicontrol">Parameter
+                        Editor</span>, navigate to <span class="ph menucascade"><span class="ph uicontrol">3A</span> &gt; <span class="ph uicontrol">AEC</span> &gt; <span class="ph uicontrol">Metering</span> &gt; <span class="ph uicontrol">Mtr Luma Target Zone</span></span>.</span>
+               </li>
+
+               <li class="li substep">
+                  <span class="ph cmd">Click <img class="image" id="nhy1474864608464__image_mpb_gcw_j1b" src="hba1498761702732.png" /> to add
+                     additonal parameters for additional zones.<br /><img class="image" id="nhy1474864608464__image_hgf_jcw_j1b" src="znb1498761502085.png" /><br /></span>
+               </li>
+
+            </ol>
+
+         </li>
+<li class="li step stepexpand" id="nhy1474864608464__step_N100A4_N1002D_N10019_N10001">
+            <span class="ph cmd">If there are other zones, repeat this process for each additional zone.</span>
+            <div class="itemgroup info">The lowlight luma target is normally the last zone of the luma target. Zone 0
+               (outdoor) and Zone 1 (indoor) should use the same luma target value. For the lowlight
+               zone (Zone 2), use half of the target value used for Zones 0 and 1.</div>
+         </li>
+</ol>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Information</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="fic1495661072017.html" title="Luma target and exposure index">Luma target and exposure index</a></div></div>
+
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="enu1495660880089.html" title="The AEC lux index normalization feature can reduce the effort for updating a new trigger point for each mode.">Tune AEC lux index normalization</a></div></div>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="cpr1495660858748.html" title="Required AEC tuning procedures"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Required AEC tuning procedures</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

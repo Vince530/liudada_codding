@@ -1,0 +1,171 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="ASF is an adaptive filter that can apply smoothing and sharpening to different parts in images, depending on the detection of edges. It smooths areas with less detail to remove noise and sharpens ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="task" /><meta name="DC.Title" content="Tune ASF" /><meta name="abstract" content="ASF is an adaptive filter that can apply smoothing and sharpening to different parts in images, depending on the detection of edges. It smooths areas with less detail to remove noise and sharpens edges to increase the sharpness of the image." /><meta name="description" content="ASF is an adaptive filter that can apply smoothing and sharpening to different parts in images, depending on the detection of edges. It smooths areas with less detail to remove noise and sharpens edges to increase the sharpness of the image." /><meta name="DC.Relation" scheme="URI" content="pfu1494872329760.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="nnn1476471149922" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Tune ASF</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="nnn1476471149922">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="qwz1504650571172.html" title="IPE tuning">IPE tuning</a> / <a class="navheader_parent_path" href="pfu1494872329760.html" title="ASF tuning concepts">ASF tuning concepts</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="pfu1494872329760.html" title="ASF tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ASF tuning concepts</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">Tune ASF </h1>
+
+	
+	<div class="body taskbody"><p class="shortdesc">ASF is an adaptive filter that can apply smoothing and sharpening to
+		different parts in images, depending on the detection of edges. It smooths areas with less
+		detail to remove noise and sharpens edges to increase the sharpness of the image. </p>
+
+		<ol><li class="li step stepexpand" id="nnn1476471149922__step_N10020_N1001C_N10019_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Pipeline</span> tab,
+					click <span class="ph uicontrol">ASF</span> and then click a region in the
+					Regions group.</span>
+			</li>
+<li class="li step stepexpand" id="nnn1476471149922__step_N10036_N1001D_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Load Image</span> and select a resolution chart image
+					that was captured under the specified lighting condition.</span>
+			</li>
+<li class="li step stepexpand" id="nnn1476471149922__step_N10031_N1001C_N10019_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Region Data</span> and expand the <span class="ph uicontrol">Asf 30 Rgn
+						Data</span> navigation tree.</span>
+				<ol type="a" class="ol substeps" id="nnn1476471149922__substeps_izg_nlc_h1b">
+					<li class="li substep">
+						<span class="ph cmd">Set layer 1 symmetric kernel parameters based on light
+							conditions.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Tune layer 1 gain strenght based on level and activity to enhance steep
+							edges and textures.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Set layer 2 kernel as the default.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Tune layer 2 gain strength based on level and activity to enhance thick
+							edges and local edge enhancements.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">If haloing occurs, tune gain contrast to reduce gain
+							strength around the edges.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">If skin appears dirty, tune skin gain to reduce
+							sharpening on skin.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Tune smoothing strength to make edges smoother.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Tune clamp if haloing persists after tuning gain
+							contrast.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="nnn1476471149922__step_N100AD_N1001D_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Simulate</span>.</span>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">Kernel</strong></p><ol start="5"><li class="li step stepexpand" id="nnn1476471149922__step_N100C0_N1001D_N1001A_N10001">
+				<span class="ph cmd">On the <span class="ph uicontrol">Kernel</span> tab, select <span class="ph uicontrol">HPF Symmetric
+						Coeff</span>, <span class="ph uicontrol">LPF Symmetric Coeff</span>, or
+						<span class="ph uicontrol">Activity Band Pass Coeff</span> from the list and adjust the
+					values as needed.</span>
+			</li>
+</ol><p class="li stepsection"><strong class="ph b">LUT</strong></p><ol start="6"><li class="li step stepexpand" id="nnn1476471149922__step_N10087_N1001C_N10019_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">LUT</span>.</span>
+				<ol type="a" class="ol substeps" id="nnn1476471149922__substeps_e5t_2xv_l1b">
+					<li class="li substep substepexpand">
+						<span class="ph cmd">On the <span class="ph uicontrol">Gain LUT</span> tab, use the three sliders to
+							adjust <span class="ph uicontrol">Overall Gain</span>, <span class="ph uicontrol">Shadow
+								Boost</span>, and <span class="ph uicontrol">Highlight Boost</span>.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">On the <span class="ph uicontrol">Negative Gain</span> tab, select adjust the
+								<span class="ph uicontrol">Negative Gain</span>, <span class="ph uicontrol">Negative
+								Shadow</span>, and <span class="ph uicontrol">Negative Highlight</span>
+							sliders to change gain LUT scaling.</span>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">On the <span class="ph uicontrol">Detail</span> tab, adjust the
+								<span class="ph uicontrol">Detail</span>, <span class="ph uicontrol">Noise</span>, and
+								<span class="ph uicontrol">Halo</span> sliders as needed.</span>
+						<div class="itemgroup info">If haloing occurs around chroma edges when contrast is not high, tune
+							gain chroma. If edge alignment is unnatural for textures, tune the
+							thresholds for edge alighnment not to detect textures as edges.</div>
+					</li>
+
+					<li class="li substep substepexpand">
+						<span class="ph cmd">If image corners are noisy or have less details,
+							adjust the <span class="ph uicontrol">Radial Gain</span> and <span class="ph uicontrol">Radial
+								Activity</span> sliders on the <span class="ph uicontrol">Radial</span>
+							tab.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="nnn1476471149922__step_N10157_N1001D_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph uicontrol">Sigma LUT RNR</span> to adjust the RNR control
+					points.</span>
+				<div class="itemgroup info">The radial control circles split the image into four knee points (Radial
+					Anchor[0] though Radial Anchor[3]), where each point has a different noise
+					reduction value. Moving the slider right increases the circle radius and moves
+					the location of the noise.</div>
+			</li>
+</ol><p class="li stepsection">To confirm the module performs as expected:</p><ol start="8"><li class="li step stepexpand" id="nnn1476471149922__step_N100B1_N1001C_N10019_N10001">
+				<span class="ph cmd">Capture a TE42 image.</span>
+			</li>
+<li class="li step stepexpand" id="nnn1476471149922__step_N100BA_N1001C_N10019_N10001">
+				<span class="ph cmd">Verify the following:</span>
+				<ol type="a" class="ol substeps" id="nnn1476471149922__substeps_vqp_1nq_h1b">
+					<li class="li substep">
+						<span class="ph cmd">Flat area has no dots or artifacts from this module.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Details are visible and look acceptable.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Edges are strong.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Corners are not noisy or less sharpened from the rest of the
+							image.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Halos are not present.</span>
+					</li>
+
+					<li class="li substep">
+						<span class="ph cmd">Skin appears smooth.</span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="li step stepexpand" id="nnn1476471149922__step_N101C4_N1001D_N1001A_N10001">
+				<span class="ph cmd">Repeat process for each region.</span>
+			</li>
+<li class="li step stepexpand" id="nnn1476471149922__step_N1012A_N1001D_N1001A_N10001">
+				<span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">File</span> &gt; <span class="ph uicontrol">Save to Project</span></span> to save any changes made.</span>
+			</li>
+</ol>
+	</div>
+
+<div class="related-links"></div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="pfu1494872329760.html" title="ASF tuning concepts"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">ASF tuning concepts</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-13</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

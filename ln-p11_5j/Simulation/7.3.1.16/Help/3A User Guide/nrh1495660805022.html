@@ -1,0 +1,55 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="If overall fail rate is too high compared to reference devices, the following options are listed from least to most in terms of tuning effort and impact/trade-off. Increase FV curve by tuning FV_min ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AF failure rate is too high for night/low light/flat/low contrast scenes" /><meta name="DC.Relation" scheme="URI" content="fht1495661081112.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="jer1477085287684" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AF failure rate is too high for night/low light/flat/low contrast scenes</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="jer1477085287684">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+   <h1 class="title topictitle1" id="ariaid-title1">AF failure rate is too high for night/low light/flat/low contrast scenes</h1>
+
+   <div class="body conbody">
+      <p class="p">If overall fail rate is too high compared to reference devices, the following options are listed from least to most in terms of tuning effort and impact/trade-off.</p>
+
+      <ul class="ul">
+         <li class="li">Increase FV curve by tuning FV_min</li>
+
+         <li class="li">Tune ROI for low light</li>
+
+      </ul>
+
+      <div class="section" id="jer1477085287684__section_N10021_N1000E_N10001"><h2 class="title sectiontitle">Increase FV curve by tuning FV_min</h2><p class="p"><span class="keyword cmdname">FV_min</span> tuning has the trade-off of lowering contrast in a normal scene. Because of this, tune this parameter carefully. When <span class="keyword cmdname">FV_min</span> is set too high, it filters out some low texture edges. When set too low, noise lowers the contrast of the curve. If <span class="keyword cmdname">FV_min</span> was not previously tuned, it can be tuned to increase contrast.</p>
+<ol class="ol">
+            <li class="li">Follow the procedure to tune <span class="keyword cmdname">FV_min</span>.</li>
+
+            <li class="li">Verify by comparing the focus curve minimum/maximum ratio in the log. The ratio should be higher with new settings.</li>
+
+            <li class="li">Verify the new setting in normal scenes to ensure that it does not increase the focus failure rate.</li>
+
+         </ol>
+</div>
+
+      <div class="section" id="jer1477085287684__section_N10049_N1000E_N10001"><h2 class="title sectiontitle">Tune ROI for low light</h2><p class="p">Increasing the ROI size gives more samples for the FV, thus increasing the success rate. Edge contrast in low light is typically lower due to low signal. Therefore, adjusting ROI could increase success rate. The ROI clipping ratio should not be greater than 1/3 of the CAMIF, otherwise, it starts to break the focus for all other normal scenes.</p>
+<ol class="ol">
+            <li class="li">Set the h_clip_low_light and v_clip_low_light ratios to 0.25.</li>
+
+            <li class="li">Test the focus success rate for a problematic scene.</li>
+
+            <li class="li">Increase the ratio by 0.05 for each iteration to improve focus success rate.</li>
+
+            <li class="li">Verify that the ROI is not too large by focusing on a scene with multiple objects. If the focus fails, it means that the ROI contains multiple objects. If so, then reduce the ROI unless corner case focus is preferred.</li>
+
+         </ol>
+</div>
+
+   </div>
+
+<div class="related-links">
+<div class="linklist linklist relinfo"><strong>Related Tasks</strong><br />
+
+<div class="related_link"><a class="navheader_parent_path" href="fht1495661081112.html" title="Tune FV_min">Tune FV_min</a></div></div>
+</div><div class="navfooter"><!----></div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

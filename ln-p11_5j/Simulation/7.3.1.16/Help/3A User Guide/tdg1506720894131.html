@@ -1,0 +1,60 @@
+
+<!DOCTYPE html
+  PUBLIC "" "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="AWB estimates the illuminant in a given scene based on several factors, including BG stats, scene brightness, and other information, and computes the AWB gain accordingly. Any changes in conditions, ..." /><meta name="copyright" content="(C) Copyright 2019" /><meta name="DC.rights.owner" content="(C) Copyright 2019" /><meta name="DC.Type" content="concept" /><meta name="DC.Title" content="AWB temporal convergence concept" /><meta name="DC.Relation" scheme="URI" content="aub1508957447801.html" /><meta name="DC.Relation" scheme="URI" content="puy1506724235594.html" /><meta name="DC.Relation" scheme="URI" content="khz1506724392313.html" /><meta name="documenttype" content="Tuning Guide" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="tdg1506720894131" /><meta name="DC.Language" content="en-us" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>AWB temporal convergence concept</title><!--  Generated with Oxygen version 17.1, build number 2016020417.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="tdg1506720894131">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="aub1508957447801.html" title="AWB frame control">AWB frame control</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="aub1508957447801.html" title="AWB frame control"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB frame control</span></a></span>  </div></td></tr></tbody></table>
+	<h1 class="title topictitle1" id="ariaid-title1">AWB temporal convergence concept</h1>
+
+	<div class="body conbody">
+		<p class="p">AWB estimates the illuminant in a given scene based on several factors,
+			including BG stats, scene brightness, and other information, and computes the AWB gain
+			accordingly. Any changes in conditions, such as illuminant, brightness, and camera FOV,
+			influences an AWB decision, which can change significantly from a previous decision. </p>
+
+		<p class="p">The temporal convergence module applies a temporal filter to ensure smooth
+			transition from the previous AWB decision to the current decision at a reasonable
+			convergence speed, preventing sudden AWB and color changes. This module does the
+			following:</p>
+
+		<ul class="ul" id="tdg1506720894131__ul_abg_qzp_jbb">
+			<li class="li">Manages convergence speed requests from other modules</li>
+
+			<li class="li">Provides an API for other modules to register convergence speed requests</li>
+
+			<li class="li">Selects a convergence speed that has highest priority in the list of
+				requests</li>
+
+			<li class="li">Applies the selected convergence speed to the current AWB decision</li>
+
+		</ul>
+
+		<p class="p">The temporal convergence module itself has two convergence speed requests: One that can
+			be applied to the first number of frames after the camera starts and one for normal
+			mode.</p>
+
+		<p class="p">The convergence speed is computed as follows: final gain = convergence speed * current
+			AWB gain + (1.0 - convergence speed) * previous AWB gain.</p>
+
+		<p class="p">The following figure shows an example of AWB convergence from gain 1.5 to 2.0, at
+			convergence speeds of 0.15, 0.25, and 0.5:</p>
+
+		<img class="image" id="tdg1506720894131__image_hjp_21q_jbb" src="ymi1506721235851.png" />
+	</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="puy1506724235594.html">Temporal convergence parameters</a></strong><br />
+</li>
+<li class="link ulchildlink"><strong><a href="khz1506724392313.html">Fine-tune temporal convergence</a></strong><br />
+</li>
+</ul>
+</div><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="aub1508957447801.html" title="AWB frame control"><span class="navheader_label">Parent Topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">AWB frame control</span></a></span>  </div><div class="footer"><table><col width="30%" /><col width="40%" /><col width="30%" /><tr><td class="Qualcommfooter" rowspan="2" align="left">80-NK872-14</td><td class="Qualcommfooter" align="center">Confidential and Proprietary – Qualcomm Technologies, Inc.</td><td></td></tr><tr><td class="Qualcommfooter" align="center"><b>MAY CONTAIN U.S. AND INTERNATIONAL EXPORT CONTROLLED INFORMATION</b></td><td align="right"></td></tr></table></div></body>
+</html>

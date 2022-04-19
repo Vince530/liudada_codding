@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<StreamConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\XSD\stream_config.xsd">
+  <module_version major_revision="1" minor_revision="0" incr_revision="0"/>
+  <DeviceSetting>
+    <InputStream0>
+      <Type>1</Type>
+      <Width>4656</Width>
+      <Height>3496</Height>
+      <Format>0x25</Format>
+      <!-- 0x25: Raw10, 0x7FA30C0A: P010, 0x26: PD10, 0x23: YUV420_888 -->
+      <PlaneStride>5824</PlaneStride>
+      <SliceHeight>3496</SliceHeight>
+    </InputStream0>
+    <OutputStream0>
+      <Type>0</Type>
+      <Width>4656</Width>
+      <Height>3496</Height>
+      <Format>0x7fa30c0a</Format>
+      <!-- 0x25: Raw10, 0x7fa30c0a: P010, 0x26: PD10, 0x23: YUV420_888 -->
+      <PlaneStride>9472</PlaneStride>
+      <SliceHeight>3520</SliceHeight>
+    </OutputStream0>
+    <OutputStream1>
+      <Type>0</Type>
+      <Width>1164</Width>
+      <Height>874</Height>
+      <Format>0x26</Format>
+      <!-- 0x25: Raw10, 0x7FA30C0A: P010, 0x26: PD10, 0x23: YUV420_888 -->
+      <PlaneStride>4864</PlaneStride>
+      <SliceHeight>448</SliceHeight>
+    </OutputStream1>
+    <OutputStream2>
+      <Type>0</Type>
+      <Width>292</Width>
+      <Height>220</Height>
+      <Format>0x26</Format>
+      <!-- 0x25: Raw10, 0x7FA30C0A: P010, 0x26: PD10, 0x23: YUV420_888 -->
+      <PlaneStride>1536</PlaneStride>
+      <SliceHeight>128</SliceHeight>
+    </OutputStream2>
+    <OutputStream3>
+      <Type>0</Type>
+      <Width>72</Width>
+      <Height>56</Height>
+      <Format>0x26</Format>
+      <!-- 0x25: Raw10, 0x7FA30C0A: P010, 0x26: PD10, 0x23: YUV420_888 -->
+      <PlaneStride>512</PlaneStride>
+      <SliceHeight>32</SliceHeight>
+    </OutputStream3>
+  </DeviceSetting>  
+  
+  <Width>2592</Width>
+  <Height>1944</Height>
+  <Stride>2592</Stride>
+  <!-- Fulll resolution before cropping/scaling -->
+  <FullWidth>2592</FullWidth>
+  <FullHeight>1944</FullHeight>
+  <!-- 0 : RGGB, 1 : GRBG, 2 : BGGR, 3 : GBRG-->
+  <BayerPattern>2</BayerPattern>
+  <BitsPerPixel>8</BitsPerPixel>
+  <!-- 0 : Unpacked, 1 : QCOM Packed, 2 : MIPI -->
+  <PackedType>0</PackedType>
+  <!-- Only valid for MIPI Raw images, Enable Padding : When PackedType == 2  -->
+  <MIPIPaddingEnable>1</MIPIPaddingEnable>
+  <!-- Only valid for MIPI Raw images, Padding Length in Bytes : When PackedType == 2  -->
+  <MIPIPaddingLength>16</MIPIPaddingLength>
+  <!-- 0 : Planar , 1 : CrCb , 2: Cbcr -->
+  <yuvFormatType>2</yuvFormatType>
+  <SensorScalefactor>1.0</SensorScalefactor>
+  <SensorBinningfactor>1</SensorBinningfactor>
+  <SensorCrop>
+    <OffsetX>0</OffsetX>
+    <OffsetY>0</OffsetY>
+  </SensorCrop>
+</StreamConfig>

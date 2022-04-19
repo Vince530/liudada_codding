@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+========================================================================
+   Copyright (c) 2017-2020 Qualcomm Technologies, Inc.
+   All Rights Reserved.
+   Confidential and Proprietary - Qualcomm Technologies, Inc.
+========================================================================
+-->
+<refPtV1
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="..\..\..\XSD\stats\awb\modrefptv1.xsd">
+  <moduleID>
+    <moduleID>2</moduleID>
+    <subModuleID>1</subModuleID>
+  </moduleID>
+  <module_version>
+    <major_revision>1</major_revision>
+    <minor_revision>0</minor_revision>
+    <incr_revision>0</incr_revision>
+  </module_version>
+  <enableFlag>1</enableFlag>
+  <refPt>
+    <rg>0.287289619</rg>
+    <bg>1.0914005</bg>
+  </refPt>
+  <refPt>
+    <rg>0.473021418</rg>
+    <bg>0.9166172</bg>
+  </refPt>
+  <refPt>
+    <rg>0.508209</rg>
+    <bg>0.7837634</bg>
+  </refPt>
+  <refPt>
+    <rg>0.57012</rg>
+    <bg>0.7255023</bg>
+  </refPt>
+  <refPt>
+    <rg>0.5961997</rg>
+    <bg>0.5209929</bg>
+  </refPt>
+  <refPt>
+    <rg>0.616292357</rg>
+    <bg>0.535519</bg>
+  </refPt>
+  <refPt>
+    <rg>0.636385</rg>
+    <bg>0.5500452</bg>
+  </refPt>
+  <refPt>
+    <rg>0.8008094</rg>
+    <bg>0.4435563</bg>
+  </refPt>
+  <refPt>
+    <rg>0.972153246</rg>
+    <bg>0.374076217</bg>
+  </refPt>
+  <refPt>
+    <rg>1.22138071</rg>
+    <bg>0.273014277</bg>
+  </refPt>
+  <refPt>
+    <rg>0</rg>
+    <bg>0</bg>
+  </refPt>
+  <refPt>
+    <rg>0</rg>
+    <bg>0</bg>
+  </refPt>
+  <refPt>
+    <rg>0</rg>
+    <bg>0</bg>
+  </refPt>
+  <refPt>
+    <rg>0</rg>
+    <bg>0</bg>
+  </refPt>
+  <refPt>
+    <rg>0</rg>
+    <bg>0</bg>
+  </refPt>
+</refPtV1>
